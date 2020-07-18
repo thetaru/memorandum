@@ -31,7 +31,7 @@ enabled=1
 baseurl=file:///media/AppStream/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 ```
-メディアのマウント先が```/media```でない場合は、```baseurl```の値を変更する必要があります。
+メディアのマウント先が```/media```でない場合は、```baseurl```の値を変更する必要があります。  
 RHEL8とでgpgkeyの値が変わることに注意します。
 ### 2.3 キャッシュクリア
 ```
