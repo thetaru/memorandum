@@ -11,4 +11,5 @@
 - [ ] [**K**ubernetes]()
 - [ ] [**N**ginx]()
 - [ ] [**P**rometheus]()
+- [ ] [**T**erraform]()
 - [ ] [**Z**abbix](https://github.com/thetaru/memorandum/tree/master/Software/Zabbix)
