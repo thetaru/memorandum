@@ -20,7 +20,7 @@ name=Red Hat Enterprise Linux 8 - BaseOS
 metadata_expire=-1
 gpgcheck=1
 enabled=1
-baseurl=file:///media/rhel8dvd/BaseOS/
+baseurl=file:///media/BaseOS/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 
 [InstallMedia-AppStream]
@@ -28,7 +28,7 @@ name=Red Hat Enterprise Linux 8 - AppStream
 metadata_expire=-1
 gpgcheck=1
 enabled=1
-baseurl=file:///media/rhel8dvd/AppStream/
+baseurl=file:///media/AppStream/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 ```
 RHEL8とでgpgkeyの値が変わることに注意します。
