@@ -48,6 +48,10 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 ```
 # dmesg | grep Reserving
 ```
+次のように出力されます。160MB予約していることがわかります。
+```
+[    0.000000] Reserving 160MB of memory at 688MB for crashkernel (System RAM: 2047MB)
+```
 ## ■ クラッシュダンプの採取
 システムを故意にクラッシュさせダンプできていることを確認します。
 ### 1. Magic SysRq Key
