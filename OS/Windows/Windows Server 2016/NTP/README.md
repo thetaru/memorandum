@@ -10,14 +10,12 @@ w32timeにおける```トリガー開始```というのは、
 ```Win + R```から```regedit```でレジストリエディタを起動します。
 ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters```に移動し```NtpServer```の値を次のように変更します。
 ```
-[NTPサーバのURLまたはIPアドレス],[パラメータ(16進表記を行う)]
-```
-```
 例えば、 ntp.nict.jp,0x8 や 192.168.0.1,0x8 など
 ```
 ### §1.1 コマンドから設定
 やっていることはレジストリをいじっているだけです。  
-cmdを***管理者権限***で起動します。
+cmdを***管理者権限***で起動します。  
+環境ごとに読み替えて実行してください。
 ```
-> reg add HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer /t "REG_SZ" /d "time.windows.com,0x9"
+> reg add HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer /t "REG_SZ" /d "<NTPサーバIP or URL>,Param"
 ```
