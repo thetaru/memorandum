@@ -33,5 +33,8 @@ OSを再起動するか次のコマンドを実行します。
 ```
 IPv6が無効化されていることを確認します。
 ```
+# sysctl -a | grep -e all.disable_ipv6 -e default.disable_ipv6
 # ip a
 ```
+```net.ipv6.conf.all.disable_ipv6``` と ```net.ipv6.conf.default.disable_ipv6```のパラメータの値が```1```になっていて  
+IPv6アドレスが設定されていなければOKです。
