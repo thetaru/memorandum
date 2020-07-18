@@ -5,5 +5,5 @@
 - [x] CentOS8
 
 ## Windows
-- [x] Windows Server2016  
-- [x] Windows Server2019
+- [x] Windows Server 2016  
+- [x] Windows Server 2019
