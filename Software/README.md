@@ -1,1 +1,14 @@
-## Software
+# Software
+- [ ] [**A**nsible]()
+- [ ] [**A**pache]()
+- [ ] [**B**acula]()
+- [ ] [**B**ind]()
+- [ ] [**D**ocker]()
+- [ ] [**E**lasticsearch]()
+- [ ] [**F**luentd]()
+- [ ] [**G**rafana]()
+- [ ] [**K**ibana]()
+- [ ] [**K**ubernetes]()
+- [ ] [**N**ginx]()
+- [ ] [**P**rometheus]()
+- [ ] [**Z**abbix]()
