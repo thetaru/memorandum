@@ -26,12 +26,12 @@ net.ipv6.conf.default.disable_ipv6 = 0
 # echo "net.ipv6.conf.default.disable_ipv6 = 0" >> /etc/sysctl.conf
 ```
 ### §3. カーネルパラメータの反映
+OSを再起動するか次のコマンドを実行します。
 ```
 # sysctl -p
 # systemctl restart network.service
 ```
-または OS再起動です。
+IPv6が無効化されていることを確認します。
 ```
 # ip a
 ```
-IPv6が無効化されていることを確認します。
