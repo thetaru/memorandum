@@ -20,7 +20,8 @@ Ipv6を無効化するパラメータを追記します。
 net.ipv6.conf.all.disable_ipv6 = 0
 net.ipv6.conf.default.disable_ipv6 = 0
 ```
-```/etc/sysctl.conf```に```net.ipv6.conf.all.disable_ipv6``` や ```net.ipv6.conf.default.disable_ipv6```のパラメータが**ない**なら以下のコマンドでもいいです。
+```/etc/sysctl.conf```に```net.ipv6.conf.all.disable_ipv6``` や ```net.ipv6.conf.default.disable_ipv6```のパラメータが**ない**なら  
+以下のコマンドでもいいです。
 ```
 # echo "net.ipv6.conf.all.disable_ipv6 = 0" >> /etc/sysctl.conf
 # echo "net.ipv6.conf.default.disable_ipv6 = 0" >> /etc/sysctl.conf
