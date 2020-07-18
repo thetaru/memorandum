@@ -31,8 +31,19 @@ enabled=1
 baseurl=file:///media/AppStream/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 ```
+メディアのマウント先が```/media```でない場合は、```baseurl```の値を変更する必要があります。
 RHEL8とでgpgkeyの値が変わることに注意します。
 ### 2.3 キャッシュクリア
 ```
 # yum clean all
 ```
+念のためリポジトリが読まれていることを確認します。
+```
+# yum repolist
+```
+```
+repo id                      repo の名前                                   状態
+InstallMedia-AppStream       Red Hat Enterprise Linux 8 - AppStream        4,681
+InstallMedia-BaseOS          Red Hat Enterprise Linux 8 - BaseOS           1,655
+```
+こんな感じになっていればOKです。
