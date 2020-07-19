@@ -39,7 +39,7 @@
 ### §2.1 フォームの定義方法
 form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```クラスを継承する。
 ### 表2.1 
-|メソッド名|デフォルトのウィジェット|デフォルトHTMLタグ|
+|フィールドクラス|デフォルトのウィジェット|デフォルトHTMLタグ|
 |:---:|:---:|:---:|
 |CharField|TextInput|\<input type="text"\>|
 |IntegerField|NumberInput|\<input type="number"\>|
@@ -49,3 +49,11 @@ form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```�
 |EmailField|EmailInput|\<input type="email"\>|
 |FileField|ClearableFileInput|\<input type="file"\>|
 |ImageFiled|ClearableFileInput|\<input type="file"\>|
+
+### 表2.2
+|フィールドオプション|用途|補足|
+|:---:|:---:|:---:|
+|required|必須フィールドにするかどうか|True または Falseを設定する(デフォルトはTrue)|
+|label|フォーム画面のラベルを設定する|-|
+|widget|ウィジェットを設定|-|
+|validators|バリデータを設定|-|
