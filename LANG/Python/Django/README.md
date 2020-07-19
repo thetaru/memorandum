@@ -39,6 +39,13 @@
 ### §2.1 フォームの定義方法
 form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```クラスを継承する。
 ### 表2.1 
-|メソッド名|対応するビュー|用途|
+|メソッド名|デフォルトのウィジェット|デフォルトHTMLタグ|
 |:---:|:---:|:---:|
-|CharField|TextInput|<input type="text"|
+|CharField|TextInput|<input type="text">|
+|IntegerField|NumberInput|<input type="number">|
+|ChoiceField|Select|<select>|
+|DateField|DateInput|<input type="text">|
+|DateTimeField|DateTimeInput|<input type="text">|
+|EmailField|EmailInput|<input type="email">|
+|FileField|ClearableFileInput|<input type="file">|
+|ImageFiled|ClearableFileInput|<input type="file">|
