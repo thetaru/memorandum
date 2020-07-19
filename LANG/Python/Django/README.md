@@ -21,3 +21,16 @@
 |form_class|CreateView<br>UpdateView<br>FormView|フォームクラス名を指定する|
 |success_url|CreateView<br>UpdateView<br>DeleteView<br>FormView|処理成功時にリダイレクトさせるURLを指定する|
 |fields|CreateView<br>UpdateView|ビューで使うフォームのフィールドを指定する|
+
+
+## オーバーライドするメソッド
+|クラス名|対応するビュー|用途|
+|:---:|:---:|:---:|
+|get_context_data|RedirectView以外|テンプレートに辞書データを渡す|
+|get_queryset|ListView<br>CreateView<br>DetailView<br>UpdateView<br>DeleteView|テンプレートにクエリーセットを渡す|
+|form_valid|CreateView<br>UpdateView<br>FormView|フォームバリデーションに問題がない場合の処理を記述する|
+|form_invalid|CreateView<br>UpdateView<br>FormView|フォームバリデーションに問題がある場合の処理を記述する|
+|get_success_url|CreateView<br>UpdateView<br>DeleteView<br>FormView|処理成功時にリダイレクトさせるURLを指定する|
+|delete|DeleteView|削除処理時に何を処理するかを追加する|
+|get|すべて|他のメソッドには当てはまらないGET通信時の処理を記述する|
+|post|RedirectView<br>CreateView<br>UpdateView<br>DeleteView<br>FormView|他のメソッドには当てはまらないPOST通信時の処理を記述する|
