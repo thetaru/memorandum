@@ -41,11 +41,11 @@ form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```�
 ### 表2.1 
 |メソッド名|デフォルトのウィジェット|デフォルトHTMLタグ|
 |:---:|:---:|:---:|
-|CharField|TextInput|<input type="text">|
-|IntegerField|NumberInput|<input type="number">|
-|ChoiceField|Select|<select>|
-|DateField|DateInput|<input type="text">|
-|DateTimeField|DateTimeInput|<input type="text">|
-|EmailField|EmailInput|<input type="email">|
-|FileField|ClearableFileInput|<input type="file">|
-|ImageFiled|ClearableFileInput|<input type="file">|
+|CharField|TextInput|\<input type="text"\>|
+|IntegerField|NumberInput|\<input type="number"\>|
+|ChoiceField|Select|\<select\>|
+|DateField|DateInput|\<input type="text"\>|
+|DateTimeField|DateTimeInput|\<input type="text"\>|
+|EmailField|EmailInput|\<input type="email"\>|
+|FileField|ClearableFileInput|\<input type="file"\>|
+|ImageFiled|ClearableFileInput|\<input type="file"\>|
