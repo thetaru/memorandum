@@ -1,7 +1,7 @@
 # Kdump
 クラッシュ時にメモリ内容をファイルへ保存するサービス
 ## ■ 設定方法
-### 1. サービスの確認
+### §1. サービスの確認
 ```
 # systemctl status kdump.service
 ```
@@ -11,7 +11,7 @@ Kdumpを有効化します(サービスの自動起動も)
 # systemctl start kdump.service
 # systemctl enable kdump.service
 ```
-### 2. [Option]カーネルパラメータの設定
+### §2. [Option]カーネルパラメータの設定
 Kdumpが有効になっていることを確認したら、カーネルダンプ出力に関する設定をします。  
 ```
 # vi /etc/default/grub
@@ -26,6 +26,7 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 ```
 また、このように手動で設定することもできます。  
 ## ■ 設定の反映
+### §1. 反映方法
 編集した```default```ファイルを使用して、GRUB2 設定を再生成します。
 ### 1.1 BIOSの場合
 ```
@@ -43,7 +44,7 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 ```
 # systemctl status kdump.service
 ```
-### 2. おまけ
+### §2. おまけ
 確保されているメモリ量は、```dmesg```から確認できます。
 ```
 # dmesg | grep Reserving
@@ -54,14 +55,14 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 160MB予約していることがわかります。
 ## ■ クラッシュダンプの採取
 システムを故意にクラッシュさせダンプできていることを確認します。
-### 1. Magic SysRq Key
+### §1. Magic SysRq Key
 クラッシュさせるのに```Magic SysRq Key```の機能を使用します。  
 次のコマンドのいずれかを実行するとLinuxカーネルは強制的にクラッシュします。
 ```
 # echo 1 > /proc/sys/kernel/sysrq
 # echo c > /proc/sysrq-trigger
 ```
-### 2. クラッシュダンプの出力先
+### §2. クラッシュダンプの出力先
 デフォルトでは```/var/crash/address-YYYY-MM-DD-HH:MM:SS```配下にvmcoreとして出力されます。  
 
 ### 2.1 [Option] クラッシュダンプ出力先の変更方法
