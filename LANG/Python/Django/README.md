@@ -37,4 +37,4 @@
 
 ## $2. フォーム
 ### $2.1 フォームの定義方法
-form.pyに```django.forms.Formクラス```または```django.forms.ModelFormクラス```を継承する。
+form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```クラスを継承する。
