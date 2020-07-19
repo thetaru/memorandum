@@ -15,9 +15,9 @@
 |クラス名|対応するビュー|用途|
 |:---:|:---:|:---:|
 |template_name|RedirectView以外|テンプレート名を指定する|
-|model|a|a|
-|paginate_by|||
-|queryset|||
-|form_class|||
-|success_url|||
-|fields|||
+|model|ListView<br>CreateView<br>DetailView<br>UpdateView<br>DeleteView|モデルを指定する<br>※querysetを設定していない場合は必須|
+|paginate_by|ListView|1ページに表示する件数を指定する|
+|queryset|ListView<br>CreateView<br>DetailView<br>UpdateView<br>DeleteView|テンプレートにクエリーセットを渡す<br>※modelを設定しない場合は必須|
+|form_class|CreateView<br>UpdateView<br>FormView|フォームクラス名を指定する|
+|success_url|CreateView<br>UpdateView<br>DeleteView<br>FormView|処理成功時にリダイレクトさせるURLを指定する|
+|fields|CreateView<br>UpdateView|ビューで使うフォームのフィールドを指定する|
