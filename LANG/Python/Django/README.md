@@ -23,7 +23,6 @@
 |success_url|CreateView<br>UpdateView<br>DeleteView<br>FormView|処理成功時にリダイレクトさせるURLを指定する|
 |fields|CreateView<br>UpdateView|ビューで使うフォームのフィールドを指定する|
 
-
 ### §1.3. オーバーライドするメソッド
 |メソッド名|対応するビュー|用途|
 |:---:|:---:|:---:|
@@ -35,3 +34,7 @@
 |delete|DeleteView|削除処理時に何を処理するかを追加する|
 |get|すべて|他のメソッドには当てはまらないGET通信時の処理を記述する|
 |post|RedirectView<br>CreateView<br>UpdateView<br>DeleteView<br>FormView|他のメソッドには当てはまらないPOST通信時の処理を記述する|
+
+## $2. フォーム
+### $2.1 フォームの定義方法
+form.pyに```django.forms.Formクラス```または```django.forms.ModelFormクラス```を継承する。
