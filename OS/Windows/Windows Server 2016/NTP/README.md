@@ -9,3 +9,7 @@ cmdを***管理者権限***で起動します。:warning:下記のコマンド�
 ```
 > reg add HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer /t "REG_SZ" /d "[NTPサーバIP or URL],[Param]"
 ```
+想定通り設定されていることを確認します。
+```
+> reg query HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters /v NtpServer
+```
