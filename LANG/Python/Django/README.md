@@ -35,6 +35,6 @@
 |get|すべて|他のメソッドには当てはまらないGET通信時の処理を記述する|
 |post|RedirectView<br>CreateView<br>UpdateView<br>DeleteView<br>FormView|他のメソッドには当てはまらないPOST通信時の処理を記述する|
 
-## $2. フォーム
-### $2.1 フォームの定義方法
+## §2. フォーム
+### §2.1 フォームの定義方法
 form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```クラスを継承する。
