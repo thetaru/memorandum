@@ -12,7 +12,7 @@
 |FormView|フォーム処理をする|
 
 ## オーバーライドするクラス変数
-|クラス名|対応するビュー|用途|
+|クラス変数名|対応するビュー|用途|
 |:---:|:---:|:---:|
 |template_name|RedirectView以外|テンプレート名を指定する|
 |model|ListView<br>CreateView<br>DetailView<br>UpdateView<br>DeleteView|モデルを指定する<br>※querysetを設定していない場合は必須|
@@ -24,7 +24,7 @@
 
 
 ## オーバーライドするメソッド
-|クラス名|対応するビュー|用途|
+|メソッド名|対応するビュー|用途|
 |:---:|:---:|:---:|
 |get_context_data|RedirectView以外|テンプレートに辞書データを渡す|
 |get_queryset|ListView<br>CreateView<br>DetailView<br>UpdateView<br>DeleteView|テンプレートにクエリーセットを渡す|
