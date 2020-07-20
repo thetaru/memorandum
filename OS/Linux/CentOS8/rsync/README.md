@@ -66,7 +66,7 @@ rsync -a --delete -e ssh $SRC $SSH_TO:$DEST
 ```
 #!/bin/bash
 Backup=/path/backup/ # バックアップ先の親ディレクトリ
-Save=7 # 保存期間
+Save=7 # 保存期間(好きに変えてください)
 Date=`date "+%s"` # 現在日時
 for item in `ls $Backup`
 do
