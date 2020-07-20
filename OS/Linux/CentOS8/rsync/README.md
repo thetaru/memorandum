@@ -33,3 +33,20 @@ rsync -a --delete /path/src/ /path/dest/
 ```
 rsync -a --delete --link-dest=/path/link_dest/ /path/src/ /path/dest/
 ```
+```/path/link_dest```オプションをつけると、バックアップ時に変更のないファイルが```/path/link_dest/```と```/path_dest/```で共有されます。
+### cronによるバックアップ
+cronを使ってバックアップを定期実行します。
+バックアップのシェル```backup.sh```はこんな感じにします。
+```
+#!/bin/bash
+SRC=/path/src/
+DEST=/path/dest/$(date "+%Y%m%d-%H%M%S")
+SSH_TO=user@hostname
+rsync -a --delete -e ssh $SRC $SSH_TO:$DEST
+```
+```
+# vi /etc/crontab
+```
+```
+30 4 * * 6 root COMMAND=/path/to/backup.sh
+```
