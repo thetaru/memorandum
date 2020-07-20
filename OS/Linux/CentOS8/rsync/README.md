@@ -28,16 +28,22 @@ rsyncの**コピー元の**パス指定において、  ```/path/to/```と```/pa
 # rsync -avh --delete /path/src/ /path/dest/
 ```
 ### 完全バックアップ
-バックアップ容量が小さいときはこちら
 ```
 # rsync -a --delete /path/src/ /path/dest/
 ```
 ### 差分バックアップ
-バックアップ容量が大きいときはこちら
 ```
 # rsync -a --delete --link-dest=/path/link_dest/ /path/src/ /path/dest/
 ```
 ```/path/link_dest```オプションをつけると、バックアップ時に変更のないファイルが```/path/link_dest/```と```/path_dest/```で共有されます。
+### 増分バックアップ(世代管理あり)
+```--link-dest```が1つ前のバックアップを指すようにすると、世代管理ありの増分バックアップになります。  
+以下のようにスクリプトを作成して定期実行すれば増分バックアップとなります。
+```
+BASEDIR=/path/link_dest/ # バックアップ先の親ディレクトリ
+LASTBACKUP=$(ls $BASEDIR | grep backup- | tail -n 1) # 1つ前のバックアップディレクトリ名
+rsync -avh --link-dest=$BASEDIR/$LASTBACKUP/ /path/src/ $BASEDIR/backup-$(date "+%Y%m%d-%H%M%S")
+```
 ### cronによるバックアップ
 cronを使ってバックアップを定期実行します。
 バックアップのシェル```backup.sh```はこんな感じにします。
