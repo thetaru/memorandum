@@ -24,12 +24,13 @@ rsyncの**コピー元の**パス指定において、  ```/path/to/```と```/pa
 ```
 ## e.g. 差分・完全バックアップ
 ### ミラーリング
+```--delete```オプションを付けることで、転送元にないファイルは転送先からも削除されます。
 ```
 # rsync -avh --delete /path/src/ /path/dest/
 ```
 ### 完全バックアップ
 ```
-# rsync -a --delete /path/src/ /path/dest/
+# rsync -avh /path/src/ /path/dest/
 ```
 ### 差分バックアップ
 ```/path/link_dest```オプションをつけると、バックアップ時に変更のないファイルが```/path/link_dest/```と```/path_dest/```で共有されます。
