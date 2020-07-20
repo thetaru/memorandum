@@ -1,6 +1,6 @@
 # CentOS8
 ## ■ Commands
-- [ ] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
+- [] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
 ## ■ OS Settings
 - [x] [Ipv6無効化](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ipv6無効化)
 - [x] [kdump](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/kdump)
