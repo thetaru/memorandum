@@ -1,1 +1,1 @@
-# WSUS
+# Squid
