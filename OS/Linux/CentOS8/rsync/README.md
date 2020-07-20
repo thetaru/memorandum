@@ -44,7 +44,7 @@ BASEDIR=/path/link_dest/ # バックアップ先の親ディレクトリ
 LASTBACKUP=$(ls $BASEDIR | grep backup- | tail -n 1) # 1つ前のバックアップディレクトリ名
 rsync -avh --link-dest=$BASEDIR/$LASTBACKUP/ /path/src/ $BASEDIR/backup-$(date "+%Y%m%d-%H%M%S")
 ```
-### cronによるバックアップ
+### [Option]cronによるバックアップ
 cronを使ってバックアップを定期実行します。
 バックアップのシェル```backup.sh```はこんな感じにします。
 ```
@@ -60,6 +60,22 @@ rsync -a --delete -e ssh $SRC $SSH_TO:$DEST
 ```
 ```
 30 4 * * 6 root COMMAND=/path/to/backup.sh
+```
+### [Option]バックアップのローテーション
+以下のようなスクリプトを作成してcronで定期実行します。
+```
+#!/bin/bash
+Backup=/path/backup/ # バックアップ先の親ディレクトリ
+Save=7 # 保存期間
+Date=`date "+%s"` # 現在日時
+for item in `ls $Backup`
+do
+  LastUpdate=`date "+%s" -r $Backup/$item` # ファイルの更新日
+  Diff=$((($Date - $LastUpdate) / 86400)) # 経過日時
+  if [[ $Diff -ge $Save ]]; then
+    rm -f $Backup/$item
+  fi
+done
 ```
 ## オプション
 |オプション|意味|
