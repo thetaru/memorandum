@@ -1,6 +1,6 @@
 # Django
 ## §1. ビュー
-### 表1.1. クラスベースビュー
+### クラスベースビュー
 |クラス名|用途|
 |:---:|:---:|
 |RedirectView|リダイレクトに特化した処理を行う|
@@ -12,7 +12,7 @@
 |DeleteView|モデルオブジェクトを削除する|
 |FormView|フォーム処理をする|
 
-### 表1.2. オーバーライドするクラス変数
+### オーバーライドするクラス変数
 |クラス変数名|対応するビュー|用途|
 |:---:|:---:|:---:|
 |template_name|RedirectView以外|テンプレート名を指定する|
@@ -23,7 +23,7 @@
 |success_url|CreateView<br>UpdateView<br>DeleteView<br>FormView|処理成功時にリダイレクトさせるURLを指定する|
 |fields|CreateView<br>UpdateView|ビューで使うフォームのフィールドを指定する|
 
-### 表1.3. オーバーライドするメソッド
+### オーバーライドするメソッド
 |メソッド名|対応するビュー|用途|
 |:---:|:---:|:---:|
 |get_context_data|RedirectView以外|テンプレートに辞書データを渡す|
@@ -38,7 +38,7 @@
 ## §2. フォーム
 ### §2.1 フォームの定義方法
 form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```クラスを継承する。
-### 表2.1 
+### フィールドクラス
 |フィールドクラス|デフォルトのウィジェット|デフォルトHTMLタグ|
 |:---:|:---:|:---:|
 |CharField|TextInput|\<input type="text"\>|
@@ -50,7 +50,7 @@ form.pyに```django.forms.Form```クラスまたは```django.forms.ModelForm```�
 |FileField|ClearableFileInput|\<input type="file"\>|
 |ImageFiled|ClearableFileInput|\<input type="file"\>|
 
-### 表2.2
+### フィールドオプション
 |フィールドオプション|用途|補足|
 |:---:|:---:|:---:|
 |required|必須フィールドにするかどうか|True または Falseを設定する(デフォルトはTrue)|
