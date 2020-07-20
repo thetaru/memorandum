@@ -5,7 +5,7 @@ rsync [OPTION] [username@]hostname:/path/src/ /path/dest
 ```
 ```/path/src/```: コピー元のパス ```/path/dest```: コピー先のパス  
 ### :warning:注意:warning:
-rsyncのコピー元のパス指定において、  ```/path/to/```と```/path/to```とで意味が変わります。  
+rsyncの**コピー元の**パス指定において、  ```/path/to/```と```/path/to```とで意味が変わります。  
 前者は```/path/to/*```を意味しますが 、後者は```/path/to```ディレクトリ自身を意味します。  
 つまり、ファイルとして送られてくるかディレクトリごと送られてくるかの違いがあります。
 ## e.g. リモートサーバからローカルサーバへコピー
