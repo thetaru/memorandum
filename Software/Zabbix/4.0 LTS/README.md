@@ -1,1 +1,0 @@
-## Zabbix 4.0 LTS
