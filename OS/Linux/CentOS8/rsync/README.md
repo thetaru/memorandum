@@ -44,7 +44,7 @@ DEST=/path/dest/$(date "+%Y%m%d-%H%M%S")
 SSH_TO=user@hostname
 rsync -a --delete -e ssh $SRC $SSH_TO:$DEST
 ```
-このシェルだと```/path/dest/```配下に日時のついたディレクトリにコピー元がバックアップされることになります。
+このシェルだと```/path/dest/```配下に日時のついたディレクトリにコピー元の全ファイルがバックアップされることになります。
 ```
 # vi /etc/crontab
 ```
