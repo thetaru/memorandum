@@ -1,1 +1,1 @@
-# WSUS
+# syslog
