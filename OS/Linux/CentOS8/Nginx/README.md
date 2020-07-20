@@ -7,7 +7,10 @@
 ```
 ## §2. Config
 ```/etc/nginx/nginx.conf```を編集します。  
-ここでは必要な項目のみに絞って紹介します。
+ここでは必要な項目のみに絞って紹介します。  
+https://qiita.com/syou007/items/3e2d410bbe65a364b603  
+https://qiita.com/ryuichi1208/items/50594810be613d838948  
+https://qiita.com/morrr/items/7c97f0d2e46f7a8ec967  
 ```worker_processes```
 ```worker_rlimit_nofile```
 ```eventsブロック```
