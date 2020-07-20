@@ -32,10 +32,10 @@ rsyncの**コピー元の**パス指定において、  ```/path/to/```と```/pa
 # rsync -a --delete /path/src/ /path/dest/
 ```
 ### 差分バックアップ
+```/path/link_dest```オプションをつけると、バックアップ時に変更のないファイルが```/path/link_dest/```と```/path_dest/```で共有されます。
 ```
 # rsync -a --delete --link-dest=/path/link_dest/ /path/src/ /path/dest/
 ```
-```/path/link_dest```オプションをつけると、バックアップ時に変更のないファイルが```/path/link_dest/```と```/path_dest/```で共有されます。
 ### 増分バックアップ(世代管理あり)
 ```--link-dest```が1つ前のバックアップを指すようにすると、世代管理ありの増分バックアップになります。  
 以下のようにスクリプトを作成して定期実行すれば増分バックアップとなります。
