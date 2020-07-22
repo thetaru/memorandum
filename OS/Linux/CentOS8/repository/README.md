@@ -6,6 +6,7 @@ media: DVD(isoイメージでも可)
 ```
 ## §2. 設定方法
 ### 2.1 マウント
+isoイメージをマウントする場合は```/dev/sr0```をisoイメージと差し替えます。
 ```
 # mount -o loop /dev/sr0 /media
 ```
