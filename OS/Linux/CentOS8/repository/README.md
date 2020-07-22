@@ -5,7 +5,7 @@ OS: CentOS8
 media: DVD(isoイメージでも可)
 ```
 ## §2. 設定方法
-### 2.1 DVDマウント
+### 2.1 マウント
 ```
 # mount -o loop /dev/sr0 /media
 ```
