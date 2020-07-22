@@ -1,8 +1,8 @@
 # OS
 
 ## Linux
-- [x] [Rhel7]()
 - [x] [CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
+- [x] [RHEL7](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7)
 
 ## Windows
 - [x] [Windows Server 2016](https://github.com/thetaru/memorandum/tree/master/OS/Windows/Windows%20Server%202016)
