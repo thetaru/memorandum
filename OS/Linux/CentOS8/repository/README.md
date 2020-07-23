@@ -11,6 +11,7 @@ isoイメージをマウントする場合は```/dev/sr0```をisoイメージと
 # mount -o loop /dev/sr0 /media
 ```
 ### 2.2 リポジトリ作成
+リポジトリの設定ファイルを作成します。
 ```
 # vi /etc/yum.repos.d/local.repo
 ```
