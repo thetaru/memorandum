@@ -32,6 +32,7 @@ Containers          2                   1                   1.116kB             
 Local Volumes       0                   0                   0B                  0B
 Build Cache         0                   0                   0B                  0B
 ```
+## § COMMAND 2
 ### docker image pull コマンド
 イメージのダウンロードをします。
 ```
@@ -171,6 +172,7 @@ Docker Hubにイメージをアップロードします。
 ```
 # docker image push docker-image[:tag]
 ```
+## § COMMAND 3
 ### docker container create コマンド
 イメージからコンテナを生成します。(実際はスナップショットをとっているらしい)
 ```
