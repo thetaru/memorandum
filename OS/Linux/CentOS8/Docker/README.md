@@ -64,9 +64,6 @@ Build Cache         0                   0                   0B                  
 |--digests|ダイジェストを表示するかどうか|
 |--no-trunc|結果をすべて表示する|
 |--quiet, -q|DockerイメージIDのみ表示|
-### docker image inspect コマンド
-イメージの詳細情報を表示します。  
-出力はJSON形式です。
 #### e.g.
 ```
 # docker image ls
@@ -75,6 +72,9 @@ Build Cache         0                   0                   0B                  
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ubuntu              latest              1e4467b07108        20 hours ago        73.9MB
 ```
+### docker image inspect コマンド
+イメージの詳細情報を表示します。  
+出力はJSON形式です。
 ```
 # docker image inspect [option] docker-image[:tag]
 ```
