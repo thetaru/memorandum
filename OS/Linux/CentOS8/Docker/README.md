@@ -179,7 +179,7 @@ Docker Hubにイメージをアップロードします。
 # docker container create docker-image
 ```
 ### docker container run コマンド
-Dockerコンテナを作成/実行します。
+Dockerイメージからコンテナ上で任意のプロセスを起動します。
 ```
 # docker container run [option] docker-image[:tag] [argument]
 ```
@@ -193,6 +193,27 @@ Dockerコンテナを作成/実行します。
 |--name||
 |--port, -p||
 |--tty, -t|端末デバイスを使う|
+#### e.g.
+test1というコンテナを作成してその中で/bin/calを実行しています。
+```
+# docker container run -it --name "test1" centos /bin/cal
+```
+```
+      July 2020
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+```
+次でコンテナ内にログインできます。
+```
+# docker container run -it --name "test2" centos /bin/bash
+```
 ### docker container start コマンド
+停止中のコンテナを起動します。
 ### docker container stop コマンド
+起動中のコンテナを停止します。
 ### docker container rm コマンド
+(停止している)コンテナを削除します。
