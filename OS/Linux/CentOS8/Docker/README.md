@@ -143,5 +143,5 @@ nginx                              Official build of Nginx.                     
 ```
 ```
 Untagged: ubuntu:latest
-Untagged: ubuntu@sha256:123456789123456789123456789123456789
+Deleted: ubuntu@sha256:123456789123456789123456789123456789
 ```
