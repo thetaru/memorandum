@@ -182,11 +182,6 @@ Docker Hubにイメージをアップロードします。
 # docker image push docker-image[:tag]
 ```
 ## § コンテナの生成/起動(docker container run)
-### docker container create コマンド
-イメージからコンテナを生成します。(実際はスナップショットをとっているらしい)
-```
-# docker container create docker-image
-```
 ### docker container run コマンド
 Dockerイメージからコンテナ上で任意のプロセスを起動します。
 ```
