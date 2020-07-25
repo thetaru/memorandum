@@ -7,22 +7,6 @@
 ```
 
 ## § COMMAND
-### docker container run コマンド
-Dockerコンテナを作成/実行します。
-```
-# docker container run [option] docker-image[:tag] [argument]
-```
-`tag`を指定しないとデフォルトでは`latest`になります。
-|オプション|意味|
-|:---|:---|
-|--attach, -a|標準入力/標準出力/標準エラー出力にアタッチする|
-|--cidfile|コンテナIDをファイルに出力する|
-|--detach, -d|コンテナを作成し、バックグラウンドで実行する|
-|--interactive, -i|コンテナの標準入力を開く|
-|--name||
-|--port, -p||
-|--tty, -t|端末デバイスを使う|
-
 ### docker version コマンド
 ```
 # docker version
@@ -187,3 +171,26 @@ Docker Hubにイメージをアップロードします。
 ```
 # docker image push docker-image[:tag]
 ```
+### docker container create コマンド
+イメージからコンテナを生成します。(実際はスナップショットをとっているらしい)
+```
+# docker container create docker-image
+```
+### docker container run コマンド
+Dockerコンテナを作成/実行します。
+```
+# docker container run [option] docker-image[:tag] [argument]
+```
+`tag`を指定しないとデフォルトでは`latest`になります。
+|オプション|意味|
+|:---|:---|
+|--attach, -a|標準入力/標準出力/標準エラー出力にアタッチする|
+|--cidfile|コンテナIDをファイルに出力する|
+|--detach, -d|コンテナを作成し、バックグラウンドで実行する|
+|--interactive, -i|コンテナの標準入力を開く|
+|--name||
+|--port, -p||
+|--tty, -t|端末デバイスを使う|
+### docker container start コマンド
+### docker container stop コマンド
+### docker container rm コマンド
