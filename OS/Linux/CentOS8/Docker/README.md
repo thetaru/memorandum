@@ -139,6 +139,7 @@ Deleted: ubuntu@sha256:123456789123456789123456789123456789
 |:---|:---|
 |--all, -a|使用していあないイメージをすべて削除する|
 |--force, -f|イメージを強制的に削除する|
+## § Docker Hubからのログイン/ログアウト(docker login/logout)
 ### docker login コマンド
 Docker Hubにログインします。
 ```
@@ -167,12 +168,13 @@ Docker Hubからログアウトします。
 ```
 Removing login credentials for https://index.docker.io/v1/
 ```
+## § イメージのアップロード(docker image push)
 ### docker image コマンド
 Docker Hubにイメージをアップロードします。
 ```
 # docker image push docker-image[:tag]
 ```
-## § COMMAND 3
+## § コンテナの生成/起動(docker container run)
 ### docker container create コマンド
 イメージからコンテナを生成します。(実際はスナップショットをとっているらしい)
 ```
