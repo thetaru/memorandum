@@ -53,6 +53,10 @@ Build Cache         0                   0                   0B                  
 ```
 # docker image pull [option] docker-iamge[:tag]
 ```
+#### e.g.
+```
+# docker image pull ubuntu:latest
+```
 ### docker image ls コマンド
 取得したイメージの一覧表示をします。
 ```
@@ -84,4 +88,23 @@ ubuntu              latest              1e4467b07108        20 hours ago        
 ```
 ```
 linux
+```
+### docker image tag コマンド
+Dockerイメージにタグを付けます。
+```
+# docker image tag SOURCE-image[:tag] TARGET-image[:tag]
+```
+#### e.g.
+タグを変更します。
+```
+# docker image tag ubuntu:latest hoge:1.0
+```
+タグが変更されていることを確認します。
+```
+# docker image ls
+```
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hoge                1.0                 1e4467b07108        20 hours ago        73.9MB
+ubuntu              latest              1e4467b07108        20 hours ago
 ```
