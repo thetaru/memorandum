@@ -108,4 +108,4 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 hoge                1.0                 1e4467b07108        20 hours ago        73.9MB
 ubuntu              latest              1e4467b07108        20 hours ago
 ```
-hogeとubuntuのIMAGE IDが同じなので実体は同一です。
+hogeとubuntuのIMAGE IDが同じなので実体は同一です。(ハードリンクみたいなイメージ)
