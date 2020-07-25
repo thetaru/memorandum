@@ -35,8 +35,11 @@ Dockerコンテナを作成/実行します。
 Dockerが使用しているディスクの使用状況を表示します。  
 ```-v```を付けると詳細表示になります。
 ```
+# docker system df [-v]
+```
+#### e.g.
+```
 # docker system df
-# docker system df -v
 ```
 ```
 TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE
@@ -55,13 +58,6 @@ Build Cache         0                   0                   0B                  
 ```
 # docker image ls [option] [repository]
 ```
-```
-# docker image ls
-```
-```
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-ubuntu              latest              1e4467b07108        20 hours ago        73.9MB
-```
 |オプション|意味|
 |:---|:---|
 |-all, -a|すべてのイメージを表示|
@@ -71,9 +67,18 @@ ubuntu              latest              1e4467b07108        20 hours ago        
 ### docker image inspect コマンド
 イメージの詳細情報を表示します。  
 出力はJSON形式です。
+#### e.g.
+```
+# docker image ls
+```
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              1e4467b07108        20 hours ago        73.9MB
+```
 ```
 # docker image inspect [option] docker-image[:tag]
 ```
+#### e.g.
 ```
 # docker image inspect --format="{{ .Os}}" ubuntu:latest
 ```
