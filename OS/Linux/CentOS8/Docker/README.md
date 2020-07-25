@@ -175,6 +175,13 @@ Docker Hubからログアウトします。
 ```
 # docker logout [サーバ名]
 ```
+#### e.g.
+```
+# docker logout
+```
+```
+Removing login credentials for https://index.docker.io/v1/
+```
 ### docker image コマンド
 Docker Hubにイメージをアップロードします。
 ```
