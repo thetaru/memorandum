@@ -10,17 +10,17 @@
 ### docker container run コマンド
 Dockerコンテナを作成/実行します。
 ```
-# docker container run Docker-image exec-command
-```
-```
 # docker container run [option] docker-image[:tag] [argument]
 ```
+`tag`を指定しないとデフォルトでは`latest`になります。
 |オプション|意味|
 |:---|:---|
 |--attach, -a|標準入力/標準出力/標準エラー出力にアタッチする|
 |--cidfile|コンテナIDをファイルに出力する|
 |--detach, -d|コンテナを作成し、バックグラウンドで実行する|
 |--interactive, -i|コンテナの標準入力を開く|
+|--name||
+|--port, -p||
 |--tty, -t|端末デバイスを使う|
 
 ### docker version コマンド
@@ -38,3 +38,4 @@ Dockerが使用しているディスクの使用状況を表示します。
 # docker system df
 # docker system df -v
 ```
+### 
