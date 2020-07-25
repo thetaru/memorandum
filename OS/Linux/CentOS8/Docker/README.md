@@ -154,3 +154,19 @@ Deleted: ubuntu@sha256:123456789123456789123456789123456789
 |:---|:---|
 |--all, -a|使用していあないイメージをすべて削除する|
 |--force, -f|イメージを強制的に削除する|
+### docker login
+Dockerレポジトリにアップデートするためにログインします。
+```
+# docker login [option] [サーバ]
+```
+|オプション|意味|
+|:---|:---|
+|--password, -p|パスワード|
+|--username, -u|ユーザ名|
+#### e.g.
+```
+# docker login
+USERNAME: 登録したユーザ名
+PASSWORD: 登録したパスワード
+Login Succeeded
+```
