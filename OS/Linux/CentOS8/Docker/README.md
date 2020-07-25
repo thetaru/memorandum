@@ -38,6 +38,13 @@ Dockerが使用しているディスクの使用状況を表示します。
 # docker system df
 # docker system df -v
 ```
+```
+TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE
+Images              2                   2                   206.3MB             0B (0%)
+Containers          2                   1                   1.116kB             0B (0%)
+Local Volumes       0                   0                   0B                  0B
+Build Cache         0                   0                   0B                  0B
+```
 ### docker image pull コマンド
 イメージのダウンロードをします。
 ```
@@ -47,6 +54,10 @@ Dockerが使用しているディスクの使用状況を表示します。
 取得したイメージの一覧表示をします。
 ```
 # docker image ls [option] [repository]
+```
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              1e4467b07108        20 hours ago        73.9MB
 ```
 |オプション|意味|
 |:---|:---|
