@@ -145,3 +145,12 @@ nginx                              Official build of Nginx.                     
 Untagged: ubuntu:latest
 Deleted: ubuntu@sha256:123456789123456789123456789123456789
 ```
+### docker image prune コマンド
+未使用のDockerイメージを削除します。
+```
+# docker image prune [option]
+```
+|オプション|意味|
+|:---|:---|
+|--all, -a|使用していあないイメージをすべて削除する|
+|--force, -f|イメージを強制的に削除する|
