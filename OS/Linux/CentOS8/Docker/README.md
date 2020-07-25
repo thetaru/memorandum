@@ -1,12 +1,12 @@
 # Docker
-## § INSTALL
+# § INSTALL
 [公式](https://docs.docker.com/engine/install/centos/)を参照してください。  
 バージョンや依存関係でインストールできない場合は[ここ](https://download.docker.com/linux/)からパッケージを探します。
 ```
 # yum -y install https://download.docker.com/linux/<path_to_rpm>
 ```
 
-## § COMMAND
+# § COMMAND
 ## § バージョン確認(docker version)
 ### docker version コマンド
 ```
@@ -233,6 +233,20 @@ Su Mo Tu We Th Fr Sa
 # docker container logs -t container-id
 ```
 `-t`はタイムスタンプを付けるオプションです。
+## § リソースを指定したコンテナを生成/実行(docker container run)
+CPUやメモリなどのリソースを指定してコンテナを作成/実行します。
+```
+# docker container run [resource option] docker-image[:tag] [argument]
+```
+|オプション|意味|
+|:---|:---|
+|--cpu-shares, -c|CPUの使用の配分|
+|--memory, -m|使用するメモリを制限して実行する|
+|--volume=[ホストのディレクトリ]:[コンテナのディレクトリ]|ホストとコンテナディレクトリを共有|
+#### e.g.
+```
+# docker container run --cpu-shares=512 --memory=1g centos
+```
 ## § ネットワークの一覧表示(docker network ls)
 ```
 # docker network ls [option]
