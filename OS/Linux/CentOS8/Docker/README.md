@@ -211,6 +211,19 @@ Su Mo Tu We Th Fr Sa
 ```
 # docker container run -it --name "test2" centos /bin/bash
 ```
+## § コンテナのバックグラウンド実行(docker container run)
+```
+# docker container run [option] docker-image[:tag] [argument]
+```
+|オプション|意味|
+|:---|:---|
+|--detach, -d|バックグラウンド実行する|
+|--user, -u|ユーザ名を指定|
+|--restart=[no \| onfailure \| on-failure:回数n \| always \| unless-stopped]|コマンドの実行結果によって再起動を行う|
+|--rm|コマンド実行完了時にコンテナを自動で削除|
+```
+# docker container run -d centos /bin/ping localhost
+```
 ### docker container start コマンド
 停止中のコンテナを起動します。
 ### docker container stop コマンド
