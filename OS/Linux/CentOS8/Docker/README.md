@@ -10,6 +10,9 @@
 ### docker container run コマンド
 Dockerコンテナを作成/実行します。
 ```
+# docker container run Docker-image exec-command
+```
+```
 # docker container run [option] docker-image[:tag] [argument]
 ```
 |オプション|意味|
@@ -23,4 +26,15 @@ Dockerコンテナを作成/実行します。
 ### docker version コマンド
 ```
 # docker version
+```
+### docker system info コマンド
+```
+# docker system info
+```
+### docker system df コマンド
+Dockerが使用しているディスクの使用状況を表示します。  
+```-v```を付けると詳細表示になります。
+```
+# docker system df
+# docker system df -v
 ```
