@@ -228,9 +228,22 @@ Su Mo Tu We Th Fr Sa
 ```
 # docker container run -d centos /bin/ping localhost
 ```
-### docker container start コマンド
-停止中のコンテナを起動します。
-### docker container stop コマンド
-起動中のコンテナを停止します。
-### docker container rm コマンド
-(停止している)コンテナを削除します。
+バックグラウンドで実行されていることを確認します。
+```
+# docker container logs -t container-id
+```
+`-t`はタイムスタンプを付けるオプションです。
+## § コンテナのネットワーク設定(docker container run)
+```
+# docker container run [network-option] docker-image[:tag] [argument]
+```
+|オプション|意味|
+|:---|:---|
+|--add-host=[ホスト名:IPアドレス]|コンテナの/etc/hostsにホスト名とIPアドレスを定義する|
+|--dns=[IPアドレス]|コンテナ用のDNSサーバのIPアドレス指定|
+|--expose|指定したレンジのポート番号を割り当てる|
+|--mac-address=[MACアドレス]|コンテナのMACアドレスを指定する|
+|--net=[bridge \| none \| container:<name \| id> \| host \| NETWORK]| コンテナのネットワークを指定する|
+|--hostname, -h|コンテナ自身のホスト名を指定する|
+|--publish, -p[ホストのポート番号]:[コンテナのポート番号]|ホストとコンテナのポートマッピング|
+|--publish-all, -P|ホストの任意のポートをコンテナに割り当てる|
