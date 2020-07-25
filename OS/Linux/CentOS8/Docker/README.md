@@ -109,3 +109,39 @@ hoge                1.0                 1e4467b07108        20 hours ago        
 ubuntu              latest              1e4467b07108        20 hours ago
 ```
 hogeとubuntuのIMAGE IDが同じなので実体は同一です。(ハードリンクみたいなイメージ)
+### docker search コマンド
+Docker Hubに公開されているDockerイメージを検索します。
+```
+# docker search [option] 検索キーワード
+```
+|オプション|意味|
+|:---|:---|
+|--no-trunc|結果をすべて表示する|
+|--limit|n件の検索結果を表示する|
+|--filter=stars=n|お気に入りの数(n以上)の指定|
+#### e.g.
+```
+# docker search nginx
+```
+```
+NAME                               DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+nginx                              Official build of Nginx.                        13509               [OK]
+...
+```
+### docker image rm コマンド
+作成したイメージを削除します。
+```
+# docker image rm [option] docker-image1 [docker-image2]
+```
+|オプション|意味|
+|:---|:---|
+|--force, -f|イメージを強制的に削除する|
+|--no-prun|中間イメージを削除しない|
+#### e.g.
+```
+# docker image rm ubuntu -f
+```
+```
+Untagged: ubuntu:latest
+Untagged: ubuntu@sha256:123456789123456789123456789123456789
+```
