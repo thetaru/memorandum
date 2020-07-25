@@ -263,6 +263,36 @@ CPUやメモリなどのリソースを指定してコンテナを作成/実行�
 ```
 # docker container run -it -e foo=bar centos /bin/bash
 ```
+## § 稼働コンテナの一覧表示(docker container ls)
+```
+# docker container ls [option]
+```
+## § コンテナの起動(docker container start)
+```
+# docker container start [option] container-id [container-id]
+```
+|オプション|意味|
+|:---|:---|
+|--attach, -a|標準出力/標準エラー出力を開く|
+|--interactive, -i|コンテナの標準入力を開く|
+## § コンテナの停止(docker container stop)
+```
+# docker container stop [option] container-id [container-id]
+```
+|オプション|意味|
+|:---|:---|
+|--time, -t|コンテナの停止時間を指定する(指定秒数後に停止)|
+## § コンテナの再起動(docker container restart)
+```
+# docker container restart [option] container-id [container-id]
+```
+|オプション|意味|
+|:---|:---|
+|--time, -t|コンテナの再起動時間を指定する(指定秒数後に再起動)|
+## § コンテナの稼働確認(docker container stats)
+```
+# docker container stats [container-id]
+```
 ## § ネットワークの一覧表示(docker network ls)
 ```
 # docker network ls [option]
