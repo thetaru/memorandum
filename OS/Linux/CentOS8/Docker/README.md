@@ -155,7 +155,7 @@ Deleted: ubuntu@sha256:123456789123456789123456789123456789
 |--all, -a|使用していあないイメージをすべて削除する|
 |--force, -f|イメージを強制的に削除する|
 ### docker login コマンド
-DockerレポジトリにアップデートするためにDocker Hubにログインします。
+Docker Hubにログインします。
 ```
 # docker login [option] [サーバ名]
 ```
