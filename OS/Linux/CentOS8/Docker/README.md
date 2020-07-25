@@ -242,10 +242,26 @@ CPUやメモリなどのリソースを指定してコンテナを作成/実行�
 |:---|:---|
 |--cpu-shares, -c|CPUの使用の配分|
 |--memory, -m|使用するメモリを制限して実行する|
-|--volume=[ホストのディレクトリ]:[コンテナのディレクトリ]|ホストとコンテナディレクトリを共有|
+|--volume=[ホストのディレクトリ]:[コンテナのディレクトリ], -v|ホストとコンテナディレクトリを共有|
 #### e.g.
 ```
 # docker container run --cpu-shares=512 --memory=1g centos
+```
+## § コンテナを生成/起動する環境を指定(docker container run)
+コンテナの環境変数は作業ディレクトリを変更します。
+```
+# docker container run [env option] docker-image[:tag] [argument]
+```
+|オプション|意味|
+|:---|:---|
+|--env=[環境変数], -e|環境変数を設定する|
+|--env-file=[ファイル名]|環境変数をファイルから設定する|
+|--readonly=[true \| false]|コンテナのファイルシステムを読み込み専用にする|
+|--workdir=[パス], -w|コンテナの作業ディレクトリを指定する|
+|-u, -user=[ユーザ名]|ユーザ名またはUIDを指定する|
+#### e.g.
+```
+# docker container run -it -e foo=bar centos /bin/bash
 ```
 ## § ネットワークの一覧表示(docker network ls)
 ```
