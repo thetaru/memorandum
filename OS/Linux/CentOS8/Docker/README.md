@@ -154,10 +154,10 @@ Deleted: ubuntu@sha256:123456789123456789123456789123456789
 |:---|:---|
 |--all, -a|使用していあないイメージをすべて削除する|
 |--force, -f|イメージを強制的に削除する|
-### docker login
-Dockerレポジトリにアップデートするためにログインします。
+### docker login コマンド
+DockerレポジトリにアップデートするためにDocker Hubにログインします。
 ```
-# docker login [option] [サーバ]
+# docker login [option] [サーバ名]
 ```
 |オプション|意味|
 |:---|:---|
@@ -169,4 +169,14 @@ Dockerレポジトリにアップデートするためにログインします�
 USERNAME: 登録したユーザ名
 PASSWORD: 登録したパスワード
 Login Succeeded
+```
+### docker logout コマンド
+Docker Hubからログアウトします。
+```
+# docker logout [サーバ名]
+```
+### docker image コマンド
+Docker Hubにイメージをアップロードします。
+```
+# docker image push docker-image[:tag]
 ```
