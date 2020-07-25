@@ -233,6 +233,32 @@ Su Mo Tu We Th Fr Sa
 # docker container logs -t container-id
 ```
 `-t`はタイムスタンプを付けるオプションです。
+## § ネットワークの一覧表示(docker network ls)
+```
+# docker network ls [option]
+```
+## § ネットワークの作成(docker network create)
+新しくネットワークを作成します。
+```
+# docker network create [option] network
+```
+|オプション|意味|
+|:---|:---|
+|--driver, -d|ネットワークブリッジまたはオーバーレイ(デフォルトはbridge)|
+|--ip-range|コンテナに割り当てるIPアドレスのレンジを指定|
+|--subnet|サブネットをCIDR形式で指定|
+|--ipv6|IPv6ネットワークを有効にするかどうか(true/false)|
+|-label|ネットワークに設定するラベル|
+#### e.g.
+ネットワークtest-networkを作成します。
+```
+# docker network create --driver=bridge test-network
+```
+作成されていることを確認します。
+```
+# docker network ls
+```
+
 ## § コンテナのネットワーク設定(docker container run)
 コンテナを起動するときは、ネットワーク設定を行うことができます。
 ```
