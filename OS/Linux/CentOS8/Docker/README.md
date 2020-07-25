@@ -13,10 +13,11 @@ Dockerコンテナを作成/実行します。
 # docker container run [option] docker-image[:tag] [argument]
 ```
 |オプション|意味|
-|:---:|:---:|
+|:---|:---|
 |--attach, -a|標準入力/標準出力/標準エラー出力にアタッチする|
 |--cidfile|コンテナIDをファイルに出力する|
 |--detach, -d|コンテナを作成し、バックグラウンドで実行する|
+|--interactive, -i|コンテナの標準入力を開く|
 |--tty, -t|端末デバイスを使う|
 
 ### docker version コマンド
