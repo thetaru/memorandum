@@ -38,4 +38,19 @@ Dockerが使用しているディスクの使用状況を表示します。
 # docker system df
 # docker system df -v
 ```
-### 
+### docker image pull コマンド
+イメージのダウンロードをします。
+```
+# docker image pull [option] docker-iamge[:tag]
+```
+### docker image ls
+取得したイメージの一覧表示をします。
+```
+# docker image ls [option] [repository]
+```
+|オプション|意味|
+|:---|:---|
+|-all, -a|すべてのイメージを表示|
+|--digests|ダイジェストを表示するかどうか|
+|--no-trunc|結果をすべて表示する|
+|--quiet, -q|DockerイメージIDのみ表示|
