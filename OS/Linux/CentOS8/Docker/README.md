@@ -306,10 +306,6 @@ CPUやメモリなどのリソースを指定してコンテナを作成/実行�
 ```
 # docker container stats [container-id]
 ```
-## § ネットワークの一覧表示(docker network ls)
-```
-# docker network ls [option]
-```
 ## § ネットワークの作成(docker network create)
 新しくネットワークを作成します。
 ```
@@ -330,6 +326,10 @@ CPUやメモリなどのリソースを指定してコンテナを作成/実行�
 作成されていることを確認します。
 ```
 # docker network ls
+```
+## § ネットワークの一覧表示(docker network ls)
+```
+# docker network ls [option]
 ```
 ## § コンテナのネットワーク設定(docker container run)
 コンテナを起動するときは、ネットワーク設定を行うことができます。
