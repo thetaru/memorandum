@@ -234,6 +234,7 @@ Su Mo Tu We Th Fr Sa
 ```
 `-t`はタイムスタンプを付けるオプションです。
 ## § コンテナのネットワーク設定(docker container run)
+コンテナを起動するときは、ネットワーク設定を行うことができます。
 ```
 # docker container run [network-option] docker-image[:tag] [argument]
 ```
@@ -247,3 +248,43 @@ Su Mo Tu We Th Fr Sa
 |--hostname, -h|コンテナ自身のホスト名を指定する|
 |--publish, -p[ホストのポート番号]:[コンテナのポート番号]|ホストとコンテナのポートマッピング|
 |--publish-all, -P|ホストの任意のポートをコンテナに割り当てる|
+#### e.g.
+ホストの8080ポートとコンテナの80ポートをマッピングしています。
+```
+# docker container run -d -p 8080:80 nginx
+```
+DNSサーバを設定しています。
+```
+# docker container run -d --dns 192.168.1.1 nginx
+```
+`/etc/hosts`にホスト名とipアドレスを設定しています。
+```
+# docker container run -it --add-host test.com:192.168.1.1 centos
+```
+```
+[root@xxxxxxxxxxxx /]# cat /etc/hosts
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+192.168.1.1     test.com
+172.17.0.3      xxxxxxxxxxxx
+```
+```
+# docker container run -it --hostname www.test.com --add-host node1.test.com:192.168.1.1 centos
+```
+```
+[root@www /]# hostname
+www.test.com
+[root@www /]# cat /etc/hosts
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+192.168.1.1     node1.test.com
+172.17.0.3      www.test.com www
+```
