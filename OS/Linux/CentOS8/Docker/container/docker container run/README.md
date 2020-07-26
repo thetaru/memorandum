@@ -55,3 +55,58 @@ exit
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 3878be285b91        centos              "/bin/bash"         40 seconds ago      Up 35 seconds                           clever_wiles
 ```
+# コンテナのネットワーク設定
+## Syntax
+```
+# docker container run [network-option] docker-image[:tag] [argument]
+```
+|オプション|意味|
+|:---|:---|
+|--add-host=[ホスト名:IPアドレス]|コンテナの/etc/hostsにホスト名とIPアドレスを定義する|
+|--dns=[IPアドレス]|コンテナ用のDNSサーバのIPアドレス指定|
+|--expose|指定したレンジのポート番号を割り当てる|
+|--mac-address=[MACアドレス]|コンテナのMACアドレスを指定する|
+|--net=[bridge \| none \| container:<name \| id> \| host \| NETWORK]| コンテナのネットワークを指定する|
+|--hostname, -h|コンテナ自身のホスト名を指定する|
+|--publish, -p[ホストのポート番号]:[コンテナのポート番号]|ホストとコンテナのポートマッピング|
+|--publish-all, -P|ホストの任意のポートをコンテナに割り当てる|
+### e.g.
+#### コンテナのポートマッピング
+```
+# docker container run -d -p 8080:80 nginx
+```
+#### コンテナのDNSサーバ指定
+```
+# docker container run -d --dns 192.168.1.1 nginx
+```
+#### MACアドレスの指定
+```
+# docker container run -d --mac-address="92:d0:c6:0a:29:33" centos
+```
+```
+8473c0da13f0c31735c9f7314580688cbb61d26b9414d568daee379ecf89adb3
+```
+```
+# docker container inspect --format="{{ .Config.MacAddress }}" 8473c0da13f0c31735c9f7314580688cbb61d26b9414d568daee379ecf89adb3
+```
+```
+92:d0:c6:0a:29:33
+```
+#### ホスト名とIPアドレスを定義
+```
+# docker container run -it --add-host test.com:192.168.1.1 centos
+```
+```
+[root@9f5b5ee2dd2b /]# cat /etc/hosts
+```
+```
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+192.168.1.1     test.com
+172.17.0.4      9f5b5ee2dd2b
+```
+#### ホスト名の設定
