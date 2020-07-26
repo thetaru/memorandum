@@ -9,6 +9,9 @@
 |--ipv6|IPv6アドレス|
 |--alias|エイリアス名|
 |--link|他のコンテナへのリンク|
+```
+# docker network disconnect network container
+```
 ### e.g.
 #### ネットワークへの接続
 ```
@@ -37,4 +40,37 @@
                     "DriverOpts": {}
                 }
 ...
+```
+#### ネットワークを指定したコンテナの起動
+```
+# docker container run -itd --name=test-container --net=test-network centos
+```
+```
+# docker container ls
+```
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+d67a5987ea0b        centos              "/bin/bash"         15 seconds ago      Up 14 seconds                           test-container
+```
+```
+# docker container inspect test-container
+```
+```
+                "test-network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "d67a5987ea0b"
+                    ],
+                    "NetworkID": "7651abdce1fb805c122a5301d7cf775ffc94e4d38a29c98a04ead733e8f873ed",
+                    "EndpointID": "3ec27aabf7af3d361b4577a68e4af6270c20371b76b0cecdaad55fbd542197c6",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:12:00:03",
+                    "DriverOpts": null
+                }
 ```
