@@ -11,7 +11,7 @@
 ```
 # docker container ls
 ```
-|オプション|意味|
+|項目|意味|
 |:---|:---|
 |CONTAINER ID|コンテナID|
 |IMAGE|コンテナのもとになっているイメージ|
