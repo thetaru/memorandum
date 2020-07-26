@@ -3,8 +3,8 @@
 ```
 # docker container stats [container-id]
 ```
-### e.g.
-#### コンテナ稼働確認
+## e.g.
+### コンテナ稼働確認
 ```
 # docker container ls
 ```
