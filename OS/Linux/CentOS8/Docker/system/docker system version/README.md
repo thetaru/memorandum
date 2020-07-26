@@ -1,4 +1,4 @@
-# docker system version
+# バージョン確認
 ```
 # docker version
 ```
