@@ -16,3 +16,9 @@ centos              latest              831691599b88        5 weeks ago         
 ```
 # docker image save -o export.tar centos
 ```
+```
+# ll | grep export.tar
+```
+```
+-rw-------  1 root root 222588416  7月 26 11:54 export.tar
+```
