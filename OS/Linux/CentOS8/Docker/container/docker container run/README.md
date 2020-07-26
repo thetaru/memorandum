@@ -110,3 +110,36 @@ ff02::2 ip6-allrouters
 172.17.0.4      9f5b5ee2dd2b
 ```
 #### ホスト名の設定
+```
+# docker container run -it --hostname www.test.com --add-host node1.test.com:192.168.1.1 centos
+```
+```
+[root@www /]# hostname
+www.test.com
+```
+```
+[root@www /]# cat /etc/hosts
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+192.168.1.1     node1.test.com
+172.17.0.3      www.test.com www
+```
+# リソースを指定したコンテナの生成/実行
+## Syntax
+```
+# docker container run [resource option] docker-image[:tag] [argument]
+```
+|オプション|意味|
+|:---|:---|
+|--cpu-shares, -c|CPUの使用の配分|
+|--memory, -m|使用するメモリを制限して実行する|
+|--volume=[ホストのディレクトリ]:[コンテナのディレクトリ], -v|ホストとコンテナディレクトリを共有|
+### e.g.
+#### CPU時間の相対割合とメモリの使用量を指定
+```
+# docker container run --cpu-shares=512 --memory=1g centos
+```
