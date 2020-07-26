@@ -1,4 +1,4 @@
-# docker system info
+# システム情報確認
 ```
 # docker system info
 ```
