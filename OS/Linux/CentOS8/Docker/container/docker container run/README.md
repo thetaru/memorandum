@@ -1,5 +1,4 @@
 # コンテナの生成/起動
-イメージからコンテナを作成し、コンテナ上で任意のプロセスを起動します。
 ## Syntax
 ```
 # docker container run [option] docker-image[:tag] [argument]
@@ -35,7 +34,20 @@ Hello World
 |--user, -u|ユーザ名を指定|
 |--restart=[no \| onfailure \| on-failure:回数n \| always \| unless-stopped]|コマンドの実行結果によって再起動を行う|
 |--rm|コマンド実行完了時にコンテナを自動で削除|
+### e.g.
 #### pingコマンドの実行によりコンテナのバックグラウンド起動
 ```
 # docker container run -d centos /bin/ping localhost
+```
+#### コンテナの常時再起動
+```
+# docker container run -it --restart=always centos /bin/bash
+```
+```
+[root@3878be285b91 /]# exit
+exit
+```
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+3878be285b91        centos              "/bin/bash"         40 seconds ago      Up 35 seconds                           clever_wiles
 ```
