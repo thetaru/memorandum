@@ -1,5 +1,4 @@
-# docker image pull
-Docker Hubからイメージをダウンロードします。
+# イメージのダウンロード
 ## Syntax
 ```
 # docker image pull [option] docker-iamge[:tag]
