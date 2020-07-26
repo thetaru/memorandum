@@ -49,6 +49,9 @@ Hello World
 exit
 ```
 ```
+# docker container ls
+```
+```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 3878be285b91        centos              "/bin/bash"         40 seconds ago      Up 35 seconds                           clever_wiles
 ```
