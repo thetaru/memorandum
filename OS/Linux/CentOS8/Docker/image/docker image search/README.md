@@ -1,5 +1,4 @@
-# docker image search
-Docker Hubに公開されているDockerイメージを検索します。
+# イメージの検索
 ## Syntax
 ```
 # docker search [option] 検索キーワード
