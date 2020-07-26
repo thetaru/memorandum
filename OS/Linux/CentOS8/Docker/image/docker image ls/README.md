@@ -1,5 +1,4 @@
-# docker image ls
-取得したイメージの一覧表示
+# イメージの一覧表示
 ## Syntax
 ```
 # docker image ls [option] [repository]
