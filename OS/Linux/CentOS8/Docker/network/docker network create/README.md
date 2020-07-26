@@ -10,8 +10,8 @@
 |--subnet|サブネットをCIDR形式で指定|
 |--ipv6|IPv6ネットワークを有効にするかどうか(true/false)|
 |-label|ネットワークに設定するラベル|
-### e.g.
-#### ブリッジネットワークの作成
+## e.g.
+### ブリッジネットワークの作成
 ```
 # docker network create --driver=bridge test-network
 ```
