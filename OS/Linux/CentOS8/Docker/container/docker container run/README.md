@@ -40,6 +40,7 @@ Hello World
 # docker container run -d centos /bin/ping localhost
 ```
 #### コンテナの常時再起動
+コンテナ内で/bin/bashをexitコマンドで終了しても自動でコンテナを再起動します。
 ```
 # docker container run -it --restart=always centos /bin/bash
 ```
