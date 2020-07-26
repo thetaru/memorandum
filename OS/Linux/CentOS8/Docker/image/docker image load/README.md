@@ -12,6 +12,7 @@
 ```
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ```
+`-i`で読み込むファイル名を指定します。
 ```
 # docker image load -i export.tar
 ```
