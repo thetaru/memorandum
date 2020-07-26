@@ -4,8 +4,8 @@
 # docker network rm [option] network
 ```
 :warning: ただしネットワークの削除をするにはどのコンテナも削除対象のネットワークを使っていない必要があります。
-### e.g.
-#### ネットワークの削除
+## e.g.
+### ネットワークの削除
 ```
 # docker network ls
 ```
