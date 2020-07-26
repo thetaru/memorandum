@@ -5,8 +5,8 @@
 ```
 # docker image inspect [option] docker-image[:tag]
 ```
-### e.g.
-#### イメージの詳細表示
+## e.g.
+### イメージの詳細表示
 ```
 # docker image inspect --format="{{ .Os}}" ubuntu:latest
 ```
