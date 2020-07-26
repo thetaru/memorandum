@@ -38,6 +38,8 @@ piyo
 ```
 ```
 [root@55815d33a8a0 /]# cat /tmp/test1.txt
+```
+```
 hoge
 fuga
 piyo
