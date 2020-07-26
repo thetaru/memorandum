@@ -23,3 +23,22 @@
 |STOPSIGNAL|システムコールシグナルの設定|
 |HEALTHCHECK|コンテナのヘルスチェック|
 |SHELL|デフォルトシェルの設定|
+
+
+# Dockerfileの作成
+## Syntax
+```
+FROM [docker-iamge]
+FROM [docker-image]:[tag]
+FROM [docker-image]:[digest]
+```
+## e.g.
+### CentOS7をベースイメージにしたDockerfile
+```
+# ベースイメージの設定
+FROM centos:centos7
+```
+### ダイジェストの確認
+```
+# docker image ls --digests tensorflow
+```
