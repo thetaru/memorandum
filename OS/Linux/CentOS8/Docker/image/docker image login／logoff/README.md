@@ -1,5 +1,4 @@
-# docker image login/logoff
-Docker Hubにログイン/ログアウトします。
+# Docker Hubへのログイン/ログアウト
 ## Syntax
 ```
 # docker login [option] [サーバ名]
