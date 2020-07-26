@@ -1,11 +1,10 @@
-# docker image tag
-Dockerイメージにタグを付けます。
+# イメージのタグ設定
 ## Syntax
 ```
 # docker image tag SOURCE-image[:tag] TARGET-image[:tag]
 ```
-### e.g.
-#### イメージへのタグ設定
+## e.g.
+### イメージへのタグ設定
 ```
 # docker image ls
 ```
