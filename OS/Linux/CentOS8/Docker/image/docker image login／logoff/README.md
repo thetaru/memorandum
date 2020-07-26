@@ -10,8 +10,8 @@
 ```
 # docker logout [サーバ名]
 ```
-### e.g.
-#### Docker Hubへログイン
+## e.g.
+### Docker Hubへログイン
 ```
 # docker login
 ```
@@ -20,7 +20,7 @@ USERNAME: 登録したユーザ名
 PASSWORD: 登録したパスワード
 Login Succeeded
 ```
-#### Docker Hubからログアウト
+### Docker Hubからログアウト
 ```
 # docker logout
 ```
