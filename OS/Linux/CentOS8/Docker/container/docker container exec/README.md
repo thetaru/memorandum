@@ -9,8 +9,8 @@
 |--tty, -t|tty(端末デバイス)を使う|
 |--user, -u|ユーザ名を指定する|
 ## Syntax
-### e.g.
-#### コンテナでのbash実行
+## e.g.
+### コンテナでのbash実行
 ```
 # docker container ls
 ```
@@ -24,7 +24,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ```
 [root@55815d33a8a0 /]#
 ```
-#### コンテナでのecho実行
+### コンテナでのecho実行
 ```
 # docker container exec -it clever_wiles /bin/echo "Hello World"
 ```
