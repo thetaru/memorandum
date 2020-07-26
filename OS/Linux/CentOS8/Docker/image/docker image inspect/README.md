@@ -1,4 +1,4 @@
-# docker image inspect
+# イメージの詳細確認
 イメージの詳細情報を表示します。  
 出力はJSON形式です。
 ## Syntax
