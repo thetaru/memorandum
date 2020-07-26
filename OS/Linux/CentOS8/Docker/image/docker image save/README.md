@@ -13,6 +13,7 @@
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 centos              latest              831691599b88        5 weeks ago         215MB
 ```
+`-o`で保存するファイル名を指定します。
 ```
 # docker image save -o export.tar centos
 ```
