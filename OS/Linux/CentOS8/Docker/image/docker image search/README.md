@@ -10,6 +10,7 @@ Docker Hubに公開されているDockerイメージを検索します。
 |--limit|n件の検索結果を表示する|
 |--filter=stars=n|お気に入りの数(n以上)の指定|
 ### e.g.
+#### docker hubに公開されているイメージの検索
 ```
 NAME                               DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
 nginx                              Official build of Nginx.                        13509               [OK]
