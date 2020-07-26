@@ -12,8 +12,8 @@
 ```
 # docker network disconnect network container
 ```
-### e.g.
-#### ネットワークへの接続
+## e.g.
+### ネットワークへの接続
 ```
 # docker network connect test-network clever_wiles
 ```
@@ -41,7 +41,7 @@
                 }
 ...
 ```
-#### ネットワークを指定したコンテナの起動
+### ネットワークを指定したコンテナの起動
 ```
 # docker container run -itd --name=test-container --net=test-network centos
 ```
@@ -74,7 +74,7 @@ d67a5987ea0b        centos              "/bin/bash"         15 seconds ago      
                     "DriverOpts": null
                 }
 ```
-#### ネットワークの切断
+### ネットワークの切断
 ```
 # docker container ls
 ```
