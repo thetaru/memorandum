@@ -8,8 +8,8 @@
 ```
 # docker container unpause container-id
 ```
-### e.g.
-#### コンテナの中断
+## e.g.
+### コンテナの中断
 ```
 # docker container ls -a
 ```
@@ -27,7 +27,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                  PORTS               NAMES
 55815d33a8a0        centos              "/bin/bash"         3 minutes ago       Up 2 minutes (Paused)                       clever_wiles
 ```
-#### コンテナの再開
+### コンテナの再開
 ```
 # docker container ls -a
 ```
