@@ -3,8 +3,8 @@
 ```
 # docker network inspect [option] network
 ```
-### e.g.
-#### ネットワークの詳細表示
+## e.g.
+### ネットワークの詳細表示
 ```
 # docker network ls
 ```
