@@ -1,5 +1,4 @@
-# docker image rm
-作成したイメージを削除します。
+# イメージの削除。
 ## Syntax
 ```
 # docker image rm [option] docker-image [docker-image]
