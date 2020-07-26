@@ -1,11 +1,12 @@
-# docker system df
+# ディスク使用率確認
 Dockerが使用しているディスクの使用状況を表示します。  
 ```-v```を付けると詳細表示になります。
 ## Syntax
 ```
 # docker system df [-v]
 ```
-### e.g.
+## e.g.
+### ディスク使用率
 ```
 # docker system df
 ```
