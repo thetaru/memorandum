@@ -1,5 +1,4 @@
-# docker image push
-Docker Hubにイメージをアップロードします。
+# イメージのアップロード
 ## Syntax
 ```
 # docker image push docker-image[:tag]
