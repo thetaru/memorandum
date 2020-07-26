@@ -11,15 +11,15 @@
 |--interactive, -i|コンテナの標準入力を開く|
 |--name|コンテナの名前を指定する|
 |--tty, -t|端末デバイスを使う|
-### e.g.
-#### echoコマンドを実行してHello Worldを出力
+## e.g.
+### echoコマンドを実行してHello Worldを出力
 ```
 # docker container run -it --name "test1" centos /bin/echo "Hello World"
 ```
 ```
 Hello World
 ```
-#### bashの実行
+### bashの実行
 ```
 # docker container run -it --name "test2" centos /bin/bash
 ```
@@ -34,12 +34,12 @@ Hello World
 |--user, -u|ユーザ名を指定|
 |--restart=[no \| onfailure \| on-failure:回数n \| always \| unless-stopped]|コマンドの実行結果によって再起動を行う|
 |--rm|コマンド実行完了時にコンテナを自動で削除|
-### e.g.
-#### pingコマンドの実行によりコンテナのバックグラウンド起動
+## e.g.
+### pingコマンドの実行によりコンテナのバックグラウンド起動
 ```
 # docker container run -d centos /bin/ping localhost
 ```
-#### コンテナの常時再起動
+### コンテナの常時再起動
 コンテナ内で/bin/bashをexitコマンドで終了しても自動でコンテナを再起動します。
 ```
 # docker container run -it --restart=always centos /bin/bash
@@ -70,16 +70,16 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 |--hostname, -h|コンテナ自身のホスト名を指定する|
 |--publish, -p[ホストのポート番号]:[コンテナのポート番号]|ホストとコンテナのポートマッピング|
 |--publish-all, -P|ホストの任意のポートをコンテナに割り当てる|
-### e.g.
-#### コンテナのポートマッピング
+## e.g.
+### コンテナのポートマッピング
 ```
 # docker container run -d -p 8080:80 nginx
 ```
-#### コンテナのDNSサーバ指定
+### コンテナのDNSサーバ指定
 ```
 # docker container run -d --dns 192.168.1.1 nginx
 ```
-#### MACアドレスの指定
+### MACアドレスの指定
 ```
 # docker container run -d --mac-address="92:d0:c6:0a:29:33" centos
 ```
@@ -92,7 +92,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ```
 92:d0:c6:0a:29:33
 ```
-#### ホスト名とIPアドレスを定義
+### ホスト名とIPアドレスを定義
 ```
 # docker container run -it --add-host test.com:192.168.1.1 centos
 ```
@@ -109,7 +109,7 @@ ff02::2 ip6-allrouters
 192.168.1.1     test.com
 172.17.0.4      9f5b5ee2dd2b
 ```
-#### ホスト名の設定
+### ホスト名の設定
 ```
 # docker container run -it --hostname www.test.com --add-host node1.test.com:192.168.1.1 centos
 ```
@@ -138,8 +138,8 @@ ff02::2 ip6-allrouters
 |--cpu-shares, -c|CPUの使用の配分|
 |--memory, -m|使用するメモリを制限して実行する|
 |--volume=[ホストのディレクトリ]:[コンテナのディレクトリ], -v|ホストとコンテナディレクトリを共有|
-### e.g.
-#### CPU時間の相対割合とメモリの使用量を指定
+## e.g.
+### CPU時間の相対割合とメモリの使用量を指定
 ```
 # docker container run --cpu-shares=512 --memory=1g centos
 ```
@@ -155,8 +155,8 @@ ff02::2 ip6-allrouters
 |--readonly=[true \| false]|コンテナのファイルシステムを読み込み専用にする|
 |--workdir=[パス], -w|コンテナの作業ディレクトリを指定する|
 |-u, -user=[ユーザ名]|ユーザ名またはUIDを指定する|
-### e.g.
-#### 環境変数の設定
+## e.g.
+### 環境変数の設定
 ```
 # docker container run -it -e foo=bar centos /bin/bash
 ```
@@ -166,7 +166,7 @@ ff02::2 ip6-allrouters
 ```
 foo=bar
 ```
-#### 環境変数の一括設定
+### 環境変数の一括設定
 ```
 # cat env_list
 ```
