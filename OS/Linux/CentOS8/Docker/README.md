@@ -386,3 +386,22 @@ ff02::2 ip6-allrouters
 192.168.1.1     node1.test.com
 172.17.0.3      www.test.com www
 ```
+## § ネットワークへの接続(docke rnetwork connect/docker network disconect)
+```
+# docker network connect [option] network container
+```
+|オプション|意味|
+|:---|:---|
+|--ip|IPv4アドレス|
+|--ipv6|IPv6アドレス|
+|--alias|エイリアス名|
+|--link|他のコンテナへのリンク|
+#### e.g.
+ネットワークへの接続
+```
+# docker network connect test-network test-container
+```
+ネットワークを指定したコンテナの起動
+```
+# docker container run -itd --name=test-container --net=test-network docker-image
+```
