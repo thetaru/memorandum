@@ -45,5 +45,5 @@
 ## system
 - [x] [docker system df](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20df)
 - [x] [docker system info](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20info)
-- [x] [docker system prune](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20prune)
+- [ ] [docker system prune](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20prune)
 - [x] [docker system version](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20version)
