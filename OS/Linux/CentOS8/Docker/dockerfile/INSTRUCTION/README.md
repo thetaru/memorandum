@@ -1,5 +1,4 @@
-# Dockerfile
-# Dockerfileの基本文法
+# INSTRUCTION
 ## Syntax
 ```
 命令 引数
@@ -23,8 +22,6 @@
 |STOPSIGNAL|システムコールシグナルの設定|
 |HEALTHCHECK|コンテナのヘルスチェック|
 |SHELL|デフォルトシェルの設定|
-
-
 # Dockerfileの作成
 ## Syntax
 ```
