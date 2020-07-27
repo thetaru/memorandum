@@ -22,20 +22,3 @@
 |[STOPSIGNAL](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/STOPSIGNAL)|システムコールシグナルの設定|
 |[HEALTHCHECK](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/HEALTHCHECK)|コンテナのヘルスチェック|
 |SHELL|デフォルトシェルの設定|
-# Dockerfileの作成
-## Syntax
-```
-FROM [docker-iamge]
-FROM [docker-image]:[tag]
-FROM [docker-image]:[digest]
-```
-## e.g.
-### CentOS7をベースイメージにしたDockerfile
-```
-# ベースイメージの設定
-FROM centos:centos7
-```
-### ダイジェストの確認
-```
-# docker image ls --digests tensorflow
-```
