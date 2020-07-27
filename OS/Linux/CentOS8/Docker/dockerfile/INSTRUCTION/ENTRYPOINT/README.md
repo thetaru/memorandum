@@ -26,3 +26,22 @@ FROM ubuntu:latest
 ENTRYPOINT ["top"]
 CMD ["-d", "10"]
 ```
+```
+# docker build -t sample .
+```
+```
+# docker image ls
+```
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+sample              latest              402210f55703        50 seconds ago      73.9MB
+ubuntu              latest              1e4467b07108        2 days ago          73.9MB
+```
+CMD命令で指定した10秒ごとに更新する
+```
+# docker container run -it sample
+```
+2秒ごとに更新する
+```
+# docker container run -it sample -d 2
+```
