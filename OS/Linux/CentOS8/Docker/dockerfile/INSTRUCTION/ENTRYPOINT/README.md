@@ -45,3 +45,4 @@ CMD命令で指定した10秒ごとに更新する
 ```
 # docker container run -it sample -d 2
 ```
+これは、CMD命令が`docker container run`コマンド実行時に上書きできるという仕様のためです。
