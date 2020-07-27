@@ -14,3 +14,15 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ENTRYPOINT nginx -g 'daemon off;'
 ```
 ## e.g.
+### ENTRYPOINT命令とCMD命令の組み合わせ
+```
+# cat Dockerfile
+```
+```
+# base image
+FROM ubuntu:latest
+
+# topの実行
+ENTRYPOINT ["top"]
+CMD ["-d", "10"]
+```
