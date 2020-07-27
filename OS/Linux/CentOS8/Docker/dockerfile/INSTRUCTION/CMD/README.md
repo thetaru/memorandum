@@ -19,6 +19,9 @@ ENTRYPOINT命令の引数としてCMD命令を使うことができます。
 ## e.g.
 ### CMD命令の例
 ```
+# cat Dockerfile
+```
+```
 # base image
 FROM ubuntu:latest
 
