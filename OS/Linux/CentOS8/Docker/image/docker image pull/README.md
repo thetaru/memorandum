@@ -22,7 +22,7 @@ docker.io/library/ubuntu:latest
 ```
 # docker image pull -a centos
 ```
-### TensorFlowのURLを指定してイメージ取得
+### URLを指定したイメージ取得
 URLを使う場合は、http(s)を取って指定します。
 ```
 # docker image pull gcr.io/tensorflow/tensorflow
