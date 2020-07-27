@@ -54,3 +54,19 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 cmd-sample          latest              1e010bf778dd        58 seconds ago      158MB
 ubuntu              latest              1e4467b07108        2 days ago          73.9MB
 ```
+```
+# docker container run -p 80:80 -d cmd-sample
+```
+```
+# docker container ls
+```
+```
+ONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                NAMES
+27001b3db2a5        cmd-sample          "nginx -g 'daemon of…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp   exciting_faraday
+```
+```
+# docker container port exciting_faraday
+```
+```
+80/tcp -> 0.0.0.0:80
+```
