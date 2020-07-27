@@ -66,3 +66,4 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 run-sample          latest              fbee10d1e86c        3 minutes ago       73.9MB
 ubuntu              latest              1e4467b07108        2 days ago          73.9MB
 ```
+ダウンロードされた`ubuntu`イメージと生成された`run-sample'イメージがあります。
