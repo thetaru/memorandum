@@ -6,6 +6,7 @@
 - [x] [kdump](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/kdump)
 - [x] [repository](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/repository)
 ## ■ Software Settings
+- [ ] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
 - [ ] [BIND](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/BIND)
 - [ ] [Docker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Docker)
 - [ ] [LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
