@@ -1,7 +1,7 @@
 # AWS
-# ■ Features
+## ■ Features
 - [ ] [aws-cli]()
-# ■ BestPractice
+## ■ BestPractice
 # GCP
-# ■ Features
-# ■ BestPractice
+## ■ Features
+## ■ BestPractice
