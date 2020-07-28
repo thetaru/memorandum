@@ -3,3 +3,6 @@
 ```
 # yum install bind
 ```
+# § Config
+# § Zone
+# § Chroot
