@@ -4,6 +4,6 @@ COPY命令はADD命令と違いリモートファイルのダウンロードや�
 ## Syntax
 ```
 COPY <ホストのファイルパス> <Docker-imageのファイルパス>
-COPY ["<ホストのファイルパス>", "<Docker-imageのファイルパス>"]
+COPY ["<ホストのファイルパス>" "<Docker-imageのファイルパス>"]
 ```
 ## e.g.
