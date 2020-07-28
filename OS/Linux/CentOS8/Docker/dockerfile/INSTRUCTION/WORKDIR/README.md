@@ -22,7 +22,10 @@ RUN ["pwd"]
 ### WORKDIR命令とENV命令を使う例
 ```
 ENV BASEPATH /first
+
 ENV DIRNAME second
+
 WORKDIR $BASEPATH/$DIRNAME
+
 RUN ["pwd"]
 ```
