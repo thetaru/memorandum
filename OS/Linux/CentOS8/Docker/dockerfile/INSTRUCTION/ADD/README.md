@@ -4,7 +4,7 @@
 ## Syntax
 ```
 ADD <ホストのファイルパス> <Docker-imageのファイルパス>
-ADD ["<ホストのファイルパス>", "<Docker-imageのファイルパス>"]
+ADD ["<ホストのファイルパス>" "<Docker-imageのファイルパス>"]
 ```
 ## e.g.
 ### ADD命令の例
