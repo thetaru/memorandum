@@ -22,17 +22,17 @@ ENTRYPOINT命令の引数としてCMD命令を使うことができます。
 # cat Dockerfile
 ```
 ```
-# base image
+### base image
 FROM ubuntu:latest
 
-# Nginx install
+### Nginx install
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install nginx
 
-# ポート指定
+### ポート指定
 EXPOSE 80
 
-# サーバ実行
+### サーバ実行
 CMD ["nginx", "-g", "daemon off;"]
 ```
 ```
