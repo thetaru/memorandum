@@ -1,6 +1,5 @@
 # 環境変数の設定
 ## Syntax
-次のいずれかで記述します。
 ```
 ENV [key] [value]
 ENV [key]=[value]
