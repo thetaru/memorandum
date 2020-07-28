@@ -19,10 +19,10 @@ ENTRYPOINT nginx -g 'daemon off;'
 # cat Dockerfile
 ```
 ```
-# base image
+### base image
 FROM ubuntu:latest
 
-# topの実行
+### topの実行
 ENTRYPOINT ["top"]
 CMD ["-d", "10"]
 ```
