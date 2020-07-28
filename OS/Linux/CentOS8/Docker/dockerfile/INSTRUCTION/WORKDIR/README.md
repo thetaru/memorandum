@@ -9,10 +9,13 @@ WORKDIR [path_to_work-directory]
 ```
 ### /firstが基点となった
 WORKDIR /first
+
 ### /first/secondが作業ディレクトリになる
 WORKDIR second
+
 ### /first/second/thirdが作業ディレクトリになる
 WORKDIR third
+
 ### /first/second/thirdが出力される
 RUN ["pwd"]
 ```
