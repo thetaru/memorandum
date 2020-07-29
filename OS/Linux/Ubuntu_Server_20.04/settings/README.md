@@ -46,29 +46,4 @@ $ sudo apt-get update
 ```
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
-### [検証]カーネルアップデートがされないことを確かめる
-```
-$ uname -r
-```
-```
-5.4.0-26-generic
-```
-```
-$ sudo apt-get install linux-image-5.6.0-1020-oem
-```
-```
-...
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-5.6.0-1020-oem
-Found initrd image: /boot/initrd.img-5.6.0-1020-oem
-Found linux image: /boot/vmlinuz-5.4.0-26-generic
-Found initrd image: /boot/initrd.img-5.4.0-26-generic
-done
-```
-```
-$ uname -r
-```
-```
-5.4.0-26-generic
-```
-`5.4.0-26-generic`のままです。
+:warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
