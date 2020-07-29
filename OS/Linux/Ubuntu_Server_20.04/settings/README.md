@@ -23,11 +23,11 @@ network:
         addresses: [<dns-server ip-address1>, <dns-server ip-address2>]
 ```
 ```
-### IPアドレスを反映します
+### IPアドレスを反映
 $ sudo netplan apply
 ```
 ```
-### 反映されていることを確認します
+### 反映されていることを確認
 $ ip a
 ```
 ```
@@ -85,5 +85,4 @@ $ cat /etc/default/locale
 ```
 ```
 LANG=ja_JP.UTF-8
-```
 ```
