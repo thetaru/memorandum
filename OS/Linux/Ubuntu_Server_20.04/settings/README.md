@@ -47,3 +47,43 @@ $ sudo apt-get update
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
 :warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
+## sshdの設定
+## ufwの設定
+ステータスを確認します。
+```
+$ systemctl status ufw
+```
+■ 有効にする場合(デフォルトで有効です)
+```
+### サービスの有効化
+$ sudo systemctl start ufw
+
+### 自動起動の無効化
+$ sudo systemctl enable ufw
+```
+■ 無効にする場合
+```
+### サービスの無効化
+$ sudo systemctl stop ufw
+
+### 自動起動の無効化
+$ sudo systemctl disable ufw
+```
+ここでは、ufwの詳しい設定は行いません。
+## localeの設定
+```
+### language-pack-jaのインストール
+$ sudo apt-get install language-pack-ja
+```
+```
+### localeにja_JP.UTF-8を設定
+$ sudo update-locale LANG=ja_JP.UTF-8
+```
+```
+### 確認
+$ cat /etc/default/locale
+```
+```
+LANG=ja_JP.UTF-8
+```
+```
