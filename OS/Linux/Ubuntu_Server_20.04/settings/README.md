@@ -38,3 +38,37 @@ $ ip a
     inet6 fe80::215:5dff:fed9:6104/64 scope link
        valid_lft forever preferred_lft forever
 ```
+## パッケージアップデート
+```
+$ sudo apt-get update
+```
+## カーネルアップデート抑止
+```
+$ sudo apt-mark hold linux-image-generic linux-headers-generic
+```
+### 試しに違うバージョンのカーネルを入れてみます
+```
+$ uname -r
+```
+```
+5.4.0-26-generic
+```
+```
+$ sudo apt-get install linux-image-5.6.0-1020-oem
+```
+```
+...
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.6.0-1020-oem
+Found initrd image: /boot/initrd.img-5.6.0-1020-oem
+Found linux image: /boot/vmlinuz-5.4.0-26-generic
+Found initrd image: /boot/initrd.img-5.4.0-26-generic
+done
+```
+```
+### アップデートされていません
+$ uname -r
+```
+```
+5.4.0-26-generic
+```
