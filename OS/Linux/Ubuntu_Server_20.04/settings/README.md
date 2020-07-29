@@ -31,7 +31,6 @@ $ sudo netplan apply
 $ ip a
 ```
 ```
-...
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether 00:15:5d:d9:61:04 brd ff:ff:ff:ff:ff:ff
     inet 192.168.137.3/24 brd 192.168.137.255 scope global eth0
