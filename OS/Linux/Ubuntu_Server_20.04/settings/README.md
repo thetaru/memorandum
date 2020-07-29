@@ -46,7 +46,7 @@ $ sudo apt-get update
 ```
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
-### 試しに違うバージョンのカーネルを入れてみます
+### [検証]カーネルアップデートがされないことを確かめる
 ```
 $ uname -r
 ```
@@ -66,9 +66,9 @@ Found initrd image: /boot/initrd.img-5.4.0-26-generic
 done
 ```
 ```
-### アップデートされていません
 $ uname -r
 ```
 ```
 5.4.0-26-generic
 ```
+`5.4.0-26-generic`のままです。
