@@ -10,4 +10,5 @@
 
 # SANKO
 tips  
-https://www.gadgety.net/shin/tips/internet/dns9.html
+https://www.gadgety.net/shin/tips/internet/dns9.html  
+https://www.ipentec.com/document/linux-centos-7-bind-configuration
