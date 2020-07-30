@@ -3,7 +3,7 @@
 ```
 $ sudo hostnamectl set-hostname <hostname>
 ```
-## (Static)IPアドレス設定
+## [Static]IPアドレス設定
 `/etc/netplan/99_config.yaml`を作成し、下記のように記述します。
 ```
 $ sudo vi /etc/netplan/99_config.yaml
