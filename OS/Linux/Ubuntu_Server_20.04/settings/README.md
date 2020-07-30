@@ -49,8 +49,8 @@ $ sudo apt-mark hold linux-image-generic linux-headers-generic
 :warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
 ## sshdの設定
 ## ufwの設定
-ステータスを確認します。
 ```
+### サービスのステータス確認
 $ systemctl status ufw
 ```
 ■ 有効にする場合(デフォルトで有効です)
