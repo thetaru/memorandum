@@ -94,3 +94,5 @@ $ sudo apt-get install ntp
 ```
 ## pamの設定
 `root`へ昇格できるユーザを制限します。
+https://kawairi.jp/weblog/vita/2016040220277  
+https://qiita.com/kotarella1110/items/f638822d64a43824dfa4
