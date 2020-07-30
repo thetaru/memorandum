@@ -86,6 +86,7 @@ $ cat /etc/default/locale
 ```
 LANG=ja_JP.UTF-8
 ```
+## timezoneの設定
 ## 時刻同期の設定
 ```
 ### ntpのインストール
