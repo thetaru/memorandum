@@ -92,3 +92,5 @@ LANG=ja_JP.UTF-8
 ### ntpのインストール
 $ sudo apt-get install ntp
 ```
+## pamの設定
+`root`へ昇格できるユーザを制限します。
