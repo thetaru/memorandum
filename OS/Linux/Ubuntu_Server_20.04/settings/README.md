@@ -142,4 +142,9 @@ compress
 ### journalログ抑止対策
 $imjournalRatelimitInterval 0
 $SystemLogRateLimitInterval 0
+
+## pam
+/etc/pam.d/su
+### モジュールの有効化(su可能ユーザ制限)
+auth            required        pam_wheel.so use_uid
 ```
