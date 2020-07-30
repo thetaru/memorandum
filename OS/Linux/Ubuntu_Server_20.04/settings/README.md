@@ -151,4 +151,6 @@ auth            required        pam_wheel.so use_uid
 /etc/sudoers
 https://tech.unifa-e.com/entry/2018/05/18/112810　　
 記法が優秀なのでマネをするべき
+
+## proxy設定
 ```
