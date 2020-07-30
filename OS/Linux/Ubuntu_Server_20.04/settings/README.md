@@ -47,7 +47,8 @@ $ sudo apt-get update
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
 :warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
-## sshdの設定
+## 
+sshdの設定
 ## ufwの設定
 ```
 ### サービスのステータス確認
@@ -96,3 +97,38 @@ $ sudo apt-get install ntp
 `root`へ昇格できるユーザを制限します。
 https://kawairi.jp/weblog/vita/2016040220277  
 https://qiita.com/kotarella1110/items/f638822d64a43824dfa4
+## 不要なサービスの停止
+http://sekaruru.hatenablog.com/entry/2018/07/03/225457
+
+
+# sankokooo
+```
+## カーネルパラメータの設定!!!!!!
+`/etc/sysctl.conf`
+```
+### コアダンプ設定(コアファイル出力先設定)
+kernel.core_pattern=/var/tmp/core-%e.%p
+
+### コアダンプ設定(rootのみ読み取り許可)
+fs.suid_dumpable=2
+
+### OOM Killer設定(OOM発生時の挙動設定)
+vm.panic_on_oom=2
+```
+```
+/etc/systemd/system.conf
+### コアダンプ設定(コアファイルの最大値)
+[Manager]
+DefaultLimitCORE=infinity
+```
+```
+/etc/sysconfig/init]
+### コアダンプ設定(コアファイルの出力設定)
+DAEMON_COREFILE_LIMIT=unlimited
+
+/etc/hosts
+/etc/netconfig
+のipv6の設定を無効化する
+```
+
+```
