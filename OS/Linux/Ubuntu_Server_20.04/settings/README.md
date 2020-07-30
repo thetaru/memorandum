@@ -47,8 +47,9 @@ $ sudo apt-get update
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
 :warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
-## 
-sshdの設定
+## sshdの設定
+/// IPv4のみ
+AddressFamily inet
 ## ufwの設定
 ```
 ### サービスのステータス確認
@@ -106,6 +107,7 @@ http://sekaruru.hatenablog.com/entry/2018/07/03/225457
 ## カーネルパラメータの設定!!!!!!
 `/etc/sysctl.conf`
 ```
+```
 ### コアダンプ設定(コアファイル出力先設定)
 kernel.core_pattern=/var/tmp/core-%e.%p
 
@@ -129,6 +131,15 @@ DAEMON_COREFILE_LIMIT=unlimited
 /etc/hosts
 /etc/netconfig
 のipv6の設定を無効化する
-```
 
+## ログ設定
+/etc/logrotate.conf
+daily
+rotate x
+compress
+
+/etc/rsyslog.conf
+### journalログ抑止対策
+$imjournalRatelimitInterval 0
+$SystemLogRateLimitInterval 0
 ```
