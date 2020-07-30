@@ -48,8 +48,21 @@ $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
 :warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
 ## sshdの設定
-/// IPv4のみ
-AddressFamily inet
+```
+$ sudo vi /etc/ssh/sshd_config
+```
+```
+-   #Port 22
++   Port 22
+```
+```
+-   #AddressFamily any
++   AddressFamily inet
+```
+```
+-   PermitRootLogin without-password
++   PermitRootLogin no
+```
 ## ufwの設定
 ```
 ### サービスのステータス確認
