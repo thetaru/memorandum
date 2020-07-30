@@ -86,3 +86,8 @@ $ cat /etc/default/locale
 ```
 LANG=ja_JP.UTF-8
 ```
+## 時刻同期の設定
+```
+### ntpのインストール
+$ sudo apt-get install ntp
+```
