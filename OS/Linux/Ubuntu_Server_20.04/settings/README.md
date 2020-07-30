@@ -52,14 +52,17 @@ $ sudo apt-mark hold linux-image-generic linux-headers-generic
 $ sudo vi /etc/ssh/sshd_config
 ```
 ```
+### sshで使用するポートを指定
 -   #Port 22
 +   Port 22
 ```
 ```
+### IPv4のみ許可
 -   #AddressFamily any
 +   AddressFamily inet
 ```
 ```
+### rootでのログインを禁止
 -   PermitRootLogin without-password
 +   PermitRootLogin no
 ```
