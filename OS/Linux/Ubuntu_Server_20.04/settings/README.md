@@ -226,7 +226,7 @@ $ sudo vi /etc/logrotate.conf
 +  daily
 ```
 ```
-### n世代ログ管理
+### 7世代分のログを管理
 -  rotate 4
 +  rotate 7
 ```
