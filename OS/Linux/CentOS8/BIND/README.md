@@ -1,11 +1,15 @@
 # BIND
 # § INSTALL
 ```
+### install
 # yum install bind
 ```
 ```
-### Version確認
-# 
+### version
+# rpm -qa bind
+```
+```
+bind-9.11.13-5.el8_2.x86_64
 ```
 # § Config
 # § Zone
