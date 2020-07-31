@@ -1,47 +1,6 @@
 # config
 `named.conf`は主に次の4つのステートメントから構成されています。
-## ■ acl ステートメント
-## ■ options ステートメント
-## ■ logging ステートメント
-## ■ zone ステートメント
-`/etc/named.conf`
-```
-options {
-        listen-on port 53 { 127.0.0.1; };
-        listen-on-v6 port 53 { ::1; };
-        directory       "/var/named";
-        dump-file       "/var/named/data/cache_dump.db";
-        statistics-file "/var/named/data/named_stats.txt";
-        memstatistics-file "/var/named/data/named_mem_stats.txt";
-        secroots-file   "/var/named/data/named.secroots";
-        recursing-file  "/var/named/data/named.recursing";
-        allow-query     { localhost; };
-
-        recursion yes;
-
-        dnssec-enable yes;
-        dnssec-validation yes;
-
-        managed-keys-directory "/var/named/dynamic";
-
-        pid-file "/run/named/named.pid";
-        session-keyfile "/run/named/session.key";
-
-        include "/etc/crypto-policies/back-ends/bind.config";
-};
-
-logging {
-        channel default_debug {
-                file "data/named.run";
-                severity dynamic;
-        };
-};
-
-zone "." IN {
-        type hint;
-        file "named.ca";
-};
-
-include "/etc/named.rfc1912.zones";
-include "/etc/named.root.key";
-```
+## ■ acl
+## ■ options
+## ■ logging
+## ■ zone
