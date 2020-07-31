@@ -162,20 +162,41 @@ $ sudo vi /etc/ntp.conf
 -  restrict ::1
 +  #restrict ::1
 ```
+## pamの設定
+`su` コマンドを実行できるユーザを制限します。
+```
+### ubuntuにはwheelグループがデフォルトで存在しないので作成
+$ sudo addgroup wheel
+```
+```
+### ユーザthetaru を グループwheelに追加
+$ sudo usermod -aG wheel thetaru
+```
+```
+### wheelグループに属していることを確認
+$ id thetaru
+```
+```
+uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
+```
+```
+$ sudo vi /etc/pam.d/su
+```
+```
++  auth           required        pam_wheel.so use_uid
+```
+
 ## 不要なサービスの停止
 ```
 ###Bluetoothの停止
 $ sudo systemctl stop 
+
 ### パッケージリストの自動更新の停止
 $ sudo systemctl stop apt-daily.timer
 $ sudo systemctl stop apt-daily.service
 $ sudo systemctl disable apt-daily.timer
 $ sudo systemctl disable apt-daily.service
 ```
-## pamの設定
-`root`へ昇格できるユーザを制限します。
-https://kawairi.jp/weblog/vita/2016040220277  
-https://qiita.com/kotarella1110/items/f638822d64a43824dfa4
 # sankokooo
 ```
 ## カーネルパラメータの設定!!!!!!
