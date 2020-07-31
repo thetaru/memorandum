@@ -63,8 +63,17 @@ $ sudo vi /etc/ssh/sshd_config
 ```
 ```
 ### rootでのログインを禁止
--  PermitRootLogin without-password
+-  PermitRootLogin prohibit-password
 +  PermitRootLogin no
+```
+```
+### パスワード認証を禁止
+-  PasswordAuthentication yes
++  PasswordAuthentication no
+```
+```
+### sshdを再起動
+$ sudo systemctl restart sshd
 ```
 ## ufwの設定
 ```
