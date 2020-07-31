@@ -1,9 +1,9 @@
 # config
 `named.conf`は主に次の4つのステートメントから構成されています。
-## acl
-## options
-## logging
-## zone
+## ■ acl ステートメント
+## ■ options ステートメント
+## ■ logging ステートメント
+## ■ zone ステートメント
 `/etc/named.conf`
 ```
 options {
