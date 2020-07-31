@@ -5,8 +5,8 @@
 なおコメントアウトは`###`始まりとします。
 ```
 ### これはコメントです
-# echo 'これはコマンドです'
-$ echo 'これもコマンドです'
+# echo 'これはrootです'
+$ echo 'これもuserです'
 ```
 # ■ Contents
 - [ ] [CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
