@@ -3,6 +3,10 @@
 ```
 # yum install bind
 ```
+```
+### Version確認
+# 
+```
 # § Config
 # § Zone
 # § Chroot
