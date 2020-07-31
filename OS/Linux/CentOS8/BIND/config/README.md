@@ -4,3 +4,5 @@
 ## ■ options
 ## ■ logging
 ## ■ zone
+http://cos.linux-dvr.biz/archives/87  
+https://www.eis.co.jp/bind9_src_build_2/
