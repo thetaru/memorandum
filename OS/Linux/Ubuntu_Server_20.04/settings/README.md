@@ -241,6 +241,8 @@ $ sudo vi /etc/logrotate.conf
 ### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl mask apt-daily.timer
 $ sudo systemctl mask apt-daily.service
+$ sudo systemctl mask apt-daily-upgrade.timer
+$ sudo systemctl mask apt-daily-upgrade.service
 ```
 # 書きたいこと
 ```
