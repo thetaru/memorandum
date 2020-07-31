@@ -130,7 +130,25 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 $ sudo apt-get install ntp
 ```
 ```
-
+$ sudo vi /etc/ntp.conf
+```
+```
+-  pool 0.ubuntu.pool.ntp.org iburst
+-  pool 1.ubuntu.pool.ntp.org iburst
+-  pool 2.ubuntu.pool.ntp.org iburst
+-  pool 3.ubuntu.pool.ntp.org iburst
+```
+```
++  #pool 0.ubuntu.pool.ntp.org iburst
++  #pool 1.ubuntu.pool.ntp.org iburst
++  #pool 2.ubuntu.pool.ntp.org iburst
++  #pool 3.ubuntu.pool.ntp.org iburst
+```
+```
+-  pool ntp.ubuntu.com
+```
+```
++  #pool ntp.ubuntu.com
 ```
 ## 不要なサービスの停止
 ```
