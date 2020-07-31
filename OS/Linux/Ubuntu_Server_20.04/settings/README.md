@@ -185,7 +185,10 @@ $ sudo vi /etc/pam.d/su
 ```
 +  auth           required        pam_wheel.so use_uid
 ```
-
+```
+### 再起動して反映
+$ reboot
+```
 ## 不要なサービスの停止
 ```
 ###Bluetoothの停止
