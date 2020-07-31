@@ -38,7 +38,7 @@ $ ip a
     inet6 fe80::215:5dff:fed9:6104/64 scope link
        valid_lft forever preferred_lft forever
 ```
-## hosts
+## hostsの設定
 ```
 $ sudo vi /etc/hosts
 ```
@@ -208,7 +208,9 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 $ sudo vi /etc/pam.d/su
 ```
 ```
-+  auth           required        pam_wheel.so use_uid
+### su可能ユーザ制限
+-  #auth       required   pam_wheel.so
++  auth       required   pam_wheel.so use_uid
 ```
 ```
 ### 再起動して反映
@@ -266,15 +268,5 @@ compress
 ### journalログ抑止対策
 $imjournalRatelimitInterval 0
 $SystemLogRateLimitInterval 0
-
-## pam
-/etc/pam.d/su
-### モジュールの有効化(su可能ユーザ制限)
-auth            required        pam_wheel.so use_uid
-
-/etc/sudoers
-https://tech.unifa-e.com/entry/2018/05/18/112810　　
-記法が優秀なのでマネをするべき
-
 ## proxy設定
 ```
