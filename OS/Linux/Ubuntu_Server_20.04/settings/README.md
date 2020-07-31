@@ -186,6 +186,10 @@ $ sudo vi /etc/ntp.conf
 -  restrict ::1
 +  #restrict ::1
 ```
+```
+### ntpサービスの起動
+$ sudo systemctl start ntp.service
+```
 ## pamの設定
 `su` コマンドを実行できるユーザを制限します。  
 :warning:ユーザ名として`thetaru`を使用しています。
