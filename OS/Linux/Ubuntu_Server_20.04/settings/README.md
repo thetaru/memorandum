@@ -134,21 +134,25 @@ $ sudo vi /etc/ntp.conf
 ```
 ```
 -  pool 0.ubuntu.pool.ntp.org iburst
--  pool 1.ubuntu.pool.ntp.org iburst
--  pool 2.ubuntu.pool.ntp.org iburst
--  pool 3.ubuntu.pool.ntp.org iburst
-```
-```
 +  #pool 0.ubuntu.pool.ntp.org iburst
+-  pool 1.ubuntu.pool.ntp.org iburst
 +  #pool 1.ubuntu.pool.ntp.org iburst
+-  pool 2.ubuntu.pool.ntp.org iburst
 +  #pool 2.ubuntu.pool.ntp.org iburst
+-  pool 3.ubuntu.pool.ntp.org iburst
 +  #pool 3.ubuntu.pool.ntp.org iburst
 ```
 ```
 -  pool ntp.ubuntu.com
-```
-```
 +  #pool ntp.ubuntu.com
+```
+```
+-  restrict -6 default kod notrap nomodify nopeer noquery limited
++  #restrict -6 default kod notrap nomodify nopeer noquery limited
+```
+```
+-  restrict ::1
++  #restrict ::1
 ```
 ## 不要なサービスの停止
 ```
