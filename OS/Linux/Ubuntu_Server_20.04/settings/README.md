@@ -239,11 +239,8 @@ $ sudo vi /etc/logrotate.conf
 調査中...
 ```
 ### パッケージリストの自動更新の停止・自動起動の無効化
-$ sudo systemctl stop apt-daily.timer
-$ sudo systemctl disable apt-daily.timer
-
-$ sudo systemctl stop apt-daily.service
-$ sudo systemctl disable apt-daily.service
+$ sudo systemctl mask apt-daily.timer
+$ sudo systemctl mask apt-daily.service
 ```
 # 書きたいこと
 ```
