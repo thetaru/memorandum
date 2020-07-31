@@ -38,6 +38,22 @@ $ ip a
     inet6 fe80::215:5dff:fed9:6104/64 scope link
        valid_lft forever preferred_lft forever
 ```
+## hosts
+```
+$ sudo vi /etc/hosts
+```
+```
+-  ::1     ip6-localhost ip6-loopback
++  #::1     ip6-localhost ip6-loopback
+-  fe00::0 ip6-localnet
++  #fe00::0 ip6-localnet
+-  ff00::0 ip6-mcastprefix
++  #ff00::0 ip6-mcastprefix
+-  ff02::1 ip6-allnodes
++  #ff02::1 ip6-allnodes
+-  ff02::2 ip6-allrouters
++  #ff02::2 ip6-allrouters
+```
 ## パッケージアップデート
 ```
 $ sudo apt-get update
@@ -163,7 +179,8 @@ $ sudo vi /etc/ntp.conf
 +  #restrict ::1
 ```
 ## pamの設定
-`su` コマンドを実行できるユーザを制限します。
+`su` コマンドを実行できるユーザを制限します。  
+:warning:ユーザ名として`thetaru`を使用しています。
 ```
 ### ubuntuにはwheelグループがデフォルトで存在しないので作成
 $ sudo addgroup wheel
