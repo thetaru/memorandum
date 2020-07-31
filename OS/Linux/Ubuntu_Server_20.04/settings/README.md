@@ -114,19 +114,38 @@ $ cat /etc/default/locale
 LANG=ja_JP.UTF-8
 ```
 ## timezoneの設定
+```
+### Asia/Tokyoのシンボリックリンクlocaltimeを作成
+$ sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+```
+```
+$ ll /etc/localtime
+```
+```
+lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/Asia/Tokyo
+```
 ## 時刻同期の設定
 ```
 ### ntpのインストール
 $ sudo apt-get install ntp
 ```
+```
+
+```
+## 不要なサービスの停止
+```
+###Bluetoothの停止
+$ sudo systemctl stop 
+### パッケージリストの自動更新の停止
+$ sudo systemctl stop apt-daily.timer
+$ sudo systemctl stop apt-daily.service
+$ sudo systemctl disable apt-daily.timer
+$ sudo systemctl disable apt-daily.service
+```
 ## pamの設定
 `root`へ昇格できるユーザを制限します。
 https://kawairi.jp/weblog/vita/2016040220277  
 https://qiita.com/kotarella1110/items/f638822d64a43824dfa4
-## 不要なサービスの停止
-http://sekaruru.hatenablog.com/entry/2018/07/03/225457
-
-
 # sankokooo
 ```
 ## カーネルパラメータの設定!!!!!!
