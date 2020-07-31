@@ -153,10 +153,12 @@ $ sudo vi /etc/ntp.conf
 +  #pool ntp.ubuntu.com
 ```
 ```
+### IPv6は使わないので無効化
 -  restrict -6 default kod notrap nomodify nopeer noquery limited
 +  #restrict -6 default kod notrap nomodify nopeer noquery limited
 ```
 ```
+### IPv6は使わないので無効化
 -  restrict ::1
 +  #restrict ::1
 ```
