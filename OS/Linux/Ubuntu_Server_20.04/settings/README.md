@@ -236,15 +236,13 @@ $ sudo vi /etc/logrotate.conf
 +  compress
 ```
 ## 不要なサービスの停止
+調査中...
 ```
-###Bluetoothの停止
-$ sudo systemctl stop 
-
 ### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl stop apt-daily.timer
-$ sudo systemctl stop apt-daily.service
-
 $ sudo systemctl disable apt-daily.timer
+
+$ sudo systemctl stop apt-daily.service
 $ sudo systemctl disable apt-daily.service
 ```
 # 書きたいこと
