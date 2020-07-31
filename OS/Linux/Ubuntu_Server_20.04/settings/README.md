@@ -43,14 +43,19 @@ $ ip a
 $ sudo vi /etc/hosts
 ```
 ```
+### IPv6は使わないので無効化
 -  ::1     ip6-localhost ip6-loopback
 +  #::1     ip6-localhost ip6-loopback
+
 -  fe00::0 ip6-localnet
 +  #fe00::0 ip6-localnet
+
 -  ff00::0 ip6-mcastprefix
 +  #ff00::0 ip6-mcastprefix
+
 -  ff02::1 ip6-allnodes
 +  #ff02::1 ip6-allnodes
+
 -  ff02::2 ip6-allrouters
 +  #ff02::2 ip6-allrouters
 ```
@@ -151,10 +156,13 @@ $ sudo vi /etc/ntp.conf
 ```
 -  pool 0.ubuntu.pool.ntp.org iburst
 +  #pool 0.ubuntu.pool.ntp.org iburst
+
 -  pool 1.ubuntu.pool.ntp.org iburst
 +  #pool 1.ubuntu.pool.ntp.org iburst
+
 -  pool 2.ubuntu.pool.ntp.org iburst
 +  #pool 2.ubuntu.pool.ntp.org iburst
+
 -  pool 3.ubuntu.pool.ntp.org iburst
 +  #pool 3.ubuntu.pool.ntp.org iburst
 ```
@@ -211,9 +219,10 @@ $ reboot
 ###Bluetoothの停止
 $ sudo systemctl stop 
 
-### パッケージリストの自動更新の停止
+### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl stop apt-daily.timer
 $ sudo systemctl stop apt-daily.service
+
 $ sudo systemctl disable apt-daily.timer
 $ sudo systemctl disable apt-daily.service
 ```
