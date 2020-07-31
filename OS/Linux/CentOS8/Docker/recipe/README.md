@@ -1,7 +1,7 @@
 # RECIPE
 レシピ集です。
 ## test
-- [ ] [環境構築1]()
+- [ ] [環境構築]()
 参考:   
 https://qiita.com/hakaicode/items/5522a5ad1c280b9cf757  
 https://qiita.com/zembutsu/items/b62abcf8a558c98a5125
