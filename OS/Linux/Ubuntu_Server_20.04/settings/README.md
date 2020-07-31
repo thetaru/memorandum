@@ -216,6 +216,25 @@ $ sudo vi /etc/pam.d/su
 ### 再起動して反映
 $ reboot
 ```
+## logrotateの設定
+```
+$ sudo vi /etc/logrotate.conf
+```
+```
+### ローテート期間
+-  weekly
++  daily
+```
+```
+### n世代ログ管理
+-  rotate 4
++  rotate 7
+```
+```
+### ローテーションしたログをgzipで圧縮
+-  #compress
++  compress
+```
 ## 不要なサービスの停止
 ```
 ###Bluetoothの停止
@@ -228,10 +247,10 @@ $ sudo systemctl stop apt-daily.service
 $ sudo systemctl disable apt-daily.timer
 $ sudo systemctl disable apt-daily.service
 ```
-# sankokooo
+# 書きたいこと
 ```
 ## カーネルパラメータの設定!!!!!!
-`/etc/sysctl.conf`
+/etc/sysctl.conf
 ```
 ```
 ### コアダンプ設定(コアファイル出力先設定)
@@ -253,16 +272,6 @@ DefaultLimitCORE=infinity
 /etc/sysconfig/init]
 ### コアダンプ設定(コアファイルの出力設定)
 DAEMON_COREFILE_LIMIT=unlimited
-
-/etc/hosts
-/etc/netconfig
-のipv6の設定を無効化する
-
-## ログ設定
-/etc/logrotate.conf
-daily
-rotate x
-compress
 
 /etc/rsyslog.conf
 ### journalログ抑止対策
