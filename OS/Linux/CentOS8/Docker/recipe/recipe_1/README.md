@@ -65,7 +65,6 @@ CentOS Linux release 8.2.2004 (Core)
  # rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
 ```
 ```
-### httpdも一緒に入る
 # yum -y install zabbix-web-mysql zabbix-web-japanese
 ```
 ```
