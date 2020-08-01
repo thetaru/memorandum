@@ -142,10 +142,10 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ```
 # mysql -u root -e 'create database zabbix character set utf8 collate utf8_bin;'
-### 'password'は変更すること
-# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"localhost" identified by "zabbix";'
-# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-srv.zbx-nw" identified by "zabbix";'
-# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-web.zbx-nw" identified by "zabbix";'
+### 以下の'password'は変更し共通の値であることが必要
+# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"localhost" identified by "password";'
+# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-srv.zbx-nw" identified by "password";'
+# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-web.zbx-nw" identified by "password";'
 ```
 ```
 # rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
