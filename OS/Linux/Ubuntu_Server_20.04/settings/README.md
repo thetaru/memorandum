@@ -101,7 +101,7 @@ $ sudo systemctl restart sshd
 ### サービスのステータス確認
 $ systemctl status ufw
 ```
-1. 有効にする場合(デフォルトで有効です)
+1. **有効**にする場合(デフォルトで有効です)
 ```
 ### サービスの有効化
 $ sudo systemctl start ufw
@@ -109,7 +109,7 @@ $ sudo systemctl start ufw
 ### 自動起動の無効化
 $ sudo systemctl enable ufw
 ```
-2. 無効にする場合
+2. **無効**にする場合
 ```
 ### サービスの無効化
 $ sudo systemctl stop ufw
