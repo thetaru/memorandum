@@ -35,6 +35,7 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ```
 ## ■ Zabbixサーバ構築
+### zabbix serverコンテナ作成
 ```
 ### コンテナの作成
 # docker container run -d -it -p 10051:10051 --name zbx-srv --hostname zbx-srv --privileged centos:base /sbin/init
@@ -45,8 +46,37 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ```
 ### zabbixリポジトリのインストール
-# rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
+ # rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
 ```
 ```
-# yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent
+# yum -y install zabbix-server-mysql mariadb-server
+```
+### web コンテナ作成
+```
+### コンテナの作成
+# docker run -d -it -p 80:80 --name zbx-web --hostname zbx-web --privileged centos:base /sbin/init
+```
+```
+### コンテナに入る
+# docker exec -it zbx-web /bin/bash
+```
+```
+### zabbixリポジトリのインストール
+ # rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
+```
+```
+### httpdも一緒に入る
+# yum -y install zabbix-web-mysql zabbix-web-japanese
+```
+```
+### timezoneの設定
+# sed -i 's|# php_value date.timezone Europe/Riga|php_value date.timezone Asia/Tokyo|' /etc/httpd/conf.d/zabbix.conf
+```
+```
+### httpサービスの起動・自動起動の有効化
+# systemctl start httpd
+# systemctl enable httpd
+```
+### DB コンテナの作成
+```
 ```
