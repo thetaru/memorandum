@@ -1,2 +1,5 @@
 # Ubuntu Server
-https://qiita.com/kotarella1110/items/f638822d64a43824dfa4  
+## ■ Commands
+## ■ OS Settings
+- [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/settings)
+## ■ Software Settings
