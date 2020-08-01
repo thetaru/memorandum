@@ -22,8 +22,8 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 |ホスト名|IPアドレス|
 |:---|:---|
-|docker-test|192.168.137.2|
-|docker-test2|192.168.137.3|
+|docker-zabbix|192.168.137.2|
+|docker-nginx|192.168.137.3|
 ## 目標
 ```
 ここにイメージが入る予定
