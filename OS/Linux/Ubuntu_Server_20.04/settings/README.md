@@ -118,7 +118,7 @@ $ sudo systemctl stop ufw
 $ sudo systemctl disable ufw
 ```
 ここでは、ufwの詳しい設定は行いません。
-## localeの設定
+## ■ localeの設定
 ```
 ### language-pack-jaのインストール
 $ sudo apt-get install language-pack-ja
