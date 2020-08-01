@@ -72,6 +72,11 @@ CentOS Linux release 8.2.2004 (Core)
 -  # DBPassword=
 +  DBPassword=hoge
 ```
+```
+###
+-  # AllowRoot
++  AllowRoot
+```
 ### web コンテナ作成
 ```
 ### コンテナの作成
