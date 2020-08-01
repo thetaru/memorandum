@@ -36,4 +36,17 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ## ■ Zabbixサーバ構築
 ```
+### コンテナの作成
+# docker container run -d -it -p 10051:10051 --name zbx-srv --hostname zbx-srv --privileged centos:base /sbin/init
+```
+```
+### コンテナに入る
+# docker exec -it zbx-srv /bin/bash
+```
+```
+### zabbixリポジトリのインストール
+# rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
+```
+```
+# yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent
 ```
