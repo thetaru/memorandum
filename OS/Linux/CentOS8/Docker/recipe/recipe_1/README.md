@@ -95,7 +95,6 @@ CentOS Linux release 8.2.2004 (Core)
 +  collation-server     = utf8_bin
 +  skip-character-set-client-handshake
 +  innodb_file_per_table
-
 ```
 ```
 # vi /etc/my.cnf
@@ -114,6 +113,25 @@ CentOS Linux release 8.2.2004 (Core)
 +  innodb_log_file_size = 1024M
 +  innodb_checksums = 0
 +  innodb_doublewrite = 0
+```
+```
+# mysql -u root -e 'create database zabbix character set utf8 collate utf8_bin;'
+### 'password'は変更すること
+# mysql -u root -e 'create user zabbix@localhost identified by 'password';'
+# mysql -u root -e 'grant all privileges on zabbix.* to zabbix@localhost;'
+# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-srv.zbx-nw" identified by "zabbix";'
+# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-web.zbx-nw" identified by "zabbix";'
+```
+```
+# rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+```
+```
+# yumdownloader --destdir=/root zabbix-server-mysql
+```
+```
+### mariadbの起動・自動起動の有効化
+# systemctl start mariadb
+# systemctl enable mariadb
 ```
 ### network作成
 ```
