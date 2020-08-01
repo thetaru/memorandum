@@ -108,7 +108,7 @@ CentOS Linux release 8.2.2004 (Core)
 # yum -y install mariadb-server
 ```
 ```
-# vi /etc/my.cnd.d/server.cnf
+# vi /etc/my.cnf.d/server.cnf
 ```
 ```
 [mysqld]
