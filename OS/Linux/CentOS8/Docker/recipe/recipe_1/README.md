@@ -78,4 +78,48 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ### DB コンテナの作成
 ```
+# docker container run -d -it --name zbx-db --hostname zbx-db --privileged centos:base /sbin/init
+```
+```
+# docker exec -it zbx-db /bin/bash
+```
+```
+# yum -y install mariadb-server
+```
+```
+# vi /etc/my.cnd.d/server.cnf
+```
+```
+[mysqld]
++  character-set-server = utf8
++  collation-server     = utf8_bin
++  skip-character-set-client-handshake
++  innodb_file_per_table
+
+```
+```
+# vi /etc/my.cnf
+```
+```
+[mysqld]
+...
++  user=mysql
++  innodb_file_per_table
++  innodb_autoextend_increment = 1
++  innodb_file_format=Barracuda
++  innodb_buffer_pool_size = 1024M
++  innodb_thread_concurrency = 16
++  innodb_flush_log_at_trx_commit=2
++  innodb_log_buffer_size = 32M
++  innodb_log_file_size = 1024M
++  innodb_checksums = 0
++  innodb_doublewrite = 0
+```
+### network作成
+```
+```
+```
+# docker network connect zbx-nw zbx-db
+# docker network connect zbx-nw zbx-srv
+# docker network connect zbx-nw zbx-web
 ```
