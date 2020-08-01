@@ -143,8 +143,7 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 # mysql -u root -e 'create database zabbix character set utf8 collate utf8_bin;'
 ### 'password'は変更すること
-# mysql -u root -e 'create user zabbix@localhost identified by 'password';'
-# mysql -u root -e 'grant all privileges on zabbix.* to zabbix@localhost;'
+# mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"localhost" identified by "zabbix";'
 # mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-srv.zbx-nw" identified by "zabbix";'
 # mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-web.zbx-nw" identified by "zabbix";'
 ```
@@ -172,5 +171,5 @@ CentOS Linux release 8.2.2004 (Core)
 ### zabbixサーバ起動
 ```
 # docker exec -it zbx-srv /bin/bash
-"
+# 
 ```
