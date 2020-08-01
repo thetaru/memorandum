@@ -1,5 +1,5 @@
 # RECIPE 1
-## 前提条件
+## ■ 前提条件
 ```
 # cat /etc/redhat-release
 ```
@@ -24,13 +24,13 @@ CentOS Linux release 8.2.2004 (Core)
 |:---|:---|
 |docker-zabbix|192.168.137.2|
 |docker-nginx|192.168.137.3|
-## 目標
+## ■ 目標
 ```
 ここにイメージが入る予定
 ```
-## Zabbixサーバ構築
+## ■ nginxサーバ構築
 ```
 ```
-## nginxサーバ構築
+## ■ Zabbixサーバ構築
 ```
 ```
