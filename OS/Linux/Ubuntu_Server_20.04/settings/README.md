@@ -1,9 +1,9 @@
-# settings
-## ホスト名の設定
+# Settings
+## ■ ホスト名の設定
 ```
 $ sudo hostnamectl set-hostname <hostname>
 ```
-## [Static]IPアドレス設定
+## ■ [Static]IPアドレス設定
 `/etc/netplan/99_config.yaml`を作成し、下記のように記述します。
 ```
 $ sudo vi /etc/netplan/99_config.yaml
@@ -38,7 +38,7 @@ $ ip a
     inet6 fe80::215:5dff:fed9:6104/64 scope link
        valid_lft forever preferred_lft forever
 ```
-## hostsの設定
+## ■ hostsの設定
 ```
 $ sudo vi /etc/hosts
 ```
@@ -59,16 +59,16 @@ $ sudo vi /etc/hosts
 -  ff02::2 ip6-allrouters
 +  #ff02::2 ip6-allrouters
 ```
-## パッケージアップデート
+## ■ パッケージアップデート
 ```
 $ sudo apt-get update
 ```
-## カーネルアップデート抑止
+## ■ カーネルアップデート抑止
 ```
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
 :warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
-## sshdの設定
+## ■ sshdの設定
 ```
 $ sudo vi /etc/ssh/sshd_config
 ```
@@ -96,12 +96,12 @@ $ sudo vi /etc/ssh/sshd_config
 ### sshdを再起動
 $ sudo systemctl restart sshd
 ```
-## ufwの設定
+## ■ ufwの設定
 ```
 ### サービスのステータス確認
 $ systemctl status ufw
 ```
-■ 有効にする場合(デフォルトで有効です)
+1. 有効にする場合(デフォルトで有効です)
 ```
 ### サービスの有効化
 $ sudo systemctl start ufw
@@ -109,7 +109,7 @@ $ sudo systemctl start ufw
 ### 自動起動の無効化
 $ sudo systemctl enable ufw
 ```
-■ 無効にする場合
+2. 無効にする場合
 ```
 ### サービスの無効化
 $ sudo systemctl stop ufw
@@ -134,7 +134,7 @@ $ cat /etc/default/locale
 ```
 LANG=ja_JP.UTF-8
 ```
-## timezoneの設定
+## ■ timezoneの設定
 ```
 ### Asia/Tokyoのシンボリックリンクlocaltimeを作成
 $ sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
@@ -145,7 +145,7 @@ $ ll /etc/localtime
 ```
 lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/Asia/Tokyo
 ```
-## 時刻同期の設定
+## ■ 時刻同期の設定
 ```
 ### ntpのインストール
 $ sudo apt-get install ntp
@@ -190,7 +190,7 @@ $ sudo vi /etc/ntp.conf
 ### ntpサービスの起動
 $ sudo systemctl start ntp.service
 ```
-## pamの設定
+## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
 :warning:ユーザ名として`thetaru`を使用しています。
 ```
@@ -220,7 +220,7 @@ $ sudo vi /etc/pam.d/su
 ### 再起動して反映
 $ reboot
 ```
-## logrotateの設定
+## ■ logrotateの設定
 ```
 $ sudo vi /etc/logrotate.conf
 ```
@@ -239,7 +239,7 @@ $ sudo vi /etc/logrotate.conf
 -  #compress
 +  compress
 ```
-## 不要なサービスの停止
+## ■ 不要なサービスの停止
 調査中...
 ```
 ### パッケージリストの自動更新の停止・自動起動の無効化
