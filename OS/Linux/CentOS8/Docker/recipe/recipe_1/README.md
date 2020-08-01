@@ -99,7 +99,8 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ### DB コンテナの作成
 ```
-# docker container run -d -it --name zbx-db --hostname zbx-db --privileged centos:base /sbin/init
+### 共有させないといけないっぽい
+# docker container run -d -it -v /opt:/opt --name zbx-db --hostname zbx-db --privileged centos:base /sbin/init
 ```
 ```
 # docker exec -it zbx-db /bin/bash
