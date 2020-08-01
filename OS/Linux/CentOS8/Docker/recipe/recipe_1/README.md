@@ -74,8 +74,8 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ```
 ###
--  # AllowRoot
-+  AllowRoot
+-  # AllowRoot=0
++  AllowRoot=1
 ```
 ### web コンテナ作成
 ```
