@@ -51,6 +51,27 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 # yum -y install zabbix-server-mysql mariadb-server
 ```
+```
+# vi /etc/zabbix/zabbix_server.conf
+```
+```
+-  # ListenPort=10051
++  ListenPort=10051
+```
+```
+-  LogFileSize=0
++  LogFileSize=20
+```
+```
+### DBのホスト名を設定
+-  # DBHost=localhost
++  DBHost=zbx-db
+```
+```
+### 任意のパスワードを設定
+-  # DBPassword=
++  DBPassword=hoge
+```
 ### web コンテナ作成
 ```
 ### コンテナの作成
@@ -115,6 +136,11 @@ CentOS Linux release 8.2.2004 (Core)
 +  innodb_doublewrite = 0
 ```
 ```
+### mariadbの起動・自動起動の有効化
+# systemctl start mariadb
+# systemctl enable mariadb
+```
+```
 # mysql -u root -e 'create database zabbix character set utf8 collate utf8_bin;'
 ### 'password'は変更すること
 # mysql -u root -e 'create user zabbix@localhost identified by 'password';'
@@ -129,15 +155,22 @@ CentOS Linux release 8.2.2004 (Core)
 # yumdownloader --destdir=/root zabbix-server-mysql
 ```
 ```
-### mariadbの起動・自動起動の有効化
-# systemctl start mariadb
-# systemctl enable mariadb
+# cd /root
+# rpm2cpio zabbix-server-mysql* | cpio -id ./usr/share/doc/zabbix-server-mysql-*/create.sql.gz
+# zcat usr/share/doc/zabbix-server-mysql-*/create.sql.gz | mysql -u root zabbix
+# rm -rf /root/usr/ /root/zabbix-server-mysql-*
 ```
 ### network作成
 ```
+# docker network create zbx-nw
 ```
 ```
 # docker network connect zbx-nw zbx-db
 # docker network connect zbx-nw zbx-srv
 # docker network connect zbx-nw zbx-web
+```
+### zabbixサーバ起動
+```
+# docker exec -it zbx-srv /bin/bash
+"
 ```
