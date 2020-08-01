@@ -157,7 +157,7 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 # cd /root
 # rpm2cpio zabbix-server-mysql* | cpio -id ./usr/share/doc/zabbix-server-mysql-*/create.sql.gz
-# zcat usr/share/doc/zabbix-server-mysql-*/create.sql.gz | mysql -u root zabbix
+# zcat usr/share/doc/zabbix-server-mysql-*/create.sql.gz | mysql -u root -p zabbix
 # rm -rf /root/usr/ /root/zabbix-server-mysql-*
 ```
 ### network作成
