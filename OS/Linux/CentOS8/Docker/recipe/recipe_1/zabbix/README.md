@@ -39,16 +39,16 @@ composeファイルを編集します。
 version: '3.5'
 services:
   zabbix-server:
-  zabbix-proxy-sqlite3:x
-  zabbix-proxy-mysql:x
+  zabbix-proxy-sqlite3:
+  zabbix-proxy-mysql:
   zabbix-web-apache-mysql:
-  zabbix-web-nginx-mysql:x
+  zabbix-web-nginx-mysql:
   zabbix-agent:
-  zabbix-java-gateway:x
+  zabbix-java-gateway:
   zabbix-snmptraps:
   mysql-server:
   db_data_mysql:
 networks:
 secrets:
 ```
-必要のないサービス`zabbix-proxy-sqlite3:`,`zabbix-proxy-mysql:`,`zabbix-web-nginx-mysql:`,`zabbix-java-gateway:`を削除しましょう。
+必要のないサービス`zabbix-proxy-sqlite3`,`zabbix-proxy-mysql`,`zabbix-web-nginx-mysql`,`zabbix-java-gateway`を削除しましょう。
