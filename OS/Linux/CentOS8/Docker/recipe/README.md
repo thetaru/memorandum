@@ -23,10 +23,12 @@ CentOS Linux release 8.2.2004 (Core)
  Version:           19.03.12
 ...
 ```
-|ホスト名|IPアドレス|
-|:---|:---|
-|docker-zabbix|192.168.137.2|
-|docker-nginx|192.168.137.3|
+```
+# docker-compose --version
+```
+```
+docker-compose version 1.26.2, build eefe0d31
+```
 ## ■ 目標
 ```
 ここにイメージが入る予定
