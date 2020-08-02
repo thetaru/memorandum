@@ -2,6 +2,8 @@ version: '3.5'
 services:
  zabbix-server:
   image: zabbix/zabbix-server-mysql:centos-5.0-latest
+  container_name: zbx-srv
+  hostname: zbx-srv
   ports:
    - "10051:10051"
   volumes:
@@ -60,6 +62,8 @@ services:
 
  zabbix-web-apache-mysql:
   image: zabbix/zabbix-web-apache-mysql:centos-5.0-latest
+  container_name: zbx-web
+  hostname: zbx-web
   ports:
    - "80:8080"
    - "443:8443"
@@ -109,6 +113,8 @@ services:
 
  zabbix-agent:
   image: zabbix/zabbix-agent:centos-5.0-latest
+  container_name: zbx-agent
+  hostname: zbx-agent
   ports:
    - "10050:10050"
   volumes:
@@ -139,6 +145,8 @@ services:
 
  zabbix-snmptraps:
   image: zabbix/zabbix-snmptraps:centos-5.0-latest
+  container_name: zbx-snmp
+  hostname: zbx-snmp
   ports:
    - "162:1162/udp"
   volumes:
@@ -157,6 +165,8 @@ services:
 
  mysql-server:
   image: mysql:8.0
+  container_name: zbx-db
+  hostname: zbx-db
   command:
    - mysqld
    - --character-set-server=utf8
