@@ -99,12 +99,12 @@ composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を�
 # docker container ls
 ```
 ```
-CONTAINER ID        IMAGE                                              COMMAND                  CREATED             STATUS                       PORTS                                         NAMES
-3c6b67f550fe        zabbix/zabbix-web-apache-mysql:centos-5.0-latest   "docker-entrypoint.sh"   About an hour ago   Up About an hour (healthy)   0.0.0.0:80->8080/tcp, 0.0.0.0:443->8443/tcp   my-zabbix_zabbix-web-apache-mysql_1
-60860b80725e        zabbix/zabbix-agent:centos-5.0-latest              "/sbin/tini -- /usr/…"   About an hour ago   Up About an hour                                                           zabbix-compose_zabbix-agent_1
-d1b77264e9f8        zabbix/zabbix-server-mysql:centos-5.0-latest       "/sbin/tini -- /usr/…"   About an hour ago   Up About an hour             0.0.0.0:10051->10051/tcp                      zabbix-compose_zabbix-server_1
-ca6a00d9ae68        zabbix/zabbix-snmptraps:centos-5.0-latest          "/usr/bin/supervisor…"   About an hour ago   Up About an hour             0.0.0.0:162->1162/udp                         zabbix-compose_zabbix-snmptraps_1
-52cbeb1df471        mysql:8.0                                          "docker-entrypoint.s…"   About an hour ago   Up About an hour                                                           zabbix-compose_mysql-server_1
+CONTAINER ID        IMAGE                                              COMMAND                  CREATED              STATUS                        PORTS                                         NAMES
+03837464c31c        zabbix/zabbix-web-apache-mysql:centos-5.0-latest   "docker-entrypoint.sh"   About a minute ago   Up About a minute (healthy)   0.0.0.0:80->8080/tcp, 0.0.0.0:443->8443/tcp   zbx-web
+148474f98dbc        zabbix/zabbix-agent:centos-5.0-latest              "/sbin/tini -- /usr/…"   About a minute ago   Up About a minute                                                           zbx-agent
+dde5c66bb666        zabbix/zabbix-server-mysql:centos-5.0-latest       "/sbin/tini -- /usr/…"   About a minute ago   Up About a minute             0.0.0.0:10051->10051/tcp                      zbx-srv
+45d06ee3acd6        mysql:8.0                                          "docker-entrypoint.s…"   About a minute ago   Up About a minute                                                           zbx-db
+832ef62a5b11        zabbix/zabbix-snmptraps:centos-5.0-latest          "/usr/bin/supervisor…"   About a minute ago   Up About a minute             0.0.0.0:162->1162/udp                         zbx-snmp
 ```
 ### ログイン方法
 ブラウザから`http://<zabbix-server ip-address>`を開きます。  
