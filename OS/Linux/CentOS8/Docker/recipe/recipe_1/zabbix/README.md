@@ -1,4 +1,4 @@
-# Zabbix 5.0LTS を docker-compose で構築
+# Zabbix 5.0 LTS を docker-compose で構築
 ## ■ バージョン
 ```
 # docker --version
