@@ -51,5 +51,5 @@ services:
 networks:
 secrets:
 ```
-必要のないサービス`zabbix-proxy-sqlite3`,`zabbix-proxy-mysql`,`zabbix-web-nginx-mysql`,`zabbix-java-gateway`を削除しましょう。
-:warning:`zabbix-java-gateway`サービスは`zabbix-server`サービスの`links`と`depends_on`に依存しているのでここも削除しましょう。
+必要のないサービス`zabbix-proxy-sqlite3`,`zabbix-proxy-mysql`,`zabbix-web-nginx-mysql`,`zabbix-java-gateway`を削除しましょう。  
+また、全サービスの`deploy`ディレクティブも必要ないので削除します。
