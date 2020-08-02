@@ -1,4 +1,7 @@
-# RECIPE 1
+# RECIPE
+## ■ docker-composeのインストール
+[ここ](https://docs.docker.com/compose/install/)を参考にインストールしてください。
+
 ## ■ 前提条件
 ```
 # cat /etc/redhat-release
