@@ -39,12 +39,12 @@ composeファイルがたくさんありますが、今回の構成では`docker
 version: '3.5'
 services:
   zabbix-server:
-  zabbix-proxy-sqlite3:     <- いらない
-  zabbix-proxy-mysql:       <- いらない
+  zabbix-proxy-sqlite3:     <- 削除
+  zabbix-proxy-mysql:       <- 削除
   zabbix-web-apache-mysql:
-  zabbix-web-nginx-mysql:   <- いらない
+  zabbix-web-nginx-mysql:   <- 削除
   zabbix-agent:
-  zabbix-java-gateway:      <- いらない
+  zabbix-java-gateway:      <- 削除
   zabbix-snmptraps:
   mysql-server:
   db_data_mysql:
