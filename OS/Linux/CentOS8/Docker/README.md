@@ -51,4 +51,8 @@
 - [x] [zabbix](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/recipe/recipe_1/zabbix)
 # § Tips
 - [ ] [複数のdocker-compose間での通信]()
+https://medium.com/anti-pattern-engineering/%E8%A4%87%E6%95%B0%E3%81%AEdocker-compose%E9%96%93%E3%81%A7%E9%80%9A%E4%BF%A1%E3%81%99%E3%82%8B-4de7c6bf8bf7
 - [ ] [ホストからコンテナへの通信]()
+https://qiita.com/ttsubo/items/40162f5001a8c95040d9
+- [ ] [コンテナの起動順序について]()
+https://teratail.com/questions/157702
