@@ -34,7 +34,7 @@ composeファイルがたくさんありますが、今回の構成では`docker
 # cp .MYSQL_PASSWORD .MYSQL_ROOT_PASSWORD .MYSQL_USER ./zabbix-compose
 ```
 composeファイルを編集します。  
-編集前のcomposeファイルの構成は主に次のようになっています。
+編集前のcomposeファイルの簡素化した構成は次のようになっています。
 ```
 version: '3.5'
 services:
@@ -52,3 +52,4 @@ networks:
 secrets:
 ```
 必要のないサービス`zabbix-proxy-sqlite3`,`zabbix-proxy-mysql`,`zabbix-web-nginx-mysql`,`zabbix-java-gateway`を削除しましょう。
+:warning:`zabbix-java-gateway`サービスは`zabbix-server`サービスの`links`ディレクティブと`depends_on`ディレクティブに依存しているのでここも削除しましょう。
