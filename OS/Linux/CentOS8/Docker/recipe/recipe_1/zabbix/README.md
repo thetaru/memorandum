@@ -1,4 +1,4 @@
-# Zabbix5.0LTSをdocker-composeで構築
+# Zabbix 5.0LTS を docker-compose で構築
 ## ■ バージョン
 ```
 # docker --version
@@ -52,4 +52,21 @@ networks:
 secrets:
 ```
 必要のないサービス`zabbix-proxy-sqlite3`,`zabbix-proxy-mysql`,`zabbix-web-nginx-mysql`,`zabbix-java-gateway`を削除しましょう。  
-また、全サービスの`deploy`ディレクティブも必要ないので削除します。
+また、全サービスの`deploy`ディレクティブも必要ないので削除します。  
+最終的に、[これ](https://github.com/thetaru/memorandum/blob/master/OS/Linux/CentOS8/Docker/recipe/recipe_1/zabbix/docker-compose.yaml)と同じになっているはずです。  
+  
+MariaDBの認証設定を編集します。  
+composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を読み込んでいます。
+  
+環境変数ファイルを編集します。
+```
+# vi .env_web
+```
+```
+-  ZBX_SERVER_NAME=Composed installation
++  ZBX_SERVER_NAME=<任意の名前>
+```
+```
+-  # PHP_TZ=Europe/Riga
++  PHP_TZ=Asia/Tokyo
+```
