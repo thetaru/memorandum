@@ -74,6 +74,11 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ```
 ###
+-  # CacheSize=8M
++  CacheSize=32M
+```
+```
+###
 -  # AllowRoot=0
 +  AllowRoot=1
 ```
