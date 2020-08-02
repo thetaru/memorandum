@@ -24,10 +24,13 @@ Web: apache
 ### 公式をクローン
 # git clone https://github.com/zabbix/zabbix-docker
 ```
-`zabbix-docker`内の必要なファイルのみ`zabbi-docker/zabbix-compose`に移します。
+`zabbix-docker`内の必要なファイルのみ`zabbi-docker/zabbix-compose`に移します。  
+composeファイルがたくさんありますが、今回の構成では`docker-compose_v3_centos_mysql_latest.yaml`を使用します。
 ```
 # cd zabbix-docker/
 # mkdir zabbix-compse
+# cp docker-compose_v3_centos_mysql_latest.yaml ./zabbix-compose/docker-compose.yaml
 # cp .env_agent .env_db_mysql .env_srv .env_web ./zabbix-compose
 # cp .MYSQL_PASSWORD .MYSQL_ROOT_PASSWORD .MYSQL_USER ./zabbix-compose
 ```
+composeファイルを編集します。
