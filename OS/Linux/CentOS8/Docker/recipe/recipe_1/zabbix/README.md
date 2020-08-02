@@ -39,12 +39,12 @@ composeファイルを編集します。
 version: '3.5'
 services:
   zabbix-server:
-  zabbix-proxy-sqlite3:
-  zabbix-proxy-mysql:
+  zabbix-proxy-sqlite3:     <- いらない
+  zabbix-proxy-mysql:       <- いらない
   zabbix-web-apache-mysql:
-  zabbix-web-nginx-mysql:
+  zabbix-web-nginx-mysql:   <- いらない
   zabbix-agent:
-  zabbix-java-gateway:
+  zabbix-java-gateway:      <- いらない
   zabbix-snmptraps:
   mysql-server:
   db_data_mysql:
