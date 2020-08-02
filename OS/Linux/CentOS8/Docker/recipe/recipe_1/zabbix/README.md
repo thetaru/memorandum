@@ -51,3 +51,4 @@ services:
 networks:
 secrets:
 ```
+必要のないサービス`zabbix-proxy-sqlite3:`,`zabbix-proxy-mysql:`,`zabbix-web-nginx-mysql:`,`zabbix-java-gateway:`を削除しましょう。
