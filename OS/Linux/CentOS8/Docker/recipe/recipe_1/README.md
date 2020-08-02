@@ -159,7 +159,7 @@ CentOS Linux release 8.2.2004 (Core)
 # mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-web.zbx-nw" identified by "password";'
 ```
 ```
-# rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+#  rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
 ```
 ```
 # yumdownloader --destdir=/root zabbix-server-mysql
