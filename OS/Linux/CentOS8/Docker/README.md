@@ -49,3 +49,6 @@
 - [x] [docker system version](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20version)
 # § RECIPE
 - [x] [zabbix](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/recipe/recipe_1/zabbix)
+# § Tips
+- [ ] [複数のdocker-compose間での通信]()
+- [ ] [ホストからコンテナへの通信]()
