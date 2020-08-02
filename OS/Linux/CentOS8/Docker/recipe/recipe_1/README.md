@@ -152,8 +152,7 @@ CentOS Linux release 8.2.2004 (Core)
 # systemctl enable mariadb
 ```
 ```
-# mysql -u root -e 'create database zabbix character set utf8 collate utf8_bin;'
-### 以下の'password'は変更し共通の値であることが必要
+# mysql -u root -e 'create database zabbix;'
 # mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"localhost" identified by "password";'
 # mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-srv.zbx-nw" identified by "password";'
 # mysql -u root -e 'grant all privileges on zabbix.* to "zabbix"@"zbx-web.zbx-nw" identified by "password";'
