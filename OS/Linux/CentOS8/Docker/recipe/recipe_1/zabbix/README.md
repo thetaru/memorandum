@@ -13,11 +13,13 @@ Docker version 19.03.12, build 48a66213fe
 docker-compose version 1.26.2, build eefe0d31
 ```
 ## ■ 
+### 構成
 ```
 Base: CentOS7
 DB: mariadb
 Web: apache
 ```
+### 手順
 ```
 ### 公式をクローン
 # git clone https://github.com/zabbix/zabbix-docker
