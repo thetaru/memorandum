@@ -46,7 +46,7 @@ CentOS Linux release 8.2.2004 (Core)
 ```
 ```
 ### zabbixリポジトリのインストール
- # rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
+# rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
 ```
 ```
 # yum -y install zabbix-server-mysql mariadb-server
