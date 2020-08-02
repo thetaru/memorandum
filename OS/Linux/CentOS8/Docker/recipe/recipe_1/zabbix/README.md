@@ -12,18 +12,18 @@ Docker version 19.03.12, build 48a66213fe
 ```
 docker-compose version 1.26.2, build eefe0d31
 ```
-## ■ 
-### 構成
+## ■ 構成
 ```
 Base: CentOS7
 DB: mariadb
 Web: apache
 ```
-### 手順
+## ■ 手順
+### git clone
 ```
-### 公式をクローン
 # git clone https://github.com/zabbix/zabbix-docker
 ```
+### ファイルの選択
 `zabbix-docker`内の必要なファイルのみ`zabbi-docker/zabbix-compose`に移します。  
 composeファイルがたくさんありますが、今回の構成では`docker-compose_v3_centos_mysql_latest.yaml`を使用します。
 ```
@@ -33,7 +33,7 @@ composeファイルがたくさんありますが、今回の構成では`docker
 # cp .env_agent .env_db_mysql .env_srv .env_web ./zabbix-compose
 # cp .MYSQL_PASSWORD .MYSQL_ROOT_PASSWORD .MYSQL_USER ./zabbix-compose
 ```
-composeファイルを編集します。  
+### composeファイルの編集
 編集前のcomposeファイルの簡素化した構成は次のようになっています。
 ```
 version: '3.5'
@@ -54,10 +54,9 @@ secrets:
 必要のないサービス`zabbix-proxy-sqlite3`,`zabbix-proxy-mysql`,`zabbix-web-nginx-mysql`,`zabbix-java-gateway`を削除しましょう。  
 また、全サービスの`deploy`ディレクティブも必要ないので削除します。  
 最終的に、[これ](https://github.com/thetaru/memorandum/blob/master/OS/Linux/CentOS8/Docker/recipe/recipe_1/zabbix/docker-compose.yaml)と同じになっているはずです。  
-  
-MariaDBの認証設定を編集します。  
+### DBの認証設定 
 composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を読み込んでいます。
-  
+### 環境変数の設定
 環境変数ファイルを編集します。
 ```
 # vi .env_web
