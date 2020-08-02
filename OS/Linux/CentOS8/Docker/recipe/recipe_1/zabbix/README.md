@@ -60,6 +60,7 @@ composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を�
 ### 環境変数の設定
 環境変数ファイルを編集します。
 ```
+### zabbix-agentの設定
 # vi .env_agent
 ```
 ```
@@ -71,6 +72,7 @@ composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を�
 +  ZBX_HOSTNAME=<Zabbixで表示するホスト名を設定>
 ```
 ```
+### zabbix-serverの設定
 # vi .env_srv
 ```
 ```
@@ -78,6 +80,7 @@ composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を�
 +  ZBX_CACHESIZE=32M
 ```
 ```
+### httpd(とphp)の設定
 # vi .env_web
 ```
 ```
