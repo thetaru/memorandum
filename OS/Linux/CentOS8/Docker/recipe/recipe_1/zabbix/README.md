@@ -105,3 +105,6 @@ d1b77264e9f8        zabbix/zabbix-server-mysql:centos-5.0-latest       "/sbin/ti
 ca6a00d9ae68        zabbix/zabbix-snmptraps:centos-5.0-latest          "/usr/bin/supervisor…"   About an hour ago   Up About an hour             0.0.0.0:162->1162/udp                         zabbix-compose_zabbix-snmptraps_1
 52cbeb1df471        mysql:8.0                                          "docker-entrypoint.s…"   About an hour ago   Up About an hour                                                           zabbix-compose_mysql-server_1
 ```
+### ログイン方法
+ブラウザから`http://<zabbix-server ip-address>`を開きます。  
+ユーザは`Admin`,パスワードは`zabbix`でログインできます。
