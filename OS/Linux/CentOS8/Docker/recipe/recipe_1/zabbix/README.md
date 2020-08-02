@@ -33,4 +33,21 @@ composeファイルがたくさんありますが、今回の構成では`docker
 # cp .env_agent .env_db_mysql .env_srv .env_web ./zabbix-compose
 # cp .MYSQL_PASSWORD .MYSQL_ROOT_PASSWORD .MYSQL_USER ./zabbix-compose
 ```
-composeファイルを編集します。
+composeファイルを編集します。  
+編集前のcomposeファイルの構成は主に次のようになっています。
+```
+version: '3.5'
+services:
+  zabbix-server:
+  zabbix-proxy-sqlite3:x
+  zabbix-proxy-mysql:x
+  zabbix-web-apache-mysql:
+  zabbix-web-nginx-mysql:x
+  zabbix-agent:
+  zabbix-java-gateway:x
+  zabbix-snmptraps:
+  mysql-server:
+  db_data_mysql:
+networks:
+secrets:
+```
