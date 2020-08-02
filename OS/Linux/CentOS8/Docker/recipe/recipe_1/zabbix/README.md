@@ -78,8 +78,6 @@ composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を�
 +  ZBX_CACHESIZE=32M
 ```
 ```
-```
-```
 # vi .env_web
 ```
 ```
