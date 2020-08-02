@@ -75,7 +75,7 @@ $ sudo vi /etc/ssh/sshd_config
 ```
 ### sshで使用するポートを指定
 -  #Port 22
-+  Port 22
++  Port 2020
 ```
 ```
 ### IPv4のみ許可
