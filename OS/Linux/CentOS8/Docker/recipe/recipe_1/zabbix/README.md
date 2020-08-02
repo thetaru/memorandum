@@ -19,11 +19,11 @@ DB: mariadb
 Web: apache
 ```
 ## ■ 手順
-### git clone
+## git clone
 ```
 # git clone https://github.com/zabbix/zabbix-docker
 ```
-### ファイルの選択
+## ファイルの選択
 `zabbix-docker`内の必要なファイルのみ`zabbi-docker/zabbix-compose`に移します。  
 composeファイルがたくさんありますが、今回の構成では`docker-compose_v3_centos_mysql_latest.yaml`を使用します。
 ```
@@ -33,7 +33,7 @@ composeファイルがたくさんありますが、今回の構成では`docker
 # cp .env_agent .env_db_mysql .env_srv .env_web ./zabbix-compose
 # cp .MYSQL_PASSWORD .MYSQL_ROOT_PASSWORD .MYSQL_USER ./zabbix-compose
 ```
-### composeファイルの編集
+## composeファイルの編集
 編集前のcomposeファイルの簡素化した構成は次のようになっています。
 ```
 version: '3.5'
@@ -54,10 +54,10 @@ secrets:
 必要のないサービス`zabbix-proxy-sqlite3`,`zabbix-proxy-mysql`,`zabbix-web-nginx-mysql`,`zabbix-java-gateway`を削除しましょう。  
 また、全サービスの`deploy`ディレクティブも必要ないので削除します。  
 最終的に、[これ](https://github.com/thetaru/memorandum/blob/master/OS/Linux/CentOS8/Docker/recipe/recipe_1/zabbix/docker-compose.yaml)と同じになっていればいいです。
-### DBの認証設定 
+## DBの認証設定 
 composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を読み込んでいます。
 特に設定する必要はないですが**必須**です。
-### 環境変数の設定
+## 環境変数の設定
 環境変数ファイルを編集します。
 ```
 ### zabbix-agentの設定
@@ -91,7 +91,7 @@ composeファイルは`.MYSQL_PASSWORD`,`.MYSQL_ROOT_PASSWORD`,`.MYSQL_USER`を�
 -  # PHP_TZ=Europe/Riga
 +  PHP_TZ=Asia/Tokyo
 ```
-### zabbixサーバの起動
+## zabbixサーバの起動
 ```
 # docker-compose up -d
 ```
@@ -106,6 +106,6 @@ dde5c66bb666        zabbix/zabbix-server-mysql:centos-5.0-latest       "/sbin/ti
 45d06ee3acd6        mysql:8.0                                          "docker-entrypoint.s…"   About a minute ago   Up About a minute                                                           zbx-db
 832ef62a5b11        zabbix/zabbix-snmptraps:centos-5.0-latest          "/usr/bin/supervisor…"   About a minute ago   Up About a minute             0.0.0.0:162->1162/udp                         zbx-snmp
 ```
-### ログイン方法
+## ログイン方法
 ブラウザから`http://<zabbix-server ip-address>`を開きます。  
 ユーザは`Admin`,パスワードは`zabbix`でログインできます。
