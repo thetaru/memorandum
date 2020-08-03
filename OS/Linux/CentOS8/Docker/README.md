@@ -57,4 +57,5 @@ https://qiita.com/ttsubo/items/40162f5001a8c95040d9
 - [ ] [コンテナの起動順序について]()
 https://teratail.com/questions/157702
 - [ ] [DockerのDNSについて]()
-https://tenzen.hatenablog.com/entry/2020/02/13/193228
+https://tenzen.hatenablog.com/entry/2020/02/13/193228  
+Docker network内での内々の名前解決はできるけど外部ネットワークの名前解決はできないので解決したいよねってこと
