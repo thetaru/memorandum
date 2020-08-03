@@ -56,3 +56,5 @@ https://medium.com/anti-pattern-engineering/%E8%A4%87%E6%95%B0%E3%81%AEdocker-co
 https://qiita.com/ttsubo/items/40162f5001a8c95040d9
 - [ ] [コンテナの起動順序について]()
 https://teratail.com/questions/157702
+- [ ] [DockerのDNSについて]()
+https://tenzen.hatenablog.com/entry/2020/02/13/193228
