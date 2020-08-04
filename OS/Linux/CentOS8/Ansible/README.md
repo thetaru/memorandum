@@ -39,9 +39,10 @@ ansible 2.9.11
 # ■ ホスト名の変更
 ## Syntax
 ```
-- name: <task-name>
-  hostname:
-    name: <hostname>
+tasks:
+  - name: <task-name>
+    hostname:
+      name: <hostname>
 ```
 |パラメータ|説明|
 |:---|:---|
@@ -49,10 +50,11 @@ ansible 2.9.11
 # ■ パッケージのインストール
 ## Syntax
 ```
-- name: <task-name>
-  yum:
-    name: <package>
-    state: <status>
+tasks:
+  - name: <task-name>
+    yum:
+      name: <package>
+      state: <status>
 ```
 |パラメータ|説明|
 |:---|:---|
@@ -62,11 +64,12 @@ ansible 2.9.11
 # ■ コンテンツの配置
 ## Syntax
 ```
-- name: <task-name>
-  copy:
-    src: <src-path>
-    dest: <dest-path>
-    owner: <owner-user>
+tasks:
+  - name: <task-name>
+    copy:
+      src: <src-path>
+      dest: <dest-path>
+      owner: <owner-user>
 ```
 |パラメータ|説明|
 |:---|:---|
@@ -78,10 +81,11 @@ ansible 2.9.11
 # ■ サービスの起動
 ## Syntax
 ```
-- name: <task-name>
-  systemd:
-    state:
-    name:
+tasks:
+  - name: <task-name>
+    systemd:
+      state:
+      name:
 ```
 |パラメータ|説明|
 |:---|:---|
@@ -92,9 +96,10 @@ ansible 2.9.11
 # ■ SELinuxの無効化
 ## Syntax
 ```
-- name: <task-name>
-  selinux:
-    state: <status>
+tasks:
+  - name: <task-name>
+    selinux:
+      state: <status>
 ```
 |パラメータ|説明|
 |:---|:---|
@@ -103,12 +108,11 @@ ansible 2.9.11
 # ■ ハンドラの設定
 ## Syntax
 ```
-- name: <task-name1>
-  tasks:
-    - name: <task-name2>
-    notify: <handler-name>
-  handlers:
-    - name: <handler-name>
+tasks:
+  - name: <task-name2>
+  notify: <handler-name>
+handlers:
+  - name: <handler-name>
 ```
 # § やりたいこと
 playbook作り  
