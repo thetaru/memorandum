@@ -11,7 +11,7 @@
 ```
 ansible 2.9.11
 ```
-# § COMMANDS
+# § COMMAND
 ## Syntax
 ```
 # ansible-playbook [option] <inventory> <playbook>
