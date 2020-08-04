@@ -1,5 +1,4 @@
-# Ansible Playbook Reference
-# § TASKS
+# Ansible Playbook Module Reference
 ## ■ ホスト名の変更
 ## Syntax
 ```
@@ -113,37 +112,3 @@ handlers:
   - name: <handler-name>
     <処理内容>
 ```
-## ■ データベースの作成
-## Syntax
-```
-tasks:
-  - name: <task-name>
-    mysql_db:
-      name: <db-name>
-      state: <status>
-      encoding: <encode>
-      collation: <collation>
-```
-|パラメータ|説明|
-|:---|:---|
-|name|データベース名を指定する|
-|state|指定したユーザを作成または削除する[ present \| absent \| dump \| import \| ]|
-|encoding|文字エンコードを指定する|
-|collation|文字エンコードの照合順序を指定する|
-## ■ MySQLのユーザ管理
-## Syntax
-```
-tasks:
-  - name: <task-name>
-    mysql_user:
-      name: <username>
-      state: <status>
-      password: <password>
-      priv: <priviledge>
-```
-|パラメータ|説明|
-|:---|:---|
-|name|ユーザ名を指定する|
-|state|ユーザの状態を指定する [ present \| absent ]|
-|password|ユーザのパスワードを指定する|
-|priv|MySQLの権限の文字列を指定する|
