@@ -40,7 +40,7 @@ ansible 2.9.11
 ## Syntax
 ```
 - hostname:
-  name: <hostname>
+    name: <hostname>
 ```
 |パラメータ|説明|
 |:---|:---|
