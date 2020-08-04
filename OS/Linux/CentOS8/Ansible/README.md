@@ -39,7 +39,8 @@ ansible 2.9.11
 # ホスト名の変更
 ## Syntax
 ```
-- hostname:
+- name: <task-name>
+  hostname:
     name: <hostname>
 ```
 |パラメータ|説明|
@@ -48,7 +49,8 @@ ansible 2.9.11
 # パッケージのインストール
 ## Syntax
 ```
-- yum:
+- name: <task-name>
+  yum:
     name: <package>
     state: <status>
 ```
@@ -56,7 +58,7 @@ ansible 2.9.11
 |:---|:---|
 |name|パッケージを指定する|
 |state|指定したパッケージの状態を定義する|
-|enablerepo|このタスクの間だけ有効化するリポジトリを指定する|
+|enablerepo|(option)このタスクの間だけ有効化するリポジトリを指定する|
 ## やりたいこと
 playbook作り  
 テンプレートとなるplaybookをまず作る。  
