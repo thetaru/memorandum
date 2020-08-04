@@ -125,6 +125,7 @@ tasks:
 ```
 tasks:
   -name: <task-name>
+  wait_for_connection:
     timeout: <sec>
     connect_timeout: <sec>
     delay: <sec>
