@@ -36,6 +36,12 @@ ansible 2.9.11
 |--become-user|権限昇格に利用するユーザを指定する|
 |-K, --ask-become-pass|権限昇格時に利用するパスワードを指定する|
 # § PLAYBOOKS
+# ホスト名の変更
+## Syntax
+```
+- hostname:
+  name: <hostname>
+```
 ## やりたいこと
 playbook作り  
 テンプレートとなるplaybookをまず作る。  
