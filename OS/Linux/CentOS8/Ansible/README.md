@@ -106,7 +106,8 @@ tasks:
 |policy|SELinuxのポリシーを指定する|
 |state|SELinuxのステータスを指定する [ disabled \| permissive \| enforcing ]|
 # ■ ハンドラの設定
-`notify`を組み込んだタスクに変更があった場合にのみ実行される処理を記述します。
+`notify`を組み込んだタスクに変更があった場合にのみ実行される処理を記述します。  
+また、処理の実行タイミングはタスクセクションのタスクがすべて実行された後です。
 ## Syntax
 ```
 tasks:
