@@ -36,7 +36,7 @@ ansible 2.9.11
 |--become-user|権限昇格に利用するユーザを指定する|
 |-K, --ask-become-pass|権限昇格時に利用するパスワードを指定する|
 # § PLAYBOOKS
-# ホスト名の変更
+# ■ ホスト名の変更
 ## Syntax
 ```
 - name: <task-name>
@@ -46,7 +46,7 @@ ansible 2.9.11
 |パラメータ|説明|
 |:---|:---|
 |name|コピー元となるコントロールノード上のファイルパスを指定する|
-# パッケージのインストール
+# ■ パッケージのインストール
 ## Syntax
 ```
 - name: <task-name>
@@ -59,7 +59,7 @@ ansible 2.9.11
 |name|パッケージを指定する|
 |state|指定したパッケージの状態を定義する|
 |enablerepo|(option)このタスクの間だけ有効化するリポジトリを指定する|
-# コンテンツの配置
+# ■ コンテンツの配置
 ## Syntax
 ```
 - name: <task-name>
@@ -75,7 +75,7 @@ ansible 2.9.11
 |owner|コピーされたファイルのオーナーを指定する|
 |group|コピーされたファイルのグループを指定する|
 |mode|コピーされたファイルのパーミッションを指定する|
-# サービスの起動
+# ■ サービスの起動
 ## Syntax
 ```
 - name <task-name>
@@ -89,7 +89,7 @@ ansible 2.9.11
 |state|対象サービスの状態を指定する [started \| stopped \| restarted \| reloaded]|
 |enabled|対象サービスの自動起動の可否を指定する [yes \| no]|
 |daeon_reload|対象サービスの操作前に、サービスの設定ファイルを再読み込みさせる|
-## やりたいこと
+# やりたいこと
 playbook作り  
 テンプレートとなるplaybookをまず作る。  
 それをもとにして各種ミドルが乗ったplaybookを作って展開する。  
