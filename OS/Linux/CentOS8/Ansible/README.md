@@ -103,13 +103,12 @@ ansible 2.9.11
 # ■ ハンドラの設定
 ## Syntax
 ```
-- name: <task-name>
+- name: <task-name1>
+  tasks:
+    - name: <task-name2>
+    notify: <handler-name>
   handlers:
     - name: <handler-name>
-```
-```
-- name: <task-name>
-  notify: <handler-name>
 ```
 # § やりたいこと
 playbook作り  
