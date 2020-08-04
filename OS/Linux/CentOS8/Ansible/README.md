@@ -1,6 +1,16 @@
 # Ansible
 # § INSTALL
-[ここ](https://densan-hoshigumi.com/server/ansible/install-rhel8-centos8)が参考になります。
+```
+# yum -y install epel-release
+# yum -y install ansible
+```
+```
+### version確認
+# ansible --version
+```
+```
+ansible 2.9.11
+```
 ## やりたいこと
 playbook作り  
 テンプレートとなるplaybookをまず作る。  
