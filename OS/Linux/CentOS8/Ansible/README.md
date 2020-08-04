@@ -106,6 +106,7 @@ tasks:
 |policy|SELinuxのポリシーを指定する|
 |state|SELinuxのステータスを指定する [ disabled \| permissive \| enforcing ]|
 # ■ ハンドラの設定
+`notify`を組み込んだタスクに変更があった場合にのみ実行される処理を記述します。
 ## Syntax
 ```
 tasks:
@@ -113,6 +114,7 @@ tasks:
   notify: <handler-name>
 handlers:
   - name: <handler-name>
+    <処理内容>
 ```
 # § やりたいこと
 playbook作り  
