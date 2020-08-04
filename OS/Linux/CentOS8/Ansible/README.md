@@ -105,6 +105,21 @@ tasks:
 |:---|:---|
 |policy|SELinuxのポリシーを指定する|
 |state|SELinuxのステータスを指定する [ disabled \| permissive \| enforcing ]|
+# ■ ターゲットノードの再起動
+## Syntax
+```
+tasks:
+  - name: <task-name>
+    reboot:
+    reboot_timeout: <num-of-sec>
+```
+|パラメータ|説明|
+|:---|:---|
+|connection_timeout|接続がタイムアウトするまでの最大の秒数を指定する|
+|msg|再起動する前にログインしているユーザに指定したメッセージを表示する|
+|pre_reboot_delay|再起動を実行する前に待機する秒数を指定する(デフォルト:0秒)|
+|post_reboot_delay|再起動完了後に待機する秒数を指定する(デフォルト:0秒)|
+|test_command|再起動後のターゲットホストでタスクの実行が可能かどうかを判断するためのコマンドを指定する(デフォルト:whoami)|
 # ■ ハンドラの設定
 `notify`を組み込んだタスクに変更があった場合にのみ実行される処理を記述します。  
 また、処理の実行タイミングはタスクセクション内のタスクがすべて実行された後です。
