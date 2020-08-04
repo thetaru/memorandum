@@ -50,7 +50,7 @@ ansible 2.9.11
 ```
 - yum:
     name: <package>
-    state: <version>
+    state: <status>
 ```
 |パラメータ|説明|
 |:---|:---|
