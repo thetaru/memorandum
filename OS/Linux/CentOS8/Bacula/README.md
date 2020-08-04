@@ -4,6 +4,14 @@
 ### リポジトリ追加
 # wget -P /etc/yum.repos.d https://copr.fedorainfracloud.org/coprs/slaanesh/Bacula/repo/epel-8/slaanesh-Bacula-epel-8.repo
 ```
+```
+### リポジトリが追加されていることを確認
+# yum repolist
+```
+```
+###
+# yum -y install 
+```
 # 参考
 https://aimstogeek.hatenablog.com/entry/2017/04/07/103253  
 https://aimstogeek.hatenablog.com/entry/2017/04/10/110239  
