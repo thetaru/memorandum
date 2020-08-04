@@ -75,6 +75,20 @@ ansible 2.9.11
 |owner|コピーされたファイルのオーナーを指定する|
 |group|コピーされたファイルのグループを指定する|
 |mode|コピーされたファイルのパーミッションを指定する|
+# サービスの起動
+## Syntax
+```
+- name <task-name>
+  systemd:
+    state:
+    name:
+```
+|パラメータ|説明|
+|:---|:---|
+|name|対象とするサービスを指定する|
+|state|対象サービスの状態を指定する [started | stopped | restarted | reloaded]|
+|enabled|対象サービスの自動起動の可否を指定する [yes | no]|
+|daeon_reload|対象サービスの操作前に、サービスの設定ファイルを再読み込みさせる|
 ## やりたいこと
 playbook作り  
 テンプレートとなるplaybookをまず作る。  
