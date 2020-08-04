@@ -111,7 +111,7 @@ tasks:
 tasks:
   - name: <task-name>
     reboot:
-    reboot_timeout: <num-of-sec>
+    reboot_timeout: <sec>
 ```
 |パラメータ|説明|
 |:---|:---|
