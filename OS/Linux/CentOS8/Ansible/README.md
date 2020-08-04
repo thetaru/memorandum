@@ -11,6 +11,9 @@
 ```
 ansible 2.9.11
 ```
+# § COMMANDS
+- [ ] [ansible-playbook]()
+# § PLAYBOOKS
 ## やりたいこと
 playbook作り  
 テンプレートとなるplaybookをまず作る。  
