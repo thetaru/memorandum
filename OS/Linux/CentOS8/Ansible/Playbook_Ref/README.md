@@ -107,9 +107,25 @@ tasks:
 ## Syntax
 ```
 tasks:
-  - name: <task-name2>
+  - name: <task-name>
   notify: <handler-name>
 handlers:
   - name: <handler-name>
     <処理内容>
 ```
+## ■ データベースの作成
+```
+tasks:
+  - name: <task-name>
+    mysql_db:
+      name: <db-name>
+      state: <status>
+      encoding: <encode>
+      collation: <collation>
+```
+|パラメータ|説明|
+|:---|:---|
+|name|データベース名を指定する|
+|state|指定したユーザを作成または削除する[ present \| absent \| dump \| import \| ]|
+|encoding|文字エンコードを指定する|
+|collation|文字エンコードの照合順序を指定する|
