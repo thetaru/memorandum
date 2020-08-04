@@ -78,7 +78,7 @@ ansible 2.9.11
 # ■ サービスの起動
 ## Syntax
 ```
-- name <task-name>
+- name: <task-name>
   systemd:
     state:
     name:
@@ -89,6 +89,28 @@ ansible 2.9.11
 |state|対象サービスの状態を指定する [ started \| stopped \| restarted \| reloaded ]|
 |enabled|対象サービスの自動起動の可否を指定する [ yes \| no ]|
 |daeon_reload|対象サービスの操作前に、サービスの設定ファイルを再読み込みさせる|
+# ■ SELinuxの無効化
+## Syntax
+```
+- name: <task-name>
+  selinux:
+    state: <status>
+```
+|パラメータ|説明|
+|:---|:---|
+|policy|SELinuxのポリシーを指定する|
+|state|SELinuxのステータスを指定する [ disabled \| permissive \| enforcing ]|
+# ■ ハンドラの設定
+## Syntax
+```
+- name: <task-name>
+  handlers:
+    - name: <handler-name>
+```
+```
+- name: <task-name>
+  notify: <handler-name>
+```
 # § やりたいこと
 playbook作り  
 テンプレートとなるplaybookをまず作る。  
