@@ -1,4 +1,5 @@
 # Ansible Playbook Module Reference
+サードパーティ製は[ここ](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)を参照するといいです。
 ## ■ ホスト名の変更
 ## Syntax
 ```
