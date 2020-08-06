@@ -48,4 +48,6 @@ ansible-galaxy init playbook/roles
 # inventory:
 (
     echo "---"
+    echo "#[example]"
+    echo "#192.168.0.1 node_hostname=example-host"
 ) > playbook/inventory/hosts
