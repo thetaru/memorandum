@@ -51,3 +51,9 @@ ansible-galaxy init playbook/roles
     echo "#[example]"
     echo "#192.168.0.1 node_hostname=example-host"
 ) > playbook/inventory/hosts
+
+# group_vars: example-host refer to group_vars/example/example.yml
+(
+    echo "---"
+    echo "# write about ..."
+) > playbook/group_vars/example/example.yml
