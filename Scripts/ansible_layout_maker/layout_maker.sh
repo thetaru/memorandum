@@ -55,7 +55,8 @@ ansible-galaxy init playbook/roles
 # group_vars: example-host refer to group_vars/example/main.yml
 (
     echo "---"
-    echo "# write about ..."
+    echo "#write about ..."
+    echo "#ntp_server=ntp.nict.jp"
 ) > playbook/group_vars/example/example.yml
 
 # host_vars: example-host refer to host_vars/192.168.0.1/main.yml
