@@ -41,6 +41,12 @@ mkdir playbook/roles/common
 # make yml files
 #######################################################################
 
+# inventory: ip and hostname
+(
+    echo "#[example]"
+    echo "#192.168.0.1 node_hostname=example-host"
+) > playbook/inventory/hosts
+
 # Main Playbook
 # Keep include module only
 (
@@ -51,17 +57,11 @@ mkdir playbook/roles/common
 # Sub Playbook
 (
     echo "---"
-    echo "#- hosts:"
+    echo "#- hosts: example"
     echo "#  - example:"
     echo "#  roles:"
     echo "#    - common"
 ) > playbook/example_servers.yml
-
-# inventory: ip and hostname
-(
-    echo "#[example]"
-    echo "#192.168.0.1 node_hostname=example-host"
-) > playbook/inventory/hosts
 
 # group_vars:
 # groups are separated by segments
