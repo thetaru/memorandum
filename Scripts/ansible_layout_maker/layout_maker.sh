@@ -43,11 +43,20 @@ ansible-galaxy init playbook/roles
 # Main Playbook
 (
     echo "---"
+    echo "#- include example_servers.yml"
 ) > playbook/site.yml
+
+# Sub Playbook
+(
+    echo "---"
+    echo "#- hosts:"
+    echo "#  - example:"
+    echo "#  roles:"
+    echo "#    - common"
+) > playbook/example_servers.yml
 
 # inventory: ip and hostname
 (
-    echo "---"
     echo "#[example]"
     echo "#192.168.0.1 node_hostname=example-host"
 ) > playbook/inventory/hosts
@@ -57,7 +66,7 @@ ansible-galaxy init playbook/roles
     echo "---"
     echo "#write about ..."
     echo "#ntp_server=ntp.nict.jp"
-) > playbook/group_vars/example/example.yml
+) > playbook/group_vars/example/main.yml
 
 # host_vars: example-host refer to host_vars/192.168.0.1/main.yml
 (
