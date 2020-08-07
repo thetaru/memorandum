@@ -1,5 +1,9 @@
 #!/bin/bash
 # https://thinkit.co.jp/article/9871
+# is ansible installed ?
+
+
+
 #######################################################################
 # confirm
 #######################################################################
@@ -26,7 +30,9 @@ esac
 mkdir playbook
 
 # group_vars: env
-mkdir -p playbook/group_vars/example
+# groups are separated by segments
+# directories in group_vars are named by <IP-ADDR>_<PREFIX>
+mkdir -p playbook/group_vars/192.168.0.0_24
 
 # host_vars: env
 mkdir -p playbook/host_vars/192.168.0.1
@@ -66,7 +72,6 @@ ansible-galaxy init playbook/roles/common
 ) > playbook/example_servers.yml
 
 # group_vars:
-# groups are separated by segments
 # example-host group refer to group_vars/example/main.yml
 (
     echo "---"
@@ -77,7 +82,7 @@ ansible-galaxy init playbook/roles/common
     echo "---"
     echo "#default_gateway: 192.168.0.254"
     echo "#ntp_server: ntp.nict.jp"
-) > playbook/group_vars/example/main.yml
+) > playbook/group_vars/192.168.0.0_24/main.yml
 
 # host_vars: example-host refer to host_vars/192.168.0.1/main.yml
 (
