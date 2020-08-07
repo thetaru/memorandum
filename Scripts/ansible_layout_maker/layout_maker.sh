@@ -50,7 +50,7 @@ ansible-galaxy init playbook/roles/common
 # Keep include module only
 (
     echo "---"
-    echo "#- include example_servers.yml"
+    echo "#- import-playbook: example_servers.yml"
 ) > playbook/site.yml
 
 # Sub Playbook
@@ -79,5 +79,4 @@ ansible-galaxy init playbook/roles/common
 # host_vars: example-host refer to host_vars/192.168.0.1/main.yml
 (
     echo "---"
-    echo "# write about ..."
 ) > playbook/host_vars/192.168.0.1/main.yml
