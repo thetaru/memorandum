@@ -56,7 +56,7 @@ ansible-galaxy init playbook/roles/common
 # Sub Playbook
 (
     echo "---"
-    echo "#- hosts: example"
+    echo "#- hosts:"
     echo "#  - example:"
     echo "#  roles:"
     echo "#    - common"
