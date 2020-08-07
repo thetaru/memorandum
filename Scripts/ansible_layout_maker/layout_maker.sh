@@ -61,11 +61,16 @@ ansible-galaxy init playbook/roles
     echo "#192.168.0.1 node_hostname=example-host"
 ) > playbook/inventory/hosts
 
-# group_vars: example-host refer to group_vars/example/main.yml
+# group_vars: example-host group refer to group_vars/example/main.yml
+(
+    echo "---"
+    echo "#ansible_ssh_user: root"
+) > playbook/group_vars/all.yml
+
 (
     echo "---"
     echo "#write about ..."
-    echo "#ntp_server=ntp.nict.jp"
+    echo "#ntp_server: ntp.nict.jp"
 ) > playbook/group_vars/example/main.yml
 
 # host_vars: example-host refer to host_vars/192.168.0.1/main.yml
