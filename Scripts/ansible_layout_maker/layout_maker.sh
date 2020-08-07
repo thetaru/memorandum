@@ -1,7 +1,5 @@
 #!/bin/bash
 # https://thinkit.co.jp/article/9871
-# is ansible installed ?
-
 
 #######################################################################
 # confirm
@@ -30,7 +28,7 @@ esac
 # make directories
 #######################################################################
 
-# root
+# project name
 mkdir $project
 
 # group_vars: env
