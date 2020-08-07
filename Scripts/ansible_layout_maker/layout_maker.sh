@@ -28,7 +28,7 @@ mkdir playbook
 mkdir -p playbook/group_vars/example
 
 # host_vars: env
-mkdir playbook/host_vars/192.168.0.1
+mkdir -p playbook/host_vars/192.168.0.1
 
 # inventories:
 mkdir playbook/inventory
