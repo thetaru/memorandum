@@ -56,8 +56,10 @@ ansible-galaxy init playbook/roles/common
 # Sub Playbook
 (
     echo "---"
-    echo "#- hosts:"
-    echo "#  - example:"
+    echo "#- name: deploy"
+    echo "#  hosts:"
+    echo "#    - example"
+    echo "#  become: yes"
     echo "#  roles:"
     echo "#    - common"
 ) > playbook/example_servers.yml
