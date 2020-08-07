@@ -41,6 +41,7 @@ ansible-galaxy init playbook/roles
 #######################################################################
 
 # Main Playbook
+# Keep include module only
 (
     echo "---"
     echo "#- include example_servers.yml"
