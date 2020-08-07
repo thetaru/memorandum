@@ -1,5 +1,7 @@
 #!/bin/bash
 # https://thinkit.co.jp/article/9871
+# is ansible installed ?
+
 
 #######################################################################
 # confirm
@@ -10,6 +12,10 @@ read -p "Are you sure to make directories? (y/N): " confirm
 case "$confirm" in
     [Yy]|[Yy][Ee][Ss])
         read -p "Input Project Name: " project
+        if [[ -e ./$project ]]; then
+            echo "${project} is already exists."
+            exit
+        fi
         echo "make directories..."
         ;;
     [Nn]|[Nn][Oo])
@@ -39,7 +45,7 @@ mkdir -p $project/host_vars/192.168.0.1
 mkdir $project/inventory
 
 # roles:
-ansible-galaxy init $project/roles/common
+ansible-galaxy init $project/roles/common > /dev/null 2>&1
 
 #######################################################################
 # make yml files
