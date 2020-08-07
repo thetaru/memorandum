@@ -25,10 +25,10 @@ esac
 mkdir playbook
 
 # group_vars: env
-mkdir playbook/group_vars
+mkdir -p playbook/group_vars/example
 
 # host_vars: env
-mkdir playbook/host_vars
+mkdir playbook/host_vars/192.168.0.1
 
 # inventories:
 mkdir playbook/inventory
@@ -61,7 +61,9 @@ ansible-galaxy init playbook/roles
     echo "#192.168.0.1 node_hostname=example-host"
 ) > playbook/inventory/hosts
 
-# group_vars: example-host group refer to group_vars/example/main.yml
+# group_vars:
+# groups are separated by segments
+# example-host group refer to group_vars/example/main.yml
 (
     echo "---"
     echo "#ansible_ssh_user: root"
@@ -69,7 +71,7 @@ ansible-galaxy init playbook/roles
 
 (
     echo "---"
-    echo "#write about ..."
+    echo "#default_gateway: 192.168.0.254"
     echo "#ntp_server: ntp.nict.jp"
 ) > playbook/group_vars/example/main.yml
 
