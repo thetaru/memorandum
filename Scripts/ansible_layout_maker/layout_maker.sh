@@ -82,3 +82,11 @@ ansible-galaxy init playbook/roles/common
 (
     echo "---"
 ) > playbook/host_vars/192.168.0.1/main.yml
+
+# roles:
+(
+    echo "---"
+    echo "#- name: example task"
+    echo "#  hostname:"
+    echo "#    name: "{{ node_hostname }}"
+) > playbook/roles/common/main.yml
