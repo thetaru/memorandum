@@ -94,5 +94,5 @@ ansible-galaxy init playbook/roles/common
     echo "---"
     echo "#- name: example task"
     echo "#  hostname:"
-    echo "#    name: "{{ node_hostname }}"
+    echo '#    name: "{{ node_hostname }}"'
 ) > playbook/roles/common/main.yml
