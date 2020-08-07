@@ -1,8 +1,5 @@
 #!/bin/bash
 # https://thinkit.co.jp/article/9871
-# is ansible installed ?
-
-
 
 #######################################################################
 # confirm
@@ -12,6 +9,7 @@ echo "You are in '"`pwd`"' here."
 read -p "Are you sure to make directories? (y/N): " confirm
 case "$confirm" in
     [Yy]|[Yy][Ee][Ss])
+        read -p "Input Project Name: " project
         echo "make directories..."
         ;;
     [Nn]|[Nn][Oo])
@@ -27,21 +25,21 @@ esac
 #######################################################################
 
 # root
-mkdir playbook
+mkdir $project
 
 # group_vars: env
 # groups are separated by segments
 # directories in group_vars are named by <IP-ADDR>_<PREFIX>
-mkdir -p playbook/group_vars/192.168.0.0_24
+mkdir -p $project/group_vars/192.168.0.0_24
 
 # host_vars: env
-mkdir -p playbook/host_vars/192.168.0.1
+mkdir -p $project/host_vars/192.168.0.1
 
 # inventories:
-mkdir playbook/inventory
+mkdir $project/inventory
 
 # roles:
-ansible-galaxy init playbook/roles/common
+ansible-galaxy init $project/roles/common
 
 #######################################################################
 # make yml files
@@ -51,14 +49,14 @@ ansible-galaxy init playbook/roles/common
 (
     echo "#[example]"
     echo "#192.168.0.1 node_hostname=example-host"
-) > playbook/inventory/hosts
+) > $project/inventory/hosts
 
 # Main Playbook
 # Keep include module only
 (
     echo "---"
     echo "#- import-playbook: example_servers.yml"
-) > playbook/site.yml
+) > $project/site.yml
 
 # Sub Playbook
 (
@@ -69,25 +67,25 @@ ansible-galaxy init playbook/roles/common
     echo "#  become: yes"
     echo "#  roles:"
     echo "#    - common"
-) > playbook/example_servers.yml
+) > $project/example_servers.yml
 
 # group_vars:
 # example-host group refer to group_vars/example/main.yml
 (
     echo "---"
     echo "#ansible_ssh_user: root"
-) > playbook/group_vars/all.yml
+) > $project/group_vars/all.yml
 
 (
     echo "---"
     echo "#default_gateway: 192.168.0.254"
     echo "#ntp_server: ntp.nict.jp"
-) > playbook/group_vars/192.168.0.0_24/main.yml
+) > $project/group_vars/192.168.0.0_24/main.yml
 
 # host_vars: example-host refer to host_vars/192.168.0.1/main.yml
 (
     echo "---"
-) > playbook/host_vars/192.168.0.1/main.yml
+) > $project/host_vars/192.168.0.1/main.yml
 
 # roles:
 (
@@ -95,4 +93,4 @@ ansible-galaxy init playbook/roles/common
     echo "#- name: example task"
     echo "#  hostname:"
     echo '#    name: "{{ node_hostname }}"'
-) > playbook/roles/common/main.yml
+) > $project/roles/common/main.yml
