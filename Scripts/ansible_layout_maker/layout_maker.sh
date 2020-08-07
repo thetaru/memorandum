@@ -35,6 +35,7 @@ mkdir playbook/inventory
 
 # roles:
 ansible-galaxy init playbook/roles
+mkdir playbook/roles/common
 
 #######################################################################
 # make yml files
