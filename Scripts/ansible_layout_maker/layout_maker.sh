@@ -34,8 +34,7 @@ mkdir -p playbook/host_vars/192.168.0.1
 mkdir playbook/inventory
 
 # roles:
-ansible-galaxy init playbook/roles
-mkdir playbook/roles/common
+ansible-galaxy init playbook/roles/common
 
 #######################################################################
 # make yml files
