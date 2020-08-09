@@ -1,9 +1,9 @@
 # Cloud
 ## AWS
+### ■ BestPractice
 ### ■ Features
 - [ ] [aws-cdk]()
 - [ ] [aws-cli]()
-### ■ BestPractice
 ## GCP
-### ■ Features
 ### ■ BestPractice
+### ■ Features
