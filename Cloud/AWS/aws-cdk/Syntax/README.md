@@ -37,12 +37,12 @@ class Stack_Name(core.Stack):
 ```
         ### インスタンスの定義
         host = ec2.Instance(
-            self, "Instance_Name",                                                  # インスタンス名
-            instance_type=ec2.InstanceType("t2.micro"),                             # インスタンスタイプの選択
-            machine_image=ec2.MachineImage.latest_amazon_linux(),                   # マシンイメージの選択
-            vpc=vpc,                                                                # インスタンスが所属するVPCの選択
+            self, "Instance_Name",                                                   # インスタンス名
+            instance_type=ec2.InstanceType("t2.micro"),                              # インスタンスタイプの選択
+            machine_image=ec2.MachineImage.latest_amazon_linux(),                    # マシンイメージの選択
+            vpc=vpc,                                                                 # インスタンスが所属するVPCの選択
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC), 
-            security_group=sg,                                                      # セキュリティグループの選択
+            security_group=sg,                                                       # セキュリティグループの選択
             key_name=key_name
         )
 ```
