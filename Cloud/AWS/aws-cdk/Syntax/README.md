@@ -80,7 +80,22 @@ app.synth()
     "app": "python3 app.py"
 }
 ```
+## requirements.txt
+バージョンは指定したほうがいい
+```
+aws-cdk.aws-ec2
+```
 # 実行方法
+## 0. Python依存ライブラリのインストール
+```
+# python3 -m venv .env
+```
+```
+# source .env/bin/activate
+```
+```
+# pip install -r requirements.txt
+```
 ## 1. SSH鍵の生成
 ```
 ```
