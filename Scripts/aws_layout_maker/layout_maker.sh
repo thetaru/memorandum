@@ -323,7 +323,7 @@ class ${project}_Stack(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
         # The code that defines your stack goes here
-        vpc_id = 'MyVPC'
+        vpc_id = '${project}'
         subnet_desired_layers = 2
         subnet_desired_azs = 2
         private_subnet_enabled=True
