@@ -156,7 +156,7 @@ def create_route_table_association(scope: core.Construct, vpc: aws_ec2.CfnVPC, s
 EOS
 
 # subnet
-cat << 'EOS' > $Target/subnet.py
+cat << EOS > $Target/subnet.py
 import hashlib
 import ipaddress
 import uuid
@@ -164,7 +164,7 @@ from aws_cdk import (
     core,
     aws_ec2,
 )
-from my_resources import (
+from ${project}_resources import (
     availability_zone,
     vpc,
 )
