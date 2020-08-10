@@ -348,3 +348,8 @@ class ${project}_Stack(core.Stack):
                 az_number = [tag['value'] for tag in private_subnet.tags.render_tags() if tag['key'] == 'AZNumber'].pop()
                 route.create_route_table_association(self, v, private_subnet, private_route_tables[int(az_number)])
 EOS
+
+# TO DO LIST
+echo "# cd ${project}"
+echo "# source .env/bin/activate"
+echo "# cdk diff"
