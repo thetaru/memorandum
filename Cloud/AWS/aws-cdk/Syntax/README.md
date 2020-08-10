@@ -131,3 +131,7 @@ aws-cdk.aws-ec2
 |  xx.xx.xxx.xxx|  yyyyyyyyyyyyyyyyyyy |  FirstEC2/First_Instance  |  192.168.0.93 |  running  |
 +---------------+----------------------+---------------------------+---------------+-----------+
 ```
+```
+### 上で得たGlobalIPアドレスに対してSSH接続
+# ssh -i ~/.ssh/Key_Name.pem ec2-user@xx.xx.xxx.xxx
+```
