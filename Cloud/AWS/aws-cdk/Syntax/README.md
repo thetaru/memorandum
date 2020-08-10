@@ -86,6 +86,7 @@ app.synth()
 aws-cdk.aws-ec2
 ```
 # 実行方法
+閉じた環境で実行したいので仮想環境を構築する
 ## 0. Python依存ライブラリのインストール
 ```
 # python3 -m venv .env
