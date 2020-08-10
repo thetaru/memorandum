@@ -122,3 +122,12 @@ aws-cdk.aws-ec2
 ### IPアドレス確認
 #  aws ec2 describe-instances --output=table --query 'Reservations[].Instances[].{InstanceId: InstanceId, PrivateIp: join(`, `, NetworkInterfaces[].PrivateIpAddress), GlobalIP: join(`, `, NetworkInterfaces[].Association.PublicIp), State: State.Name, Name: Tags[?Key==`Name`].Value|[0]}'
 ```
+```
+------------------------------------------------------------------------------------------------
+|                                       DescribeInstances                                      |
++---------------+----------------------+---------------------------+---------------+-----------+
+|   GlobalIP    |     InstanceId       |           Name            |   PrivateIp   |   State   |
++---------------+----------------------+---------------------------+---------------+-----------+
+|  xx.xx.xxx.xxx|  yyyyyyyyyyyyyyyyyyy |  FirstEC2/First_Instance  |  192.168.0.93 |  running  |
++---------------+----------------------+---------------------------+---------------+-----------+
+```
