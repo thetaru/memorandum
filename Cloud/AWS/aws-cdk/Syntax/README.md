@@ -1,3 +1,13 @@
+# 前提条件
+```
+### aws-cliがインストール済みであること
+# aws --version
+```
+```
+
+### aws-cdkがインストール済みであること
+# cdk --version
+```
 # Sample
 ```
 ### class名がスタック名になります
@@ -46,3 +56,8 @@ class Stack_Name(core.Stack):
             key_name=key_name
         )
 ```
+# 実行方法
+## 1. SSH鍵の生成
+```
+```
+## 2. デプロイ開始
