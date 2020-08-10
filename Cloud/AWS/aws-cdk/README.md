@@ -15,5 +15,5 @@ Node.jsがインストールされていると仮定します。
 ```
 ```
 ### AWS側の初期設定
-# cdk boostrap
+# cdk bootstrap aws://<アカウントID>/<リージョン名>
 ```
