@@ -65,7 +65,7 @@ mkdir ${project}/${project}_resources
 cat << EOS > app.py
 from aws_cdk import core
 
-from aws_test_2.aws_test_2_stack import ${project}_Stack
+from ${project}.${project}_stack import ${project}_Stack
 
 
 app = core.App()
