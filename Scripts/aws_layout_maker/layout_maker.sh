@@ -299,15 +299,15 @@ def create_internet_gateway(scope: core.Construct, vpc: aws_ec2.CfnVPC) -> aws_e
 EOS
 
 #
-cat << 'EOS' > ${project}/${project}_stack.py
+cat << EOS > ${project}/${project}_stack.py
 from aws_cdk import core
-from my_resources import (
+from ${project}_resources import (
     vpc,
     subnet,
     nat_gateway,
     route,
 )
-class MyNetworkStack(core.Stack):
+class ${project}_Stack(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
         # The code that defines your stack goes here
