@@ -135,3 +135,14 @@ aws-cdk.aws-ec2
 ### 上で得たGlobalIPアドレスに対してSSH接続
 # ssh -i ~/.ssh/Key_Name.pem ec2-user@xx.xx.xxx.xxx
 ```
+```
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+5 package(s) needed for security, out of 6 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-192-168-0-93 ~]$
+```
