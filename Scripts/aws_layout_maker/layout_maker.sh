@@ -69,7 +69,7 @@ from ${project}.${project}_stack import ${project}_Stack
 
 
 app = core.App()
-${project}_Stack(app, "aws-test-2")
+${project}_Stack(app, "${project}")
 
 app.synth()
 EOS
