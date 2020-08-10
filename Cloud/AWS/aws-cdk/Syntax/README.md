@@ -9,6 +9,7 @@
 # cdk --version
 ```
 # Sample
+## sample.py
 ```
 from aws_cdk import (
     core,
@@ -72,6 +73,12 @@ Stack_Name(
         "account":os.environ["CDK_DEFAULT_ACCOUNT"],
     }
 app.synth()
+```
+## cdk.json
+```
+{
+    "app": "python3 app.py"
+}
 ```
 # 実行方法
 ## 1. SSH鍵の生成
