@@ -42,7 +42,7 @@ class Stack_Name(core.Stack):
             machine_image=ec2.MachineImage.latest_amazon_linux(),                    # マシンイメージの選択
             vpc=vpc,                                                                 # インスタンスが所属するVPCの選択
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC), 
-            security_group=sg,                                                       # セキュリティグループの選択
+            security_group=sg,                                                       # 適用するセキュリティグループの選択
             key_name=key_name
         )
 ```
