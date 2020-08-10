@@ -310,7 +310,7 @@ def create_internet_gateway(scope: core.Construct, vpc: aws_ec2.CfnVPC) -> aws_e
     return internet_gateway
 EOS
 
-#
+# app.py
 cat << EOS > ${project}/${project}_stack.py
 from aws_cdk import core
 from ${project}_resources import (
