@@ -97,7 +97,23 @@ aws-cdk.aws-ec2
 ```
 # pip install -r requirements.txt
 ```
+```
+### [option] AWSのシークレットキーをセット(既に設定済みなら飛ばしください)
+# export AWS_ACCESS_KEY_ID=XXXXXX
+# export AWS_SECRET_ACCESS_KEY=YYYYYY
+# export AWS_DEFAULT_REGION=ap-northeast-1
+```
 ## 1. SSH鍵の生成
 ```
+### 鍵の生成
+# export KEY_NAME=Key_Name
+# aws ec2 create-key-pair --key-name ${KEY_NAME} --query 'KeyMaterial' --output text > ${KEY_NAME}.pem
+```
+```
+# mv <キー名>.pem ~/.ssh/
+# chmod 400 ~/.ssh/Key_Name.pem
 ```
 ## 2. デプロイ開始
+```
+# cdk deploy -c key_name="Key_Name"
+```
