@@ -110,7 +110,7 @@ aws-cdk.aws-ec2
 # aws ec2 create-key-pair --key-name ${KEY_NAME} --query 'KeyMaterial' --output text > ${KEY_NAME}.pem
 ```
 ```
-# mv <キー名>.pem ~/.ssh/
+# mv Key_Name.pem ~/.ssh/
 # chmod 400 ~/.ssh/Key_Name.pem
 ```
 ## 2. デプロイ開始
