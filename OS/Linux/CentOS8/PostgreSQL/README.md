@@ -1,5 +1,6 @@
 # PostgreSQL
 # INSTALL
+バージョンを指定する際は注意すること。
 ```
 # yum -y install postgresql-server
 ```
