@@ -21,8 +21,19 @@ psql (PostgreSQL) 12.1
 # vi /var/lib/pgsql/data/postgresql.conf
 ```
 ```
+### デフォルトはlocalhostのみlisteするので外からもlistenするようにする
 -  #listen_addresses = 'localhost'
 +  listen_addresses = '*'
+```
+```
+### 接続ポート
+-  #port = 5432
++  port = 10864
+```
+```
+### ログの出力形式
+-  log_line_prefix = '%m [%p] '
++  log_line_prefix = '< %t %u %d >'
 ```
 ## pg_hba.confの編集
 ```
