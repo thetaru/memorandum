@@ -6,7 +6,7 @@
 # 初期設定
 ## データベース初期化
 ```
-### postgresql.confが生成される
+### 各種confファイルが生成される
 # postgresql-setup initdb
 ```
 ## postgresql.confの編集
