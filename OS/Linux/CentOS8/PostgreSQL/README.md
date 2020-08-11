@@ -4,6 +4,12 @@
 ```
 # yum -y install postgresql-server
 ```
+```
+# psql --version
+```
+```
+psql (PostgreSQL) 12.1
+```
 # 初期設定
 ## データベース初期化
 ```
