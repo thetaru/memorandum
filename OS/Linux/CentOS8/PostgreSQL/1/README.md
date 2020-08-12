@@ -111,6 +111,7 @@
 (3 行)
 ```
 ```
+### nameが'Bob'の行を削除
 => delete from testtable1
    where name = 'Bob';
 ```
@@ -124,4 +125,13 @@
  101 | Alice   |  21
  103 | Cathy   |  23
 (2 行)
+```
+```
+### すべての行を削除
+=> delete from testtable1;
+```
+```
+ id  |  name   | age
+-----+---------+-----
+(0 行)
 ```
