@@ -137,3 +137,14 @@
 -----+---------+-----
 (0 行)
 ```
+# テーブルを削除
+```
+=> drop table testtable1;
+```
+```
+=> select * from testtable1;
+```
+```
+ERROR:  リレーション"testtable1"は存在しません
+行 1: select * from testtable1
+```
