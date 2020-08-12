@@ -45,7 +45,7 @@
 ```
 # テーブルの行を更新
 ```
-### テーブルの行をすべて検索
+### テーブル更新前
 => select * from testtable1;
 ```
 ```
@@ -61,7 +61,7 @@
    set age = age + 1;
 ```
 ```
-### テーブルの行をすべて検索
+### テーブル更新後
 => select * from testtable1;
 ```
 ```
@@ -69,6 +69,23 @@
 -----+---------+-----
  101 | Alice   |  21
  102 | Bob     |  26
+ 103 | Cathy   |  23
+(3 行)
+```
+```
+### 特定の行のみの更新
+=> update testtable1
+   set age = 27
+   where name = 'Bob';
+```
+```
+=> select * from testtable1;
+```
+```
+ id  |  name   | age
+-----+---------+-----
+ 101 | Alice   |  21
+ 102 | Bob     |  27
  103 | Cathy   |  23
 (3 行)
 ```
