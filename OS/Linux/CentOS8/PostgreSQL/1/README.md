@@ -44,6 +44,7 @@
    where name = 'Bob';
 ```
 # テーブルの行を更新
+すべての行に対して更新
 ```
 ### テーブル更新前
 => select * from testtable1;
@@ -72,6 +73,7 @@
  103 | Cathy   |  23
 (3 行)
 ```
+特定の行のみ更新
 ```
 ### 特定の行のみの更新
 => update testtable1
