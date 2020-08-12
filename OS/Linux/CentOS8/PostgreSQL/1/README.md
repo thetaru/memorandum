@@ -27,6 +27,7 @@
 ```
 # テーブルの行を検索
 ```
+### テーブルの行をすべて検索
 => select * from testtable1;
 ```
 ```
@@ -35,5 +36,39 @@
  101 | Alice   |  20
  102 | Bob     |  25
  103 | Cathy   |  22
+(3 行)
+```
+```
+### 行を指定した検索
+=> select name, age from testtable1
+   where name = 'Bob';
+```
+# テーブルの行を更新
+```
+### テーブルの行をすべて検索
+=> select * from testtable1;
+```
+```
+ id  |  name   | age
+-----+---------+-----
+ 101 | Alice   |  20
+ 102 | Bob     |  25
+ 103 | Cathy   |  22
+(3 行)
+```
+```
+=> update testtable1
+   set age = age + 1;
+```
+```
+### テーブルの行をすべて検索
+=> select * from testtable1;
+```
+```
+ id  |  name   | age
+-----+---------+-----
+ 101 | Alice   |  21
+ 102 | Bob     |  26
+ 103 | Cathy   |  23
 (3 行)
 ```
