@@ -20,6 +20,12 @@
 ```
 # テーブルに新しい行を挿入
 ```
+### 1行を挿入
+=> insert into testtable1(id, name, age)
+   values (101, 'Alice', 20)
+```
+```
+### 複数行を挿入
 => insert into testtable1(id, name, age)
    values (101, 'Alice', 20)
         , (102, 'Bob'  , 25)
