@@ -97,3 +97,31 @@
  103 | Cathy   |  23
 (3 行)
 ```
+# テーブルから行を削除
+```
+# 削除前
+=> select * from testtable1;
+```
+```
+ id  |  name   | age
+-----+---------+-----
+ 101 | Alice   |  21
+ 102 | Bob     |  27
+ 103 | Cathy   |  23
+(3 行)
+```
+```
+=> delete from testtable1
+   where name = 'Bob';
+```
+```
+### 削除後
+=> select * from testtable1;
+```
+```
+ id  |  name   | age
+-----+---------+-----
+ 101 | Alice   |  21
+ 103 | Cathy   |  23
+(2 行)
+```
