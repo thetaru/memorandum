@@ -49,6 +49,11 @@
 => select name, age from testtable1
    where name = 'Bob';
 ```
+```
+ id  |  name   | age
+-----+---------+-----
+ 102 | Bob     |  25
+```
 # テーブルの行を更新
 ## すべての行に対して更新
 ```
