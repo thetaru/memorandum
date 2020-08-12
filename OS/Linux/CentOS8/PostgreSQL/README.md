@@ -36,6 +36,7 @@ psql (PostgreSQL) 12.1
 +  log_line_prefix = '< %t %u %d >'
 ```
 ## pg_hba.confの編集
+※ もう少し細かい設定ができるので追記する予定
 ```
 # vi /var/lib/pgsql/data/pg_hba.conf
 ```
