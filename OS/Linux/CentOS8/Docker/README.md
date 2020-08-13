@@ -5,6 +5,11 @@
 ```
 # yum -y install https://download.docker.com/linux/<path_to_rpm>
 ```
+```
+### サービスの起動と自動起動を有効にする
+# systemctl start dockerd
+# systemctl enable dockerd
+```
 # § COMMANDS
 ## container
 - [x] [docker container attach](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20attach)
