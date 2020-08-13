@@ -13,7 +13,7 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    eth0:
+    <NIC_Name>:
       dhcp4: false
       dhcp6: false
       addresses:
