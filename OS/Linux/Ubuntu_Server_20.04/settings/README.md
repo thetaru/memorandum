@@ -4,7 +4,8 @@
 $ sudo hostnamectl set-hostname <hostname>
 ```
 ## ■ [Static]IPアドレス設定
-`/etc/netplan/99_config.yaml`を作成し、下記のように記述します。
+`/etc/netplan/99_config.yaml`を作成し、下記のように記述します。  
+その他の設定方法に関しては[ここ](https://www.komee.org/entry/2018/06/12/181400)が参考になります。
 ```
 $ sudo vi /etc/netplan/99_config.yaml
 ```
