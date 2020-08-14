@@ -68,6 +68,7 @@ $ sudo vi /etc/hosts
 ## ■ パッケージアップデート
 ```
 $ sudo apt-get update
+$ sudo apt-get upgrade
 ```
 ## ■ カーネルアップデート抑止
 ```
