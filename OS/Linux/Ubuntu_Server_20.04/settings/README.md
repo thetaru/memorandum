@@ -74,7 +74,7 @@ $ sudo apt-get upgrade
 ```
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
-:warning:手動でカーネルアップデートをするとバージョンが上がることに注意します。
+:warning:`sudo apt full-upgrade`でアップデートをするとカーネルアップデートが実行してしまうことに注意します。
 ## ■ sshdの設定
 ```
 $ sudo vi /etc/ssh/sshd_config
