@@ -25,4 +25,14 @@ Docker version 19.03.12, build 48a66213fe
 # kubectl version --client
 ```
 # minikube Install
-
+```
+# curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+```
+```
+### バイナリを実行可能にする
+# chmod +x minikube
+```
+```
+### バイナリをPATHの中に追加
+# sudo install minikube /usr/local/bin/
+```
