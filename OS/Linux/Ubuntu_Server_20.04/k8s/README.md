@@ -6,12 +6,12 @@
 |kube-node1|192.168.137.101|
 |kube-node2|192.168.137.102|
 # 構築ログ
-# 共通設定
+# § 共通設定
 ## swapの無効化
 ```
 $ sudo swapoff -a
 ```
-# docker Install
+# § docker Install
 https://docs.docker.com/engine/install/ubuntu/
 ```
 $ sudo apt-get update
@@ -32,7 +32,7 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 $ docker --version
 ```
-# k8s Install
+# § k8s Install
 ## kubelet kubeadm kubectl Install
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 ```
