@@ -91,6 +91,7 @@ TOKEN                     TTL         EXPIRES                USAGES             
 ```
 5229ea2d50bf5b4131c9bd841eec89041e5f1edbf1f15da480b021a1eacdd45f
 ```
+### Nodeの追加
 ```
 ### 上で得たtokenとhashを入れてrootで実行
 [kube-node]# kubeadm join 192.168.137.100:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
