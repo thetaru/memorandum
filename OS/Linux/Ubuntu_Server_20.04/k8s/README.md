@@ -70,10 +70,9 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompl
 [kube-master]$ echo "source <(kubectl completion bash)" >> ~/.bashrc
 [kube-master]$ source ~/.bashrc
 ```
-## Flannel Install
-https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network
+## Podネットワークアドオン Install
 ```
-### CNIプラグイン
+### Flannel Install
 [kube-master]$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 ## Nodeの設定
