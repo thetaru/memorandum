@@ -76,8 +76,8 @@ https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network
 ### CNIプラグイン
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
-## Nodeの追加
-Master側の操作
+## Nodeの設定
+`Master`側の操作
 ### トークン確認
 ```
 ### トークン一覧表示
@@ -96,7 +96,7 @@ $ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outf
 ```
 5229ea2d50bf5b4131c9bd841eec89041e5f1edbf1f15da480b021a1eacdd45f
 ```
-Node側の操作
+`Node`側の操作
 ```
 ### 上で得たtokenとhashを入れて実行
 $ kubeadm join 192.168.137.100:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
@@ -119,7 +119,7 @@ This node has joined the cluster:
 
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
-Master側の操作
+## クラスター確認
 ```
 $ kubectl get nodes
 ```
