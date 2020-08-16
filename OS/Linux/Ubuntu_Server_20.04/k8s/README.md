@@ -48,18 +48,18 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 ## Masterの設定
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
 ```
-$ kubeadm init --pod-network-cidr=10.244.0.0/16
+[kube-master]$ kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
 ```
 kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 ```
 ```
-$ mkdir -p $HOME/.kube
-$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+[kube-master]$ mkdir -p $HOME/.kube
+[kube-master]$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+[kube-master]$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 ```
-$ kubectl get node
+[kube-master]$ kubectl get node
 ```
 ```
 NAME          STATUS     ROLES    AGE     VERSION
@@ -67,21 +67,20 @@ kube-master   NotReady   master   4m31s   v1.18.8
 ```
 https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
 ```
-$ echo "source <(kubectl completion bash)" >> ~/.bashrc
-$ source ~/.bashrc
+[kube-master]$ echo "source <(kubectl completion bash)" >> ~/.bashrc
+[kube-master]$ source ~/.bashrc
 ```
 ## Flannel Install
 https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network
 ```
 ### CNIプラグイン
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+[kube-master]$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 ## Nodeの設定
-`Master`側の操作
 ### トークン確認
 ```
 ### トークン一覧表示
-$ kubeadm token list
+[kube-master]$ kubeadm token list
 ```
 ```
 TOKEN                     TTL         EXPIRES                USAGES                   DESCRIPTION                                                EXTRA GROUPS
@@ -91,15 +90,14 @@ TOKEN                     TTL         EXPIRES                USAGES             
 ### ハッシュの算出
 トークンから算出する
 ```
-$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+[kube-master]$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
 ```
 5229ea2d50bf5b4131c9bd841eec89041e5f1edbf1f15da480b021a1eacdd45f
 ```
-`Node`側の操作
 ```
 ### 上で得たtokenとhashを入れて実行
-$ kubeadm join 192.168.137.100:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+[kube-node]$ kubeadm join 192.168.137.100:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 ```
 ```
 W0816 15:02:09.519458   19179 join.go:346] [preflight] WARNING: JoinControlPane.controlPlane settings will be ignored when control-plane flag is not set.
@@ -121,7 +119,7 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
 ## クラスター確認
 ```
-$ kubectl get nodes
+[kube-master]$ kubectl get nodes
 ```
 ```
 NAME          STATUS   ROLES    AGE    VERSION
