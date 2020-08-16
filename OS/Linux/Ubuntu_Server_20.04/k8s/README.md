@@ -119,3 +119,7 @@ This node has joined the cluster:
 
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
+Master側の操作
+```
+$ kubectl get nodes
+```
