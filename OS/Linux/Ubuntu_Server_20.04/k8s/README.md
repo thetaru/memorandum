@@ -82,7 +82,6 @@ TOKEN                     TTL         EXPIRES                USAGES             
 ```
 ※ TTLが有効期限で時間を過ぎると失効し一覧に表示されなくなる。
 ### ハッシュの算出
-トークンから算出する
 ```
 [kube-master]$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
