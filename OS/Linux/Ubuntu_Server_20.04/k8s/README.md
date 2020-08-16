@@ -51,8 +51,30 @@ https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-clu
 $ kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
 ```
+kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
+```
 $ mkdir -p $HOME/.kube
 $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
-## Nodeの設定
+```
+$ kubectl get node
+```
+```
+NAME          STATUS     ROLES    AGE     VERSION
+kube-master   NotReady   master   4m31s   v1.18.8
+```
+https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
+```
+$ echo "source <(kubectl completion bash)" >> ~/.bashrc
+$ source ~/.bashrc
+```
+## Flannel Install
+https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network
+```
+### CNIプラグイン
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
+## Nodeの追加
+
