@@ -77,6 +77,7 @@ https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 ## Nodeの追加
+Master側の操作
 ### トークン確認
 ```
 ### トークン一覧表示
@@ -91,4 +92,30 @@ TOKEN                     TTL         EXPIRES                USAGES             
 トークンから算出できる
 ```
 $ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+```
+```
+5229ea2d50bf5b4131c9bd841eec89041e5f1edbf1f15da480b021a1eacdd45f
+```
+Node側の操作
+```
+### 上で得たtokenとhashを入れて実行
+$ kubeadm join 192.168.137.100:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
+```
+W0816 15:02:09.519458   19179 join.go:346] [preflight] WARNING: JoinControlPane.controlPlane settings will be ignored when control-plane flag is not set.
+[preflight] Running pre-flight checks
+[WARNING IsDockerSystemdCheck]: detected "cgroupfs" as the Docker cgroup driver. The recommended driver is "systemd". Please follow the guide at https://kubernetes.io/docs/setup/cri/
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm                                                                                                -config -oyaml'
+[kubelet-start] Downloading configuration for the kubelet from the "kubelet-config-1.18" Conf                                                                                                igMap in the kube-system namespace
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
