@@ -34,7 +34,6 @@ $ docker --version
 ```
 # § k8s Install
 ## kubelet kubeadm kubectl Install
-https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 ```
 $ sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -46,7 +45,6 @@ $ sudo apt-get install -y kubelet kubeadm kubectl
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 ## Masterの設定
-https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
 ```
 [kube-master]$ kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
@@ -65,7 +63,6 @@ kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-ha
 NAME          STATUS     ROLES    AGE     VERSION
 kube-master   NotReady   master   4m31s   v1.18.8
 ```
-https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
 ```
 [kube-master]$ echo "source <(kubectl completion bash)" >> ~/.bashrc
 [kube-master]$ source ~/.bashrc
