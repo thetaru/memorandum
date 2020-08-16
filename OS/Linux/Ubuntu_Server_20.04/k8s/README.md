@@ -6,8 +6,7 @@
 |kube-node1|192.168.137.101|$, [kube-node]$|
 |kube-node2|192.168.137.102|$, [kube-node]$|
 # 構築ログ
-# § 共通設定
-## swapの無効化
+# § swapの無効化
 ```
 $ sudo swapoff -a
 ```
