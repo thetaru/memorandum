@@ -67,7 +67,7 @@ kube-master   NotReady   master   4m31s   v1.18.8
 [kube-master]$ echo "source <(kubectl completion bash)" >> ~/.bashrc
 [kube-master]$ source ~/.bashrc
 ```
-## Podネットワークアドオン Install
+## Addon Install
 ```
 ### Flannel Install
 [kube-master]$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
