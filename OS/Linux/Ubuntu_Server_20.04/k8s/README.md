@@ -30,7 +30,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 $ docker --version
 ```
 # § k8s Install
-## kubelet kubeadm kubectl Install
+## ■ kubelet kubeadm kubectl Install
 ```
 $ sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -41,7 +41,7 @@ $ sudo apt-get update
 $ sudo apt-get install -y kubelet kubeadm kubectl
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
-## Masterの設定
+## ■ Masterの設定
 ```
 [kube-master]$ kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
@@ -64,12 +64,12 @@ kube-master   NotReady   master   4m31s   v1.18.8
 [kube-master]$ echo "source <(kubectl completion bash)" >> ~/.bashrc
 [kube-master]$ source ~/.bashrc
 ```
-## Addon Install
+## ■ Addon Install
 ```
 ### Flannel Install
 [kube-master]$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
-## Nodeの設定
+## ■ Nodeの設定
 ### トークン確認
 ```
 ### トークン一覧表示
@@ -110,7 +110,7 @@ This node has joined the cluster:
 
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
-## クラスター確認
+## ■ クラスター確認
 ```
 [kube-master]$ kubectl get nodes
 ```
