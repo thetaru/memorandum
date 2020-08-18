@@ -11,7 +11,6 @@
 $ sudo swapoff -a
 ```
 # § docker Install
-https://docs.docker.com/engine/install/ubuntu/
 ```
 $ sudo apt-get update
 $ sudo apt-get install \
