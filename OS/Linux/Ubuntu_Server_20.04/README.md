@@ -3,4 +3,4 @@
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/settings)
 ## ■ Software Settings
-- [ ] [k8s]()
+- [ ] [k8s](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/k8s)
