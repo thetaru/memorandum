@@ -22,7 +22,7 @@
 - [x] [**docker container rm**](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20rm)
 - [x] [**docker container run**](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20run)
 - [x] [**docker container start**](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20start)
-- [x] [docker container stats](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20stats)
+- [x] [**docker container stats**](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20stats)
 - [x] [docker container stop](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20stop)
 - [x] [docker container top](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20top)
 ## image
