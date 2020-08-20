@@ -1,10 +1,10 @@
 # k8s
 # 環境
-|ホスト名|IPアドレス|プロンプト表示|
-|:---|:---|:---|
-|kube-master|192.168.137.100|$, [kube-master]$|
-|kube-node1|192.168.137.101|$, [kube-node]$|
-|kube-node2|192.168.137.102|$, [kube-node]$|
+|ホスト名|IPアドレス|CPU|プロンプト表示|
+|:---|:---|:---|:---|
+|kube-master|192.168.137.100|2cpus|$, [kube-master]$|
+|kube-node1|192.168.137.101|2cpus|$, [kube-node]$|
+|kube-node2|192.168.137.102|2cpus|$, [kube-node]$|
 # 構築ログ
 # § swapの無効化
 一時的に無効化する。永続的な無効化は`/etc/fstab`のswapの箇所をコメントする(はず[未検証])。
