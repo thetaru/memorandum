@@ -1,10 +1,10 @@
 # Esxi 監視
 # 構成
-|ホスト名|役割|IPアドレス|Username:Password|
-|:---|:---|:---|:---|
-|esxi1|esxi|192.168.1.1|root:test1|
-|esxi2|esxi|192.168.1.2|root:test2|
-|vCenter|vCenter|192.168.1.3|administrator@do:|
+|ホスト名|役割|IPアドレス|
+|:---|:---|:---|
+|esxi1|esxi|192.168.1.1|
+|esxi2|esxi|192.168.1.2|
+|vCenter|vCenter|192.168.1.3|
 # 手順
 ## ディスカバリルール作成
 `設定`-`ディスカバリ`より以下のようなディスカバリルールを作成します。
