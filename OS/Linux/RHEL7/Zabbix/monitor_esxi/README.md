@@ -24,12 +24,12 @@ IPアドレスの範囲: <EsxiのIPアドレスまたはEsxiのIPアドレスを
 
 |テンプレート|値|
 |:---|:---|
-|テンプレートとのリンク|Template VM VMware|
+|テンプレートとのリンク　　　　　|Template VM VMware|
 
 |マクロ|値|
 |:---|:---|
 |{$USERNAME}|<vCenterにログインするユーザ名>|
 |{$PASSWORD}|<ログインするユーザのパスワード>|
-|{$URL}|<https://192.168.1.3/sdk>|
+|{$URL}　　　　　　　　　　　　　|<https://192.168.1.3/sdk>|
 
 補足) 上の例ではvCenterで管理されているEsxiの監視をしているが、マクロをEsxiのものにすればEsxi単体の監視も可能だと思う。
