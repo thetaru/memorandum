@@ -31,3 +31,4 @@ IPアドレスの範囲: <EsxiのIPアドレスまたはEsxiのIPアドレスを
 {$PASSWORD} => <ログインするユーザのパスワード>
 {$URL}      => <https://<vCenter IPアドレス>/sdk>
 ```
+補足) 上の例ではvCenterで管理されているEsxiの監視をしているが、マクロをEsxiのものにすれば単体での監視も可能だと思う。
