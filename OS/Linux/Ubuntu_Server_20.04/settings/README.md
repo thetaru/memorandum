@@ -255,7 +255,7 @@ $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 ```
-# 書きたいこと
+# 書きたいこと(ubuntuでも必要か検証すること
 ```
 ## カーネルパラメータの設定!!!!!!
 /etc/sysctl.conf
@@ -282,7 +282,7 @@ DefaultLimitCORE=infinity
 DAEMON_COREFILE_LIMIT=unlimited
 
 /etc/rsyslog.conf
-### journalログ抑止対策
+### journalログ溢れ対策
 $imjournalRatelimitInterval 0
 $SystemLogRateLimitInterval 0
 ## proxy設定
