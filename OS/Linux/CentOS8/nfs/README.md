@@ -24,17 +24,24 @@
     100003    4   tcp   2049  nfs
     100227    3   tcp   2049  nfs_acl
 ```
-## NFS共有先の作成
+## § NFS共有先の作成
 ```
-# mkdir -p /mnt/nfs_shares/docs
+# mkdir -p /var/share/nfs
 ```
 ```
 ### ファイルの権限制限回避
-# chown -R nobody: /mnt/nfs_shares/docs
-# chmod -R 777 /mnt/nfs_shares/docs
+# chown -R nobody: /var/share/nfs
+# chmod -R 777 /var/share/nfs
 ```
 ```
 ### 変更の有効化
 # systemctl restart nfs-utils.service
+```
+## § アクセス制限
+```
+# vi /etc/exports
+```
+```
++  /var/share/nfs 192.168.137.0/24(rw)
 ```
 # Client側の設定
