@@ -58,3 +58,4 @@
 exporting 192.168.137.0/24:/var/share/nfs
 ```
 # Client側の設定
+書く予定
