@@ -5,3 +5,7 @@
 |kube-node1|192.168.137.101|
 |kube-node2|192.168.137.102|
 |kube-nfs|192.168.137.200|
+```
+$ sudo apt-get install nfs-common
+?? $ sudo apt-get install rpcbind
+```
