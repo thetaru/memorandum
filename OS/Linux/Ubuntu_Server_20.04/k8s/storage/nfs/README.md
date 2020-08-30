@@ -7,5 +7,7 @@
 |kube-nfs|192.168.137.200|
 ```
 $ sudo apt-get install nfs-common
-?? $ sudo apt-get install rpcbind
+
+### いらないかも?
+$ sudo apt-get install rpcbind
 ```
