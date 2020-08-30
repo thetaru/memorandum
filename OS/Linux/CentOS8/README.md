@@ -13,6 +13,7 @@
 - [ ] [k8s](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/k8s)
 - [ ] [LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [ ] [Logrotate](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Logrotate)
+- [ ] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [ ] [Nginx](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Nginx)
 - [ ] [PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
