@@ -38,6 +38,12 @@
 # systemctl restart nfs-utils.service
 ```
 ## § アクセス制限
+|パラメータ|意味|
+|:---|:---|
+|rw||
+|sync||
+|no_all_squash||
+|root_squash||
 ```
 # vi /etc/exports
 ```
