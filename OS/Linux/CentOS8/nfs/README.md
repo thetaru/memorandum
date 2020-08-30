@@ -50,4 +50,11 @@
 ```
 +  /var/share/nfs 192.168.137.0/24(rw)
 ```
+## § Export
+```
+# exportfs -arv
+```
+```
+exporting 192.168.137.0/24:/var/share/nfs
+```
 # Client側の設定
