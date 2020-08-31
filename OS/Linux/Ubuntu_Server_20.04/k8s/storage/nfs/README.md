@@ -1,13 +1,13 @@
 # NFS
-|ホスト名|IPアドレス|
-|:---|:---|
-|kube-master|192.168.137.100|
-|kube-node1|192.168.137.101|
-|kube-node2|192.168.137.102|
-|kube-nfs|192.168.137.200|
+|ホスト名|IPアドレス|プロンプト|
+|:---|:---|:---|
+|kube-master|192.168.137.100|[$, [kube-master]$|
+|kube-node1|192.168.137.101|$, [kube-node]$|
+|kube-node2|192.168.137.102|$, [kube-node]$|
+|kube-nfs|192.168.137.200|$, [kube-nfs]$|
 ```
-$ sudo apt-get install nfs-common
+[kube-node]$ sudo apt-get install nfs-common
 
 ### いらないかも?
-$ sudo apt-get install rpcbind
+[kube-node]$ sudo apt-get install rpcbind
 ```
