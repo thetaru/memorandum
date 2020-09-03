@@ -1,4 +1,10 @@
 # Router化
+# 前提条件
+```
+ここにdevとipと役割を書くよてい
+ens02s: 
+```
+
 ## IPフォワードの有効化
 ```
 $ sudo sed -i'.bak' 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
@@ -10,3 +16,4 @@ $ sudo sysctl -p
 ### 確認
 $ sudo sysctl -a | grep net.ipv4.ip_forward
 ```
+## IPマスカレード設定
