@@ -23,6 +23,7 @@ $ sudo iptables -A FORWARD -i wlp3s0 -o enp2s0 -m state --state RELATED,ESTABLIS
 $ sudo iptables -A FORWARD -i enp2s0 -o wlp3s0 -j ACCEPT
 ```
 ## iptablesの設定の永続化
+永続化する方法は色々あるが楽なので`iptables-persistent`の`netfilter-persistent`コマンドを使います。
 ```
 $ sudo apt-get install iptables-persistent
 ```
