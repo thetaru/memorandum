@@ -27,6 +27,7 @@ $ sudo iptables -A FORWARD -i enp2s0 -o wlp3s0 -j ACCEPT
 $ sudo apt-get install iptables-persistent
 ```
 ```
+### 設定の永続化
 $ sudo netfilter-persistent save
 ```
 ```
