@@ -35,8 +35,6 @@
 ```
 ### Pool IDを確認
 # subscription-manager list --available
-# subscription-manager list --available | grep -e "サブスクリプション名" -e "プール ID"
-# subscription-manager list --available | grep -e "Subscription Name" -e "Pool ID"
 ```
 ```
 ...
