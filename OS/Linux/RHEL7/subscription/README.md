@@ -1,0 +1,63 @@
+# サブスクリプション登録
+## [任意]プロキシ設定
+`/etc/profile.d`下にプロキシ用スクリプトとか書いてどうぞ。
+## サブスクリプション確認
+```
+# subscription-manager list
+```
+```
++-------------------------------------------+
+    インストール済み製品のステータス
++-------------------------------------------+
+製品名:           Red Hat Enterprise Linux Server
+製品 ID:          69
+バージョン:       7.6
+アーキテクチャー: x86_64
+状態:             不明
+状態の詳細:
+開始:
+終了:
+```
+## サブスクリプション登録
+```
+# subscription-manager register
+```
+```
+ユーザー名: <RHNに登録しているユーザー名>
+パスワード: <上記ユーザーのパスワード>
+このシステムは、次の ID で登録されました: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+登録されたシステム名: <ホスト名>
+```
+## サブスクリプション確認
+```
+# subscription-manager list --available
+# subscription-manager list --available | grep -e "サブスクリプション名" -e "プール ID"
+# subscription-manager list --available | grep -e "Subscription Name" -e "Pool ID"
+```
+```
+略)
+プール ID:                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+略)
+```
+## サブスクリプション割り当て
+```
+# subscription-manager subscribe --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+```
+サブスクリプションが正しく割り当てられました: <サブスクリプション名>
+```
+## 割り当て確認
+サブスクリプションを割り当ててから反映されるまで時間がかかることがあります。
+```
+# subscription-manager list
+```
+```
+製品名:           Red Hat Enterprise Linux Server
+製品 ID:          69
+バージョン:       7.6
+アーキテクチャー: x86_64
+状態:             登録済み
+状態の詳細:
+開始:             aa/bb/cccc
+終了:             xx/yy/zzzz
+```
