@@ -1,1 +1,24 @@
 # virt-who
+RHELのサブスクリプションを管理します。ここではvCenter管理下での設定をします。
+## 前提条件
+## virt-whoのインストール
+vCenterに管理されているEsxi上に存在するRHEL仮想マシン1台に対してのみインストールします。設定に関しても同様です。
+```
+### ローカルリポジトリなどを使ってインストールする
+# yum -y install virt-who
+```
+## virt-whoの設定
+```
+### 設定ファイルの新規作成(.confで終われば何でもいいようです)
+# vi /etc/virt-who.d/vcetner.conf
+```
+```
+[vcenter]                                 # 任意
+type=esx                                  
+server=<vCenterのIPアドレス>
+username=<vCetnerのユーザー>
+password=<ユーザーのパスワード>
+owner=xxxxxxxx                            # subscription-manager identity より 組織 ID を記載
+env=Library
+hypervisor_id=hostname
+```
