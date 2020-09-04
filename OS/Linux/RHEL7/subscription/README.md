@@ -51,6 +51,7 @@
 ## § 割り当て確認
 サブスクリプションを割り当ててから反映されるまで時間がかかることがあります。
 ```
+# subscription-manager list –consumed
 # subscription-manager list
 ```
 ```
