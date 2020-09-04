@@ -18,7 +18,7 @@
 開始:
 終了:
 ```
-## サブスクリプション登録
+## アクティベート
 ```
 # subscription-manager register
 ```
@@ -28,7 +28,7 @@
 このシステムは、次の ID で登録されました: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 登録されたシステム名: <ホスト名>
 ```
-## サブスクリプション確認
+## Pool IDの確認
 ```
 ### Pool IDを確認
 # subscription-manager list --available
@@ -42,7 +42,7 @@
 ```
 ## サブスクリプション割り当て
 ```
-### サブスクリプション名のPool IDを入れて実行
+### 割り当て対象のサブスクリプションのPool IDを入れて実行
 # subscription-manager subscribe --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 ```
