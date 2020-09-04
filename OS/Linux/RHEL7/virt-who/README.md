@@ -10,11 +10,11 @@ vCenterに管理されているEsxi上に存在するRHEL仮想マシン1台に�
 ```
 ## virt-whoの設定
 ```
-### 設定ファイルの新規作成(.confで終われば何でもいいようです)
+### 設定ファイルの新規作成(ホスト名.confでいいと思います)
 # vi /etc/virt-who.d/vcetner.conf
 ```
 ```
-[vcenter]                                 # 任意
+[vcenter]                                 # 任意ですが、[ホスト名] でいいと思います
 type=esx                                  
 server=<vCenterのIPアドレス>
 username=<vCetnerのユーザー>
