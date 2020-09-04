@@ -53,14 +53,13 @@
 サブスクリプションを割り当ててから反映されるまで時間がかかることがあります。
 ```
 # subscription-manager list --consumed
-# subscription-manager list
 ```
 ```
 製品名:           Red Hat Enterprise Linux Server
 製品 ID:          69
 バージョン:       7.x
 アーキテクチャー: x86_64
-状態:             登録済み
+状態:             サブスクライブ済み
 状態の詳細:
 開始:             aa/bb/cccc
 終了:             xx/yy/zzzz
