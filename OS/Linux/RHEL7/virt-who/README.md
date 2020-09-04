@@ -31,5 +31,3 @@ virt-whoが起動するとRed Hat Customer Portal上でEsxiが認識されるよ
 ```
 ## RHNからEsxiのサブスクリプション登録
 Red Hat Customer Portalから「サブスクリプション」-「システム」より認識されたEsxiに対して「サブスクリプションのアタッチ」でサブスクリプション登録します。
-```
-```
