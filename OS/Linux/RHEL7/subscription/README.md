@@ -18,11 +18,10 @@
 ```
 ## § システム登録
 ```
-### プロキシなしの場合
-# subscription-manager register
-
 ### プロキシありの場合
 # subscription-manager config --server.proxy_hostname=proxy.example.com --server.proxy_port=8080
+
+# subscription-manager register
 ```
 ```
 ユーザー名: <RHNに登録しているユーザー名>
