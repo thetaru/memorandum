@@ -30,17 +30,19 @@
 ```
 ## サブスクリプション確認
 ```
+### Pool IDを確認
 # subscription-manager list --available
 # subscription-manager list --available | grep -e "サブスクリプション名" -e "プール ID"
 # subscription-manager list --available | grep -e "Subscription Name" -e "Pool ID"
 ```
 ```
-略)
+...
 プール ID:                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-略)
+...
 ```
 ## サブスクリプション割り当て
 ```
+### サブスクリプション名のPool IDを入れて実行
 # subscription-manager subscribe --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 ```
