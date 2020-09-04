@@ -1,7 +1,7 @@
 # サブスクリプション登録
-## [任意]プロキシ設定
+## § [任意]プロキシ設定
 `/etc/profile.d`下にプロキシ用スクリプトとか書いてどうぞ。
-## サブスクリプション確認
+## § サブスクリプション確認
 ```
 # subscription-manager list
 ```
@@ -18,7 +18,7 @@
 開始:
 終了:
 ```
-## システム登録
+## § システム登録
 ```
 # subscription-manager register
 ```
@@ -28,7 +28,7 @@
 このシステムは、次の ID で登録されました: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 登録されたシステム名: <ホスト名>
 ```
-## Pool IDの確認
+## § Pool IDの確認
 ```
 ### Pool IDを確認
 # subscription-manager list --available
@@ -40,7 +40,7 @@
 プール ID:                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ...
 ```
-## サブスクリプション割り当て
+## § サブスクリプション割り当て
 ```
 ### 割り当て対象のサブスクリプションのPool IDを入れて実行
 # subscription-manager subscribe --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -48,7 +48,7 @@
 ```
 サブスクリプションが正しく割り当てられました: <サブスクリプション名>
 ```
-## 割り当て確認
+## § 割り当て確認
 サブスクリプションを割り当ててから反映されるまで時間がかかることがあります。
 ```
 # subscription-manager list
