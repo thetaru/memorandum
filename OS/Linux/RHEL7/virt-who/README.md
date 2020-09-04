@@ -28,7 +28,7 @@ virt-whoが起動するとRed Hat Customer Portal上でEsxiが認識されるよ
 # systemctl start virt-who.service
 # systemctl enable virt-who.service
 ```
-## RHNからEsxiのサブスクリプション登録
+## Esxiのサブスクリプション登録
 Red Hat Customer Portalから「サブスクリプション」-「システム」より認識されたEsxiに対して「サブスクリプションのアタッチ」でサブスクリプション登録します。
 ## 仮想マシンのサブスクリプション登録
 仮想マシンのサブスクリプション登録に関しては[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/subscription)を参考にしてください。
