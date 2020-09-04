@@ -1,6 +1,4 @@
 # サブスクリプション登録
-## § [任意]プロキシ設定
-`/etc/profile.d`下にプロキシ用スクリプトとか書いてどうぞ。
 ## § サブスクリプション確認
 ```
 # subscription-manager list
@@ -20,7 +18,11 @@
 ```
 ## § システム登録
 ```
+### プロキシなしの場合
 # subscription-manager register
+
+### プロキシありの場合
+# subscription-manager config --server.proxy_hostname=proxy.example.com --server.proxy_port=8080
 ```
 ```
 ユーザー名: <RHNに登録しているユーザー名>
