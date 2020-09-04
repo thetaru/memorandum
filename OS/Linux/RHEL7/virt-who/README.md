@@ -23,3 +23,13 @@ owner=xxxxxxxx                            # subscription-manager identity より
 env=Library
 hypervisor_id=hostname
 ```
+## virt-whoの起動
+virt-whoが起動するとRed Hat Customer Portal上でEsxiが認識されるようになります。
+```
+# systemctl start virt-who.service
+# systemctl enable virt-who.service
+```
+## RHNからEsxiのサブスクリプション登録
+Red Hat Customer Portalから「サブスクリプション」-「システム」より認識されたEsxiに対して「サブスクリプションのアタッチ」でサブスクリプション登録します。
+```
+```
