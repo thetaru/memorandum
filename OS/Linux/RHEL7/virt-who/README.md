@@ -15,14 +15,14 @@ vCenterに管理されているEsxi上に存在するRHEL仮想マシン1台に�
 # vi /etc/virt-who.d/vcetner.conf
 ```
 ```
-[vcenter]                                 # 任意ですが、[ホスト名] でいいと思います
-type=esx                                  
-server=<vCenterのIPアドレス>
-username=<vCetnerのユーザー>
-password=<ユーザーのパスワード>
-owner=xxxxxxxx                            # subscription-manager identity より 組織 ID を記載
-env=Library
-hypervisor_id=hostname
++  [vcenter]                                 # 任意ですが、[ホスト名] でいいと思います
++  type=esx                                  
++  server=<vCenterのIPアドレス>
++  username=<vCetnerのユーザー>
++  password=<ユーザーのパスワード>
++  owner=xxxxxxxx                            # subscription-manager identity より 組織 ID を記載
++  env=Library
++  hypervisor_id=hostname
 ```
 ## § virt-whoの起動
 virt-whoが起動するとRed Hat Customer Portal上でEsxiが認識されるようになります。
