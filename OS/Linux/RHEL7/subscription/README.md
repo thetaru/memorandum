@@ -18,7 +18,7 @@
 開始:
 終了:
 ```
-## アクティベート
+## システム登録
 ```
 # subscription-manager register
 ```
