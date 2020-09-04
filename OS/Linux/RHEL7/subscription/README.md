@@ -1,6 +1,6 @@
 # サブスクリプション登録
-:warning: vCetner管理下のEsxi上のRHELサーバに対してサブスクリプション登録をする場合は事前にvirt-whoの設定をすること。  
-また、RHNで各Esxiに対して適切なサブスクリプションを割り当てること。
+:warning: vCetner管理下のEsxi上のRHELサーバに対してサブスクリプション登録をする場合は事前にvirt-whoの設定をする必要があります。  
+:warning: virt-whoの設定後、RHNのweb画面から各Esxiに対して適切なサブスクリプションを割り当てます。
 ## § サブスクリプション確認
 ```
 # subscription-manager list
