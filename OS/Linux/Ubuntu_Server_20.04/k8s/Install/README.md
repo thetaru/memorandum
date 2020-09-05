@@ -65,6 +65,15 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 ## ■ Masterの設定
 ```
+[kube-master]$ sudo vi /var/lib/kubelet/config.yaml
+```
+```
+...
++  cgroupDriver: systemd
+...
+
+```
+```
 [kube-master]$ sudo vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
 ```
