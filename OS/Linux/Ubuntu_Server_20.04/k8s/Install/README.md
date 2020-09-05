@@ -71,6 +71,10 @@ kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-ha
    ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
 ```
 ```
+[kube-master]$ sudo systemctl daemon-reload
+[kube-master]$ sudo systemctl restart kubelet.service
+```
+```
 [kube-master]$ kubectl get node
 ```
 ```
