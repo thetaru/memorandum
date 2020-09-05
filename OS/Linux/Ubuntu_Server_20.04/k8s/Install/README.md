@@ -18,6 +18,7 @@ $ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg-agent \
+    gnupg2 \
     software-properties-common
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 $ sudo apt-key fingerprint 0EBFCD88
@@ -28,6 +29,27 @@ $ sudo add-apt-repository \
 $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 $ docker --version
+```
+```
+$ cat > /etc/docker/daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+```
+```
+$ mkdir -p /etc/systemd/system/docker.service.d
+```
+```
+# Restart Docker
+$ systemctl daemon-reload
+$ systemctl restart docker
+$ systemctl enable docker
 ```
 # § k8s Install
 ## ■ kubelet kubeadm kubectl Install
