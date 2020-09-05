@@ -65,17 +65,6 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 ## ■ Masterの設定
 ```
-[kube-master]$ kubeadm init --pod-network-cidr=10.244.0.0/16
-```
-```
-kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
-```
-```
-[kube-master]$ mkdir -p $HOME/.kube
-[kube-master]$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-[kube-master]$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
-```
-```
 [kube-master]$ sudo vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
 ```
@@ -95,6 +84,17 @@ kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-ha
 ```
 [kube-master]$ sudo systemctl daemon-reload
 [kube-master]$ sudo systemctl restart kubelet.service
+```
+```
+[kube-master]$ kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+```
+kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
+```
+[kube-master]$ mkdir -p $HOME/.kube
+[kube-master]$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+[kube-master]$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 ```
 [kube-master]$ kubectl get node
