@@ -69,6 +69,7 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 ```
 ...
+-  cgroupDriver: cgroupfs
 +  cgroupDriver: systemd
 ...
 
