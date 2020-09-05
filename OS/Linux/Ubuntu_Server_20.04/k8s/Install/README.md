@@ -31,6 +31,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 $ docker --version
 ```
 ```
+### cgroupdriverの変更
 $ cat > /etc/docker/daemon.json <<EOF
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
