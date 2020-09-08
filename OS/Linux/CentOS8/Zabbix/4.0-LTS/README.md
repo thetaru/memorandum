@@ -6,3 +6,4 @@ https://oshiire.to/archives/1684
 https://www.percona.com/blog/2014/11/14/optimizing-mysql-zabbix/  
 https://corporate.inter-edu.com/developper/1373  
 https://knowledge.sakura.ad.jp/11981/  
+https://sys-guard.com/post-5216/  
