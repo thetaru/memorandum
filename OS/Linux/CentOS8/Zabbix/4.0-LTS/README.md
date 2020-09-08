@@ -5,3 +5,4 @@ https://blog.infra-se.net/?p=52
 https://oshiire.to/archives/1684  
 https://www.percona.com/blog/2014/11/14/optimizing-mysql-zabbix/  
 https://corporate.inter-edu.com/developper/1373  
+https://knowledge.sakura.ad.jp/11981/  
