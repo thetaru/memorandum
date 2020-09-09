@@ -42,6 +42,7 @@
 ...
 ```
 ## § サブスクリプション割り当て
+`virt-who.service`を一度再起動するといいかも?
 ```
 ### 割り当て対象のサブスクリプションのPool IDを入れて実行
 # subscription-manager subscribe --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
