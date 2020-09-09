@@ -32,6 +32,7 @@
 登録されたシステム名: <ホスト名>
 ```
 ## § Pool IDの確認
+`virt-who.service`を一度再起動するといいかも?
 ```
 ### Pool IDを確認
 # subscription-manager list --available
@@ -42,7 +43,6 @@
 ...
 ```
 ## § サブスクリプション割り当て
-`virt-who.service`を一度再起動するといいかも?
 ```
 ### 割り当て対象のサブスクリプションのPool IDを入れて実行
 # subscription-manager subscribe --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
