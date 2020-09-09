@@ -11,6 +11,15 @@ vCenterに管理されているEsxi上に存在するRHEL仮想マシン1台に�
 ```
 ## § virt-whoの設定
 ```
+# vi /etc/sysconfig/virt-who
+```
+```
+...
+-  # VIRTWHO_SAM=1
++  VIRTWHO_SAM=1
+...
+```
+```
 ### 設定ファイルの新規作成(ホスト名.confでいいと思います)
 # vi /etc/virt-who.d/vcetner.conf
 ```
