@@ -157,6 +157,7 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 ### ntpのインストール
 $ sudo apt-get install ntp
 ```
+### ntpdの設定
 ```
 $ sudo vi /etc/ntp.conf
 ```
@@ -193,9 +194,22 @@ $ sudo vi /etc/ntp.conf
 -  restrict ::1
 +  #restrict ::1
 ```
+### ntpdateの設定
 ```
+### ntpdが起動する前に時刻同期をするため
+$ sudo vi /etc/ntp/step-tickers
+```
+```
++  <NTPサーバ>
+```
+### ntpdate, ntpdの起動
+順番が大切です。ntpdateを起動してからntpdを起動しましょう。
+```
+### ntpdateの起動
+$ sudo systemctl start ntpdate
 ### ntpサービスの起動
-$ sudo systemctl start ntp.service
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
 ```
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
