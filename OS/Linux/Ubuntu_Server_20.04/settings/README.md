@@ -279,6 +279,8 @@ $ sudo vi /etc/logrotate.conf
 $ sudo vi /etc/default/grub
 ```
 ```
+-  GRUB_CMDLINE_LINUX=""
++  GRUB_CMDLINE_LINUX=""
 ```
 ## ■ カーネルパラメータの設定
 ```
