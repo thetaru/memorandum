@@ -274,6 +274,12 @@ $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 ```
+## ■ ブートローダーの設定(GRUB2)
+```
+$ sudo vi /etc/default/grub
+```
+```
+```
 ## ■ カーネルパラメータの設定
 ```
 $ sudo vi /etc/sysctl.conf
