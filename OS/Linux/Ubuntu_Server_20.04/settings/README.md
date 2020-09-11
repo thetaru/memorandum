@@ -255,6 +255,14 @@ $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 ```
+## ■ コアダンプ出力設定
+```
+# vi /etc/systemd/system.conf
+```
+```
+#DefaultLimitCORE=
+DefaultLimitCORE=infinity
+```
 # 書きたいこと(ubuntuでも必要か検証すること
 ```
 ## カーネルパラメータの設定!!!!!!
@@ -269,12 +277,6 @@ fs.suid_dumpable=2
 
 ### OOM Killer設定(OOM発生時の挙動設定)
 vm.panic_on_oom=2
-```
-```
-/etc/systemd/system.conf
-### コアダンプ設定(コアファイルの最大値)
-[Manager]
-DefaultLimitCORE=infinity
 ```
 ```
 /etc/sysconfig/init]
