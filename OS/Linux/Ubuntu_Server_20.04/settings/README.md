@@ -285,6 +285,10 @@ $ sudo vi /etc/sysctl.conf
 
 +  vm.panic_on_oom=2
 ```
+```
+### 設定の反映
+$ sudo systemctl -p
+```
 ## ■ コアダンプ出力設定
 ```
 # vi /etc/systemd/system.conf
