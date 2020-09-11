@@ -192,7 +192,7 @@ $ sudo vi /etc/ntp.conf
 ```
 ```
 ### step動作抑止
-# vi /etc/default/ntp
+$ sudo vi /etc/default/ntp
 ```
 ```
 -  NTPD_OPTS='-g'
