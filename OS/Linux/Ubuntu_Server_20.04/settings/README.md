@@ -70,6 +70,15 @@ $ sudo vi /etc/hosts
 $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
+## ■ 不要なサービスの停止
+調査中...
+```
+### パッケージリストの自動更新の停止・自動起動の無効化
+$ sudo systemctl mask apt-daily.timer
+$ sudo systemctl mask apt-daily.service
+$ sudo systemctl mask apt-daily-upgrade.timer
+$ sudo systemctl mask apt-daily-upgrade.service
+```
 ## ■ カーネルアップデート抑止
 ```
 $ sudo apt-mark hold linux-image-generic linux-headers-generic
@@ -264,15 +273,6 @@ $ sudo vi /etc/logrotate.conf
 ### ローテーションしたログをgzipで圧縮
 -  #compress
 +  compress
-```
-## ■ 不要なサービスの停止
-調査中...
-```
-### パッケージリストの自動更新の停止・自動起動の無効化
-$ sudo systemctl mask apt-daily.timer
-$ sudo systemctl mask apt-daily.service
-$ sudo systemctl mask apt-daily-upgrade.timer
-$ sudo systemctl mask apt-daily-upgrade.service
 ```
 ## ■ ブートローダーの設定(GRUB2)
 ```
