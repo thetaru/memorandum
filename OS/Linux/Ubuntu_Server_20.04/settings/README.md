@@ -260,8 +260,8 @@ $ sudo systemctl mask apt-daily-upgrade.service
 # vi /etc/systemd/system.conf
 ```
 ```
-#DefaultLimitCORE=
-DefaultLimitCORE=infinity
+-  #DefaultLimitCORE=
++  DefaultLimitCORE=infinity
 ```
 # 書きたいこと(ubuntuでも必要か検証すること
 ```
