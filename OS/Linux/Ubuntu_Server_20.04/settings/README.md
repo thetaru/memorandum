@@ -211,6 +211,7 @@ ntpdateを起動してからntpdを起動しましょう。
 ```
 ### ntpdateの起動
 $ sudo systemctl start ntpdate
+
 ### ntpサービスの起動
 $ sudo systemctl start ntpd
 $ sudo systemctl enable ntpd
