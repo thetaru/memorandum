@@ -263,6 +263,7 @@ $ sudo systemctl mask apt-daily-upgrade.service
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
 ```
+個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
 # 書きたいこと(ubuntuでも必要か検証すること
 ```
 ## カーネルパラメータの設定!!!!!!
