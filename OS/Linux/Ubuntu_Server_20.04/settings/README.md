@@ -173,23 +173,19 @@ $ sudo vi /etc/ntp.conf
 
 -  pool 3.ubuntu.pool.ntp.org iburst
 +  #pool 3.ubuntu.pool.ntp.org iburst
-```
-```
+
 ### 参照するntpサーバを指定
 +  server <ntp-server1 ip-address or hostname>
 +  server <ntp-server2 ip-address or hostname>
 +  server <ntp-server3 ip-address or hostname>
-```
-```
+
 -  pool ntp.ubuntu.com
 +  #pool ntp.ubuntu.com
-```
-```
+
 ### IPv6は使わないので無効化
 -  restrict -6 default kod notrap nomodify nopeer noquery limited
 +  #restrict -6 default kod notrap nomodify nopeer noquery limited
-```
-```
+
 ### IPv6は使わないので無効化
 -  restrict ::1
 +  #restrict ::1
