@@ -280,7 +280,7 @@ $ sudo vi /etc/default/grub
 ```
 ```
 -  GRUB_CMDLINE_LINUX=""
-+  GRUB_CMDLINE_LINUX="crashkernel=auto rhgb quiet"
++  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet"
 ```
 ```
 $ sudo update-grub
