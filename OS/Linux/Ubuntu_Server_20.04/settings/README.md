@@ -274,7 +274,17 @@ $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 ```
-## ■ 
+## ■ カーネルパラメータの設定
+```
+$ sudo vi /etc/sysctl.conf
+```
+```
++  kernel.core_pattern=/var/tmp/core-%e.%p
+
++  fs.suid_dumpable=2
+
++  vm.panic_on_oom=2
+```
 ## ■ コアダンプ出力設定
 ```
 # vi /etc/systemd/system.conf
@@ -285,20 +295,6 @@ $ sudo systemctl mask apt-daily-upgrade.service
 ```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
 # 書きたいこと(ubuntuでも必要か検証すること
-```
-## カーネルパラメータの設定!!!!!!
-/etc/sysctl.conf
-```
-```
-### コアダンプ設定(コアファイル出力先設定)
-kernel.core_pattern=/var/tmp/core-%e.%p
-
-### コアダンプ設定(rootのみ読み取り許可)
-fs.suid_dumpable=2
-
-### OOM Killer設定(OOM発生時の挙動設定)
-vm.panic_on_oom=2
-```
 ```
 /etc/rsyslog.conf
 ### journalログ溢れ対策
