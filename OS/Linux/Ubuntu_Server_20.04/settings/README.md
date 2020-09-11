@@ -280,7 +280,10 @@ $ sudo vi /etc/default/grub
 ```
 ```
 -  GRUB_CMDLINE_LINUX=""
-+  GRUB_CMDLINE_LINUX=""
++  GRUB_CMDLINE_LINUX="crashkernel=auto rhgb quiet"
+```
+```
+$ sudo update-grub
 ```
 ## ■ カーネルパラメータの設定
 ```
