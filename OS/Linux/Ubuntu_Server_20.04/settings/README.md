@@ -274,6 +274,7 @@ $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 ```
+## ■ 
 ## ■ コアダンプ出力設定
 ```
 # vi /etc/systemd/system.conf
@@ -299,10 +300,6 @@ fs.suid_dumpable=2
 vm.panic_on_oom=2
 ```
 ```
-/etc/sysconfig/init]
-### コアダンプ設定(コアファイルの出力設定)
-DAEMON_COREFILE_LIMIT=unlimited
-
 /etc/rsyslog.conf
 ### journalログ溢れ対策
 $imjournalRatelimitInterval 0
