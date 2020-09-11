@@ -32,7 +32,6 @@
 登録されたシステム名: <ホスト名>
 ```
 ## § Pool IDの確認
-`virt-who.service`を一度再起動するといいかも?
 ```
 ### Pool IDを確認
 # subscription-manager list --available
