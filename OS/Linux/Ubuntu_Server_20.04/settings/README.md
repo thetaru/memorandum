@@ -92,18 +92,15 @@ $ sudo vi /etc/ssh/sshd_config
 ### sshで使用するポートを指定
 -  #Port 22
 +  Port 2020
-```
-```
+
 ### IPv4のみ許可
 -  #AddressFamily any
 +  AddressFamily inet
-```
-```
+
 ### rootでのログインを禁止
 -  PermitRootLogin prohibit-password
 +  PermitRootLogin no
-```
-```
+
 ### パスワード認証を禁止
 -  PasswordAuthentication yes
 +  PasswordAuthentication no
