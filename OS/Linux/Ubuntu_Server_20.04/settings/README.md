@@ -302,18 +302,27 @@ $ sudo systemctl -p
 ```
 ## ■ コアダンプ出力設定
 ```
-# vi /etc/systemd/system.conf
+$ sudo vi /etc/systemd/system.conf
 ```
 ```
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
 ```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
+## ■ Proxyの設定
+```
+$ sudo vi /etc/profile.d/proxy.sh
+```
+```
+#!/bin/bash
+$PROXY="<Proxy-server Ip-address>:Port"
+export proxy_http=
+export proxy_https=
+```
 # 書きたいこと(ubuntuでも必要か検証すること
 ```
 /etc/rsyslog.conf
 ### journalログ溢れ対策
 $imjournalRatelimitInterval 0
 $SystemLogRateLimitInterval 0
-## proxy設定
 ```
