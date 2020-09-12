@@ -260,13 +260,11 @@ $ sudo vi /etc/logrotate.conf
 ### ローテート期間
 -  weekly
 +  daily
-```
-```
+
 ### 7世代分のログを管理
 -  rotate 4
 +  rotate 7
-```
-```
+
 ### ローテーションしたログをgzipで圧縮
 -  #compress
 +  compress
@@ -283,14 +281,18 @@ $ sudo vi /etc/default/grub
 $ sudo update-grub
 ```
 ## ■ カーネルパラメータの設定
+https://gist.github.com/koudaiii/035120ed116ecf6f1b06
 ```
 $ sudo vi /etc/sysctl.conf
 ```
 ```
+###
 +  kernel.core_pattern=/var/tmp/core-%e.%p
 
+###
 +  fs.suid_dumpable=2
 
+### OOM Killer が実行に必ずカーネルパニックさせる
 +  vm.panic_on_oom=2
 ```
 ```
