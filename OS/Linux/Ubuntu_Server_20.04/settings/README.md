@@ -281,7 +281,8 @@ $ sudo vi /etc/default/grub
 $ sudo update-grub
 ```
 ## ■ カーネルパラメータの設定
-https://gist.github.com/koudaiii/035120ed116ecf6f1b06
+https://gist.github.com/koudaiii/035120ed116ecf6f1b06  
+https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 $ sudo vi /etc/sysctl.conf
 ```
