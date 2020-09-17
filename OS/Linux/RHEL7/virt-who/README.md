@@ -30,7 +30,6 @@ vCenterに管理されているEsxi上に存在するRHEL仮想マシン1台に�
 +  username=<vCetnerのユーザー>
 +  password=<ユーザーのパスワード>
 +  owner=xxxxxxxx                            # subscription-manager identity より 組織 ID を記載
-+  env=Library
 +  hypervisor_id=hostname
 ```
 ## § virt-whoの起動
