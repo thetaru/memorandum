@@ -7,21 +7,32 @@ $ sudo apt install python3-pip python3-pandas
 $ sudo apt install jupyter-notebook
 ```
 ## Jupyter Notebookの設定
+Jupyter Notebookをユーザ`thetaru`で実行します。
 ```
-$ sudo mkdir ~/.jupyter; touch ~/.jupyter/jupyter_notebook_config.py
-```
-```
-$ sudo vi ~/.jupyter/jupyter_notebook_config.py
+$ sudo vi /etc/systemd/system/jupyter.service
 ```
 ```
-c = get_config()
+[Unit]
+Description=Jupyter Notebook
 
-# 全てのIPから接続を許可
-c.NotebookApp.ip = '*'
+[Service]
+Type=simple
+WorkingDirectory=/home/thetaru
+ExecStart=/bin/jupyter-notebook --config=/thetaru/.jupyter/jupyter_notebook_config.py
 
-#ブラウザは立ち上げない
-c.NotebookApp.open_browser = False
+User=thetaru
+Group=thetaru
 
-# 特定のポートに指定(デフォルトは8888)
-c.NotebookApp.port = 8888
+[Install]
+WantedBy=multi-user.target
+```
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl start jupyter.service
+```
+```
+$ sudo systemctl status jupyter.service
+```
+```
+$ sudo systemctl enable jupyter.service
 ```
