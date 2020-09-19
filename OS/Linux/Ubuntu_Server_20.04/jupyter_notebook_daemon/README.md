@@ -37,7 +37,7 @@ c.NotebookApp.open_browser = False
 ### Quitボタンを隠す
 c.NotebookApp.quit_button = False
 
-### terminalメニューを無効化
+### terminalメニューを無効化(Notebookからshellコマンドは実行できるので効果は薄い)
 c.NotebookApp.terminals_enabled = False
 
 ### ポート指定
