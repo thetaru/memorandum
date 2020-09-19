@@ -7,10 +7,10 @@ $ sudo apt install python3-pip
 $ sudo apt install jupyter-notebook
 ```
 ## Jupyter Notebookの設定
-Jupyter Notebookはrootで実行しないのでroot以外のユーザを想定しています。
+Jupyter Notebookはrootで実行しないのでroot以外のユーザ`thetaru`を想定しています。
 ```
-### [Option] Jupyter Notebookの起動時のディレクトリを作成(デフォルトは)
-$ sudo mkdir /jupyter
+### [Option] Jupyter Notebookの起動時のディレクトリを作成(デフォルトは/home/thetaruです)
+$ sudo mkdir /home/thetaru/jupyter
 ```
 ```
 $ sudo vi /home/thetaru/.jupyter/jupyter_notebook_config.py
@@ -26,7 +26,7 @@ c.NotebookApp.token = ''
 c.NotebookApp.password = ''
 
 ### [Option] ディレクトリの指定(無効化する場合はコメントアウト)
-c.NotebookApp.notebook_dir = '/jupyter'
+c.NotebookApp.notebook_dir = '/home/thetaru/jupyter'
 
 ### ブラウザの立ち上げ
 c.NotebookApp.open_browser = False
