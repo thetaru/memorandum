@@ -14,20 +14,20 @@ $ sudo vi /home/thetaru/jupyter/jupyter_notebook_config.py
 ```
 c = get_config()
 
-# 全てのIPから接続を許可
+### 接続元IPの制限
 c.NotebookApp.ip = '*'
 
-# token password設定(パスワードなしは非推奨)
+### token passwordの設定(パスワードなしは非推奨)
 c.NotebookApp.token = ''
 c.NotebookApp.password = ''
 
-# ブラウザは立ち上げない
+### ブラウザの立ち上げ
 c.NotebookApp.open_browser = False
 
-# Quitボタンを隠す
+### Quitボタンを隠す
 c.NotebookApp.quit_button = False
 
-# ポート指定
+### ポート指定
 c.NotebookApp.port = 8888
 ```
 ## Jupyter Notebookのデーモン化
