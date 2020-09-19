@@ -7,7 +7,8 @@ $ sudo apt install python3-pip
 $ sudo apt install jupyter-notebook
 ```
 ## Jupyter Notebookの設定
-Jupyter Notebookはrootで実行しないのでroot以外のユーザ`thetaru`を想定しています。
+Jupyter Notebookはrootで実行しないのでroot以外のユーザ`thetaru`を想定しています。  
+初期ディレクトリを指定しないと色々見えてしまうので制限します。
 ```
 ### [Option] Jupyter Notebookの起動時のディレクトリを作成(デフォルトは/home/thetaru)
 $ sudo mkdir /home/thetaru/jupyter
