@@ -38,7 +38,7 @@ c.NotebookApp.open_browser = False
 c.NotebookApp.quit_button = False
 
 ### terminalメニューを無効化
-c.NotebookApp.terminals_enabledBool = False
+c.NotebookApp.terminals_enabled = False
 
 ### ポート指定
 c.NotebookApp.port = 8888
