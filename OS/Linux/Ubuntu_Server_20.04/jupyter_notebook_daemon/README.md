@@ -1,7 +1,7 @@
 # Jupyter Notebookをデーモンにする
 ## Jupyter Notebookのインストール
 ```
-$ sudo apt install python3-pip python3-pandas
+$ sudo apt install python3-pip
 ```
 ```
 $ sudo apt install jupyter-notebook
