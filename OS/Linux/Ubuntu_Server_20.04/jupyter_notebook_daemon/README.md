@@ -37,13 +37,14 @@ c.NotebookApp.open_browser = False
 ### Quitボタンを隠す
 c.NotebookApp.quit_button = False
 
-### terminalメニューを無効化(Notebookからshellコマンドは実行できるので効果は薄い)
+### terminalメニューを無効化
 c.NotebookApp.terminals_enabled = False
 
 ### ポート指定
 c.NotebookApp.port = 8888
 ```
-本気でshellコマンドを禁じるなら`https://github.com/jupyter/notebook/issues/2242#issuecomment-283369629`が参考になると思います。
+terminalメニューを無効にすることはできますがNotebookからshellコマンドは実行できるので効果は薄いです。  
+本気でshellコマンドを禁止するなら`https://github.com/jupyter/notebook/issues/2242#issuecomment-283369629`が参考になると思います。
 ## Jupyter Notebookのデーモン化
 Jupyter Notebookをユーザ`thetaru`で実行します。
 ```
