@@ -48,9 +48,9 @@ $ mkdir -p /etc/systemd/system/docker.service.d
 ```
 ```
 # Restart Docker
-$ systemctl daemon-reload
-$ systemctl restart docker
-$ systemctl enable docker
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+$ sudo systemctl enable docker
 ```
 # § k8s Install
 ## ■ kubelet kubeadm kubectl Install
