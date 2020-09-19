@@ -43,7 +43,7 @@ c.NotebookApp.terminals_enabled = False
 ### ポート指定
 c.NotebookApp.port = 8888
 ```
-本気でshellコマンドを禁じるなら`https://github.com/jupyter/notebook/issues/2242#issuecomment-283369629`が有効だと思います。
+本気でshellコマンドを禁じるなら`https://github.com/jupyter/notebook/issues/2242#issuecomment-283369629`が参考になると思います。
 ## Jupyter Notebookのデーモン化
 Jupyter Notebookをユーザ`thetaru`で実行します。
 ```
