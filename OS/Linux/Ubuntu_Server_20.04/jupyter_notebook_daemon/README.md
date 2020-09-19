@@ -7,6 +7,29 @@ $ sudo apt install python3-pip python3-pandas
 $ sudo apt install jupyter-notebook
 ```
 ## Jupyter Notebookの設定
+```
+$ sudo vi ~/.jupyter/jupyter_notebook_config.py
+```
+```
+c = get_config()
+
+# 全てのIPから接続を許可
+c.NotebookApp.ip = '*'
+
+# token password設定(パスワードなしは非推奨)
+c.NotebookApp.token = ''
+c.NotebookApp.password = ''
+
+# ブラウザは立ち上げない
+c.NotebookApp.open_browser = False
+
+# Quitボタンを隠す
+c.NotebookApp.quit_button = False
+
+# ポート指定
+c.NotebookApp.port = 8888
+```
+## Jupyter Notebookのデーモン化
 Jupyter Notebookをユーザ`thetaru`で実行します。
 ```
 $ sudo vi /etc/systemd/system/jupyter.service
