@@ -73,6 +73,13 @@ $ sudo apt-get upgrade
 ## ■ 不要なサービスの停止
 調査中...
 ```
+### いらないサービス
+avahi-daemon.service
+bluetooth.service
+cups.service
+cups-browsed.service
+ModemManager.service
+
 ### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl mask apt-daily.timer
 $ sudo systemctl mask apt-daily.service
