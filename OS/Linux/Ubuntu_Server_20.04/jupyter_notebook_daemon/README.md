@@ -9,7 +9,7 @@ $ sudo apt install jupyter-notebook
 ## Jupyter Notebookの設定
 Jupyter Notebookはrootで実行しないのでroot以外のユーザを想定しています。
 ```
-### [Option] Jupyter Notebookの起動時のディレクトリを作成
+### [Option] Jupyter Notebookの起動時のディレクトリを作成(デフォルトは)
 $ sudo mkdir /jupyter
 ```
 ```
@@ -25,8 +25,8 @@ c.NotebookApp.ip = '*'
 c.NotebookApp.token = ''
 c.NotebookApp.password = ''
 
-### [Option] ディレクトリの指定
-#c.NotebookApp.notebook_dir = /jupyter
+### [Option] ディレクトリの指定(無効化する場合はコメントアウト)
+c.NotebookApp.notebook_dir = '/jupyter'
 
 ### ブラウザの立ち上げ
 c.NotebookApp.open_browser = False
