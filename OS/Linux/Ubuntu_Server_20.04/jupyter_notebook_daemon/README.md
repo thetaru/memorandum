@@ -1,4 +1,5 @@
 # Jupyter Notebookをデーモンにする
+jupyterhubでいいんじゃん?
 ## Jupyter Notebookのインストール
 ```
 $ sudo apt install python3-pip
