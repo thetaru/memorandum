@@ -73,7 +73,7 @@ $ sudo apt-get upgrade
 ## ■ 不要なサービスの停止
 調査中...
 ```
-### いらないサービス
+### いらないサービス(メモ)
 avahi-daemon.service
 bluetooth.service
 cups.service
