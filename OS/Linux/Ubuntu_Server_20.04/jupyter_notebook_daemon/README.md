@@ -7,7 +7,7 @@ $ sudo apt install python3-pip
 $ sudo apt install jupyter-notebook
 ```
 ## Jupyter Notebookの設定
-Jupyter Notebookはrootで実行しないのでroot以外のログインユーザを想定しています。
+Jupyter Notebookはrootで実行しないのでroot以外のユーザを想定しています。
 ```
 $ sudo vi /home/thetaru/jupyter/jupyter_notebook_config.py
 ```
