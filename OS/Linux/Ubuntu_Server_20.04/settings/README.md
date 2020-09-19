@@ -224,7 +224,7 @@ $ sudo systemctl enable ntpd
 ```
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
-:warning:ユーザ名として`thetaru`を使用しています。
+:warning:例としてユーザ名は`thetaru`を使用しています。
 ```
 ### ubuntuにはwheelグループがデフォルトで存在しないので作成
 $ sudo addgroup wheel
