@@ -9,7 +9,7 @@ $ sudo apt install jupyter-notebook
 ## Jupyter Notebookの設定
 Jupyter Notebookはrootで実行しないのでroot以外のユーザ`thetaru`を想定しています。
 ```
-### [Option] Jupyter Notebookの起動時のディレクトリを作成(デフォルトは/home/thetaruです)
+### [Option] Jupyter Notebookの起動時のディレクトリを作成(デフォルトは/home/thetaru)
 $ sudo mkdir /home/thetaru/jupyter
 ```
 ```
