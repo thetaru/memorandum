@@ -21,4 +21,3 @@
 - [ ] [syslog](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/syslog)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
-- [ ] [Jupyter Notebookをデーモンにする](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/jupyter_nodebook_daemon)
