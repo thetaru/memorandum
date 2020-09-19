@@ -309,7 +309,7 @@ $ sudo vi /etc/systemd/system.conf
 +  DefaultLimitCORE=infinity
 ```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
-## ■ Proxyの設定
+## ■ [option]Proxyの設定
 ```
 $ sudo vi /etc/profile.d/proxy.sh
 ```
