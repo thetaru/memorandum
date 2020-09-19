@@ -27,12 +27,15 @@ Group=thetaru
 WantedBy=multi-user.target
 ```
 ```
+### 設定を読み込んで起動
 $ sudo systemctl daemon-reload
 $ sudo systemctl start jupyter.service
 ```
 ```
+### Activeであることを確認
 $ sudo systemctl status jupyter.service
 ```
 ```
+### 自動起動の設定
 $ sudo systemctl enable jupyter.service
 ```
