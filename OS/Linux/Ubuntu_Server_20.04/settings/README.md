@@ -307,6 +307,24 @@ $ sudo vi /etc/sysctl.conf
 ### 設定の反映
 $ sudo systemctl -p
 ```
+## ■ カーネルクラッシュダンプ
+```
+$ sudo apt install linux-crashdump
+```
+```
+$ kdump-config show
+```
+```
+DUMP_MODE:        kdump
+USE_KDUMP:        1
+KDUMP_SYSCTL:     kernel.panic_on_oops=1
+KDUMP_COREDIR:    /var/crash
+crashkernel addr: 
+   /var/lib/kdump/vmlinuz: symbolic link to /boot/vmlinuz-5.4.0-45-generic
+kdump initrd: 
+   /var/lib/kdump/initrd.img: symbolic link to /var/lib/kdump/initrd.img-5.4.0-45-generic
+current state:    Not ready to kdump
+```
 ## ■ コアダンプ出力設定
 ```
 $ sudo vi /etc/systemd/system.conf
