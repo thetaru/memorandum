@@ -309,6 +309,7 @@ $ sudo systemctl -p
 ```
 ## ■ カーネルクラッシュダンプ
 ```
+### kdumpのインストール
 $ sudo apt install linux-crashdump
 ```
 ```
