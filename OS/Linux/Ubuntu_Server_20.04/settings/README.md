@@ -325,6 +325,7 @@ kdump initrd:
    /var/lib/kdump/initrd.img: symbolic link to /var/lib/kdump/initrd.img-5.4.0-45-generic
 current state:    Not ready to kdump
 ```
+`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
 ## ■ コアダンプ出力設定
 ```
 $ sudo vi /etc/systemd/system.conf
