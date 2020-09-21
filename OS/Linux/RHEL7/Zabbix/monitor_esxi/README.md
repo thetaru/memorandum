@@ -1,6 +1,6 @@
 # Esxi 監視
 # 設定
-zabbix落ちるなら VMwareCahuesizeを上げる
+zabbix落ちるなら `/etc/zabbix/zabbix-server.conf`から`VMwareCahuesize`の値を上げる
 # 構成
 |ホスト名|役割|IPアドレス|
 |:---|:---|:---|
