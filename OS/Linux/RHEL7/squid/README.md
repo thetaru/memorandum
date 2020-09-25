@@ -1,4 +1,5 @@
 # squid
+## ■ /etc/squid/squid.conf
 ```
 # ここで定義したネットワークからのアクセスを許可
 acl localnet src 10.0.0.0/8     # RFC1918 possible internal network
