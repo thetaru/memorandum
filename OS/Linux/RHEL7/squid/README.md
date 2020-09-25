@@ -1,19 +1,18 @@
 # squid
 ## ■ /etc/squid/squid.conf
 ```
-# ここで定義したネットワークからのアクセスを許可
-acl localnet src 10.0.0.0/8     # RFC1918 possible internal network
-acl localnet src 172.16.0.0/12  # RFC1918 possible internal network
-acl localnet src 192.168.0.0/16 # RFC1918 possible internal network
-acl localnet src fc00::/7 # RFC 4193 local private network range
-acl localnet src fe80::/10# RFC 4291 link-local (directly plugged) machines
+# ここで定義したネットワーク(localnet)からのアクセスを許可
+acl localnet src 192.168.0.0/24
+acl localnet src 192.168.137.0/24
 
-# SSL接続時に 443 ポート以外の CONNECT を拒否
+# SSL接続時に 443 ポートの CONNECT を許可
 acl SSL_ports port 443
 acl CONNECT method CONNECT
+
+# SSL_portsで指定したポート以外を拒否
 http_access deny CONNECT !SSL_ports
 
-# 接続先として指定されているポート以外を拒否
+# 接続先として指定されているポートを許可
 acl Safe_ports port 80    # http
 acl Safe_ports port 21    # ftp
 acl Safe_ports port 443   # https
@@ -24,6 +23,8 @@ acl Safe_ports port 280   # http-mgmt
 acl Safe_ports port 488   # gss-http
 acl Safe_ports port 591   # filemaker
 acl Safe_ports port 777   # multiling http
+
+# 接続先として指定されているポート以外を拒否
 http_access deny !Safe_ports
 
 # キャッシュの設定( manager を定義してないので無効な値)
@@ -45,9 +46,12 @@ http_port 8080
 # core 出力場所の設定
 coredump_dir /var/spool/squid
 
-# キャッシュの設定
+# キャッシュ更新間隔の設定
 refresh_pattern ^ftp:     1440    20%     10080
 refresh_pattern ^gopher:  1440    0%1440
 refresh_pattern -i (/cgi-bin/|\?) 0     0%0
-refresh_pattern .   0 20%     4320   
+refresh_pattern .   0 20%     4320
+
+# エラーページにバージョンを表示させない
+httpd_suppress_version_string on
 ```
