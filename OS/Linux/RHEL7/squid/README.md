@@ -2,7 +2,7 @@
 設定値の概要
 ## ■ /etc/squid/squid.conf
 ```
-# ここで定義したネットワーク(localnet)からのアクセスを許可
+# ローカルネットワーク(localnet)の定義
 acl localnet src 192.168.0.0/24
 acl localnet src 192.168.137.0/24
 
