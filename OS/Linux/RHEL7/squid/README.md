@@ -1,11 +1,12 @@
 # squid
+設定値の概要
 ## ■ /etc/squid/squid.conf
 ```
 # ここで定義したネットワーク(localnet)からのアクセスを許可
 acl localnet src 192.168.0.0/24
 acl localnet src 192.168.137.0/24
 
-# SSL接続時に 443 ポートの CONNECT を許可
+# SSL接続時に443ポートのCONNECTを許可
 acl SSL_ports port 443
 acl CONNECT method CONNECT
 
