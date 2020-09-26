@@ -343,8 +343,8 @@ $ sudo vi /etc/profile.d/proxy.sh
 ```
 #!/bin/bash
 $PROXY="<Proxy-server Ip-address>:Port"
-export proxy_http=
-export proxy_https=
+export proxy_http="http://$PROXY"
+export proxy_https="https://$PROXY"
 ```
 # 書きたいこと(ubuntuでも必要か検証すること
 ```
