@@ -247,10 +247,6 @@ $ sudo systemctl enable ntpd
 `su` コマンドを実行できるユーザを制限します。  
 :warning:例としてユーザ名は`thetaru`を使用しています。
 ```
-### ubuntuにはwheelグループがデフォルトで存在しないので作成
-$ sudo addgroup wheel
-```
-```
 ### ユーザthetaru を グループwheelに追加
 $ sudo usermod -aG wheel thetaru
 ```
@@ -271,7 +267,7 @@ $ sudo vi /etc/pam.d/su
 ```
 ```
 ### 再起動して反映
-$ reboot
+$ systemctl reboot
 ```
 ## ■ logrotateの設定
 ```
