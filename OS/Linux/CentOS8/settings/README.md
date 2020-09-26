@@ -116,10 +116,10 @@ $ sudo vi /etc/ssh/sshd_config
 ### sshdを再起動
 $ sudo systemctl restart sshd
 ```
-## ■ ufwの設定
+## ■ firewalldの設定
 ```
 ### サービスのステータス確認
-$ systemctl status ufw
+$ systemctl status firewalld
 ```
 1. **有効**にする場合(デフォルトで有効です)
 ```
