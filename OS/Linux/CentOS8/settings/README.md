@@ -17,9 +17,17 @@ lo      loopback  管理無し  --
 `ensxxx`は環境に応じて置き換えて設定してください。
 ```
 # nmcli connection modify ensxxx ipv4.method manual
+# nmcli connection modify ensxxx connection.autoconnect <yes|no>
 # nmcli connection modify ensxxx ipv4.address <ip-address>/<prefix>
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
+```
+デバイスを再起動して設定を反映させます
+```
+# nmcli connection up ensxxx
+```
+```
+接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
 ```
 ## ■ hostsの設定
 ```
