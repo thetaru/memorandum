@@ -52,6 +52,7 @@ lo      loopback  管理無し  --
 # sysctl --load /etc/sysctl.d/70-ipv6.conf
 ```
 </details>
+
 ## ■ hostsの設定
 ```
 $ sudo vi /etc/hosts
