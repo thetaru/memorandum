@@ -23,7 +23,9 @@ lo      loopback  管理無し  --
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
-### [option]IPv6の無効化
+<details>
+<summary>[option]IPv6の無効化</summary>
+
 ```
 # nmcli connection modify ensxxx ipv6.method ignore
 ```
@@ -38,6 +40,7 @@ lo      loopback  管理無し  --
 ```
 # sysctl --load /etc/sysctl.d/70-ipv6.conf
 ```
+</details>
 デバイスを再起動して設定を反映させます
 ```
 # nmcli connection up ensxxx
