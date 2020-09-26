@@ -13,12 +13,13 @@ DEVICE  TYPE      STATE     CONNECTION
 ens192  ethernet  接続済み  ens192
 lo      loopback  管理無し  --
 ```
-`nmcli connection modify`を使って設定します
+`nmcli connection modify`を使って設定します(:warning: `/etc/sysconfig/network-script/ifcfg-ensxxx`に反映されます)  
+`ensxxx`は環境に応じて置き換えて設定してください。
 ```
-# nmcli connection modify ens1 ipv4.method manual
-# nmcli connection modify ens1 ipv4.address <ip-address>/<prefix>
-# nmcli connection modify ens1 ipv4.gateway <gateway-address>
-# nmcli connection modify ens1 ipv4.dns "<dns1-address> <dns2-address>"
+# nmcli connection modify ensxxx ipv4.method manual
+# nmcli connection modify ensxxx ipv4.address <ip-address>/<prefix>
+# nmcli connection modify ensxxx ipv4.gateway <gateway-address>
+# nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
 ## ■ hostsの設定
 ```
