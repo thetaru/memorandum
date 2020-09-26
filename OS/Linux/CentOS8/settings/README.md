@@ -34,7 +34,7 @@ lo      loopback  管理無し  --
 ```
 設定値を確認します
 ```
-# nmcli dev ensxxx
+# nmcli dev show ensxxx
 ```
 ```
 接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
