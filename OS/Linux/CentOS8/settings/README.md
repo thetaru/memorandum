@@ -78,7 +78,7 @@ IP6.GATEWAY:                            --
 
 ## ■ hostsの設定
 ```
-$ sudo vi /etc/hosts
+# vi /etc/hosts
 ```
 ```
 ### IPv6は使わないので無効化
