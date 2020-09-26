@@ -23,6 +23,17 @@ lo      loopback  管理無し  --
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
+デバイスを再起動して設定を反映させます
+```
+# nmcli connection up ensxxx
+```
+```
+接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
+```
+設定値を確認します
+```
+# nmcli dev show ensxxx
+```
 <details>
 <summary>[option]IPv6の無効化</summary>
 
@@ -41,18 +52,6 @@ lo      loopback  管理無し  --
 # sysctl --load /etc/sysctl.d/70-ipv6.conf
 ```
 </details>
-
-デバイスを再起動して設定を反映させます
-```
-# nmcli connection up ensxxx
-```
-```
-接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
-```
-設定値を確認します
-```
-# nmcli dev show ensxxx
-```
 ## ■ hostsの設定
 ```
 $ sudo vi /etc/hosts
