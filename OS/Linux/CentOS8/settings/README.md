@@ -82,20 +82,8 @@ IP6.GATEWAY:                            --
 ```
 ```
 ### IPv6は使わないので無効化
--  ::1     ip6-localhost ip6-loopback
-+  #::1     ip6-localhost ip6-loopback
-
--  fe00::0 ip6-localnet
-+  #fe00::0 ip6-localnet
-
--  ff00::0 ip6-mcastprefix
-+  #ff00::0 ip6-mcastprefix
-
--  ff02::1 ip6-allnodes
-+  #ff02::1 ip6-allnodes
-
--  ff02::2 ip6-allrouters
-+  #ff02::2 ip6-allrouters
+-  ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
++  #::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 ```
 ## ■ パッケージアップデート
 ```
