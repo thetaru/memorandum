@@ -41,6 +41,7 @@ lo      loopback  管理無し  --
 # sysctl --load /etc/sysctl.d/70-ipv6.conf
 ```
 </details>
+
 デバイスを再起動して設定を反映させます
 ```
 # nmcli connection up ensxxx
