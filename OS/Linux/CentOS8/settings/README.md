@@ -85,11 +85,6 @@ IP6.GATEWAY:                            --
 -  ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 +  #::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 ```
-## ■ パッケージアップデート
-```
-$ sudo apt-get update
-$ sudo apt-get upgrade
-```
 ## ■ 不要なサービスの停止
 調査中...
 ```
@@ -100,17 +95,16 @@ cups.service
 cups-browsed.service
 ModemManager.service
 
-### パッケージリストの自動更新の停止・自動起動の無効化
-$ sudo systemctl mask apt-daily.timer
-$ sudo systemctl mask apt-daily.service
-$ sudo systemctl mask apt-daily-upgrade.timer
-$ sudo systemctl mask apt-daily-upgrade.service
+# systemctl stop <service>
+# systemctl disable <service>
 ```
 ## ■ カーネルアップデート抑止
 ```
-$ sudo apt-mark hold linux-image-generic linux-headers-generic
+# vi /etc/yum.conf
 ```
-:warning:`sudo apt full-upgrade`でアップデートをするとカーネルアップデートが実行してしまうことに注意します。
+```
++  exclude=kernel* centos*
+```
 ## ■ sshdの設定
 ```
 $ sudo vi /etc/ssh/sshd_config
