@@ -23,7 +23,7 @@ lo      loopback  管理無し  --
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
-[option]IPv6の設定を無効化します
+### [option]IPv6の無効化
 ```
 # nmcli connection modify ensxxx ipv6.method ignore
 ```
