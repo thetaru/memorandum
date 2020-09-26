@@ -257,7 +257,7 @@ $ sudo vi /etc/pam.d/su
 ```
 ```
 ### 再起動して反映
-$ reboot
+$ sudo systemctl reboot
 ```
 ## ■ logrotateの設定
 ```
