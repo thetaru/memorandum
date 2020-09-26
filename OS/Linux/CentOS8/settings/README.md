@@ -23,6 +23,9 @@ lo      loopback  管理無し  --
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
+[option]ipv6の設定を無効にします
+```
+```
 デバイスを再起動して設定を反映させます
 ```
 # nmcli connection up ensxxx
