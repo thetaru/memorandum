@@ -1,13 +1,13 @@
 # Settings
 ## ■ ホスト名の設定
 ```
-$ sudo hostnamectl set-hostname <hostname>
+# hostnamectl set-hostname <hostname>
 ```
 ## ■ [Static]IPアドレス設定
 インストール時に作成される`/etc/netplan/00-installer-config.yaml`は無効化します。  
 yamlファイルでなければ設定は読み込まれません。
 ```
-$ sudo mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.org
+# mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.org
 ```
 `/etc/netplan/99_config.yaml`を作成し、下記のように記述します。  
 詳しい設定方法に関しては[ここ](https://www.komee.org/entry/2018/06/12/181400)が参考になります。
