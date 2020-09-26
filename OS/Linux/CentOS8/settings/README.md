@@ -51,9 +51,28 @@ lo      loopback  管理無し  --
 ```
 # sysctl --load /etc/sysctl.d/70-ipv6.conf
 ```
+```
+# systemctl reboot
+```
 IPv6が設定が無効化されていることを確認します
 ```
 # nmcli device show ensxxx
+```
+```
+GENERAL.DEVICE:                         ensxxx
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         aa:aa:aa:aa:aa:aa
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (接続済み)
+GENERAL.CONNECTION:                     ensxxx
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+WIRED-PROPERTIES.CARRIER:               オン
+IP4.ADDRESS[1]:                         <ip-address>/<prefix>
+IP4.GATEWAY:                            <gateway-address>
+IP4.ROUTE[1]:                           dst = xxx.xxx.xxx.xxx/yy, nh = 0.0.0.0, mt = 100
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = zzz.zzz.zzz.zzz, mt = 100
+IP4.DNS[1]:                             <dns1-address>
+IP6.GATEWAY:                            --
 ```
 </details>
 
