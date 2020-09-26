@@ -11,6 +11,7 @@
 ```
 DEVICE  TYPE      STATE     CONNECTION
 ens192  ethernet  接続済み  ens192
+ens224  ethernet  接続済み  ens224
 lo      loopback  管理無し  --
 ```
 `nmcli connection modify`を使って設定します(:warning: `/etc/sysconfig/network-script/ifcfg-ensxxx`に反映されます)  
