@@ -4,45 +4,21 @@
 # hostnamectl set-hostname <hostname>
 ```
 ## ■ [Static]IPアドレス設定
-インストール時に作成される`/etc/netplan/00-installer-config.yaml`は無効化します。  
-yamlファイルでなければ設定は読み込まれません。
+認識しているデバイスを確認します
 ```
-# mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.org
-```
-`/etc/netplan/99_config.yaml`を作成し、下記のように記述します。  
-詳しい設定方法に関しては[ここ](https://www.komee.org/entry/2018/06/12/181400)が参考になります。
-```
-$ sudo vi /etc/netplan/99_config.yaml
+# nmcli dev
 ```
 ```
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    <NIC_Name>:
-      dhcp4: false
-      dhcp6: false
-      addresses:
-        - <host ip-address>/<prefix>
-      gateway4: <default-gateway ip-address>
-      nameservers:
-        addresses: [<dns-server ip-address1>, <dns-server ip-address2>]
+DEVICE  TYPE      STATE     CONNECTION
+ens192  ethernet  接続済み  ens192
+lo      loopback  管理無し  --
 ```
+`nmcli connection modify`を使って設定します
 ```
-### IPアドレスを反映
-$ sudo netplan apply
-```
-```
-### 反映されていることを確認
-$ ip a
-```
-```
-2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:15:5d:d9:61:04 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.137.3/24 brd 192.168.137.255 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::215:5dff:fed9:6104/64 scope link
-       valid_lft forever preferred_lft forever
+# nmcli connection modify ens1 ipv4.method manual
+# nmcli connection modify ens1 ipv4.address <ip-address>/<prefix>
+# nmcli connection modify ens1 ipv4.gateway <gateway-address>
+# nmcli connection modify ens1 ipv4.dns "<dns1-address> <dns2-address>"
 ```
 ## ■ hostsの設定
 ```
