@@ -6,7 +6,7 @@
 ## ■ [Static]IPアドレス設定
 認識しているデバイスを確認します
 ```
-# nmcli dev
+# nmcli device
 ```
 ```
 DEVICE  TYPE      STATE     CONNECTION
@@ -32,7 +32,7 @@ lo      loopback  管理無し  --
 ```
 設定値を確認します
 ```
-# nmcli dev show ensxxx
+# nmcli device show ensxxx
 ```
 <details>
 <summary>[option]IPv6の無効化</summary>
@@ -50,6 +50,10 @@ lo      loopback  管理無し  --
 設定を反映します
 ```
 # sysctl --load /etc/sysctl.d/70-ipv6.conf
+```
+IPv6が設定が無効化されていることを確認します
+```
+# nmcli device show ensxxx
 ```
 </details>
 
