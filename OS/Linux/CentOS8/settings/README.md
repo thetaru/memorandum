@@ -26,18 +26,28 @@ lo      loopback  管理無し  --
 [option]IPv6の設定を無効化します
 ```
 # nmcli connection modify ensxxx ipv6.method ignore
-# nmcli connection modify ensxxx
+```
+```
+# vi /etc/sysctl.d/70-ipv6.conf
+```
+```
++  net.ipv6.conf.all.disable_ipv6 = 1
++  net.ipv6.conf.default.disable_ipv6 = 1
+```
+設定を反映します
+```
+# sysctl --load /etc/sysctl.d/70-ipv6.conf
 ```
 デバイスを再起動して設定を反映させます
 ```
 # nmcli connection up ensxxx
 ```
+```
+接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
+```
 設定値を確認します
 ```
 # nmcli dev show ensxxx
-```
-```
-接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
 ```
 ## ■ hostsの設定
 ```
