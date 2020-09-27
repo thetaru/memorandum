@@ -270,7 +270,12 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 +  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet"
 ```
 ```
-# update-grub
+### BIOSの場合
+# grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+```
+### UEFIの場合
+# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 ```
 ## ■ カーネルパラメータの設定
 https://gist.github.com/koudaiii/035120ed116ecf6f1b06  
