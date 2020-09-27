@@ -1,5 +1,5 @@
 # ZabbixのInstall
-## SELinuxの無効化
+## ■ SELinuxの無効化
 ```
 # vi /etc/selinuc/config
 ```
@@ -7,7 +7,7 @@
 -  SELINUX=enforcing
 +  SELINUX=disabled
 ```
-## MariaDBのインストール
+## ■ MariaDBのインストール
 ```
 # yum install maridb mariadb-server
 ```
@@ -62,7 +62,7 @@ installation should now be secure.
 
 Thanks for using MariaDB!
 ```
-## phpのインストール
+## ■ phpのインストール
 ```
 # yum intall php php-fpm
 ```
@@ -73,11 +73,11 @@ Thanks for using MariaDB!
 -  ; php_value[date.timezone] = Europe/Riga
 +  php_value[date.timezone] = Asia/Tokyo
 ```
-## apacheのインストール
+## ■ apacheのインストール
 ```
 # yum install httpd
 ```
-## zabbixのインストール
+## ■ zabbixのインストール
 ```
 # rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/8/x86_64/zabbix-release-5.0-1.el8.noarch.rpm
 ```
@@ -87,9 +87,24 @@ Thanks for using MariaDB!
 ```
 # yum install zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-agent
 ```
-## zabbixのデータベース設定
+## ■ zabbixのデータベース設定
 ```
 ### MariaDBにログイン
 # mysql -u root -p
 Enter password: <上で設定したrootのパスワードを入力>
+```
+```
+### zabbixDBの作成
+> create database zabbix character set utf8 collate utf8_bin;
+### zabbixユーザーの作成('password'がzabbixのパスワードになります)
+> create user zabbix@localhost identified by 'password';
+### zabbixユーザーに全ての権限を与える
+> grant all privileges on zabbix.* to zabbix@localhost;
+### 終了
+> quit;
+```
+```
+### zabbixDBに新規スキーマとデータをインポートする
+# zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+Enter password: <上で設定したzabbixのパスワードを入力>
 ```
