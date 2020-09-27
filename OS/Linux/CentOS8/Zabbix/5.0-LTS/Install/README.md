@@ -12,7 +12,7 @@
 # vi /etc/httpd/conf/httpd.conf
 ```
 ### Listen
-Apacheのリッスンポートを指定する
+Apacheのリッスンポートを指定する。
 80番と443番をリッスンさせておく。Firewallやiptablesを使うならポートを空けること。
 ```
    Listen 80
@@ -25,6 +25,19 @@ Apacheのリッスンポートを指定する
 ```
 -  ServerAdmin root@localhost
 +  ServerAdmin root@localhost
+```
+### ServerName
+Apacheサーバが自分自身のホスト名を示す時に使われる名前を指定する。  
+デフォルトはコメントアウトですが、設定していないと構文チェックで警告が出ます。  
+```
+-  #ServerName www.example.com:80
++  ServerName <hostname>[:port]
+```
+### DocumentRoot
+ルートディレクトリを指定する。  
+Webコンテンツを置く場所。特に理由がなければデフォルト(`/var/www/html`)のままで設定する。
+```
+DocumentRoot "/var/www/html"
 ```
 ## ■ phpの設定
 ## ■ MariaDBの設定
