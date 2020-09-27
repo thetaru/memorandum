@@ -190,7 +190,10 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 ```
 ```
 -  pool 2.centos.pool.ntp.org iburst
-+  server <ntp_server-address> iburst
++  pool <ntp_server-address> iburst
+
++  leapsecmode slew
++  maxslewrate 1000
 ```
 ```
 ### 同期状態の確認
