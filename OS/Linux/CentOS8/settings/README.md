@@ -89,11 +89,7 @@ IP6.GATEWAY:                            --
 調査中...
 ```
 ### いらないサービス(メモ)
-avahi-daemon.service
 bluetooth.service
-cups.service
-cups-browsed.service
-ModemManager.service
 
 # systemctl stop <service>
 # systemctl disable <service>
