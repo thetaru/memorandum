@@ -8,5 +8,12 @@
 +  SELINUX=disabled
 ```
 ## ■ apacheの設定
+```
+# vi /etc/httpd/conf/httpd.conf
+```
+```
+-  ServerAdmin root@localhost
++  ServerAdmin <hostname>@<domain>
+```
 ## ■ phpの設定
 ## ■ MariaDBの設定
