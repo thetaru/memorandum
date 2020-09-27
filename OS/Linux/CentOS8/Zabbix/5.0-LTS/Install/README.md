@@ -8,7 +8,6 @@
 +  SELINUX=disabled
 ```
 ## MariaDBのインストール
-MariaDBをインストールします
 ```
 # yum install maridb mariadb-server
 ```
@@ -22,12 +21,14 @@ MariaDBのrootユーザーの初期パスワードを設定します
 # /usr/bin/mysql_secure_installation
 ```
 ```
+### Enterを押す
 Enter current password for root (enter for none):
 OK, successfully used password, moving on...
 
 Setting the root password ensures that nobody can log into the MariaDB
 root user without the proper authorisation.
 
+### rootパスワードを設定しますか?
 Set root password? [Y/n] y
 New password:
 Re-enter new password:
@@ -35,18 +36,22 @@ Password updated successfully!
 Reloading privilege tables..
  ... Success!
 
+### 匿名ユーザを削除しますか?
 Remove anonymous users? [Y/n] y
  ... Success!
 
+### rootでのリモートログインを禁止しますか?
 Disallow root login remotely? [Y/n] y
  ... Success!
 
+### テストDBの削除をしますか?
 Remove test database and access to it? [Y/n] y
  - Dropping test database...
  ... Success!
  - Removing privileges on test database...
  ... Success!
 
+### 権限の変更を再読み込みしますか?
 Reload privilege tables now? [Y/n] y
  ... Success!
 
@@ -56,4 +61,19 @@ All done!  If you've completed all of the above steps, your MariaDB
 installation should now be secure.
 
 Thanks for using MariaDB!
+```
+## phpのインストール
+```
+# yum intall php php-fpm
+```
+```
+# vi /etc/php-fpm.d/zabbix.conf
+```
+```
+-  ; php_value[date.timezone] = Europe/Riga
++  php_value[date.timezone] = Asia/Tokyo
+```
+## apacheのインストール
+```
+# yum install httpd
 ```
