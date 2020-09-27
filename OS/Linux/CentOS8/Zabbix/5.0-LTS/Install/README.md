@@ -87,3 +87,9 @@ Thanks for using MariaDB!
 ```
 # yum install zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-agent
 ```
+## zabbixのデータベース設定
+```
+### MariaDBにログイン
+# mysql -u root -p
+Enter password: <上で設定したrootのパスワードを入力>
+```
