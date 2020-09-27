@@ -190,7 +190,6 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 ### chronyのインストール
 # yum install chrony
 ```
-### ntpdの設定
 ```
 # vi /etc/chrony.conf
 ```
