@@ -105,6 +105,12 @@ ModemManager.service
 ```
 +  exclude=kernel* centos*
 ```
+```
+# vi /etc/dnf/dnf.conf
+```
+```
++  exclude=kernel* centos*
+```
 ## ■ sshdの設定
 ```
 # vi /etc/ssh/sshd_config
