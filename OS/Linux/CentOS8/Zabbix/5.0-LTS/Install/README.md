@@ -21,7 +21,7 @@ Apacheのリッスンポートを指定する。
 ### ServerAdmin
 連絡先用メールアドレスの設定する。  
 エラーページを表示する際に、問い合わせ先となるメールアドレスを設定する。  
-大体、いつも設定しないのでコメントアウト。デフォルトでは有効になっている。
+いつも設定しないのでコメントアウト。デフォルトでは有効になっています。
 ```
 -  ServerAdmin root@localhost
 +  ServerAdmin root@localhost
@@ -35,9 +35,21 @@ Apacheサーバが自分自身のホスト名を示す時に使われる名前�
 ```
 ### DocumentRoot
 ルートディレクトリを指定する。  
-Webコンテンツを置く場所。特に理由がなければデフォルト(`/var/www/html`)のままで設定する。
+Webコンテンツを置く場所。特に理由がなければデフォルトのままで設定する。
 ```
 DocumentRoot "/var/www/html"
+```
+### Errorlog
+エラーログの格納先をわかりやすいように「/var/log」配下に変更する。
+```
+-  ErrorLog "logs/error_log"
++  ErrorLog "/var/log"
+```
+### AccessLog
+ログフォーマットの変更と格納先変更する。
+```
+-  CustomLog "logs/access_log" combined
++  CustomLog "/var/log/httpd/access_log" combined
 ```
 ## ■ phpの設定
 ## ■ MariaDBの設定
