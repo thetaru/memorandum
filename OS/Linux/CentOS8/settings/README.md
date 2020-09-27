@@ -181,7 +181,7 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 ```
 ## ■ 時刻同期の設定
 ```
-### ntpのインストール
+### chronyのインストール
 # yum install chrony
 ```
 ### ntpdの設定
