@@ -1,5 +1,4 @@
 # apache
-## ■ apacheの設定
 ```
 # vi /etc/httpd/conf/httpd.conf
 ```
