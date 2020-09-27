@@ -158,21 +158,23 @@ $ sudo systemctl stop ufw
 $ sudo systemctl disable ufw
 ```
 ここでは、ufwの詳しい設定は行いません。
-## ■ localeの設定(まだ)
+## ■ localeの設定
 ```
-### language-pack-jaのインストール
-# yum install language-pack-ja
+### 日本語用パッケージがインストールされていない場合はlanguage-pack-jaをインストール
+# yum install langpacks-ja
 ```
 ```
 ### localeにja_JP.UTF-8を設定
-# yum update-locale LANG=ja_JP.UTF-8
+# localectl set-locale LANG=ja_JP.utf8
 ```
 ```
 ### 確認
-$ cat /etc/default/locale
+# localectl status
 ```
 ```
-LANG=ja_JP.UTF-8
+   System Locale: LANG=ja_JP.UTF-8
+       VC Keymap: jp
+      X11 Layout: jp
 ```
 ## ■ timezoneの設定(まだ)
 ```
