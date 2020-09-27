@@ -139,23 +139,23 @@ $ sudo systemctl restart sshd
 ## ■ firewalldの設定
 ```
 ### サービスのステータス確認
-$ systemctl status firewalld
+# systemctl status firewalld
 ```
 1. **有効**にする場合(デフォルトで有効です)
 ```
 ### サービスの有効化
-$ sudo systemctl start ufw
+# systemctl start ufw
 
 ### 自動起動の無効化
-$ sudo systemctl enable ufw
+# systemctl enable ufw
 ```
 2. **無効**にする場合
 ```
 ### サービスの無効化
-$ sudo systemctl stop ufw
+# systemctl stop ufw
 
 ### 自動起動の無効化
-$ sudo systemctl disable ufw
+# systemctl disable ufw
 ```
 ここでは、ufwの詳しい設定は行いません。
 ## ■ localeの設定
@@ -308,7 +308,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
 ## ■ [option]Proxyの設定
 ```
-$ sudo vi /etc/profile.d/proxy.sh
+# vi /etc/profile.d/proxy.sh
 ```
 ```
 #!/bin/bash
