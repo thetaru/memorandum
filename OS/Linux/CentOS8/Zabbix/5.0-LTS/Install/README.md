@@ -11,7 +11,6 @@
 ```
 # yum install maridb mariadb-server
 ```
-MariaDBを起動します
 ```
 # systemctl start mariadb
 # systemctl enable mariadb
