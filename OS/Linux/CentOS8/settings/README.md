@@ -182,40 +182,15 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 ## ■ 時刻同期の設定
 ```
 ### ntpのインストール
-# yum install ntp
+# yum install chrony
 ```
 ### ntpdの設定
 ```
-# vi /etc/ntp.conf
+# vi /etc/chrony.conf
 ```
 ```
--  pool 0.ubuntu.pool.ntp.org iburst
-+  #pool 0.ubuntu.pool.ntp.org iburst
-
--  pool 1.ubuntu.pool.ntp.org iburst
-+  #pool 1.ubuntu.pool.ntp.org iburst
-
--  pool 2.ubuntu.pool.ntp.org iburst
-+  #pool 2.ubuntu.pool.ntp.org iburst
-
--  pool 3.ubuntu.pool.ntp.org iburst
-+  #pool 3.ubuntu.pool.ntp.org iburst
-
-### 参照するntpサーバを指定
-+  server <ntp-server1 ip-address or hostname>
-+  server <ntp-server2 ip-address or hostname>
-+  server <ntp-server3 ip-address or hostname>
-
--  pool ntp.ubuntu.com
-+  #pool ntp.ubuntu.com
-
-### IPv6は使わないので無効化
--  restrict -6 default kod notrap nomodify nopeer noquery limited
-+  #restrict -6 default kod notrap nomodify nopeer noquery limited
-
-### IPv6は使わないので無効化
--  restrict ::1
-+  #restrict ::1
+-  pool 2.centos.pool.ntp.org iburst
++  server <ntp_server-address> iburst
 ```
 ```
 ### step動作抑止
