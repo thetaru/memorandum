@@ -266,8 +266,8 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 # vi /etc/default/grub
 ```
 ```
--  GRUB_CMDLINE_LINUX=""
-+  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet"
+-  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=03c2915c-7232-4e8b-8593-c553c429b2db rhgb quiet"
++  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=03c2915c-7232-4e8b-8593-c553c429b2db rhgb quiet consoleblank=0 ipv6.disable=1"
 ```
 ```
 ### BIOSの場合
