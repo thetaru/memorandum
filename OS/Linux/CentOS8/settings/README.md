@@ -152,7 +152,7 @@ $ sudo systemctl stop ufw
 $ sudo systemctl disable ufw
 ```
 ここでは、ufwの詳しい設定は行いません。
-## ■ localeの設定
+## ■ localeの設定(まだ)
 ```
 ### language-pack-jaのインストール
 # yum install language-pack-ja
@@ -168,7 +168,7 @@ $ cat /etc/default/locale
 ```
 LANG=ja_JP.UTF-8
 ```
-## ■ timezoneの設定
+## ■ timezoneの設定(まだ)
 ```
 ### Asia/Tokyoのシンボリックリンクlocaltimeを作成
 # ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
@@ -193,12 +193,13 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 +  server <ntp_server-address> iburst
 ```
 ```
-### step動作抑止
-$ sudo vi /etc/default/ntp
+### 同期状態の確認
+# chronyc sources
 ```
 ```
--  NTPD_OPTS='-g'
-+  NTPD_OPTS='-g -x'
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^* <ntp-server>                1   6   377     9  +3649us[+5915us] +/-   30ms
 ```
 ### ntpdateの設定
 ```
