@@ -204,20 +204,8 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
 ^* <ntp-server>                1   6   377     9  +3649us[+5915us] +/-   30ms
 ```
-### ntpdateの設定
+### ntpdの起動
 ```
-### ntpdが起動する前に時刻同期をするため
-# vi /etc/ntp/step-tickers
-```
-```
-+  <ntp-server ip-address or hostname>
-```
-### ntpdate, ntpdの起動
-ntpdateを起動してからntpdを起動しましょう。
-```
-### ntpdateの起動
-# systemctl start ntpdate
-
 ### ntpサービスの起動
 # systemctl start ntpd
 # systemctl enable ntpd
