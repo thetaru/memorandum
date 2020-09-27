@@ -107,7 +107,7 @@ ModemManager.service
 ```
 ## ■ sshdの設定
 ```
-$ sudo vi /etc/ssh/sshd_config
+# vi /etc/ssh/sshd_config
 ```
 ```
 ### sshで使用するポートを指定
@@ -155,11 +155,11 @@ $ sudo systemctl disable ufw
 ## ■ localeの設定
 ```
 ### language-pack-jaのインストール
-$ sudo apt-get install language-pack-ja
+# yum install language-pack-ja
 ```
 ```
 ### localeにja_JP.UTF-8を設定
-$ sudo update-locale LANG=ja_JP.UTF-8
+# yum update-locale LANG=ja_JP.UTF-8
 ```
 ```
 ### 確認
@@ -171,10 +171,10 @@ LANG=ja_JP.UTF-8
 ## ■ timezoneの設定
 ```
 ### Asia/Tokyoのシンボリックリンクlocaltimeを作成
-$ sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 ```
 ```
-$ ll /etc/localtime
+# ll /etc/localtime
 ```
 ```
 lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/Asia/Tokyo
@@ -182,11 +182,11 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 ## ■ 時刻同期の設定
 ```
 ### ntpのインストール
-$ sudo apt-get install ntp
+# yum install ntp
 ```
 ### ntpdの設定
 ```
-$ sudo vi /etc/ntp.conf
+# vi /etc/ntp.conf
 ```
 ```
 -  pool 0.ubuntu.pool.ntp.org iburst
@@ -228,7 +228,7 @@ $ sudo vi /etc/default/ntp
 ### ntpdateの設定
 ```
 ### ntpdが起動する前に時刻同期をするため
-$ sudo vi /etc/ntp/step-tickers
+# vi /etc/ntp/step-tickers
 ```
 ```
 +  <ntp-server ip-address or hostname>
@@ -237,28 +237,28 @@ $ sudo vi /etc/ntp/step-tickers
 ntpdateを起動してからntpdを起動しましょう。
 ```
 ### ntpdateの起動
-$ sudo systemctl start ntpdate
+# systemctl start ntpdate
 
 ### ntpサービスの起動
-$ sudo systemctl start ntpd
-$ sudo systemctl enable ntpd
+# systemctl start ntpd
+# systemctl enable ntpd
 ```
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
 :warning:例としてユーザ名は`thetaru`を使用しています。
 ```
 ### ユーザthetaru を グループwheelに追加
-$ sudo usermod -aG wheel thetaru
+# usermod -aG wheel thetaru
 ```
 ```
 ### wheelグループに属していることを確認
-$ id thetaru
+# id thetaru
 ```
 ```
 uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 ```
 ```
-$ sudo vi /etc/pam.d/su
+# vi /etc/pam.d/su
 ```
 ```
 ### su可能ユーザ制限
@@ -267,11 +267,11 @@ $ sudo vi /etc/pam.d/su
 ```
 ```
 ### 再起動して反映
-$ systemctl reboot
+# systemctl reboot
 ```
 ## ■ logrotateの設定
 ```
-$ sudo vi /etc/logrotate.conf
+# vi /etc/logrotate.conf
 ```
 ```
 ### ローテート期間
@@ -288,20 +288,20 @@ $ sudo vi /etc/logrotate.conf
 ```
 ## ■ ブートローダーの設定(GRUB2)
 ```
-$ sudo vi /etc/default/grub
+# vi /etc/default/grub
 ```
 ```
 -  GRUB_CMDLINE_LINUX=""
 +  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet"
 ```
 ```
-$ sudo update-grub
+# update-grub
 ```
 ## ■ カーネルパラメータの設定
 https://gist.github.com/koudaiii/035120ed116ecf6f1b06  
 https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
-$ sudo vi /etc/sysctl.conf
+# vi /etc/sysctl.conf
 ```
 ```
 ###
@@ -315,31 +315,11 @@ $ sudo vi /etc/sysctl.conf
 ```
 ```
 ### 設定の反映
-$ sudo systemctl -p
+# systemctl -p
 ```
-## ■ カーネルクラッシュダンプ
-```
-### kdumpのインストール
-$ sudo apt install linux-crashdump
-```
-```
-$ kdump-config show
-```
-```
-DUMP_MODE:        kdump
-USE_KDUMP:        1
-KDUMP_SYSCTL:     kernel.panic_on_oops=1
-KDUMP_COREDIR:    /var/crash
-crashkernel addr: 
-   /var/lib/kdump/vmlinuz: symbolic link to /boot/vmlinuz-5.4.0-45-generic
-kdump initrd: 
-   /var/lib/kdump/initrd.img: symbolic link to /var/lib/kdump/initrd.img-5.4.0-45-generic
-current state:    Not ready to kdump
-```
-`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
 ## ■ コアダンプ出力設定
 ```
-$ sudo vi /etc/systemd/system.conf
+# vi /etc/systemd/system.conf
 ```
 ```
 -  #DefaultLimitCORE=
