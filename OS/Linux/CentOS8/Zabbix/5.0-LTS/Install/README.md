@@ -108,5 +108,44 @@ Apacheでファイル一覧を表示させないようにする
 +  #    Require all granted
 +  #</Directory>
 ```
+### Traceメソッド無効
+```
++  TraceEnable Off
+```
+### header
+```
+# 使用可能なリクエストヘッダを設定する。
+Header set Access-Control-Allow-Headers "Content-Type"  
+
+# アクセスを許可するOriginのURL。*で指定なし
+Header set Access-Control-Allow-Origin "*"  
+
+# キャッシュを残さないようにするため。
+Header append Pragma no-cache
+
+# リクエスト、レスポンスを一切保存しないため。
+Header append Cache-Control no-store
+
+# オリジンサーバの確認無しにキャッシュを利用させないため。
+Header append Cache-Control no-cache    
+
+# リクエストごとに毎回完全なレスポンスを利用するため。
+Header append Cache-Control must-revalidate
+
+# XSSフィルターを有効化し、XSS検出時にページのレンダリングを停止させるため。
+Header always set X-XSS-Protection "1; mode=block"
+
+# XSS対策のため、常にレスポンスヘッダからContentTypeを優先して指示する。
+Header always set X-Content-Type-Options nosniff
+
+# クリックジャッキング対策ためのフレーム内でのページ表示表示を一切許可しない。
+Header append X-FRAME-OPTIONS "DENY"
+
+# 大量のアクセスが来た際に、サーバ負荷をあげないため。
+ListenBacklog 511   
+
+# PHPに関するHTTP_PROXYの脆弱性について対策するため。
+RequestHeader unset Proxy   
+```
 ## ■ phpの設定
 ## ■ MariaDBの設定
