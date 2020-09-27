@@ -189,9 +189,11 @@ lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/A
 # vi /etc/chrony.conf
 ```
 ```
+### 参照先NTPサーバを指定
 -  pool 2.centos.pool.ntp.org iburst
 +  pool <ntp_server-address> iburst
 
+### うるう秒設定
 +  leapsecmode slew
 +  maxslewrate 1000
 ```
@@ -204,11 +206,10 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
 ^* <ntp-server>                1   6   377     9  +3649us[+5915us] +/-   30ms
 ```
-### ntpdの起動
 ```
-### ntpサービスの起動
-# systemctl start ntpd
-# systemctl enable ntpd
+### chronyサービスの起動
+# systemctl start chrony
+# systemctl enable chrony
 ```
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
