@@ -7,5 +7,6 @@
 -  SELINUX=enforcing
 +  SELINUX=disabled
 ```
+## ■ apacheの設定
 ## ■ phpの設定
 ## ■ MariaDBの設定
