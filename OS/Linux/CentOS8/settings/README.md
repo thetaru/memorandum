@@ -176,16 +176,16 @@ $ sudo systemctl disable ufw
        VC Keymap: jp
       X11 Layout: jp
 ```
-## ■ timezoneの設定(まだ)
+## ■ timezoneの設定
 ```
-### Asia/Tokyoのシンボリックリンクlocaltimeを作成
-# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-```
-```
-# ll /etc/localtime
+### タイムゾーンの変更
+#  timedatectl set-timezone Asia/Tokyo
 ```
 ```
-lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/Asia/Tokyo
+# timedatectl | grep "Time zone"
+```
+```
+                Time zone: Asia/Tokyo (JST, +0900)
 ```
 ## ■ 時刻同期の設定
 ```
