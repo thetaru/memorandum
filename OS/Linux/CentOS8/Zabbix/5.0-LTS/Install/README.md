@@ -77,3 +77,13 @@ Thanks for using MariaDB!
 ```
 # yum install httpd
 ```
+## zabbixのインストール
+```
+# rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/8/x86_64/zabbix-release-5.0-1.el8.noarch.rpm
+```
+```
+# yum clean all
+```
+```
+# yum install zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-agent
+```
