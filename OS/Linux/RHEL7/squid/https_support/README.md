@@ -25,8 +25,9 @@ SELinuxが無効化されていることを前提に進めます。
 # vi /etc/squid/squid.conf
 ```
 ```
-acl localnet src 192.168.254.0/24
-acl localnet src 172.19.215.0/24
+# ローカルネットワーク(localnet)の定義
+acl localnet src 192.168.0.0/24
+acl localnet src 192.168.137.0/24
 
 # SSL接続時に443ポートのCONNECTを許可
 acl SSL_ports port 443
@@ -70,10 +71,10 @@ http_port 8080 ssl-bump generate-host-certificates=on dynamic_cert_mem_cache_siz
 coredump_dir /var/spool/squid
 
 # キャッシュ更新間隔の設定
-refresh_pattern ^ftp:     1440    20%     10080
+refresh_pattern ^ftp:             1440    20%     10080
 refresh_pattern ^gopher:          1440    0%      1440
 refresh_pattern -i (/cgi-bin/|\?) 0       0%      0
-refresh_pattern .   0 20%     4320
+refresh_pattern .                 0       20%     4320
 
 # エラーページにバージョンを表示させない
 httpd_suppress_version_string on
