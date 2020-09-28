@@ -7,22 +7,23 @@ acl localnet src 192.168.137.0/24
 
 # SSL接続時に443ポートのCONNECTを許可
 acl SSL_ports port 443
+acl SSL method CONNECT
 acl CONNECT method CONNECT
 
 # SSL_portsで指定したポート以外を拒否
 http_access deny CONNECT !SSL_ports
 
 # 接続先として指定されているポートを許可
-acl Safe_ports port 80    # http
-acl Safe_ports port 21    # ftp
-acl Safe_ports port 443   # https
-acl Safe_ports port 70    # gopher
-acl Safe_ports port 210   # wais
+acl Safe_ports port 80          # http
+acl Safe_ports port 21          # ftp
+acl Safe_ports port 443         # https
+acl Safe_ports port 70          # gopher
+acl Safe_ports port 210         # wais
 acl Safe_ports port 1025-65535  # unregistered ports
-acl Safe_ports port 280   # http-mgmt
-acl Safe_ports port 488   # gss-http
-acl Safe_ports port 591   # filemaker
-acl Safe_ports port 777   # multiling http
+acl Safe_ports port 280         # http-mgmt
+acl Safe_ports port 488         # gss-http
+acl Safe_ports port 591         # filemaker
+acl Safe_ports port 777         # multiling http
 
 # 接続先として指定されているポート以外を拒否
 http_access deny !Safe_ports
