@@ -93,8 +93,13 @@ reply_header_access X-Forwarded-For deny all
 reply_header_access Via deny all
 reply_header_access Cache-Control deny all
 
+# SSLサーバのサービスに生み出すプロセスの最大数。
 sslcrtd_children 5
+
+# localhost以外からのリクエストはSSL interception 
 ssl_bump server-first all
+
+# 
 sslproxy_cert_error deny all
 ```
 ```
