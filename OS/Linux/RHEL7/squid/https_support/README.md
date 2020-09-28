@@ -112,3 +112,7 @@ sslproxy_cert_error deny all
 # scp root@<proxy-server>:/etc/squid/ssl_cert/server.crt ./
 # update-ca-trust extract
 ```
+```
+### 確認
+# curl https://www.google.com
+```
