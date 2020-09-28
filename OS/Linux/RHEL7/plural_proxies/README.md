@@ -48,7 +48,7 @@ http_access allow localhost
 # ここまで一致しなかった場合は拒否
 http_access deny all
 
-# Squid が使用するポート
+# Squidが使用するポート
 http_port 8080
 
 # core 出力場所の設定
@@ -63,7 +63,7 @@ refresh_pattern .                 0       20%     4320
 # 上位プロキシーを経由しない通信を禁止
 never_direct allow all
 
-# 上位のSquidを参照
+# 上位のSquidを参照(複数選択可)
 cache_peer 172.16.0.1 parent 8080 7 no-query
 
 # エラーページにバージョンを表示させない
