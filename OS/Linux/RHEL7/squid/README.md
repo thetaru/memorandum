@@ -1,5 +1,5 @@
 # squid
-設定値の概要
+見本
 ## ■ /etc/squid/squid.conf
 ```
 # ローカルネットワーク(localnet)の定義
@@ -55,4 +55,36 @@ refresh_pattern .   0 20%     4320
 
 # エラーページにバージョンを表示させない
 httpd_suppress_version_string on
+
+# アクセス元のIPを表示しない
+forwarded_for off
+
+# ローカルのホスト名の隠蔽
+visible_hostname unknown
+
+# Proxy経由であることを隠す(Squidのバージョンが3の場合)
+request_header_access X-Forwarded-For deny all
+request_header_access Via deny all
+request_header_access Cache-Control deny all
+reply_header_access X-Forwarded-For deny all
+reply_header_access Via deny all
+reply_header_access Cache-Control deny all
+```
+## [option]チューニング
+### キャッシュ機能
+```
+# キャッシュのメモリサイズ
+cache_mem 8 MB
+
+# メモリの格納するオブジェクトの最大サイズ
+maximum_object_size_in_memory 8 KB
+
+# キャッシュする最大オブジェクトサイズ
+maximum_object_size 20480 KB
+
+# FQDNの最大キャッシュ数
+fqdncache_size 1024
+
+# キャッシュの保存先(100がディスクキャッシュ容量、16が一次ディレクトリ数、256が二次ディレクトリ数)
+cache_dir ufs /var/spool/squid 100 16 256
 ```
