@@ -48,10 +48,10 @@ http_port 8080
 coredump_dir /var/spool/squid
 
 # キャッシュ更新間隔の設定
-refresh_pattern ^ftp:     1440    20%     10080
-refresh_pattern ^gopher:  1440    0%1440
-refresh_pattern -i (/cgi-bin/|\?) 0     0%0
-refresh_pattern .   0 20%     4320
+refresh_pattern ^ftp:             1440    20%     10080
+refresh_pattern ^gopher:          1440    0%      1440
+refresh_pattern -i (/cgi-bin/|\?) 0       0%      0
+refresh_pattern .                 0       20%     4320
 
 # エラーページにバージョンを表示させない
 httpd_suppress_version_string on
