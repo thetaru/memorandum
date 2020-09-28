@@ -3,6 +3,7 @@ SELinuxが無効化されていることを前提に進めます。
 ## サーバー側の設定
 ```
 # mkdir -p /etc/squid/ssl_cert
+# chown squid:squid /etc/squid/ssl_cert
 # chmod 700 /etc/squid/ssl_cert
 # cd /etc/squid/ssl_cert
 ```
