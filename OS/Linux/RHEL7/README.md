@@ -8,3 +8,4 @@
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/Zabbix)
 ## ■ Tips
 - [ ] [DNSプロキシ(DNSフォワーダー)](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/dns_proxy)
+- [ ] [多段プロキシ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/plural_proxies)
