@@ -1,5 +1,4 @@
 # squid
-見本
 ## ■ /etc/squid/squid.conf
 ```
 # ローカルネットワーク(localnet)の定義
@@ -69,6 +68,34 @@ request_header_access Cache-Control deny all
 reply_header_access X-Forwarded-For deny all
 reply_header_access Via deny all
 reply_header_access Cache-Control deny all
+```
+## HTTPS対応の手順
+SELinuxが無効化されていることを前提に進めます。
+```
+# mkdir -p /etc/squid/ssl_cert
+# chmod 700 /etc/squid/ssl_cert
+# cd /etc/squid/ssl_cert
+
+### 鍵と証明書を生成
+# openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout server.key -out server.crt -days 3650
+```
+`squid.conf`の設定
+```
+# vi /etc/squid/squid.conf
+```
+```
+...
+-  http_proxy 8080
++  http_proxy 8080 ssl-bump generate-host-certificates=on dynamic_cert_mem_cache_size=4MB cert=/etc/squid/ssl_cert/server.crt key=/etc/squid/ssl_cert/server.key
+...
+#
+sslcrtd_children 5
+
+# localhost 以外からのリクエストは SSL interception する。
+ssl_bump server-first all
+
+# 
+sslproxy_cert_error deny all
 ```
 ## [option]チューニング
 ### キャッシュ機能
