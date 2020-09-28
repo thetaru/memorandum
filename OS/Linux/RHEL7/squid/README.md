@@ -1,5 +1,4 @@
 # squid
-HTTPSに対応させる場合は[コチラ]()を参照してください
 ## ■ /etc/squid/squid.conf
 ```
 # ローカルネットワーク(localnet)の定義
