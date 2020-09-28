@@ -101,3 +101,9 @@ sslproxy_cert_error deny all
 # systemctl restart squid
 ```
 ## クライアント側の設定
+```
+### 証明書のインストール
+# cd /etc/pki/ca-trust/source/anchors/
+# scp root@<proxy-server>:/etc/squid/ssl_cert/server.crt ./
+# update-ca-trust extract
+```
