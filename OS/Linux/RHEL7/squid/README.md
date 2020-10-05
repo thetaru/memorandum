@@ -101,3 +101,10 @@ cache_dir ufs /var/spool/squid 100 16 256
 # I/Oが多いなら気持ち多めに設定する
 max_filedesc 8192
 ```
+### 短い間隔でアクセスすると、キャッシュが残りIPが切り替わらない
+同じドメインに対して短い間隔で連続アクセスされた時に接続を使い回す仕様らしい。(i.e. IP分散が出来なくなってしまう)  
+この現象を回避するために以下の設定が必要となります。
+```
+client_persistent_connections off
+server_persistent_connections off
+```
