@@ -2,6 +2,7 @@
 ## ■ /etc/squid/squid.conf
 ```
 # ローカルネットワーク(localnet)の定義
+# 多くなる場合はファイルを作ってそれを読み込ませる
 acl localnet src 192.168.0.0/24
 acl localnet src 192.168.137.0/24
 
@@ -70,7 +71,14 @@ reply_header_access X-Forwarded-For deny all
 reply_header_access Via deny all
 reply_header_access Cache-Control deny all
 ```
-## [option]チューニング
+## ■ 個別設定
+### 特定のページをキャッシュから除外
+ある特定のページをキャッシュから除外する場合
+```
+# github.comをキャッシュしない例
+acl QUERY urlpath_regex cgi-bin \? github.com
+no_cache deny QUERY
+```
 ### キャッシュ機能
 ```
 # キャッシュのメモリサイズ
@@ -85,6 +93,11 @@ maximum_object_size 20480 KB
 # FQDNの最大キャッシュ数
 fqdncache_size 1024
 
-# キャッシュの保存先(100がディスクキャッシュ容量、16が一次ディレクトリ数、256が二次ディレクトリ数)
+# キャッシュの保存先(100MBの容量を16分割しそれぞれに256のフォルダが切られその中にキャッシングされる)
 cache_dir ufs /var/spool/squid 100 16 256
+```
+### ファイルディスクリプタ数の設定
+```
+# I/Oが多いなら気持ち多めに設定する
+max_filedesc 8192
 ```
