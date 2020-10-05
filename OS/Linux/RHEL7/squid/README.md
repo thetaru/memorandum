@@ -108,3 +108,9 @@ max_filedesc 8192
 client_persistent_connections off
 server_persistent_connections off
 ```
+### 名前解決する際の挙動変更
+```
+# on  -> hostname or fqdn
+# off -> fqdn Only
+dns_defnames on
+```
