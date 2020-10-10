@@ -322,6 +322,25 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 +  DefaultLimitCORE=infinity
 ```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
+## ■ journalログ設定
+```
+# vi /etc/systemd/journald.conf
+```
+```
+-  #RateLimitIntervalSec=30s
++  RateLimitIntervalSec=30s
+
+-  #RateLimitBurst=10000
++  RateLimitBurst=10000
+```
+```
+# vi /etc/rsyslog.conf
+```
+```
+### journalログ溢れ対策
+$imjournalRatelimitInterval 0
+$SystemLogRateLimitInterval 0
+```
 ## ■ [option]Proxyの設定
 ```
 # vi /etc/profile.d/proxy.sh
@@ -331,11 +350,4 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 PROXY="<Proxy-server Ip-address>:Port"
 export proxy_http="http://$PROXY"
 export proxy_https="http://$PROXY"
-```
-# 書きたいこと
-```
-/etc/rsyslog.conf
-### journalログ溢れ対策
-$imjournalRatelimitInterval 0
-$SystemLogRateLimitInterval 0
 ```
