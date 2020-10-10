@@ -340,13 +340,13 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 #### 制限あり
 ```
 ### 10秒間に500以上のメッセージがあった場合削除
-+  $SystemLogRateLimitInterval 10
-+  $SystemLogRateLimitBurst 500
++  $imjournalRatelimitInterval 10
++  $imjournalRatelimitBurst 500
 ```
 #### 制限なし
 ```
 ### 無制限に書き込む
-+  $SystemLogRateLimitInterval 0
++  $imjournalRatelimitInterval 0
 ```
 ## ■ [option]Proxyの設定
 ```
