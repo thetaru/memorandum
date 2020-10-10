@@ -14,6 +14,11 @@ ens192  ethernet  接続済み  ens192
 ens224  ethernet  接続済み  ens224
 lo      loopback  管理無し  --
 ```
+<details>
+<summary>STATEがdisconnectedだった場合</summary>
+# nmcli connection add type ethernet con-name <CONNECTIONNAME> ifname <DEVICENAME>
+</details>
+
 `nmcli connection modify`を使って設定します(:warning: `/etc/sysconfig/network-script/ifcfg-ensxxx`に反映されます)  
 `ensxxx`は環境に応じて置き換えて設定してください。
 ```
