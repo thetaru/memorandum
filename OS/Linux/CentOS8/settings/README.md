@@ -218,7 +218,6 @@ $ sudo systemctl restart sshd
 +  leapsecmode slew
 
 ### うるう秒設定
-+  leapsecmode slew
 +  maxslewrate 1000
 ```
 ```
