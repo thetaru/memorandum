@@ -17,6 +17,7 @@
 - [ ] [Logrotate](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Logrotate)
 - [ ] [NFS(書きかけ)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [ ] [Nginx](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Nginx)
+- [ ] [NTP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/NTP)
 - [ ] [PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
 - [ ] [Squid](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Squid)
