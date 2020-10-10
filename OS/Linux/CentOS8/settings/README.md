@@ -16,7 +16,9 @@ lo      loopback  管理無し  --
 ```
 <details>
 <summary>STATEがdisconnectedだった場合</summary>
+```
 # nmcli connection add type ethernet con-name <CONNECTIONNAME> ifname <DEVICENAME>
+```
 </details>
 
 `nmcli connection modify`を使って設定します(:warning: `/etc/sysconfig/network-script/ifcfg-ensxxx`に反映されます)  
