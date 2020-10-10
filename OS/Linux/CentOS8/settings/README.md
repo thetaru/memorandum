@@ -327,8 +327,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # vi /etc/systemd/journald.conf
 ```
 ```
--  #RateLimitIntervalSec=30s
-+  RateLimitIntervalSec=30s
++  RateLimitInterval=??
 
 -  #RateLimitBurst=10000
 +  RateLimitBurst=10000
