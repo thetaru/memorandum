@@ -327,6 +327,14 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 # vi /etc/systemd/journald.conf
 ```
+#### 制限あり
+```
+### 30秒間に500以上のメッセージがあった場合ドロップ
+-  #RateLimitIntervalSec=
++  RateLimitIntervalSec=30s
++  RateLimitBurst=500
+```
+#### 制限なし
 ```
 ### 単位時間あたりに受付ける最大メッセージ数(0は無制限)
 -  #RateLimitBurst=10000
@@ -343,7 +351,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 #### 制限あり
 ```
-### 10秒間に500以上のメッセージがあった場合削除
+### 10秒間に500以上のメッセージがあった場合ドロップ
 +  $imjournalRatelimitInterval 10
 +  $imjournalRatelimitBurst 500
 ```
