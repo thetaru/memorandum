@@ -140,6 +140,14 @@ bluetooth.service
 ### sshdを再起動
 $ sudo systemctl restart sshd
 ```
+## ■ SELinuxの設定
+```
+# vi /etc/selinux/config
+```
+```
+-  SELINUX=enforcing
++  SELINUX=disabled
+```
 ## ■ firewalldの設定
 ```
 ### サービスのステータス確認
