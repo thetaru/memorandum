@@ -322,7 +322,8 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 +  DefaultLimitCORE=infinity
 ```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
-## ■ journalログ設定
+## ■ ログ設定
+### journal設定
 ```
 # vi /etc/systemd/journald.conf
 ```
@@ -331,15 +332,13 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 -  #RateLimitBurst=10000
 +  RateLimitBurst=0
 ```
+### rsyslog設定
 ```
 # vi /etc/rsyslog.conf
 ```
 ```
-### レート制限が適用される間隔を秒単位で指定
+### レート制限が適用される間隔を秒単位で指定(0は無制限)
 +  $imjournalRatelimitInterval 0
-
-### $imjournalRatelimitIntervalで指定した間隔内に発行できるメッセージの最大数を指定
-+  $imjournalRatelimitBurst 20000
 
 ### 無制限に書き込む
 +  $SystemLogRateLimitInterval 0
