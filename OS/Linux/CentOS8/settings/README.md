@@ -327,18 +327,22 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # vi /etc/systemd/journald.conf
 ```
 ```
-+  RateLimitInterval=??
-
+### 単位時間あたりに受付ける最大メッセージ数(0は無制限)
 -  #RateLimitBurst=10000
-+  RateLimitBurst=10000
++  RateLimitBurst=0
 ```
 ```
 # vi /etc/rsyslog.conf
 ```
 ```
-### journalログ溢れ対策
-$imjournalRatelimitInterval 0
-$SystemLogRateLimitInterval 0
+### レート制限が適用される間隔を秒単位で指定
++  $imjournalRatelimitInterval 0
+
+### $imjournalRatelimitIntervalで指定した間隔内に発行できるメッセージの最大数を指定
++  $imjournalRatelimitBurst 20000
+
+### 無制限に書き込む
++  $SystemLogRateLimitInterval 0
 ```
 ## ■ [option]Proxyの設定
 ```
