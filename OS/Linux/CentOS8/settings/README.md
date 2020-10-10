@@ -212,6 +212,11 @@ $ sudo systemctl restart sshd
 -  pool 2.centos.pool.ntp.org iburst
 +  pool <ntp_server-address> iburst
 
+### slewモードに設定
+-  makestep 1.0 3
++  #makestep 1.0 3
++  leapsecmode slew
+
 ### うるう秒設定
 +  leapsecmode slew
 +  maxslewrate 1000
