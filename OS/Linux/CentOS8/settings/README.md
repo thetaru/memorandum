@@ -332,14 +332,19 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 -  #RateLimitBurst=10000
 +  RateLimitBurst=0
 ```
-### rsyslog設定
+### メッセージ溢れ回避
+5秒間にrsyslogへ200以上のメッセージを送信するとメッセージを捨ててしまう。
 ```
 # vi /etc/rsyslog.conf
 ```
+#### 制限あり
 ```
-### レート制限が適用される間隔を秒単位で指定(0は無制限)
-+  $imjournalRatelimitInterval 0
-
+### 10秒間に500以上のメッセージがあった場合削除
++  $SystemLogRateLimitInterval 10
++  $SystemLogRateLimitBurst 500
+```
+#### 制限なし
+```
 ### 無制限に書き込む
 +  $SystemLogRateLimitInterval 0
 ```
