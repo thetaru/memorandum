@@ -332,6 +332,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ### 30秒間に500以上のメッセージがあった場合ドロップ
 -  #RateLimitIntervalSec=
 +  RateLimitIntervalSec=30s
+-  #RateLimitBurst=
 +  RateLimitBurst=500
 ```
 #### 制限なし
