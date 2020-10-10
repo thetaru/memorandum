@@ -332,6 +332,10 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 -  #RateLimitBurst=10000
 +  RateLimitBurst=0
 ```
+```
+# systemctl restart systemd-journald
+# systemctl status systemd-journald
+```
 ### メッセージ溢れ回避
 5秒間にrsyslogへ200以上のメッセージを送信するとメッセージを捨ててしまう。
 ```
@@ -347,6 +351,10 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 ### 無制限に書き込む
 +  $imjournalRatelimitInterval 0
+```
+```
+# systemctl restart rsyslog.service
+# systemctl status rsyslog.service
 ```
 ## ■ [option]Proxyの設定
 ```
