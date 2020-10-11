@@ -365,6 +365,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # systemctl restart rsyslog.service
 # systemctl status rsyslog.service
 ```
+ログ出力設定は[こちら]()を参考にしてください。
 ## ■ [option]Proxyの設定
 ```
 # vi /etc/profile.d/proxy.sh
