@@ -10,7 +10,7 @@ https://sig9.hatenablog.com/entry/2019/10/08/000000
 $template test,"/logs/%hostname%/messages"
 
 ### IPアドレスのフィルタリング
-if $fromhost-ip == ['xxx.xxx.xxx.xxx' , 'yyy.yyy.yyy.yyy'] then {
+if $fromhost-ip == ['xxx.xxx.xxx.xxx', 'yyy.yyy.yyy.yyy'] then {
     -?test
     stop
 }
