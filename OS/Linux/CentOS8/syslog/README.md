@@ -6,7 +6,11 @@ https://sig9.hatenablog.com/entry/2019/10/08/000000
 ```
 # vi /etc/rsyslog.d/Send_To_Server.conf
 ```
+### UDPの場合
 ```
-### UDP
 *.*    @<Syslog Serverのホスト名 or IPアドレス>[:<Port>]
+```
+### TCPの場合
+```
+*.*    @@<Syslog Serverのホスト名 or IPアドレス>[:<Port>]
 ```
