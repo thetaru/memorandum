@@ -7,7 +7,7 @@ https://sig9.hatenablog.com/entry/2019/10/08/000000
 ```
 ```
 ### 振り分け先テンプレート(テンプレート名:test)
-$template test,"/logs/%fromhost%/messages"
+$template test,"/logs/%hostname%/messages"
 
 ### IPアドレスのフィルタリング
 if $fromhost-ip == ['xxx.xxx.xxx.xxx' , 'yyy.yyy.yyy.yyy'] then {
