@@ -97,7 +97,7 @@ IP6.GATEWAY:                            --
 調査中...
 ```
 ### いらないサービス(メモ)
-bluetooth.service
+# disable_arr = [bluetooth.service]
 
 # systemctl stop <service>
 # systemctl disable <service>
