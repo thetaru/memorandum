@@ -1,4 +1,7 @@
 # Elasticsearch
+<details>
+<summary>Elasticsearch</summary>
+
 ## ■ インストール
 ```
 # cat <<EOF > /etc/yum.repos.d/elasticsearch.repo
@@ -55,3 +58,4 @@ Elasticsearchの割り当てメモリを変更(ヒープサイズ)します。
 +  # ---------------------------------- For kibana -----------------------------------
 +  http.cors.enabled: true
 ```
+</details>
