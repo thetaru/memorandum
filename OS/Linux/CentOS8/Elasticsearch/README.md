@@ -28,9 +28,12 @@ EOF
 ```
 
 ```
+Elasticsearchの割り当てメモリを変更(ヒープサイズ)します。  
+`Xms`と`Xmx`の値は等しくすること。
 ```
 # vi /etc/elasticsearch/jvm.options
 ```
 ```
-
+-Xms1g
+-Xmx1g
 ```
