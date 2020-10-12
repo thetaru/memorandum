@@ -38,3 +38,15 @@ Elasticsearchの割り当てメモリを変更(ヒープサイズ)します。
 -Xms1g
 -Xmx1g
 ```
+```
+# vi /etc/elasticsearch/elasticsearch.yml
+```
+```
+### 接続元IPアドレス制限
+-  network.host: 192.168.0.1
++  network.host: 0.0.0.0
+
+### 末尾に追記
++  # ---------------------------------- For kibana -----------------------------------
++  http.cors.enabled: true
+```
