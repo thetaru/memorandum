@@ -16,3 +16,8 @@ EOF
 ### Elasticsearchのインストール
 # yum install --enablerepo=elasticsearch elasticsearch
 ```
+```
+# systemctl daemon-reload
+# systemctl start elasticsearch.service
+# systemctl enable elasticsearch.service
+```
