@@ -34,7 +34,7 @@ baseurl=file:///media/AppStream/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 ```
 メディアのマウント先が```/media```でない場合は、```baseurl```の値を変更する必要があります。  
-また、RHEL8とで```gpgkey```の値が変わることに注意します。
+また、RHEL8とで`gpgkey`の値が`file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release`に変わることに注意します。
 ### 2.3 キャッシュクリア
 ```
 # yum clean all
