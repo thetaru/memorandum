@@ -1,5 +1,5 @@
 # Elasticsearch
-## インストール
+## ■ インストール
 ```
 # cat <<EOF > /etc/yum.repos.d/elasticsearch.repo
 [elasticsearch]
@@ -20,4 +20,10 @@ EOF
 # systemctl daemon-reload
 # systemctl start elasticsearch.service
 # systemctl enable elasticsearch.service
+```
+## ■ 設定
+```
+# vi /usr/lib/systemd/system/elasticsearch.service
+```
+```
 ```
