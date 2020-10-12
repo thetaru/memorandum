@@ -26,4 +26,11 @@ EOF
 # vi /usr/lib/systemd/system/elasticsearch.service
 ```
 ```
+
+```
+```
+# vi /etc/elasticsearch/jvm.options
+```
+```
+
 ```
