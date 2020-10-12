@@ -1,0 +1,1 @@
+# rsyslogからElasticsearchにログ転送
