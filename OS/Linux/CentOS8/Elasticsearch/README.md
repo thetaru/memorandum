@@ -90,6 +90,15 @@ EOF
 ```
 ## ■ 設定
 ```
-# vi /etc/kibana.conf
+# vi /etc/kibana/kibana.yml
+```
+```
+### 接続元IPアドレス制限
+-  #server.host: "localhost"
++  server.host: "0.0.0.0"
+
+### 日本語化
+-  #i18n.defaultLocale: "en"
++  i18n.defaultLocale: "ja-JP"
 ```
 </details>
