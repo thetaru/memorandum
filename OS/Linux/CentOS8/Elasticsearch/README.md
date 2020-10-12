@@ -1,5 +1,8 @@
 # Elasticsearch + Kibana
-version: 7.9
+|software|version|
+|:---|:---|
+|elasticsearch|7.9.2|
+|kibana|7.9.2|
 
 <details>
 <summary>Elasticsearch</summary>
