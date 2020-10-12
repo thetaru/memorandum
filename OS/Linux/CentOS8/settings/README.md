@@ -15,7 +15,7 @@ ens224  ethernet  接続済み  ens224
 lo      loopback  管理無し  --
 ```
 <details>
-<summary>STATEがdisconnectedだった場合</summary>
+<summary>NICを後から追加した場合</summary>
    
 ```
 # nmcli connection add type ethernet con-name <CONNECTIONNAME> ifname <DEVICENAME>
