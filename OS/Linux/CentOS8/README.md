@@ -12,6 +12,7 @@
 - [ ] [Bacula](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Bacula)
 - [ ] [BIND](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/BIND)
 - [ ] [Docker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Docker)
+- [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
 - [ ] [k8s](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/k8s)
 - [ ] [LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [ ] [Logrotate](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Logrotate)
