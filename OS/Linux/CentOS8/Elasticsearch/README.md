@@ -59,3 +59,24 @@ Elasticsearchの割り当てメモリを変更(ヒープサイズ)します。
 +  http.cors.enabled: true
 ```
 </details>
+
+<details>
+<summary>Kibana</summary>
+
+## ■ インストール
+```
+# rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+```
+```
+cat <<EOF > /etc/yum.repos.d/kibana.repo
+[kibana-5.x]
+name=Kibana repository for 5.x packages
+baseurl=https://artifacts.elastic.co/packages/5.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+EOF
+```
+</details>
