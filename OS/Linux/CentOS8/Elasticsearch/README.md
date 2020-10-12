@@ -1,4 +1,5 @@
 # Elasticsearch + Kibana
+ElasticsearchとKibanaの構築ログ
 |software|version|
 |:---|:---|
 |elasticsearch|7.9.2|
