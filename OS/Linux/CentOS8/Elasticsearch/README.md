@@ -104,6 +104,6 @@ EOF
 
 ### 日本語化
 -  #i18n.defaultLocale: "en"
-+  i18n.defaultLocale: "ja-JP"
++  i18n.locale: "ja-JP"
 ```
 </details>
