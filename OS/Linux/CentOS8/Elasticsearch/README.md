@@ -68,7 +68,7 @@ Elasticsearchの割り当てメモリを変更(ヒープサイズ)します。
 # rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 ```
 ```
-cat <<EOF > /etc/yum.repos.d/kibana.repo
+# cat <<EOF > /etc/yum.repos.d/kibana.repo
 [kibana-5.x]
 name=Kibana repository for 5.x packages
 baseurl=https://artifacts.elastic.co/packages/5.x/yum
@@ -78,5 +78,18 @@ enabled=1
 autorefresh=1
 type=rpm-md
 EOF
+```
+```
+### kibanaのインストール
+# yum install kibana
+```
+```
+# systemctl daemon-reload
+# systemctl start kibana.service
+# systemctl enable kibana.service
+```
+## ■ 設定
+```
+# vi /etc/kibana.conf
 ```
 </details>
