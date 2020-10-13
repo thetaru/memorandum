@@ -1,4 +1,4 @@
-# Elasticsearch + Kibana
+# Elasticsearch + Kibana + Filebeat
 ElasticsearchとKibanaの構築ログ
 |software|version|
 |:---|:---|
