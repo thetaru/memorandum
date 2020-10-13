@@ -130,7 +130,7 @@ EOF
 ```
 ```
 # cp -i /etc/filebeat/modules.d/system.yml.disabled /etc/filebeat/modules.d/system.yml
-# vi /etc/filebeat/module.d/system.yml
+# vi /etc/filebeat/modules.d/system.yml
 ```
 ```
 - module: system
