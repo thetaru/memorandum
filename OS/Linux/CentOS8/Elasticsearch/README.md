@@ -131,12 +131,20 @@ EOF
 # cp -i /etc/filebeat/modules.d/system.yml.disabled /etc/filebeat/modules.d/system.yml
 # vi /etc/filebeat/module.d/system.yml
 ```
+```
 - module: system
   syslog:
     enabled: true
 -     #var.paths:
 +     var.paths: ["/var/log/messages*"]
 ```
-
+```
+# filebeat modules enable system
+```
+```
+# filebeat setup
+# systemctl start filebeat
+# systemctl enable filebeat
+```
 ```
 </details>
