@@ -108,3 +108,10 @@ EOF
 +  i18n.locale: "ja-JP"
 ```
 </details>
+
+<details>
+<summary>Filebeat</summary>
+
+## ■ インストール
+## ■ 設定
+</details>
