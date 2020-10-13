@@ -128,7 +128,8 @@ EOF
 +  host: "localhost:5601"
 ```
 ```
-# vi /etc/filebeat/module.d/
+# cp -i /etc/filebeat/modules.d/system.yml.disabled /etc/filebeat/modules.d/system.yml
+# vi /etc/filebeat/module.d/system.yml
 ```
 - module: system
   syslog:
