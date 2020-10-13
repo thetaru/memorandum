@@ -4,6 +4,7 @@ ElasticsearchとKibanaの構築ログ
 |:---|:---|
 |elasticsearch|7.9.2|
 |kibana|7.9.2|
+|Filebete|7.9.2|
 
 <details>
 <summary>Elasticsearch</summary>
