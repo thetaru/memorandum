@@ -114,5 +114,28 @@ EOF
 <summary>Filebeat</summary>
 
 ## ■ インストール
+```
+# curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.9.2-x86_64.rpm
+# rpm -vi filebeat-7.9.2-x86_64.rpm
+```
 ## ■ 設定
+```
+# vi /etc/filebeat/filebeat.yml
+```
+```
+# =================================== Kibana ===================================
+-  #host: "localhost:5601"
++  host: "localhost:5601"
+```
+```
+# vi /etc/filebeat/module.d/
+```
+- module: system
+  syslog:
+    enabled: true
+-     #var.paths:
++     var.paths: ["/var/log/messages*"]
+```
+
+```
 </details>
