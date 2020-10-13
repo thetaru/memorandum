@@ -1,5 +1,7 @@
 # Zabbixの通信暗号化設定
-証明書ベースの設定方法
+証明書ベースの設定方法  
+これを参考に書き直し?  
+https://qiita.com/mitzi2funk/items/602d9c5377f52cb60e54  
 |ホスト名|役割|プロンプト|
 |:---|:---|:---|
 |Zabbix_Server|監視する側|[Server]#|
