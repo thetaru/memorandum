@@ -146,5 +146,4 @@ EOF
 # systemctl start filebeat
 # systemctl enable filebeat
 ```
-```
 </details>
