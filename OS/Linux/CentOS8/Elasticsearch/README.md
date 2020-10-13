@@ -1,5 +1,6 @@
 # Elasticsearch + Kibana + Filebeat
-ElasticsearchとKibanaの構築ログ
+ElasticsearchとKibanaとFilebeatでsyslog分析サーバ構築ログ  
+検索方法等もう少し煮詰める必要あり
 |software|version|
 |:---|:---|
 |elasticsearch|7.9.2|
