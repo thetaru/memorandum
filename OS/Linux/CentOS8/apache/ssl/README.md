@@ -21,8 +21,6 @@
 -  ServerName example.com:443
 +  ServerName <hostname>:443
 
-+  Header set Strict-Transport-Security "max-age=315360000; includeSubDomains"
-
 -  SSLCertificateFile
 +  SSLCertificateFile /etc/httpd/ssl/apache-selfsigned.crt
 
