@@ -6,12 +6,13 @@
 ```
 # mkdir -p /etc/httpd/ssl/private
 # chmod 700 /etc/httpd/ssl/private
-# openssl req -x509                                                \ #
-              -nodes                                               \ #
-              -days 3650                                           \ #
-              -newkey rsa：2048                                    \ #
-              -keyout /etc/httpd/ssl/private/apache-selfsigned.key \ #
-              -out /etc/httpd/ssl/apache-selfsigned.crt              #
+# openssl req -x509                                                \ # 証明書の規格
+              -nodes                                               \ # 秘密鍵にパスフレーズを付けない
+              -sha256                                              \ # 証明書の署名アルゴリズムにSHA-256を使用
+              -days 3650                                           \ # 証明書の有効期限(単位:日)
+              -newkey rsa：2048                                    \ # 作成する秘密鍵で使用する暗号方式と鍵のサイズを指定
+              -keyout /etc/httpd/ssl/private/apache-selfsigned.key \ # 作成する秘密鍵のファイル名を指定
+              -out /etc/httpd/ssl/apache-selfsigned.crt              # 作成するSSLサーバ証明書のファイル名を指定
 ```
 ```
 # vi /etc/httpd/conf.d/ssl.conf
@@ -27,17 +28,4 @@
 
 -  SSLCertificateKeyFile
 +  SSLCertificateKeyFile /etc/httpd/ssl/private/apache-selfsigned.key
-```
-## ■ HSTS
-```
-# vi /etc/httpd/conf/httpd.conf
-```
-```
-+  <VirtualHost *:80>
-+     <IfModule mod_rewrite.c>
-+       RewriteEngine on
-+       RewriteCond %{HTTPS} off
-+       RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-+     </IfModule>
-+  </VirtualHost>
 ```
