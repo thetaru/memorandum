@@ -109,6 +109,9 @@ Apacheでファイル一覧を表示させないようにする
 ```
 ### header
 ```
+# HTTPヘッダーの削除
+Header unset X-Powered-By
+
 # 使用可能なリクエストヘッダを設定する。
 Header set Access-Control-Allow-Headers "Content-Type"  
 
