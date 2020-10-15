@@ -1,4 +1,8 @@
 # apache
+|パッケージ|バージョン|
+|:---|:---|
+|apache|2.4|
+
 ```
 # vi /etc/httpd/conf/httpd.conf
 ```
