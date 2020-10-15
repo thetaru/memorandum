@@ -1,0 +1,54 @@
+zabbix HTTPS化
+
+・SSL設定
+yum install mod_ssl
+mkdir -p /etc/httpd/ssl/private
+chmod 700 /etc/httpd/ssl/private
+### 10年
+openssl req -x509 -nodes -days 3650 -newkey rsa：2048 -keyout /etc/httpd/ssl/private/apache-selfsigned.key -out /etc/httpd/ssl/apache-selfsigned.crt
+vi /etc/httpd/conf.d/ssl.conf
+ServerName <hostname>:443
+Header set Strict-Transport-Security "max-age=315360000; includeSubDomains" 
+SSLCertificateFile /etc/httpd/ssl/apache-selfsigned.crt
+SSLCertificateKeyFile /etc/httpd/ssl/private/apache-selfsigned.key
+systemctl restart httpd.service
+・HSTS
+vi /etc/httpd/conf/httpd.conf
+```
+### 追加
+<VirtualHost *:80>
+   <IfModule mod_rewrite.c>
+     RewriteEngine on
+     RewriteCond %{HTTPS} off
+     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+   </IfModule>
+</VirtualHost>
+<Directory "/var/www/html">
+    Options -Indexes +FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+```
+systemctl restart httpd.service
+・WEBサーバー情報の公開を無効にする
+vi /etc/httpd/conf/httpd.conf
+```
+### 末尾追記
+ServerSignature Off
+ServerTokens Prod
+```
+vi /etc/php/php.ini
+```
+expose_php = Off
+```
+vi /etc/httpd/conf.d/welcome.conf
+```
+#<LocationMatch "^/+$">
+#    Options -Indexes
+#    ErrorDocument 403 /.noindex.html
+#</LocationMatch>
+```
+
+https://www.riscascape.net/archives/3933
+https://qiita.com/y-araki-qiita/items/2dd3bcffe80932437e7e
+https://qiita.com/bezeklik/items/1c4145652661cf5b2271
