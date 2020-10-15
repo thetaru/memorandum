@@ -46,6 +46,7 @@ welcomeページに色々な情報がわかってしまうので削除する。
 echo "" > /etc/httpd/conf.d/welcome.conf
 ```
 ## ■ 任意設定
+### `/etc/httpd/conf.d/security-strict.conf`
 - GET/POST 以外使えなくなる
 - cgi-bin が使えなくなる
 ```
