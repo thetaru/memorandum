@@ -67,7 +67,7 @@ Apacheでファイル一覧を表示させないようにする
 ```
 <Directory "/var/www/html">
 -   Options Indexes FollowSymLinks
-+   Options -Indexes FollowSymLinks
++   Options -Indexes +FollowSymLinks
     AllowOverride None
     Require all granted
 </Directory>
