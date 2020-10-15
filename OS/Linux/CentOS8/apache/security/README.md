@@ -54,6 +54,7 @@ echo "" > /etc/httpd/conf.d/welcome.conf
 # DoS 攻撃対策
 LimitRequestBody 10485760
 LimitRequestFields 50
+
 # slowloris 対策
 RequestReadTimeout header=20-40,MinRate=500 body=20,MinRate=500
 
