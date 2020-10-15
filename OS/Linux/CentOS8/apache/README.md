@@ -75,7 +75,7 @@ Apacheでファイル一覧を表示させないようにする
 ### バージョン隠し
 レスポンスヘッダーのバージョンを非表示にする
 ```
-+  ServerTokens ProductOnly
++  ServerTokens Prod
 ```
 エラーページのフッターにバージョンを非表示にする
 ```
