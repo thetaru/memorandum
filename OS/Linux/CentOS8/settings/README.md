@@ -35,6 +35,10 @@ lo      loopback  管理無し  --
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
+無線LANとワイヤレスWANを無効化します。
+```
+# nmcli radio all off
+```
 デバイスを再起動して設定を反映させます
 ```
 # nmcli connection up ensxxx
@@ -45,6 +49,8 @@ lo      loopback  管理無し  --
 設定値を確認します
 ```
 # nmcli device show ensxxx
+# nmcli nmcli networking connectivity
+# nmcli radio all
 ```
 <details>
 <summary>[option]IPv6の無効化</summary>
