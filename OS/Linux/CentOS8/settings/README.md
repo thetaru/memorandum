@@ -156,18 +156,18 @@ $ sudo systemctl restart sshd
 1. **有効**にする場合(デフォルトで有効です)
 ```
 ### サービスの有効化
-# systemctl start ufw
+# systemctl start firewalld
 
 ### 自動起動の無効化
-# systemctl enable ufw
+# systemctl enable firewalld
 ```
 2. **無効**にする場合
 ```
 ### サービスの無効化
-# systemctl stop ufw
+# systemctl stop firewalld
 
 ### 自動起動の無効化
-# systemctl disable ufw
+# systemctl disable firewalld
 ```
 ここでは、ufwの詳しい設定は行いません。
 ## ■ localeの設定
