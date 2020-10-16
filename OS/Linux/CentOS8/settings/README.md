@@ -84,6 +84,7 @@ IP6.GATEWAY:                            --
 ```
 </details>
 
+`/etc/resolv.conf`の自動更新の無効化→
 ## ■ hostsの設定
 ```
 # vi /etc/hosts
