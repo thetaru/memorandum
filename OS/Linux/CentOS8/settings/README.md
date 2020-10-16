@@ -301,7 +301,8 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # vi /etc/sysctl.conf
 ```
 ```
-###
+### /proc/sys/kernel/core_patternに反映される
+### 逆に/proc/sys/kernel/core_patternを設定するとkernel.core_patternの値に反映される
 +  kernel.core_pattern=/var/tmp/core-%e.%p
 
 ###
