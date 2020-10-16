@@ -124,7 +124,7 @@ IP6.GATEWAY:                            --
 # vi /etc/dnf/dnf.conf
 ```
 ```
-+  exclude=kernel* centos*
++  excludepkgs=kernel* centos*
 ```
 ## ■ sshdの設定
 ```
