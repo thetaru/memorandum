@@ -319,8 +319,15 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # vi /etc/systemd/system.conf
 ```
 ```
+-  #DumpCore=yes
++  DumpCore=yes
+
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
+```
+```
+### 反映
+# systemctl daemon-reexec
 ```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
 ## ■ ログ設定
