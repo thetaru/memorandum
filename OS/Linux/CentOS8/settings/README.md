@@ -221,7 +221,7 @@ $ sudo systemctl restart sshd
 ```
 ### 参照先NTPサーバを指定
 -  pool 2.centos.pool.ntp.org iburst
-+   <ntp_server-address> iburst
++  server <ntp_server-address> iburst
 
 ### slewモードに設定
 -  makestep 1.0 3
