@@ -97,6 +97,7 @@ IP6.GATEWAY:                            --
 <details>
 <summary>[option]/etc/resolv.confの自動更新の無効化</summary>
 
+例えばDHCPサーバからIPアドレスを取得している場合、DNSも渡されたものを`/etc/resolv.conf`に設定してしまうので無効化する。
 ```
 # vi /etc/NetworkManager/NetworkManager.conf
 ```
