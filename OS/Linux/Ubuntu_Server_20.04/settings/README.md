@@ -74,7 +74,7 @@ $ sudo apt-get upgrade
 調査中...
 ```
 ### いらないサービス(メモ)
-avahi-daemon.service
+avahi-daemon.service # 自動でルーティングが入る
 bluetooth.service
 cups.service
 cups-browsed.service
