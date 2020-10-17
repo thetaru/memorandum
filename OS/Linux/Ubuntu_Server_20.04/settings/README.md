@@ -5,12 +5,17 @@ $ sudo hostnamectl set-hostname <hostname>
 ```
 ## ■ [Static]IPアドレス設定
 インストール時に作成される`/etc/netplan/00-installer-config.yaml`は無効化します。  
-yamlファイルでなければ設定は読み込まれません。
+ymlファイルでなければ設定は読み込まれません。
 ```
-$ sudo mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.org
+$ sudo mv /etc/netplan/00-installer-config.yml /etc/netplan/00-installer-config.yml.org
 ```
 `/etc/netplan/99_config.yaml`を作成し、下記のように記述します。  
 詳しい設定方法に関しては[ここ](https://www.komee.org/entry/2018/06/12/181400)が参考になります。
+```
+### 起動していることと自動起動が有効になっていることを確認する
+$ sudo systemctl status systemd-networkd.service
+$ sudo systemctl is-enable systemd-networkd.service
+```
 ```
 $ sudo vi /etc/netplan/99_config.yaml
 ```
@@ -80,6 +85,7 @@ bluetooth.service
 cups.service
 cups-browsed.service
 ModemManager.service
+networking.service
 
 ### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl mask apt-daily.timer
