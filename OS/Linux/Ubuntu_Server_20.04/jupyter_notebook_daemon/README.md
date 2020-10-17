@@ -42,6 +42,10 @@ c.NotebookApp.terminals_enabled = False
 
 ### ポート指定
 c.NotebookApp.port = 8888
+
+### SSL設定
+#c.NotebookApp.certfile = u''
+#c.NotebookApp.keyfile = u''
 ```
 terminalメニューを無効にすることはできますがNotebookからshellコマンドは実行できるので効果は薄いです。  
 非推奨ですがshellコマンドを禁止するなら`https://github.com/jupyter/notebook/issues/2242#issuecomment-283369629`が参考になると思います。
