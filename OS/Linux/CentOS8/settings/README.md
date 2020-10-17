@@ -95,7 +95,7 @@ IP6.GATEWAY:                            --
 </details>
 
 <details>
-<summary>[option]`/etc/resolv.conf`の自動更新の無効化</summary>
+<summary>[option]/etc/resolv.confの自動更新の無効化</summary>
 
 ```
 # vi /etc/NetworkManager/NetworkManager.conf
