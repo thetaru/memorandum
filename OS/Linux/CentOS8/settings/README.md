@@ -152,6 +152,15 @@ IP6.GATEWAY:                            --
 ```
 +  excludepkgs=kernel* centos*
 ```
+### 万が一アップデートされた場合の設定
+```
+### カーネルアップデートされても、新しいカーネルで起動しない
+# vi /etc/sysconfig/kernel
+```
+```
+-  UPDATEDEFAULT=yes
++  UPDATEDEFAULT=no
+```
 ## ■ sshdの設定
 ```
 # vi /etc/ssh/sshd_config
