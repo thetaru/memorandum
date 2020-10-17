@@ -434,3 +434,7 @@ export proxy_https="http://$PROXY"
 
 export no_proxy="127.0.0.1"
 ```
+```
+### 反映
+# source /etc/profile.d/proxy.sh
+```
