@@ -12,11 +12,6 @@ $ sudo mv /etc/netplan/00-installer-config.yml /etc/netplan/00-installer-config.
 `/etc/netplan/99_config.yaml`を作成し、下記のように記述します。  
 詳しい設定方法に関しては[ここ](https://www.komee.org/entry/2018/06/12/181400)が参考になります。
 ```
-### 起動していることと自動起動が有効になっていることを確認する
-$ sudo systemctl status systemd-networkd.service
-$ sudo systemctl is-enable systemd-networkd.service
-```
-```
 $ sudo vi /etc/netplan/99_config.yaml
 ```
 ```
@@ -34,6 +29,7 @@ network:
         addresses: [<dns-server ip-address1>, <dns-server ip-address2>]
         search: [<domain>]
 ```
+ちなみにサービスとしては`systemd-networkd.service`で動いているので何かあったときはまず`journalctl -u systemd-networkd`とか打てばいいと思います。
 ```
 ### IPアドレスを反映
 $ sudo netplan apply
