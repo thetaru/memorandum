@@ -27,6 +27,7 @@ network:
       gateway4: <default-gateway ip-address>
       nameservers:
         addresses: [<dns-server ip-address1>, <dns-server ip-address2>]
+        search: [<domain>]
 ```
 ```
 ### IPアドレスを反映
@@ -345,6 +346,8 @@ $ sudo vi /etc/profile.d/proxy.sh
 $PROXY="<Proxy-server Ip-address>:Port"
 export proxy_http="http://$PROXY"
 export proxy_https="https://$PROXY"
+
+export no_proxy="127.0.0.1"
 ```
 # 書きたいこと(ubuntuでも必要か検証すること
 ```
