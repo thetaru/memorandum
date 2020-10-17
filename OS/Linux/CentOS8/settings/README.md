@@ -94,7 +94,18 @@ IP6.GATEWAY:                            --
 ```
 </details>
 
-`/etc/resolv.conf`の自動更新の無効化→
+<details>
+<summary>[option]`/etc/resolv.conf`の自動更新の無効化</summary>
+
+```
+# vi /etc/NetworkManager/NetworkManager.conf
+```
+```
+[main]
++  dns=none
+```
+</details>
+
 ## ■ hostsの設定
 ```
 # vi /etc/hosts
@@ -114,6 +125,20 @@ IP6.GATEWAY:                            --
 # systemctl disable <service>
 ```
 ## ■ カーネルアップデート抑止
+### Xあり
+```
+# vi /etc/yum.conf
+```
+```
++  exclude=kernel* centos* xorg*
+```
+```
+# vi /etc/dnf/dnf.conf
+```
+```
++  excludepkgs=kernel* centos* xorg*
+```
+### Xなし
 ```
 # vi /etc/yum.conf
 ```
