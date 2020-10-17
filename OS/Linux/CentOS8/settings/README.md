@@ -161,6 +161,7 @@ IP6.GATEWAY:                            --
 -  UPDATEDEFAULT=yes
 +  UPDATEDEFAULT=no
 ```
+脆弱性対処の際にはこれらの設定を外してから`yum update`します。
 ## ■ sshdの設定
 ```
 # vi /etc/ssh/sshd_config
