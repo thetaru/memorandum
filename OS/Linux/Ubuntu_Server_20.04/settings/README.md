@@ -29,7 +29,7 @@ network:
         addresses: [<dns-server ip-address1>, <dns-server ip-address2>]
         search: [<domain>]
 ```
-ちなみにサービスとしては`systemd-networkd.service`で動いているので何かあったときはまず`journalctl -u systemd-networkd`とか打てばいいと思います。
+ちなみにサービスとしては`systemd-networkd.service`で動いているので何かあったときはまず`journalctl -x -u systemd-networkd`とか打てばいいと思います。
 ```
 ### IPアドレスを反映
 $ sudo netplan apply
