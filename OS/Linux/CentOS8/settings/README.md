@@ -180,7 +180,7 @@ $ sudo systemctl restart sshd
 ### 自動起動の無効化
 # systemctl disable firewalld
 ```
-ここでは、ufwの詳しい設定は行いません。
+ここでは、firewalldの詳しい設定は行いません。
 ## ■ localeの設定
 ```
 ### 日本語用パッケージがインストールされていない場合はlanguage-pack-jaをインストール
