@@ -126,7 +126,8 @@ IP6.GATEWAY:                            --
 つまり`/run/NetworkManager/resolv.conf`や`/run/NetworkManager/no-stub-resolv.conf`はインターフェース設定ファイルからNetworkManagerが構築しています。  
 そして`/etc/resolv.conf`はそれらを元にして構築されます。  
   
-`/etc/NetworkManager/NetworkManager.conf`で設定した`dns=none`の意味は`/run/NetworkManager/resolv.conf`や`/run/NetworkManager/no-stub-resolv.conf`を参照しないことで`/etc/resolv.conf`の自動更新を無効化しているようです。
+`/etc/NetworkManager/NetworkManager.conf`で設定した`dns=none`は  
+`/run/NetworkManager/resolv.conf`や`/run/NetworkManager/no-stub-resolv.conf`を参照しないことで`/etc/resolv.conf`の自動更新を無効化するということを意味するようです。
 
 </details>
 
