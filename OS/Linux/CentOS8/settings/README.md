@@ -333,12 +333,12 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 -  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=03c2915c-7232-4e8b-8593-c553c429b2db rhgb quiet"
 +  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=03c2915c-7232-4e8b-8593-c553c429b2db rhgb quiet consoleblank=0 ipv6.disable=1"
 ```
+### BIOS
 ```
-### BIOSの場合
 # grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
+### UEFI
 ```
-### UEFIの場合
 # grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 ```
 ## ■ カーネルパラメータの設定
