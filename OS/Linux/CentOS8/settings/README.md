@@ -4,7 +4,7 @@
 # hostnamectl set-hostname <hostname>
 ```
 ## ■ [Static]IPアドレス設定
-認識しているデバイスを確認します
+認識しているデバイスを確認します。
 ```
 # nmcli device
 ```
@@ -39,14 +39,14 @@ lo      loopback  管理無し  --
 ```
 # nmcli radio all off
 ```
-デバイスを再起動して設定を反映させます
+デバイスを再起動して設定を反映させます。
 ```
 # nmcli connection up ensxxx
 ```
 ```
 接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
 ```
-設定値を確認します
+設定値を確認します。
 ```
 # nmcli device show ensxxx
 # nmcli nmcli networking connectivity
@@ -65,14 +65,14 @@ lo      loopback  管理無し  --
 +  net.ipv6.conf.all.disable_ipv6 = 1
 +  net.ipv6.conf.default.disable_ipv6 = 1
 ```
-設定を反映します
+設定を反映します。
 ```
 # sysctl --load /etc/sysctl.d/70-ipv6.conf
 ```
 ```
 # systemctl reboot
 ```
-IPv6が設定が無効化されていることを確認します
+IPv6が設定が無効化されていることを確認します。
 ```
 # nmcli device show ensxxx
 ```
@@ -97,7 +97,7 @@ IP6.GATEWAY:                            --
 <details>
 <summary>[option]/etc/resolv.confの自動更新の無効化</summary>
 
-例えばDHCPサーバからIPアドレスを取得している場合、DNSも渡されたものを`/etc/resolv.conf`に設定してしまうので無効化する。
+例えばDHCPサーバからIPアドレスを取得している場合、DNSも渡されたものを`/etc/resolv.conf`に設定してしまうので無効化します。
 ```
 # vi /etc/NetworkManager/NetworkManager.conf
 ```
@@ -108,7 +108,7 @@ IP6.GATEWAY:                            --
 </details>
 
 ## ■ DNSの設定
-上記で`/etc/resolv.conf`の自動更新を無効化した人向け
+上記で`/etc/resolv.conf`の自動更新を無効化した人向けです。
 ```
 # vi /etc/resolv.conf
 ```
