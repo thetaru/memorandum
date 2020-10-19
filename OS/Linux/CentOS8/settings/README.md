@@ -107,6 +107,20 @@ IP6.GATEWAY:                            --
 ```
 </details>
 
+## ■ DNSの設定
+上記で`/etc/resolv.conf`の自動更新を無効化した人向け
+```
+# vi /etc/resolv.conf
+```
+```
++  search <domain>
+
++  nameserver <DNS1 Server>
++  nameserver <DNS2 Server>
+```
+## ■ networkの設定
+```
+```
 ## ■ hostsの設定
 ```
 # vi /etc/hosts
