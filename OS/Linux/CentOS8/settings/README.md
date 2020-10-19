@@ -219,7 +219,7 @@ IP6.GATEWAY:                            --
 ```
 ```
 ### sshdを再起動
-$ sudo systemctl restart sshd
+# systemctl restart sshd
 ```
 ## ■ SELinuxの設定
 ```
