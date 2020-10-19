@@ -126,7 +126,7 @@ IP6.GATEWAY:                            --
 # vi /etc/hosts
 ```
 ```
-### IPv6は使わないので無効化
+### IPv6を使わない場合は無効化
 -  ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 +  #::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 ```
