@@ -118,6 +118,19 @@ IP6.GATEWAY:                            --
 +  nameserver <DNS1 Server>
 +  nameserver <DNS2 Server>
 ```
+<details>
+<summary>[option]NetworkManagerの挙動</summary>
+
+NetworkManagerのDNS設定はインターフェースのデバイスファイル(/etc/sysconfig/network-script/ifcfg-<device name>)に記載のDNSサーバとサーチドメインをまとめているに過ぎない。  
+```
+# cat /run/NetworkManager/resolv.conf
+# cat /run/NetworkManager/no-stub-resolv.conf
+```
+また仮に`/run/NetworkManager/resolv.conf`や`/run/NetworkManager/no-stub-resolv.conf`を削除したとしてもデバイスファイルからNetworkManagerが再構築する。(実験済み)  
+`/etc/NetworkManager/NetworkManager.conf`で設定した`dns=none`の意味は`/run/NetworkManager/resolv.conf`や`/run/NetworkManager/no-stub-resolv.conf`を参照しないということみたいです。
+
+</details>
+
 ## ■ networkの設定
 `/etc/sysconfig/network`に`Networking=yes`がデフォルトで入っているがこれを消しても疎通が取れてしまう。  
 `nmcli networking on`は別ファイルを参照・変更していそう。
