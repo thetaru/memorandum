@@ -119,7 +119,8 @@ IP6.GATEWAY:                            --
 +  nameserver <DNS2 Server>
 ```
 ## ■ networkの設定
-`Networking=yes`はIPアドレス設定時に実行した`nmcli networking on`で入っているはずです。
+`/etc/sysconfig/network`に`Networking=yes`がデフォルトで入っているがこれを消しても疎通が取れてしまう。  
+`nmcli networking on`は別ファイルを参照・変更していそう。
 ```
 # vi /etc/sysconfig/network
 ```
