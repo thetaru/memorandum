@@ -119,7 +119,13 @@ IP6.GATEWAY:                            --
 +  nameserver <DNS2 Server>
 ```
 ## ■ networkの設定
+`Networking=yes`はIPアドレス設定時に実行した`nmcli networking on`で入っているはずです。
 ```
+# vi /etc/sysconfig/network
+```
+```
+### 不要なルーティングテーブルの作成を防ぐ
++  NOZEROCONF=yes
 ```
 ## ■ hostsの設定
 ```
