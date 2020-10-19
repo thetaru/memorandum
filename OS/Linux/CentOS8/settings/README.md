@@ -132,7 +132,7 @@ IP6.GATEWAY:                            --
 </details>
 
 ## ■ networkの設定
-`/etc/sysconfig/network`に`Networking=yes`がデフォルトで入っているがこれを消しても疎通が取れてしまう。  
+:warning `/etc/sysconfig/network`に`Networking=yes`がデフォルトで入っているがこれを消しても疎通が取れてしまう。  
 `nmcli networking on`は別ファイルを参照・変更していそう。
 ```
 # vi /etc/sysconfig/network
