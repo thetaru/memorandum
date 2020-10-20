@@ -25,3 +25,4 @@
 - [ ] [syslog](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/syslog)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
+- [ ] [デバイス名ずれ対策](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
