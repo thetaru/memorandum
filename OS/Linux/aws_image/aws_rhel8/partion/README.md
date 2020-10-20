@@ -24,6 +24,10 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 # fdisk
 ```
 ```
+### マウント用ディレクトリの作成
+# mkdir -p /var/crash
+```
+```
 ### ファイルシステムのUUIDとディレクトリを紐づける
 # vi /etc/fstab
 ```
