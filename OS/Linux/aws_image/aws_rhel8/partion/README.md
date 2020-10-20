@@ -1,6 +1,7 @@
 # パーティション設定
 ## ■ EBS追加
 ```
+### filesystemを入れる
 # mkfs.xfs -f /dev/xvdb
 ```
 ```
@@ -21,4 +22,8 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 ```
 # fdisk
+```
+```
+### ファイルシステムのUUIDとディレクトリを紐づける
+# vi /etc/fstab
 ```
