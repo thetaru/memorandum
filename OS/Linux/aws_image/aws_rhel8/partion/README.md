@@ -31,3 +31,6 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ### ファイルシステムのUUIDとディレクトリを紐づける
 # vi /etc/fstab
 ```
+```
+# mount -a
+```
