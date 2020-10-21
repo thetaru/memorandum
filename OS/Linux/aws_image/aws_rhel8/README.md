@@ -5,3 +5,4 @@ https://dev.classmethod.jp/articles/amazon-linux-2-change-and-fix-hostname-when-
 - [ ] [メモリダンプの注意点]()
 - [ ] [パーティション設定]()
 - [ ] [インターネットへでる(Elatic ip)]()
+- [ ] [Route 53 Resolver(Amazon Provided DNS)による内部解決]()
