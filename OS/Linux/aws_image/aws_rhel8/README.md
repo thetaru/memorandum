@@ -3,3 +3,4 @@ https://dev.classmethod.jp/articles/amazon-linux-2-change-and-fix-hostname-when-
 ## ■ Tips
 - [ ] [メモリダンプの注意点]()
 - [ ] [パーティション設定]()
+- [ ] [インターネットへでる]()
