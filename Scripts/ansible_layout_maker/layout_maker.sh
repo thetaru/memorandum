@@ -33,7 +33,7 @@ mkdir $project
 
 # group_vars: env
 # groups are separated by segments
-# directories in group_vars are named by <IP-ADDR>_<PREFIX>
+# directories in group_vars are named by <NW-ADDR>_<PREFIX>
 mkdir -p $project/group_vars/192.168.0.0_24
 
 # host_vars: env
