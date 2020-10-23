@@ -351,10 +351,3 @@ export proxy_https="https://$PROXY"
 
 export no_proxy="127.0.0.1"
 ```
-# 書きたいこと(ubuntuでも必要か検証すること
-```
-/etc/rsyslog.conf
-### journalログ溢れ対策
-$imjournalRatelimitInterval 0
-$SystemLogRateLimitInterval 0
-```
