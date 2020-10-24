@@ -23,10 +23,6 @@ lo      loopback  管理無し  --
 
 </details>
 
-```
-### ネットワークの有効(デフォルトでONだと思うけど念のため)
-# nmcli networking on
-```
 `nmcli connection modify`を使って設定します(:warning: `/etc/sysconfig/network-script/ifcfg-ensxxx`に反映されます)  
 `ensxxx`は環境に応じて置き換えて設定してください。
 ```
@@ -49,7 +45,7 @@ lo      loopback  管理無し  --
 設定値を確認します。
 ```
 # nmcli device show ensxxx
-# nmcli nmcli networking connectivity
+# nmcli networking connectivity
 # nmcli radio all
 ```
 <details>
