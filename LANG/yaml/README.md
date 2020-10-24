@@ -32,17 +32,17 @@ name2: test2
 python的にはこんな感じ
 ```py
 [
-  {name: the 1st Example},
-  {hosts: 172.17.0.2},
-  {tasks:
-    [
-      {name: Hello World},
-      {debug: }
-    ],
-    [
-      {name: Next debug},
-      {debug: msg="Hello, World"}
-    ]
-  }
+    {name: the 1st Example},
+    {hosts: 172.17.0.2},
+    {tasks:
+        [
+            {name: Hello World},
+            {debug: }
+        ],
+        [
+            {name: Next debug},
+            {debug: msg="Hello, World"}
+        ]
+   }
 ]
 ```
