@@ -1,5 +1,17 @@
 # Ansible Playbook Module Reference
 サードパーティ製は[ここ](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)を参照するといいです。
+## ■ 対象ホストの設定
+```
+- hosts: <value>
+  tasls:
+    - name: <task-name>
+```
+|Value|説明|
+|:---|:---|
+|all|プレイブック実行時に指定したインベントリファイルに存在するすべてのホスト|
+|localhost|Ansibleを実行しているノード自身|
+|<ホスト名>|指定したホスト名|
+|<ホストグループ>|指定したホストグループに所属するホスト|
 ## ■ ホスト名の変更
 ## Syntax
 ```
