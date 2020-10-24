@@ -287,6 +287,11 @@ IP6.GATEWAY:                            --
 +  maxslewrate 1000
 ```
 ```
+### chronyサービスの起動
+# systemctl start chrony
+# systemctl enable chrony
+```
+```
 ### 同期状態の確認
 # chronyc sources
 ```
@@ -294,11 +299,6 @@ IP6.GATEWAY:                            --
 MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
 ^* <ntp-server>                1   6   377     9  +3649us[+5915us] +/-   30ms
-```
-```
-### chronyサービスの起動
-# systemctl start chrony
-# systemctl enable chrony
 ```
 時刻があまりにずれているようなら`chronyc makestep`を実行して強制的に同期させます。
 ## ■ pamの設定
