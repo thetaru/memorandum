@@ -156,13 +156,8 @@ IP6.GATEWAY:                            --
 # systemctl disable <service>
 ```
 ## ■ カーネルアップデート抑止
+`/etc/yum.conf`は`/etc/dnf/dnf.conf`のシンボリックリンクなので`dnf.conf`を編集します。
 ### Xあり
-```
-# vi /etc/yum.conf
-```
-```
-+  exclude=kernel* centos* xorg*
-```
 ```
 # vi /etc/dnf/dnf.conf
 ```
@@ -170,12 +165,6 @@ IP6.GATEWAY:                            --
 +  excludepkgs=kernel* centos* xorg*
 ```
 ### Xなし
-```
-# vi /etc/yum.conf
-```
-```
-+  exclude=kernel* centos*
-```
 ```
 # vi /etc/dnf/dnf.conf
 ```
