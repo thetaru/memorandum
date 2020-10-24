@@ -288,8 +288,8 @@ IP6.GATEWAY:                            --
 ```
 ```
 ### chronyサービスの起動
-# systemctl start chrony
-# systemctl enable chrony
+# systemctl start chronyd
+# systemctl enable chronyd
 ```
 ```
 ### 同期状態の確認
