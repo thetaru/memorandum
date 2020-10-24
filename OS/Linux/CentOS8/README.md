@@ -1,6 +1,6 @@
 # CentOS8
 ## ■ Commands
-- [ ] [パーティション設定](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
+- [ ] [パーティション設定(書きかけ)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
 - [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/settings)
@@ -26,4 +26,4 @@
 - [ ] [syslog](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/syslog)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
-- [ ] [デバイス名ずれ対策](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
+- [ ] [デバイス名ずれ対策(書きかけ)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
