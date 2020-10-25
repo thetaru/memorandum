@@ -34,9 +34,9 @@ python的にはこんな感じ
 [
     {name: the 1st Example},
     {hosts: 172.17.0.2},
-    {tasks: [
-        {name: Hello, World, debug: },
-        {name: Next dubeg, debug: msg="Hello, Ansible"}
-    ]}
+    {tasks: 
+        [{name: Hello, World},{debug: }],
+        [{name: Next dubeg, debug: msg="Hello, Ansible"}]
+    }
 ]
 ```
