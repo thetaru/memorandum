@@ -4,3 +4,7 @@
 - [ ] [LANG](https://github.com/thetaru/memorandum/tree/master/LANG)
 - [ ] [OS](https://github.com/thetaru/memorandum/tree/master/OS)
 - [ ] [Scripts](https://github.com/thetaru/memorandum/tree/master/Scripts)
+# MEMO[書きたいこと]
+Windows Server レジストリまとめ  
+書きかけの書き終える  
+AWS実験ログ
