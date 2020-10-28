@@ -1,5 +1,6 @@
 # Windows Server 2019
 ## ■ General Settings
+- [ ] [Basic Configuration]()
 ## ■ Software Settings
 Acitve Directory  
 https://www.rem-system.com/win2019-adsetup/
