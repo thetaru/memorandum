@@ -1,6 +1,6 @@
 # Windows Server 2019
 ## ■ General Settings
-- [ ] [Basic Configuration]()
+- [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Windows/Windows%20Server%202019/settings)
 ## ■ Software Settings
 Acitve Directory  
 https://www.rem-system.com/win2019-adsetup/
