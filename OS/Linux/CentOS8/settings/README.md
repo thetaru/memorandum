@@ -371,7 +371,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ### 逆に/proc/sys/kernel/core_patternを設定するとkernel.core_patternの値に反映される
 +  kernel.core_pattern=/var/tmp/core-%e.%p
 
-###
+### setuidおよびsetgidプロセスに対するコアダンプの有効化
 +  fs.suid_dumpable=2
 
 ### OOM Killer が実行に必ずカーネルパニックさせる
