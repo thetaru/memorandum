@@ -1,4 +1,5 @@
 # Ansible
+テンプレート作ったので[こちら](https://github.com/thetaru/ansible_template)を参考にしてください。
 # § INSTALL
 ```
 # yum -y install epel-release
