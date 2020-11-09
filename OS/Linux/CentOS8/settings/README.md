@@ -450,8 +450,8 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 #!/bin/bash
 PROXY="<Proxy-server Ip-address>:Port"
-export proxy_http="http://$PROXY"
-export proxy_https="http://$PROXY"
+export http_proxy="http://$PROXY"
+export https_proxy="http://$PROXY"
 
 export no_proxy="127.0.0.1"
 ```
