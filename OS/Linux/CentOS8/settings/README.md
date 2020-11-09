@@ -156,7 +156,7 @@ IP6.GATEWAY:                            --
 調査中...
 ```
 ### いらないサービス(メモ)
-# disable_arr = [bluetooth.service]
+# disable_arr = [atd.service bluetooth.service ksm.service ksmtuned.service libvirtd.service mdmonitor.service]
 
 # systemctl stop <service>
 # systemctl disable <service>
