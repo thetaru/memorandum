@@ -306,6 +306,8 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 :warning:例としてユーザ名は`thetaru`を使用しています。
 ```
 ### ユーザthetaru を グループwheelに追加
+# gpasswd -a thetaru wheel
+or
 # usermod -aG wheel thetaru
 ```
 ```
