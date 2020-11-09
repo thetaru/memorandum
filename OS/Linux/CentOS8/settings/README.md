@@ -136,6 +136,12 @@ IP6.GATEWAY:                            --
 ```
 ### 不要なルーティングテーブルの作成を防ぐ
 +  NOZEROCONF=yes
+
+### システム起動時にNWを有効化
++  NETWORKING=yes
+
+### IPv6の無効化
++  NETWORKING_IPV6=no
 ```
 ## ■ hostsの設定
 ```
