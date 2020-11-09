@@ -1,9 +1,10 @@
 # CentOS8
 ## ■ Commands
-- [ ] [パーティション設定(書きかけ)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
+- [ ] [fdisk](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
 - [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/settings)
+- [ ] [firewalld](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/firewalld)
 - [x] [ipv6無効化](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ipv6無効化)
 - [x] [kdump](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/kdump)
 - [ ] [logrotate](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Logrotate)
