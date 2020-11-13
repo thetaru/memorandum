@@ -48,7 +48,7 @@
 # vi /etc/exports
 ```
 ```
-+  /var/share/nfs 192.168.137.0/24(rw)
++  /var/share/nfs 192.168.137.0/24(rw,no_root_squash,async)
 ```
 ## § Export
 ```
