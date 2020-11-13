@@ -63,9 +63,11 @@
 exporting 192.168.137.0/24:/var/share/nfs
 ```
 # Client側の設定
+## § NFS Install
 ```
 # yum -y install nfs-utils
 ```
+## § マウントの設定
 ```
 ### マウント先のディレクトリを作成
 # mkdir -p /share/nfs-client
