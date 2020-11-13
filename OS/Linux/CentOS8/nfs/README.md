@@ -1,4 +1,9 @@
 # NFS
+|役割|IPアドレス|
+|:---|:---|
+|Server|192.168.137.100|
+|Client|192.168.137.101|
+
 # Server側の設定
 ## § NFS Install
 ```
@@ -52,10 +57,21 @@
 ```
 ## § Export
 ```
-# exportfs -arv
+# exportfs -rav
 ```
 ```
 exporting 192.168.137.0/24:/var/share/nfs
 ```
 # Client側の設定
-書く予定
+```
+# yum -y install nfs-utils
+```
+```
+### マウント先のディレクトリを作成
+# mkdir -p /share/nfs-client
+```
+```
+### 確認のためマウントしてみる
+# mount -v -t nfs 192.168.142.100:/var/share/nfs /share/nfs-client
+```
+成功したら`/etc/fstab`にいれましょう。
