@@ -9,15 +9,6 @@
 ```
 # yum -y install nfs-utils
 ```
-## § サービスの起動
-```
-# systemctl start nfs-server.service
-# systemctl enable nfs-server.service
-```
-```
-### 起動確認
-# systemctl status nfs-server.service
-```
 ## § バージョン確認
 ```
 ### nfsプロトコルのバージョン確認
@@ -55,6 +46,15 @@
 ```
 +  /var/share/nfs 192.168.137.0/24(rw,no_root_squash,async)
 ```
+## § サービスの起動
+```
+# systemctl start nfs-server.service
+# systemctl enable nfs-server.service
+```
+```
+### 起動確認
+# systemctl status nfs-server.service
+```
 ## § Export
 ```
 # exportfs -rav
@@ -74,4 +74,10 @@ exporting 192.168.137.0/24:/var/share/nfs
 ### 確認のためマウントしてみる
 # mount -v -t nfs 192.168.142.100:/var/share/nfs /share/nfs-client
 ```
-成功したら`/etc/fstab`にいれましょう。
+マウントすることができたら`fstab`を編集します。
+```
+# vi /etc/fstab
+```
+```
++  192.168.137.100:/var/share/nfs /share/nfs-client nfs defaults 0 0
+```
