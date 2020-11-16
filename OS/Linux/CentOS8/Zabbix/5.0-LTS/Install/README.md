@@ -7,6 +7,12 @@
 -  SELINUX=enforcing
 +  SELINUX=disabled
 ```
+## ■ firewalldの設定
+```
+### 無効化してしまう場合
+# systemctl stop firewalld
+# systemctl disable firewalld
+```
 ## ■ apacheの設定
 [ここ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
 ## ■ PHPの設定
