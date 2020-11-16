@@ -83,3 +83,4 @@ exporting 192.168.137.0/24:/var/share/nfs
 ```
 +  192.168.137.100:/var/share/nfs /share/nfs-client nfs defaults 0 0
 ```
+再起動してOSが上がってきた後もマウントされていることを確認すること。
