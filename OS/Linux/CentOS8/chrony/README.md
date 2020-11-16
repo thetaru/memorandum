@@ -21,6 +21,7 @@ chrony-3.5-1.el8.x86_64
 +  #pool 2.rhel.pool.ntp.org iburst
 
 ### 上位のNTPサーバ(IP or FQDN)を指定
+### 上位のNTPサーバがDNSラウンドロビンされているならpoolを使うのも手です
 +  server <上位NTPサーバ> iburst
 
 ### step無効化
