@@ -17,6 +17,9 @@
 [ここ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
 ## ■ PHPの設定
 ## ■ MariaDBの設定
+```
+# yum install mariadb-server
+```
 ## ■ Zabbixの設定
 ```
 # vi /etc/zabbix/zabbix_server.conf
@@ -30,4 +33,9 @@
 
 -  CacheSize=8M
 +  CacheSize=32M
+```
+## ■ サービスの起動
+```
+# systemctl start mariadb
+# systemctl enable mariadb
 ```
