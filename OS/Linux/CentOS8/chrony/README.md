@@ -42,3 +42,12 @@ chrony-3.5-1.el8.x86_64
 -  #local stratum 10
 +  local stratum 10
 ```
+## ■ chronydの起動と自動起動設定
+```
+# systemctl start chronyd.service
+# systemctl enable chronyd.service
+```
+```
+### 確認
+# systemctl status chronyd.service
+```
