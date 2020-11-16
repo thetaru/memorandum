@@ -18,7 +18,7 @@ chrony-3.5-1.el8.x86_64
 ```
 ### デフォルトのNTPサーバと時刻同期しない場合は無効化
 -  pool 2.rhel.pool.ntp.org iburst
-+  pool 2.rhel.pool.ntp.org iburst
++  #pool 2.rhel.pool.ntp.org iburst
 
 ### 上位のNTPサーバ(IP or FQDN)を指定
 +  server <上位NTPサーバ> iburst
