@@ -22,7 +22,7 @@
 - [ ] [LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [ ] [Nginx](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Nginx)
-- [ ] [NTP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/NTP)
+- [x] [NTP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
 - [ ] [mariadb(mysql)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
 - [ ] [PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
