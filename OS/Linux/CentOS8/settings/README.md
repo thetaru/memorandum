@@ -271,7 +271,7 @@ IP6.GATEWAY:                            --
 ```
                 Time zone: Asia/Tokyo (JST, +0900)
 ```
-## ■ 時刻同期の設定
+## ■ 時刻同期(クライアント)の設定
 ```
 ### chronyのインストール
 # yum install chrony
@@ -288,10 +288,12 @@ IP6.GATEWAY:                            --
 -  makestep 1.0 3
 +  #makestep 1.0 3
 +  leapsecmode slew
-
-### うるう秒設定
 +  maxslewrate 1000
+
+### どのポートでもリッスンしない(クライアントとしてのみ機能させる)
++  port 0
 ```
+
 ```
 ### chronyサービスの起動
 # systemctl start chronyd
