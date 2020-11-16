@@ -4,8 +4,8 @@
 ```
 # yum install chrony
 ```
-### バージョン確認
 ```
+### バージョン確認
 # rpm -qa | grep chrony
 ```
 ```
