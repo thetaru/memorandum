@@ -55,7 +55,7 @@
 ### 起動確認
 # systemctl status nfs-server.service
 ```
-## § Export
+## § 設定の反映
 ```
 # exportfs -rav
 ```
