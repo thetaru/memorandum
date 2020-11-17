@@ -1,0 +1,43 @@
+### INSTALL
+# yum install mariadb-server
+# dnf install zabbix-server-mysql zabbix-web-mysql zabbix-web-japanese zabbix-apache-conf zabbix-agent
+
+# systemctl start mariadb
+
+mysql_secure_installation
+
+# mysql -uroot -p
+> NOPASS ENTER
+mysql> create database zabbix character set utf8 collate utf8_bin;
+mysql> create user zabbix@localhost identified by 'password';
+mysql> grant all privileges on zabbix.* to zabbix@localhost;
+mysql> quit;
+
+# zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+Enter password: password
+
+# systemctl stop mariadb
+
+# vi /etc/zabbix/zabbix_server.conf
+
+# vi /etc/php-fpm.d/zabbix.conf
+
+もろもろの設定
+
+# 
+
+
+# echo "" > /etc/httpd/conf.d/welcome.conf
+# cat /etc/httpd/conf.d/welcome.conf
+
+# mkdir -p /etc/httpd/ssl/private
+# chmod 700 /etc/httpd/ssl/private
+# openssl req -x509 -nodes -sha256 -days 3650 -newkey rsa:2048 -keyout /etc/httpd/ssl/private/apache-selfsigned.key -out /etc/httpd/ssl/apache-selfsigned.crt
+
+# vi /etc/httpd/conf.d/ssl.conf
+~~~
+
+# systemctl restart mariadb
+# systemctl enable mariadb
+# systemctl restart zabbix-server zabbix-agent httpd php-fpm
+# systemctl enable zabbix-server zabbix-agent httpd php-fpm
