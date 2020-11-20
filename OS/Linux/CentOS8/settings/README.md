@@ -455,6 +455,12 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # systemctl status rsyslog.service
 ```
 ログ出力設定は[こちら]()を参考にしてください。
+## ■ メール(クライアント)の設定
+```
+# vi /etc/postfix/main.cf
+```
+```
+```
 ## ■ [option]Proxyの設定
 ```
 # vi /etc/profile.d/proxy.sh
