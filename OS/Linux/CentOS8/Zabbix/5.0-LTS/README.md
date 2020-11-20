@@ -2,4 +2,5 @@
 ## ■ 基本設定
 - [ ] [ZabbixのInstall](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Zabbix/5.0-LTS/Install)
 ## ■ Tips
-- [ ] [DBチューニング](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Zabbix/5.0-LTS/db_tuning)
+- [ ] [DBのチューニング](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Zabbix/5.0-LTS/db_tuning)
+- [ ] [DBの移行](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Zabbix/5.0-LTS/db_migration)
