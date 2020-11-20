@@ -27,8 +27,7 @@ lo      loopback  管理無し  --
 `ensxxx`は環境に応じて置き換えて設定してください。
 ```
 # nmcli connection modify ensxxx connection.autoconnect yes
-# nmcli connection modify ensxxx ipv4.method manual
-# nmcli connection modify ensxxx ipv4.address <ip-address>/<prefix>
+# nmcli connection modify ensxxx ipv4.method manual ipv4.address <ip-address>/<prefix>
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
