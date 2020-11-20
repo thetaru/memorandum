@@ -37,8 +37,10 @@ psql (PostgreSQL) 12.1
 ```
 ## pg_hba.confの編集
 `pg_hba.conf`はクライアント認証に関する設定を記述するファイルです。  
-ここで接続元IPの制限や接続タイプ、接続先のDBなどを設定できます。  
-ローカルにDBを持つ場合にはデフォルトの設定でも接続できますが、外部のDBに対して接続することがほとんどだと思います。
+ここで接続元IPの制限や接続タイプ、接続先のDBなどを設定します。  
+ローカルにDBを持つ場合にはデフォルトの設定でも接続できますが、外部のDBに対して接続することがほとんどだと思います。  
+  
+https://densan-hoshigumi.com/server/postgresql12-installation-centos8  
 ※ もう少し細かい設定ができるので追記する予定
 ```
 # vi /var/lib/pgsql/data/pg_hba.conf
