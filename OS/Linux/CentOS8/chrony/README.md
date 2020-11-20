@@ -52,3 +52,4 @@ chrony-3.5-1.el8.x86_64
 ### 確認
 # systemctl status chronyd.service
 ```
+## ■ 設定の解説
