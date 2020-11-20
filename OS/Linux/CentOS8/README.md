@@ -24,6 +24,7 @@
 - [ ] [Nginx](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Nginx)
 - [x] [NTP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
 - [ ] [mariadb(mysql)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
+- [ ] [postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
 - [ ] [PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
 - [ ] [Squid](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Squid)
