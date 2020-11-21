@@ -26,6 +26,7 @@ GitLabにアクセスするときのURLを設定します。
 ### 4. Firewallの設定
 firewalldを無効化しているなら以下の設定は不要です。
 ```
+### httpsを使用するならhttp→https
 # firewall-cmd --add-service=http --zone=public --parmanent
 # firewall-cmd --reload
 ```
