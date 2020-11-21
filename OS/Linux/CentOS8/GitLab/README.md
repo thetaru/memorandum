@@ -40,6 +40,12 @@ firewalldを無効化しているなら以下の設定は不要です。
 # firewall-cmd --add-service=http --zone=public --parmanent
 # firewall-cmd --reload
 ```
+```
+### サービスの自動起動の有効化
+### 初回のときはすでに起動済みだと思いますが念のため実行
+# systemctl start gitlab-runsvdir.service
+# systemctl enable gitlab-runsvdir.service
+```
 ## ■ コマンド集
 ```
 ### バージョン確認
