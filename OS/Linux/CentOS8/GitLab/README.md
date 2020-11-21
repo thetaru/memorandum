@@ -15,6 +15,7 @@ GitLabにアクセスするときのURLを設定します。
 # vi /etc/gitlab/gitlab.rb
 ```
 ```
+### URLを指定
 -  external_url 'http://gitlab.example.com'
 +  external_url 'http://<ホスト名 or IPアドレス>'
 ```
