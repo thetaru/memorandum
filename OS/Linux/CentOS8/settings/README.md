@@ -272,6 +272,7 @@ IP6.GATEWAY:                            --
                 Time zone: Asia/Tokyo (JST, +0900)
 ```
 ## ■ 時刻同期(クライアント)の設定
+サーバ側はslewでクライアント側はstepであることが多いです。
 ```
 ### chronyのインストール
 # yum install chrony
@@ -283,12 +284,6 @@ IP6.GATEWAY:                            --
 ### 参照先NTPサーバを指定
 -  pool 2.centos.pool.ntp.org iburst
 +  server <ntp_server-address> iburst
-
-### slewモードに設定
--  makestep 1.0 3
-+  #makestep 1.0 3
-+  leapsecmode slew
-+  maxslewrate 1000
 
 ### どのポートでもリッスンしない(クライアントとしてのみ機能させる)
 +  port 0
