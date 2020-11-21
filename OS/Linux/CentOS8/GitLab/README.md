@@ -40,6 +40,7 @@ firewalldを無効化しているなら以下の設定は不要です。
 # firewall-cmd --add-service=http --zone=public --parmanent
 # firewall-cmd --reload
 ```
+### 5. サービスの設定
 ```
 ### サービスの自動起動の有効化
 ### 初回のときはすでに起動済みだと思いますが念のため実行
