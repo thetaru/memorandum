@@ -1,0 +1,2 @@
+# GitLab Runnerの構築
+GitLab RunnerがGitLab上のコミットを検知してジョブを実行する
