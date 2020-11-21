@@ -1,4 +1,13 @@
 # GitLabサーバ
+## ■ 要件
+|項目|設定値|
+|:---|:---|
+|Hypervisor|vSphere 6.8|
+|OS|CentOS8|
+|CPU|4|
+|MEM|4|
+|Storage|200GB|
+
 ## ■ Install
 ### 1. パッケージインストール
 ```
