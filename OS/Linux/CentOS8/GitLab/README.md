@@ -7,6 +7,7 @@
 |CPU|4|
 |MEM|4|
 |Storage|200GB|
+|Software|Gitlab 13.5.4-ee|
 
 ## ■ Install
 ### 1. パッケージインストール
@@ -40,6 +41,10 @@ firewalldを無効化しているなら以下の設定は不要です。
 # firewall-cmd --reload
 ```
 ## ■ コマンド集
+```
+### バージョン確認
+# gitlab-rake gitlab:env:info
+```
 ```
 ### gitlabサーバの起動
 # gitlab-ctl start
