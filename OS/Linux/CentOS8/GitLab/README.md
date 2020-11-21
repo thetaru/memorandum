@@ -23,6 +23,13 @@ GitLabにアクセスするときのURLを設定します。
 ```
 # gitlab-ctl reconfigure
 ```
+### 4. Firewallの設定
+firewalldを無効化しているなら以下の設定は不要です。
+```
+# firewall-cmd --add-service=http --zone=public --parmanent
+
+# firewall-cmd --reload
+```
 ## ■ コマンド集
 ```
 ### gitlabサーバの起動
