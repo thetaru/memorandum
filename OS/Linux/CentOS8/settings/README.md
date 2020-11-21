@@ -355,6 +355,16 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 
 ### sudoパスワードの試行回数制限(デフォルトは3回)
 +  Defaults passwd_tries = 5
+
+### [Option] tty経由以外のsudoを許可(デフォルトはttyのみ使用可能)
+### Case1. この設定だと全ユーザが対象
++  Defaults requiretty
+### Case2. ユーザを指定する場合(rootを許可)
++  Defaults requiretty
++  Defaults:root !requiretty
+### Case3. グループを指定する場合(wheelグループを許可)
++  Defaults requiretty
++  Defaults:%wheel !requiretty
 ```
 ## ■ logrotateの設定
 ```
