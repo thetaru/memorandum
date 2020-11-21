@@ -287,6 +287,7 @@ IP6.GATEWAY:                            --
 ### slew設定
 -  makestep 1.0 3
 +  #makestep 1.0 3
+
 +  leapsecmode slew
 +  maxslewrate 1000
 +  smoothtime 400 0.001 leaponly
