@@ -1,5 +1,5 @@
 # GitLab Runnerの構築
-### 概要
+# ■ 概要
 GitLab RunnerがGitLab上のコミットを検知してジョブを実行する  
 ### GitLab Runnnerの種類
 GitLab Runnerには2つの動作モードが存在する。
