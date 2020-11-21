@@ -344,6 +344,18 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 ### 再起動して反映
 # systemctl reboot
 ```
+## ■ ユーザ権限の設定
+```
+### drop in
+# vi /etc/sudoers.d/override
+```
+```
+### sudoパスワードのキャッシュをしない(デフォルトは5分)
++  Defaults timestamp_timeout = 0
+
+### sudoパスワードの試行回数制限(デフォルトは3回)
++  Defaults passwd_tries = 5
+```
 ## ■ logrotateの設定
 ```
 # vi /etc/logrotate.conf
