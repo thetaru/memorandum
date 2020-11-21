@@ -284,10 +284,11 @@ IP6.GATEWAY:                            --
 -  pool 2.centos.pool.ntp.org iburst
 +  server <ntp_server-address> iburst
 
-### slew設定
+### stepの無効化
 -  makestep 1.0 3
 +  #makestep 1.0 3
 
+### slew設定
 +  leapsecmode slew
 +  maxslewrate 1000
 +  smoothtime 400 0.001 leaponly
