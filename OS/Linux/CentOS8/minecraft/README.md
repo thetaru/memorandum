@@ -94,9 +94,9 @@ Environment=MAX_HEAP=1024
 Environment=MIN_HEAP=1024
 ExecStart=tmux new-session -s minecraft -d "/usr/bin/java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui"
 ExecStop=tmux send-keys -t minecraft:0.0 '/say The Server is going down in 5 minutes!'
-ExecStop=sleep 5
+ExecStop=sleep 300
 ExecStop=tmux send-keys -t minecraft:0.0 "save-all" C-m "/stop" C-m
-ExecStop=sleep 5
+ExecStop=sleep 3
 ExecStop=pkill -f tmux
 
 Restart=always
