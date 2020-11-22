@@ -24,5 +24,5 @@
 ```
 ```
 ### パッケージのダウンロード
-# curl -o /home/minecraft -O https://launcher.mojang.com/download/Minecraft.tar.gz
+# curl -o /home/minecraft/Minecraft.tar.gz -O https://launcher.mojang.com/download/Minecraft.tar.gz
 ```
