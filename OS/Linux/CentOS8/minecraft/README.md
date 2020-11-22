@@ -36,6 +36,14 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 -rw-r--r-- 1 root root     1084 11月 23 03:06 server.properties
 ```
 ```
+### End-User License Agreementに同意する
+# vi /home/minecraft/eula.txt
+```
+```
+-  eula=false
++  eula=true
+```
+```
 ### サーバファイルを実行
 # java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
