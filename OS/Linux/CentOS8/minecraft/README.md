@@ -97,6 +97,7 @@ ExecStop=tmux send-keys -t minecraft:0.0 '/say The Server is going down in 5 min
 ExecStop=sleep 5
 ExecStop=tmux send-keys -t minecraft:0.0 "save-all" C-m "/stop" C-m
 ExecStop=sleep 5
+ExecStop=pkill -f tmux
 
 Restart=always
 
