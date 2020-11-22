@@ -19,6 +19,7 @@
 
 ### パッケージダウンロード先
 # mkdir /opt/minecraft/server
+# chown minecraft:minecraft /opt/minecraft/server
 ```
 ## ■ インストール
 ### パッケージのインストール
