@@ -52,6 +52,6 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 ```
 ```
 ...
-[03:12:50] [Server thread/INFO]: Done (x.x.x s)! For help, type "help"
+[xx:yy:zz] [Server thread/INFO]: Done (x.x.x s)! For help, type "help"
 <stopを入力して停止する>
 ```
