@@ -24,6 +24,9 @@
 ## ■ インストール
 ### パッケージのインストール
 ```
+### tmuxのインストール(これでminecraftサービスをコントロールします)
+# yum install tmux
+
 ### javaのインストール
 # yum install java
 ```
