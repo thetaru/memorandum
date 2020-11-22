@@ -69,6 +69,7 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 ```
 ### サービスとして登録する
 ```
+### Unitファイルの作成
 # vi /etc/systemd/system/minecraft.service
 ```
 ```
