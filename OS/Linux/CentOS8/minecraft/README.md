@@ -25,7 +25,8 @@
 ```
 ### パッケージのダウンロード
 # curl -o /home/minecraft/server.jar -O https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar
-
-### 解凍
-# tar xvf /home/minecraft/Minecraft.tar.gz
+```
+```
+### サーバファイルを実行
+# java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
