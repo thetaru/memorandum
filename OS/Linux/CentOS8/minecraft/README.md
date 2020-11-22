@@ -117,3 +117,8 @@ WantedBy=multi-user.target
 ### サービスの自動起動有効化
 # systemctl enable minecraft.service
 ```
+### ポート開放
+```
+# 
+# 
+```
