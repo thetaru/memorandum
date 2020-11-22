@@ -68,7 +68,7 @@ Type=simple
 WorkingDirectory=/home/minecraft
 Environment=MAX_HEAP=1024
 Environment=MIN_HEAP=1024
-ExecStart=java -Xmx{MAX_HEAP}M -Xms{MIN_HEAP}M -jar server.jar nogui
+ExecStart=java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui
 
 User=minecraft
 Group=minecraft
