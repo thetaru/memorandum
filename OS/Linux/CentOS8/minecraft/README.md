@@ -16,6 +16,9 @@
 
 ### minecraftユーザのパスワード設定
 # passwd minecraft
+
+### パッケージダウンロード先
+# mkdir /opt/minecraft
 ```
 ## ■ インストール
 ### パッケージのインストール
