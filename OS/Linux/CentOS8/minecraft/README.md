@@ -85,12 +85,15 @@ Restart=always
 WantedBy=multi-user.target
 ```
 ```
+### サービスの再読み込みと起動
 # systemctl daemon-reload
 # systemctl start minecraft.service
 ```
 ```
+### サービスが正常に起動していることを確認する
 # systemctl status minecraft.service
 ```
 ```
+### サービスの自動起動有効化
 # systemctl enable minecraft.service
 ```
