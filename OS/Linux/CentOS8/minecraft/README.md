@@ -80,7 +80,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-Type=simple
+Type=forking
 CPUAccounting=yes
 User=minecraft
 Group=minecraft
