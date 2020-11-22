@@ -65,13 +65,15 @@ Description=minecraft service
 
 [Service]
 Type=simple
+CPUAccounting=yes
+User=minecraft
+Group=minecraft
 WorkingDirectory=/home/minecraft
 Environment=MAX_HEAP=1024
 Environment=MIN_HEAP=1024
-ExecStart=java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui
+ExecStart=/usr/bin/java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui
 
-User=minecraft
-Group=minecraft
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
