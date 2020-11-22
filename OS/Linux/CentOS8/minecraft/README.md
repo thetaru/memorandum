@@ -18,7 +18,7 @@
 # passwd minecraft
 
 ### パッケージダウンロード先
-# mkdir /opt/minecraft
+# mkdir /opt/minecraft/server
 ```
 ## ■ インストール
 ### パッケージのインストール
@@ -28,10 +28,10 @@
 ```
 ### サーバーファイルをダウンロード
 ```
-# curl -o /home/minecraft/server.jar -O https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar
+# curl -o /opt/minecraft/server/server.jar -O https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar
 ```
 ```
-# ll /home/minecraft
+# ll /opt/minecraft/server
 ```
 ```
 -rw-r--r-- 1 root root      181 11月 23 03:06 eula.txt
@@ -42,13 +42,16 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 ### ライセンスに同意する
 ```
 ### End-User License Agreementに同意する
-# vi /home/minecraft/eula.txt
+# vi /opt/minecraft/server/eula.txt
 ```
 ```
 -  eula=false
 +  eula=true
 ```
 ### server.jarを実行
+```
+# cd /opt/minecraft/server
+```
 ```
 ### サーバファイルを実行
 # java -Xmx1024M -Xms1024M -jar server.jar nogui
@@ -61,7 +64,7 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 ### 所有権の変更
 ここまでminecraftユーザで実行しているなら不要です。
 ```
-# chown -R minecraft:minecraft /home/minecraft
+# chown -R minecraft:minecraft /opt/minecraft/server
 ```
 ### サービスとして登録する
 ```
@@ -76,11 +79,13 @@ Type=simple
 CPUAccounting=yes
 User=minecraft
 Group=minecraft
-WorkingDirectory=/home/minecraft
+ProtectSystem=full
+ProtectHome=read-only
+
+WorkingDirectory=/opt/minecraft/server
 Environment=MAX_HEAP=1024
 Environment=MIN_HEAP=1024
 ExecStart=/usr/bin/java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui
-ExecStop=/usr/bin/java
 
 Restart=always
 
