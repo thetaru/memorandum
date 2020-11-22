@@ -93,9 +93,8 @@ ProtectHome=read-only
 WorkingDirectory=/opt/minecraft/server
 Environment=MAX_HEAP=1024
 Environment=MIN_HEAP=1024
-ExecStartPre=tmux new-session -d -s minecraft
-ExecStart=tmux send-keys -t minecraft "/usr/bin/java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui" C-m
-ExecStop=tmux send-keys -t minecraft "/stop" C-m
+ExecStart=tmux new-session -s minecraft -d "/usr/bin/java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui"
+ExecStop=tmux send-keys -t minecraft:0.0 "/stop" C-m
 
 Restart=always
 
