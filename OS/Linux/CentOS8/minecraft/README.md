@@ -50,3 +50,8 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 ### サーバファイルを実行
 # java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
+```
+...
+[03:12:50] [Server thread/INFO]: Done (x.x.x s)! For help, type "help"
+<stopを入力して停止する>
+```
