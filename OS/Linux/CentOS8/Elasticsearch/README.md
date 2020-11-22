@@ -33,11 +33,15 @@ EOF
 # systemctl enable elasticsearch.service
 ```
 ## ■ 設定
+ファイルディスクリプタ数を上げます。
 ```
 # vi /usr/lib/systemd/system/elasticsearch.service
 ```
 ```
-
+### ファイルディスクリプタの上限変更
+[Service]
++  LimitNOFILE=65536
++  LimitNPROC=65536
 ```
 Elasticsearchの割り当てメモリを変更(ヒープサイズ)します。  
 `Xms`と`Xmx`の値は等しくすること。デフォルトでは以下のように1GBが指定されています。  
