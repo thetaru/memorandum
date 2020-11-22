@@ -88,7 +88,6 @@ CPUAccounting=yes
 User=minecraft
 Group=minecraft
 ProtectSystem=full
-ProtectHome=read-only
 
 WorkingDirectory=/opt/minecraft/server
 Environment=MAX_HEAP=1024
