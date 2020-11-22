@@ -155,3 +155,4 @@ EOF
 </details>
 
 https://acro-engineer.hatenablog.com/entry/2018/12/13/120000  
+https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-input-log.html  
