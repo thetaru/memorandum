@@ -76,3 +76,13 @@ Group=minecraft
 [Install]
 WantedBy=multi-user.target
 ```
+```
+# systemctl daemon-reload
+# systemctl start minecraft.service
+```
+```
+# systemctl status minecraft.service
+```
+```
+# systemctl enable minecraft.service
+```
