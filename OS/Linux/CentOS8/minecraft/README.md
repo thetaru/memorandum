@@ -55,6 +55,11 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 [xx:yy:zz] [Server thread/INFO]: Done (x.x.x s)! For help, type "help"
 <stopを入力して停止する>
 ```
+### 所有権の変更
+ここまでminecraftユーザで実行しているなら不要です。
+```
+# chown -R minecraft:minecraft /home/minecraft
+```
 ### サービスとして登録する
 ```
 # vi /etc/systemd/system/minecraft.service
@@ -72,6 +77,7 @@ WorkingDirectory=/home/minecraft
 Environment=MAX_HEAP=1024
 Environment=MIN_HEAP=1024
 ExecStart=/usr/bin/java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui
+ExecStop=/usr/bin/java
 
 Restart=always
 
