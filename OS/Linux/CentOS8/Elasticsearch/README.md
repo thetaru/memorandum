@@ -35,6 +35,7 @@ EOF
 ## ■ 設定
 ファイルディスクリプタ数を上げます。
 ```
+### drop-inでもいいです
 # vi /usr/lib/systemd/system/elasticsearch.service
 ```
 ```
