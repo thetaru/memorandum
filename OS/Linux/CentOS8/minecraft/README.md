@@ -91,7 +91,7 @@ WorkingDirectory=/opt/minecraft/server
 Environment=MAX_HEAP=1024
 Environment=MIN_HEAP=1024
 ExecStart=tmux new -s minecraft -d '/usr/bin/java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar server.jar nogui'
-ExecStop=
+ExecStop=tmux attach -t minecraft -d 'echo /stop'
 
 Restart=always
 
