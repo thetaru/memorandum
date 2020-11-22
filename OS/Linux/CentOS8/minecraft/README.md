@@ -74,6 +74,8 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 ```
 [Unit]
 Description=minecraft service
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=simple
