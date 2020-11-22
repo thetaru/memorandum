@@ -12,7 +12,7 @@
 ### ユーザ作成
 ```
 ### マインクラフト実行ユーザの作成
-# useradd minecraft
+# useradd -s /bin/bash minecraft
 
 ### minecraftユーザのパスワード設定
 # passwd minecraft
