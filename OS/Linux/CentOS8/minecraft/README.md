@@ -55,3 +55,24 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 [xx:yy:zz] [Server thread/INFO]: Done (x.x.x s)! For help, type "help"
 <stopを入力して停止する>
 ```
+### サービスとして登録する
+```
+# vi /etc/systemd/system/minecraft.service
+```
+```
+[Unit]
+Description=minecraft service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/minecraft
+Environment=MAX_HEAP=1024
+Environment=MIN_HEAP=1024
+ExecStart=java -Xmx{MAX_HEAP}M -Xms{MIN_HEAP}M -jar server.jar nogui
+
+User=minecraft
+Group=minecraft
+
+[Install]
+WantedBy=multi-user.target
+```
