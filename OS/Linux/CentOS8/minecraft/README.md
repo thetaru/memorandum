@@ -68,6 +68,7 @@ drwxr-xr-x 2 root root       24 11月 23 03:06 logs
 # chown -R minecraft:minecraft /opt/minecraft/server
 ```
 ### サービスとして登録する
+`MAX_HEAP`と`MIN_HEAP`の値は環境に応じて変更しましょう。
 ```
 ### Unitファイルの作成
 # vi /etc/systemd/system/minecraft.service
