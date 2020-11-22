@@ -23,6 +23,6 @@
 # yum install java
 ```
 ```
-###
-# curl -ULO https://launcher.mojang.com/download/Minecraft.tar.gz
+### パッケージのダウンロード
+# curl -o /home/minecraft -O https://launcher.mojang.com/download/Minecraft.tar.gz
 ```
