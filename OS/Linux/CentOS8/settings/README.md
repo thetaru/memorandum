@@ -117,13 +117,10 @@ IP6.GATEWAY:                            --
 <details>
 <summary>[option]NetworkManagerの挙動</summary>
 
-デフォルトのNetworkManagerのDNS設定はインターフェース設定ファイル(/etc/sysconfig/network-script/ifcfg-<device name>)に記載のDNSサーバとサーチドメインをまとめているに過ぎません。  
-  
-つまり`/run/NetworkManager/resolv.conf`や`/run/NetworkManager/no-stub-resolv.conf`はインターフェース設定ファイルからNetworkManagerが構築しています。  
-そして`/etc/resolv.conf`はそれらを元にして構築されます。  
+デフォルトのNetworkManagerのDNS設定はインターフェース設定ファイル(/etc/sysconfig/network-script/ifcfg-<device name>)に記載のDNSサーバとサーチドメインをまとめています。  
   
 `/etc/NetworkManager/NetworkManager.conf`で設定した`dns=none`は  
-`/run/NetworkManager/resolv.conf`や`/run/NetworkManager/no-stub-resolv.conf`を参照しないことで`/etc/resolv.conf`の自動更新を無効化するということを意味するようです。
+`/etc/sysconfig/network-script/ifcfg-`を参照しないことで`/etc/resolv.conf`の自動更新を無効化するということを意味するようです。
 
 </details>
 
