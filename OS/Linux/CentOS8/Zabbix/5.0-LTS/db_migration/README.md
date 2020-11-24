@@ -12,7 +12,7 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 ```
 # mount /dev/sdb1 /data
 ```
-### /etc/fstabの編集
+### fstabの編集
 ```
 # vi /etc/fstab
 ```
