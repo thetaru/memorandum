@@ -497,6 +497,7 @@ inet_protocols = ipv4
 header_checks = regexp:/etc/postfix/header_checks
 ```
 ```
+### ヘッダーの変更だけでなく受信拒否もできる
 # vi /etc/postfix/header_checks
 ```
 ```
