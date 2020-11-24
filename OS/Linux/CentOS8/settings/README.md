@@ -467,13 +467,16 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 ### 10秒間に500以上のメッセージがあった場合ドロップ
 -  module(load="imjournal" StateFile="imjournal.state")
-+  module(load="imjournal" StateFile="imjournal.state" ratelimit.interval="10" Ratelimit.Burst="500")
++  module(load="imjournal" StateFile="imjournal.state" Ratelimit.Interval="10" Ratelimit.Burst="500")
 ```
 #### 制限なし
 ```
 ### 無制限に書き込む
 -  module(load="imjournal" StateFile="imjournal.state")
 +  module(load="imjournal" StateFile="imjournal.state" ratelimit.interval="0")
+
+-  module(load="imuxsock" SysSock.Use="off")
++  module(SysSock.RateLimit.Interval="0" SysSock.RateLimit.Burst="0")
 ```
 ```
 # systemctl restart rsyslog.service
