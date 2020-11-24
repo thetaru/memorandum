@@ -34,4 +34,3 @@
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
 - [ ] [デバイス名ずれ対策(書きかけ)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
-- [ ] [名前解決について](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/dns_resolution)
