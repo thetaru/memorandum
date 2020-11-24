@@ -6,6 +6,7 @@
     -  Network1 (192.168.0.0/24)
    
 ```
+### Proxy2に設定を入れます
 # vi /etc/squid/squid.conf
 ```
 ```
