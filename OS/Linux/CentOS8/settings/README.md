@@ -30,6 +30,8 @@ lo      loopback  管理無し  --
 # nmcli connection modify ensxxx ipv4.method manual ipv4.address <ip-address>/<prefix>
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
+# nmcli connection modify ensxxx ipv4.ignore-auto-routes yes
+# nmcli connection modify ensxxx ipv4.ignore-auto-dns yes
 ```
 無線LANとワイヤレスWANを無効化します。
 ```
