@@ -5,6 +5,9 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 ```
 ### HDD追加後、デバイスが/dev/sdbと認識されていると仮定して進めます
 # fdisk /dev/sdb
+
+### 
+# mkfs.xxx /dev/sdb
 ```
 ```
 # systemctl stop mariadb
