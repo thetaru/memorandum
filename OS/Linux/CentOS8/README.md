@@ -1,6 +1,6 @@
 # CentOS8
 ## ■ Commands
-- [ ] [fdisk](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
+- [ ] [(書きかけ)fdisk](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
 - [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/settings)
@@ -33,6 +33,6 @@
 - [ ] [Squid](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Squid)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
-- [ ] [デバイス名ずれ対策(書きかけ)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
+- [ ] [(書きかけ)デバイス名ずれ対策](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
 - [ ] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
 - [ ] [AnsibleとGitLabでCI/CD環境構築](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible+GitLab)
