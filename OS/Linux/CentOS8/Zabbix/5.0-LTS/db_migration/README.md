@@ -12,6 +12,7 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 ```
 # mount /dev/sdb1 /data
 ```
+### /etc/fstabの編集
 ```
 # vi /etc/fstab
 ```
@@ -19,12 +20,14 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 ### うろおぼえ
 +  UUID=<UUID> /data xfs defaults 0 0
 ```
+### 移行先の権限設定
 ```
 # mkdir /data/mysql
 # chmod 755 /data/mysql
 # chown mysql:mysql /data/mysql
 # cp -pr /var/lib/mysql/* /data
 ```
+### mariadb-server.cnfの設定
 ```
 # vi /etc/my.cnf.d/mariadb-server.cnf
 ```
@@ -34,8 +37,8 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 
 -  socket=/var/lib/mysql/mysql.sock
 +  socket=/data/mysql/mysql.sock
-
 ```
+### php.iniの設定
 ```
 # vi /etc/php.ini
 ```
@@ -46,6 +49,7 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 -  mysqli.default_socket =
 +  mysqli.default_socket = /data/mysql/mysql.sock
 ```
+### zabbix-server.confの設定
 ```
 # vi /etc/zabbix/zabbix-server.conf
 ```
@@ -53,6 +57,7 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 -  # DBSocket=
 +  DBSocket=/data/mysql/mysql.sock
 ```
+### サービスの再起動
 ```
 ### サービス再起動
 # systemctl restart php-fpm mariadb zabbix-server
