@@ -207,30 +207,18 @@ $ sudo vi /etc/ntp.conf
 +  #restrict ::1
 ```
 ```
-### step動作抑止
+### slewモード設定
 $ sudo vi /etc/default/ntp
 ```
 ```
 -  NTPD_OPTS='-g'
 +  NTPD_OPTS='-g -x'
 ```
-### ntpdateの設定
+### ntpの起動
 ```
-### ntpdが起動する前に時刻同期をするため
-$ sudo vi /etc/ntp/step-tickers
-```
-```
-+  <ntp-server ip-address or hostname>
-```
-### ntpdate, ntpdの起動
-ntpdateを起動してからntpdを起動しましょう。
-```
-### ntpdateの起動
-$ sudo systemctl start ntpdate
-
 ### ntpサービスの起動
-$ sudo systemctl start ntpd
-$ sudo systemctl enable ntpd
+$ sudo systemctl start ntp
+$ sudo systemctl enable ntp
 ```
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
