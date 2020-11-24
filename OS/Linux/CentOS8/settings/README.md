@@ -467,7 +467,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 ### 10秒間に500以上のメッセージがあった場合ドロップ
 -  module(load="imjournal" StateFile="imjournal.state")
-+  module(load="imjournal" StateFile="imjournal.state" Ratelimit.Interval="10" Ratelimit.Burst="500")
++  module(load="imjournal" StateFile="imjournal.state" SysSock.Use="off" Ratelimit.Interval="10" Ratelimit.Burst="500")
 ```
 #### 制限なし
 ```
