@@ -34,3 +34,4 @@
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
 - [ ] [デバイス名ずれ対策(書きかけ)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
+- [ ] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
