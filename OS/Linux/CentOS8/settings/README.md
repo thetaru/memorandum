@@ -466,13 +466,14 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 #### 制限あり
 ```
 ### 10秒間に500以上のメッセージがあった場合ドロップ
-+  $imjournalRatelimitInterval 10
-+  $imjournalRatelimitBurst 500
+-  module(load="imjournal" StateFile="imjournal.state")
++  module(load="imjournal" StateFile="imjournal.state" ratelimit.interval="10" Ratelimit.Burst="500")
 ```
 #### 制限なし
 ```
 ### 無制限に書き込む
-+  $imjournalRatelimitInterval 0
+-  module(load="imjournal" StateFile="imjournal.state")
++  module(load="imjournal" StateFile="imjournal.state" ratelimit.interval="0")
 ```
 ```
 # systemctl restart rsyslog.service
