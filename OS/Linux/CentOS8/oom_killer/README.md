@@ -24,6 +24,7 @@ OOMScoreAdjust=-1000
 ```
 設定が反映されていることを確認する。
 ```
+### oom_score_adjはOOM Killerが停止させるプロセスを選択する際のスコアの補正値
 # cat /proc/`pgrep --parent 1 -f httpd`/oom_score_adj
 ```
 ```
