@@ -484,6 +484,23 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # vi /etc/postfix/main.cf
 ```
 ```
+### 指定したNWから来たメールの中継を許可(複数指定可能)
+mynetworks = <network address>
+
+### 待ち受けインターフェイスを指定(allは全てのインターフェイスを指定)
+inet_interfaces = all
+
+### postfixが使用するインターネットプロトコルを指定
+inet_protocols = ipv4
+
+### 外部にメールを送信する際に、ローカルNW情報が流出しないよう書き換える
+header_checks = regexp:/etc/postfix/header_checks
+```
+```
+# vi /etc/postfix/header_checks
+```
+```
+/(^Received:.*) \[[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\](.*)/ REPLACE $1$2
 ```
 ## ■ [option]Proxyの設定
 ```
