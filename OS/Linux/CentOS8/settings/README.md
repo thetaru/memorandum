@@ -113,7 +113,7 @@ IP6.GATEWAY:                            --
 </details>
 
 <details>
-<summary>[option]スタティックルートの追加</summary>
+<summary>[option]スタティックルートの追加/削除</summary>
  
  スタティックルートの追加と削除は次の通りです。
  ```
