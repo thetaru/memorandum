@@ -28,11 +28,11 @@ lo      loopback  管理無し  --
 ```
 # nmcli connection modify ensxxx connection.autoconnect yes
 # nmcli connection modify ensxxx ipv4.method manual ipv4.address <ip-address>/<prefix>
+# nmcil connection modify ensxxx ipv4.may-fail no
 ```
 ```
-### ゲートウェイを設定するN場合
+### ゲートウェイを設定する場合
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
-
 ### ゲートウェイを設定しない場合
 # nmcli connection modify ensxxx ipv4.never-defaut yes
 ```
@@ -111,6 +111,21 @@ IP6.GATEWAY:                            --
 +  dns=none
 ```
 </details>
+
+<details>
+<summary>[option]スタティックルートの追加</summary>
+ 
+ スタティックルートの追加と削除は次の通りです。
+ ```
+ ### 追加
+ # nmcli connection modify +ipv4.routes "192.168.137.0/24 192.168.1.1"
+ ```
+ ```
+ ### 削除
+ # nmcli connection modify -ipv4.routes "192.168.137.0/24 192.168.1.1"
+ ```
+   
+ </details>
 
 ## ■ DNSの設定
 上記で`/etc/resolv.conf`の自動更新を無効化した人向けです。
