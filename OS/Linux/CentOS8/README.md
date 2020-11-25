@@ -9,6 +9,7 @@
 - [x] [ipv6無効化](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ipv6無効化)
 - [x] [kdump](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/kdump)
 - [ ] [(書きかけ)logrotate](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Logrotate)
+- [ ] [(書きかけ)nftables](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nftables)
 - [x] [repository](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/repository)
 - [ ] [(書きかけ)syslog](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/syslog)
 ## ■ Software Settings
