@@ -28,7 +28,16 @@ lo      loopback  管理無し  --
 ```
 # nmcli connection modify ensxxx connection.autoconnect yes
 # nmcli connection modify ensxxx ipv4.method manual ipv4.address <ip-address>/<prefix>
+```
+```
+### ゲートウェイを設定するN場合
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
+
+### ゲートウェイを設定しない場合
+# nmcli connection modify ensxxx ipv4.never-defaut yes
+```
+```
+### DNSをNetworkManagerで管理する場合(しない場合は後述の方法で無効化すること)
 # nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
 ```
 無線LANとワイヤレスWANを無効化します。
