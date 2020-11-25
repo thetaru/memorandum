@@ -125,7 +125,42 @@ IP6.GATEWAY:                            --
  # nmcli connection modify -ipv4.routes "192.168.137.0/24 192.168.1.1"
  ```
    
- </details>
+</details>
+ 
+<details>
+<summary>[option]Bondingの設定</summary>
+
+|No.|モード|説明|
+|:---|:---|:---|
+|0|balance-rr|ラウンドロビン方式で送信|
+|1|active-backup|アクティブ/バックアップ方式|
+|2|balance-xor||
+|3|broadcast||
+|4|802.3ad||
+|5|balance-tlb|スレーブの負荷に応じて送信スレーブを決定しパケットを送信|
+|6|balance-alb|balance-tlbの機能に加え、受信も負荷分散|
+
+### masterの作成
+ここでは例として`bond0`というデバイスを作成します。
+```
+# nmcli connectin add type bond ifname bond0 con-name bond0 mode balance-rr
+```
+### slaveの追加
+作成した`bond0`のslaveとなるインターフェース`ensxxx`を追加します。
+```
+### masterにスレーブensxxxを追加する
+# nmcli connection add type ethernet ifname ensxxx master bond0
+```
+masterに追加するインターフェースを上と同様の手順で追加します。
+### コネクションの有効化
+```
+# nmcli connection up bond0
+```
+### 設定の確認
+```
+# cat /proc/net/bonding/bond0
+```
+</details>
 
 ## ■ DNSの設定
 上記で`/etc/resolv.conf`の自動更新を無効化した人向けです。
