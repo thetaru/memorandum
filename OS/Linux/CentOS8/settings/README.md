@@ -480,6 +480,13 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 ## ■ コアダンプ出力設定
 ```
+# vi /etc/systemd/coredump.conf
+```
+```
+-  #Compress=yes
++  Compress=no
+```
+```
 # vi /etc/systemd/system.conf
 ```
 ```
