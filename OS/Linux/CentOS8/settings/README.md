@@ -159,6 +159,10 @@ masterに追加するインターフェースを上と同様の手順で追加�
 ### 設定の確認
 ```
 # cat /proc/net/bonding/bond0
+# nmcli connection
+
+### ActiveなNICがわかる
+# grep 'Active Slave:' /proc/net/bonding/bond0
 ```
 </details>
 
