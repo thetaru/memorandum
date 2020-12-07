@@ -6,7 +6,7 @@ $ sudo hostnamectl set-hostname <hostname>
 ## ■ [Static]IPアドレス設定
 
 <details>
-<summary>[option]IPv6の無効化</summary>
+<summary>[option]netplanでの変更</summary>
 
 インストール時に作成される`/etc/netplan/00-installer-config.yaml`は無効化します。  
 ymlファイルでなければ設定は読み込まれません。
@@ -52,6 +52,118 @@ $ ip a
 ```
 </details>
 
+<details>
+<summary>[option]netplanでの変更</summary>
+  
+認識しているデバイスを確認します。
+```
+# nmcli device
+```
+```
+DEVICE  TYPE      STATE     CONNECTION
+ens192  ethernet  接続済み  ens192
+ens224  ethernet  接続済み  ens224
+lo      loopback  管理無し  --
+```
+<details>
+<summary>NICを後から追加した場合</summary>
+   
+```
+# nmcli connection add type ethernet con-name <CONNECTIONNAME> ifname <DEVICENAME>
+```
+
+</details>
+
+`nmcli connection modify`を使って設定します(:warning: `/etc/sysconfig/network-script/ifcfg-ensxxx`に反映されます)  
+`ensxxx`は環境に応じて置き換えて設定してください。
+```
+# nmcli connection modify ensxxx connection.autoconnect yes
+# nmcli connection modify ensxxx ipv4.method manual ipv4.address <ip-address>/<prefix>
+# nmcil connection modify ensxxx ipv4.may-fail no
+```
+```
+### ゲートウェイを設定する場合
+# nmcli connection modify ensxxx ipv4.gateway <gateway-address>
+### ゲートウェイを設定しない場合
+# nmcli connection modify ensxxx ipv4.never-defaut yes
+```
+```
+### DNSをNetworkManagerで管理する場合(しない場合は後述の方法で無効化すること)
+# nmcli connection modify ensxxx ipv4.dns "<dns1-address> <dns2-address>"
+```
+無線LANとワイヤレスWANを無効化します。
+```
+# nmcli radio all off
+```
+デバイスを再起動して設定を反映させます。
+```
+# nmcli connection up ensxxx
+```
+```
+接続が正常にアクティベートされました (D-Bus アクティブパス: /org/freedesktop/NetworkManager/ActiveConnection/3)
+```
+設定値を確認します。
+```
+# nmcli device show ensxxx
+# nmcli networking connectivity
+# nmcli radio all
+```
+<details>
+<summary>[option]IPv6の無効化</summary>
+
+```
+# nmcli connection modify ensxxx ipv6.method ignore
+```
+```
+# vi /etc/sysctl.d/70-ipv6.conf
+```
+```
++  net.ipv6.conf.all.disable_ipv6 = 1
++  net.ipv6.conf.default.disable_ipv6 = 1
+```
+設定を反映します。
+```
+# sysctl --load /etc/sysctl.d/70-ipv6.conf
+```
+```
+# systemctl reboot
+```
+IPv6が設定が無効化されていることを確認します。
+```
+# nmcli device show ensxxx
+```
+```
+GENERAL.DEVICE:                         ensxxx
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         aa:aa:aa:aa:aa:aa
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (接続済み)
+GENERAL.CONNECTION:                     ensxxx
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+WIRED-PROPERTIES.CARRIER:               オン
+IP4.ADDRESS[1]:                         <ip-address>/<prefix>
+IP4.GATEWAY:                            <gateway-address>
+IP4.ROUTE[1]:                           dst = xxx.xxx.xxx.xxx/yy, nh = 0.0.0.0, mt = 100
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = zzz.zzz.zzz.zzz, mt = 100
+IP4.DNS[1]:                             <dns1-address>
+IP6.GATEWAY:                            --
+```
+</details>
+
+<details>
+<summary>[option]/etc/resolv.confの自動更新の無効化</summary>
+
+例えばDHCPサーバからIPアドレスを取得している場合、DNSも渡されたものを`/etc/resolv.conf`に設定してしまうので無効化します。
+```
+# vi /etc/NetworkManager/NetworkManager.conf
+```
+```
+[main]
++  dns=none
+```
+  
+</details>
+  
 ## ■ hostsの設定
 ```
 $ sudo vi /etc/hosts
