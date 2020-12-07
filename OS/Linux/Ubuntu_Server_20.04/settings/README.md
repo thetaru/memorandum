@@ -53,7 +53,7 @@ $ ip a
 </details>
 
 <details>
-<summary>[option]netplanでの変更</summary>
+<summary>[option]NetworkManagerでの変更</summary>
   
 認識しているデバイスを確認します。
 ```
