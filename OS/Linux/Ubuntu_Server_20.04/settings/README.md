@@ -51,6 +51,7 @@ $ ip a
        valid_lft forever preferred_lft forever
 ```
 </details>
+
 ## ■ hostsの設定
 ```
 $ sudo vi /etc/hosts
