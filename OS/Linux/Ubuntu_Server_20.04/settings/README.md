@@ -161,7 +161,8 @@ IP6.GATEWAY:                            --
 [main]
 +  dns=none
 ```
-  
+
+</details>
 </details>
   
 ## ■ hostsの設定
