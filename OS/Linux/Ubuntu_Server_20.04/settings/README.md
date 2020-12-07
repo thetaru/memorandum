@@ -4,6 +4,10 @@
 $ sudo hostnamectl set-hostname <hostname>
 ```
 ## ■ [Static]IPアドレス設定
+
+<details>
+<summary>[option]IPv6の無効化</summary>
+
 インストール時に作成される`/etc/netplan/00-installer-config.yaml`は無効化します。  
 ymlファイルでなければ設定は読み込まれません。
 ```
@@ -46,6 +50,7 @@ $ ip a
     inet6 fe80::215:5dff:fed9:6104/64 scope link
        valid_lft forever preferred_lft forever
 ```
+</details>
 ## ■ hostsの設定
 ```
 $ sudo vi /etc/hosts
