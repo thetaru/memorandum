@@ -202,6 +202,9 @@ cups-browsed.service
 ModemManager.service
 networking.service
 
+### 必要に応じて停止
+multipathd.service
+
 ### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl mask apt-daily.timer
 $ sudo systemctl mask apt-daily.service
@@ -445,7 +448,57 @@ $ sudo vi /etc/systemd/system.conf
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
 ```
+```
+### 反映
+# systemctl daemon-reexec
+```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
+## ■ ログ設定
+### journal設定
+```
+# vi /etc/systemd/journald.conf
+```
+#### 制限あり
+```
+### 30秒間に500以上のメッセージがあった場合ドロップ
+-  #RateLimitIntervalSec=
++  RateLimitIntervalSec=30s
+-  #RateLimitBurst=
++  RateLimitBurst=500
+```
+#### 制限なし
+```
+### 単位時間あたりに受付ける最大メッセージ数(0は無制限)
+-  #RateLimitBurst=10000
++  RateLimitBurst=0
+```
+```
+# systemctl restart systemd-journald
+# systemctl status systemd-journald
+```
+### メッセージ溢れ回避
+5秒間にrsyslogへ200以上のメッセージを送信するとメッセージを捨ててしまう。
+```
+# vi /etc/rsyslog.conf
+```
+#### 制限あり
+```
+### 10秒間に500以上のメッセージがあった場合ドロップ
+-  module(load="imjournal" StateFile="imjournal.state")
++  module(load="imjournal" StateFile="imjournal.state" Ratelimit.Interval="10" Ratelimit.Burst="500")
+```
+#### 制限なし
+```
+### 無制限に書き込む
++  module(load="imjournal" StateFile="imjournal.state" Ratelimit.Interval="0")
+
+-  module(load="imuxsock")
++  module(load="imuxsock" SysSock.Use="off" SysSock.RateLimit.Interval="0" SysSock.RateLimit.Burst="0")
+```
+```
+# systemctl restart rsyslog.service
+# systemctl status rsyslog.service
+```
 ## ■ [option]Proxyの設定
 ```
 $ sudo vi /etc/profile.d/proxy.sh
