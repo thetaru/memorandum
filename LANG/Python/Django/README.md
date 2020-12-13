@@ -99,7 +99,7 @@ Quit the server with CONTROL-C.
 ```
 ## ■ アプリの作成
 プロジェクトにアプリを作成します。  
-アプリ名`app_name`は任意の値にしてください。
+アプリ名`applicatoin_name`は任意の値にしてください。
 ```
 # python3 manage.py startapp app_name
 ```
@@ -113,7 +113,7 @@ project_name
   │   ├ asgi.py
   │   └ wsgi.py
   ├ templates
-  └ app_name
+  └ applicatoin_name
       ├ __init__.py
       ├ admin.py
       ├ app.py
@@ -124,7 +124,7 @@ project_name
       └ views.py
 ```
 ### モデルの作成
-データベースに定義するデータモデルを、`app_name/models.py`に定義します。  
+データベースに定義するデータモデルを、`applicatoin_name/models.py`に定義します。  
 例として次のようなデータベースを考えます。
 
 |書籍名|出版社|ページ数|
@@ -133,7 +133,7 @@ project_name
 |Linuxシステムプログラミング|O'Reilly|396|
 
 ```
-# vi app_name/models.py
+# vi applicatoin_name/models.py
 ```
 ```py
 from django.db import models
@@ -156,7 +156,7 @@ class Book(models.Model):
 アプリを入れ、モデルを作成しました。  
 作成したモデルをプロジェクトに登録します。  
   
-`app_name/app.py`を開くと、`AppNameConfig`というクラスが定義されています。  
+`applicatoin_name/app.py`を開くと、`ApplicationNameConfig`というクラスが定義されています。  
 これを`project_name/settings.py`の`INSTALLED_APPS`に追加します。
 ```
 # vi project_name/settings.py
@@ -169,21 +169,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app_name.apps.AppNameConfig',
+    'applicatoin_name.apps.ApplicationNameConfig',
 ]
 ```
 以下のコマンドで、models.py の変更を拾って、マイグレートファイルを作成します。
 ```
-# python3 manage.py makemigrations app_name
+# python3 manage.py makemigrations applicatoin_name
 ```
 ```
-Migrations for 'app_name':
-  app_name/migrations/0001_initial.py
+Migrations for 'applicatoin_name':
+  applicatoin_name/migrations/0001_initial.py
     - Create model Book
 ```
 このマイグレートファイルが、どのような SQL になるか、以下のコマンドで確認できます。
 ```
-# python3 manage.py sqlmigrate app_name 0001
+# python3 manage.py sqlmigrate applicatoin_name 0001
 ```
 ```
 BEGIN;
@@ -199,9 +199,9 @@ COMMIT;
 ```
 ```
 Operations to perform:
-  Apply all migrations: app_name
+  Apply all migrations: applicatoin_name
 Running migrations:
-  Applying app_name.0001_initial... OK
+  Applying applicatoin_name.0001_initial... OK
 ```
 ### 管理サイトの有効化
 管理サイトを表示します。
@@ -216,12 +216,12 @@ Running migrations:
 ```
 ```
 from django.contrib import admin
-from app_name.models import Book
+from applicatoin_name.models import Book
 
 admin.site.register(Book)
 ```
 もう一度、`http://127.0.0.1:8000/admin/`を見てみましょう。  
-`APP_NAME`が追加され、`Book`の要素があります。  
+`APPLICATION_NAME`が追加され、`Book`の要素があります。  
 データの追加、修正、削除ができることを確認してください。
 ### 管理サイトの一覧ページをカスタマイズする
 管理サイトの一覧を見たとき、`models.py`の
@@ -229,9 +229,9 @@ admin.site.register(Book)
 def __str__(self):
 ```
 で設定したものが、レコード名として見えています。  
-レコードの項目全体が見えるように、`app_name/admin.py`を修正しましょう。
+レコードの項目全体が見えるように、`applicatoin_name/admin.py`を修正しましょう。
 ```
-# vi app_name/admin.py
+# vi applicatoin_name/admin.py
 ```
 ```
 from django.contrib import admin
@@ -248,10 +248,10 @@ admin.site.register(Book, BookAdmin)
 モデルに追加したテーブルの一覧、登録、修正、削除ができることが確認できました。
 ## ■ CRUD
 ### ビューを作る
-一覧、登録、修正、削除に対応する関数を`app_name/views.py`に作ります。  
+一覧、登録、修正、削除に対応する関数を`applicatoin_name/views.py`に作ります。  
 登録、修正は編集としてひとまとめにしています。(book_idの指定がなければ登録、あれば修正とします)
 ```
-# vi app_name/views.py
+# vi applicatoin_name/views.py
 ```
 ```
 from django.shortcuts import render
@@ -270,15 +270,15 @@ def book_del(request, book_id):
     return HttpResponse('書籍の削除')
 ```
 ### URL スキームの設計
-`app_name/urls.py`を新規作成して、URLとViewの関数の紐付けを行います。
+`applicatoin_name/urls.py`を新規作成して、URLとViewの関数の紐付けを行います。
 ```
-# vi app_name/urls.py
+# vi applicatoin_name/urls.py
 ```
 ```
 from django.urls import path
 from app_name import views
 
-app_name = 'app_name'
+app_name = 'applicatoin_name'
 urlpatters = [
     # Book
     ### 一覧
@@ -291,7 +291,7 @@ urlpatters = [
     path('book/del/<int:book_id>/', views.book_del, name='book_del'),
 ]
 ```
-次に、`app_name/urls.py`をプロジェクト全体の`project_name/urls.py`の中でインクルードします。
+次に、`applicatoin_name/urls.py`をプロジェクト全体の`project_name/urls.py`の中でインクルードします。
 ```
 # vi project_name/urls.py
 ```
@@ -301,6 +301,6 @@ from django.urls import path, include # includeを追加
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app_name', include('app_name.urls')), # ここでinclude
+    path('applicatoin_name', include('applicatoin_name.urls')), # ここでinclude
 ]
 ```
