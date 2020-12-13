@@ -212,7 +212,7 @@ Running migrations:
 ログイン画面がでたら、上記で作成したスーパーユーザ`admin/thetaru`でログインします。
 ### アプリのモデルをadmin上で編集可能にする
 ```
-# vi app_name/admin.py
+# vi application_name/admin.py
 ```
 ```
 from django.contrib import admin
