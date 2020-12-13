@@ -243,5 +243,6 @@ class BookAdmin(admin.ModelAdmin):
     ### 修正リンクでクリックできる項目
     list_display_links = ('id', 'name',)
     
-admin.site.register(Books, BookAdmin)
+admin.site.register(Book, BookAdmin)
 ```
+モデルに追加したテーブルの一覧、登録、修正、削除ができることが確認できました。
