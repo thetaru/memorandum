@@ -195,7 +195,7 @@ COMMIT;
 ```
 まだデータベースに反映していないマイグレートファイルを、以下のコマンドでデータベースに反映します。
 ```
-# python3 manage.py migrate app_name
+# python3 manage.py migrate application_name
 ```
 ```
 Operations to perform:
