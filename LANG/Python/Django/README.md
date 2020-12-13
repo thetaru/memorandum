@@ -281,9 +281,26 @@ from app_name import views
 app_name = 'app_name'
 urlpatters = [
     # Book
+    ### 一覧
     path('book/', views.book_list, name='book_list'),
+    ### 登録
     path('book/add/', views.book_edit, name='book_add'),
+    ### 修正
     path('book/mod/<int:book_id>/', views.book_edit, name='book_mod'),
+    ### 削除
     path('book/del/<int:book_id>/', views.book_del, name='book_del'),
+]
+```
+次に、`app_name/urls.py`をプロジェクト全体の`project_name/urls.py`の中でインクルードします。
+```
+# vi project_name/urls.py
+```
+```
+from django.contrib import admin
+from django.urls import path, include # includeを追加
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('app_name', include('app_name.urls')), # ここでinclude
 ]
 ```
