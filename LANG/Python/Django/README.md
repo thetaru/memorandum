@@ -96,3 +96,28 @@ Django version 3.1.4, using settings 'project_name.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
+## ■ アプリの作成
+プロジェクトにアプリを作成します。
+```
+# python3 manage.py startapp <app_name>
+```
+```
+<project_name>
+  ├ manage.py
+  ├ <project_name>
+  │   ├ __init__.py
+  │   ├ settings.py
+  │   ├ urls.py
+  │   ├ asgi.py
+  │   └ wsgi.py
+  ├ templates
+  └ <app_name>
+      ├ __init__.py
+      ├ admin.py
+      ├ app.py
+      ├ migrations
+      │  └ __init__.py
+      ├ models.py
+      ├ tests.py
+      └ views.py
+```
