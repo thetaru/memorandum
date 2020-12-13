@@ -246,3 +246,44 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(Book, BookAdmin)
 ```
 モデルに追加したテーブルの一覧、登録、修正、削除ができることが確認できました。
+## ■ CRUD
+### ビューを作る
+一覧、登録、修正、削除に対応する関数を`app_name/views.py`に作ります。  
+登録、修正は編集としてひとまとめにしています。(book_idの指定がなければ登録、あれば修正とします)
+```
+# vi app_name/views.py
+```
+```
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def book_list(request):
+    """書籍の一覧"""
+    return HttpResponse('書籍の一覧')
+
+def book_edit(request, book_id=None):
+    """書籍の編集"""
+    return HttpResponse('書籍の編集')
+
+def book_del(request, book_id):
+    """書籍の削除"""
+    return HttpResponse('書籍の削除')
+```
+### URL スキームの設計
+`app_name/urls.py`を新規作成して、URLとViewの関数の紐付けを行います。
+```
+# vi app_name/urls.py
+```
+```
+from django.urls import path
+from app_name import views
+
+app_name = 'app_name'
+urlpatters = [
+    # Book
+    path('book/', views.book_list, name='book_list'),
+    path('book/add/', views.book_edit, name='book_add'),
+    path('book/mod/<int:book_id>/', views.book_edit, name='book_mod'),
+    path('book/del/<int:book_id>/', views.book_del, name='book_del'),
+]
+```
