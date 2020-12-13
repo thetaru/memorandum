@@ -7,7 +7,7 @@
 ```
 ```
 ### htmlファイルの格納先を作成
-# mkdir templates
+# cd project_name && mkdir templates
 ```
 ```
 project_name
