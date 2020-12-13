@@ -121,3 +121,19 @@ Quit the server with CONTROL-C.
       ├ tests.py
       └ views.py
 ```
+### モデルの作成
+データベースに定義するデータモデルを、`<app_name>/models.py`に定義します。
+例として次のようなデータベースを考えます。
+
+|name|publisher|page|
+|:---|:---|:---|
+|書籍名|出版社|ページ数|
+
+```
+# vi <app_name>/models.py
+```
+```
+from django.db import models
+
+class
+```
