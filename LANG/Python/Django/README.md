@@ -14,9 +14,9 @@
       ├ asgi.py
       └ wsgi.py
 ```
-### settings.py
+## settings.py
 最初に設定するべき箇所を説明します。
-#### TEMPLATES
+### TEMPLATES
 ```
 TEMPLATES = [
     {
@@ -37,7 +37,7 @@ TEMPLATES = [
     },
 ]
 ```
-#### DATABASES
+### DATABASES
 DBの設定をするところ。
 ```
 DATABASES = {
