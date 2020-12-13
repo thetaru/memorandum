@@ -248,7 +248,7 @@ admin.site.register(Book, BookAdmin)
 モデルに追加したテーブルの一覧、登録、修正、削除ができることが確認できました。
 ## ■ CRUD
 ### ビューを作る
-一覧、登録、修正、削除に対応する関数を`applicatoin_name/views.py`に作ります。  
+一覧、登録、修正、削除に対応する関数を`application_name/views.py`に作ります。  
 登録、修正は編集としてひとまとめにしています。(book_idの指定がなければ登録、あれば修正とします)
 ```
 # vi application_name/views.py
