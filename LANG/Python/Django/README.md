@@ -362,7 +362,7 @@ def book_list(request):
 # vi templates/application_name/book_list.html
 ```
 ```
-{% extends "cms/base.html" %}
+{% extends "application_name/base.html" %}
 
 {% block title %}書籍の一覧{% endblock title %}
 
