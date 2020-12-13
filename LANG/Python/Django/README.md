@@ -1,6 +1,5 @@
 # Django
-## ■ チートシート
-### プロジェクトの作成
+## ■ プロジェクトの作成
 ```
 # django-admin startproject <project_name>
 ```
@@ -15,12 +14,36 @@
       ├ asgi.py
       └ wsgi.py
 ```
-
-|ファイル名|役割|
-|:---|:---|
-|__init__.py|モジュールをインポートすると一番初めに読み込まれる|
-|settings.py|プロジェクト全体の設定を行う|
-|urls.py|ブラウザから受けたrequestをview.pyに渡す|
-|asgi.py||
-|wsgi.py||
-
+### settings.py
+最初に設定するべき箇所を説明します。
+#### TEMPLATES
+```
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        
+        ### htmlファイルが入っているディレクトリを指定する
+        'DIRS': [],
+        
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+#### DATABASES
+DBの設定をするところ。
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
