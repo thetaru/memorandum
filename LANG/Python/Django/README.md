@@ -221,7 +221,7 @@ from app_name.models import Book
 admin.site.register(Book)
 ```
 もう一度、`http://127.0.0.1:8000/admin/`を見てみましょう。  
-`APP_NAME`が追加され、`Books`の要素があります。  
+`APP_NAME`が追加され、`Book`の要素があります。  
 データの追加、修正、削除ができることを確認してください。
 ### 管理サイトの一覧ページをカスタマイズする
 管理サイトの一覧を見たとき、`models.py`の
