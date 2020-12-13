@@ -324,3 +324,75 @@ def book_list(request):
                   'application_name/book_list.html',     # 使用するテンプレート
                   {'books': books})                      # テンプレートに渡すデータ
 ```
+### 一覧のテンプレートを作る
+`project_name`プロジェクトの`application_name`アプリケーションで使うテンプレート`book_list.html`を作成します。  
+プロジェクト直下の`templates`ディレクトリにアプリ毎のディレクトリを作成します。
+```
+# mkdir templates/application_name
+```
+まずは、`book_list.html`の継承元となる`base.html`というテンプレートを作成します。
+```
+# vi templates/application_name/base.html
+```
+```
+{% load i18n static %}
+<!DOCTYPE html>{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="{% static 'cms/css/bootstrap.min.css' %}">
+{% block extra_css %}{% endblock %}
+<title>{% block title %}My books{% endblock %}</title>
+</head>
+<body>
+  <div class="container">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+<script src="{% static 'cms/js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'cms/js/bootstrap.bundle.min.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
+```
+`base.html`を継承して`templates/application_name/book_list.html`を作成します。
+```
+# vi templates/application_name/book_list.html
+```
+```
+{% extends "cms/base.html" %}
+
+{% block title %}書籍の一覧{% endblock title %}
+
+{% block content %}
+    <h4 class="mt-4 border-bottom">書籍の一覧</h4>
+    <a href="{% url 'cms:book_add' %}" class="btn btn-primary btn-sm my-3">追加</a>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">書籍名</th>
+          <th scope="col">出版社</th>
+          <th scope="col">ページ数</th>
+          <th scope="col">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+        <tr>
+          <th scope="row">{{ book.id }}</th>
+          <td>{{ book.name }}</td>
+          <td>{{ book.publisher }}</td>
+          <td>{{ book.page }}</td>
+          <td>
+            <a href="{% url 'cms:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>
+            <a href="{% url 'cms:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock content %}
+```
