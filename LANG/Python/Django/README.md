@@ -220,3 +220,28 @@ from app_name.models import Book
 
 admin.site.register(Book)
 ```
+もう一度、`http://127.0.0.1:8000/admin/`を見てみましょう。  
+`APP_NAME`が追加され、`Books`の要素があります。  
+データの追加、修正、削除ができることを確認してください。
+### 管理サイトの一覧ページをカスタマイズする
+管理サイトの一覧を見たとき、`models.py`の
+```
+def __str__(self):
+```
+で設定したものが、レコード名として見えています。  
+レコードの項目全体が見えるように、`app_name/admin.py`を修正しましょう。
+```
+# vi app_name/admin.py
+```
+```
+from django.contrib import admin
+from app_name.models import Book
+
+class BookAdmin(admin.ModelAdmin):
+    ### 一覧に出したい項目
+    list_display = ('id', 'name', 'publisher', 'page',)
+    ### 修正リンクでクリックできる項目
+    list_display_links = ('id', 'name',)
+    
+admin.site.register(Books, BookAdmin)
+```
