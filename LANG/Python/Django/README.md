@@ -128,6 +128,7 @@ Quit the server with CONTROL-C.
 |書籍名|出版社|ページ数|
 |:---|:---|:---|
 |ハンズオンJavaScript|O'Reilly|740|
+|Linuxシステムプログラミング|O'Reilly|396|
 
 ```
 # vi <app_name>/models.py
