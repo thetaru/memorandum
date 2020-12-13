@@ -341,7 +341,7 @@ def book_list(request):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="{% static 'cms/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'application_name/css/bootstrap.min.css' %}">
 {% block extra_css %}{% endblock %}
 <title>{% block title %}My books{% endblock %}</title>
 </head>
@@ -351,8 +351,8 @@ def book_list(request):
       {{ content }}
     {% endblock %}
   </div>
-<script src="{% static 'cms/js/jquery-3.4.1.min.js' %}"></script>
-<script src="{% static 'cms/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'application_name/js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'application_name/js/bootstrap.bundle.min.js' %}"></script>
 {% block extra_js %}{% endblock %}
 </body>
 </html>
@@ -368,7 +368,7 @@ def book_list(request):
 
 {% block content %}
     <h4 class="mt-4 border-bottom">書籍の一覧</h4>
-    <a href="{% url 'cms:book_add' %}" class="btn btn-primary btn-sm my-3">追加</a>
+    <a href="{% url 'application_name:book_add' %}" class="btn btn-primary btn-sm my-3">追加</a>
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -387,8 +387,8 @@ def book_list(request):
           <td>{{ book.publisher }}</td>
           <td>{{ book.page }}</td>
           <td>
-            <a href="{% url 'cms:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>
-            <a href="{% url 'cms:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>
+            <a href="{% url 'application_name:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>
+            <a href="{% url 'application_name:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>
           </td>
         </tr>
         {% endfor %}
