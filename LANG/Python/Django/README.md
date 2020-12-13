@@ -279,7 +279,7 @@ from django.urls import path
 from application_name import views
 
 app_name = 'application_name'
-urlpatters = [
+urlpatterns = [
     # Book
     ### 一覧
     path('book/', views.book_list, name='book_list'),
