@@ -101,7 +101,7 @@ Quit the server with CONTROL-C.
 プロジェクトにアプリを作成します。  
 アプリ名`applicatoin_name`は任意の値にしてください。
 ```
-# python3 manage.py startapp app_name
+# python3 manage.py startapp applicatoin_name
 ```
 ```
 project_name
