@@ -301,6 +301,6 @@ from django.urls import path, include # includeを追加
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('application_name', include('application_name.urls')), # ここでinclude
+    path('application_name/', include('application_name.urls')), # ここでinclude
 ]
 ```
