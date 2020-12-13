@@ -38,7 +38,6 @@ TEMPLATES = [
 ]
 ```
 ### DATABASES
-DBの設定をするところ。
 ```
 DATABASES = {
     'default': {
@@ -47,3 +46,6 @@ DATABASES = {
     }
 }
 ```
+### AUTH_PASSWORD_VALIDATORS
+### LANGUAGE_CODE
+## ■ urls.py
