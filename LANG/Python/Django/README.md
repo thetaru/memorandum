@@ -203,3 +203,10 @@ Operations to perform:
 Running migrations:
   Applying app_name.0001_initial... OK
 ```
+### 管理サイトの有効化
+管理サイトを表示します。
+```
+### 開発サーバを起動してからグーグルで開く
+# python3 manage.py runserver && google-chrome http://127.0.0.1:8000/admin/
+```
+ログイン画面がでたら、上記で作成したスーパーユーザ`admin/thetaru`でログインします。
