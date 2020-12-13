@@ -172,7 +172,7 @@ INSTALLED_APPS = [
     'app_name.apps.AppNameConfig',
 ]
 ```
-アプリのmodels.pyを変更したのでマイグレーションします。
+以下のコマンドで、models.py の変更を拾って、マイグレートファイルを作成します。
 ```
 # python3 manage.py makemigrations app_name
 ```
@@ -180,4 +180,26 @@ INSTALLED_APPS = [
 Migrations for 'app_name':
   app_name/migrations/0001_initial.py
     - Create model Book
+```
+このマイグレートファイルが、どのような SQL になるか、以下のコマンドで確認できます。
+```
+# python3 manage.py sqlmigrate app_name 0001
+```
+```
+BEGIN;
+--
+-- Create model Book
+--
+CREATE TABLE "app_name_book" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "publisher" varchar(255) NOT NULL, "page" integer NOT NULL);
+COMMIT;
+```
+まだデータベースに反映していないマイグレートファイルを、以下のコマンドでデータベースに反映します。
+```
+# python3 manage.py migrate app_name
+```
+```
+Operations to perform:
+  Apply all migrations: app_name
+Running migrations:
+  Applying app_name.0001_initial... OK
 ```
