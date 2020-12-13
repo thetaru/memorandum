@@ -291,7 +291,8 @@ urlpatterns = [
     path('book/del/<int:book_id>/', views.book_del, name='book_del'),
 ]
 ```
-次に、`application_name/urls.py`をプロジェクト全体の`project_name/urls.py`の中でインクルードします。
+次に、`application_name/urls.py`をプロジェクト全体の`project_name/urls.py`の中でインクルードします。  
+:warning:`/`で閉じるのを忘れないこと。
 ```
 # vi project_name/urls.py
 ```
