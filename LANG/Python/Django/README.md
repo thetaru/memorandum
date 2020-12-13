@@ -1,17 +1,18 @@
 # Django
 ## ■ プロジェクトの作成
+プロジェクト名`project_name`は任意の値にしてください。
 ```
 ### プロジェクト作成
-# django-admin startproject <project_name>
+# django-admin startproject project_name
 ```
 ```
 ### htmlファイルの格納先を作成
 # mkdir templates
 ```
 ```
-<project_name>
+project_name
   ├ manage.py
-  ├ <project_name>
+  ├ project_name
   │   ├ __init__.py
   │   ├ settings.py
   │   ├ urls.py
@@ -21,9 +22,9 @@
 ```
 ### データベースの設定
 ```
-# vi <project_name>/settings.py
+# vi project_name/settings.py
 ```
-```
+```py
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DATABASES = {
@@ -35,9 +36,9 @@ DATABASES = {
 ```
 ### 言語とタイムゾーンの設定
 ```
-# vi <project_name>/settings.py
+# vi project_name/settings.py
 ```
-```
+```py
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'ja'
 
@@ -97,21 +98,22 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 ## ■ アプリの作成
-プロジェクトにアプリを作成します。
+プロジェクトにアプリを作成します。  
+アプリ名`app_name`は任意の値にしてください。
 ```
-# python3 manage.py startapp <app_name>
+# python3 manage.py startapp app_name
 ```
 ```
-<project_name>
+project_name
   ├ manage.py
-  ├ <project_name>
+  ├ project_name
   │   ├ __init__.py
   │   ├ settings.py
   │   ├ urls.py
   │   ├ asgi.py
   │   └ wsgi.py
   ├ templates
-  └ <app_name>
+  └ app_name
       ├ __init__.py
       ├ admin.py
       ├ app.py
@@ -122,7 +124,7 @@ Quit the server with CONTROL-C.
       └ views.py
 ```
 ### モデルの作成
-データベースに定義するデータモデルを、`<app_name>/models.py`に定義します。
+データベースに定義するデータモデルを、`app_name/models.py`に定義します。  
 例として次のようなデータベースを考えます。
 
 |書籍名|出版社|ページ数|
@@ -131,17 +133,51 @@ Quit the server with CONTROL-C.
 |Linuxシステムプログラミング|O'Reilly|396|
 
 ```
-# vi <app_name>/models.py
+# vi app_name/models.py
 ```
-```
+```py
 from django.db import models
 
 class Book(models.Model):
     """書籍"""
+    ### 
     name = models.CharField('書籍名', max_length=255)
+    
+    ### 
     publisher = models.CharField('出版社', max_length=255, blank=True)
+    
+    ### 
     page = models.IntegerField('ページ数', blank=True, default=0)
 
     def __str__(self):
         return self.name
+```
+### モデルを登録する
+アプリを入れ、モデルを作成しました。  
+作成したモデルをプロジェクトに登録します。  
+  
+`app_name/app.py`を開くと、`AppNameConfig`というクラスが定義されています。  
+これを`project_name/settings.py`の`INSTALLED_APPS`に追加します。
+```
+# vi project_name/settings.py
+```
+```py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app_name.apps.AppNameConfig',
+]
+```
+アプリのmodels.pyを変更したのでマイグレーションします。
+```
+# python3 manage.py makemigrations app_name
+```
+```
+Migrations for 'app_name':
+  app_name/migrations/0001_initial.py
+    - Create model Book
 ```
