@@ -210,3 +210,13 @@ Running migrations:
 # python3 manage.py runserver && google-chrome http://127.0.0.1:8000/admin/
 ```
 ログイン画面がでたら、上記で作成したスーパーユーザ`admin/thetaru`でログインします。
+### アプリのモデルをadmin上で編集可能にする
+```
+# vi app_name/admin.py
+```
+```
+from django.contrib import admin
+from app_name.models import Book
+
+admin.site.register(Book)
+```
