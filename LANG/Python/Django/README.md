@@ -305,3 +305,22 @@ urlpatterns = [
     path('application_name/', include('application_name.urls')), # ここでinclude
 ]
 ```
+### 一覧のビュー
+一覧を表示するビューを書きます。  
+```
+# vi application_name/views.py
+```
+```
+from django.shortcuts import render
+from django.http import HttpResponse
+
+from application_name.models import Book
+
+def book_list(request):
+    """書籍の一覧"""
+    # return HttpResponse('書籍の一覧')
+    books = Book.objects.all().order_by('id')
+    return render(request,
+                  'application_name/book_list.html',     # 使用するテンプレート
+                  {'books': books})                      # テンプレートに渡すデータ
+```
