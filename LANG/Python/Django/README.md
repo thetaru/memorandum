@@ -99,9 +99,9 @@ Quit the server with CONTROL-C.
 ```
 ## ■ アプリの作成
 プロジェクトにアプリを作成します。  
-アプリ名`applicatoin_name`は任意の値にしてください。
+アプリ名`application_name`は任意の値にしてください。
 ```
-# python3 manage.py startapp applicatoin_name
+# python3 manage.py startapp application_name
 ```
 ```
 project_name
@@ -113,7 +113,7 @@ project_name
   │   ├ asgi.py
   │   └ wsgi.py
   ├ templates
-  └ applicatoin_name
+  └ application_name
       ├ __init__.py
       ├ admin.py
       ├ app.py
@@ -124,7 +124,7 @@ project_name
       └ views.py
 ```
 ### モデルの作成
-データベースに定義するデータモデルを、`applicatoin_name/models.py`に定義します。  
+データベースに定義するデータモデルを、`application_name/models.py`に定義します。  
 例として次のようなデータベースを考えます。
 
 |書籍名|出版社|ページ数|
@@ -133,7 +133,7 @@ project_name
 |Linuxシステムプログラミング|O'Reilly|396|
 
 ```
-# vi applicatoin_name/models.py
+# vi application_name/models.py
 ```
 ```py
 from django.db import models
@@ -156,7 +156,7 @@ class Book(models.Model):
 アプリを入れ、モデルを作成しました。  
 作成したモデルをプロジェクトに登録します。  
   
-`applicatoin_name/app.py`を開くと、`ApplicationNameConfig`というクラスが定義されています。  
+`application_name/app.py`を開くと、`ApplicationNameConfig`というクラスが定義されています。  
 これを`project_name/settings.py`の`INSTALLED_APPS`に追加します。
 ```
 # vi project_name/settings.py
@@ -169,28 +169,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'applicatoin_name.apps.ApplicationNameConfig',
+    'application_name.apps.ApplicationNameConfig',
 ]
 ```
 以下のコマンドで、models.py の変更を拾って、マイグレートファイルを作成します。
 ```
-# python3 manage.py makemigrations applicatoin_name
+# python3 manage.py makemigrations application_name
 ```
 ```
-Migrations for 'applicatoin_name':
-  applicatoin_name/migrations/0001_initial.py
+Migrations for 'application_name':
+  application_name/migrations/0001_initial.py
     - Create model Book
 ```
 このマイグレートファイルが、どのような SQL になるか、以下のコマンドで確認できます。
 ```
-# python3 manage.py sqlmigrate applicatoin_name 0001
+# python3 manage.py sqlmigrate application_name 0001
 ```
 ```
 BEGIN;
 --
 -- Create model Book
 --
-CREATE TABLE "app_name_book" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "publisher" varchar(255) NOT NULL, "page" integer NOT NULL);
+CREATE TABLE "application_name_book" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "publisher" varchar(255) NOT NULL, "page" integer NOT NULL);
 COMMIT;
 ```
 まだデータベースに反映していないマイグレートファイルを、以下のコマンドでデータベースに反映します。
@@ -199,9 +199,9 @@ COMMIT;
 ```
 ```
 Operations to perform:
-  Apply all migrations: applicatoin_name
+  Apply all migrations: application_name
 Running migrations:
-  Applying applicatoin_name.0001_initial... OK
+  Applying application_name.0001_initial... OK
 ```
 ### 管理サイトの有効化
 管理サイトを表示します。
@@ -216,7 +216,7 @@ Running migrations:
 ```
 ```
 from django.contrib import admin
-from applicatoin_name.models import Book
+from application_name.models import Book
 
 admin.site.register(Book)
 ```
@@ -229,13 +229,13 @@ admin.site.register(Book)
 def __str__(self):
 ```
 で設定したものが、レコード名として見えています。  
-レコードの項目全体が見えるように、`applicatoin_name/admin.py`を修正しましょう。
+レコードの項目全体が見えるように、`application_name/admin.py`を修正しましょう。
 ```
-# vi applicatoin_name/admin.py
+# vi application_name/admin.py
 ```
 ```
 from django.contrib import admin
-from app_name.models import Book
+from application_name.models import Book
 
 class BookAdmin(admin.ModelAdmin):
     ### 一覧に出したい項目
@@ -251,7 +251,7 @@ admin.site.register(Book, BookAdmin)
 一覧、登録、修正、削除に対応する関数を`applicatoin_name/views.py`に作ります。  
 登録、修正は編集としてひとまとめにしています。(book_idの指定がなければ登録、あれば修正とします)
 ```
-# vi applicatoin_name/views.py
+# vi application_name/views.py
 ```
 ```
 from django.shortcuts import render
@@ -270,15 +270,15 @@ def book_del(request, book_id):
     return HttpResponse('書籍の削除')
 ```
 ### URL スキームの設計
-`applicatoin_name/urls.py`を新規作成して、URLとViewの関数の紐付けを行います。
+`application_name/urls.py`を新規作成して、URLとViewの関数の紐付けを行います。
 ```
-# vi applicatoin_name/urls.py
+# vi application_name/urls.py
 ```
 ```
 from django.urls import path
-from app_name import views
+from application_name import views
 
-app_name = 'applicatoin_name'
+app_name = 'application_name'
 urlpatters = [
     # Book
     ### 一覧
@@ -291,7 +291,7 @@ urlpatters = [
     path('book/del/<int:book_id>/', views.book_del, name='book_del'),
 ]
 ```
-次に、`applicatoin_name/urls.py`をプロジェクト全体の`project_name/urls.py`の中でインクルードします。
+次に、`application_name/urls.py`をプロジェクト全体の`project_name/urls.py`の中でインクルードします。
 ```
 # vi project_name/urls.py
 ```
@@ -301,6 +301,6 @@ from django.urls import path, include # includeを追加
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('applicatoin_name', include('applicatoin_name.urls')), # ここでinclude
+    path('application_name', include('application_name.urls')), # ここでinclude
 ]
 ```
