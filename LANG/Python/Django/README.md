@@ -402,3 +402,79 @@ def book_list(request):
     </table>
 {% endblock content %}
 ```
+### 追加、修正のフォーム
+`application_name/forms.py`というファイルを作って、以下のように記述します。  
+ここでは、`application_name/models.py`のBookモデルを追加、修正するための元となるフォームを作成します。
+```
+# vi application_name/models.py
+```
+```
+from django.forms import ModelForm
+from application_models import Book
+
+class BookForm(ModelForm):
+    """書籍のフォーム"""
+    class Meta:
+        model = Book
+        fields = ('name', 'publisher', 'page', )
+```
+### 追加、修正のビュー
+`application_name/views.py`の`def book_edit`を以下ののように修正します。
+```
+# vi application_name/views.py
+```
+```
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
+
+from application_name.models import Book
+from application_name.forms import BookForm
+
+# 省略
+
+def book_edit(request, book_id=None):
+    """書籍の編集"""
+    if book_id:                                       ### book_idに値が入っている
+        book = get_object_or_404(Book, pk=book_id)
+    else:                                             ### book_idに値が入ってない
+        book = Book()
+        
+    if request.method == 'POST':
+        form = BookForm(request.POST, instance=book)  ### POSTされたrequestデータからフォームを作成
+        if form.is_valid():                           ### フォームのバリデーション
+            book = form.save(commit=False)
+            book.save()
+            return redirect('application_name:book_list')
+        else:                                         ### GET の時
+            form = BookForm(instance=book)            ### bookインスタンスからフォームを作成
+    return render(request, 'application_name/book_edit.html', dict(form=form, book_id=book_id))
+```
+### 追加、修正のテンプレート
+`templates/application_name/base.html`を継承して、`p`
+```
+# vi templates/application_name/book_edit.html
+```
+```
+{% extends "application_name/base.html" %}
+{% load bootstrap4 %}
+
+{% block title %}書籍の編集{% endblock title %}
+
+{% block content %}
+    <h4 class="mt-4 mb-5 border-bottom">書籍の編集</h4>
+    {% if book_id %}
+    <form action="{% url 'cms:book_mod' book_id=book_id %}" method="post">
+    {% else %}
+    <form action="{% url 'cms:book_add' %}" method="post">
+    {% endif %}
+      {% csrf_token %}
+      {% bootstrap_form form layout='horizontal' %}
+      <div class="form-group row">
+        <div class="offset-md-3 col-md-9">
+          <button type="submit" class="btn btn-primary">送信</button>
+        </div>
+      </div>
+    </form>
+    <a href="{% url 'application_name:book_list' %}" class="btn btn-secondary btn-sm">戻る</a>
+{% endblock content %}
+```
