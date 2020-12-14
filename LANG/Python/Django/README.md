@@ -325,7 +325,6 @@ from application_name.models import Book
 
 def book_list(request):
     """書籍の一覧"""
-    # return HttpResponse('書籍の一覧')
     books = Book.objects.all().order_by('id')
     return render(request,
                   'application_name/book_list.html',     # 使用するテンプレート
