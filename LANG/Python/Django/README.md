@@ -7,7 +7,7 @@
 ```
 ```
 ### htmlファイルの格納先を作成
-# cd project_name && mkdir templates && mkdir static
+# cd project_name && mkdir templates
 ```
 ```
 project_name
@@ -104,6 +104,9 @@ Quit the server with CONTROL-C.
 # python3 manage.py startapp application_name
 ```
 ```
+# mkdir -p application_name/static/application_name
+```
+```
 project_name
   ├ manage.py
   ├ project_name
@@ -121,7 +124,11 @@ project_name
       │  └ __init__.py
       ├ models.py
       ├ tests.py
-      └ views.py
+      ├ views.py
+      └ static
+         └ application_name
+            ├ css
+            └ js
 ```
 ### モデルの作成
 データベースに定義するデータモデルを、`application_name/models.py`に定義します。  
