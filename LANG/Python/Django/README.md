@@ -463,9 +463,9 @@ def book_edit(request, book_id=None):
 {% block content %}
     <h4 class="mt-4 mb-5 border-bottom">書籍の編集</h4>
     {% if book_id %}
-    <form action="{% url 'cms:book_mod' book_id=book_id %}" method="post">
+    <form action="{% url 'application_name:book_mod' book_id=book_id %}" method="post">
     {% else %}
-    <form action="{% url 'cms:book_add' %}" method="post">
+    <form action="{% url 'application_name:book_add' %}" method="post">
     {% endif %}
       {% csrf_token %}
       {% bootstrap_form form layout='horizontal' %}
