@@ -410,7 +410,7 @@ def book_list(request):
 ```
 ```
 from django.forms import ModelForm
-from application_models import Book
+from application_name.models import Book
 
 class BookForm(ModelForm):
     """書籍のフォーム"""
@@ -445,8 +445,8 @@ def book_edit(request, book_id=None):
             book = form.save(commit=False)
             book.save()
             return redirect('application_name:book_list')
-        else:                                         ### GET の時
-            form = BookForm(instance=book)            ### bookインスタンスからフォームを作成
+    else:                                             ### GET の時
+        form = BookForm(instance=book)                ### bookインスタンスからフォームを作成
     return render(request, 'application_name/book_edit.html', dict(form=form, book_id=book_id))
 ```
 ### 追加、修正のテンプレート
