@@ -450,7 +450,7 @@ def book_edit(request, book_id=None):
     return render(request, 'application_name/book_edit.html', dict(form=form, book_id=book_id))
 ```
 ### 追加、修正のテンプレート
-`templates/application_name/base.html`を継承して、`p`
+`templates/application_name/base.html`を継承して、`templates/application_name/book_edit.html`を作成します。
 ```
 # vi templates/application_name/book_edit.html
 ```
@@ -478,3 +478,4 @@ def book_edit(request, book_id=None):
     <a href="{% url 'application_name:book_list' %}" class="btn btn-secondary btn-sm">戻る</a>
 {% endblock content %}
 ```
+`application_name/forms.py`のBookFormで定義した項目を、`application_name/views.py`でformという変数でテンプレートに渡し、`{% bootstrap_form form layout='horizontal' %}`と書いている`form`の部分で、フォームの内容がHTMLで展開されます。
