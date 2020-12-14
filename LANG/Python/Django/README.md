@@ -406,7 +406,7 @@ def book_list(request):
 `application_name/forms.py`というファイルを作って、以下のように記述します。  
 ここでは、`application_name/models.py`のBookモデルを追加、修正するための元となるフォームを作成します。
 ```
-# vi application_name/models.py
+# vi application_name/forms.py
 ```
 ```
 from django.forms import ModelForm
