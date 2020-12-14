@@ -7,7 +7,7 @@
 ```
 ```
 ### htmlファイルの格納先を作成
-# cd project_name && mkdir templates
+# cd project_name && mkdir templates && mkdir static
 ```
 ```
 project_name
@@ -351,7 +351,6 @@ def book_list(request):
       {{ content }}
     {% endblock %}
   </div>
-<script src="{% static 'application_name/js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static 'application_name/js/bootstrap.bundle.min.js' %}"></script>
 {% block extra_js %}{% endblock %}
 </body>
