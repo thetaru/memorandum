@@ -11,3 +11,18 @@
 ```
 # apt-get install qemu-system
 ```
+### xv6のダウンロード
+```
+# git clone git://github.com/mit-pdos/xv6-public.git
+```
+### 編集
+```
+# vi Makefile
+```
+```
++  QEMU = qemu-system-x86_64
+```
+### 実行
+```
+# make qemu-nox
+```
