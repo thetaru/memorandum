@@ -17,12 +17,13 @@
 ```
 ### 編集
 ```
-# vi Makefile
+# vi xv6-public/Makefile
 ```
 ```
 +  QEMU = qemu-system-x86_64
 ```
 ### 実行
 ```
+# cd xv6-public
 # make qemu-nox
 ```
