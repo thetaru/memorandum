@@ -179,7 +179,7 @@ INSTALLED_APPS = [
     'application_name.apps.ApplicationNameConfig',
 ]
 ```
-以下のコマンドで、models.py の変更を拾って、マイグレートファイルを作成します。
+以下のコマンドで、models.py の変更を拾って、マイグレートファイル(DBの設計図のようなもの)を作成します。
 ```
 # python3 manage.py makemigrations application_name
 ```
