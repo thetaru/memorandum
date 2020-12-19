@@ -156,6 +156,7 @@ class Book(models.Model):
     ### 
     page = models.IntegerField('ページ数', blank=True, default=0)
 
+    ### このクラスからオブジェクトを生成した際にnameをリターンするようにする
     def __str__(self):
         return self.name
 ```
