@@ -218,6 +218,7 @@ Running migrations:
 ```
 ログイン画面がでたら、上記で作成したスーパーユーザ`admin/thetaru`でログインします。
 ### アプリのモデルをadmin上で編集可能にする
+`admin.py`にモデルを登録することで、Djangoの管理画面がそのモデルを認識できるようになる。
 ```
 # vi application_name/admin.py
 ```
