@@ -6,7 +6,5 @@
 - [ ] [Scripts](https://github.com/thetaru/memorandum/tree/master/Scripts)
 # MEMO[書きたいこと]
 device-mapper  
-esxi raw device mapping  
 書きかけの書き終える  
 arch linux server  
-AWS実験ログ
