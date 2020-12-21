@@ -43,7 +43,7 @@ nmcli connection modify bond0.20 connection.autoconnect yes ipv4.method manual i
 nmcli connection modify bond0.10 802-3-ethernet.auto-negotiate yes
 nmcli connection modify bond0.20 802-3-ethernet.auto-negotiate yes
 ```
-## interface再起動
+## interfaceの再起動
 ```
 nmcli coonection down bond0
 nmcli coonection down bond0.10
