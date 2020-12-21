@@ -55,6 +55,7 @@ nft add chain ip filter forward { type filter hook forward priority 0 \; policy 
 
 ###########################################################
 # 共通ルール
+# サーバ共通で設定するルールを記載する
 ###########################################################
 ### 確立済みのパケット疎通は許可
 nft add rule ip filter input ip protocol tcp ct state established,related counter accept
@@ -71,6 +72,7 @@ nft add rule ip filter input ip protocol icmp counter accept
 
 ###########################################################
 # 個別ルール
+# サーバ毎に異なるルールを記載する
 ###########################################################
 ### e.g.
 # nft add rule ip filter input ip saddr $LOCAL_NET tcp dport 22 counter accept
