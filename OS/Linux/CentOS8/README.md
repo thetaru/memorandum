@@ -38,3 +38,4 @@
 - [ ] [(書きかけ)デバイス名ずれ対策](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
 - [ ] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
 - [ ] [AnsibleとGitLabでCI/CD環境構築](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible+GitLab)
+- [ ] [tmux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/tmux)
