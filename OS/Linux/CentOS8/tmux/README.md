@@ -1,4 +1,9 @@
 # tmux
+## インストール
+```
+# yum install tmux
+```
+## 設定
 ```
 ### いつもつかってるやつ
 # vi ~/.tmux.conf
