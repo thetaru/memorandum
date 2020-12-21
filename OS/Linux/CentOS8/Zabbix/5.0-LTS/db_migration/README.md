@@ -28,7 +28,7 @@ MariaDBのデータ領域はデフォルトの設定では`/var/lib/mysql`です
 # mkdir /data/mysql
 # chmod 755 /data/mysql
 # chown mysql:mysql /data/mysql
-# cp -pr /var/lib/mysql/* /data
+# cp -pr /var/lib/mysql/* /data/mysql
 ```
 ### mariadb-server.cnfの設定
 ```
