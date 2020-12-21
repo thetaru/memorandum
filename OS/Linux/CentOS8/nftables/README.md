@@ -67,7 +67,7 @@ nft add rule ip filter input iifname "lo" counter accept
 nft add rule ip filter input ip protocol icmp counter accept
 
 ### e.g.
-# nft add rule ip filter input ip saddr $ZABBIX_SRV tcp dport 10050 counter accept
+# nft add rule ip filter input ip saddr $HOSTNAME tcp dport 10050 counter accept
 
 ###########################################################
 # 個別ルール
