@@ -22,9 +22,16 @@
 #    "xxx.xxx.xxx.xxx"
 # )
 
+# HOSTNAME=192.168.137.10
+
 ###########################################################
 # ポートの定義
 ###########################################################
+SSH=22
+DNS=52
+HTTP=80
+HTTPS=443
+NTP=123
 
 ###########################################################
 # nftablesの初期化
@@ -53,11 +60,14 @@ nft add chain ip filter forward { type filter hook forward priority 0 \; policy 
 nft add rule ip filter input ip protocol tcp ct state established,related counter accept
 nft add rule ip filter input ip protocol udp ct state established,related counter accept
 
+### 自分自身は許可
+nft add rule ip filter input iifname "lo" counter accept
+
 ### Pingに応答する
 nft add rule ip filter input ip protocol icmp counter accept
 
-###
-nft add rule ip filter input ip saddr 192.168.137.22/32 tcp dport 10050 counter accept
+### e.g.
+# nft add rule ip filter input ip saddr $ZABBIX_SRV tcp dport 10050 counter accept
 
 ###########################################################
 # 個別ルール
