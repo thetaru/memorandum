@@ -5,7 +5,7 @@
 ###########################################################
 # ルールのパス
 ###########################################################
-OUTPUT_FILE="/etc/nftables/main.nft"
+OUTPUT_FILE="/etc/nftables/rules.nft"
 
 ###########################################################
 # ネットワークの定義
@@ -93,4 +93,12 @@ nft add rule ip filter input counter log prefix \"\[nftables-dropped\]\: \"
 ###########################################################
 nft list ruleset
 nft list ruleset > $OUTPUT_FILE
+```
+## ルールの適用
+`/etc/sysconfig/nftables.conf`でルールをincludeする必要があります。
+```
+# vi /etc/sysconfig/nftables.conf
+```
+```
++  include /etc/nftables/rules.nft
 ```
