@@ -50,8 +50,8 @@ nft add chain ip filter forward { type filter hook forward priority 0 \; policy 
 # 共通ルール
 ###########################################################
 ### 確立済みのパケット疎通は許可
-nft add rule ip filter tcp ct state established,related counter accept
-nft add rule ip filter udp ct state established,related counter accept
+nft add rule ip filter input ip protocol tcp ct state established,related counter accept
+nft add rule ip filter input ip protocol udp ct state established,related counter accept
 
 ### Pingに応答する
 nft add rule ip filter input ip protocol icmp counter accept
