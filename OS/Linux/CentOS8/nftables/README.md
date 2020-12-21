@@ -91,5 +91,6 @@ nft add rule ip filter input counter log prefix \"\[nftables-dropped\]\: \"
 ###########################################################
 # ルールを保存
 ###########################################################
+nft list ruleset
 nft list ruleset > $OUTPUT_FILE
 ```
