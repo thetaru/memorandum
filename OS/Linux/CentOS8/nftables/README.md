@@ -77,6 +77,7 @@ nft add rule ip filter input ip protocol icmp counter accept
 
 ###########################################################
 # 上記ルールに当てはまらなかったパケットはロギングしてDROP
+# 出力先を変える場合は、syslogで拾うこと
 ###########################################################
 nft add rule ip filter input counter log prefix \"\[nftables-dropped\]\: \"
 
