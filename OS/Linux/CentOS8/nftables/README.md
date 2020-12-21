@@ -94,11 +94,16 @@ nft add rule ip filter input counter log prefix \"\[nftables-dropped\]\: \"
 nft list ruleset
 nft list ruleset > $OUTPUT_FILE
 ```
-## ルールの適用
+## ルールの永続化
 `/etc/sysconfig/nftables.conf`でルールをincludeする必要があります。
 ```
 # vi /etc/sysconfig/nftables.conf
 ```
 ```
 +  include /etc/nftables/rules.nft
+```
+サービスを再起動してルールが残っていることを確認する
+```
+# systemctl restart nftables
+# nft list ruleset
 ```
