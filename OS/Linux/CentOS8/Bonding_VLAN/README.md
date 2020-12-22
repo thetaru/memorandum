@@ -7,7 +7,7 @@ nmcli connection add type bond ifname bond0 con-name bond0 mode balance-rr
 
 ### 設定
 ```
-nmcli connection modify ipv4.method disabled ipv6.method ignore
+nmcli connection modify bond0 ipv4.method disabled ipv6.method ignore
 ```
 
 ## slave
@@ -46,10 +46,8 @@ nmcli connection modify bond0.20 802-3-ethernet.auto-negotiate yes
 ## interfaceの再起動
 ```
 nmcli coonection down bond0
-nmcli coonection down bond0.10
-nmcli coonection down bond0.20
+nmcli connection up bond0
 nmcli coonection up bond0.10
 nmcli coonection up bond0.20
-nmcli connection up bond0
 nmcli connection show
 ```
