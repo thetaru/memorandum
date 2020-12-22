@@ -1,5 +1,5 @@
 # Bonding + VLAN
-## bond
+## ■ bond
 ### 追加
 ```
 nmcli connection add type bond ifname bond0 con-name bond0 mode balance-rr
@@ -10,7 +10,7 @@ nmcli connection add type bond ifname bond0 con-name bond0 mode balance-rr
 nmcli connection modify bond0 ipv4.method disabled ipv6.method ignore
 ```
 
-## slave
+## ■ slave
 ### 追加
 ```
 nmcli connection add type bond-slave ifname eno1 con-name bond0-slave-eno3 master bond0
@@ -29,7 +29,7 @@ nmcli connection modify bond0 connection.autoconnect yes
 nmcli connection modify bond0 connection.autoconnect-slaves 1
 ```
 
-## vlan
+## ■ vlan
 ### 追加
 ```
 nmcli connection add type vlan ifname bond0.10 con-name bond0.10 dev bond0 vlan.parent bond0 id 10
@@ -43,7 +43,7 @@ nmcli connection modify bond0.20 connection.autoconnect yes ipv4.method manual i
 nmcli connection modify bond0.10 802-3-ethernet.auto-negotiate yes
 nmcli connection modify bond0.20 802-3-ethernet.auto-negotiate yes
 ```
-## interfaceの再起動
+## ■ interfaceの再起動
 ```
 nmcli coonection down bond0
 nmcli connection up bond0
