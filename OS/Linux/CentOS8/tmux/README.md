@@ -9,7 +9,7 @@
 # vi ~/.tmux.conf
 ```
 ```
-# tmux起動時のシェルをzshにする
+# tmux起動時のシェルをbashにする
 set-option -g default-shell /bin/bash
 
 # tmuxを256色表示できるようにする
