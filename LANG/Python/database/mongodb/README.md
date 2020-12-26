@@ -19,10 +19,13 @@
 ```py
 import datetime
 
-from pymongo imprt MongoClient
+from pymongo import MongoClient
 
 ### (ローカルの)MongoDBに接続する
 client = MongoCleient('mongodb://localhost:27017/')
+
+### DBの作成
+db = client['test_datebase']
 
 ### MongoDBに登録するデータの例
 stack1 = {
@@ -31,4 +34,16 @@ stack1 = {
     'age': 23,
     'data': datetime.datetime.utcnow()
 }
+
+stack2 = {
+    'name': 'thetakun',
+    'gender': 'female',
+    'age': 25,
+    'data': datetime.datetime.utcnow()
+}
+
+### stack1をDBに挿入する
+db_stacks = db.stacks
+db_stacks.insert_one(stack1).inserted_id
+print(db_stacks.find_one({'_id': stack_id}))
 ```
