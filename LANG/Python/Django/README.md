@@ -126,9 +126,9 @@ project_name
       ├ tests.py
       ├ views.py
       └ static
-         └ application_name
-            ├ css
-            └ js
+          └ application_name
+              ├ css
+              └ js
 ```
 ### モデルの作成
 データベースに定義するデータモデルを、`application_name/models.py`に定義します。  
