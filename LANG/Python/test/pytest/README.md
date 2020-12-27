@@ -10,6 +10,7 @@ https://www.m3tech.blog/entry/pytest-summary
 書き方は以下の通りです。
 - テストは関数として定義
 - assert文で検証
+
 ルールは以下の通りです。
 - テストファイル名が`test_*.py`または`*_test.py`であること
 - テスト関数名に`test`が付くこと
