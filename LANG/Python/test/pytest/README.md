@@ -42,6 +42,26 @@ class TestClass:
 # pytest test_foo.py
 ```
 ## ■ pytestの例外テスト
+`pytest.raises`を使います。  
+例外のメッセージのチェックには`match=`を使います。
+詳細な検証をする際は`as`で例外オブジェクトに変数を代入します。
+### 例
+```
+import pytest
+
+def test_raises():
+    with pytest.raises(ZeroDivisionError):
+        1 / 0
+
+def test_match():
+    with pytest.raises(ValueError, match=r".* 123 .*":
+        raise ValueError("Ecveption 123 raised")
+        
+def test_excinfo():
+    with pytest.raises(RuntimeError) as excinfo:
+        raise RuntimeError("ERROR")
+    assert str(excinfo.value) == "ERROR"
+```
 ## ■ pytestのsetupとteardown
 ## ■ pytestのスキップ
 ## ■ テストファイルの配置
