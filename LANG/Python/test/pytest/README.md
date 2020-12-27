@@ -36,11 +36,10 @@ class TestClass:
         x = "hello"
         assert hasattr(x, "check")
 ```
-## ■ 実行
-```
-# pytest <テストファイル>.py
-```
-### 例
+`pytest`コマンドでテストを実行します。
 ```
 # pytest test_foo.py
 ```
+## ■ テストファイルの配置
+- テストファイルは`src/tests/`ディレクトリ下にまとめる
+- テスト対象のコードと対応する名前を付ける(e.g. テスト対象コードがapp.pyにあるならtest_app.pyと付ける)
