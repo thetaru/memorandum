@@ -13,7 +13,6 @@ https://www.m3tech.blog/entry/pytest-summary
 ### 例
 ```
 ### test_foo.py
-
 def f():
     return 3
 
