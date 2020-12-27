@@ -5,7 +5,7 @@ https://www.m3tech.blog/entry/pytest-summary
 ```
 # pip3 install pytest
 ```
-## ■ 使い方
+## ■ 基本的な使い方
 `test_`で始まる関数や`Test`で始まるクラスがテスト対象になります。  
 書き方は以下の通りです。
 - テストは関数として定義
@@ -41,6 +41,9 @@ class TestClass:
 ```
 # pytest test_foo.py
 ```
+## ■ pytestの例外テスト
+## ■ pytestのsetupとteardown
+## ■ pytestのスキップ
 ## ■ テストファイルの配置
 - テストファイルは`src/tests/`ディレクトリ下にまとめる
 - テスト対象のコードと対応する名前を付ける(e.g. テスト対象コードが`app.py`にあるなら`test_app.py`と付ける)
