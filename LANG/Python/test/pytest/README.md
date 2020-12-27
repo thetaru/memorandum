@@ -10,12 +10,33 @@ https://www.m3tech.blog/entry/pytest-summary
 基本的な書き方は以下の通りです。
 - テストは関数として定義
 - assert文で検証
-#### 例
+### 例
 ```
-def test_func(x, y):
-    assert f() == 4
+### test_foo.py
+
+def f():
+    return 3
+
+def test_func():
+    """f()の戻り値を検証する"""
+    assert f() == 3
+```
+```
+### test_class.py
+class TestClass:
+    def test_one(self):
+        x = "this"
+        assert "h" in x
+        
+    def test_two(self):
+        x = "hello"
+        assert hasattr(x, "check")
 ```
 ## ■ 実行
 ```
 # pytest <テストファイル>.py
+```
+### 例
+```
+# pytest test_foo.py
 ```
