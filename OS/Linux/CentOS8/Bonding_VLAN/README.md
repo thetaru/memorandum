@@ -1,5 +1,13 @@
 # Bonding + VLAN
-bondに1つ以上のタグVLANを付与して通信する。
+bondに1つ以上のタグVLANを付与して通信する。  
+今回の設定では次のようにする。
+
+|interface name|
+|:---|
+|eth1|
+|eth2|
+|eth3|
+|eth4|
 
 |connection|type|
 |:---|:---|
