@@ -1,5 +1,6 @@
 # CentOS8
 ## ■ Commands
+- [ ] [chroot](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chroot)
 - [ ] [(書きかけ)fdisk](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
 - [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
 ## ■ OS Settings
