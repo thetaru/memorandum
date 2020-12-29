@@ -14,4 +14,4 @@ grubが壊れたり、レスキューモードに入った際に使用します�
 # mount /dev/sdaX /
 (環境依存のため省略)
 ```
-あとは`grub2-install`するなり`grub2-mkconfig`するなりしてください。
+あとは`/boot`マウントするなり`grub2-install`するなり`grub2-mkconfig`するなりしてください。
