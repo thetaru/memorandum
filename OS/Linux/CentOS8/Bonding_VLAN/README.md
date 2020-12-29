@@ -1,4 +1,16 @@
 # Bonding + VLAN
+bondに1つ以上のタグVLANを付与して通信する。
+
+|connection|type|
+|:---|:---|
+|bond0|bond|
+|bond0-slave-eth1|slave|
+|bond0-slave-eth2|slave|
+|bond0-slave-eth3|slave|
+|bond0-slave-eth4|slave|
+|bond0.10|VLAN(id=10)|
+|bond0.20|VLAN(id=20)|
+
 ## ■ bond
 ### 追加
 ```
@@ -13,18 +25,18 @@ nmcli connection modify bond0 ipv4.method disabled ipv6.method ignore
 ## ■ slave
 ### 追加
 ```
-nmcli connection add type bond-slave ifname eno1 con-name bond0-slave-eno3 master bond0
-nmcli connection add type bond-slave ifname eno2 con-name bond0-slave-eno4 master bond0
-nmcli connection add type bond-slave ifname eno3 con-name bond0-slave-eno5 master bond0
-nmcli connection add type bond-slave ifname eno4 con-name bond0-slave-eno6 master bond0
+nmcli connection add type bond-slave ifname eno1 con-name bond0-slave-eth1 master bond0
+nmcli connection add type bond-slave ifname eno2 con-name bond0-slave-eth2 master bond0
+nmcli connection add type bond-slave ifname eno3 con-name bond0-slave-eth3 master bond0
+nmcli connection add type bond-slave ifname eno4 con-name bond0-slave-eth4 master bond0
 ```
 
 ### 設定
 ```
-nmcli connection modify bond0-slave-eno1 connection.autoconnect yes
-nmcli connection modify bond0-slave-eno2 connection.autoconnect yes
-nmcli connection modify bond0-slave-eno3 connection.autoconnect yes
-nmcli connection modify bond0-slave-eno4 connection.autoconnect yes
+nmcli connection modify bond0-slave-eth1 connection.autoconnect yes
+nmcli connection modify bond0-slave-eth2 connection.autoconnect yes
+nmcli connection modify bond0-slave-eth3 connection.autoconnect yes
+nmcli connection modify bond0-slave-eth4 connection.autoconnect yes
 nmcli connection modify bond0 connection.autoconnect yes
 nmcli connection modify bond0 connection.autoconnect-slaves 1
 ```
@@ -50,4 +62,9 @@ nmcli connection up bond0
 nmcli coonection up bond0.10
 nmcli coonection up bond0.20
 nmcli connection show
+```
+## ■ 確認
+```
+### NICを抜き差ししてstateのUP,DOWNを確認する
+watch -n 5 /proc/net/bonding/bond0
 ```
