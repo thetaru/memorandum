@@ -39,4 +39,23 @@ IPv6が無効化されていることを確認します。
 ```
 ```net.ipv6.conf.all.disable_ipv6``` と ```net.ipv6.conf.default.disable_ipv6```のパラメータの値が```1```になっていて  
 IPv6アドレスが設定されていなければOKです。
-## 方法2: NetworkManagerより
+## 方法2: GRUBより
+### §1. `/etc/default/grub`を編集する
+`/etc/default/grub`の`GRUB_CMDLINE_LINUX`に`ipv6.disable=1`を設定(追記)します。
+```
+# vi /etc/default/grub
+```
+```
+-  GRUB_CMDLINE_LINUX="..."
++  GRUB_CMDLINE_LINUX="... ipv6.disable=1"
+```
+### §2. `grub.cfg`を再生成する
+#### BIOS
+```
+# grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+#### UEFI
+```
+# grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+```
+再起動します。
