@@ -5,7 +5,7 @@
 - [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/settings)
-- [] [Bonding + VLAN](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Bonding_VLAN)
+- [x] [Bonding + VLAN](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Bonding_VLAN)
 - [x] [ファイルディスクリプタ](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/filedescriptor)
 - [ ] [(書きかけ)firewalld](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/firewalld)
 - [x] [ipv6無効化](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ipv6無効化)
@@ -32,6 +32,7 @@
 - [ ] [minecraft](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/minecraft)
 - [ ] [(書きかけ)postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
 - [ ] [PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
+- [ ] [Pacemaker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Pacemaker)
 - [ ] [(書きかけ)Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
 - [ ] [Squid](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Squid)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
