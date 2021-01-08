@@ -41,3 +41,4 @@
 - [ ] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
 - [ ] [AnsibleとGitLabでCI/CD環境構築](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible+GitLab)
 - [ ] [tmux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/tmux)
+- [ ] [アプデの際の注意](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/update_note)
