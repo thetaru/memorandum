@@ -7,7 +7,7 @@
 ```
 # curl -u natas0:natas0 http://natas0.natas.labs.overthewire.org
 ```
-```
+```html
 <html>
 <head>
 <!-- This stuff in the header has nothing to do with the level -->
