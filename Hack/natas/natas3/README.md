@@ -26,7 +26,7 @@ There is nothing on this page
 </div>
 </body></html>
 ```
-今回はディレクトリ名のヒントがないが、`Not even Google will find it this time...`とあります。  
+今回はディレクトリ名のヒントはないが、`Not even Google will find it this time...`とあります。  
 アクセス制御のためのファイルといえば、`robots.txt`です。
 ```
 $ curl -u natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14 http://natas3.natas.labs.overthewire.org/robots.txt
