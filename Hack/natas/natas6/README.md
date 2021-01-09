@@ -68,7 +68,10 @@ $secret = "FOEIUWGHFEEUHOFUOIU";
 予想通り、`$secret`の値があることがわかりました。  
 `secret`に`FOEIUWGHFEEUHOFUOIU`、`submit`に`Submit`を渡します。
 ```
-$ curl -X POST -d "secret=FOEIUWGHFEEUHOFUOIU&submit=Submit" http://natas6:aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1@natas6.natas.labs.overthewire.org
+$ curl -X POST \
+       -d "secret=FOEIUWGHFEEUHOFUOIU&submit=Submit" \
+       -u natas6:aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1 \
+          http://natas6.natas.labs.overthewire.org
 ```
 ```html
 <html>
