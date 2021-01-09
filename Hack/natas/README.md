@@ -1,6 +1,6 @@
 # NATAS
 基本的に標準コマンドのみで対処していきます。  
-:warning: All passwords are also stored in /etc/natas_webpass/ :warning:
+:warning: All passwords are also stored in /etc/natas_webpass/natasXX :warning:
 
 - [ ] [natas0](https://github.com/thetaru/memorandum/tree/master/Hack/natas/natas0)
 - [ ] [natas1](https://github.com/thetaru/memorandum/tree/master/Hack/natas/natas1)
