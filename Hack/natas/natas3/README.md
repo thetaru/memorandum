@@ -65,3 +65,4 @@ $ curl -u natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14 http://natas3.natas.labs.overt
 ```
 natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
 ```
+テキストファイルの中にpassword(`Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ`)が書いてある。
