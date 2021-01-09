@@ -55,7 +55,8 @@ Access disallowed. You are not logged in</div>
 Access disallowed. You are not logged in</div>
 ```
 と書いてあります。  
-そこでクッキーを送信して`loggedin`の値を変更します。
+`logedin`の値でアクセスを制限していると仮定します。  
+そこでクッキーを送信して`loggedin`の値を`1`に変更してみましょう。
 ```
 $ curl -u natas5:iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq \
        -b loggedin=1 \
