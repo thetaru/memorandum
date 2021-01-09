@@ -42,7 +42,7 @@ Output:
 と書いてあります。  
 ブラウザで`http://natas9:W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl@natas9.natas.labs.overthewire.org/index-source.html`にアクセスします。
 ```
-...
+...html
 <form>
 Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
 </form>
@@ -89,3 +89,35 @@ $ curl -u natas9:W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl \
           http://natas9.natas.labs.overthewire.org |
   head -n 30
 ```
+```
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src=http://natas.labs.overthewire.org/js/wechall-data.js></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas9", "pass": "W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl" };</script></head>
+<body>
+<h1>natas9</h1>
+<div id="content">
+<form>
+Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
+</form>
+
+
+Output:
+<pre>
+W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+
+African
+Africans
+Allah
+Allah's
+American
+Americanism
+Americanism's
+Americanisms
+```
+これでpassword(`W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl`)を得ることができました。
