@@ -29,4 +29,4 @@ next level on this page, but rightclicking has been blocked!
 </body>
 </html>
 ```
-コメントの中にpassword('ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi')が書いてある。
+コメントの中にpassword(`ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi`)が書いてある。
