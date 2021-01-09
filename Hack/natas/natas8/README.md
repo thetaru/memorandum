@@ -37,7 +37,7 @@ Input secret: <input name=secret><br>
 ```
 <div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
 ```
-と書いてあります。
+と書いてあります。  
 ブラウザで`http://natas8:DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe@natas8.natas.labs.overthewire.org/index-source.html`にアクセスします。
 ```html
 <?
