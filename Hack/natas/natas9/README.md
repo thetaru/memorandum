@@ -41,8 +41,8 @@ Output:
 ```
 と書いてあります。  
 ブラウザで`http://natas9:W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl@natas9.natas.labs.overthewire.org/index-source.html`にアクセスします。
-```
-...html
+```html
+...
 <form>
 Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
 </form>
