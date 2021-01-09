@@ -65,7 +65,7 @@ if($key != "") {
 ...
 ```
 コードをみると`$key`が空文字でなければ`dictionary.txt`の中に`$key`の値があるか判断しています。  
-想定するコードは以下の通りです。()
+想定するコードは以下の通りです。(Passwordは`/etc/natas_webpass/natas9`に入っています。)
 ```
 $ grep -i ; cat /etc/natas_webpass/natas9 dictionary.txt
 ```
