@@ -4,6 +4,10 @@
 rsync [OPTION] [username@]hostname:/path/src/ /path/dest
 ```
 ```/path/src/```: コピー元のパス ```/path/dest```: コピー先のパス  
+### :warning:一番大切なコト:warning:
+実際に`rsysnc`コマンドを実行して同期(またはコピー)する前に`--dry-run`オプションを付けて実行しましょう。(同期、コピーを実施せず転送内容のみ出力します)  
+コピー内容が正しいことを確認してから実施してください。
+
 ### :warning:注意:warning:
 rsyncの**コピー元の**パス指定において、  ```/path/to/```と```/path/to```とで意味が変わります。  
 前者は```/path/to/*```を意味しますが 、後者は```/path/to```ディレクトリ自身を意味します。  
