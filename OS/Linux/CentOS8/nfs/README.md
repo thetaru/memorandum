@@ -9,17 +9,6 @@
 ```
 # yum -y install nfs-utils
 ```
-## § バージョン確認
-```
-### nfsプロトコルのバージョン確認
-# rpcinfo -p | grep -e nfs -e vers
-```
-```
-   program vers proto   port  service
-    100003    3   tcp   2049  nfs
-    100003    4   tcp   2049  nfs
-    100227    3   tcp   2049  nfs_acl
-```
 ## § NFS共有先の作成
 ```
 # mkdir -p /var/share/nfs
@@ -31,7 +20,21 @@
 ```
 ```
 ### 変更の有効化
-# systemctl restart nfs-utils.service
+# systemctl start nfs-utils.service
+# systemctl enable nfs-utils.service
+# systemctl start rpcbind.service
+# systemctl start nfs-idmapd.service
+```
+## § バージョン確認
+```
+### nfsプロトコルのバージョン確認
+# rpcinfo -p | grep -e nfs -e vers
+```
+```
+   program vers proto   port  service
+    100003    3   tcp   2049  nfs
+    100003    4   tcp   2049  nfs
+    100227    3   tcp   2049  nfs_acl
 ```
 ## § アクセス制限
 |パラメータ|意味|
