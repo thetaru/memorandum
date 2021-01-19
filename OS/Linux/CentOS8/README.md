@@ -42,3 +42,5 @@
 - [ ] [AnsibleとGitLabでCI/CD環境構築](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible+GitLab)
 - [ ] [tmux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/tmux)
 - [ ] [アプデの際の注意](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/update_note)
+- [ ] [systemdでアクセス制限](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/systemd_access_restrict)
+- [ ] [名前解決について](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/about_name_resolution)
