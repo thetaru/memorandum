@@ -32,7 +32,7 @@
 - [ ] [(書きかけ)postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
 - [ ] [PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [Pacemaker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Pacemaker)
-- [ ] [(書きかけ)Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
+- [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
 - [ ] [Squid](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Squid)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
