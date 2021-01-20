@@ -43,20 +43,7 @@ retype new password: <Samba用パスワード>
     log file = /var/log/samba/sambalog.%m
     log level = 5
 
-# ログインしたユーザのホームディレクトリの設定(今回の場合はsambauserの/home/sambauser)
-[homes]
-    comment = HOME DIR
-    valid users = sambauser
-    browseable = No
-    read only = No
-
-# セクション名が共有名となります
-[share]
-    comment = Share Folder for All Users
-# 共有するディレクトリ
-    path = /share
-    browsable = yes
-    read only = no
+# 残りのセクションはやりたいことに依存するので省略する
 ```
 ## Sambaの起動
 ```
