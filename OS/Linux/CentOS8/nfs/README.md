@@ -63,7 +63,7 @@ exporting 192.168.137.0/24:/var/share/nfs
 # Client側の設定
 ## § NFS Install
 ```
-# yum -y install nfs-utils
+# yum -y install rpcbind nfs-utils
 ```
 ## § マウントの設定
 ```
