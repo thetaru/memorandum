@@ -129,7 +129,7 @@ acl DenyBrowser -i MSIE.5
 http_access deny DenyOS
 http_access deny DenyBrowser
 
-# Show Error message on Browser(※エラーメッセージ用ディレクトリ[/etc/share/squid/errors/English]に ERR_SECURITY_DENY ファイルを置く)
+# Show Error message on Browser(※/etc/share/squid/errors/English に ERR_SECURITY_DENY ファイルを置く)
 deny_info ERR_SECURITY_DENY DenyOS
 deny_info ERR_SECURITY_DENY DenyBrowser
 ```
