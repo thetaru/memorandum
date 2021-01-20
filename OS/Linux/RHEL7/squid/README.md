@@ -115,7 +115,7 @@ server_persistent_connections off
 dns_defnames on
 ```
 ### 古いOS・ブラウザを制限
-ブラウザのバージョントークやOSのプラットフォームトークンを調べ`DenyBrowser`, `DenyOS`に登録する。
+必要に応じてブラウザのバージョントークやOSのプラットフォームトークンを調べ`DenyBrowser`, `DenyOS`に登録する。
 ```
 # define denied OS
 acl DenyOS browser -i windows.95
