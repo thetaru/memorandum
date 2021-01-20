@@ -7,52 +7,47 @@
 # Server側の設定
 ## § NFS Install
 ```
-# yum -y install nfs-utils
+# yum -y install rpcbind nfs-utils
 ```
 ## § NFS共有先の作成
+共有用のディレクトリを作成します。
 ```
 # mkdir -p /var/share/nfs
 ```
+## § 設定事項
+### アクセス制限
+#### Syntax
 ```
-### ファイルの権限制限回避
-# chown -R nobody: /var/share/nfs
-# chmod -R 777 /var/share/nfs
+<共有ディレクトリへのPATH> <接続許可ネットワーク>(<オプション>)
 ```
-```
-### 変更の有効化
-# systemctl start nfs-utils.service
-# systemctl enable nfs-utils.service
-# systemctl start rpcbind.service
-# systemctl start nfs-idmapd.service
-```
-## § バージョン確認
-```
-### nfsプロトコルのバージョン確認
-# rpcinfo -p | grep -e nfs -e vers
-```
-```
-   program vers proto   port  service
-    100003    3   tcp   2049  nfs
-    100003    4   tcp   2049  nfs
-    100227    3   tcp   2049  nfs_acl
-```
-## § アクセス制限
 |パラメータ|意味|
 |:---|:---|
 |ro|読み出し専用で共有します。クライアントは書き込むことができません。|
 |rw|クライアントは読み書き込み両方でアクセスできます。|
 |async|デフォルトは同期だが非同期にする。|
 |root_squash|rootユーザからのリクエストをanonymousに格下げする。デフォルトはno_all_squash。|
+
 ```
 # vi /etc/exports
 ```
 ```
 +  /var/share/nfs 192.168.137.0/24(rw,no_root_squash,async)
 ```
+### ドメイン設定
+`/etc/idmapd.conf`を編集します。`DOMAIN`の値はサーバとクライアントで共通のドメイン名を指定します。
+以下は、`DOMAIN`が`WORKGROUP`であると仮定しています。
+```
+# vi /etc/idmapd.conf
+```
+```
+-  #Domain = WORKGROUP
++  Domain = WORKGROUP
+```
 ## § サービスの起動
 ```
-# systemctl start nfs-server.service
-# systemctl enable nfs-server.service
+# systemctl start nfs-server
+# systemctl start nfs-idmap
+# systemctl enable nfs-server
 ```
 ```
 ### 起動確認
