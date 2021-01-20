@@ -32,18 +32,26 @@ retype new password: <Samba用パスワード>
 # vi /etc/samba/smb.conf
 ```
 ```
+# globalセクションで設定した設定は他セクションに対しても同様に働きます
 [global]
 # ワークグループ名の指定(ドメイン名かワークグループ名をファイル共有するクライアントと揃える必要がある)
     workgroup = WORKGROUP
-# アクセス制限
-    hosts allow = 127. 192.168.137.
 # NetBIOS名の指定(e.g. \\192.168.137.1\shareでアクセスできるようになる)
-    netbios name = SAMBA
+    netbios name = samba
+# ユーザー名とパスワードを使ってアクセス制御
+    security = user
+# パスワードを管理するデータベースを指定
+    passdb backend = tdbsam
 # ログ出力先
     log file = /var/log/samba/sambalog.%m
     log level = 5
+    max log size = 1024
 
 # 残りのセクションはやりたいことに依存するので省略する
+# e.g.
+#  接続制限(ユーザ, グループ, IPアドレスなど)
+#  アクセス制御(ユーザ毎、グループ毎など)
+#  読み書き設定(RO, RWなど)
 ```
 ## Sambaの起動
 ```
