@@ -16,7 +16,7 @@ Listen 443
 エラーページに遷移した際に、問い合わせ先として設定したメールアドレスが表示されます。  
 つかわないのでコメントしてしまいます。
 ```
-# ServerAdmin root@localhost
+#ServerAdmin root@localhost
 ```
 ### ServerName
 apacheサーバ自身のホスト名(FQDN)を指定します。
