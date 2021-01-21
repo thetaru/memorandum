@@ -60,7 +60,7 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 ```
 ### Directory - Options
 #### Indexs
-ディレクトリリスティング(Indexs)を無効化します。
+ディレクトリリスティング(ブラウザからディレクトリ情報が筒抜けになる)を無効化します。
 #### FollowSymLinks
 シンボリックリンク先をApacheが見れるようになります。
 ### CGI
