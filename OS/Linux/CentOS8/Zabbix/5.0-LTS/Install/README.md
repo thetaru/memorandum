@@ -16,9 +16,20 @@
 ## ■ apacheの設定
 [ここ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
 ## ■ PHPの設定
+```
+# vi /etc/php-fpm.d/zabbix.conf
+```
+```
+-  ;php_value[date.timezone] = Euro/Riga
++  php_value[date.timezone] = Asia/Tokyo
+```
 ## ■ MariaDBの設定
 ```
 # yum install mariadb-server
+```
+最低限のセキュリティ設定をしてくれるコマンドを実行します。
+```
+# mysql_secure_installation
 ```
 ## ■ Zabbixの設定
 ```
