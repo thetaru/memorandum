@@ -69,4 +69,10 @@ CGIを実行しない場合は許可しないようにします。
 <IfModule alias_module>
     #ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
 </IfModule>
+
+#<Directory "/var/www/cgi-bin">
+#    AllowOverride None
+#    Options None
+#    Require all granted
+#</Directory>
 ```
