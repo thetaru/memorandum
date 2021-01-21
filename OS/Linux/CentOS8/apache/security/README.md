@@ -15,22 +15,41 @@ Header unset X-Powered-By
 # httpoxy 対策
 RequestHeader unset Proxy
 
-# クリックジャッキング対策
-Header append X-Frame-Options SAMEORIGIN
+# 使用可能なリクエストヘッダを設定する。
+Header set Access-Control-Allow-Headers "Content-Type"  
 
-# XSS対策
+# アクセスを許可するOriginのURL。*で指定なし
+Header set Access-Control-Allow-Origin "*"  
+
+# キャッシュを残さないようにするため。
+Header append Pragma no-cache
+
+# リクエスト、レスポンスを一切保存しないため。
+Header append Cache-Control no-store
+
+# オリジンサーバの確認無しにキャッシュを利用させないため。
+Header append Cache-Control no-cache
+
+# リクエストごとに毎回完全なレスポンスを利用するため。
+Header append Cache-Control must-revalidate
+
+# XSSフィルターを有効化し、XSS検出時にページのレンダリングを停止させるため。
 Header set X-XSS-Protection "1; mode=block"
+
+# XSS対策のため、常にレスポンスヘッダからContentTypeを優先して指示する。
 Header set X-Content-Type-Options nosniff
 
 # XST対策
 TraceEnable Off
 
-<Directory /var/www/html>
-    # .htaccess の有効化
-    AllowOverride All
-    # ファイル一覧出力の禁止
-    Options -Indexes
-</Directory>
+# クリックジャッキング対策ためのフレーム内でのページ表示表示を一切許可しない。
+Header append X-FRAME-OPTIONS "DENY"
+
+# 大量のアクセスが来た際に、サーバ負荷をあげないため。
+ListenBacklog 511   
+
+# PHPに関するHTTP_PROXYの脆弱性について対策するため。
+RequestHeader unset Proxy
 EOF
 ```
 ### autoindex.conf
