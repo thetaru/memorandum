@@ -82,3 +82,6 @@ exporting 192.168.137.0/24:/var/share/nfs
 +  192.168.137.100:/var/share/nfs /share/nfs-client nfs defaults 0 0
 ```
 再起動してOSが上がってきた後もマウントされていることを確認すること。
+### IPv6無効化している場合
+本質的ではないけど原因はわかる`/usr/lib/systemd/system/rpcbind.socket`
+https://www.unknownengineer.net/entry/2017/02/16/163419https://www.unknownengineer.net/entry/2017/02/16/163419
