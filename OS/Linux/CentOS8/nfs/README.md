@@ -84,4 +84,5 @@ exporting 192.168.137.0/24:/var/share/nfs
 再起動してOSが上がってきた後もマウントされていることを確認すること。
 ### IPv6無効化している場合
 本質的ではないけど原因はわかる`/usr/lib/systemd/system/rpcbind.socket`
-https://www.unknownengineer.net/entry/2017/02/16/163419https://www.unknownengineer.net/entry/2017/02/16/163419
+https://www.unknownengineer.net/entry/2017/02/16/163419https://www.unknownengineer.net/entry/2017/02/16/163419  
+https://qiita.com/ymko/items/e1ff79efed9cf7f29348
