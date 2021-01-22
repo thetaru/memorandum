@@ -28,3 +28,5 @@ if $fromhost-ip == ['xxx.xxx.xxx.xxx', 'yyy.yyy.yyy.yyy'] then {
 ```
 *.*    @@<Syslog Serverのホスト名 or IPアドレス>[:<Port>]
 ```
+## 送信元ホスト名の指定
+ホスト名のみ`$LocalHostName {{HOSTNAME}}`, FQDN`$ PreserveFQDN on`
