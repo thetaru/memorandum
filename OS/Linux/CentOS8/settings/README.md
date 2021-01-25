@@ -166,6 +166,13 @@ masterに追加するインターフェースを上と同様の手順で追加�
 ```
 </details>
 
+<details>
+<summary>[option]Bondingの設定</summary>
+   
+ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
+   
+</details>
+
 ## ■ DNSの設定
 上記で`/etc/resolv.conf`の自動更新を無効化した人向けです。
 ```
