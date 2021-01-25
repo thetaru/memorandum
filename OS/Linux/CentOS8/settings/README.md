@@ -167,7 +167,7 @@ masterに追加するインターフェースを上と同様の手順で追加�
 </details>
 
 <details>
-<summary>[option]Bondingの設定</summary>
+<summary>[option]ethtool</summary>
    
 ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
    
