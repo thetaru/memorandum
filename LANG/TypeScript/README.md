@@ -24,7 +24,7 @@ const displayStatus(value: Status) {
 ```ts
 class Pokemon {
     // フィールド
-    name: string;
+    Name: string;
     Lv: number;
     HP: number;
     Attack: number;
