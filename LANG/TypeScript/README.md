@@ -34,6 +34,7 @@ class Pokemon {
     
     // コンストラクタ
     constructor(Name: string, Lv: number, HP: number, Attack: number, Defense: number, Special: number, Speed: number) {
+        this.Name = Name;
         this.Lv = Lv;
         this.HP = HP;
         this.Attack = number;
