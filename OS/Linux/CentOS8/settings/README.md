@@ -256,6 +256,9 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 脆弱性対処の際にはこれらの設定を外してから`yum update`します。
 ## ■ sshdの設定
 ```
+# ps -ef | grep sshd
+```
+```
 # vi /etc/ssh/sshd_config
 ```
 ```
@@ -274,10 +277,35 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 ### パスワード認証を禁止
 -  PasswordAuthentication yes
 +  PasswordAuthentication no
+
+### ログイン可能ユーザーを指定(スペース区切り)
+AllowUsers USER1 USER2
+
+### 暗号化アルゴリズム
++  Ciphers aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+
+### 鍵交換アルゴリズム
++  KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group18-sha512,diffie-hellman-group16-sha512,diffie-hellman-group14-sha256,diffie-hellman-group-exchange-sha256
+
+### MACアルゴリズム
++  Macs umac-128-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-64-etm@openssh.com,umac-64@openssh.com,hmac-sha1
+
+### ホスト間認証アルゴリズム
++  HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-ed25519,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256,ssh-rsa-cert-v01@openssh.com,rsa-sha2-512,rsa-sha2-256,ssh-rsa
+
+### 鍵生成の頻度(何バイトの鍵を何秒毎に生成するか)を指定
++  RekeyLimit default 600
 ```
 ```
 ### sshdを再起動
 # systemctl restart sshd
+```
+指定した`Ciphers`,`MACs`,`KexAlgorithms`,`PubkeyAcceptedKeyTypes`が適用されていることを確認する。
+```
+# ssh -Q cipher
+# ssh -Q mac
+# ssh -Q kex
+# ssh -Q key
 ```
 ## ■ SELinuxの設定
 ```
