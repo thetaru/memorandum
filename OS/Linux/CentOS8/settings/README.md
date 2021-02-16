@@ -256,9 +256,6 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 脆弱性対処の際にはこれらの設定を外してから`yum update`します。
 ## ■ sshdの設定
 ```
-# ps -ef | grep sshd
-```
-```
 # vi /etc/ssh/sshd_config
 ```
 ```
