@@ -304,6 +304,17 @@ AllowUsers USER1 USER2
 # ssh -Q kex
 # ssh -Q key
 ```
+## ■ セキュリティポリシーの設定
+基本的に`DEFAULT`ポリシーでいいと考えている
+```
+### 現在適用中のポリシーを確認
+# update-crypto-policies --show
+```
+次のポリシーの一つを適用する  
+`DEFAULT`,`LEGACY`,`FUTURE`,`FIPS`
+```
+# update-crypto-policies --set [POLICY]
+```
 ## ■ SELinuxの設定
 ```
 # vi /etc/selinux/config
