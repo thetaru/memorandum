@@ -158,7 +158,7 @@ Boot0001* UEFI OS       HD(1,800,64000,7e44aa01-f593-4ce4-8ec8-b3afba558cfc)File
 ```
 # exit
 ```
-■
+ここでディスクを交換する場合は終了です。
 
 </details>
 
