@@ -61,12 +61,12 @@ lvmを使っている場合は以下も実施します。
 ### レスキューモードに入る
 インストールメディアからブートし`TroubleShooting -> Rescue a CentOS Linux system -> 1) Continue`の順番に遷移します。  
 すると従来のファイルシステムが`/mnt/sysimage`以下にマウントされます。  
-次にIPを設定します。
+IPを設定します。
 ```
 ### 必要に応じてGWも設定します
 # nmcli connection modify ens192 ipv4.method manual ipv4.addresses 192.168.137.2/24
 ```
-バックアップを置いたNFSサーバにマウント
+バックアップを置いたNFSサーバにマウントします。
 ```
 # mkdir /backup
 # mount -t nfs 192.168.137.1:/vol /backup
