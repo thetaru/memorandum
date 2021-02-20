@@ -40,12 +40,7 @@
 ### 各デバイスごとに取得すること
 # fdisk -l /dev/sdX > /backup/fdisk_sdX.log
 ```
-lvmを使っている場合は以下も実施します。
-```
-# pvdisplay > /backup/lv.log
-# vgdisplay > /backup/vg.log
-# lvdisplay > /backup/vp.log
-```
+
 ## バックアップ
 ### EFIシステムパーティション`/boot/efi`
 ```
