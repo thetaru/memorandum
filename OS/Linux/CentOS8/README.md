@@ -1,7 +1,6 @@
 # CentOS8
 ## ■ Commands
 - [ ] [chroot](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chroot)
-- [ ] [(書きかけ)fdisk](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/fdisk)
 - [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/settings)
@@ -14,6 +13,7 @@
 - [ ] [nftables](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nftables)
 - [x] [repository](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/repository)
 - [ ] [(書きかけ)syslog](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/syslog)
+- [ ] [xfsファイルシステムのバックアップとリストア方法](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_backup)
 ## ■ Software Settings
 - [ ] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
 - [ ] [apache](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/apache)
