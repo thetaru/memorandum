@@ -90,3 +90,4 @@ IPを設定します。
 # tar xf /backup/sda2.tar
 # sync
 ```
+UEFI環境の場合、ブートローダは`/boot/efi`以下に存在するため`grub2-install`は不要です。
