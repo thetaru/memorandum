@@ -71,7 +71,7 @@ IPを設定します。
 
 <details>
 <summary>[Option]ディスクを交換する場合</summary>
-   
+
 ### ディスクのパーティションを定義
 既存のパーティションをもとに設定していきます。
 ```
@@ -80,18 +80,65 @@ IPを設定します。
 (parted) unit MiB
 (parted) mkpart
 Partition type? : (primary|extended)
-File system : (xfs|vfat)
+File system : (xfs|linux-swap|vfat)
 Start : 開始位置の指定
 End   : 終了位置の指定
 (parted) q
 ```
-
 ### ブートフラグを立てる
 ```
 ### 「１」はパーティション番号です。pの結果からブートフラグを立てるパーティションを指定します。
 # parted /dev/sdb
 (parted) p
 (parted) set 1 boot on
+```
+### fstabの編集
+以下の結果をもとに`/etc/fstab`を編集します。  
+```
+# lsblk -f
+```
+```
+# vi /etc/fstab
+```
+### ブート設定準備
+`dev`, `proc`, `sys`をchroot先のディレクトリ(`/mnt/sysimage`)にマウントします。
+```
+# mount -t proc proc /mnt/sysimage/proc
+# mount --bind /dev  /mnt/sysimage/dev
+# mount -t sysfs sysfs /mnt/sysimage/sys
+```
+リストア先にchrootします。
+```
+# chroot /mnt/sysimage
+```
+### UEFIブート設定
+ディスクを交換した場合はUUIDが変更するので、UEFIブートの設定を変更します。
+```
+### 現在の起動順序の確認
+# efibootmgr -v
+```
+```
+BootCurrent: 0000
+Timeout: 1 seconds
+BootOrder: 0000,0001
+Boot0000* CentOS        HD(1,800,64000,7e44aa01-f593-4ce4-8ec8-b3afba558cfc)File(\EFI\CENTOS\SHIM.EFI)
+Boot0001* UEFI OS       HD(1,800,64000,7e44aa01-f593-4ce4-8ec8-b3afba558cfc)File(\EFI\BOOT\BOOTX64.EFI)
+```
+既存設定を削除します。
+```
+# efibootmgr -b 1 -B
+# efibootmgr -b 0 -B
+```
+起動順序を登録します。
+```
+# efibootmgr -c -d /dev/sdb -p 1 -l '\EFI\CENTOS\SHIM.EFI' -L 'CentOS'
+# efibootmgr -o 0000
+# efibootmgr -t 1
+```
+### grub2ブート設定ファイルの再作成
+`/boot/efi/EFI/CENTOS/grub.cfg`に古いパーティションへのUUIDが使用されているので再作成して修正します。
+```
+# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 ```
 
 </details>
