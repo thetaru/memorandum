@@ -86,6 +86,14 @@ End   : 終了位置の指定
 (parted) q
 ```
 
+### ブートフラグを立てる
+```
+### 「１」はパーティション番号です。pの結果からブートフラグを立てるパーティションを指定します。
+# parted /dev/sdb
+(parted) p
+(parted) set 1 boot on
+```
+
 </details>
 
 
