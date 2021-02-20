@@ -55,7 +55,9 @@
 ```
 ## リストア
 ### レスキューモードに入る
-インストールメディアからブートし`TroubleShooting -> Rescue a CentOS Linux system -> 1) Continue`の順番に遷移します。  
+インストールメディアからブートし  
+`TroubleShooting -> Rescue a CentOS Linux system -> 1) Continue`  
+の順番に遷移します。  
 すると従来のファイルシステムが`/mnt/sysimage`以下にマウントされます。  
 IPを設定します。
 ```
