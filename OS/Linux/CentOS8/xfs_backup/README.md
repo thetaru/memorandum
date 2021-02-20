@@ -72,6 +72,27 @@ IPを設定します。
 # mount -t nfs 192.168.137.1:/vol /backup
 ```
 ### データリストア
+
+<details>
+<summary>[Option]ディスクを交換する場合</summary>
+   
+### ディスクのパーティションを定義
+既存のパーティションをもとに設定していきます。
+```
+# parted /dev/sdb
+(parted) mklabel gpt
+(parted) unit MiB
+(parted) mkpart
+Partition type? : (primary|extended)
+File system : (xfs|vfat)
+Start : 開始位置の指定
+End   : 終了位置の指定
+(parted) q
+```
+
+</details>
+
+
 ```
 ### /bootの場合
 # cd /mnt/sysimage/boot
