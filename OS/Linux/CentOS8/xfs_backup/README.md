@@ -14,6 +14,7 @@
 |プロトコル|NFS|
 |バージョン|3以上|
 
+ここでは例として以下のようになっていると仮定して進めます。
 |デバイス名|FS TYPE|MOUNT POINT|
 |:---|:---|:---|
 |/dev/sda1|xfs|/boot|
@@ -36,7 +37,7 @@
 ### UUID対応
 # lsblk -f > /backup/lsblk.log
 
-### 
+### 各デバイスごとに取得すること
 # fdisk -l /dev/sdX > /backup/fdisk_sdX.log
 ```
 lvmを使っている場合は以下も実施します。
@@ -49,16 +50,12 @@ lvmを使っている場合は以下も実施します。
 ### EFIシステムパーティション`/boot/efi`
 ```
 # sync
-# tar -C /boot/efi -cf /backup/boot_efi.tar .
+# tar -C /boot/efi -cf /backup/sda2.tar .
 ```
 ### xfsパーティション
 ```
-# xfsdump -l 0 -e - <デバイス名> 2>> /tmp/backup.log | gzip -c > /backup/<デバイス名>.dump.gz
-```
-#### 例
-```
-# xfsdump -l 0 -e - /boot 2>> /tmp/backup.log | gzip -c > /backup/boot.dump.gz
-# xfsdump -l 0 -e - / 2>> /tmp/backup.log | gzip -c > /backup/root.dump.gz
+# xfsdump -l 0 -e - /boot 2>> /tmp/backup.log | gzip -c > /backup/sda1.dump.gz
+# xfsdump -l 0 -e - / 2>> /tmp/backup.log | gzip -c > /backup/sda3.dump.gz
 ```
 ## リストア
 ### レスキューモードに入る
@@ -76,6 +73,20 @@ lvmを使っている場合は以下も実施します。
 ```
 ### データリストア
 ```
-cd /mnt/sysimage/<従来のマウントポイント>
-zcat /backup/<デバイス名>.dump.gz | xfsrestore - /boot
+### /bootの場合
+# cd /mnt/sysimage/boot
+# gzip -dc /backup/sda1.dump.gz | xfsrestore - ./
+# sync
+```
+```
+### /の場合
+# cd /mnt/sysimage
+# gzip -dc /backup/sda3.dump.gz | xfsrestore - ./
+# sync
+```
+```
+### /boot/efiの場合
+# cd /mnt/sysimage
+# tar xf /backup/sda2.tar
+# sync
 ```
