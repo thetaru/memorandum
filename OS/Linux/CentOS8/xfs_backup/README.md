@@ -140,6 +140,28 @@ Boot0001* UEFI OS       HD(1,800,64000,7e44aa01-f593-4ce4-8ec8-b3afba558cfc)File
 ```
 # grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 ```
+### 初期RAMディスク再作成
+古いパーティションのUUIDを見ているので古いディスクを探しに行ってしまうため再作成して修正します。
+```
+# cd /boot
+# ls vmlinuz-*
+# ls initramfs-*
+# mv initramfs-<version>.img initramfs-<version>.img.old
+# dracut -f initramfs-<version>.img <version>
+```
+### ディスク同期
+キャッシュに残っているファイル変更内容を書き込みます。これを忘れるとブートできません。
+```
+# sync
+```
+### 再起動
+```
+# exit
+```
+再起動後、キャッシュに残っているファイル変更内容を書き込んで終了します。
+```
+# sync
+```
 
 </details>
 
