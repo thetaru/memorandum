@@ -67,6 +67,7 @@ IPを設定します。
 # mkdir /backup
 # mount -t nfs 192.168.137.1:/vol /backup
 ```
+### [Option]ディスクを交換する場合
 
 <details>
 <summary>[Option]ディスクを交換する場合</summary>
