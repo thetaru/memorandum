@@ -32,6 +32,7 @@ fs.file-max = 1592048
 ### 最大FD数の確認
 # cat /proc/`pgrep --parent 1 -f httpd`/limits | grep 'open files'
 ```
+以下のように`/etc/systemd/system/<サービス名>.service.d/<任意の名前>.conf`を作成します。
 ```
 # mkdir /etc/systemd/system/httpd.service.d
 # chown root:root /etc/systemd/system/httpd.service.d
@@ -39,7 +40,7 @@ fs.file-max = 1592048
 ```
 ```
 ### ファイル名は末尾が.confであれば何でもいいです
-# vi /etc/systemd/system/http.service.d/limits.conf
+# vi /etc/systemd/system/httpd.service.d/limits.conf
 ```
 ```
 [Service]
