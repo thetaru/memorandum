@@ -42,4 +42,8 @@ action(type="omfwd" Port="<Port>" Protocol="udp" Target="<SyslogサーバのIP�
 action(type="omfwd" Port="<Port>" Protocol="tcp" Target="<SyslogサーバのIPアドレス>")
 ```
 ## 送信元ホスト名の指定
-ホスト名のみ`$LocalHostName {{HOSTNAME}}`, FQDN`$ PreserveFQDN on`
+
+|設定|表示|
+|:---|:---|
+|$LocalHostName {{HOSTNAME}}|ホスト名|
+|$PreserveFQDN on|FQDN|
