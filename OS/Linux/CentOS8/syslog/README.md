@@ -16,7 +16,7 @@ if $fromhost-ip == ['xxx.xxx.xxx.xxx', 'yyy.yyy.yyy.yyy'] then {
     *.info;mail.none;authpriv.none;cron.none ?test
 }
 
-if (re_match($fromhost-ip, '^xxx\\.xxx\\.xxx\\.()$'))
+if (re_match($fromhost-ip, '^xxx\\.xxx\\.xxx\\.([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-4])$'))
 ```
 # クライアント側の設定
 ## rsyslogの設定
