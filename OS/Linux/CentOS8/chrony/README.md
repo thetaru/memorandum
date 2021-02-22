@@ -101,7 +101,7 @@ chrony-3.5-1.el8.x86_64
 +  maxslewrate 1000
 +  smoothtime 50000 0.01 leaponly
 
-### NTPサーバとして動作させない
+### クライアントとして動作させます。(123ポートでListenをしない)
 +  port 0
 ```
 IPv4のみを使用する場合は以下も実施してください。
