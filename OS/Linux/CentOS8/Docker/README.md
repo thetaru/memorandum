@@ -5,6 +5,10 @@
 ```
 # yum -y install https://download.docker.com/linux/<path_to_rpm>
 ```
+podmanでエミュレートしたdockerを使用する場合は以下のコマンドを実行します。
+```
+# yum -y install podman-docker
+```
 # § COMMANDS
 ## container
 - [x] [**docker container attach**](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/container/docker%20container%20attach)
