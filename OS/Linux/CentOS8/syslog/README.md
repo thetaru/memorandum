@@ -13,10 +13,10 @@ template(name="test" type="string" string="string="/var/log/syslog/%$YEAR%/%$MON
 
 ### IPアドレスのフィルタリング例
 if $fromhost-ip == ['xxx.xxx.xxx.xxx', 'yyy.yyy.yyy.yyy'] then {
-    ?test
+    *.info;mail.none;authpriv.none;cron.none ?test
 }
 
-if 
+if (re_match($fromhost-ip, '^xxx\\.xxx\\.xxx\\.()$'))
 ```
 # クライアント側の設定
 ## rsyslogの設定
