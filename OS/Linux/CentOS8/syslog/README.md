@@ -1,22 +1,25 @@
-# syslogサーバ設定
+# syslog設定
 :warning:書きかけ  
 https://www.server-world.info/query?os=CentOS_8&p=rsyslog&f=2  
 https://sig9.hatenablog.com/entry/2019/10/08/000000
-## ■ サーバー側の設定
+# サーバー側の設定
+## rsyslogの設定
 ```
-# vi /etc/rsyslog.d/assign.conf
+# vi /etc/rsyslog.d/filter.conf
 ```
 ```
 ### 振り分け先テンプレート(テンプレート名:test)
-$template test,"/logs/%hostname%/messages"
+template(name="test" type="string" string="string="/var/log/syslog/%$YEAR%/%$MONTH%/%$DAY%/%HOSTNAME%/messages.log")
 
-### IPアドレスのフィルタリング
+### IPアドレスのフィルタリング例
 if $fromhost-ip == ['xxx.xxx.xxx.xxx', 'yyy.yyy.yyy.yyy'] then {
-    -?test
-    stop
+    ?test
 }
+
+if 
 ```
-## ■ クライアント側の設定
+# クライアント側の設定
+## rsyslogの設定
 ```
 # vi /etc/rsyslog.d/Send_To_Server.conf
 ```
