@@ -22,7 +22,6 @@
 - [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
 - [x] [GitLab](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab)
 - [ ] [(書きかけ)GitLab Runner](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab_Runner)
-- [ ] [(書きかけ)k8s](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/k8s)
 - [ ] [(書きかけ)LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [ ] [(書きかけ)Nginx](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Nginx)
