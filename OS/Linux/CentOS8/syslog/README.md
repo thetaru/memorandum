@@ -16,20 +16,30 @@ if $fromhost-ip == ['xxx.xxx.xxx.xxx', 'yyy.yyy.yyy.yyy'] then {
     *.info;mail.none;authpriv.none;cron.none ?test
 }
 
-if (re_match($fromhost-ip, '^xxx\\.xxx\\.xxx\\.([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-4])$'))
+if (re_match($fromhost-ip, '^xxx\\.xxx\\.xxx\\.([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-4])$')) then {
+    *.info;mail.none;authpriv.none;cron.none ?test
+}
 ```
 # クライアント側の設定
 ## rsyslogの設定
 ```
 # vi /etc/rsyslog.d/Send_To_Server.conf
 ```
-### UDPの場合
+### ログ転送(UDPの場合)
 ```
+### 旧
 *.*    @<Syslog Serverのホスト名 or IPアドレス>[:<Port>]
+
+### 新
+action(type="omfwd" Port="<Port>" Protocol="udp" Target="<SyslogサーバのIPアドレス>")
 ```
-### TCPの場合
+### ログ転送(TCPの場合)
 ```
+### 旧
 *.*    @@<Syslog Serverのホスト名 or IPアドレス>[:<Port>]
+
+### 新
+action(type="omfwd" Port="<Port>" Protocol="tcp" Target="<SyslogサーバのIPアドレス>")
 ```
 ## 送信元ホスト名の指定
 ホスト名のみ`$LocalHostName {{HOSTNAME}}`, FQDN`$ PreserveFQDN on`
