@@ -47,3 +47,4 @@ action(type="omfwd" Port="<Port>" Protocol="tcp" Target="<SyslogサーバのIP�
 |:---|:---|
 |$LocalHostName {{HOSTNAME}}|ホスト名|
 |$PreserveFQDN on|FQDN|
+
