@@ -33,6 +33,27 @@
 ```
 +  /var/share/nfs 192.168.137.0/24(rw,no_root_squash,async)
 ```
+`/etc/exports`の内容を反映させます。
+```
+# exportfs -rav
+```
+```
+exporting 192.168.137.0/24:/var/share/nfs
+```
+### [Option]ポートの固定化
+Firewallでポートを指定してマウント元を絞るときは必須となります。
+```
+# vi /etc/nfs.mount
+```
+```
+[lockd]
+port = 2052
+udp-port = 2052
+[mountd]
+port = 2050
+[statd]
+port = 2051
+```
 ### ドメイン設定
 `/etc/idmapd.conf`を編集します。`DOMAIN`の値はサーバとクライアントで共通のドメイン名を指定します。
 以下は、`DOMAIN`が`WORKGROUP`であると仮定しています。
@@ -53,13 +74,7 @@
 ### 起動確認
 # systemctl status nfs-server.service
 ```
-## § 設定の反映
-```
-# exportfs -rav
-```
-```
-exporting 192.168.137.0/24:/var/share/nfs
-```
+## § チューニング
 # Client側の設定
 ## § NFS Install
 ```
