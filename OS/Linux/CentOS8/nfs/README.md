@@ -75,6 +75,22 @@ port = 2051
 # systemctl status nfs-server.service
 ```
 ## § チューニング
+#### スレッド数
+```
+# vi /etc/nfs.mount
+```
+```
+[nfsd]
+-  threads = 8
++  threads = 16
+```
+#### I/Oサイズ変更
+```
+# /etc/tmpfiles.d/nfsd-block-size.conf
+```
+```
+w /proc/fs/nfsd/max_block_size - - - - 32768
+```
 # Client側の設定
 ## § NFS Install
 ```
