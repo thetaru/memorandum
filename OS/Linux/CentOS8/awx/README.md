@@ -73,6 +73,13 @@ GitHubのAWXリポジトリをクローンします。
 (awx-venv) # cd /tmp/awx/installer/
 (awx-venv) # vi inventory
 ```
-```json
+``
+-  localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"
++  localhost ansible_connection=local ansible_python_interpreter="/opt/python/venv/awx_venv/python"
 
+-  postgres_data_dir="~/.awx/pgdocker"
++  postgres_data_dir="/var/lib/awx/pgdocker"
+
+-  docker_compose_dir="~/.awx/awxcompose"
++  docker_compose_dir="/var/lib/awx/awxcompose"
 ```
