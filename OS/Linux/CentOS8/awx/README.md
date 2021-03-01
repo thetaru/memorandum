@@ -75,7 +75,7 @@ GitHubのAWXリポジトリをクローンします。
 ```
 ```
 -  localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"
-+  localhost ansible_connection=local ansible_python_interpreter="/opt/python/venv/awx_venv/python"
++  localhost ansible_connection=local ansible_python_interpreter="/opt/python/venv/awx_venv/bin/python"
 
 -  postgres_data_dir="~/.awx/pgdocker"
 +  postgres_data_dir="/var/lib/awx/pgdocker"
