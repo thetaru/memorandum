@@ -7,4 +7,5 @@
 
 ## MEMO
 環境  
-https://tech.unifa-e.com/entry/2020/01/27/185644
+https://tech.unifa-e.com/entry/2020/01/27/185644  
+https://dev.classmethod.jp/articles/saenai-aws-1/
