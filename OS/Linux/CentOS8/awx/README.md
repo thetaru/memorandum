@@ -7,7 +7,7 @@
 |CPU|4|
 |MEM|8GB|
 |Storage|700GB|
-|Software|AWX|
+|Software|AWX17.0|
 
 ## § INSTALL
 ### ■ Python
@@ -104,7 +104,7 @@ GitHubのAWXリポジトリをクローンします。
 -  docker_compose_dir="~/.awx/awxcompose"
 +  docker_compose_dir="/var/lib/awx/awxcompose"
 
-### adminパスワードの変更(あとで変更可能)
+### adminパスワードの変更
 -  #  admin_password=password
 +  admin_password=password
 ```
