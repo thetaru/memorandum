@@ -74,12 +74,23 @@ GitHubのAWXリポジトリをクローンします。
 (awx-venv) # vi inventory
 ```
 ```
+###  ターゲットノードで使用するPythonインタプリタのパスを変更する
 -  localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"
 +  localhost ansible_connection=local ansible_python_interpreter="/opt/python/venv/awx_venv/bin/python"
 
+### PostgreSQLコンテナのDB領域指定
 -  postgres_data_dir="~/.awx/pgdocker"
 +  postgres_data_dir="/var/lib/awx/pgdocker"
 
+### Docker Compoesのファイルディレクトリ
 -  docker_compose_dir="~/.awx/awxcompose"
 +  docker_compose_dir="/var/lib/awx/awxcompose"
+
+### adminパスワードの変更(あとで変更可能)
+-  #  admin_password=password
++  admin_password=password
+```
+パラメータを設定したらPlaybookを実行してAWXをインストールします。
+```
+(awx-venv) # ansible-playbook -i inventory install.yml
 ```
