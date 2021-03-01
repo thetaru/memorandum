@@ -16,7 +16,6 @@
 - [ ] [xfsファイルシステムのバックアップとリストア方法](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_backup)
 ## ■ Software Settings
 - [ ] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
-- [ ] [(AWSのページに移すかも)AWX](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/awx)
 - [ ] [apache](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/apache)
 - [ ] [BIND](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/BIND)
 - [ ] [Docker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Docker)
