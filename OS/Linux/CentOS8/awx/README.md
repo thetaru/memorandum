@@ -73,7 +73,7 @@ GitHubのAWXリポジトリをクローンします。
 (awx-venv) # cd /tmp/awx/installer/
 (awx-venv) # vi inventory
 ```
-``
+```
 -  localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"
 +  localhost ansible_connection=local ansible_python_interpreter="/opt/python/venv/awx_venv/python"
 
