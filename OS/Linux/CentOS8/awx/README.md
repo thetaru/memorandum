@@ -10,7 +10,7 @@
 |Software|AWX|
 
 ## § INSTALL
-### Python
+### ■ Python
 もし入っていなかったら`python3`をインストールします。
 ```
 # yum install python3
@@ -31,17 +31,17 @@
 ```
 以下、仮想環境で実行している場合は`(awx_venv)`をプロンプトの頭に付けます。
 
-### Ansible
+### ■ Ansible
 Ansibleを`pip`コマンドでインストールします。
 ```
 (awx_venv) # pip install --upgrade pip
 (awx_venv) # pip install ansible
 ```
-### Docker操作用Pythonモジュール
+### ■ Docker操作用Pythonモジュール
 ```
 (awx_venv) # pip install docker docker-compose selinux
 ```
-### Docker
+### ■ Docker
 AWXはコンテナ上で動作するため`Docker`をインストールします。  
 もし`podman`が先に動いていた場合はアンインストールしてからにしましょう。  
 ※ podman complete uninstallとかでググると出てくると思います。
@@ -55,12 +55,12 @@ AWXはコンテナ上で動作するため`Docker`をインストールします
 (awx_venv) # systemctl enable docker.service
 (awx_venv) # systemctl status docker.service
 ```
-### Git
+### ■ Git
 AWXのリポジトリのダウンロードをするために`Git`をインストールします。
 ```
 (awx-venv) # yum install git
 ```
-### AWX
+### ■ AWX
 GitHubのAWXリポジトリをクローンします。
 ```
 (awx-venv) # cd /tmp
@@ -74,4 +74,5 @@ GitHubのAWXリポジトリをクローンします。
 (awx-venv) # vi inventory
 ```
 ```json
+
 ```
