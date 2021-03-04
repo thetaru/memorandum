@@ -106,9 +106,10 @@ GitHubのAWXリポジトリをクローンします。
 
 ### adminパスワードの変更
 -  #  admin_password=password
-+  admin_password=password
++  admin_password=<任意のパスワードを指定>
 ```
 パラメータを設定したらPlaybookを実行してAWXをインストールします。
 ```
-(awx-venv) # ansible-playbook -i inventory install.yml
+(awx-venv) # cd ..
+(awx-venv) # ansible-playbook tools/ansible/build.yml -e awx_version=test-build
 ```
