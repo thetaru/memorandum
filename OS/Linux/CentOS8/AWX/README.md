@@ -108,7 +108,7 @@ GitHubのAWXリポジトリをクローンします。
 -  #  admin_password=password
 +  admin_password=<任意のパスワードを指定>
 ```
-パラメータを設定したらPlaybookを実行してAWXをインストールします。
+パラメータを設定したらPlaybookを実行してAWXのイメージをビルドします。
 ```
 (awx-venv) # cd ..
 (awx-venv) # ansible-playbook tools/ansible/build.yml -e awx_version=test-build
