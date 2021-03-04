@@ -4,7 +4,7 @@
 ## D
 - [ ] [Dockerから入るKubernetes]()
 ## K
-- [ ] [Kubernetes on AWS]
+- [ ] [Kubernetes on AWS]()
 ## し
 - [ ] [詳細システム・パフォーマンス]()
 ## ふ
