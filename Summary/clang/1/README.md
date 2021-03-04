@@ -6,7 +6,7 @@
 ## 1.3.1 プログラムを作る前に
 特になし
 ## 1.3.2 Hello World プログラム
-次のソースコードを書きます。
+次のソースコード`main.c`を書きます。
 ```c
 #include <stdio.h>
 int main(void)
