@@ -1,6 +1,6 @@
 # C言語プログラミング入門
 ## 前提条件
-- OS: CentOS Stream
+実行環境: CentOS Stream
 
 ## 第1章 [C言語プログラミングの基礎](https://github.com/thetaru/memorandum/tree/master/Summary/clang/1)
 ## 第2章 [変数について](https://github.com/thetaru/memorandum/tree/master/Summary/clang/2)
