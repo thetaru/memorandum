@@ -83,7 +83,8 @@ printf("%d", hoge);
 変数の型の前に`const`を付けると、変数の値を書き換えることができなくなります。  
 ただし初期値を与えることはできます。  
 const修飾子は読み込み専用変数を宣言したい際に使用します。  
-次のように初期値を与え読み込み可能です。
+  
+次の例では読み込み可能であることがわかります。
 ```c
 #include <stdio.h>
 int main(void)
@@ -93,13 +94,38 @@ int main(void)
   return 0;
 }
 ```
-一方const指定した変数値に値を代入することはできません。
+次の例ではconst指定した変数値に値を代入できないことがわかります。
 ```c
 #include <stdio.h>
 int main(void)
 {
   const i = 5;
   i = 10; /* compile error*/
+  return 0;
+}
+```
+## 2.9 演算
+四則演算ができます。
+
+|記号|意味|
+|:---:|:---:|
+|+|足し算|
+|-|引き算|
+|\*|掛け算|
+|/|割り算|
+
+次に簡単な例を示します。
+```c
+#include <stdio.h>
+int main(void)
+{
+  int x, y;
+  
+  x = 10;
+  y = 20;
+  printf("x+y equals %d\n", x + y);
+  y = y - x;
+  printf("y equals %d\n", y);
   return 0;
 }
 ```
