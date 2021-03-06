@@ -121,3 +121,21 @@ switchに続くカッコの中には変数をいれます。このカッコ内�
   
 各caseでbreakを入れているのには理由があり、変数(上の例だとhoge)が複数case(とdefault)にマッチしてしまうことを止めるためです。  
 ※ 逆に複数条件にマッチしてもいい場合(fall throughという)はbreakを入れる必要はないといえます。
+## 3.3 繰り返し do while for構文
+do while for構文は繰り返し処理を行いたい場合に利用します。
+### 3.3.1 do while構文
+実際にdo while構文を使ってプログラムを書いてみます。
+```c
+#include <stdio.h>
+int main(void)
+{
+  int hoge = 10;
+  
+  do {
+    printf("%d回目: Hello World\n", 11 - hoge);
+    hoge --;
+  } while ( hoge > 0 );
+  
+  return 0;
+}
+```
