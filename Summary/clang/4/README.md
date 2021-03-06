@@ -10,7 +10,7 @@
 ```c
 #include <stdio.h>
 
-int Plus(int x, int y)
+int Plus(int x, int y) /* 仮引数: x, y */
 {
   int result;
   result = x + y;
@@ -26,7 +26,7 @@ int main(void)
   printf("1つ目: "); scanf("%d", &hoge);
   printf("2つ目: "); scanf("%d", &fuga);
   
-  n = Plus(hoge, piyo);
+  n = Plus(hoge, piyo); /* 実引数: hoge, piyo */
   printf("足し算の結果は%dです\n", n);
   return 0;
 }
