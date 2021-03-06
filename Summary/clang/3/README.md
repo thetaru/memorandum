@@ -141,3 +141,26 @@ int main(void)
 ```
 do { }の中に何か処理を書きます。そしてwhile ( )の中に条件式を書きます。  
 繰り返しはこの条件が真の場合に行われ、一度でも条件が偽になったら繰り返しを打ち切ります。
+### 3.3.2 while構文
+## Syntax
+```c
+while ( 条件式 ) { 処理 }
+```
+do while と whileの違いは条件式を最初に判定するか後で判定するかの違いです。  
+このような違いからdo while構文は少なくとも1回は処理が実行されますが、while構文は一度も実行されないことがあります。  
+実際にwhile構文を使ってプログラムを書いてみます。
+```c
+#include <stdio.h>
+
+int main(void)
+{
+  int hoge = 10;
+  
+  while ( hoge > 0 ) {
+    printf("%d回目: Hello World\n", 11 - hoge);
+    hoge--;
+  }
+  return 0;
+}
+```
+### 3.3.3 for構文
