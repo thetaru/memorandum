@@ -208,3 +208,24 @@ int main(void)
   return 0;
 ```
 このプログラムを実行すると`Before break`は出力されますが`After break`が出力されないこと(繰り返し処理の終わり)がわかります。
+### 3.3.5 continue文
+continueはループの次の繰り返しをすぐさま実行したい場合に使用されます。  
+実際にプログラムを書いてみます。
+```c
+#include <stdio.h>
+
+int main(void)
+{
+  int i;
+  
+  for ( i = 0; i < 5; i++ ) {
+    printf("i = %d\n", i);
+    if ( i <= 2 ) {
+      continue;
+    }
+    printf("LOOP");
+  }
+  return 0;
+}
+```
+このプログラムではcontinue文に到達した時点で次の繰り返し処理を実行するためiが2以下の場合には`LOOP`が出力されません。
