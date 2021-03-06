@@ -187,3 +187,24 @@ int main(void)
   return 0;
 }
 ```
+### 3.3.4 breakを使ったループの脱出
+繰り返し処理を実行している間にbreakを使うと、いつでもループから脱出することができます。  
+実際にプログラムを書いてみます。
+```c
+#include <stdio.h>
+
+int main(void)
+{
+  int i;
+  
+  for ( i = 0; i < 10; i++ ) {
+    printf("i = %d\n", i);
+    if ( i == 5 ) {
+      printf("Before break");
+      break
+      printf("After break")
+    }
+  }
+  return 0;
+```
+このプログラムを実行すると`Before break`は出力されますが`After break`が出力されないこと(繰り返し処理の終わり)がわかります。
