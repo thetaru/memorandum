@@ -124,7 +124,7 @@ switchに続くカッコの中には変数をいれます。このカッコ内�
 ## 3.3 繰り返し do while for構文
 do while for構文は繰り返し処理を行いたい場合に利用します。
 ### 3.3.1 do while構文
-#### Syntax
+#### Syntax - do while
 ```c
 do { 処理 } while ( 条件式 );
 ```
@@ -146,7 +146,7 @@ int main(void)
 do { }の中に何か処理を書きます。そしてwhile ( )の中に条件式を書きます。  
 繰り返しはこの条件が真の場合に行われ、一度でも条件が偽になったら繰り返しを打ち切ります。
 ### 3.3.2 while構文
-#### Syntax
+#### Syntax - while
 ```c
 while ( 条件式 ) { 処理 }
 ```
@@ -168,7 +168,7 @@ int main(void)
 }
 ```
 ### 3.3.3 for構文
-#### Syntax
+#### Syntax - for
 ```c
 for ( 初期条件; 条件式; 後始末 ) { 処理 }
 ```
