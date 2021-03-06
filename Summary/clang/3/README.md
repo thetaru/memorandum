@@ -285,3 +285,31 @@ int main(void)
 ```
 となります。  
 左シフトは10進数で考えると値に2^(シフト数)を掛けていることだとわかります。
+## 3.5 例題
+### 3.5.2 最大値を求めるプログラム
+解答がミスってるので訂正
+```c
+#incude <stdio.h>
+
+int main(void) {
+  int array[10];
+  int i, j, max;
+  
+  printf("10個の数字を入力してください\n");
+  
+  for ( i = 0; i < 10; i++ ) {
+    printf("%d回目: ", i+1);
+    scanf("%d", &array[i]);
+  }
+  
+  for ( j = 1, max = array[0]; j < 10; j++ ) {
+    if ( max < array[j] ) {
+      max = array[j];
+    }
+  }
+  
+  printf("最大値は%d\n", max);
+  return 0;
+}
+}
+```
