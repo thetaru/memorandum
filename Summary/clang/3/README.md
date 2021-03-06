@@ -311,5 +311,4 @@ int main(void) {
   printf("最大値は%d\n", max);
   return 0;
 }
-}
 ```
