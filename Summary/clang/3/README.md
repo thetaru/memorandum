@@ -99,12 +99,16 @@ int main(void)
   int hoge = 10;
   
   switch ( hoge ) {
+  /* hoge == 10 */
   case 10: /* 処理A */
     break;
+  /* hoge == 9  */
   case 9:  /* 処理B */
     break;
+  /* hoge == 8  */
   case 8:  /* 処理C */
     break;
+  /* else */
   default: /* 処理D */
     break;
   }
