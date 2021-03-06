@@ -299,7 +299,7 @@ int main(void) {
   
   for ( i = 0; i < 10; i++ ) {
     printf("%d回目: ", i+1);
-    scanf("%d", &array[i]);
+    scanf("%d", &array[i]); /* ココを修正 */
   }
   
   for ( j = 1, max = array[0]; j < 10; j++ ) {
