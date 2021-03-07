@@ -189,3 +189,6 @@ int main(void)
 ```c
 size_t strlen( const char* str )
 ```
+strlen関数は引数strの文字数を返す関数です。  
+ただし文字列の最後のNULL文字は文字数に含まれません。  
+ちなみに`size_t`は`unsigned int`とほぼ同じです。
