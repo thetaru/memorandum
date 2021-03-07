@@ -163,9 +163,29 @@ char *strncpy( char* str1, const char* str2, size_t n );
 ```
 strcpy関数は文字列を部分コピーする際に使います。  
 1つ目の引数に2つ目の引数の内容をn文字だけコピーします。  
-ただし、str2の長さがn以上のときはn文字コピーしますが、NULL文字の自動付与は行われません。
+ただし、str2の長さがn以上のときはn文字コピーしますが、NULL文字`\0`の自動付与は行われません。
 ```
 (n=5の場合) コピー元 -> コピー先 の 図
-{ 'H', 'E', 'L', 'L', 'O', '\0' } -> { 'H', 'E', 'L', 'L', 'O' }
+"HELLO" = { 'H', 'E', 'L', 'L', 'O', '\0' } -> { 'H', 'E', 'L', 'L', 'O' }
 ```
-実際は、目に見える文字列の長さ(e.g. "HELLO"だと長さ5)にNULL文字分が加わる(i.e. 実際の長さは6)ことに注意すること。
+こういう場合には、自分で文字列の最後にNULL文字を付与してあげる必要があります。  
+実際にstrbcpy関数を使ってプログラムを書いてみます。
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char souce[20] = "HelloWorld";
+  char dest[20];
+  
+  strncpy( dest, souce, 5 );
+  dest[5] = '\0'; /* NULL文字を付与 */
+  printf("コピーされた文字列は%sです\n", dest);
+  return 0;
+}
+```
+#### definition - strlen関数
+```c
+size_t strlen( const char* str )
+```
