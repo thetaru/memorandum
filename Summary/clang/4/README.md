@@ -104,8 +104,6 @@ int main()
 ```
 次のように書き換えても同じように動きます。
 ```c
-#include <stdio.h>
-
 /* 変更点: array[5] -> array[] */
 void show(int array[], int n)
 {
@@ -114,19 +112,10 @@ void show(int array[], int n)
     printf("%d\n", array[i]);
   }
 }
-
-int main()
-{
-  int array[] = { 1, 2, 3, 4, 5 };
-  show( array, 5 );
-  return 0;
-}
 ```
 3章でも少しだけ説明しましたが配列を引数として渡すと配列の先頭アドレスへのポインタ(e.g. &array[0])を渡すようになっています。  
 以下のように書いても同じです。
 ```c
-#include <stdio.h>
-
 /* 変更点: array[5] -> array[] -> *array */
 void show(int *array, int n)
 {
@@ -134,12 +123,5 @@ void show(int *array, int n)
   for ( i = 0; i < n; i++ ) {
     printf("%d\n", array[i]);
   }
-}
-
-int main()
-{
-  int array[] = { 1, 2, 3, 4, 5 };
-  show( array, 5 );
-  return 0;
 }
 ```
