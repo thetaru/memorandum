@@ -130,4 +130,30 @@ void show(int *array, int n)
 実はmain関数が最初に呼び出される関数ではない。  
 またmain関数の戻り値は使われることがあるため`void main`ではなく`int main`(e.g. main関数の戻り値が0なら正常終了、0以外なら異常終了とみなす)である必要がある。
 ## 4.6 標準関数
+C言語には標準言語という関数が存在します。  
+これはよく使われる処理があらかじめ関数として用意されており別ファイルに既に定義されています。(e.g. printf関数, scanf関数,...)  
+例えば、printf関数は`stdio.h`というファイルに定義されていて、`#include <stdio.h>`からこのファイルをインクルードすることでprintf関数を使用できるようになります。
 ### 4.6.1 文字列関連の処理
+文字列の処理に用いる関数は`string.h`に定義されています。  
+そのため以下に紹介する関数を使う場合は`string.h`をインクルードする必要があります。
+#### definition - strcpy関数
+```c
+char *strcpy( char* str1, const char* str2 );
+```
+strcpy関数は文字列をコピーする際に使います。  
+1つ目の引数に２つ目の引数の内容をコピーします。
+実際にstrcpy関数を使ってプログラムを書いてみます。
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char souce[20] = "hello";
+  char dest[20];
+  
+  strcpy( dest, souce );
+  printf("コピーされた文字列は%sです\n", dest);
+  return 0;
+}
+```
