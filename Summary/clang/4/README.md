@@ -114,6 +114,7 @@ void show(int array[], int n)
 }
 ```
 3章でも少しだけ説明しましたが、配列を引数として渡すと配列の先頭アドレスへのポインタ(e.g. &array[0] or \*array)を渡すようになっています。  
+※ `*array`はarrayのポインタを意味します。  
 以下のように書いても同じです。
 ```c
 /* 変更点: array[5] -> array[] -> *array */
@@ -125,4 +126,3 @@ void show(int *array, int n)
   }
 }
 ```
-`*array`はarrayのポインタを意味します。
