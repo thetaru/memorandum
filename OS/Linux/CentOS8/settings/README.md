@@ -421,7 +421,8 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 時刻があまりにずれているようなら`chronyc makestep`を実行して強制的に同期させます。
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
-:warning:例としてユーザ名は`thetaru`を使用しています。
+:warning:例としてユーザ名は`thetaru`を使用しています。  
+さらに細かく制限をかける場合は[こちら]()を参考にしてください。
 ```
 ### ユーザthetaru を グループwheelに追加
 # gpasswd -a thetaru wheel
