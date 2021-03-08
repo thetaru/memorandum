@@ -447,6 +447,10 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 ### 再起動して反映
 # systemctl reboot
 ```
+## ■ ログイン設定
+```
+# vi /etc/login.defs
+```
 ## ■ ユーザ権限の設定
 ```
 ### drop in
