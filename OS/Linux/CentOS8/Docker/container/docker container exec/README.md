@@ -2,13 +2,14 @@
 ```
 # docker container exec [option] container-id exec-command [argument]
 ```
+## Syntax
 |オプション|説明|
 |:---|:---|
 |--detach, -d|コマンドをバックアップで実行する|
 |--interactive, -i|コンテナの標準出力を開く|
 |--tty, -t|tty(端末デバイス)を使う|
 |--user, -u|ユーザ名を指定する|
-## Syntax
+
 ## e.g.
 ### コンテナでのbash実行
 ```
