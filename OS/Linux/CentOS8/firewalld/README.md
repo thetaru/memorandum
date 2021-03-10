@@ -4,8 +4,6 @@ https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 ## ■ DirectRule
 ## ■ RichRule
 ## ■ Zone
-## ■ Port
-## ■ Service
 ## ■ Logging
 ```
 ### 確認
