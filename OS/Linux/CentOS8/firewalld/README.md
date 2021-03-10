@@ -41,3 +41,4 @@ messages等にfirewalldのログが行かないように出力先を変更しま
     endscript
 }
 ```
+最後に`telnet`コマンド等を使いファイアウォールにREJECTさせてログが出力されつことを確認しましょう。
