@@ -2,6 +2,7 @@
 https://densan-hoshigumi.com/server/linux/firewall  
 https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 ## ■ DirectRule
+読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。
 ## ■ RichRule
 ## ■ Zone
 ## ■ Logging
