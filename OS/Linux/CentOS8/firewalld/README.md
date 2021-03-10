@@ -2,7 +2,8 @@
 https://densan-hoshigumi.com/server/linux/firewall  
 https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 ## ■ DirectRule
-読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。
+読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。  
+DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れていたりするとRichRuleまでいけません。
 ## ■ RichRule
 ## ■ Zone
 ## ■ Logging
