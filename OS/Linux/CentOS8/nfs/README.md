@@ -41,7 +41,7 @@
 exporting 192.168.137.0/24:/var/share/nfs
 ```
 ### [Option]ポートの固定化
-Firewallでポートを指定してマウント元を絞るときは必須となります。
+Firewallでポートを指定して接続元を絞るときは必須となります。
 ```
 # vi /etc/nfs.mount
 ```
