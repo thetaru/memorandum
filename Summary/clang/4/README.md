@@ -227,7 +227,7 @@ int main(void)
 char* strncat( char* str1, const char* str2, size_t n );
 ```
 strncat関数は文字列str1の後ろにstr2の文字列をn文字分連結させる関数です。  
-NULL文字は追加しなくていいのかな?
+(疑問)NULL文字は追加しなくていいのかな?
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -264,5 +264,36 @@ int main(void)
     printf("２つの文字列は異なります。\n");
   }
   return 0;
+}
+```
+### 4.6.2 入出力関係の処理
+画面への文字列の出力・キーボードからの入力などの処理を行う関数を紹介します。  
+以下に紹介する関数を使う場合は`stdio.h`をインクルードする必要があります。
+#### definition - putchar関数
+```c
+int putchar( int c );
+```
+cで指定した1文字を表示します。
+```c
+#include <stdio.h>
+
+int main(void)
+{
+  putchar('a');
+}
+```
+#### definition - puts関数
+```c
+int puts ( const char *str );
+```
+strで指定した文字列を表示します。  
+printfと違い変換指定子(%dや%sなど)を使うことはできません。  
+文字列の最後には改行`\n`が自動的に付与されます。
+```c
+#include <stdio.h>
+
+int main(void)
+{
+  puts("Hello World");
 }
 ```
