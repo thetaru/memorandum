@@ -1,4 +1,17 @@
 # firewalld
+## ■ 設定ファイルの編集
+```
+# vi /etc/firewalld/firewalld.conf
+```
+```
+### [Option] nftablesからiptablesに変更(DirectRuleのACCEPTに関する挙動が異なる)
+-  FirewallBackend=nftables
++  FirewallBackend=iptables
+
+### 非推奨設定なので無効化
+-  AllowZoneDrifting=yes
++  AllowZoneDrifting=no
+```
 ## ■ Zone
 |zone|説明|
 |:---:|:---|
@@ -61,7 +74,8 @@ firewall-cmd [--permanent] [--zone=zone] --remove-rich-rule = <Rule>
 ## ■ DirectRule
 読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。  
 DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れていたりするとRichRuleまでいけません。  
-またDirectRuleはRichRuleと異なりゾーンに対してルールが設定されるわけではありません。
+またDirectRuleはRichRuleと異なりゾーンに対してルールが設定されるわけではありません。  
+書き方は冗長ですがルールはすべてDirectRuleで管理したい気持ちがあります。
 ### Syntax - DirectRule
 ```
 ### 追加
