@@ -192,3 +192,77 @@ size_t strlen( const char* str )
 strlen関数は引数strの文字数を返す関数です。  
 ただし文字列の最後のNULL文字は文字数に含まれません。  
 ちなみに`size_t`は`unsigned int`とほぼ同じです。
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char source[20] = "hello";
+  printf("文字列の長さは %d です\n", strlen( source ));
+  return 0;
+}
+```
+#### definition - strcat関数
+```c
+char* strcat( char* str1, const char* str2 );
+```
+strcat関数は文字列str1の後ろにstr2の文字列を連結させる関数です。
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char source[80] = "World";
+  char dest[80] = "Hello";
+  
+  strcat( dest, source );
+  printf("文字列 %s\n", dest);
+  return 0;
+}
+```
+#### definition - strncat関数
+```c
+char* strncat( char* str1, const char* str2, size_t n );
+```
+strncat関数は文字列str1の後ろにstr2の文字列をn文字分連結させる関数です。  
+NULL文字は追加しなくていいのかな?
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char dest[20] = "ABC";
+  char source[20] = "DEFGH";
+  
+  strncat( dest, source, 3 );
+  printf("文字列 %s\n", dest);
+  return 0;
+}
+```
+#### definition - strcmp関数
+```c
+int strcmp( const char* str1, const char* str2 );
+```
+strcmp関数は文字列str1と文字列str2の内容を比較し、その結果を戻り値として返します。  
+等しい場合は0をそうでない場合は0以外の整数を返します。  
+※ 辞書順序(>) で str1 > str2 ⇒ 負数, str1 < str2 ⇒ 正数
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char source[80] = "Hello";
+  char dest[80] = "Hello";
+  
+  if( strcmp( source, dest ) == 0 ) {
+    printf("２つの文字列は等しいです\n");
+  } else {
+    printf("２つの文字列は異なります。\n");
+  }
+  return 0;
+}
+```
