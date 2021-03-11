@@ -1,11 +1,54 @@
 # firewalld
 https://densan-hoshigumi.com/server/linux/firewall  
 https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
+## ■ Zone
+|zone|説明|
+|:---:|:---|
+|block||
+|dmz||
+|drop||
+|external||
+|home||
+|internal||
+|public||
+|trusted||
+|work||
+
+### Zoneの確認
+#### デフォルトのZone確認
+デフォルトで設定されているzoneを確認します。
+```
+# firewall-cmd --get-default-zone
+```
+```
+<Zone>
+```
+#### インターフェイス毎のZone確認
+各NICがどのzone(デフォルトはpublic)に登録されているかを確認します。
+```
+# firewall-cmd --get-active-zones
+```
+```
+<Zone>
+  interfaces: <NIC>
+```
+### Zoneの設定
+#### デフォルトのZone設定
+デフォルトのzoneを設定します。
+```
+# firewall-cmd --set-default-zone <Zone>
+```
+#### インターフェイス毎のZone設定
+```
+# nmcli connection modify <Connection> connection.zone <Zone>
+# nmcli connection up <Connection>
+# nmcli connection show <Connection>
+```
+
 ## ■ DirectRule
 読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。  
 DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れていたりするとRichRuleまでいけません。
 ## ■ RichRule
-## ■ Zone
 ## ■ Logging
 ```
 ### 確認
@@ -32,7 +75,8 @@ messages等にfirewalldのログが行かないように出力先を変更しま
 # vi /etc/logrotate.d/firewall
 ```
 ```
-/var/log/firewall/*.log {
+/var/log/firewall/*.log
+{
     ifempty
     missingok
     compress
