@@ -1,6 +1,4 @@
 # firewalld
-https://densan-hoshigumi.com/server/linux/firewall  
-https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 ## ■ Zone
 |zone|説明|
 |:---:|:---|
@@ -62,7 +60,19 @@ firewall-cmd [--permanent] [--zone=zone] --remove-rich-rule = <Rule>
 ```
 ## ■ DirectRule
 読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。  
-DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れていたりするとRichRuleまでいけません。
+DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れていたりするとRichRuleまでいけません。  
+またDirectRuleはRichRuleと異なりゾーンに対してルールが設定されるわけではありません。
+### Syntax - DirectRule
+```
+### 追加
+firewall-cmd [--permanent] --direct --add-rule    {ipv4|ipv6|eb} <テーブル> <チェイン> <優先順位> <引数>
+### 削除
+firewall-cmd [--permanent] --direct --remove-rule {ipv4|ipv6|eb} <テーブル> <チェイン> <優先順位> <引数>
+```
+### e.g.
+```
+# firewall-cmd --direct --add-chain ipv4 filter INPUT 1 -s 192.168.100.0/24 -p tcp -m state --state NEW --dport 22 -j ACCEPT
+```
 ## ■ Ruleの反映
 ```
 # firewall-cmd --reload
