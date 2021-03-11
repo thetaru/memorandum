@@ -44,11 +44,29 @@ https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 # nmcli connection up <Connection>
 # nmcli connection show <Connection>
 ```
-
+## ■ Rule
+firewalldでは各Zoneに対してルールを設定します。  
+通常のルールではサービス、ポート単位でのみのルールを管理します。  
+送信元の制限などを設定できないため**個人的には**非推奨です。
+## ■ RichRule
+### Syntax - RichRule
+```
+### 追加
+firewall-cmd [--permanent] [--zone=zone] --add-rich-rule    = <Rule>
+### 削除
+firewall-cmd [--permanent] [--zone=zone] --remove-rich-rule = <Rule>
+```
+### e.g.
+```
+# firewall-cmd --add-rich-rule="rule family=ipv4 source address=192.168.100.0/24 port protocol="tcp" port="80" accept"
+```
 ## ■ DirectRule
 読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。  
 DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れていたりするとRichRuleまでいけません。
-## ■ RichRule
+## ■ Ruleの反映
+```
+# firewall-cmd --reload
+```
 ## ■ Logging
 ```
 ### 確認
