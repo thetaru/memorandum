@@ -14,8 +14,8 @@ https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 |trusted||
 |work||
 
-### Zoneの確認
-#### デフォルトのZone確認
+## Zoneの確認
+### デフォルトのZone確認
 デフォルトで設定されているzoneを確認します。
 ```
 # firewall-cmd --get-default-zone
@@ -23,7 +23,7 @@ https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 ```
 <Zone>
 ```
-#### インターフェイス毎のZone確認
+### インターフェイス毎のZone確認
 各NICがどのzone(デフォルトはpublic)に登録されているかを確認します。
 ```
 # firewall-cmd --get-active-zones
@@ -32,13 +32,13 @@ https://qiita.com/Tocyuki/items/6d90a1ec4dd8e991a1ce
 <Zone>
   interfaces: <NIC>
 ```
-### Zoneの設定
-#### デフォルトのZone設定
+## Zoneの設定
+### デフォルトのZone設定
 デフォルトのzoneを設定します。
 ```
 # firewall-cmd --set-default-zone <Zone>
 ```
-#### インターフェイス毎のZone設定
+### インターフェイス毎のZone設定
 ```
 # nmcli connection modify <Connection> connection.zone <Zone>
 # nmcli connection up <Connection>
