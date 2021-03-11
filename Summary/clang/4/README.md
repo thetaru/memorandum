@@ -297,3 +297,42 @@ int main(void)
   puts("Hello World");
 }
 ```
+#### definition - getchar関数
+```c
+int getchar(void);
+```
+キーボードから1文字受け取ります。
+```c
+#include <stdio.h>
+
+int main()
+{
+  char ch;
+  
+  printf("文字を入力してください: ");
+  ch = getchar();
+  
+  printf("受け取った文字: %c\n", ch);
+  return 0;
+}
+```
+#### definition - gets関数
+```c
+char *gets ( char *str );
+```
+キーボードから文字列を受け取ります。  
+scanfと違い文字列にスペースが含まれていてもスペースも含めて文字列として読み込まれます。  
+※ コンパイラによってはgets関数はあぶないので使うなと言われるかもしれません。
+```c
+#include <stdio.h>
+
+int main()
+{
+  char str[80];
+  
+  printf("文字列を入力してください: ");
+  gets( str );
+  printf("受け取った文字列: %s\n", str);
+  return 0;
+}
+```
