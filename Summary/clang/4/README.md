@@ -415,4 +415,15 @@ int atoi( const char *string );
 ```
 stringで指定した文字列をint型の数値に変換した結果を戻り値として返します。  
 stringで指定する文字列は整数の文字列表現でなくてはいけません。(e.g. `12`はOK, `Ten`はNG)  
-この関数は
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+  char str[] = "150";
+  
+  printf("文字列%sを数値%dに変換しました\n", str, atoi( str ));
+  return 0;
+}
+```
