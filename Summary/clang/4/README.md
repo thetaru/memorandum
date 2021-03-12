@@ -336,3 +336,83 @@ int main()
   return 0;
 }
 ```
+#### definition - fgets関数
+```c
+char *fgets( char *string, int n, FILE *stream );
+```
+streamからn-1文字分の文字列を受け取りstringに代入します。  
+※ streamとはファイル操作を扱う部分で登場するものです。(e.g. stdinなど)
+streamにstdinを指定するとキーボードから文字列を受け取れるようになります。
+```c
+#include <stdio.h>
+
+int main()
+{
+  char str[80];
+  
+  printf("文字列を入力してください: ");
+  fgets( str, 6, stdin );
+  printf("文字列: %s\n", str);
+  return 0;
+}
+```
+### 4.6.3 数学関連の処理
+以下に紹介する関数を使う場合は`math.h`をインクルードする必要があります。  
+また数学関連のライブラリを利用する際は`gcc math.c -o math.o -lm`のようにコンパイルします。
+#### definition - sin関数
+```c
+double sin( double arg );
+```
+sin関数はarg(radius)を引数にとります。
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+  double value = -1.0;
+  printf("%fのsinの値は%fです\n", value, sin( value ));
+  return 0;
+}
+```
+#### definition - cos関数
+```c
+double cos( double arg );
+```
+cos関数はarg(radius)を引数にとります。
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+  double value = -1.0;
+  printf("%fのcosの値は%fです\n", value, cos( value ));
+  return 0;
+}
+```
+#### definition - pow関数
+```c
+double pow( double x, double y );
+```
+pow関数はxのy乗を戻り値として返します。
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+  double x = 2.0, y = 5.0;
+  printf("%fの%f乗は%fです\n", x, y, pow( x, y ));
+  return 0;
+}
+```
+### その他の関数
+以下に紹介する関数を使う場合は`stdlib.h`をインクルードする必要があります。  
+#### definition - atoi関数
+```c
+int atoi( const char *string );
+```
+stringで指定した文字列をint型の数値に変換した結果を戻り値として返します。  
+stringで指定する文字列は整数の文字列表現でなくてはいけません。(e.g. `12`はOK, `Ten`はNG)  
+この関数は
