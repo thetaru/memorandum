@@ -5,6 +5,7 @@
 ```
 ```
 ### [Option] nftablesからiptablesに変更(DirectRuleのACCEPTに関する挙動が異なる)
+### DirectRuleを使用する場合はiptablesに変更するのがいいと思います。
 -  FirewallBackend=nftables
 +  FirewallBackend=iptables
 
