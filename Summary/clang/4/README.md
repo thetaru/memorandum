@@ -340,7 +340,7 @@ int main()
 ```c
 char *fgets( char *string, int n, FILE *stream );
 ```
-streamからn-1文字分の文字列を受け取りstringに代入します。  
+streamから**n-1文字分**の文字列を受け取りstringに代入します。  
 ※ streamとはファイル操作を扱う部分で登場するものです。(e.g. stdinなど)
 streamにstdinを指定するとキーボードから文字列を受け取れるようになります。
 ```c
@@ -408,7 +408,7 @@ int main(void)
 }
 ```
 ### その他の関数
-以下に紹介する関数を使う場合は`stdlib.h`をインクルードする必要があります。  
+以下に紹介する関数を使う場合は`stdlib.h`または`ctype.h`をインクルードする必要があります。  
 #### definition - atoi関数
 ```c
 int atoi( const char *string );
@@ -422,8 +422,43 @@ stringで指定する文字列は整数の文字列表現でなくてはいけ�
 int main(void)
 {
   char str[] = "150";
-  
   printf("文字列%sを数値%dに変換しました\n", str, atoi( str ));
   return 0;
 }
 ```
+#### definition - toupper関数
+```c
+int toupper( int c );
+```
+cで指定した文字が小文字である場合、大文字に変換します。  
+すでにcが大文字である場合は変換しません。
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+  char ch = 'a';
+  printf("%cを%cに変換しました\n", ch, toupper( ch ));
+  return 0;
+}
+```
+#### definition - tolower関数
+```c
+int tolower( int c );
+```
+cで指定した文字が大文字である場合、小文字に変換します。  
+すでにcが小文字である場合は変換しません。
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+  char ch = 'A';
+  printf("%cを%cに変換しました\n", ch, tolower( ch ));
+  return 0;
+}
+```
+## 4.7 例題
+### 4.7.1 自作strcpy関数の作成
