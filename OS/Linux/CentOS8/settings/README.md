@@ -271,7 +271,7 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 -  PermitRootLogin prohibit-password
 +  PermitRootLogin no
 
-### パスワード認証を禁止
+### [Option]パスワード認証を禁止(鍵でログイン管理する場合に設定)
 -  PasswordAuthentication yes
 +  PasswordAuthentication no
 
