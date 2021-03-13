@@ -77,3 +77,10 @@ $ sudo gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps'
 ```
 $ sudo gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 ```
+## ショートカットの作成
+### ホームフォルダー
+`ランチャー`-`ホームフォルダー`を`Super+E`に変更
+### スクリーンショット
+`スクリーンショット`-`ウィンドウのスクリーンショットをPicturesフォルダに保存する`を`Shft+Ctrl+F9`に変更
+## 電源
+環境に合わせて設定する。(ほぼいらない)
