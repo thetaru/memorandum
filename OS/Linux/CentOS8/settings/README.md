@@ -275,9 +275,6 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 -  PasswordAuthentication yes
 +  PasswordAuthentication no
 
-### [Option]ログイン可能ユーザーを指定(スペース区切り)
-#AllowUsers USER1 USER2
-
 ### 暗号化アルゴリズム
 +  Ciphers aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
 
@@ -292,6 +289,18 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 
 ### 鍵生成の頻度(何バイトの鍵を何秒毎に生成するか)を指定
 +  RekeyLimit default 600
+
+### [Option]ログイン可能ユーザーの制御
+### Case1. 接続許可ユーザ設定
++  AllowUsers <USER>
+### Case2. 複数の接続許可ユーザ設定
++  AllowUsers <USER1> <USER2>
+### Case3. 特定のIPアドレスからのみ接続許可ユーザ設定
++  AllowUsers <USER>@<接続元IP>
+### Case4. 特定のIPアドレスからのみ接続許可(全ユーザ)
++  AllowUsers *@<接続元IP>
+### Case5. 特定のネットワークからのみ接続許可
++  AllowUsers <USER>@192.168.137.0/24
 ```
 ```
 ### sshdを再起動
