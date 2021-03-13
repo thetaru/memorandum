@@ -494,12 +494,14 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 +  compress
 ```
 ## ■ ブートローダーの設定(GRUB2)
+IPv6の無効化やブラックアウトの無効化をします。  
+物理マシンの場合はさらに細かい設定が必要な場合があるので注意しましょう。(物理マシンの詳細情報を読みましょう。)
 ```
 # vi /etc/default/grub
 ```
 ```
--  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=03c2915c-7232-4e8b-8593-c553c429b2db rhgb quiet"
-+  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=03c2915c-7232-4e8b-8593-c553c429b2db rhgb quiet consoleblank=0 ipv6.disable=1"
+-  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=<UUID> rhgb quiet"
++  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=<UUID> rhgb quiet consoleblank=0 ipv6.disable=1"
 ```
 ### BIOS
 ```
