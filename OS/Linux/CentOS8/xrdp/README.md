@@ -5,7 +5,7 @@ epelリポジトリが登録されていない場合は次を実行します。
 # yum install epel-release
 ```
 ```
-# yum install xrdp tigervnc-server 
+# yum install xrdp tigervnc-server
 ```
 サービスの起動と自動起動の有効化
 ```
