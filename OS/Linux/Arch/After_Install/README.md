@@ -37,3 +37,19 @@ $ sudo pacman -S xdg-user-dirs-gtk
 $ LANG=C xdg-user-dirs-gtk-update
 ```
 再起動するとホームディレクトリが英語になります。
+## [Option] SSDのTrimコマンドを有効にする
+```
+$ sudo systemctl start fstrim.timer
+$ sudo systemctl enable fstrim.timer
+```
+## キャッシュを RAM ディスク上に
+sizeは環境に応じて設定しましょう。
+```
+$ sudo vi /etc/fstab
+```
+```
+tmpfs /home/<USER>/.cache tmpfs noatime,nodev,nosuid,size=2G 0 0
+```
+```
+$ mount -a
+```
