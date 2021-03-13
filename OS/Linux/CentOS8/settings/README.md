@@ -275,8 +275,8 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 -  PasswordAuthentication yes
 +  PasswordAuthentication no
 
-### ログイン可能ユーザーを指定(スペース区切り)
-AllowUsers USER1 USER2
+### [Option]ログイン可能ユーザーを指定(スペース区切り)
+#AllowUsers USER1 USER2
 
 ### 暗号化アルゴリズム
 +  Ciphers aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
