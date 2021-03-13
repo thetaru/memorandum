@@ -22,4 +22,8 @@ epelリポジトリが登録されていない場合は次を実行します。
 # systemctl mask packagekit-offline-update.service
 ```
 ### ポート解放
+念の為何番ポートを使用しているか確認します。
+```
+# lsof -i -n -P | grep xrdp
+```
 firewallを導入している場合は`3389/tcp`をあけましょう。
