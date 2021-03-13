@@ -8,6 +8,14 @@ $ sudo pacman-mirrors --fasttrack
 ```
 $ sudo pacman -Syyu
 ```
+## yay をインストール
+```
+$ sudo pacman -Syu yay
+```
+## vscode をインストール
+```
+$ sudo pacman -Syu code
+```
 ## Fcitx-Mozc をインストール
 ```
 $ sudo pacman -S fcitx-im fcitx-mozc
@@ -23,6 +31,14 @@ $ sudo chsh <USER> -s /bin/bash
 ファイル末尾に追記します。
 ```
 $ sudo vi ~/.bashrc
+```
+```
+export GTK_IM_MODULE="fcitx"
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE="fcitx"
+```
+```
+$ sudo vi ~/.xprofile
 ```
 ```
 export GTK_IM_MODULE="fcitx"
@@ -52,4 +68,12 @@ tmpfs /home/<USER>/.cache tmpfs noatime,nodev,nosuid,size=2G 0 0
 ```
 ```
 $ mount -a
+```
+## CapsLockをCtrlにする
+```
+$ sudo gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+```
+## キーバインドをEmacs風にする
+```
+$ sudo gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 ```
