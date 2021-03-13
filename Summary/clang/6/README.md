@@ -34,13 +34,12 @@ int* p_hoge, p_fuga;
 int *p_hoge, *p_fuga;
 ```
 例としてintのポインタ型で宣言していますが他の型に関しても同様に宣言できます。  
-個人的には後者の方法で宣言するのが無難なのかなと思っています。
 ## 6.2 ポインタへの値の代入
 `&`は指定した変数のアドレスを取得するのに使います。
 ```c
 /* 変数の宣言 */
 int hoge;
-int *p_hoge;
+int* p_hoge;
 
 hoge = 10;
 p_hoge = &hoge; /* hogeのアドレスを代入します */
@@ -54,25 +53,26 @@ printf関数でアドレスを出力するときは変換指定子に`%p`を使�
 int main(void)
 {
   int hoge;
-  int *p_hoge;
+  int* p_hoge;
   
-  hoge = 10;
+  hoge = 5;
   p_hoge = &hoge;
   
   printf("hoge address: %p\n", &hoge);
   printf("hoge: %d\n", hoge);
-  
+  printf("p_hoge address: %p\n", &p_hoge);
   printf("p_hoge: %p\n", p_hoge);
   printf("*p_hoge: %d\n", *p_hoge);
-  printf("p_hoge address: %p\n", &p_hoge);
 }
 ```
 実行結果は以下のようになります。(環境によって変化します。)
 ```c
 hoge address: 0x7ffdf1cb621c
-hoge: 10
-p_hoge: 0x7ffdf1cb621c
-*p_hoge: 10
+hoge: 5
 p_hoge address: 0x7ffdf1cb6210
+p_hoge: 0x7ffdf1cb621c
+*p_hoge: 5
 ```
+`hoge`と`*p_hoge`は同じ値をしていることがわかります。  
+つまり`*p_hoge`とは`p_hoge`が持っているアドレスにあるデータを持ってきます。
 ## 6.4 NULLポインタ
