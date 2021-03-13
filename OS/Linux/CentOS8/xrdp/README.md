@@ -14,8 +14,12 @@ epelリポジトリが登録されていない場合は次を実行します。
 # systemctl status xrdp
 ```
 ## xrdpの設定
-## 自動パッケージアップデートの無効化
+### 自動パッケージアップデートの無効化
 ```
 # systemctl stop packagekit
+# systemctl stop packagekit-offline-update.service
 # systemctl mask packagekit
+# systemctl mask packagekit-offline-update.service
 ```
+### ポート解放
+firewallを導入している場合は`3389/tcp`をあけましょう。
