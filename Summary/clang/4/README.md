@@ -462,3 +462,19 @@ int main(void)
 ```
 ## 4.7 例題
 ### 4.7.1 自作strcpy関数の作成
+`for`文のところなるほどと思ったので抜粋します。
+```c
+void my_strcpy( char dest[], char source[] )
+{
+  int i;
+  /* NULL文字が来るまでループさせる */
+  for ( i = 0; source[i] != '\0'; i++ ) {
+    dest[i] = source[i];
+  }
+  /* 末尾にNULL文字を挿入 */
+  dest[i] = '\0';
+}
+```
+### 4.7.2 自作strlen関数の作成
+特になし
+### 4.7.3 自作strcat関数の作成
