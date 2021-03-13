@@ -14,6 +14,14 @@ epelリポジトリが登録されていない場合は次を実行します。
 # systemctl status xrdp
 ```
 ## xrdpの設定
+### 各種設定
+大体の設定は以下ファイルをいじればどうにかなると思います。
+```
+# vi /etc/xrdp/sesman.ini
+```
+```
+# vi /etc/xrdp/xrdp.ini
+```
 ### 自動パッケージアップデートの無効化
 ```
 # systemctl stop packagekit
