@@ -254,6 +254,15 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 +  UPDATEDEFAULT=no
 ```
 脆弱性対処の際にはこれらの設定を外してから`yum update`します。
+## ■ 自動パッケージアップデートの無効化
+X Windows Systemを入れると自動アップデートツールが有効になるため無効化します。  
+CUI環境の場合は不要な手順です。
+```
+# systemctl stop packagekit
+# systemctl stop packagekit-offline-update.service
+# systemctl mask packagekit
+# systemctl mask packagekit-offline-update.service
+```
 ## ■ sshdの設定
 ```
 # vi /etc/ssh/sshd_config
