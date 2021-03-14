@@ -35,6 +35,7 @@
 - [ ] [Pacemaker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Pacemaker)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
 - [ ] [Squid](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Squid)
+- [ ] [VirtualBox](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/virtualbox)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
 - [ ] [(書きかけ)デバイス名ずれ対策](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
