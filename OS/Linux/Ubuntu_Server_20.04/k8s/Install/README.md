@@ -161,3 +161,4 @@ kube-master   Ready    master   102m   v1.18.8
 kube-node1    Ready    <none>   12m    v1.18.8
 kube-node2    Ready    <none>   11m    v1.18.8
 ```
+masterがReadyじゃなかったら`kubelet.service`を再起動すると`Ready`になることがあります。
