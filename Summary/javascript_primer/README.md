@@ -1,6 +1,6 @@
 # JavaScript Primer
 ## 前提条件
-OS: CentOS Stream
+OS: CentOS Stream  
 Browser: Google Chrome
 ## 第一部
 ### JavaScriptとは
