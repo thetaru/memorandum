@@ -10,4 +10,4 @@
 ## ふ
 - [ ] [ふつうのLinuxプログラミング]()
 ## わ
-- [ ] [わかりみSQL]()
+- [ ] [わかりみSQL](https://github.com/thetaru/memorandum/tree/master/Summary/wakarimi_SQL)
