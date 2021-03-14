@@ -13,6 +13,6 @@
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
 ## ふ
 - [ ] [ふつうのLinuxプログラミング]()
-- [ ] [ポインタ完全マスター]
+- [ ] [ポインタ完全マスター]()
 ## わ
 - [ ] [わかりみSQL](https://github.com/thetaru/memorandum/tree/master/Summary/wakarimi_SQL)
