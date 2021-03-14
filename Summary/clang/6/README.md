@@ -123,7 +123,7 @@ int* p_hoge;
 p_hoge = NULL;
 ```
 これでp_hogeはどこも指していないということになります。  
-NULLは大抵の場合
+またNULLは大抵の場合
 ```c
 #define NULL 0
 ```
