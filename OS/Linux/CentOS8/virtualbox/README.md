@@ -13,5 +13,7 @@ VirtualBoxの[公式ページ](https://www.virtualbox.org/wiki/Linux_Downloads)�
 建てたVMを外とやり取りさせたい場合がほとんどだと思うので設定します。  
 `ファイル`-`環境設定`-`ネットワーク`より`新しいNATネットワークを追加`を選択します。  
 ネットワーク名: <NAT_NETWORK_NAME>  
-ネットワークCIDR: <NAT_NETWORK_CIDR>
-ネットワークオプション: [] DHCPのサポート [ ] IPv6サポート
+ネットワークCIDR: <NAT_NETWORK_CIDR>  
+ネットワークオプション:
+- [ ] DHCPのサポート
+- [ ] IPv6サポート
