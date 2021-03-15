@@ -106,6 +106,7 @@ printf("%d\n", hoge);
 ```
 このとき出力はどうなるでしょうか?  
 答えは不定です。(実験してみてください。)  
+  
 同様に次のコード片を考えてみます。
 ```c
 int* p_hoge;
@@ -124,13 +125,66 @@ int* p_hoge;
 p_hoge = NULL;
 ```
 これでp_hogeはどこも指していないということになります。  
-またNULLは大抵の場合
-```c
-#define NULL 0
-```
-と定義されています。
-
 ## 6.5 引数としてのポインタ
+ここではポインタの使い方について解説します。  
+次のようなswap関数を作ったとします。
+```c
+void swap( int x, int y )
+{
+  int tmp = x;
+  x = y;
+  y = tmp;
+} 
+```
+このコードでは、2つの変数を引数として受け取り、その中身を交換する関数を作ったつもりです。  
+次のようなコードを書き実行させて見ましょう。
+```c
+#include <stdio.h>
+
+void swap( int x, int y )
+{
+  int tmp = x;
+  x = y;
+  y = tmp;
+}
+
+int main(void)
+{
+  int hoge = 10, piyo = 5;
+  
+  swap( hoge, piyo );
+  printf("hoge: %d, piyo: %d\n", hoge, piyo);
+  return 0;
+}
+```
+このswap関数ではうまく値を交換できていません。  
+`4.2 関数を作ってみる`で仮引数には実引数のコピーが渡されると説明したことを思い出してください。  
+仮引数を書き換えても元の変数hogeとpiyoには影響はありません。(仮引数はあくまでもhogeとpiyoのコピーにすぎないので)  
+そこでポインタを使って元の変数に直接アクセスして値を書き換える手段を考えます。  
+実際にプログラムを書いてみます。
+```c
+#include <stdio.h>
+
+void swap(int* x, int* y);
+
+int main(void)
+{
+  int hoge = 10, piyo = 5;
+  
+  swap( &hoge, &piyo );
+  printf("hoge: %d, piyo: %d\n", hoge, piyo);
+  return 0;
+}
+
+void swap(int* x, int* y)
+{
+  int tmp = *x;
+  *x = *y;
+  *y = tmp;
+}
+```
+x, yはポインタ型なので`*x`はhogeの値で`*y`はpiyoの値です。  
+実際にこのプログラムを実行してみると値が交換されていることがわかります。
 ## 6.6 ポインタの型
 ### 6.6.1 sizeof
 ### 6.6.2 ポインタの型の大きさ
