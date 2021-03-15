@@ -196,10 +196,7 @@ x, yはポインタ型なのでswap関数内の`*x`はhogeの値で`*y`はpiyo�
 #include <stdio.h>
 int main(void)
 {
-  char hoge;
-  int piyo;
-  
-  printf("char型のサイズは%dです\n", sizeof(hoge));
+  printf("char型のサイズは%dです\n", sizeof());
   printf("int型のサイズは%dです\n", sizeof(int));
   return 0;
 }
