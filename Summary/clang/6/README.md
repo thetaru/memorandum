@@ -345,6 +345,51 @@ int main(void)
 実は配列のように扱えるようにするために`p[0]=*p=*(p + 0)`となっています。  
 `p[1]`も同様に`p[1]=*(p + 1)`と同じです。
 ### 6.7.3 引数に配列へのポインタを渡す
+いままで引数には`int i;`などの変数を渡してきました。  
+しかし次のようなこともできます。
+```c
+#include <stdio.h>
+
+void myPuts(char str[20])
+{
+  int i;
+  for ( i = 0; str[i] != '\0'; i++ ) {
+    putchar( str[i] );
+  }
+  printf("\n");
+}
+
+int main(void)
+{
+  char str[20] = "Hello World";
+  myPuts( str );
+  return 0;
+}
+```
+myPuts関数の仮引数である`char str[20]`は配列ではなく、ポインタ`char* str`と同じです。  
+もちろんmain関数内ではこれら２つは同じ意味ではありません。  
+例えば次のように書いたとします。
+```c
+int main(void)
+{
+  char str[20];
+  char* str2;
+}
+```
+このstrとstr2は別物です。  
+あくまで`char str[20]`と`char* str`が同じ意味になるのは仮引数のときだけです。  
+つまりmyPuts関数は次のように書き換えることができます。
+```c
+void myPuts(char* str)
+{
+  int i;
+  for ( i = 0; str[i] != '\0'; i++ ) {
+    putchar(str[i]);
+  }
+  printf("\n");
+}
+```
+また`void myPuts(char str[])`としても同じ意味になります。(結局のところ配列を仮引数として渡すと配列の先頭アドレスが渡されます。)
 ### 6.7.4 ポインタ配列
 ## 6.8 文字列定数とポインタ
 ## 6.9 ポインタのポインタ
