@@ -411,7 +411,7 @@ int main(void)
   *p[0] += 10;
   
   for ( i = 0; i < 5; i++ ) {
-    printf("*p[%d]: %p\n", *p[i]);
+    printf("*p[%d]: %d\n", i, *p[i]);
   }
 }
 ```
