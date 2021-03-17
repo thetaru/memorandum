@@ -471,5 +471,69 @@ int main(void)
 `str[0]`や`*(str + 0)`は指しているアドレスのデータを見ているだけで変数ではないのです。  
 変数でないのに無理やり代入しようとしたらそりゃエラーになるよねって話です。
 ## 6.9 ポインタのポインタ
+今までは`char型`や`int型`へのポインタを作ってきましたが、`char*型`や`int*型`のポインタを作ってみます。  
+要はポインタを使って別のポインタを指してあげればいいです。  
+実際にコードを書いていきます。
+```c
+#include <stdio.h>
+
+int main(void)
+{
+  int hoge = 5;
+  int* p_hoge;
+  int** p_p_hoge;
+  
+  p_hoge = &hoge;
+  p_p_hoge = &p_hoge;
+  
+  printf("hoge = %d\n", hoge);
+  printf("*p_hoge = %d\n", *p_hoge);
+  printf("p_hoge address: %p\n", &p_hoge);
+  printf("p_p_hoge = %p\n", p_p_hoge);
+  printf("**p_p_hoge = %d\n", **p_p_hoge);
+  
+  return 0;
+}
+```
+やっていることはポインタを追跡するだけなので大体予想通りの出力が得られると思います。
+```
+hoge = 5
+*p_hoge = 5
+p_hoge address: 0x7ffe565faf48
+p_p_hoge = 0x7ffe565faf48
+**p_p_hoge = 5
+```
+このコードを図示すると次のようになります。
+```
+                          hoge           p_hoge          p_p_hoge
+-----------------------------------------------------------------------------------------
+|       |       |       |  int  |       | int*  |       | int** |       |       |       |
+|   ~   |  ...  |       |   5   |  ...  | 0x100 |  ...  | 0x150 |       |  ...  |   ~   |
+|       |       |       | 0x100 |       | 0x150 |       | 0x200 |       |       |       |
+-----------------------------------------------------------------------------------------
+```
 ## 6.10 例題
+### 6.10.1 自作strlen関数の作成2
+```c
+#include <stdio.h>
+
+int my_strlen(const char* str)
+{
+  int i = 0;
+  while ( *str++ ) {
+    i++;
+  }
+  return i;
+}
+
+int main(void)
+{
+  char str[20] = "Hello World";
+  printf("%sの長さは%dです\n", str, my_strlen(str));
+  return 0;
+}
+```
+`const char*`とは`str`が指しているデータの中身を書き換えないようにという命令です。  
+`*str++`は`*(str++)`の意味で1ループごとに次の文字へ移っています。('H'->'E'->...->'\0')  
+whileループの条件式ではNULL文字`\0`は0として扱われるのでループが終了します。(よく使われる書き方です。)
 ## 6.11 演習問題
