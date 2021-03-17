@@ -536,4 +536,24 @@ int main(void)
 `const char*`とは`str`が指しているデータの中身を書き換えないようにという命令です。  
 `*str++`は`*(str++)`の意味で1ループごとに次の文字へ移っています。('H'->'E'->...->'\0')  
 whileループの条件式ではNULL文字`\0`は0として扱われるのでループが終了します。(よく使われる書き方です。)
+### 6.10.2 自作strcpy関数の作成2
+```c
+#include <stdio.h>
+
+void my_strcpy(char* dest, const char* src)
+{
+  while ( *dest++ = *src++ ) {}
+}
+
+int main(void)
+{
+  char str[20] = "Hello world";
+  char copy[20];
+
+  my_strcpy(copy, str);
+  printf("コピーした文字列は%sです\n", copy);
+  return 0;
+}
+```
 ## 6.11 演習問題
+特になし
