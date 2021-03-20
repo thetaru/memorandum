@@ -523,3 +523,45 @@ int main()
   return 0;
 }
 ```
+### 8.5.2 平均点を求めるプログラム
+次のような成績ファイル(score.txt)を与えられました。  
+フォーマットは`名前 点数`になっています。  
+この成績表から平均点を求めるプログラムを作ります。
+```
+nishio 90
+yamada 68
+shimizu 100
+yoshioka 74
+hosaka 28
+```
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  char filename[100] = "score.txt";
+  char buf[100];
+  FILE* fp;
+  int tmp, sum = 0, number = 0;
+  double average;
+  
+  fp = fopen( filename, "r" );
+  
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+  
+  while ( !feof( fp ) ) {
+    fscanf( fp, "%s %d", buf, &tmp );
+    number++;
+    sum += tmp;
+  }
+  
+  average = sum / number;
+  printf("平均点: %f\n", average);
+  fclose( fp );
+  return 0;
+}
+```
