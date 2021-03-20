@@ -361,6 +361,7 @@ int main()
 }
 ```
 ## 8.2.5 ファイル終端の判定とエラーチェック
+### 8.2.5.1 ファイル終端の判定
 fgetcやfgets関数などはファイルの終端に達するもしくはエラーが発生した場合にEOFを返しました。  
 しかし、EOFは次のように定義されています。(※環境依存です。)
 ```c
@@ -390,6 +391,47 @@ int main() {
   }
   
   for (;;) {
+    ch = fgetc( fp );
+    if ( !feof( fp ) ) {
+      printf("%c", ch);
+    } else {
+      break;
+    }
+  }
+  printf("\n");
+  fclose(fp);
+  return 0;
+}
+```
+### 8.2.5.2 エラーチェック
+エラーをチェックするferror関数も存在します。  
+この関数はストリームでエラーが発生すると0以外の値を返します。
+#### Syntax - ferror関数
+```c
+int ferror( FILE* ストリーム );
+```
+先程のプログラムにferror関数を加えてみます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  char filename[100] = "test.txt";
+  FILE* fp;
+  int ch;
+  
+  fp = fopen(filename, "r");
+  if ( fp == NULL ) {
+    printf("ファイルが開けられませんでした\n");
+    exit(1);
+  }
+  
+  for (;;) {
+    if ( ferror( fp ) ) {
+      printf("ファイルエラー発生\n");
+      break;
+    }
+    
     ch = fgetc( fp );
     if ( !feof( fp ) ) {
       printf("%c", ch);
