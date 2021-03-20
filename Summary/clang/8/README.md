@@ -140,3 +140,41 @@ int main()
   return 0;
 }
 ```
+##  8.2.3 ファイル読み込み
+開いたファイルの内容を表示させてみましょう。  
+ファイルから文字を取得するにはfgetc関数を使用します。
+#### Syntax - fgetc関数
+```c
+int fgetc( FILE* ストリーム );
+```
+fgetc関数はストリームからunsigned char型の値を1文字読み込み、int型の値として返します。  
+実際にソースファイルと同じ場所にtestfile.txtというファイルを作成してみます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  char filename[100] = "test.txt";
+  FILE* fp;
+  int ch;
+  
+  fp = fopen(filename, "r");
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+  
+  for (;;) {
+    ch = fgetc( fp );
+    if ( ch == EOF ) {
+      break;
+    }
+    printf("%c", ch);
+  }
+  printf("\n");
+  
+  fclose(fp);
+  return 0;
+}
+```
