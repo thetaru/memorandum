@@ -140,7 +140,8 @@ int main()
   return 0;
 }
 ```
-##  8.2.3 ファイル読み込み
+## 8.2.3 ファイル読み込み
+## 8.2.3.1 1文字ごとの読み込み
 開いたファイルの内容を表示させてみましょう。  
 ファイルから文字を取得するにはfgetc関数を使用します。
 #### Syntax - fgetc関数
@@ -148,7 +149,15 @@ int main()
 int fgetc( FILE* ストリーム );
 ```
 fgetc関数はストリームからunsigned char型の値を1文字読み込み、int型の値として返します。  
-実際にソースファイルと同じ場所にtestfile.txtというファイルを作成してみます。
+ソースファイルと同じ場所にtest.txtというファイルを作成し読み込んでみます。   
+test.txtの中身は次のようにします。
+```
+hello
+world
+363
+```
+実際にプログラムを書いてみます。  
+fgetc関数で取得した文字を表示するプログラムです。
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -176,5 +185,47 @@ int main()
   
   fclose(fp);
   return 0;
+}
+```
+chがEOF(End Of File)となるまでループを続けます。  
+EOFはファイルの読み込みエラーまたはファイルの最後に到達した際にfgetcが返します。
+実行してみるとtest.txtの中身と同じものが出力されました。
+## 8.2.3.2 1行ごとの読み込み
+
+#### Syntax - fgets関数
+fgets関数はストリームから1行を読み込みます。
+```c
+char* fgets( char* 文字列, int サイズ, FILE* ストリーム );
+```
+第1引数の`文字列`に読み込んだ文字列を格納していきます。 
+`ストリーム`からn-1個以下の文字を`文字列`に取り込みます。  
+改行文字やEOFより後の文字は読まれません。読み込んだ文字の最後にはNULL文字を加えます。  
+読み込みに失敗した場合は、NULLを返します。  
+  
+実際にfgets関数を使ったプログラムを書いていきます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define BUFSIZE 100
+
+int main()
+{
+  char filename[100] = 'test.txt';
+  char buf[BUFSIZE];
+  FILE* fp;
+  
+  fp = fopen(filename, "r");
+  if ( fp == NULL ) {
+    printf("ファイルが開くませんでした\n");
+    exit(1);
+  }
+  while ( fgets( buf, BUFSIZE, fp ) != NULL ) {
+    printf("%s", buf);
+  }
+  printf("\n");
+  fclose(fp);
+  return 0;
+}
 }
 ```
