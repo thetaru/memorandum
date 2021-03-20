@@ -94,7 +94,7 @@ int main(void)
 #include <stdio.h>
 #include <math.h>
 
-typedef struct Poing_tag {
+typedef struct Point_tag {
   double x;
   double y;
 } Point;
