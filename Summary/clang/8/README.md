@@ -519,6 +519,7 @@ int main()
   size--; /* NULL文字分を削除 */
   
   printf("ファイルサイズ: %d\n", size);
+  fclose( fp );
   return 0;
 }
 ```
