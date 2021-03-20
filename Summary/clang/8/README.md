@@ -234,8 +234,7 @@ fgets関数がNULLを返すまでループを続けます。
 ```c
 int fscanf( FILE* ストリーム, char* フォーマット, ... );
 ```
-fscanf関数は`フォーマット`が指す書式文字列に従って`ストリーム`からデータを読み込み、`フォーマット`に続く引数の指すオブジェクトに代入します。  
-必ずしもデータは文字列でなくてもいいことに注意してください。  
+fscanf関数は`フォーマット`が指す書式文字列に従って`ストリーム`からデータを読み込み、`フォーマット`に続く引数の指すオブジェクトに代入します。    
 先程のプログラムをfscanf関数を使って書き換えてみます。
 ```c
 #include <stdio.h>
@@ -333,3 +332,31 @@ int main(void)
 }
 ```
 ### 8.2.4.3 書式文字列に従ったデータの書き込み
+#### Syntax - fscanf関数
+```c
+int fprintf( FILE* ストリーム, char* フォーマット, ... );
+```
+fprintf関数は`フォーマット`が指す書式文字列に従って`フォーマット`に続く引数の指すオブジェクトを代入し、`ストリーム`へデータを書き込みます。  
+先程のプログラムをfprintf関数を使って書き換えてみます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  char filename[100] = "out.txt";
+  char buf[100] = "hello";
+  FILE* fp;
+  
+  fp = fopen(filename, "w");
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+  
+  fprintf( fp, "%s", buf );
+  printf("ファイル書き込み完了\n");
+  fclose(fp);
+  return 0;
+}
+```
