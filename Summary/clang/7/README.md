@@ -53,7 +53,7 @@ int main(void)
 
 #define NUMBER_OF_STUDENT 3
 
-typedef struct
+/* 変更点 */
 typedef struct Student_tag {
   char student_name[100];
   int student_age;
