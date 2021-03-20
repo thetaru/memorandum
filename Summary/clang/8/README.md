@@ -1,5 +1,6 @@
 # メモリ管理とファイル入出力
 ## 8.1 動的メモリ割り当て
+### 8.1.1 malloc関数とfree関数
 C言語には動的メモリ割り当てを行える`malloc`という関数があります。    
 malloc関数はstdlib.hに定義されています。  
 そのためstring.hをインクルードする必要があります。
@@ -17,20 +18,30 @@ malloc関数はメモリバイト数で割り当てた領域の先頭を指す�
 free( ポインタ変数 );
 ```
   
-実際にint型の要素数5の配列を作成してみます。
+実際にint型の要素数5の配列を宣言してみます。
 ```c
 int *p;
-
-/* int型のサイズを4byteとして　5要素分のメモリ領域(= 4*5 = 20byte)を確保します */
 p = (int*)malloc( 4 * 5 );
-
-/* メモリの割り当てに失敗した場合NULLポインタが返るのでNULLポインタでないことを確認します */
-if ( !p ) {
-  printf("メモリ割り当てに失敗\n");
-  exit(1);
-}
 ```
+int型のサイズを4byteとして　5要素分のメモリ領域(= 4\*5 = 20byte)を確保します。  
 上の場合は解説のしやすさからint型を4byteとしましたが、実際の場合は次のように`sizeof`を使って型のサイズを取得しましょう。
 ```c
+int *p;
 p = (int*)malloc( sizeof(int) * 5 );
+```
+### 8.1.2 malloc関数とfree関数の使用例
+実際にmalloc関数とfree関数を使ってみます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+  int* buf;
+  int number, i, sum;
+  
+  printf("入力データ: ");
+  scanf("%d", &number);
+  
+  buf = (int*)malloc( number * sizeof(int) );
 ```
