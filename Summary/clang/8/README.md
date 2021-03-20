@@ -197,11 +197,11 @@ fgets関数はストリームから1行を読み込みます。
 ```c
 char* fgets( char* 文字列, int サイズ, FILE* ストリーム );
 ```
-第1引数の`文字列`に読み込んだ文字列を格納していきます。 
-`ストリーム`からn-1個以下の文字を`文字列`に取り込みます。  
+第1引数の`文字列`に`ストリーム`から`サイズ-1`個以下の文字を読み込み格納します。  
 改行文字やEOFより後の文字は読まれません。読み込んだ文字の最後にはNULL文字を加えます。  
 読み込みに失敗した場合は、NULLを返します。  
   
+今回も上で作成したtest.txtを使います。
 実際にfgets関数を使ったプログラムを書いていきます。
 ```c
 #include <stdio.h>
@@ -211,13 +211,13 @@ char* fgets( char* 文字列, int サイズ, FILE* ストリーム );
 
 int main()
 {
-  char filename[100] = 'test.txt';
+  char filename[100] = "test.txt";
   char buf[BUFSIZE];
   FILE* fp;
   
   fp = fopen(filename, "r");
   if ( fp == NULL ) {
-    printf("ファイルが開くませんでした\n");
+    printf("ファイルが開けませんでした\n");
     exit(1);
   }
   while ( fgets( buf, BUFSIZE, fp ) != NULL ) {
