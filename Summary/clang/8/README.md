@@ -257,6 +257,7 @@ int main()
   while ( fscanf( fp, "%s", buf ) != EOF ) {
     printf("%s\n", buf);
   }
+  printf("\n");
   fclose(fp);
   return 0;
 }
