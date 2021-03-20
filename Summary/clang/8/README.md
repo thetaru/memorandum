@@ -332,7 +332,7 @@ int main(void)
 }
 ```
 ### 8.2.4.3 書式文字列に従ったデータの書き込み
-#### Syntax - fscanf関数
+#### Syntax - fprintf関数
 ```c
 int fprintf( FILE* ストリーム, char* フォーマット, ... );
 ```
@@ -356,6 +356,48 @@ int main()
   
   fprintf( fp, "%s", buf );
   printf("ファイル書き込み完了\n");
+  fclose(fp);
+  return 0;
+}
+```
+## 8.2.5 ファイル終端の判定とエラーチェック
+fgetcやfgets関数などはファイルの終端に達するもしくはエラーが発生した場合にEOFを返しました。  
+しかし、EOFは次のように定義されています。(※環境依存です。)
+```c
+#define EOF -1
+```
+もし読み取った値が-1であった場合、EOFと判定されてしまいます。  
+この問題を解決するためにfeof関数を使用します。
+#### Syntax - feof関数
+```c
+int feof( FILE* ストリーム );
+```
+feof関数は**エラーが発生**した又は**ファイルの終端**に達した場合に**0以外の値**を**それ以外**の場合に**0**を返します。  
+実際にtest.txtを読み込むプログラムをfeof関数を使用して書き換えてみます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  char filename[100] = "test.txt";
+  FILE* fp;
+  int ch;
+  
+  fp = fopen(filename, "r");
+  if ( fp == NULL ) {
+    printf("ファイルが開けられませんでした\n");
+    exit(1);
+  }
+  
+  for (;;) {
+    ch = fgetc( fp );
+    if ( !feof( fp ) ) {
+      printf("%c", ch);
+    } else {
+      break;
+    }
+  }
+  printf("\n");
   fclose(fp);
   return 0;
 }
