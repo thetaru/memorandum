@@ -20,7 +20,7 @@ free( ポインタ変数 );
   
 実際にint型の要素数5の配列を宣言してみます。
 ```c
-int *p;
+int* p;
 p = (int*)malloc( 4 * 5 );
 
 if ( !p ) {
@@ -31,7 +31,7 @@ if ( !p ) {
 int型のサイズを4byteとして　5要素分のメモリ領域(= 4\*5 = 20byte)を確保します。  
 上の場合は解説のしやすさからint型を4byteとしましたが、実際の場合は次のように`sizeof`を使って型のサイズを取得しましょう。
 ```c
-int *p;
+int* p;
 p = (int*)malloc( sizeof(int) * 5 );
 
 if ( !p ) {
