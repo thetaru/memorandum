@@ -271,7 +271,8 @@ int main()
 ```c
 int fputc( int 文字, FILE* ストリーム );
 ```
-out.txtというファイルにhelloという文字を書き込んでみましょう。
+out.txtというファイルにhelloという文字を書き込んでみましょう。  
+ファイルモードは書き込みなので"w"にします。
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -297,5 +298,38 @@ int main()
   return 0;
 }
 ```
+out.txtに書き込まれていることを確認しましょう。
 ### 8.2.4.2 1行ごとの書き込み
+fputs関数はストリームから1行を書き込みます。
+#### Syntax - fputs関数
+```c
+int fputs( char* 文字列, FILE* ストリーム );
+```
+fputs関数は書き込みに失敗するとEOFを返します。  
+先程のプログラムをfputs関数を使って書き換えましょう。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+  char filename[100] = "out.txt";
+  char buf[100] = "hello";
+  FILE* fp;
+  
+  fp = fopen(filename, "w");
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+  
+  if ( fputs( buf, fp ) != EOF ) {
+    printf("ファイル書き込み完了\n");
+  } else {
+    printf("書き込み失敗\n");
+  }
+  fclose(fp);
+  return 0;
+}
+```
 ### 8.2.4.3 書式文字列に従ったデータの書き込み
