@@ -444,3 +444,81 @@ int main() {
   return 0;
 }
 ```
+## 8.3 標準ストリーム
+C言語には標準ストリームというものが3つ存在しています。  
+それぞれ、標準入力(stdin) 標準出力(stdout) 標準エラー(stderr) です。  
+デフォルトでは標準入力はキーボード、標準出力と標準エラーがディスプレイです。  
+  
+まずは標準出力から見ていきます。  
+画面上にHello Worldと表示するプログラムをfprintf関数を使用して作成します。
+```c
+#include <stdio.h>
+
+int main()
+{
+  fprintf( stdout, "Hello World\n");
+  return 0;
+}
+```
+次にキーボードから文字列を受け取り、その文字列を表示するプログラムを作成してみます。
+```c
+#include <stdio.h>
+
+int main()
+{
+  char buf[100];
+  
+  printf("文字列を入力: ");
+  fscanf( stdin, "%s", buf );
+  fprintf( stdout, "入力した文字列: %s\n", buf );
+  return 0;
+}
+```
+## 8.4 セキュアプログラミング
+bufferoverrunについて書いてあったけど、これだけではあまりに足らないので書かないことにしました。
+## 8.5 例題
+### 8.5.1 ファイルサイズを求めるプログラム
+やることは主に3つ
+- ファイル名の取得
+- 受け取ったファイル名には改行が含まれるのでそれをNULL文字に置換
+- 1文字(1yte)ずつ受け取っていきファイルサイズを計算
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define BUFMAX 100
+
+int main()
+{
+  char filename[BUFMAX];
+  FILE* fp;
+  int size = 0, i;
+  
+  /* 標準入力でファイル名を受け取る */
+  printf("ファイル名: ");
+  fgets( filename, BUFMAX, stdin );
+  
+  /* 改行を削除する */
+  i = strlen( filename ) - 1;
+  if ( filename[i] == '\n' ) {
+    filename[i] = '\0';
+  }
+  
+  fp = fopen( filename, "rb" );
+  
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+  
+  while ( !feof( fp ) ) {
+    fgetc( fp );
+    size++;
+  }
+  size--; /* NULL文字分を削除 */
+  
+  printf("ファイルサイズ: %d\n", size);
+  return 0;
+}
+```
