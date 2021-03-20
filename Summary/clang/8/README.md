@@ -230,7 +230,34 @@ int main()
 ```
 fgets関数がNULLを返すまでループを続けます。
 ### 8.2.3.3 
+ストリームから入力をもらうscanf関数のような動きをします。
 #### Syntax - fscanf関数
 ```c
 int fscanf( FILE* ストリーム, char* フォーマット, ... );
+```
+先程のプログラムをfscanf関数を使って書き換えてみます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define BUFSIZE 100
+
+int main()
+{
+  char filename[100] = "test.txt";
+  char buf[BUFSIZE];
+  FILE* fp;
+  
+  fp = fopen(filename, "r");
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+  
+  while ( fscanf( fp, "%s", buf ) != EOF ) {
+    printf("%s\n", buf);
+  }
+  fclose(fp);
+  return 0;
+}
 ```
