@@ -114,5 +114,5 @@ int main(void)
   printf("2点間の距離: %f\n", distance);
   return 0;
 }
-
 ```
+math.hをインクルードするのでコンパイルする際は`lm`オプションを付けましょう。
