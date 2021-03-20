@@ -131,7 +131,7 @@ int main()
   
   fp = fopen(filename, "r");
   if ( fp == NULL ) {
-    printf("ファイルが開けませんでした\");
+    printf("ファイルが開けませんでした\n");
     exit(1);
   }
   printf("ファイルを正常に開くことができました\n");
