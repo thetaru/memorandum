@@ -81,7 +81,7 @@ typedef 既存の型名 別名;
 /* uint を unsigned int の別名として定義 */
 typedef unsigned int uint;
 ```
-`typedef`を構造体に適用すると、構造体の名前をStudentにできます。
+`typedef`を構造体に適用すると、構造体の名前をStudentにできます。(構造体をあたかも型のように扱えるようになります。)
 ```c
 #include <stdio.h>
 
