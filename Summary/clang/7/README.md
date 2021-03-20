@@ -46,8 +46,42 @@ int main(void)
   return 0;
 }
 ```
-`struct Student st[NUMBER_OF_STUDENT]`で Student という構造体の配列を定義しています。  
-`typedef`を使い次のように宣言すると、構造体の名前をStudentにできます。
+`struct Student st[NUMBER_OF_STUDENT]`で Student という構造体の配列を定義しています。
+## 7.2 構造体へのポインタ
+### 7.2.1 構造体へのポインタの宣言
+int型のポインタなどと同様に、構造体のポインタも作成することができます。  
+宣言の仕方も構造体を型と見なせば、int型のポインタなどと同様にできます。  
+次のコードを見てください
+```c
+/* 構造体の宣言 */
+struct Student {
+  char studen_name[100];
+  int student_age;
+}
+
+/* 構造体のポインタ */
+struct Student* hoge;
+```
+### 7.2.2 構造体へのポインタがもつ要素へのアクセス
+上のコード片で宣言した構造体のポインタhogeの中にある要素にアクセスしたい場合についてです。  
+hoge内部の要素にアクセスする場合は
+```c
+hoge -> student_age
+```
+とします。`->`はアロー演算子といいます。  
+実は構造体内部のデータへのアクセス方法は他にも(`(*hoge).student_age`など)あるのですがわかりにくいのでアロー演算子を使ってください。
+## 7.3 typedef指定子
+typedef指定子は既存の変数の型に別名をつけることができます。
+#### Syntax - typedef
+```c
+typedef 既存の型名 別名;
+```
+例えば次のように使います。
+```c
+/* uint を unsigned int の別名として定義 */
+typedef unsigned int uint;
+```
+`typedef`を構造体に適用すると、構造体の名前をStudentにできます。
 ```c
 #include <stdio.h>
 
