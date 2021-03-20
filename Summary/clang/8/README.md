@@ -273,6 +273,29 @@ int fputc( int 文字, FILE* ストリーム );
 ```
 out.txtというファイルにhelloという文字を書き込んでみましょう。
 ```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  char filename[100] = "out.txt";
+  char buf[100] = "hello";
+  FILE* fp;
+  int i;
+
+  fp = fopen(filename, "w");
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+  
+  for ( i = 0; buf[i] != '\0'; i++ ) {
+    fputc( buf[i], fp );
+  }
+  printf("ファイル書き込み完了\n");
+  fclose(fp);
+  return 0;
+}
 ```
 ### 8.2.4.2 1行ごとの書き込み
 ### 8.2.4.3 書式文字列に従ったデータの書き込み
