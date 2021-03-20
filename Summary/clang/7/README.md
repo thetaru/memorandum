@@ -87,3 +87,32 @@ int main(void)
   return 0;
 }
 ```
+こうすることで構造体を型のように扱えます。
+## 7.4 例題
+### 7.4.1 2点間の距離を求めるプログラム
+```c
+#include <stdio.h>
+#include <math.h>
+
+typedef struct Poing_tag {
+  double x;
+  double y;
+} Point;
+
+int main(void)
+{
+  Point p1, p2;
+  double distance;
+
+  printf("p1の(x,y)座標を入力: ");
+  scanf("%lf %lf", &p1.x, &p1.y);
+  
+  printf("p2の(x,y)座標を入力: ");
+  scanf("%lf %lf", &p2.x, &p2.y);
+
+  distance = sqrt( (p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y) );
+  printf("2点間の距離: %f\n", distance);
+  return 0;
+}
+
+```
