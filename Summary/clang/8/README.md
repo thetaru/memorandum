@@ -567,3 +567,43 @@ int main()
 ```
 ## 8.6 演習問題
 ### 問題1
+特になし
+### 問題2
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  char filename[100] = "out.txt";
+  FILE* fp;
+  int ch;
+  int char_num = 0, line_num = 0;
+
+  fp = fopen(filename, "r");
+  if ( fp == NULL ) {
+    printf("ファイルが開けませんでした\n");
+    exit(1);
+  }
+
+  for (;;) {
+    ch = fgetc( fp );
+    if ( ch == EOF ) {
+      break;
+    }
+
+    if ( (char)ch == '\n' ) {
+      line_num++;
+    }
+    if ( (char)ch != '\n' ) {
+      char_num++;
+    }
+  }
+
+  printf("文字数: %d\n", char_num);
+  printf("行数: %d\n", line_num);
+
+  fclose(fp);
+  return 0;
+}
+```
