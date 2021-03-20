@@ -22,12 +22,22 @@ free( ポインタ変数 );
 ```c
 int *p;
 p = (int*)malloc( 4 * 5 );
+
+if ( !p ) {
+  printf("メモリ割り当て失敗\n");
+  exit(1);
+}
 ```
 int型のサイズを4byteとして　5要素分のメモリ領域(= 4\*5 = 20byte)を確保します。  
 上の場合は解説のしやすさからint型を4byteとしましたが、実際の場合は次のように`sizeof`を使って型のサイズを取得しましょう。
 ```c
 int *p;
 p = (int*)malloc( sizeof(int) * 5 );
+
+if ( !p ) {
+  printf("メモリ割り当て失敗\n");
+  exit(1);
+}
 ```
 ### 8.1.2 malloc関数とfree関数の使用例
 実際にmalloc関数とfree関数を使ってみます。
@@ -44,4 +54,23 @@ int main(void)
   scanf("%d", &number);
   
   buf = (int*)malloc( number * sizeof(int) );
+  
+  if ( !buf ) {
+    printf("メモリ割り当て失敗\n");
+    exit(1);
+  }
+  
+  for ( i = 0; i < number; i++ ) {
+    printf("%d個目のデータ: ", i+1);
+    scanf("%d", &buf[i]);
+  }
+  
+  for ( i = 0, sum = 0; i < number; i++ ) {
+    sum += buf[i];
+  }
+  
+  printf("合計: %d\n", sum);
+  free( buf );
+  return 0;
+}
 ```
