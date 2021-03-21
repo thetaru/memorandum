@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
 ```
 $ gcc args.c -o args.o
 ```
-実行してみます。
+実行してみましょう。
 ```
 $ ./args.o x
 $ ./args.o x y z
