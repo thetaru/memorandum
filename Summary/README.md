@@ -14,7 +14,7 @@
 ## し
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
 ## ふ
-- [ ] [ふつうのLinuxプログラミング]()
+- [ ] [ふつうのLinuxプログラミング](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming)
 - [ ] [ポインタ完全マスター]()
 ## わ
 - [ ] [わかりみSQL](https://github.com/thetaru/memorandum/tree/master/Summary/wakarimi_SQL)
