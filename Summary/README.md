@@ -8,7 +8,7 @@
 ## K
 - [ ] [Kubernetes on AWS]()
 ## L
-- [ ] [Linux Inside]()
+- [ ] [Linux Inside](https://github.com/thetaru/memorandum/tree/master/Summary/LinuxInside)
 - [ ] [Linuxのしくみ ～実験と図解で学ぶOSとハードウェアの基礎知識～]() 
 ## し
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
