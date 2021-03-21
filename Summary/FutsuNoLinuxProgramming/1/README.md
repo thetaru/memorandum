@@ -19,6 +19,7 @@ $ gcc --version
 いつもどおりHello Worldを出力するプログラムを作ります。
 ```c
 /* File Name: hello.c */
+/* Prog Name: hello.o */
 #include <stdio.h>
 
 int main(int argc, char* argv[])
@@ -54,6 +55,7 @@ $ ./test.o x y z
 最初のHello Worldプログラムをもう一度見てみましょう。
 ```c
 /* File Name: hello.c */
+/* Prog Name: hello.o */
 #include <stdio.h>
 
 int main(int argc, char* argv[])
@@ -76,3 +78,19 @@ argcは渡されたコマンドライン引数の数、argvがコマンドライ
 argv[0]には実行したプログラム名が格納されます。  
 このことからargcは常に1以上です。  
 また、コマンドライン引数だけを扱う場合はargv[1]から処理を始めなければいけません。
+### ■ args.c
+実際にコマンドライン引数を表示するプログラムを書いてみます。
+```c
+/* File Name: args.c */
+/* Prog Name: args.o */
+int main(int argc, char* argv[])
+{
+  int i;
+  
+  printf("argc = %d\n", argc);
+  for ( i = 0; i < argc; i++ ) {
+    printf("argv[%d] = %s\n", i, argv[i]);
+  }
+  exit(0);
+}
+```
