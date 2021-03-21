@@ -20,6 +20,7 @@ $ gcc --version
 ```c
 /* File Name: hello.c */
 /* Prog Name: hello.o */
+
 #include <stdio.h>
 
 int main(int argc, char* argv[])
@@ -56,6 +57,7 @@ $ ./test.o x y z
 ```c
 /* File Name: hello.c */
 /* Prog Name: hello.o */
+
 #include <stdio.h>
 
 int main(int argc, char* argv[])
@@ -83,6 +85,7 @@ argv[0]には実行したプログラム名が格納されます。
 ```c
 /* File Name: args.c */
 /* Prog Name: args.o */
+
 #include <stdio.h>
 #include <stdlib.h>
 int main(int argc, char* argv[])
@@ -95,4 +98,17 @@ int main(int argc, char* argv[])
   }
   exit(0);
 }
+```
+### ■ 実験
+まずはビルドします。
+```
+$ gcc args.c -o args.o
+```
+実行してみます。
+```
+$ ./args.o x
+$ ./args.o x y z
+$ ./args.o "z y z"
+$ ./args.o *.c
+$ ./args.o "*.c"
 ```
