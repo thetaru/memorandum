@@ -52,11 +52,23 @@ podmanでエミュレートしたdockerを使用する場合は以下のコマ�
 - [ ] [docker system prune](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20prune)
 - [x] [docker system version](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/system/docker%20system%20version)
 # § Dockerfile
-- [x] [zabbix](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/)
-
-
-
-
+## Instruction
+- [x] [ADD](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/ADD)
+- [x] [ARG](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/ARG)
+- [x] [CMD](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/CMD)
+- [ ] [COPY](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/COPY)
+- [x] [ENTRYPOINT](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/ENTRYPOINT)
+- [x] [ENV](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/ENV)
+- [x] [EXPOSE](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/EXPOSE)
+- [ ] [HEALTHCHECK](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/HEALTHCHECK)
+- [ ] [LABEL](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/LABEL)
+- [x] [ONBUILD](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/ONBUILD)
+- [x] [RUN](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/RUN)
+- [x] [SHELL](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/SHELL)
+- [ ] [STOPSIGNAL](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/STOPSIGNAL)
+- [x] [USER](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/USER)
+- [ ] [VOLUME](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/VOLUME)
+- [x] [WORKDIR](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Docker/dockerfile/INSTRUCTION/WORKDIR)
 # § Tips
 - [ ] [複数のdocker-compose間での通信]()
 https://medium.com/anti-pattern-engineering/%E8%A4%87%E6%95%B0%E3%81%AEdocker-compose%E9%96%93%E3%81%A7%E9%80%9A%E4%BF%A1%E3%81%99%E3%82%8B-4de7c6bf8bf7
