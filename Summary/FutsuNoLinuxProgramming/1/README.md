@@ -83,6 +83,8 @@ argv[0]には実行したプログラム名が格納されます。
 ```c
 /* File Name: args.c */
 /* Prog Name: args.o */
+#include <stdio.h>
+#include <stdlib.h>
 int main(int argc, char* argv[])
 {
   int i;
