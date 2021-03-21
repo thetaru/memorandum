@@ -15,3 +15,24 @@ gccのバージョンを確認します。
 ```
 $ gcc --version
 ```
+## 1.3 gccを使ったビルド(1)
+いつもどおりHello Worldを出力するプログラムを作ります。
+```c
+/* File Name: hello.c */
+#include <stdio.h>
+
+int main(int argc, char* argv[])
+{
+  printf("Hello World\n");
+  return 0;
+}
+```
+このファイルをビルドします。
+```
+$ gcc hello.c -o hello.o
+```
+出力されたプログラムを実行します。
+```
+$ ./hello.o
+```
+実行するとHello Worldを出力します。
