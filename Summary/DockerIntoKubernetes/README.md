@@ -5,9 +5,9 @@
 構築方法は[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/k8s/Install)を参照してください。
 
 ## 1章 DockerとKybernetesの概要
-### 1 [Kubernetesとは?](https://github.com/thetaru/memorandum/tree/master/Summary/DockerIntoKubernetes/about_kubernetes)
-### 2 [コンテナの理解が前提]()
-### 3 [Kubernetesの基本]()
+### 1 [Kubernetesとは?](https://github.com/thetaru/memorandum/tree/master/Summary/DockerIntoKubernetes/1)
+### 2 [コンテナの理解が前提](https://github.com/thetaru/memorandum/tree/master/Summary/DockerIntoKubernetes/2)
+### 3 [Kubernetesの基本](https://github.com/thetaru/memorandum/tree/master/Summary/DockerIntoKubernetes/3)
 ## 2章 コンテナ開発を習得する5ステップ
 ### Step 01 [コンテナ最初の一歩]()
 ### Step 02 [コンテナの操作]()
