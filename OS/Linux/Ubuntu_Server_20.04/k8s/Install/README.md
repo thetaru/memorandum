@@ -10,6 +10,16 @@
 ```
 $ sudo swapoff -a
 ```
+```
+$ sudo vi /etc/fstab
+```
+```
+-  /swap.img none swap sw 0 0
++  #/swap.img none swap sw 0 0
+```
+```
+$ rm /swap.img
+```
 # § docker Install
 ```
 $ sudo apt-get update
