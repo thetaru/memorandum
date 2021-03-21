@@ -100,15 +100,4 @@ int main(int argc, char* argv[])
 }
 ```
 ### ■ 実験
-まずはビルドします。
-```
-$ gcc args.c -o args.o
-```
-実行してみましょう。
-```
-$ ./args.o x
-$ ./args.o x y z
-$ ./args.o "z y z"
-$ ./args.o *.c
-$ ./args.o "*.c"
-```
+特になし。ビルドして実行するだけ。
