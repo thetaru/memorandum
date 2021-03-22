@@ -78,4 +78,6 @@ https://qiita.com/ttsubo/items/40162f5001a8c95040d9
 https://teratail.com/questions/157702
 - [ ] [DockerのDNSについて]()
 https://tenzen.hatenablog.com/entry/2020/02/13/193228  
-Docker network内での内々の名前解決はできるけど外部ネットワークの名前解決はできないので解決したいよねってこと
+Docker network内での内々の名前解決はできるけど外部ネットワークの名前解決はできないので解決したいよねってこと  
+https://gist.github.com/miliya612/ac13a1f0e09de78c1ec40516af6e8f8b
+
