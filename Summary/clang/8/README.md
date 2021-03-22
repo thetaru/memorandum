@@ -588,11 +588,8 @@ int main()
     exit(1);
   }
 
-  for (;;) {
-    ch = fgetc( fp );
-    if ( ch == EOF ) {
-      break;
-    }
+  while ( !feof( fp ) ) {
+    fgetc( fp );
 
     if ( (char)ch == '\n' ) {
       line_num++;
