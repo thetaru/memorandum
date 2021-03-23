@@ -16,6 +16,6 @@
 ## ふ
 - [ ] [ふつうのLinuxプログラミング](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming)
 - [ ] [ポインタ完全マスター]()
-- [ ] [プログラマのためのDocker教科書](https://github.com/thetaru/memorandum/tree/master/Summary/programmer_docker)
+- [ ] [プログラマのためのDockerの教科書](https://github.com/thetaru/memorandum/tree/master/Summary/programmer_docker)
 ## わ
 - [ ] [わかりみSQL](https://github.com/thetaru/memorandum/tree/master/Summary/wakarimi_SQL)
