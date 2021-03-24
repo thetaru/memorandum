@@ -14,6 +14,7 @@
 - [x] [repository](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/repository)
 - [ ] [(書きかけ)syslog](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/syslog)
 - [ ] [xfsファイルシステムのバックアップとリストア方法](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_backup)
+- [ ] [xfsクォータ](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_quota)
 - [ ] [xrdp](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xrdp)
 ## ■ Software Settings
 - [ ] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
