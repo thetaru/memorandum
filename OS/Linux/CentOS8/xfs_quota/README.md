@@ -11,5 +11,5 @@
 ## クォータ解除
 ```
 # xfs_quota -x -c "project -C TestProj" /quota
-# xfs_quota -x -c 'limit -p bsoft=0 bhard=0 foo' /quota
+# xfs_quota -x -c 'limit -p bsoft=0 bhard=0 TestProj' /quota
 ```
