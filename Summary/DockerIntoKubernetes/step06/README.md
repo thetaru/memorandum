@@ -62,19 +62,24 @@ Error from server (AlreadyExists): pods "hello-world" already exists
 ```
 kube-master:~/# kubectl get pod
 ```
-> NAME          READY   STATUS      RESTARTS   AGE
-> hello-world   0/1     Completed   0          5m8s
-
+```
+NAME          READY   STATUS      RESTARTS   AGE  
+hello-world   0/1     Completed   0          5m8s
+```
 終了した(Completed)ポッドが残っていることがわかります。  
 それではポッドを削除して、もう一度実行できることを確認しましょう。
 ```
 kube-master:~/# kubectl delete pod hello-world
 ```
-> pod "hello-world" deleted
+```
+pod "hello-world" deleted
+```
 ```
 kube-master:~/# kubectl get pod
 ```
-> No resources found in default namespace.
+```
+No resources found in default namespace.
+```
 ```
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never
 ```
