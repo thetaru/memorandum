@@ -93,3 +93,11 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 <以下省略>
 ```
+```
+### ポッドの削除
+kube-master:~/# kubectl delete pod hello-world
+```
+終了したポッドを自動削除するオプション`--rm`があるので使ってみます。
+```
+kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never --rm
+```
