@@ -22,6 +22,7 @@ kube-node02   Ready    <none>                 13d   v1.20.4
 ```
 k8sクラスタの稼働を確認できたら次に進みます。
 ## 6.2 ポッドの実行
+### 6.2.1 hello-worldポッドの実行
 ポッドはk8sにおけるコンテナの最小実行単位です。  
 k8sでhello-worldコンテナを実行してみます。
 ```
@@ -51,7 +52,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 ```
-もう一度ポッドとしてコンテナを起動してみると(既にポッドが存在するため)エラーが出力されます。  
+もう一度ポッドを起動してみると(既にポッドが存在するため)エラーが出力されます。  
 ```
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never
 ```
