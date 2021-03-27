@@ -67,7 +67,8 @@ NAME          READY   STATUS      RESTARTS   AGE
 hello-world   0/1     Completed   0          5m8s
 ```
 終了した(Completed)ポッドが残っていることがわかります。  
-それではポッドを削除して、もう一度実行できることを確認しましょう。
+  
+それではポッドを削除して、もう一度実行できることを確認します。
 ```
 kube-master:~/# kubectl delete pod hello-world
 ```
@@ -82,4 +83,10 @@ No resources found in default namespace.
 ```
 ```
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never
+```
+```
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+<以下省略>
 ```
