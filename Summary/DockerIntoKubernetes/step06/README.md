@@ -52,6 +52,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 ```
+## 6.2.2 hello-worldポッドの再実行
 もう一度ポッドを起動してみると(既にポッドが存在するため)エラーが出力されます。  
 ```
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never
@@ -94,6 +95,7 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 <以下省略>
 ```
+## 6.2.3 ポッドの自動削除
 終了したポッドを自動削除するオプション`--rm`があるので使ってみます。(実行済みのhello-worldポッドは削除してください。)
 ```
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never --rm
