@@ -7,5 +7,5 @@ key: value
 ### python
 ```python
 data = dict()
-data['key'] = value
+data['key'] = 'value'
 ```
