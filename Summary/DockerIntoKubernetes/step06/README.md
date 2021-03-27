@@ -70,18 +70,21 @@ hello-world   0/1     Completed   0          5m8s
   
 それではポッドを削除して、もう一度実行できることを確認します。
 ```
+### ポッドの削除
 kube-master:~/# kubectl delete pod hello-world
 ```
 ```
 pod "hello-world" deleted
 ```
 ```
+### ポッドの表示
 kube-master:~/# kubectl get pod
 ```
 ```
 No resources found in default namespace.
 ```
 ```
+### ポッドの実行
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never
 ```
 ```
