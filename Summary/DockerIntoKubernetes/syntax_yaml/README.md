@@ -20,3 +20,16 @@ metadata:
 data = dict()
 data['metadata'] = {'key':'value'}
 ```
+## Syntax - 配列
+### yaml
+```yaml
+animals:
+  - dog
+  - cat
+  - bird
+```
+### python
+```python
+data = dict()
+data['animals'] = ['dog', 'cat', 'bird']
+```
