@@ -100,3 +100,11 @@ This message shows that your installation appears to be working correctly.
 ```
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never --rm
 ```
+```
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+<以下省略>
+
+pod "hello-world" deleted
+```
