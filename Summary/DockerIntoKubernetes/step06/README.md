@@ -105,6 +105,15 @@ kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 <以下省略>
-
 pod "hello-world" deleted
+```
+## 6.2.4 ポッドのバックグラウンド実行とログ表示
+`-it`オプションを省略してポッドを実行すると、バックグランドで実行されます。
+```
+kube-master:~/# kubectl run hello-world --image=hello-world --restart=Never
+```
+ポッドのコンテナが実行中に出力した内容は、標準出力に書き出させログとして保存されます。  
+`kubectl logs <ポッド名>`でログを確認できます。
+```
+kube-master:~/# kubectl logs hello-world
 ```
