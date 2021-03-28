@@ -193,7 +193,7 @@ spec:
         - mountPath: /docs    # 共有ボリュームのマウントポイント
           name: data-vol
           readOnly: false
-          
+
   initContainers:             # メインコンテナ実行前に初期化専用コンテナが動作する
     - name: init
       image: alpine
@@ -204,7 +204,8 @@ spec:
         - mountPath: /mnt     # 共有ボリュームのマウントポイント
           name: data-vol
           readOnly: false
-      volumes:                # ポッド上の共有ボリューム
-        - name; data-vol
-          emptyDir: {}
+
+  volumes:                    # ポッド上の共有ボリューム
+    - name; data-vol
+      emptyDir: {}
 ```
