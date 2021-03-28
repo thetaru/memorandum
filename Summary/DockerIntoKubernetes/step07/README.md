@@ -123,6 +123,54 @@ kube-master:~# kubectl get pod
 kube-master:~# kubectl logs webapl
 ```
 ```
+GET /healthz 200    ## LivenessProbeからアクセスがあったログ
+GET /healthz 200    ## 間隔は5秒
+GET /healthz 200
+GET /ready 500      ## ReadinessProbeは20秒経過しておらず500を応答(失敗)
+GET /healthz 200
+GET /ready 200      ## 6秒後のReadinessProbeは成功なのでREADY 1/1に遷移、準備完了
+```
+```
 ### ポッドの詳細表示
 kube-master:~# kubectl describe pod webapl
+```
+```
+Name:         webapl
+Namespace:    default
+Priority:     0
+Node:         kube-node02/192.168.137.4
+Start Time:   Sun, 28 Mar 2021 11:27:41 +0000
+Labels:       <none>
+Annotations:  <none>
+Status:       Running
+IP:           10.244.2.29
+IPs:
+  IP:  10.244.2.29
+Containers:
+  webapl:
+    Container ID:   docker://3f7118e5724d1cebdbb43f00db20f734aba6edd9176443d68994bcb51295cdef
+    Image:          alallilianan/webapl:0.1
+    Image ID:       docker-pullable://alallilianan/webapl@sha256:78d5cabb2339cf7154dfc089865461446daa57f28129d7d45f445dab9dfbb05d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sun, 28 Mar 2021 11:28:21 +0000
+    Ready:          True    ### ReadinessProbeが成功したためTrueとなる
+    Restart Count:  0       ### 以下、プローブの設定内容
+    Liveness:       http-get http://:3000/healthz delay=3s timeout=1s period=5s #success=1 #failure=3
+    Readiness:      http-get http://:3000/ready delay=15s timeout=1s period=6s #success=1 #failure=3
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-b76qc (ro)
+<中略>
+Events:
+  Type     Reason     Age              From               Message
+  ----     ------     ----             ----               -------
+  Normal   Scheduled  91s              default-scheduler  Successfully assigned default/webapl to kube-node02
+  Normal   Pulling    85s              kubelet            Pulling image "alallilianan/webapl:0.1"
+  Normal   Pulled     57s              kubelet            Successfully pulled image "alallilianan/webapl:0.1" in 28.075762918s
+  Normal   Created    53s              kubelet            Created container webapl
+  Normal   Started    51s              kubelet            Started container webapl
+  Warning  Unhealthy  35s              kubelet            Readiness probe failed: HTTP probe failed with statuscode: 500
+  Warning  Unhealthy  2s (x2 over 7s)  kubelet            Liveness probe failed: HTTP probe failed with statuscode: 500
 ```
