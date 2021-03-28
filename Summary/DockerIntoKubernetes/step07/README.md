@@ -96,7 +96,6 @@ spec:
           port: 3000
         initialDelaySeconds: 15
         periodSeconds: 6
-  imagePullPolicy: IfNotPresent      # ローカルのイメージをyamlで起動するため
 ```
 実際にコンテナを起動してプローブの動作を見ていきます。  
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step07/hc-probe)からもろもろ持ってきてください。
