@@ -52,8 +52,8 @@ web-deploy-86cd4d65b9   3         3         3       2m11s
 kube-master:~/# kubectl get pod
 ```
 ```
-NAME                          READY   STATUS    RESTARTS   AGE
-web-deploy-86cd4d65b9-cg7nw   1/1     Running   0          3m9s
-web-deploy-86cd4d65b9-rc9wj   1/1     Running   0          3m9s
-web-deploy-86cd4d65b9-w8nzn   1/1     Running   0          3m9s
+NAME                          READY   STATUS    RESTARTS   AGE    IP            NODE          NOMINATED NODE   READINESS GATES
+web-deploy-86cd4d65b9-cg7nw   1/1     Running   0          4m2s   10.244.2.33   kube-node02   <none>           <none>
+web-deploy-86cd4d65b9-rc9wj   1/1     Running   0          4m2s   10.244.2.32   kube-node02   <none>           <none>
+web-deploy-86cd4d65b9-w8nzn   1/1     Running   0          4m2s   10.244.1.19   kube-node01   <none>           <none>
 ```
