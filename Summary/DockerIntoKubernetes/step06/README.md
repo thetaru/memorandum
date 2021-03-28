@@ -302,3 +302,4 @@ job-2-6l8kz         0/1     Error       0          34s
 job-2-c754f         0/1     Error       0          117s
 job-2-wf7pr         0/1     Error       0          65s
 ```
+job-1はジョブが完了していますが、job-2はリトライを繰り返していることがわかります。
