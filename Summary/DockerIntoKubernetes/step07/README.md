@@ -174,3 +174,37 @@ Events:
   Warning  Unhealthy  35s              kubelet            Readiness probe failed: HTTP probe failed with statuscode: 500
   Warning  Unhealthy  2s (x2 over 7s)  kubelet            Liveness probe failed: HTTP probe failed with statuscode: 500
 ```
+## 7.5 初期化専用コンテナ
+ポッドの中には、初期化専用のコンテナを組み込むことができます。  
+具体的には、リクエストを処理するコンテナと初期化だけに特化したコンテナで分けて開発します。
+```
+### FileName: init-sample.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-sample
+spec:
+  containers:
+    - name: mian
+      image: ubuntu
+      command: ["/bin/sh"]
+      args: ["-c", "tail -f /dev/null"]
+      volumeMounts:
+        - mountPath: /docs
+          name: data-vol
+          readOnly: false
+          
+  initContainers;
+    - name: init
+      image: alpine
+      ## 共有ボリュームにディレクトリを作成、オーナーを変更します
+      command: ["/bin/sh"]
+      args: ["-c", "mkdir /mnt/html; chown 33:33 /mnt/html"]
+      volumesMounts:
+        - mountPath: /mnt
+          name: data-vol
+          readOnly: false
+      volumes:
+        - name; data-vol
+          emptyDir: {}
+```
