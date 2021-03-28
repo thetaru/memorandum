@@ -185,3 +185,58 @@ deployment.apps "hello-world" deleted
 kube-master:~/# kubectl create deployment --image=nginx webserver
 kube-master:~/# kubectl scale deployment --replicas=2 webserver
 ```
+ポッドが5個作成されていることを確認します。
+```
+kube-master:~/# kubectl get deployment,pod
+```
+```
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/webserver   5/5     5            5           2m
+
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/webserver-559b886555-2dbtm   1/1     Running   0          106s
+pod/webserver-559b886555-bnwn7   1/1     Running   0          106s
+pod/webserver-559b886555-d9fpz   1/1     Running   0          119s
+pod/webserver-559b886555-qknhc   1/1     Running   0          107s
+pod/webserver-559b886555-zmj8c   1/1     Running   0          106s
+```
+## 6.3.6 デプロイメントによるポッドの自己回復
+ポッドを強制終了させても自己回復することを確認します。
+```
+### ポッドの削除
+kube-master:~/# kubectl delete pod webserver-559b886555-2dbtm webserver-559b886555-bnwn7
+```
+```
+pod "webserver-559b886555-2dbtm" deleted
+pod "webserver-559b886555-bnwn7" deleted
+```
+ポッドが削除されていることが確認できます。
+```
+kube-master:~/# kubectl get deployment,pod
+```
+```
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/webserver   3/5     5            3           5m16s
+
+NAME                             READY   STATUS              RESTARTS   AGE
+pod/webserver-559b886555-d9fpz   1/1     Running             0          5m15s
+pod/webserver-559b886555-dd8bh   0/1     ContainerCreating   0          28s
+pod/webserver-559b886555-qknhc   1/1     Running             0          5m3s
+pod/webserver-559b886555-zfnb8   0/1     ContainerCreating   0          27s
+pod/webserver-559b886555-zmj8c   1/1     Running             0          5m2s
+```
+ポッドが自己回復していることが確認できます。
+```
+kube-master:~/# kubectl get deployment,pod
+```
+```
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/webserver   5/5     5            5           7m1s
+
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/webserver-559b886555-d9fpz   1/1     Running   0          7m
+pod/webserver-559b886555-dd8bh   1/1     Running   0          2m13s
+pod/webserver-559b886555-qknhc   1/1     Running   0          6m48s
+pod/webserver-559b886555-zfnb8   1/1     Running   0          2m12s
+pod/webserver-559b886555-zmj8c   1/1     Running   0          6m47s
+```
