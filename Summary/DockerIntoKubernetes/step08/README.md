@@ -130,6 +130,72 @@ Selector:               app=web
 Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
 StrategyType:           RollingUpdate
 MinReadySeconds:        0
-**RollingUpdateStrategy:  25% max unavailable, 25% max surge**
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
 <以下省略>
+```
+`RollingUpdateStrategy`が重要で停止ポッドの許容台数とポッドの稼働数超過(新旧ポッド)の許容台数がわかります。  
+編集したマニフェストを適用してロールアウトを実施します。
+```
+### ロールアウトの実施
+kube-master:~/# kubectl apply -f deployment3.yaml
+```
+```
+deployment.apps/web-deploy configured
+```
+ロールアウト中の様子を確認します。  
+`RollingUpdateStarategy`に沿って入れ替わっていくのがわかります。
+```
+kube-master:~/# kubectl get pod
+```
+```
+NAME                          READY   STATUS              RESTARTS   AGE
+web-deploy-7675fc7857-25zdh   1/1     Running             0          48s
+web-deploy-7675fc7857-2l7gw   0/1     ContainerCreating   0          54s
+web-deploy-7675fc7857-7ldgt   0/1     ContainerCreating   0          2m38s
+web-deploy-7675fc7857-927p5   1/1     Running             0          2m48s
+web-deploy-7675fc7857-g5vsv   1/1     Running             0          2m49s
+web-deploy-7675fc7857-q295s   0/1     ContainerCreating   0          2m48s
+web-deploy-7675fc7857-xb96f   0/1     ContainerCreating   0          2m39s
+web-deploy-86cd4d65b9-mbq49   1/1     Running             0          2m49s
+web-deploy-86cd4d65b9-mfvjd   1/1     Running             0          33m
+web-deploy-86cd4d65b9-mm9g9   1/1     Terminating         0          2m49s
+web-deploy-86cd4d65b9-pzmk2   1/1     Running             0          2m50s
+web-deploy-86cd4d65b9-ql8x6   1/1     Running             0          33m
+web-deploy-86cd4d65b9-w8nzn   1/1     Running             0          46m
+```
+最終的に古いポッドは削除されます。
+## 8.4 ロールバック機能
+k8sでのロールバックは、ロールアウト前の古いコンテナへ戻すためにポッドを入れ替えることを指します。  
+ロールバックでも、ロールアウト同様にクライアントからのリクエストを処理しながら、ポッドを入れ替えます。  
+データリカバリは別に考慮する必要があります。
+## 8.4.1 ロールバックの実施
+```
+kube-master:~/# kubectl rollout undo deployment web-deploy
+```
+```
+deployment.apps/web-deploy rolled back
+```
+ロールバック中の様子を確認します。 
+```
+kube-master:~/# kubectl get pod
+```
+```
+NAME                          READY   STATUS              RESTARTS   AGE
+web-deploy-7675fc7857-25zdh   1/1     Terminating         0          23m
+web-deploy-7675fc7857-2l7gw   1/1     Terminating         0          23m
+web-deploy-7675fc7857-7ldgt   1/1     Terminating         0          25m
+web-deploy-7675fc7857-927p5   1/1     Running             0          25m
+web-deploy-7675fc7857-g5vsv   1/1     Running             0          25m
+web-deploy-7675fc7857-q295s   1/1     Running             0          25m
+web-deploy-7675fc7857-xb96f   1/1     Running             0          25m
+web-deploy-7675fc7857-xpwff   1/1     Terminating         0          23m
+web-deploy-86cd4d65b9-8rsvg   1/1     Running             0          95s
+web-deploy-86cd4d65b9-ch588   1/1     Running             0          102s
+web-deploy-86cd4d65b9-f289f   1/1     Running             0          102s
+web-deploy-86cd4d65b9-gssnc   0/1     ContainerCreating   0          25s
+web-deploy-86cd4d65b9-hsknp   0/1     ContainerCreating   0          7s
+web-deploy-86cd4d65b9-l6c7g   0/1     ContainerCreating   0          96s
+web-deploy-86cd4d65b9-shp4w   0/1     ContainerCreating   0          34s
+web-deploy-86cd4d65b9-xfsrn   1/1     Running             0          102s
+web-deploy-86cd4d65b9-z48mv   0/1     ContainerCreating   0          13s
 ```
