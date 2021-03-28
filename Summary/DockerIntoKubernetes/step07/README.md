@@ -213,5 +213,18 @@ spec:
 kube-master:~# kubectl get pod
 ```
 ```
+NAME          READY   STATUS    RESTARTS   AGE
+init-sample   1/1     Running   0          39s
+```
+```
 kube-master:~# kubectl exec -it init-sample -c main --- sh
+```
+```
+# ls -al /docs
+```
+```total 12
+drwxrwxrwx 3 root     root     4096 Mar 28 12:08 .
+drwxr-xr-x 1 root     root     4096 Mar 28 12:08 ..
+drwxr-xr-x 2 www-data www-data 4096 Mar 28 12:08 html
+
 ```
