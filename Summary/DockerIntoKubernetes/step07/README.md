@@ -101,6 +101,8 @@ spec:
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step07/hc-probe)からもろもろ持ってきてください。
 ```
 kube-master:~# docker build --tag alallilianan/webapl:0.1 .
+kube-master:~# docker login
+kube-master:~# docker push alallilianan/webapl:0.1
 kube-master:~# kubectl apply -f webapl-pod.yaml
 kube-master:~# kubectl get pod
 ```
