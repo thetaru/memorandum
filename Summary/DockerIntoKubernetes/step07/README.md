@@ -97,3 +97,4 @@ spec:
         initialDelaySeconds: 15
         periodSeconds: 6
 ```
+実際にコンテナを起動してプローブの動作を見ていきます。
