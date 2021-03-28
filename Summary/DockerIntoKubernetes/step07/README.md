@@ -185,26 +185,26 @@ metadata:
   name: init-sample
 spec:
   containers:
-    - name: mian
+    - name: main              # メインコンテナ
       image: ubuntu
       command: ["/bin/sh"]
       args: ["-c", "tail -f /dev/null"]
       volumeMounts:
-        - mountPath: /docs
+        - mountPath: /docs    # 共有ボリュームのマウントポイント
           name: data-vol
           readOnly: false
           
-  initContainers;
+  initContainers:             # メインコンテナ実行前に初期化専用コンテナが動作する
     - name: init
       image: alpine
       ## 共有ボリュームにディレクトリを作成、オーナーを変更します
       command: ["/bin/sh"]
       args: ["-c", "mkdir /mnt/html; chown 33:33 /mnt/html"]
       volumesMounts:
-        - mountPath: /mnt
+        - mountPath: /mnt     # 共有ボリュームのマウントポイント
           name: data-vol
           readOnly: false
-      volumes:
+      volumes:                # ポッド上の共有ボリューム
         - name; data-vol
           emptyDir: {}
 ```
