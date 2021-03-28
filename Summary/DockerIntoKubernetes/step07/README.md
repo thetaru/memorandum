@@ -103,6 +103,7 @@ spec:
 kube-master:~# docker build --tag alallilianan/webapl:0.1 .
 kube-master:~# docker login
 kube-master:~# docker push alallilianan/webapl:0.1
+kube-master:~# cd ../
 kube-master:~# kubectl apply -f webapl-pod.yaml
 kube-master:~# kubectl get pod
 ```
