@@ -127,4 +127,7 @@ This message shows that your installation appears to be working correctly.
 <以下省略>
 ```
 ## 6.3 コントラーラによるポッドの実行
-`kubectl run`のオプションを変更することにより、ポッドをデプロイメントコントローラの制御化で実行することもできます。(`--restart=Always`)
+`kubectl run`のオプションを変更することにより、ポッドをデプロイメントコントローラの制御化で実行することもできます。
+```
+kube-master:~/# kubectl create deployment --image hello-world hello-world
+```
