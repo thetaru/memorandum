@@ -38,3 +38,21 @@ kube-master:~# kubectl get pod
 NAME    READY   STATUS    RESTARTS   AGE
 nginx   1/1     Running   0          29s
 ```
+このポッドはバックグランドで起動しており、クラスタネットワーク上で動作しています。  
+クラスタネットワークは、k8sクラスタを構築するノード間で通信するための閉じたネットワークです。
+```
+kube-master:~# kubectl get pod nginx -o wide
+```
+```
+NAME    READY   STATUS    RESTARTS   AGE   IP            NODE          NOMINATED NODE   READINESS GATES
+nginx   1/1     Running   0          52m   10.244.2.21   kube-node02   <none>           <none>
+```
+## 7.4 ポッドのヘルスチェック
+k8sではノードに常駐するkubeletがコンテナのヘルスチェックを担当する。  
+kubeletのヘルスチェックでは、次の2種類のプローブを使用して、実行中ポッドのコンテナを検査します。
+- 活性プローブ
+> コンテナのアプリケーションが実行中であることを探査します。
+> 失敗した場合はポッド上のコンテナを強制終了して再スタートさせます。
+> マニフェストにこのプローブの設定がない場合は、アプリケーションの実行を探査しません。
+
+- 準備状態プローブ
