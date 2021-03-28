@@ -100,5 +100,7 @@ spec:
 実際にコンテナを起動してプローブの動作を見ていきます。  
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step07/hc-probe)からもろもろ持ってきてください。
 ```
-kube-master:~# 
+kube-master:~# docker build --tag webapl:0.1 .
+kube-master:~# kubectl apply -f webapl-pod.yaml
+kube-master:~# kubectl get pod
 ```
