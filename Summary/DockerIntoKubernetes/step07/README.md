@@ -83,7 +83,7 @@ metadata:
 spec:
   containers:
     - name: webapl
-      image: webapl:0.1              # (1) ハンドラ実装済みアプリケーション
+      image: alallilianan/webapl:0.1              # (1) ハンドラ実装済みアプリケーション
       livenessProbe:                 # (2) 活性プローブに対するハンドラ設定
         httpGet:
           path: /healthz
@@ -100,7 +100,7 @@ spec:
 実際にコンテナを起動してプローブの動作を見ていきます。  
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step07/hc-probe)からもろもろ持ってきてください。
 ```
-kube-master:~# docker build --tag webapl:0.1 .
+kube-master:~# docker build --tag alallilianan/webapl:0.1 .
 kube-master:~# kubectl apply -f webapl-pod.yaml
 kube-master:~# kubectl get pod
 ```
