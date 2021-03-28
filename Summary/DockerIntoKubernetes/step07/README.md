@@ -84,7 +84,7 @@ spec:
   containers:
     - name: webapl
       image: webapl:0.1              # (1) ハンドラ実装済みアプリケーション
-      imagePullPolicy: IfNotPresent
+      imagePullPolicy: IfNotPresent  # ローカルのイメージをyamlで起動するため
       livenessProbe:                 # (2) 活性プローブに対するハンドラ設定
         httpGet:
           path: /healthz
