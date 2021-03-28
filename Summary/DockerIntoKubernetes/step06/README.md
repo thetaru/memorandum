@@ -127,6 +127,7 @@ This message shows that your installation appears to be working correctly.
 <以下省略>
 ```
 ## 6.3 コントラーラによるポッドの実行
+## 6.3.1 kubectlによるデプロイメントの実行
 `kubectl run`のオプションを変更することにより、ポッドをデプロイメントコントローラの制御化で実行することもできます。  
 ポッドが停止したときに再スタートするようになります。
 ```
@@ -135,6 +136,7 @@ kube-master:~/# kubectl create deployment --image hello-world hello-world
 ```
 deployment.apps/hello-world created
 ```
+## 6.3.2 デプロイメントの実行状態のリスト表示
 次にデプロイメントが作成するオブジェクトのすべてを表示します。
 ```
 kube-master:~/# kubectl get all
@@ -151,4 +153,24 @@ deployment.apps/hello-world   0/1     1            0           81s
 
 NAME                                    DESIRED   CURRENT   READY   AGE
 replicaset.apps/hello-world-d758f5675   1         1         0       81s
+```
+## 6.3.3 ポッドのログ出力
+コンテナのメッセージ出力は、`kubectl logs <ポッド名>`で取得できます。  
+上で作成したポッドのログを出力してみます。
+```
+kube-master:~/# pod/hello-world-d758f5675-57dgf
+```
+## 6.3.4 デプロイメントの削除
+```
+kube-master:~/# kubectl get deployment
+```
+```
+NAME          READY   UP-TO-DATE   AVAILABLE   AGE
+hello-world   0/1     1            0           18m
+```
+```
+kube-master:~/# kubectl delete deployment hello-world
+```
+```
+deployment.apps "hello-world" deleted
 ```
