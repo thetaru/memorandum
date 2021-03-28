@@ -240,3 +240,10 @@ pod/webserver-559b886555-qknhc   1/1     Running   0          6m48s
 pod/webserver-559b886555-zfnb8   1/1     Running   0          2m12s
 pod/webserver-559b886555-zmj8c   1/1     Running   0          6m47s
 ```
+ポッド名のハッシュ文字列が変わっていることがわかります。(やっていることは自己回復というよりは新規作成です。)
+## 6.3.7 デプロイメントの削除
+クリーンナップには次のコマンドを実行します。  
+デプロイメント、レプリカセット、ポッドといったオブジェクトを一括削除します。
+```
+kube-master:~/# kubectl delete deployment webserver
+```
