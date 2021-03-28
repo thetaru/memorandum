@@ -161,7 +161,9 @@ replicaset.apps/hello-world-d758f5675   1         1         0       81s
 kube-master:~/# pod/hello-world-d758f5675-57dgf
 ```
 ## 6.3.4 デプロイメントの削除
+デプロイメントの削除は、`kubectl delete deployment <オブジェクト名>`で実施できます。
 ```
+### オブジェクト名の確認
 kube-master:~/# kubectl get deployment
 ```
 ```
@@ -169,8 +171,16 @@ NAME          READY   UP-TO-DATE   AVAILABLE   AGE
 hello-world   0/1     1            0           18m
 ```
 ```
+### デプロイメントの削除
 kube-master:~/# kubectl delete deployment hello-world
 ```
 ```
 deployment.apps "hello-world" deleted
+```
+## 6.3.5 Nginxのデプロイメント
+5個のNginxのポッドを起動します。  
+仮にポッドの一つがクラッシュしても、デプロイメントは稼働数5を維持するようにポッド数を制御します。
+```
+kube-master:~/# kubectl create deployment --image=nginx webserver
+kube-master:~/# kubectl scale deployment --replicas=2 webserver
 ```
