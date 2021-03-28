@@ -69,18 +69,18 @@ replicasの値を変更して、ポッド数を増減することで、処理能
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-deploy      # デプロイメント名
+  name: web-deploy
 spec:
-  replicas: 10          # ポッドテンプレートからポッドを起動する数(3から10へ変更)
+  replicas: 10          # 3から10へ変更
   selector:
-    matchLabels:        # コントローラとポッドを対応付けるラベルを指定
-      app: web          # ポッドは、このラベルと一致する必要あり
-  template:             # template以下がポッドテンプレートで、雛形となる仕様を記述
+    matchLabels:
+      app: web
+  template:
     metadata:
       labels:
-        app: web        # ポッドのラベル、コントローラのmatchLabelsと一致させる必要あり
+        app: web
     spec:
-      containers:       # コンテナの仕様
+      containers:
         - name: nginx
           image: nginx:latest
 ```
