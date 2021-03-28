@@ -73,6 +73,7 @@ kubeletのヘルスチェックでは、次の2種類のプローブを使用し
 |httpGet|指定したポートとパスに、HTTP GETが定期実行されます。</br>HTTPステータスコードが200以上400未満では成功とみなされ、それ以外は失敗とみなされます。</br>指定ポートが開いていない場合も失敗となります。|
 
 ## 7.4.3 ヘルスチェックの設定例
+デフォルトの設定では、活性ブローブが3回連続で失敗すると、kubeletがコンテナを強制終了して再スタートさせます。
 ```
 ### FileName: webpal-pod.yaml
 apiVersion: v1
@@ -82,14 +83,14 @@ metadata:
 spec:
   containers:
     - name: webapl
-      image: maho/webapl:0.1
-      livenessProbe:
+      image: maho/webapl:0.1    # (1) ハンドラ実装済みアプリケーション
+      livenessProbe:            # (2) 活性プローブに対するハンドラ設定
         httpGet:
           path: /healthz
           port: 3000
-        initialDelaySeconds: 3
-        periodSeconds: 5
-      readinessProbe:
+        initialDelaySeconds: 3  # 初回起動から探査開始までの猶予時間
+        periodSeconds: 5        # チェック感覚
+      readinessProbe:           # (3) 準備活性プローブに対するハンドラ設定
         httpGet:
           path: /ready
           port: 3000
