@@ -181,6 +181,7 @@ deployment.apps "hello-world" deleted
 5個のNginxのポッドを起動します。  
 仮にポッドの一つがクラッシュしても、デプロイメントは稼働数5を維持するようにポッド数を制御します。
 ```
+### デプロイメントを作成後にスケール
 kube-master:~/# kubectl create deployment --image=nginx webserver
 kube-master:~/# kubectl scale deployment --replicas=2 webserver
 ```
