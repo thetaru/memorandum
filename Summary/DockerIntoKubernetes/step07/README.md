@@ -70,4 +70,29 @@ kubeletのヘルスチェックでは、次の2種類のプローブを使用し
 |:---|:---|
 |exec|コンテナ内のコマンドを実行する。</br>終了コードが0で終了すると、診断結果は成功とみなされます。</br>終了コードが0以外の場合の値では失敗とみなされます。|
 |tcpSocket|指定したTCPポート番号にコネクトできれば、診断結果は成功とみなされます。|
-|httpGet|指定したポートとパスに、HTTP GETが定期実行されます。</br>HTTPステータスコードが200以上400未満では成功とみなされ、それ以外は失敗とみなされます。</br>指定ポートが開いていない場合も失敗とみなされます。|
+|httpGet|指定したポートとパスに、HTTP GETが定期実行されます。</br>HTTPステータスコードが200以上400未満では成功とみなされ、それ以外は失敗とみなされます。</br>指定ポートが開いていない場合も失敗となります。|
+
+## 7.4.3 ヘルスチェックの設定例
+```
+### FileName: webpal-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapl
+spec:
+  containers:
+    - name: webapl
+      image: maho/webapl:0.1
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 3000
+        initialDelaySeconds: 3
+        periodSeconds: 5
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 3000
+        initialDelaySeconds: 15
+        periodSeconds: 6
+```
