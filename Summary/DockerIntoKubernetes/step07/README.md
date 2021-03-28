@@ -200,7 +200,7 @@ spec:
       ## 共有ボリュームにディレクトリを作成、オーナーを変更します
       command: ["/bin/sh"]
       args: ["-c", "mkdir /mnt/html; chown 33:33 /mnt/html"]
-      volumesMounts:
+      volumeMounts:
         - mountPath: /mnt     # 共有ボリュームのマウントポイント
           name: data-vol
           readOnly: false
