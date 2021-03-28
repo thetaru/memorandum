@@ -83,14 +83,15 @@ metadata:
 spec:
   containers:
     - name: webapl
-      image: webapl:0.1    # (1) ハンドラ実装済みアプリケーション
-      livenessProbe:            # (2) 活性プローブに対するハンドラ設定
+      image: webapl:0.1              # (1) ハンドラ実装済みアプリケーション
+      imagePullPolicy: IfNotPresent
+      livenessProbe:                 # (2) 活性プローブに対するハンドラ設定
         httpGet:
           path: /healthz
           port: 3000
-        initialDelaySeconds: 3  # 初回起動から探査開始までの猶予時間
-        periodSeconds: 5        # チェック感覚
-      readinessProbe:           # (3) 準備活性プローブに対するハンドラ設定
+        initialDelaySeconds: 3       # 初回起動から探査開始までの猶予時間
+        periodSeconds: 5             # チェック感覚
+      readinessProbe:                # (3) 準備活性プローブに対するハンドラ設定
         httpGet:
           path: /ready
           port: 3000
