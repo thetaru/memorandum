@@ -99,3 +99,6 @@ spec:
 ```
 実際にコンテナを起動してプローブの動作を見ていきます。  
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step07/hc-probe)からもろもろ持ってきてください。
+```
+kube-master:~# 
+```
