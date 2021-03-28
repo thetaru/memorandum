@@ -112,3 +112,24 @@ web-deploy-86cd4d65b9-w8nzn   1/1     Running             0          13m
 ```
 kube-master:~/# kubectl scale --replicas=10 deployment web-deploy
 ```
+## 8.3 ロールアウト機能
+アプリケーションコンテナの更新を意味します。  
+ロールアウトを実行するには、事前に新しいイメージをビルドして、リポジトリへ追加登録しておかなければなりません。  
+新イメージのリポジトリ名とタグをマニフェストのimageの値にセットして、`kubectl apply -f`で再適用することでロールアウトが開始されます。
+## 8.3.1 ロールアウトの実行
+```
+kube-master:~/# kubectl describe deployment web-deploy
+```
+```
+Name:                   web-deploy
+Namespace:              default
+CreationTimestamp:      Sun, 28 Mar 2021 14:23:35 +0000
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=web
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+**RollingUpdateStrategy:  25% max unavailable, 25% max surge**
+<以下省略>
+```
