@@ -84,3 +84,31 @@ spec:
         - name: nginx
           image: nginx:latest
 ```
+マニフェストを適用します
+```
+kube-master:~/# kubectl apply -f deployment2.yaml
+```
+```
+deployment.apps/web-deploy configured
+```
+ポッド数が10へ増えていることを確認します。
+```
+kube-master:~/# kubectl get pod
+```
+```
+NAME                          READY   STATUS              RESTARTS   AGE
+web-deploy-86cd4d65b9-96bht   0/1     ContainerCreating   0          30s
+web-deploy-86cd4d65b9-9jc5b   0/1     ContainerCreating   0          31s
+web-deploy-86cd4d65b9-cg7nw   1/1     Running             0          13m
+web-deploy-86cd4d65b9-lzbrr   0/1     ContainerCreating   0          31s
+web-deploy-86cd4d65b9-mfvjd   0/1     ContainerCreating   0          31s
+web-deploy-86cd4d65b9-mj9kr   0/1     ContainerCreating   0          31s
+web-deploy-86cd4d65b9-ql8x6   0/1     ContainerCreating   0          30s
+web-deploy-86cd4d65b9-r7b8m   0/1     ContainerCreating   0          31s
+web-deploy-86cd4d65b9-rc9wj   1/1     Running             0          13m
+web-deploy-86cd4d65b9-w8nzn   1/1     Running             0          13m
+```
+同様の処理を`kubectl scale`を利用して実行できます。
+```
+kube-master:~/# kubectl scale --replicas=10 deployment web-deploy
+```
