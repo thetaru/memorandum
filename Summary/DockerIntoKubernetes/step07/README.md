@@ -99,11 +99,30 @@ spec:
 ```
 実際にコンテナを起動してプローブの動作を見ていきます。  
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step07/hc-probe)からもろもろ持ってきてください。
+## 7.4.4 コンテナをビルドしてプッシュする
 ```
+### ディレクトリをDockerfileのある場所に移りビルド
 kube-master:~# docker build --tag alallilianan/webapl:0.1 .
+```
+```
+### レジストリへログインしてプッシュ
 kube-master:~# docker login
 kube-master:~# docker push alallilianan/webapl:0.1
+```
+```
+### ディレクトリを移動しマニフェストを適用
 kube-master:~# cd ../
 kube-master:~# kubectl apply -f webapl-pod.yaml
+```
+```
+### ポッドが正常起動することを確認
 kube-master:~# kubectl get pod
+```
+```
+### ヘルスチェックの状態をコンテナのログから確認
+kube-master:~# kubectl logs webapl
+```
+```
+### ポッドの詳細表示
+kube-master:~# kubectl describe pod webapl
 ```
