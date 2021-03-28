@@ -132,3 +132,23 @@ This message shows that your installation appears to be working correctly.
 ```
 kube-master:~/# kubectl create deployment --image hello-world hello-world
 ```
+```
+deployment.apps/hello-world created
+```
+次にデプロイメントが作成するオブジェクトのすべてを表示します。
+```
+kube-master:~/# kubectl get all
+```
+```
+NAME                              READY   STATUS             RESTARTS   AGE
+pod/hello-world-d758f5675-57dgf   0/1     CrashLoopBackOff   2          80s
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   13d
+
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hello-world   0/1     1            0           81s
+
+NAME                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/hello-world-d758f5675   1         1         0       81s
+```
