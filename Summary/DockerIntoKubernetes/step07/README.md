@@ -83,7 +83,7 @@ metadata:
 spec:
   containers:
     - name: webapl
-      image: maho/webapl:0.1    # (1) ハンドラ実装済みアプリケーション
+      image: webapl:0.1    # (1) ハンドラ実装済みアプリケーション
       livenessProbe:            # (2) 活性プローブに対するハンドラ設定
         httpGet:
           path: /healthz
