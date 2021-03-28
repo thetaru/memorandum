@@ -96,7 +96,7 @@ This message shows that your installation appears to be working correctly.
 <以下省略>
 ```
 ## 6.2.3 ポッドの自動削除
-終了したポッドを自動削除するオプション`--rm`があるので使ってみます。(実行済みのhello-worldポッドは削除してください。)
+終了したポッドを自動削除するオプション`--rm`があります。(実行済みのhello-worldポッドは削除してください。)
 ```
 kube-master:~/# kubectl run hello-world --image=hello-world -it --restart=Never --rm
 ```
@@ -116,7 +116,7 @@ kube-master:~/# kubectl run hello-world --image=hello-world --restart=Never
 pod/hello-world created
 ```
 ポッドのコンテナが実行中に出力した内容は、標準出力に書き出させログとして保存されます。  
-`kubectl logs <ポッド名>`でログを確認できます。
+ログは`kubectl logs <ポッド名>`で確認します。
 ```
 kube-master:~/# kubectl logs hello-world
 ```
@@ -126,3 +126,5 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 <以下省略>
 ```
+## 6.3 コントラーラによるポッドの実行
+`kubectl run`のオプションを変更することにより、ポッドをデプロイメントコントローラの制御化で実行することもできます。(`--restart=Always`)
