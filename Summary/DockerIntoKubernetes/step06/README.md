@@ -247,3 +247,58 @@ pod/webserver-559b886555-zmj8c   1/1     Running   0          6m47s
 ```
 kube-master:~/# kubectl delete deployment webserver
 ```
+## 6.4 ジョブによるポッドの実行
+## 6.4.1 kubectlによるジョブ制御化でのポッドの実行
+```
+kube-master:~/# kubectl create job hello-world --image=hello-world
+```
+```
+job.batch/hello-world created
+```
+```
+kube-master:~/# kubectl get all
+```
+```
+NAME                    READY   STATUS              RESTARTS   AGE
+pod/hello-world-c8d87   0/1     ContainerCreating   0          6s
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   13d
+
+NAME                    COMPLETIONS   DURATION   AGE
+job.batch/hello-world   0/1           6s         7s
+```
+## 6.4.2 ポッドの終了コードによるコントローラの振る舞い
+ジョブはコンテナのプロセスのexit値で、成功か失敗を判定しています。  
+次の例で終了コードの違いでどう振る舞いが変わるのか確認します。
+```
+kube-master:~/# kubectl create job job-1 --image=ubuntu -- /bin/bash -c "exit 0"
+```
+```
+kube-master:~/# kubectl get jobs
+```
+```
+NAME          COMPLETIONS   DURATION   AGE
+job-1         0/1           4s         5s
+```
+```
+kube-master:~/# kubectl create job job-2 --image=ubuntu -- /bin/bash -c "exit 1"
+```
+```
+kube-master:~/# kubectl get jobs
+```
+```
+NAME          COMPLETIONS   DURATION   AGE
+job-1         1/1           44s        62s
+job-2         0/1           36s        36s
+```
+```
+kube-master:~# kubectl get pod
+```
+```
+NAME                READY   STATUS      RESTARTS   AGE
+job-1-6ggs2         0/1     Completed   0          2m23s
+job-2-6l8kz         0/1     Error       0          34s
+job-2-c754f         0/1     Error       0          117s
+job-2-wf7pr         0/1     Error       0          65s
+```
