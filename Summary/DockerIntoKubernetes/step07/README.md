@@ -209,3 +209,9 @@ spec:
     - name; data-vol
       emptyDir: {}
 ```
+```
+kube-master:~# kubectl get pod
+```
+```
+kube-master:~# kubectl exec -it init-sample -c main --- sh
+```
