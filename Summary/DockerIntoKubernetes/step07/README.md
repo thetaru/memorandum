@@ -209,14 +209,22 @@ spec:
     - name; data-vol
       emptyDir: {}
 ```
+マニフェストを適用して、初期化専用コンテナによって初期化されたボリュームをマウントしたメインコンテナを操作します。
 ```
+### マニフェストを適用
+kube-master:~# kubectl apply -f init-sample.yaml
+```
+```
+### 正常起動していることを確認
 kube-master:~# kubectl get pod
 ```
 ```
 NAME          READY   STATUS    RESTARTS   AGE
 init-sample   1/1     Running   0          39s
 ```
+ポッドには複数コンテナがある場合があるのでコンテナを指定してログインします。
 ```
+### 指定したコンテナにログイン
 kube-master:~# kubectl exec -it init-sample -c main --- sh
 ```
 ```
@@ -226,5 +234,4 @@ kube-master:~# kubectl exec -it init-sample -c main --- sh
 drwxrwxrwx 3 root     root     4096 Mar 28 12:08 .
 drwxr-xr-x 1 root     root     4096 Mar 28 12:08 ..
 drwxr-xr-x 2 www-data www-data 4096 Mar 28 12:08 html
-
 ```
