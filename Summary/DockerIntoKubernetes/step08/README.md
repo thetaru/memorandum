@@ -204,3 +204,101 @@ web-deploy-86cd4d65b9-z48mv   0/1     ContainerCreating   0          13s
 ポッドのIPアドレスは、イベントによって変わる場合と変わらない場合があります。  
 デプロイメント管理化のポッドを１つ削除して、自動回復した際にできたポッドには新しいIPアドレスが割り当てられています。
 ## 8.6 自己回復機能
+ポッド単独の自己回復機能とデプロイメントの自己回復機能は異なります。  
+ポッドはコンテナレベルの障害に対応する自己回復を担いますが、デプロイメントの自己回復機能はポッドが喪失するレベルの障害に対応するものです。  
+次の1〜5ステップは、ノード停止を想定した、自己回復機能を確認するための流れです。
+1. ポッドを単独で起動するマニフェストを作る。
+2. デプロイメントのマニフェストを作る。
+3. 上記2つのマニフェストをデプロイする。
+4. 単独ポッドが配置されたノードを停止して、自己回復の振る舞いを観察する。
+5. 再びノードを起動してポッドの状態を確認する。
+
+まずはポッドを単独で生成するマニフェストです。
+```
+### FileName: pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test1
+spec:
+  containers:
+    - name: busybox
+      image: budybox:1
+      command: ["sh", "-c", "sleep 3600; exit 0"]
+  restartPolicy: Always
+```
+次はデプロイメントからポッドを起動するマニフェストです。
+```
+### FileName: deployment4.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test2
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: test2
+  template:
+    metadata:
+      labels:
+        app: test2
+    spec:
+      containers:
+        - name: busybox
+          image: busybox:1
+          command: ["sh", "-c", "sleep 3600; exit 0"]
+```
+k8sクラスタへ作成したマニフェストを適用します。  
+クラスタを組めていることを確認します。
+```
+kube-master:~/# kubectl get node
+```
+```
+NAME          STATUS   ROLES                  AGE   VERSION
+kube-master   Ready    control-plane,master   15d   v1.20.4
+kube-node01   Ready    <none>                 15d   v1.20.4
+kube-node02   Ready    <none>                 15d   v1.20.4
+```
+```
+kube-master:~/# kubectl apply -f pod.yaml
+```
+```
+kube-master:~/# kubectl apply -f deployment4.yaml
+```
+次にノードの1つを停止し、デプロイメントの自己回復の様子を見ます。
+```
+kube-master:~/# kubectl get pod -o wide
+```
+```
+NAME                     READY   STATUS    RESTARTS   AGE     IP            NODE          NOMINATED NODE   READINESS GATES
+test1                    1/1     Running   0          2m39s   10.244.2.63   kube-node02   <none>           <none>
+test2-74ff6ccfd7-2hhk2   1/1     Running   0          4m7s    10.244.1.40   kube-node01   <none>           <none>
+test2-74ff6ccfd7-ftlmb   1/1     Running   0          4m6s    10.244.2.61   kube-node02   <none>           <none>
+test2-74ff6ccfd7-plc7j   1/1     Running   0          4m6s    10.244.1.41   kube-node01   <none>           <none>
+test2-74ff6ccfd7-r25r8   1/1     Running   0          4m6s    10.244.2.62   kube-node02   <none>           <none>
+```
+単独で起動したtest1のポッドはnode02へ配置されているのでnode02を停止させます。  
+時間経過後、test2で起動したnode02のポッドはなくなりnode01のみで起動するようになります。  
+一方、test1は自動回復せず削除されています。(ポッドレベルので回復は不可ということ)
+```
+kube-master:~/# kubectl get pod -o wide
+```
+```
+NAME                     READY   STATUS        RESTARTS   AGE   IP            NODE          NOMINATED NOD
+E   READINESS GATES
+test1                    1/1     Terminating   0          21m   10.244.2.63   kube-node02   <none>
+    <none>
+test2-74ff6ccfd7-22jpp   1/1     Running       0          11m   10.244.1.42   kube-node01   <none>
+    <none>
+test2-74ff6ccfd7-2hhk2   1/1     Running       0          22m   10.244.1.40   kube-node01   <none>
+    <none>
+test2-74ff6ccfd7-ftlmb   1/1     Terminating   0          22m   10.244.2.61   kube-node02   <none>
+    <none>
+test2-74ff6ccfd7-plc7j   1/1     Running       0          22m   10.244.1.41   kube-node01   <none>
+    <none>
+test2-74ff6ccfd7-r25r8   1/1     Terminating   0          22m   10.244.2.62   kube-node02   <none>
+    <none>
+test2-74ff6ccfd7-x2w66   1/1     Running       0          11m   10.244.1.43   kube-node01   <none>
+    <none>
+```
