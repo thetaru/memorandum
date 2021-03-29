@@ -302,3 +302,14 @@ test2-74ff6ccfd7-r25r8   1/1     Terminating   0          22m   10.244.2.62   ku
 test2-74ff6ccfd7-x2w66   1/1     Running       0          11m   10.244.1.43   kube-node01   <none>
     <none>
 ```
+node02を起動してもnode02で再起動するわけではないことに注意しましょう。
+## 8.7 デプロイメントを利用した高可用性構成
+デプロイメントでは、1つのポッドと永続ボリュームで、アクティブスタンバイの高可用性構成(HA構成)を作ることができます。  
+grasterfs未構築なのでいつかやる。
+## 8.8 デプロイメントの自己回復動作
+ノード障害に対するデプロイメントの働きを見ていきます。
+## トラシュー
+```
+# kubectl get events
+# kubectl describe pod <PodName>
+```
