@@ -200,3 +200,7 @@ web-deploy-86cd4d65b9-shp4w   0/1     ContainerCreating   0          34s
 web-deploy-86cd4d65b9-xfsrn   1/1     Running             0          102s
 web-deploy-86cd4d65b9-z48mv   0/1     ContainerCreating   0          13s
 ```
+## 8.5 IPアドレスが変わる/変わらない
+ポッドのIPアドレスは、イベントによって変わる場合と変わらない場合があります。  
+デプロイメント管理化のポッドを１つ削除して、自動回復した際にできたポッドには新しいIPアドレスが割り当てられています。
+## 8.6 自己回復機能
