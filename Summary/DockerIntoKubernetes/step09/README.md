@@ -94,7 +94,7 @@ deployment.apps/web-deploy   3/3     3            3           114s
 NAME                                    DESIRED   CURRENT   READY   AGE
 replicaset.apps/web-deploy-86cd4d65b9   3         3         3       114s
 ```
-## サービスへのアクセス
+## 9.6.2 サービスへのアクセス
 wgetを使ってサービスの代表IPに対してアクセスしてみます。
 ```
 kube-master:~/# wget -q -O - http://10.102.165.216
@@ -106,3 +106,75 @@ kube-master:~/# wget -q -O - http://10.102.165.216
 <title>Welcome to nginx!</title>
 <以下省略>
 ```
+## 9.6.3 生成されたポッドの環境変数
+サービスを生成したあとに起動されたポッドには、サービスにアクセスするための環境変数がセットされています。  
+確認してみましょう。
+```
+kube-master:~/# kubectl get pod -o wide
+```
+```
+NAME                          READY   STATUS    RESTARTS   AGE     IP            NODE          NOMINATED NODE   READINESS GATES
+web-deploy-86cd4d65b9-24wdf   1/1     Running   0          3h26m   10.244.2.65   kube-node02   <none>           <none>
+web-deploy-86cd4d65b9-bbmnc   1/1     Running   0          3h26m   10.244.1.44   kube-node01   <none>           <none>
+web-deploy-86cd4d65b9-c48l8   1/1     Running   0          3h26m   10.244.2.64   kube-node02   <none>           <none>
+```
+```
+kube-master:~/# kubectl exec -it web-deploy-86cd4d65b9-24wdf -- /bin/bash
+```
+```
+web-deploy-86cd4d65b9-24wdf:/# env | grep WEB_SERVICE 
+```
+```
+WEB_SERVICE_SERVICE_PORT=80
+WEB_SERVICE_PORT_80_TCP_ADDR=10.102.165.216
+WEB_SERVICE_PORT_80_TCP_PROTO=tcp
+WEB_SERVICE_SERVICE_HOST=10.102.165.216
+WEB_SERVICE_PORT_80_TCP=tcp://10.102.165.216:80
+WEB_SERVICE_PORT=tcp://10.102.165.216:80
+WEB_SERVICE_PORT_80_TCP_PORT=80
+```
+次に今回起動した各ポッドが応答していることを確かめます。  
+3つのポッドのNginxサーバのindex.htmlファイルに、各ポッドのホスト名を書き込みます。
+```
+kube-master:~/# for pod in $(kubectl get pods | awk 'NR>1 {print $1}' | grep web-deploy); do kubectl exec $pod -- /bin/sh -c "hostname > /usr/share/nginx/html/index.html"; done
+```
+別のターミナルでサービスにアクセスします。
+```
+kube-master:~/# wget -q -O - http://10.102.165.216
+```
+何度もサービスにアクセスしてみると3つのサーバに分散されていることがわかります。
+## 9.8 セッションアフィニティ
+アプリケーションによっては、代表IPアドレスで受けたリクエストを常に同じポッドに転送したい場合があります。  
+そのような場合は、マニフェストにキー項目としてセッションアフィニティを追加して値にClientIPをセットすることで、クライアントのIPアドレスで転送先を固定することができます。
+```
+### FileName: svc-sa.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 80
+  sessionAffinity: ClientIP   # クライアントIPアドレスで転送先ポッドを決定する
+```
+実際に作成したマニフェストを適用してみます。
+```
+kube-master:~/# kubectl apply -f svc-sa.yaml
+```
+サービスのリストを表示して代表IPアドレスを確認します。
+```
+kube-master:~/# kubectl get service
+```
+```
+NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+web-service   ClusterIP   10.102.165.216   <none>        80/TCP    3h51m
+```
+何度かサービスの代表IPアドレスに対して実行し応答がすべて同じホスト名であることを確認します。
+```
+kube-master:~/# wget -q -O - http://10.102.165.216
+```
+## 9.9 NortPortの利用
+NodePortタイプのサービスを生成するYAMLは次のようになります。
