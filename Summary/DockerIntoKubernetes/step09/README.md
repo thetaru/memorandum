@@ -37,7 +37,34 @@ ClusterIPに加えて、ノードのIPアドレスに公開用ポート番号を
 デプロイメントのマニフェストとサービスのマニフェストを作成します。
 ```
 ### FileName: deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
 ```
 ```
 ### FileName: svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 80
 ```
