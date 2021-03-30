@@ -178,3 +178,42 @@ kube-master:~/# wget -q -O - http://10.102.165.216
 ```
 ## 9.9 NortPortの利用
 NodePortタイプのサービスを生成するYAMLは次のようになります。
+```
+### FileName: svc-np.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service-np
+spec:
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 80
+  type: NodePort
+```
+デプロイメント(deploy.yaml)に対してサービス(svc-np.yaml)を適用します。
+```
+kube-master:~/# kubectl apply -f deploy.yaml
+kube-master:~/# kubectl apply -f svc-np.yaml
+```
+サービスを確認します。
+```
+kube-master:~/# kubectl get service
+```
+```
+NAME             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+web-service-np   NodePort    10.98.128.49     <none>        80:30315/TCP   67s
+```
+ポッドの80番ポートとノードの30315番ポートが紐付いていることがわかります。  
+ノードの30315ポートへアクセスしてみましょう。
+```
+kube-master:~/# curl http://localhost:30315
+```
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<以下省略>
+```
