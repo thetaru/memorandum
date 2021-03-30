@@ -68,3 +68,43 @@ spec:
     - protocol: TCP
       port: 80
 ```
+## 9.6.1 サービスの作成と機能確認
+作成したYAMLファイルを利用して、オブジェクトを作成してみます。
+```
+kube-master:~/# kubectl apply -f deploy.yaml
+kube-master:~/# kubectl apply -f svc.yaml
+```
+結果を確認します。サービスが実行されていることがわかります。
+```
+kube-master:~/# kubectl get all
+```
+```
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/web-deploy-86cd4d65b9-24wdf   1/1     Running   0          113s
+pod/web-deploy-86cd4d65b9-bbmnc   1/1     Running   0          113s
+pod/web-deploy-86cd4d65b9-c48l8   1/1     Running   0          113s
+
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes    ClusterIP   10.96.0.1        <none>        443/TCP   15d
+service/web-service   ClusterIP   10.102.165.216   <none>        80/TCP    101s <- これがサービス
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/web-deploy   3/3     3            3           114s
+
+NAME                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/web-deploy-86cd4d65b9   3         3         3       114s
+```
+## サービスへのアクセス
+wgetを使ってサービスに対してアクセスしてみます。
+```
+kube-master:~/# wget -q -O - http://10.102.165.216
+```
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<省略>
+</body>
+</html>
+```
