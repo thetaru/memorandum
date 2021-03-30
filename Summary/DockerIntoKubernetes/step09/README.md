@@ -104,7 +104,5 @@ kube-master:~/# wget -q -O - http://10.102.165.216
 <html>
 <head>
 <title>Welcome to nginx!</title>
-<省略>
-</body>
-</html>
+<以下省略>
 ```
