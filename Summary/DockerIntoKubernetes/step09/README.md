@@ -95,7 +95,7 @@ NAME                                    DESIRED   CURRENT   READY   AGE
 replicaset.apps/web-deploy-86cd4d65b9   3         3         3       114s
 ```
 ## サービスへのアクセス
-wgetを使ってサービスに対してアクセスしてみます。
+wgetを使ってサービスの代表IPに対してアクセスしてみます。
 ```
 kube-master:~/# wget -q -O - http://10.102.165.216
 ```
