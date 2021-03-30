@@ -217,3 +217,7 @@ kube-master:~/# curl http://localhost:30315
 <title>Welcome to nginx!</title>
 <以下省略>
 ```
+## 9.10 ロードバランサー
+クラウドサービス使うので実施できず。
+## 9.11 ExternalNameの利用
+あまり興味なし
