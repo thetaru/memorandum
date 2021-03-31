@@ -262,7 +262,8 @@ kube-master:~/# kubectl logs prime-number-wxdjl
 マニフェストにパラメータを記述する必要がなくなりポッドごとに別のパラメータを渡せるのがよいです。
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step10/job_w_msg_broker)からファイル一式もってくること。(マニフェストにあるイメージは自分のアカウントにすること。
 ## 10.7 Kubernetes APIライブラリの利用
-コードの意味を解説しているだけ
+以下メモです。  
+`job-initiator.py`の`qmgr_host`変数はk8sクラスタのノードのIPアドレス(どのノードでもよい)を指定します。
 ## 10.8 ジョブの投入と実行
 `pn-generator-que`ディレクトリでイメージをビルドして、DockerHubへ登録します。
 ```
