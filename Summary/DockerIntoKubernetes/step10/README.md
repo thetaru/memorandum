@@ -221,3 +221,38 @@ two-containers-vvql8   0/2     Completed   0          18m
 ```
 ジョブはポッド内のコンテナがすべて正常終了することをもって、ジョブが正常終了とみなすことがわかりました。
 ## 10.5 素数計算ジョブの作成と実行
+[ここ](https://github.com/takara9/codes_for_lessons/tree/master/step10/job_prime_number)からファイル一式もってくること。(Dockerfileにあるイメージは自分のアカウントにすること。)
+```
+kube-master:~/# docker build -t pn_generator .
+kube-master:~/# docker login
+kube-master:~/# docker tag pn_generator:latest alallilianan/pn_generator:0.1
+kube-master:~/# docker push alallilianan/pn_generator
+```
+マニフェストを適用してジョブを作成します。
+```
+kube-master:~/# kubectl apply -f pn_job.yaml
+```
+```
+kube-master:~/# kubectl get jobs
+```
+```
+NAME           COMPLETIONS   DURATION   AGE
+prime-number   1/1           4m33s      5m2s
+```
+ジョブの実行結果を参照するために、ジョブコントロール下で起動したポッドのログを参照します。
+```
+kube-master:~/# kubectl get pod
+```
+```
+NAME                 READY   STATUS      RESTARTS   AGE
+prime-number-wxdjl   0/1     Completed   0          7m25s
+```
+```
+kube-master:~/# kubectl logs prime-number-wxdjl
+```
+```
+[    2     3     5     7    11    13    17    19    23    29    31    37
+    41    43    47    53    59    61    67    71    73    79    83    89
+    <中略>
+]
+```
