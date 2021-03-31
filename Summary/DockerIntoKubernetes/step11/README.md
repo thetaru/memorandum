@@ -86,6 +86,11 @@ pv1    1Gi        RWO            Delete           Available           standard  
 ```
 kube-master:~/# kubectl apply -f pvc.yaml
 ```
+PVCが正常動作していることを確認します。
 ```
-kube-master:~/# kubectl get pvc,pv
+kube-master:~/# kubectl get pvc
+```
+```
+NAME    STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+data1   Bound    pv1      1Gi        RWO            standard       3s
 ```
