@@ -263,7 +263,13 @@ kube-master:~/# kubectl logs prime-number-wxdjl
 [ここ](https://github.com/takara9/codes_for_lessons/tree/master/step10/job_w_msg_broker)からファイル一式もってくること。(マニフェストにあるイメージは自分のアカウントにすること。
 ## 10.7 Kubernetes APIライブラリの利用
 以下メモです。  
-`job-initiator.py`の`qmgr_host`変数はk8sクラスタのノードのIPアドレス(どのノードでもよい)を指定します。
+`job-initiator.py`の`qmgr_host`変数はk8sクラスタのノードのIPアドレス(どのノードでもよい)を指定します。  
+修正箇所(job-initiator/Dockerfile)
+```
+# pyhon
+RUN apt-get install -y python3 python3-pip
+RUN pip3 install pika kubernetes
+```
 ## 10.8 ジョブの投入と実行
 `pn-generator-que`ディレクトリでイメージをビルドして、DockerHubへ登録します。
 ```
@@ -294,5 +300,123 @@ kube-master:~/# docker build --tag job-init:0.1 .
 kube-master:~/# docker run -it --rm --name kube -v $(pwd)/py:py) -v ~/.kube:/root/.kube job-init:0.1 bash
 ```
 ```
-# kubectl get node
+### コンテナの中で実行
+# cd /py; python3 job-initiator.py
+```
+別ターミナルでジョブの実行状態を確認します。
+```
+kube-master:~/# kubectl get jobs,pod
+```
+```
+NAME              COMPLETIONS   DURATION   AGE
+job.batch/pngen   4/4           7m         7m42s
+
+NAME                             READY   STATUS      RESTARTS   AGE
+pod/pngen-6vh6s                  0/1     Completed   0          7m40s
+pod/pngen-bgdrr                  0/1     Completed   0          96s
+pod/pngen-gc4hb                  0/1     Completed   0          93s
+pod/pngen-zbd77                  0/1     Completed   0          7m40s
+pod/taskqueue-644dd99954-6klmh   1/1     Running     0          62m
+```
+実行結果を見てみます。
+```
+kube-master:~/# kubectl logs pod/pngen-6vh6s
+```
+```
+['1001', ' 2000']
+[1009 1013 1019 1021 1031 1033 1039 1049 1051 1061 1063 1069 1087 1091
+ 1093 1097 1103 1109 1117 1123 1129 1151 1153 1163 1171 1181 1187 1193
+ 1201 1213 1217 1223 1229 1231 1237 1249 1259 1277 1279 1283 1289 1291
+ 1297 1301 1303 1307 1319 1321 1327 1361 1367 1373 1381 1399 1409 1423
+ 1427 1429 1433 1439 1447 1451 1453 1459 1471 1481 1483 1487 1489 1493
+ 1499 1511 1523 1531 1543 1549 1553 1559 1567 1571 1579 1583 1597 1601
+ 1607 1609 1613 1619 1621 1627 1637 1657 1663 1667 1669 1693 1697 1699
+ 1709 1721 1723 1733 1741 1747 1753 1759 1777 1783 1787 1789 1801 1811
+ 1823 1831 1847 1861 1867 1871 1873 1877 1879 1889 1901 1907 1913 1931
+ 1933 1949 1951 1973 1979 1987 1993 1997 1999 2003 2011 2017 2027 2029
+ 2039 2053 2063 2069 2081 2083 2087 2089 2099 2111 2113 2129 2131 2137
+ 2141 2143 2153 2161 2179 2203 2207 2213 2221 2237 2239 2243 2251 2267
+ 2269 2273 2281 2287 2293 2297 2309 2311 2333 2339 2341 2347 2351 2357
+ 2371 2377 2381 2383 2389 2393 2399 2411 2417 2423 2437 2441 2447 2459
+ 2467 2473 2477 2503 2521 2531 2539 2543 2549 2551 2557 2579 2591 2593
+ 2609 2617 2621 2633 2647 2657 2659 2663 2671 2677 2683 2687 2689 2693
+ 2699 2707 2711 2713 2719 2729 2731 2741 2749 2753 2767 2777 2789 2791
+ 2797 2801 2803 2819 2833 2837 2843 2851 2857 2861 2879 2887 2897 2903
+ 2909 2917 2927 2939 2953 2957 2963 2969 2971 2999]
+```
+ジョブを削除します。
+```
+kube-master:~/# kubectl get job
+```
+```
+NAME    COMPLETIONS   DURATION   AGE
+pngen   4/4           7m         10m
+```
+```
+kube-master:~/# kubectl delete job pngen
+```
+```
+job.batch "pngen" deleted
+```
+## 10.9 クーロンジョブ
+スケジュールに従ってジョブを実行するコントローラです。  
+マニフェストを見てみましょう。  
+スケジュールの指定はUnixのクーロンと同じです。
+```yaml
+### FileName: cron-job.yaml
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hello
+              image: busybox
+              args:
+                - /bin/sh
+                - -c
+                - date; echo Hello from the kubernetes cluseter
+          restartPolicy: OnFailure
+```
+マニフェストを適用してクーロンジョブを作成します。
+```
+kube-master:~/# kubectl apply -f cron-job.yaml
+```
+クーロンジョブの実行状態を確認します。
+```
+kube-master:~/# kubectl get cronjobs
+```
+```
+NAME    SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+hello   */1 * * * *   False     0        <none>          10s
+```
+1分毎にジョブが実行されていることを確認します。
+```
+kube-master:~/# kubectl get jobs
+```
+```
+hello-1617176940   1/1           13s        2m49s
+hello-1617177000   1/1           14s        106s
+hello-1617177060   1/1           15s        53s
+```
+```
+kube-master:~/# kubectl get pod
+```
+```
+NAME                     READY   STATUS      RESTARTS   AGE
+hello-1617177000-7w92d   0/1     Completed   0          2m25s
+hello-1617177060-n5649   0/1     Completed   0          92s
+hello-1617177120-s4n2d   0/1     Completed   0          31s
+```
+```
+kube-master:~/# kubectl logs hello-1617177000-7w92d
+```
+```
+Wed Mar 31 07:48:13 UTC 2021
+Hello from the kubernetes cluseter
 ```
