@@ -55,7 +55,7 @@ spec:
     type: DirectoryOrCreate
 ```
 PVC作成のマニフェストを作成します。
-```
+```yaml
 ### FileName: pvc.yaml
 apiVersion: v1                  # 永続ボリューム要求API
 kind: PersistentVolumeClaim
@@ -93,4 +93,24 @@ kube-master:~/# kubectl get pvc
 ```
 NAME    STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 data1   Bound    pv1      1Gi        RWO            standard       3s
+```
+次は、PVCをマウントするポッドを作成するためのマニフェストです。
+```yaml
+### FileName: pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  volumes:
+    - name: pvc1
+      persistentVolumeClaim:
+        claimName: data1       # PVCの名前をセット
+  containers:
+    - name: ubuntu
+      image: ubuntu:16.04
+      volumeMounts:
+        - name: pvc1
+          mountPath: /mnt
+      command: ["/bin/bin/tail", "-f", "/dev/null"]
 ```
