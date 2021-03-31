@@ -100,3 +100,76 @@ Events:
 `parallelism: 2`を指定したことでポッドが2個ずつ実行されていることがわかります。
 ## 10.3 ジョブが異常終了するケース
 ポッドのコンテナが異常終了するときのジョブの振る舞いを見ていきます。  
+```json
+### FileName: job-abnormal-end.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: abnormal-end
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      containers:
+        - name: busybox
+          image: busybox:latest
+          command: ["sh", "-c", "sleep 5; exit 1"]
+      restartPolicy: Never
+```
+このマニフェストを適用します。
+```
+kube-master:~/# kubectl apply -f job-abnormal-end.yaml
+```
+ジョブを確認します。
+```
+kube-master:~/# kubectl get jobs
+```
+```
+NAME           COMPLETIONS   DURATION   AGE
+abnormal-end   0/1           5m1s       5m1s
+```
+異常終了ジョブの詳細を表示します。  
+Eventsの最後にbackoffLimitに達するまでの3回、合計4回の起動が実行されていることがわかります。
+```
+kube-master:~/# kubectl describe jobs abnormal-end
+```
+```
+Name:           abnormal-end
+Namespace:      default
+Selector:       controller-uid=40c705d8-01ab-4706-b110-95f16c7fcbe7
+Labels:         controller-uid=40c705d8-01ab-4706-b110-95f16c7fcbe7
+                job-name=abnormal-end
+Annotations:    <none>
+Parallelism:    1
+Completions:    1
+Start Time:     Wed, 31 Mar 2021 04:18:31 +0000
+Pods Statuses:  0 Running / 0 Succeeded / 4 Failed
+Pod Template:
+  Labels:  controller-uid=40c705d8-01ab-4706-b110-95f16c7fcbe7
+           job-name=abnormal-end
+  Containers:
+   busybox:
+    Image:      busybox:latest
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      sh
+      -c
+      sleep 5; exit 1
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Events:
+  Type     Reason                Age    From            Message
+  ----     ------                ----   ----            -------
+  Normal   SuccessfulCreate      2m29s  job-controller  Created pod: abnormal-end-vfspm
+  Normal   SuccessfulCreate      2m6s   job-controller  Created pod: abnormal-end-fqvj2
+  Normal   SuccessfulCreate      90s    job-controller  Created pod: abnormal-end-j2b7m
+  Normal   SuccessfulCreate      43s    job-controller  Created pod: abnormal-end-kbjl4
+  Warning  BackoffLimitExceeded  2s     job-controller  Job has reached the specified backoff limit
+```
+## 10.4 コンテナの異常終了とジョブ
+ジョブから起動されるポッド上のコンテナの1つが異常終了となったときの、ジョブの振る舞いを確認するために、次のマニフェストを作成します。
+```json
+### FileName: job-container-failed.json
+```
