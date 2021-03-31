@@ -76,5 +76,27 @@ Events:
 kube-master:~/# kubectl delete -f job-normal-end.yaml
 kube-master:~/# kubectl apply -f job-normal-end.yaml
 ```
+```
+kube-master:~/# kubectl describe job normal-job
+```
+```
+Name:           normal-job
+Namespace:      default
+<中略>
+Parallelism:    2
+Completions:    6
+<中略>
+Events:
+  Type    Reason            Age    From            Message
+  ----    ------            ----   ----            -------
+  Normal  SuccessfulCreate  4m35s  job-controller  Created pod: normal-job-ght4z
+  Normal  SuccessfulCreate  4m35s  job-controller  Created pod: normal-job-x4c49
+  Normal  SuccessfulCreate  4m5s   job-controller  Created pod: normal-job-lptpn
+  Normal  SuccessfulCreate  3m54s  job-controller  Created pod: normal-job-jsskt
+  Normal  SuccessfulCreate  3m23s  job-controller  Created pod: normal-job-v8tw9
+  Normal  SuccessfulCreate  3m12s  job-controller  Created pod: normal-job-gngt7
+  Normal  Completed         2m39s  job-controller  Job completed
+```
 `parallelism: 2`を指定したことでポッドが2個ずつ実行されていることがわかります。
 ## 10.3 ジョブが異常終了するケース
+ポッドのコンテナが異常終了するときのジョブの振る舞いを見ていきます。  
