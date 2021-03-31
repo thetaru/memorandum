@@ -271,3 +271,28 @@ kube-master:~/# docker build --tag pn_generator:0.2 .
 kube-master:~/# docker tag pn_generator:0.2 alalilianan/pn_generator:0.2
 kube-master:~/# docker push alallilianan/pn_generator:0.2
 ```
+### 10.8.1 RabbitMQのデプロイ
+```
+kube-master:~/# kubectl get node
+kube-master:~/# kubectl apply -f taskQueue-deploy.yaml
+kube-master:~/# kubectl get pod, services
+```
+```
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/taskqueue-644dd99954-6klmh   1/1     Running   0          93s
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/taskqueue    NodePort    10.102.170.31   <none>        5672:31672/TCP   101s
+```
+`job-initiator`のディレクトリで、コンテナのイメージをビルドします。
+```
+kube-master:~/# docker build --tag job-init:0.1 .
+```
+ビルドが完了したら、ビルドしたディレクトリでコンテナを起動します。  
+コンテナ上から、ジョブを投入するコマンドjob-initiator.pyを実行します。
+```
+kube-master:~/# docker run -it --rm --name kube -v $(pwd)/py:py) -v ~/.kube:/root/.kube job-init:0.1 bash
+```
+```
+# kubectl get node
+```
