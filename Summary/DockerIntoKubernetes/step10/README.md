@@ -100,7 +100,7 @@ Events:
 `parallelism: 2`を指定したことでポッドが2個ずつ実行されていることがわかります。
 ## 10.3 ジョブが異常終了するケース
 ポッドのコンテナが異常終了するときのジョブの振る舞いを見ていきます。  
-```json
+```yaml
 ### FileName: job-abnormal-end.yaml
 apiVersion: batch/v1
 kind: Job
@@ -169,7 +169,43 @@ Events:
   Warning  BackoffLimitExceeded  2s     job-controller  Job has reached the specified backoff limit
 ```
 ## 10.4 コンテナの異常終了とジョブ
-ジョブから起動されるポッド上のコンテナの1つが異常終了となったときの、ジョブの振る舞いを確認するために、次のマニフェストを作成します。
-```json
-### FileName: job-container-failed.json
+ジョブから起動されるポッド上のコンテナの1つが異常終了となったときの、ジョブの振る舞いを確認します。
+```yaml
+### FileName: job-container-failed.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: two-containers
+spec:
+  template:
+    spec:
+      containers:
+        - name: busybox1
+          image: busybox:1
+          command: ["sh", "-c", "sleep 5; exit 0"]
+        - name: busybox2
+          image: busybox:1
+          command: ["sh", "-c", "sleep 5; exit 1"]
+      restartPolicy: Never
+  backoffLimit: 2
+```
+マニフェストを適用します。
+```
+kube-master:~/# kubectl apply -f job-container-failed.yaml
+```
+ジョブの詳細情報を表示します。
+```
+kube-master:~/# kubectl describe jobs two-containers
+```
+```
+Name:           two-containers
+Namespace:      default
+<中略>
+Events:
+  Type     Reason                Age    From            Message
+  ----     ------                ----   ----            -------
+  Normal   SuccessfulCreate      2m15s  job-controller  Created pod: two-containers-lbrtq
+  Normal   SuccessfulCreate      111s   job-controller  Created pod: two-containers-vvql8
+  Normal   SuccessfulCreate      76s    job-controller  Created pod: two-containers-f8tg5
+  Warning  BackoffLimitExceeded  7s     job-controller  Job has reached the specified backoff limit
 ```
