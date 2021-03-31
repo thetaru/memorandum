@@ -64,6 +64,7 @@ metadata:                       # ObjectMeta v1 meta
 spec:                           # 永続ボリューム要求の仕様
   accessModes:
     - ReadWriteOnce
+  volumeMode: Filesystem
   storageClassName: standard
   resources:
       requests:
@@ -72,6 +73,14 @@ spec:                           # 永続ボリューム要求の仕様
 PVを作成します。
 ```
 kube-master:~/# kubectl apply -f pv.yaml
+```
+PVが作成されていることを確認します。
+```
+kube-master:~/# kubectl get pv
+```
+```
+NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+pv1    1Gi        RWO            Delete           Available           standard                7s
 ```
 作成したマニフェストからPVCを適用します。
 ```
