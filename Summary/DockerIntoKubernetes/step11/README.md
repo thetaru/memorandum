@@ -25,3 +25,58 @@ hostPathはノードのディスクをポッドから一時的に利用する仕
 
 ## 11.1.3 まとめ
 外部ボリュームが最強!!!
+
+## 11.2 ストレージシステムの諸方式
+ストレージシステムの方式によって永続ボリュームの機能に差異が生じます。
+## 11.3 ストレージの抽象化と自動化
+ポッド上のコンテナは、共通の定義によって、永続ボリュームをマウントすることができます。  
+具体的には、マニフェストのポッドテンプレートにボリューム情報を記述すれば、アプリケーションは永続ボリュームとして利用開始します。
+  
+k8sオブジェクトは、永続ボリューム要求(PVC)と永続ボリューム(PV)の2つから成ります。  
+あらかじめPVCを作成しておけば、ポッドのマニフェストにPVCの名前を記述することで、永続ボリュームをコンテナにマウントできます。
+## 11.4 永続ボリューム利用の実際
+PV作成のマニフェスト
+```yaml
+### FileName: pv.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  hostPath:
+    path: /data/pv1
+    type: DirectoryOrCreate
+```
+PVC作成のマニフェストを作成します。
+```
+### FileName: pvc.yaml
+apiVersion: v1                  # 永続ボリューム要求API
+kind: PersistentVolumeClaim
+metadata:                       # ObjectMeta v1 meta
+    name: data1
+spec:                           # 永続ボリューム要求の仕様
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: standard
+  resources:
+      requests:
+          storage: 1Gi
+```
+PVを作成します。
+```
+kube-master:~/# kubectl apply -f pv.yaml
+```
+作成したマニフェストからPVCを適用します。
+```
+kube-master:~/# kubectl apply -f pvc.yaml
+```
+```
+kube-master:~/# kubectl get pvc,pv
+```
