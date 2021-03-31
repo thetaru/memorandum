@@ -112,5 +112,22 @@ spec:
       volumeMounts:
         - name: pvc1
           mountPath: /mnt
-      command: ["/bin/bin/tail", "-f", "/dev/null"]
+      command: ["/usr/bin/tail", "-f", "/dev/null"]
+```
+マニフェストを適用します。
+```
+kube-master:~/# kubectl apply -f pod.yaml
+```
+```
+kube-master:~/# kubectl get pvc,pv,pod
+```
+```
+NAME                          STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+persistentvolumeclaim/data1   Bound    pv1      1Gi        RWO            standard       11m
+
+NAME                   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM           STORAGECLASS   REASON   AGE
+persistentvolume/pv1   1Gi        RWO            Delete           Bound    default/data1   standard                14m
+
+NAME       READY   STATUS    RESTARTS   AGE
+pod/pod1   1/1     Running   0          24s
 ```
