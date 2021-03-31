@@ -209,3 +209,13 @@ Events:
   Normal   SuccessfulCreate      76s    job-controller  Created pod: two-containers-f8tg5
   Warning  BackoffLimitExceeded  7s     job-controller  Job has reached the specified backoff limit
 ```
+ジョブの終了状態を見るとステータスは正常終了となっていますが、詳細情報をみると再試行を繰り返してbackoffLimitに達していることがわかります。
+```
+kube-master:~/# kubectl get pod
+```
+```
+NAME                   READY   STATUS      RESTARTS   AGE
+two-containers-f8tg5   0/2     Completed   0          17m
+two-containers-lbrtq   0/2     Completed   0          18m
+two-containers-vvql8   0/2     Completed   0          18m
+```
