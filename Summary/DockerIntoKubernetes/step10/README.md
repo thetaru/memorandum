@@ -219,3 +219,5 @@ two-containers-f8tg5   0/2     Completed   0          17m
 two-containers-lbrtq   0/2     Completed   0          18m
 two-containers-vvql8   0/2     Completed   0          18m
 ```
+ジョブはポッド内のコンテナがすべて正常終了することをもって、ジョブが正常終了とみなすことがわかりました。
+## 10.5 素数計算ジョブの作成と実行
