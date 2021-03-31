@@ -35,7 +35,7 @@ hostPathはノードのディスクをポッドから一時的に利用する仕
 k8sオブジェクトは、永続ボリューム要求(PVC)と永続ボリューム(PV)の2つから成ります。  
 あらかじめPVCを作成しておけば、ポッドのマニフェストにPVCの名前を記述することで、永続ボリュームをコンテナにマウントできます。
 ## 11.4 永続ボリューム利用の実際
-PV作成のマニフェスト
+PV作成のマニフェストです。自ノードの/data/pv1を作成します。
 ```yaml
 ### FileName: pv.yaml
 apiVersion: v1
@@ -118,6 +118,7 @@ spec:
 ```
 kube-master:~/# kubectl apply -f pod.yaml
 ```
+ポッドが正常起動していることを確認します。
 ```
 kube-master:~/# kubectl get pvc,pv,pod
 ```
@@ -130,4 +131,15 @@ persistentvolume/pv1   1Gi        RWO            Delete           Bound    defau
 
 NAME       READY   STATUS    RESTARTS   AGE
 pod/pod1   1/1     Running   0          24s
+```
+マウントしていることを確認するためにマウントしているノード上の`/data/pv1`にファイルを作成します。
+```
+kube-node0X:~/# touch /data/pv1/hoge
+```
+```
+kube-master:~/# kubectl exec -it pod1 -- sh
+```
+hogeファイルがあるか確認します。
+```
+# ls /data/pv1
 ```
