@@ -221,7 +221,7 @@ two-containers-vvql8   0/2     Completed   0          18m
 ```
 ジョブはポッド内のコンテナがすべて正常終了することをもって、ジョブが正常終了とみなすことがわかりました。
 ## 10.5 素数計算ジョブの作成と実行
-[ここ](https://github.com/takara9/codes_for_lessons/tree/master/step10/job_prime_number)からファイル一式もってくること。(Dockerfileにあるイメージは自分のアカウントにすること。)
+[ここ](https://github.com/takara9/codes_for_lessons/tree/master/step10/job_prime_number)からファイル一式もってくること。(マニフェストにあるイメージは自分のアカウントにすること。)
 ```
 kube-master:~/# docker build -t pn_generator .
 kube-master:~/# docker login
@@ -256,3 +256,8 @@ kube-master:~/# kubectl logs prime-number-wxdjl
     <中略>
 ]
 ```
+実務でジョブを利用する場合は、計算結果を他のプログラムから読み取れるようにするために、NoSQLDBやオブジェクトストレージへ保存するのがオススメです。
+## 10.6 メッセージブローカーとの組み合わせ
+ポッドがメッセージブローカーからパラメータを受け取れるようにします。  
+マニフェストにパラメータを記述する必要がなくなりポッドごとに別のパラメータを渡せるのがよいです。
+[ここ](https://github.com/takara9/codes_for_lessons/tree/master/step10/job_w_msg_broker)からファイル一式もってくること。(マニフェストにあるイメージは自分のアカウントにすること。)
