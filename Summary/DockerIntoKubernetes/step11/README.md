@@ -250,3 +250,11 @@ kube-master:~/# kubectl exec -it nfs-client-7ff95d88b-jc8b9 -- bash
 # md5sum /mnt/test.log
 # exit
 ```
+もう片方のポッドでシェルを起動して
+```
+kube-master:~/# kubectl exec -it nfs-client-7ff95d88b-mmbgg -- bash
+```
+```
+# md5sum /mnt/test.log
+```
+ハッシュが同じであれば共有できていることがわかります。
