@@ -4,6 +4,11 @@
 |Server|192.168.137.100|
 |Client|192.168.137.101|
 
+|情報|設定値|
+|:---|:---|
+|公開ディレクトリ|/var/share/nfs|
+|マウントポイント|/share/nfs-client|
+
 # Server側の設定
 ## § NFS Install
 ```
