@@ -9,18 +9,14 @@
 
 以下それぞれのファイルについて説明します。
 ## 3.1.2 広義のファイル
-まず、適当なディレクトリをlsしてください。
-```
-# ls /etc
-```
-```
-DIR_COLORS                  firefox                   man_db.conf        resolv.conf
-DIR_COLORS.256color         firewalld                 mcelog             rhsm
-DIR_COLORS.lightbgcolor     flatpak                   microcode_ctl      rpc
-GREP_COLORS                 fonts                     mime.types         rpm
-NetworkManager              fprintd.conf              mke2fs.conf        rsyslog.conf
-<以下省略>
-```
-ここにはテキストファイル、バイナリファイル、ディレクトリ、シンボリックリンクもあります。  
+ファイルには次のようなタイプがあります。
+- 通常ファイル
+- ディレクトリ
+- キャラクターデバイス
+- デバイスブロック
+- ソケット
+- 名前付きパイプ
+- シンボリックリンク
+ 
 普段はこれらを区別して別物だと思いますが、実はこれらすべてファイルです。  
-これらを広義のファイルと呼ぶことにします。
+これらをまとめて広義のファイルと呼ぶことにします。
