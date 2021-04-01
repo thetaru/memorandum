@@ -19,3 +19,4 @@
 ```
 # apt-get -y install nfs-common
 ```
+設定等はCentOS8と同一なので省略します。
