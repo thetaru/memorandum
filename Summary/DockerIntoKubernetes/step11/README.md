@@ -144,6 +144,7 @@ hogeファイルがあるか確認します。
 # ls /data/pv1
 ```
 ## 11.5 既存NFSサーバを利用する場合
+各ノードはnfs-commonが必要なのでインストールしましょう。
 |役割|IPアドレス|
 |:---|:---|
 |NFS Server|192.168.137.6|
@@ -235,11 +236,17 @@ kube-master:~/# kubectl apply -f nfs-client.yaml
 kube-master:~/# kubectl get pod
 ```
 ```
-NAME                         READY   STATUS              RESTARTS   AGE
-nfs-client-7ff95d88b-445f5   0/1     ContainerCreating   0          8m11s
-nfs-client-7ff95d88b-zhf8k   0/1     ContainerCreating   0          8m11s
+NAME                         READY   STATUS    RESTARTS   AGE
+nfs-client-7ff95d88b-jc8b9   1/1     Running   0          39s
+nfs-client-7ff95d88b-mmbgg   1/1     Running   0          39s
 ```
 ポッドの1つにシェルを起動して、読み書きできることを確認します。
 ```
-kube-master:~/# kubectl exec -it nfs-client-7ff95d88b-445f5 bash
+kube-master:~/# kubectl exec -it nfs-client-7ff95d88b-jc8b9 -- bash
+```
+```
+# df -h
+# ls -lR > /mnt/test.log
+# md5sum /mnt/test.log
+# exit
 ```
