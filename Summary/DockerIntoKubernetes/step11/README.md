@@ -177,11 +177,69 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: ""
+  storageClassName: ""          # ストレージクラスがない永続ボリュームを利用するので、空文字を設定する。
   resources:
     requests:
       storage: "100Mi"
-  selector:
+  selector:                     # 対応するPVのラベルを設定する
     matchLabels:
       name: pv-nfs-1
+```
+### (3) 動作検証
+マニフェストを適用してPVとPVCを作成します。
+```
+kube-master:~/# kubectl apply -f nfs-pv.yaml
+kube-master:~/# kubectl apply -f nfs-pvc.yaml
+kube-master:~/# kubectl get pv,pvc
+```
+```
+NAME                     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM           STORAGECLASS   REASON   AGE
+persistentvolume/nfs-1   100Mi      RWX            Retain           Bound    default/nfs-1                           34s
+
+NAME                          STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+persistentvolumeclaim/nfs-1   Bound    nfs-1    100Mi      RWX                           28s
+```
+永続ボリュームをマウントするポッドを起動して動作を確認します。  
+次のマニフェストを適用します。
+```yaml
+### FileName: nfs-client.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ubuntu
+  template:
+    metadata:
+      labels:
+        app: ubuntu
+    spec:
+      containers:
+        - name: ubuntu
+          image: ubuntu:16.04
+          volumeMounts:                                    # コンテナにマウントするディレクトリ
+            - name: nfs
+              mountPath: /mnt
+          command: ["/usr/bin/tail", "-f", "/dev/null"]    # コンテナの終了防止のコマンド
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-1                               # PVC名を設定する
+```
+マニフェストを適用します。
+```
+kube-master:~/# kubectl apply -f nfs-client.yaml
+kube-master:~/# kubectl get pod
+```
+```
+NAME                         READY   STATUS              RESTARTS   AGE
+nfs-client-7ff95d88b-445f5   0/1     ContainerCreating   0          8m11s
+nfs-client-7ff95d88b-zhf8k   0/1     ContainerCreating   0          8m11s
+```
+ポッドの1つにシェルを起動して、読み書きできることを確認します。
+```
+kube-master:~/# kubectl exec -it nfs-client-7ff95d88b-445f5 bash
 ```
