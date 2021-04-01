@@ -258,3 +258,7 @@ kube-master:~/# kubectl exec -it nfs-client-7ff95d88b-mmbgg -- bash
 # md5sum /mnt/test.log
 ```
 ハッシュが同じであれば共有できていることがわかります。
+## 11.6 クラウドでのダイナミックプロビジョニング
+飛ばし
+## 11.7 SDS連携によるダイナミックプロビジョニング
+飛ばし
