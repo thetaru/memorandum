@@ -144,3 +144,44 @@ hogeファイルがあるか確認します。
 # ls /data/pv1
 ```
 ## 11.5 既存NFSサーバを利用する場合
+|役割|IPアドレス|
+|:---|:---|
+|NFS Server|192.168.137.6|
+|公開ディレクトリ|/data|
+
+### (1) 永続ボリューム(PV)のマニフェスト作成
+```yaml
+### FileName: nfs-pv.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-1
+  labels:
+    name: pv-nfs-1
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.137.6    # NFSサーバのIPアドレス
+    path: /data              # NFSサーバが公開しているディレクトリ
+```
+### (2) 永続ボリューム要求(PVC)のマニフェスト作成
+```yaml
+### FileName: nfs-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-1
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: ""
+  resources:
+    requests:
+      storage: "100Mi"
+  selector:
+    matchLabels:
+      name: pv-nfs-1
+```
