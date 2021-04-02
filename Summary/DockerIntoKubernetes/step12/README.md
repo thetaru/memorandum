@@ -136,3 +136,49 @@ kube-master:~/# kubectl exec -it mysql-0 -- bash
 > show databases;
 ```
 ステートフルセット削除前に作成したデータはステートフルセットの削除後も存続し、再びステートフルセットを作成してデータにアクセスできることがわかりました。
+## 12.3 手動テイクオーバーの方法
+ハードウェア保守でノードを一時的に停止したい場合の操作を説明します。  
+手順は以下の通り
+1. ノード2(保守対象)の新たなポッドのスケジュールを停止し、ポッドを移動する。
+2. ノード1(ノード2以外のノードならなんでも)で移動したノードが起動することを確認
+
+node02で動作していることを確認します。
+```
+kube-master:~/# kubectl get pod
+```
+```
+NAME                         READY   STATUS    RESTARTS   AGE   IP             NODE          NOMINATED NODE   READINESS GATES
+mysql-0                      1/1     Running   0          86s   10.244.2.114   kube-node02   <none>           <none>
+```
+node02への新たなスケジュールを禁止
+```
+kube-master:~/# kubectl cordon kube-node02
+```
+```
+node/kube-node02 cordoned
+```
+稼働中のポッドをnode02からnode01へ移行します。
+```
+kube-master:~/# kubectl drain kube-node02 --ignore-daemonsets
+```
+```
+node/kube-node02 already cordoned
+WARNING: ignoring DaemonSet-managed Pods: kube-system/kube-flannel-ds-49lg5, kube-system/kube-proxy-h8nrh
+evicting pod default/mysql-0
+pod/mysql-0 evicted
+node/kube-node02 evicted
+```
+以降完了後の状態確認
+```
+kube-master:~/# kubectl get pod mysql-0 -o wide
+```
+```
+NAME      READY   STATUS    RESTARTS   AGE     IP            NODE          NOMINATED NODE   READINESS GATES
+mysql-0   1/1     Running   0          3m12s   10.244.1.61   kube-node01   <none>           <none>
+```
+移行後はnode02のスケジュールを再開させます。  
+ポッドの移行はライブマイグレーションでないので一旦終了してから別ノードで起動されることに注意してください。  
+なので一度完全にアクセスのない状態にしてから実施しましょう。(ふつうのことですけどね...)
+```
+kube-master:~/# kubectl uncordon kube-node02
+```
