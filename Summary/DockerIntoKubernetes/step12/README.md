@@ -86,7 +86,7 @@ spec:                       ## 表2 ステートフルセットの仕様
       storageClassName: standard            # 容量 2Gi  Minikube/GKE
       resources:
         requests:
-          storage: 2Gi
+          storage: 1Gi
 ```
 マニフェストを適用します。
 ```
