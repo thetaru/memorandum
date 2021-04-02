@@ -96,3 +96,43 @@ kube-master:~/# kubectl apply -f mysql-sts.yaml
 ```
 kube-master:~/# kubectl get svc,sts,po
 ```
+```
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE
+service/mysql        ClusterIP   None         <none>        3306/TCP   3m18s
+
+NAME                     READY   AGE
+statefulset.apps/mysql   1/1     3m17s
+
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/mysql-0                      1/1     Running   0          3m16s
+```
+PVもみておきます。
+```
+kube-master:~/# kubectl get pv
+```
+```
+NAME    CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                 STORAGECLASS   REASON   AGE
+pv1     1Gi        RWO            Delete           Bound    default/pvc-mysql-0   standard                53m
+```
+次に永続ボリュームが引き継がれることを確認するために、MySQLにログインして`create database`で適当なデータベースを作成します。
+```
+kube-master:~/# kubectl exec -it mysql-0 -- bash
+# mysql -u root -u p qwerty
+> create database hello;
+> show databases;
+```
+永続ボリュームに書き込んだらステートフルセットを削除し、永続ボリュームが存続していることを確認します。  
+ポッドやステートフル接テオは削除されても、PVCとPVは存続しています。
+```
+kube-master:~/# kubectl delete -f mysql-sts.yaml
+kube-master:~/# kubectl get svc,sts,po
+kube-master:~/# kubectl get pvc,pv
+```
+再びステートフルセットを作成して、ポッドと永続ボリュームの関係を復元できることと、データが保持されていることを確認します。
+```
+kube-master:~/# kubectl apply -f mysql-sts.yaml
+kube-master:~/# kubectl exec -it mysql-0 -- bash
+# mysql -u root -u p qwerty
+> show databases;
+```
+ステートフルセット削除前に作成したデータはステートフルセットの削除後も存続し、再びステートフルセットを作成してデータにアクセスできることがわかりました。
