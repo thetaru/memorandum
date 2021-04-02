@@ -80,12 +80,19 @@ spec:                       ## 表2 ステートフルセットの仕様
   - metadata:
       name: pvc
     spec:                   ## 表4 永続ボリューム要求の雛形
-      accessModes: [ "ReadWriteOnce" ]
-      ## 環境に合わせて選択して、storageの値を編集
-      #storageClassName: ibmc-file-bronze   # 容量 20Gi IKS
-      #storageClassName: gluster-heketi     # 容量 12Gi GlusterFS
+      accessModes:
+        - ReadWriteOnce
+      volumeMode: Filesystem
       storageClassName: standard            # 容量 2Gi  Minikube/GKE
       resources:
         requests:
           storage: 2Gi
+```
+マニフェストを適用します。
+```
+kube-master:~/# kubectl apply -f mysql-sts.yaml 
+```
+デプロイ後、永続ボリュームも一緒に生成されます。
+```
+kube-master:~/# kubectl get svc,sts,po
 ```
