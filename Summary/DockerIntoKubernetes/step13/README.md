@@ -62,3 +62,8 @@ metadata:
                 serviceName: java-svc
                 servicePort: 9080
 ```
+## 13.4 イングレスの適用
+マニフェストを適用します。
+```
+
+```
