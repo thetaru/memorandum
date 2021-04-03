@@ -27,6 +27,7 @@
 PV(`storageClassName: standard`)がすでにあることが前提です。
 ## 12.2 マニフェストの書き方
 ```yaml
+### FileName: mysql-sts.yaml 
 apiVersion: v1
 kind: Service
 metadata:
