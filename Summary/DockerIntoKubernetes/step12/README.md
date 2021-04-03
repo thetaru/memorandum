@@ -408,3 +408,6 @@ kube-master:~/# kubectl get daemonset -n tkr-system
 NAME        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
 liberator   2         2         2       2            2           <none>          3m23s
 ```
+## 12.6 障害回復テスト
+障害回復テストを行います。  
+ステートフルセットの管理下で、ポッドが稼働するノードをシャットダウンし、残ったノードでサーバがサービス再開するまでの様子を確認します。  
