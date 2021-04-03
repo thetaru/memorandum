@@ -22,3 +22,43 @@ minikube使ってないので飛ばし(?)
 
 つまりイングレスは、公開用URLのパスに対するリクエストをポッドを代表するサービスへ振り分けます。  
 サービスとドメイン名が対応する感じ。
+
+### 仮想ホストとサービスを関係付けるマニフェスト記述
+イングレスのマニフェストを見ていきます。  
+イングレスのマニフェストでは、メタデータのアノテーションが重要な役割をもちます。  
+アノテーションを記述して、イングレスコントローラへコマンドを送ります。  
+#### アノテーションの例
+- kubernetes.io/ingress.class: 'nginx': 複数のイングレスコントローラがk8sクラスタ内で動作している場合、指示の送り先となるイングレスコントローラを指定できます。
+- nginx.ingress.kubernetes.io/rewrite-target: /: URLパスを書き換える要求です。この設定がないと、クライアントからのリクエストのパスをポッドへそのまま転送してFile Not Foundとなります。
+
+実際のマニフェストの例です。
+```yaml
+### FileName: ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-ingress
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  spec:
+    rules:
+      - host: abc.sample.com                          # ドメイン名1
+        http:
+          paths:
+            - path: /                                 # URLのパス1
+              backend:                                # URLパス部分とサービス対応
+                serviceName: helloworld-svc
+                servicePort: 8080
+            - path: /apl2                             # URLのパス2
+              backend:                                # URLパス部分とサービス対応
+                serviceName: nginx-svc
+                servicePort: 9080
+      - host: xyz.sample.com                          # ドメイン名2
+        http:
+          paths:
+            - path: /                                 # URLのパス3
+              backend:
+                serviceName: java-svc
+                servicePort: 9080
+```
