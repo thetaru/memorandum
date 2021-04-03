@@ -192,7 +192,35 @@ kube-master:~/# kubectl uncordon kube-node02
 4. k8sクラスタ構成変更の自動対応: この自動化ポッドは、ノードの停止・追加・変更に対応できる必要があります。(デーモンセットコントローラでポッドを起動する。)
 
 ### (1) k8sAPIをアクセスするプログラムの開発
- pythonのプログラムからk8sクラスタを操作します。
+### ■ コンテナビルド
+まずコンテナイメージを作成します。  
+修正したDockerfileは以下です。
+```
+FROM ubuntu:16.04
+RUN apt-get update # && apt-get install -y curl apt-transport-https
+
+# pyhon
+RUN apt-get install -y python3 python3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install kubernetes
+
+COPY main.py /main.py
+
+WORKDIR /
+CMD python /main.py
+```
+Dockerfileを元にイメージのビルドをします。
+```
+kube-master:~/# docker build --tag alallilianan/liberator:0.1 .
+```
+生成したイメージをリポジトリに登録します。
+```
+kube-master:~/# docker images
+kube-master:~/# docker login
+kube-master:~/# docker push alallilianan/liberator:0.1
+```
+### ■ pythonプログラム
+次のpythonのプログラムからk8sクラスタを操作します。
 ```py
 ### FileName: main.py
 # coding: UTF-8
@@ -257,18 +285,5 @@ if __name__ == '__main__':
 ```
 このコードを実行するポッドには、ノードの状態取得と削除というk8sクラスタの構成を変更するためのアクセス権が必要になります。  
 なのでサービスアカウントhigh-availabilityを作成して、それらのアクセス権を付与します。  
-修正したDockerfileは以下です。
-```
-FROM ubuntu:16.04
-RUN apt-get update # && apt-get install -y curl apt-transport-https
-
-# pyhon
-RUN apt-get install -y python3 python3-pip
-RUN pip3 install --upgrade pip
-RUN pip3 install kubernetes
-
-COPY main.py /main.py
-
-WORKDIR /
-CMD python /main.py
-```
+### (2) RBACのアクセス権付与のマニフェスト作成
+RBACは役割基準のアクセス制御のことです。役割(ロール)を設定して、その役割に対してアクセスできる権限を設定するアクセスコントロールです。
