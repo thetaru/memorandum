@@ -13,9 +13,7 @@
 イングレスを利用するには、k8sクラスタにイングレスコントローラがセットアップされている必要があります。  
 注意点としては、イングレスコントローラの実装によっては、インターネットの公開用IPアドレスを取得する機能は必ずしも含まれません。
 ## 13.2 イングレスの学習環境準備
-```
-kube-master:~/#  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
-```
+minikubeでやったほうがいいかも
 ## 13.3 公開用URLとアプリケーションの対応付け
 公開用URLのパス部分に、複数アプリケーションを対応付けることができます。  
 以下は`reservation`と`order`に対してそれぞれ専用アプリケーションを対応させています。
