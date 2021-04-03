@@ -41,29 +41,32 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: 'nginx'
     nginx.ingress.kubernetes.io/rewrite-target: /
-  spec:
-    rules:
-      - host: abc.sample.com                          # ドメイン名1
-        http:
-          paths:
-            - path: /                                 # URLのパス1
-              backend:                                # URLパス部分とサービス対応
-                serviceName: helloworld-svc
-                servicePort: 8080
-            - path: /apl2                             # URLのパス2
-              backend:                                # URLパス部分とサービス対応
-                serviceName: nginx-svc
-                servicePort: 9080
-      - host: xyz.sample.com                          # ドメイン名2
-        http:
-          paths:
-            - path: /                                 # URLのパス3
-              backend:
-                serviceName: java-svc
-                servicePort: 9080
+spec:
+  rules:
+    - host: abc.sample.com                          # ドメイン名1
+      http:
+        paths:
+          - path: /                                 # URLのパス1
+            backend:                                # URLパス部分とサービス対応
+              serviceName: helloworld-svc
+              servicePort: 8080
+          - path: /apl2                             # URLのパス2
+            backend:                                # URLパス部分とサービス対応
+              serviceName: nginx-svc
+              servicePort: 9080
+    - host: xyz.sample.com                          # ドメイン名2
+      http:
+        paths:
+          - path: /                                 # URLのパス3
+            backend:
+              serviceName: java-svc
+              servicePort: 9080
 ```
 ## 13.4 イングレスの適用
 マニフェストを適用します。
 ```
-
+kube-master:~/# kubectl apply -f application1.yaml
+kube-master:~/# kubectl apply -f application2.yaml
+kube-master:~/# kubectl apply -f application3.yaml
+kube-master:~/# kubectl apply -f ingress.yaml
 ```
