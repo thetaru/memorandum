@@ -315,9 +315,29 @@ metadata:
 subjects:
   - kind: ServiceAccount      # サービスアカウント名
     name: high-availavility   # 名前空間の指定(必須)
-    namespace: tkr-system
+    namespace: tkr-system     # 作成したサービスアカウントと同一名を設定
 roleRef:
   kind: ClusterRole
   name: nodes
   apiGroup: rbac.authorization.k8s.io
 ```
+### (3) 名前空間によるスコープ設定のマニフェスト作成
+名前空間をスコープ設定のために利用します。  
+k8sクラスタに名前空間`tkr-system`を追加し、サービスアカウント、クラスタロール、クラスタロールバインディングを設定します。  
+この名前空間には、ノード監視などk8sクラスタの運用のために使われます。
+```yaml
+### FileName: namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tkr-system        # 専用の名前空間
+```
+これを適用して名前空間を分離するができます。
+### (4) マニフェストをk8sクラスタへ適用する
+```
+kube-master:~/# kubectl applf -f service-account.yaml
+kube-master:~/# kubectl applf -f role-based-access-ctl.yaml
+kube-master:~/# kubectl applf -f namespace.yaml
+```
+### (5) クラスタ構成変更への自動対応
+kubernetesには、すべてのノードでポッドを実行するためのコントローラ`デーモンセット`があります。
