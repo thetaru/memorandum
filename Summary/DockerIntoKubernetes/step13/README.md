@@ -94,3 +94,4 @@ kube-master:~/# kubectl get ing
 NAME            CLASS    HOSTS                           ADDRESS   PORTS   AGE
 hello-ingress   <none>   abc.sample.com,xyz.sample.com             80      107s
 ```
+以上で、イングレスによってURLのパスとアプリケーションを対応付け方法、そして、複数のドメイン名でIPアドレス共有し、DNS名でリクエストの転送先を決める方法を学びました。
