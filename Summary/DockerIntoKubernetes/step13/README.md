@@ -70,3 +70,27 @@ kube-master:~/# kubectl apply -f application2.yaml
 kube-master:~/# kubectl apply -f application3.yaml
 kube-master:~/# kubectl apply -f ingress.yaml
 ```
+サービスとデプロイメントの確認
+```
+kube-master:~/# kubectl get svc,deployment
+```
+```
+NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/helloworld-svc   NodePort    10.96.159.174   <none>        8080:31445/TCP   20m
+service/java-svc         ClusterIP   10.106.91.78    <none>        9080/TCP         6m56s
+service/kubernetes       ClusterIP   10.96.0.1       <none>        443/TCP          20d
+service/nginx-svc        ClusterIP   10.96.8.41      <none>        9080/TCP         8m24s
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/helloworld-deployment   1/1     1            1           9m17s
+deployment.apps/java-deployment         1/1     1            1           7m3s
+deployment.apps/nginx-deployment        3/3     3            3           8m24s
+```
+イングレスの確認
+```
+kube-master:~/# kubectl get ing
+```
+```
+NAME            CLASS    HOSTS                           ADDRESS   PORTS   AGE
+hello-ingress   <none>   abc.sample.com,xyz.sample.com             80      107s
+```
