@@ -182,3 +182,93 @@ mysql-0   1/1     Running   0          3m12s   10.244.1.61   kube-node01   <none
 ```
 kube-master:~/# kubectl uncordon kube-node02
 ```
+## 12.4 ノード障害時の動作
+## 12.5 テイクオーバー自動化コードの開発
+ノードの障害停止に巻き込まれたポッドを他のノードへ対比させてサービスを再開する。  
+この機能の実装のポイントを挙げます。(前提としてkubectlコマンドは利用しません。)
+1. k8sAPIライブラリを利用したコード開発: ポッド上のコンテナのプログラムからk8sAPIを直接コールすることで、k8sクラスタの状態変化に対応するアクションを自動化します。
+2. k8sクラスタ操作の特権をポッドへ付与: ポッド上のコンテナがk8sクラスタを操作するためのアクセス権をコンテナに与えます。
+3. 名前空間の分離: 名前空間を分けて、ポッドの管理の範囲も分けます。
+4. k8sクラスタ構成変更の自動対応: この自動化ポッドは、ノードの停止・追加・変更に対応できる必要があります。(デーモンセットコントローラでポッドを起動する。)
+
+### (1) k8sAPIをアクセスするプログラムの開発
+ pythonのプログラムからk8sクラスタを操作します。
+```py
+### FileName: main.py
+# coding: UTF-8
+#
+# 状態不明ノードをクラスタから削除する
+#
+import signal, os, sys
+from kubernetes import client, config
+from kubernetes.client.rest import ApiException
+from time import sleep
+
+uk_node = {}  # KEYは状態不明になったノード名、値は不明状態カウント数
+
+## 停止要求シグナル処理
+def handler(signum, frame):
+    sys.exit(0)
+
+## ノード削除 関数
+def node_delete(v1,name):
+    body = client.V1DeleteOptions()
+    try:
+        resp = v1.delete_node(name, body)
+        print("delete node %s done" % name)
+    except ApiException as e:
+        print("Exception when calling CoreV1Api->delete_node: %s\n" % e)
+
+## ノード監視 関数
+def node_monitor(v1):
+    try:
+        ret = v1.list_node(watch=False)
+        for i in ret.items:
+            n_name = i.metadata.name
+            #print("%s" % (i.metadata.name)) #デバック用
+            for j in i.status.conditions:
+                #print("\t%s\t%s" % (j.type, j.status)) #デバック用
+                if (j.type == "Ready" and j.status != "True"):
+                    if n_name in uk_node:
+                        uk_node[n_name] += 1
+                    else:
+                        uk_node[n_name] = 0
+                    print("unknown %s  count=%d" % (n_name,uk_node[n_name]))
+                    # カウンタが3回超えるとノードを削除
+                    if uk_node[n_name] > 3:
+                        del uk_node[n_name]
+                        node_delete(v1,i.metadata.name)
+                # 1回でも状態が戻るとカウンタリセット
+                if (j.type == "Ready" and j.status == "True"):
+                    if n_name in uk_node:
+                        del uk_node[n_name]
+    except ApiException as e:
+        print("Exception when calling CoreV1Api->list_node: %s\n" % e)
+
+## メイン        
+if __name__ == '__main__':
+    signal.signal(signal.SIGTERM, handler) # シグナル処理
+    config.load_incluster_config()         # 認証情報の取得
+    v1 = client.CoreV1Api()                # インスタンス化
+    # 監視ループ 
+    while True:
+        node_monitor(v1)
+        sleep(5) # 監視の間隔時間
+```
+このコードを実行するポッドには、ノードの状態取得と削除というk8sクラスタの構成を変更するためのアクセス権が必要になります。  
+なのでサービスアカウントhigh-availabilityを作成して、それらのアクセス権を付与します。  
+修正したDockerfileは以下です。
+```
+FROM ubuntu:16.04
+RUN apt-get update # && apt-get install -y curl apt-transport-https
+
+# pyhon
+RUN apt-get install -y python3 python3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install kubernetes
+
+COPY main.py /main.py
+
+WORKDIR /
+CMD python /main.py
+```
