@@ -340,4 +340,37 @@ kube-master:~/# kubectl applf -f role-based-access-ctl.yaml
 kube-master:~/# kubectl applf -f namespace.yaml
 ```
 ### (5) クラスタ構成変更への自動対応
-kubernetesには、すべてのノードでポッドを実行するためのコントローラ`デーモンセット`があります。
+kubernetesには、すべてのノードでポッドを実行するためのコントローラ`デーモンセット`があります。  
+デーモンセットは管理下にポッドを、k8sクラスタの全ノードで稼働するように制御します。  
+デーモンセットが削除されると、その管理下のポッドは全ノードから削除されます。さらに、デーモンセットの管理下で配置されたポッドの所属ノードを限定する際はノードセレクタを設定します。  
+  
+今回、名前空間`tkr-system`にデーモンセットを作成することで、アプリケーションの管理者はデーモンセットとその管理化のポッドの存在を意識することなく、k8sクラスタのノードの追加と削除を実施できるようになります。
+次のマニフェストは、ビルドしたイメージをk8sクラスタ全ノード上で動作させるためのマニフェストです。  
+そのために、作成したサービスアカウントのアクセス権を作成した名前空間に設定します。
+```yamme
+### FileName: daemonset.yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: liberator
+  namespace: tkr-system                           # システム用名前空間
+spec:
+  selector:
+    matchLabels:
+      name: liberator
+  template:
+    metadata:
+      labels:
+        name: liberator
+    spec:
+      serviceAccountName: high-availability       # 権限と紐づくアカウント
+      containers:
+        - name: liberator
+          image: alialililianan/liberator:0.1
+          resources:
+            limits:
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+```
