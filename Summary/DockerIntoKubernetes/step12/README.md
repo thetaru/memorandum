@@ -286,4 +286,38 @@ if __name__ == '__main__':
 なのでサービスアカウントhigh-availabilityを作成して、それらのアクセス権を付与します。  
 ### (2) RBACのアクセス権付与のマニフェスト作成
 RBACは役割基準のアクセス制御のことです。  
-役割(ロール)を設定して、その役割に対してアクセスできる権限を設定します。
+役割(ロール)を設定して、その役割に対してアクセスできる権限を設定します。  
+次のマニフェストは名前空間に対してアカウントを作成します。
+```yaml
+### FileName: service-account.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: tkr-system     # 属する名前空間
+  name: high-availability   # サービスアカウント名
+```
+次のマニフェストは上記のサービスアカウントに対して、役割とアクセス権を付与します。
+```yaml
+### FileName: role-based-access-ctl.yaml
+kind: ClusterRole
+apiVersion: rbac.authorizatoin.k8s.io/v1
+metadata:
+  name: nodes
+rules:
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["list", "delete"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: nodes
+subjects:
+  - kind: ServiceAccount      # サービスアカウント名
+    name: high-availavility   # 名前空間の指定(必須)
+    namespace: tkr-system
+roleRef:
+  kind: ClusterRole
+  name: nodes
+  apiGroup: rbac.authorization.k8s.io
+```
