@@ -366,11 +366,45 @@ spec:
       serviceAccountName: high-availability       # 権限と紐づくアカウント
       containers:
         - name: liberator
-          image: alialililianan/liberator:0.1
+          image: alallilianan/liberator:0.1
           resources:
             limits:
               memory: 200Mi
             requests:
               cpu: 100m
               memory: 200Mi
+```
+マニフェストを適用します。
+```
+kube-master:~/# kubectl apply -f dameonset.yaml 
+```
+名前空間の指定なしでデーモンセットをリストしたケース
+```
+kube-master:~/# kubectl get daemonset
+```
+```
+No resources found in default namespace.
+```
+名前空間 tkr-system を指定してデーモンセットをリストしたケース
+```
+kube-master:~/# kubectl get daemonset -n tkr-system
+```
+```
+NAME        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+liberator   2         2         0       2            0           <none>          2m42s
+```
+```
+kube-master:~/# kubectl get pod -n tkr-system
+```
+```NAME              READY   STATUS    RESTARTS   AGE
+liberator-gqtfd   1/1     Running   0          33s
+liberator-xc6ll   1/1     Running   0          2m7s
+```
+デーモンセットの状態を確認します。
+```
+kube-master:~/# kubectl get daemonset -n tkr-system
+```
+```
+NAME        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+liberator   2         2         2       2            2           <none>          3m23s
 ```
