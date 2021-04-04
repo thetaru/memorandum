@@ -48,3 +48,8 @@ CloudFormationを用いてVPCなどのベースリソースの作成を行いま
 マネジメントコンソールでCloudFormationのページに移動しましょう。  
   
 ![Image01](./images/2-2-1.png)
+  
+CloudFormationのページを開くと、次のような画面が表示されます。
+  
+![Image02](./images/2-2-2.png)
+  
