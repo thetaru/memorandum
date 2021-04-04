@@ -46,3 +46,4 @@ AWSで配布しているkubectlパッケージを使用します。[ここ](http
 ### ■ ベースリソースの作成手順
 CloudFormationを用いてVPCなどのベースリソースの作成を行います。  
 マネジメントコンソールでCloudFormationのページに移動しましょう。  
+![Image01](/images/2-2-1.png)
