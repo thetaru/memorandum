@@ -8,7 +8,7 @@
 - Git
 
 ### ■ 構築情報
-### @仮想環境のセットアップ
+#### 仮想環境のセットアップ
 ```
 ### Python仮想環境管理用ディレクトリを作成
 # mkdir -p /opt/python/venv
@@ -20,7 +20,7 @@
 ### 仮想環境をアクティベート(以後抜けない限り 仮想環境のPythonが実行される)
 # source aws_eks/bin/activate
 ```
-### @AWS CLIの導入
+#### AWS CLIの導入
 ```
 ### パッケージのダウンロードと解凍
 # curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
@@ -29,12 +29,12 @@
 ### インストーラの実行
 # sudo ./aws/install
 ```
-### @eksctlの導入
+#### eksctlの導入
 ```
 # curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 # sudo mv /tmp/eksctl /usr/local/bin
 ```
-### @kubectlの導入
+#### kubectlの導入
 AWSで配布しているkubectlパッケージを使用します。[ここ](https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/install-kubectl.html)を参照してください。
 ```
 # curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
