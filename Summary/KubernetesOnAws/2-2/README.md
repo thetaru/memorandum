@@ -43,3 +43,6 @@ AWSで配布しているkubectlパッケージを使用します。[ここ](http
 # echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 # kubectl version --short --client
 ```
+### ■ ベースリソースの作成手順
+CloudFormationを用いてVPCなどのベースリソースの作成を行います。  
+マネジメントコンソールでCloudFormationのページに移動しましょう。  
