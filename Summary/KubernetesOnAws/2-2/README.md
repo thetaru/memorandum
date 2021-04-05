@@ -101,4 +101,29 @@ CloudFormationのページを開くと、次のような画面が表示されま
 ![Image11](./images/2-2-11.png)
   
 ## 2-2-2 EKSクラスタの構築
+次に、EKSクラスタをeksctlコマンドで構築します。
 ### ■ ベースリソースの情報取得
+EKSクラスタ構築に先立ち、先ほど作成したベースリソースの情報を取得する必要があります。  
+この情報は、CloudFormationのスタック詳細情報として取得できます。
+リソースの作成後、マネジメントコンソールでスタック詳細情報を開くと、`出力`タブに、後続の作業で必要となる情報が表示されます。
+  
+![Image12](./images/2-2-12.png)
+  
+CloudFormation画面で`eks-work-base`スタックを選択し、画面右側の`出力`タブを押します。  
+ここでは、`WorkerSubnets`の値を使用するので、値の部分をコピーしておいてください。
+### ■ eksctlの実行
+eksctlコマンドは、オプションとして各種パラメータを指定すると、様々な構成のEKSクラスタを構築することができます。  
+コンソールを開き、以下のコマンドを実行してください。
+```
+# eksctl create cluster \
+--vpc-public-subnets <WorkerSubnetsの値> \
+--name eks-work-cluster \
+--region ap-northeast-1 \
+--version 1.14 \
+--nodegroup-name eks-work-nodegroup \
+--node-type t2.small \
+--nodes 2 \
+--nodes-min 2 \
+--nodes-max 5
+```
+環境構築には約20分ほどかかります。
