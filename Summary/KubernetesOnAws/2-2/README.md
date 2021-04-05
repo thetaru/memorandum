@@ -130,3 +130,72 @@ eksctlコマンドは、オプションとして各種パラメータを指定�
 ### ■ CloudFormationでの進捗状況の確認
 eksctlコマンドはは内部でCloudFormationを使ってEKSクラスタやワーカーノードを構築しています。  
 コマンド実行後、CloudFormation画面を見ると、作成されたスタックの内容や、その進捗状況を確認できます。  
+  
+![Image13](./images/2-2-13.png)
+  
+2つのスタックが作成されていることがわかります。  
+このように、eksctlでは、
+- eksクラスタ構築
+- ワーカーノード構築
+
+の2つのCloudFormationスタックを作成してEKS環境を構築しています。
+### ■ kubeconfigの設定
+eksctlは、EKSクラスタ構築の中で、kubeconfigファイルを自動的に更新してくれます。  
+kubeconfigファイルは、k8sクライアントであるkubectlが利用する設定ファイルで、接続先のk8sクラスタの接続情報(コントロールプレーンのURL、認証情報、k8sの名前空間など)を保持します。  
+  
+以下のコマンドを実行し、新しい設定(コンテキスト)が作成されることを確認します。
+```
+# kubectl config get-contexts
+```
+```
+CURRENT   NAME                                                    CLUSTER                                     AUTHINFO                                                NAMESPACE
+*         k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   eks-work-cluster.ap-northeast-1.eksctl.io   k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   
+```
+kubectlからEKSクラスタに接続できるようになったことを確認します。
+```
+# kubectl get node
+```
+```
+NAME                                               STATUS   ROLES    AGE   VERSION
+ip-192-168-0-171.ap-northeast-1.compute.internal   Ready    <none>   12m   v1.19.6-eks-49a6c0
+ip-192-168-2-230.ap-northeast-1.compute.internal   Ready    <none>   12m   v1.19.6-eks-49a6c0
+```
+## 2-2-3 EKSクラスタの動作確認
+EKSクラスタの構築が完了しました。構築したクラスタが動作するか確認しましょう。  
+以下のコマンドを実行してください。YAMLファイルは[ここ](https://github.com/kazusato/k8sbook/tree/master/eks-env)から取得してください。  
+このマニフェストを適用するとポッドが生成されます。
+```
+# kubectl apply -f 02_nginx_k8s.yaml
+```
+次に、生成されたポッドを確認します。
+```
+# kubectl get pod
+```
+```
+NAME        READY   STATUS    RESTARTS   AGE
+nginx-pod   1/1     Running   0          2m25s
+```
+k8sクラスタに対するポートフォワードを行います。
+```
+# kubectl port-forward nginx-pod 8080:80
+```
+```
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+```
+別ターミナルを開いて`http://localhost:8080`にアクセスしてみましょう。
+```
+# curl http://localhost:8080
+```
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<以下省略>
+```
+以上で、構築したEKSクラスタが正しく動作していることが確認できました。  
+最後に作成したポッドを削除します。
+```
+# kubectl delete -f 02_nginx_k8s.yaml
+```
