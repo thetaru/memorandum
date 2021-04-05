@@ -119,7 +119,7 @@ eksctlコマンドは、オプションとして各種パラメータを指定�
 --vpc-public-subnets <WorkerSubnetsの値> \
 --name eks-work-cluster \
 --region ap-northeast-1 \
---version 1.14 \
+--version 1.19 \
 --nodegroup-name eks-work-nodegroup \
 --node-type t2.small \
 --nodes 2 \
@@ -127,3 +127,6 @@ eksctlコマンドは、オプションとして各種パラメータを指定�
 --nodes-max 5
 ```
 環境構築には約20分ほどかかります。
+### ■ CloudFormationでの進捗状況の確認
+eksctlコマンドはは内部でCloudFormationを使ってEKSクラスタやワーカーノードを構築しています。  
+コマンド実行後、CloudFormation画面を見ると、作成されたスタックの内容や、その進捗状況を確認できます。  
