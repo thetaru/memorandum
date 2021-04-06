@@ -15,17 +15,14 @@ CloudFormationテンプレートは`10_rds_ope_cfn.yaml`を利用します。
 ![Image02](./images/2-3-2.png)
   
 スタックの名前とパラメータ(EksWorkVPC、OpeServerRouteTable)を指定します。  
-`スタックの名前`には`eks-work-rds`と入力してください。
-  
-![Image03](./images/2-3-3.png)
-  
+`スタックの名前`には`eks-work-rds`と入力してください。  
 パラメータの値を入力したら`次へ`を押して次のページに進みます。
   
-![Image04](./images/2-3-4.png)
+![Image04](./images/2-3-3.png)
   
 `スタックオプションの設定`は値を変更せず、そのまま`次へ`を押します。
   
-![Image05](./images/2-3-5.png)
+![Image05](./images/2-3-4.png)
   
 `レビュー`画面では、テンプレート名及び入力したパラメータ(EksWorkVPC、OpeServerRouteTable)の値を確認してください。  
 ※ OpeServerRouteTableの値は`eks-work-base`-`出力`の`Route Table`の値です。  
