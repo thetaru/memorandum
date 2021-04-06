@@ -108,3 +108,49 @@ Secrets Managerの画面では、登録されているシークレットの一�
 上と同様にSecrets Managerから確認できます。  
 データベース環境用のCloudFormationテンプレートでは、`RdsUserSecret`という名前でデータベースユーザパスワードを登録しています。  
 シークレット名のリンクを押して、シークレットの詳細情報より`シークレットの値`の`シークレットの値を取得する`を押すと、シークレットの値を表示できます。
+## 2-3-7 データベース操作
+セッションマネージャで以下の操作をします。
+- アプリケーション用データベースユーザの作成
+- アプリケーション用データベースの作成
+- DDLの実行
+- サンプルデータの投入
+
+### ■ アプリケーション用データベースユーザの作成
+```
+$ createuser -d -U eksdbadmin -P -h <RDSエンドポイントアドレス> mywork
+```
+```
+Enter password for new role: <- myworkのパスワード(RdsUserSecretのパスワードを使用する)
+Enter it again:              <- myworkのパスワード(RdsUserSecretのパスワードを使用する)
+Password:                    <- RdsMasterSecretのパスワード
+```
+### ■ アプリケーション用データベースの作成
+```
+$ createdb -U mywork -h <RDSエンドポイントアドレス> -E UTF8 myworkdb
+```
+### ■ データベースへの接続
+```
+$ psql -U mywork -h <RDSエンドポイントアドレス> myworkdb
+```
+### ■ DDLの実行とサンプルデータの投入
+```
+myworkdb=> \i k8sbook/backend-app/scripts/10_ddl.sql
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+myworkdb=> \i k8sbook/backend-app/scripts/20_insert_sample_data.sql
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+myworkdb=> \q
+```
