@@ -133,7 +133,7 @@ kube-master:~/# kubectl get pvc,pv
 ```
 kube-master:~/# kubectl apply -f mysql-sts.yaml
 kube-master:~/# kubectl exec -it mysql-0 -- bash
-# mysql -u root -u p qwerty
+# mysql -u root -p qwerty
 > show databases;
 ```
 ステートフルセット削除前に作成したデータはステートフルセットの削除後も存続し、再びステートフルセットを作成してデータにアクセスできることがわかりました。
