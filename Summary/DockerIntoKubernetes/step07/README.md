@@ -206,7 +206,7 @@ spec:
           readOnly: false
 
   volumes:                    # ポッド上の共有ボリューム
-    - name; data-vol
+    - name: data-vol
       emptyDir: {}
 ```
 マニフェストを適用して、初期化専用コンテナによって初期化されたボリュームをマウントしたメインコンテナを操作します。
