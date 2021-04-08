@@ -9,11 +9,11 @@
 ### ~~2 [コンテナの理解が前提](https://github.com/thetaru/memorandum/tree/master/Summary/DockerIntoKubernetes/2)~~
 ### ~~3 [Kubernetesの基本](https://github.com/thetaru/memorandum/tree/master/Summary/DockerIntoKubernetes/3)~~
 ## 2章 コンテナ開発を習得する5ステップ
-### Step 01 [コンテナ最初の一歩]()
-### Step 02 [コンテナの操作]()
-### Step 03 [コンテナ開発]()
-### Step 04 [コンテナとネットワーク]()
-### Step 05 [コンテナ API]()
+### ~~Step 01 [コンテナ最初の一歩]()~~
+### ~~Step 02 [コンテナの操作]()~~
+### ~~Step 03 [コンテナ開発]()~~
+### ~~Step 04 [コンテナとネットワーク]()~~
+### ~~Step 05 [コンテナ API]()~~
 ### Step 06 [Kubernetes最初の一歩]()
 ### Step 07 [マニフェストとポッド]()
 ### Step 08 [デプロイメント]()
