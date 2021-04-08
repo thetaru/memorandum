@@ -1,5 +1,5 @@
 # BIND
-# § INSTALL
+# § Install
 ```
 ### install
 # yum install bind
@@ -11,9 +11,7 @@
 ```
 bind-9.11.13-5.el8_2.x86_64
 ```
-# § Config
-# § Zone
-# § Chroot
+# § Tips
 
 
 # SANKO
