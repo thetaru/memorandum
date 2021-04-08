@@ -32,6 +32,7 @@
 # mysql_secure_installation
 ```
 ## ■ Zabbixの設定
+以下は最低限の設定です。環境に応じて設定値を変更してください。
 ```
 # vi /etc/zabbix/zabbix_server.conf
 ```
