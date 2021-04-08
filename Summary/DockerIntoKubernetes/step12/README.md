@@ -315,8 +315,8 @@ metadata:
   name: nodes
 subjects:
   - kind: ServiceAccount      # サービスアカウント名
-    name: high-availavility   # 名前空間の指定(必須)
     namespace: tkr-system     # 作成したサービスアカウントと同一名を設定
+    name: high-availavility   # 名前空間の指定(必須)
 roleRef:
   kind: ClusterRole
   name: nodes
