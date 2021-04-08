@@ -123,7 +123,7 @@ kube-master:~/# kubectl exec -it mysql-0 -- bash
 > show databases;
 ```
 永続ボリュームに書き込んだらステートフルセットを削除し、永続ボリュームが存続していることを確認します。  
-ポッドやステートフル接テオは削除されても、PVCとPVは存続しています。
+ポッドやステートフルセットは削除されても、PVCとPVは存続しています。
 ```
 kube-master:~/# kubectl delete -f mysql-sts.yaml
 kube-master:~/# kubectl get svc,sts,po
