@@ -4,7 +4,7 @@ Squidは、キャッシュファイルやソケットファイルを大量に扱
   
 変更方法については[このページ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/filedescriptor)を参考にしてください。
   
-また、`squid.conf`にもファイルディスクリプタの最大値を設定することができます。
+また、`squid.conf`にもファイルディスクリプタの最大値を設定することができます(がOS側でも設定してあげましょう)。
 ```
 max_filedesc 8192
 ```
