@@ -10,3 +10,4 @@ https://syobon.jp/blog/2019/05/24/how-to-build-the-ad-server-using-windows-serve
 - [ ] [コマンドなど]()
 netsh 系とか net系とか route系とか
 - [ ] [ショートカットなど]()
+- [ ] [NTFSのクラスターサイズについて]()
