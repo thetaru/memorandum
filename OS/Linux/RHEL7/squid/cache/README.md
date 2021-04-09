@@ -31,3 +31,10 @@ no_cache deny QUERY
 client_persistent_connections off
 server_persistent_connections off
 ```
+## Squidのキャッシュを無効化をする方法
+動的に更新されるWebページに対して、キャッシュされた情報が影響してうまく表示ができない場合があります。  
+回線速度が十分に出ている場合はキャッシュを使わないというのも手だと思います。
+```
+acl NOCACHE src all
+cache deny NOCACHE
+```
