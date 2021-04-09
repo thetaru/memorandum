@@ -651,11 +651,16 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 ```
 #!/bin/bash
-PROXY="<Proxy-server Ip-address>:<Port>"
-export http_proxy="http://$PROXY"
-export https_proxy="http://$PROXY"
 
-export no_proxy="127.0.0.1"
+### ProxyサーバのIPアドレスとポート番号を指定
+PROXY="<Proxy-server Ip-address>:<Port>"
+export http_proxy=$PROXY
+export HTTP_PROXY=$PROXY
+export https_proxy=$PROXY
+export HTTPS_PROXY=$PROXY
+
+### Proxy接続対象外を指定
+export no_proxy="127.0.0.1,localhost"
 ```
 ```
 ### 反映
