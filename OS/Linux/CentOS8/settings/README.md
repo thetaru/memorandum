@@ -651,7 +651,7 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 ```
 #!/bin/bash
-PROXY="<Proxy-server Ip-address>:Port"
+PROXY="<Proxy-server Ip-address>:<Port>"
 export http_proxy="http://$PROXY"
 export https_proxy="http://$PROXY"
 
