@@ -7,7 +7,7 @@
 ## Samba用ユーザ作成
 今回の作成するユーザはログインすることを考えないためログインできないようにします。
 ```
-# useradd -s /sbin/nologin sambauser
+# useradd -l -s /sbin/nologin -M -c "Samba user" sambauser
 # passwd sambauser
 ```
 作成したユーザをSambaユーザに登録します。
