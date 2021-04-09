@@ -8,4 +8,7 @@
 ## 2-1 [サンプルアプリケーションの概要とAWSの基本](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws/2-1)
 ## 2-2 [EKSクラスター構築](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws/2-2)
 ## 2-3 [データベースのセットアップ](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws/2-3)
-## 2-4 []()
+## 2-4 [APIアプリケーションのビルドとデプロイ](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws/2-4)
+## 2-5 [フロント援護アプリケーションのビルドとデプロイ](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws/2-5)
+## 2-6 [バッチアプリケーションのビルドとデプロイ](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws/2-6)
+## 2-7 [サンプルアプリケーション環境の破棄](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws/2-7)
