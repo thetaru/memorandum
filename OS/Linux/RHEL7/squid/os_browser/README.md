@@ -1,4 +1,5 @@
 # OS・ブラウザによる制限
+必要に応じてブラウザのバージョントークやOSのプラットフォームトークンを調べ`DenyBrowser`, `DenyOS`に登録します。
 ```
 # define denied OS
 acl DenyOS browser -i windows.95
