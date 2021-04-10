@@ -35,7 +35,7 @@ acl basic_ncsa proxy_auth REQUIRED
 http_access allow basic_ncsa
 ```
 それぞれについて解説します。  
-aclディレクティブとhttp_accessディレクティブで、認証ファイル(`/etc/squid/.htpasswd`)で指定したユーザを利用できるようにしておきます。  
+aclディレクティブとhttp_accessディレクティブで、認証ファイル(`/etc/squid/.htpasswd`)で指定したユーザを利用できるようにします。  
 `proxy_auth REQUIRED`とすることで、認証ファイルに登録されている全てのユーザが指定されることになります。
 ```
 ### Format acl acl名 proxy_auth (ユーザ名 | REQUIRED)
