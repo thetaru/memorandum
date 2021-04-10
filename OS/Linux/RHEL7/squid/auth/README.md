@@ -28,7 +28,7 @@ Basic認証を許可するために`squid.conf`を編集します。
 +  acl basic_ncsa proxy_auth REQUIRED
 +  http_access allow basic_ncsa
 ```
-#### 補足: ユーザのアクセス制御について
+#### **補足: ユーザのアクセス制御について**
 まずは設定値のここに注目してください。  
 aclディレクティブとhttp_accessディレクティブで、認証ファイル(`/etc/squid/.htpasswd`)で指定したユーザを利用できるようにしておきます。  
 `proxy_auth REQUIRED`とすることで、認証ファイルに登録されている全てのユーザが指定されることになります。
