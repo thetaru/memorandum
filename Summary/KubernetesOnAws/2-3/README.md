@@ -15,6 +15,8 @@ CloudFormationテンプレートは`10_rds_ope_cfn.yaml`を利用します。
 ![Image02](./images/2-3-2.png)
   
 スタックの名前とパラメータ(EksWorkVPC、OpeServerRouteTable)を指定します。  
+※ OpeServerRouteTableの値は`eks-work-base`-`出力`の`Route Table`の値です。  
+  
 `スタックの名前`には`eks-work-rds`と入力してください。  
 パラメータの値を入力したら`次へ`を押して次のページに進みます。
   
@@ -24,8 +26,7 @@ CloudFormationテンプレートは`10_rds_ope_cfn.yaml`を利用します。
   
 ![Image04](./images/2-3-4.png)
   
-`レビュー`画面では、テンプレート名及び入力したパラメータ(EksWorkVPC、OpeServerRouteTable)の値を確認してください。  
-※ OpeServerRouteTableの値は`eks-work-base`-`出力`の`Route Table`の値です。  
+`レビュー`画面では、テンプレート名及び入力したパラメータ(EksWorkVPC、OpeServerRouteTable)の値を確認してください。   
 値の確認とチェックボックスのチェックを終えたら、`スタックの作成`を押してデータベース環境の構築を開始します。
   
 マネジメントコンソールでスタックの作成状況を確認し、ステータスが`CREATE COMPLETE`になるまで待ちます。
