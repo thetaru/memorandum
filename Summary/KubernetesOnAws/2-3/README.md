@@ -65,7 +65,7 @@ $ sudo yum install -y git
 ```
 ### ■ PostgreSQLクライアントの導入
 ```
-$ sudo amazon-linux-extras install -y postgreql10
+$ sudo amazon-linux-extras install -y postgresql10
 ```
 ## 2-3-5 GitHubからのクローン
 セッションマネージャのコンソールから以下のコマンドを実行します。
