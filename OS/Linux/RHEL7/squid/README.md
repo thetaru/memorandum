@@ -9,5 +9,5 @@
 - [ ] [OS・ブラウザの制限](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/os_browser)
 - [ ] [カーネルパラメータの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/KernelParameter)
 - [ ] [Basic認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth)
-- [ ] [LDAP認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth_LDAP)
+- [ ] [(まだ)LDAP認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth_LDAP)
 - [ ] [(まだ)ホワイトリスト・ブラックリストの設定]()
