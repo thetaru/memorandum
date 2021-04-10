@@ -19,11 +19,14 @@ Basic認証を許可するために`squid.conf`を編集します。
 # vi /etc/squid/squid.conf
 ```
 ```
+### Basic認証用の設定
 +  auth_param basic program /usr/lib64/squid/basic_ncsa_auth /etc/squid/.htpasswd
 +  auth_param basic children 5 startup=5 idle=1
 +  auth_param basic realm Squid proxy-caching web server
 +  auth_param basic credentialsttl 2 hours
-+  acl staff proxy_auth REQUIRED
+
++  acl basic_ncsa proxy_auth REQUIRED
++  http_access allow basic_ncsa
 ```
 
 ## ユーザの追加・削除
