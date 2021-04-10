@@ -34,7 +34,7 @@ Dockerfileは、[ここ](https://github.com/kazusato/k8sbook/tree/master/backend
 ```
 # docker build -t k8sbook/backend-app:1.0.0 --build-arg JAR_FILE=build/libs/backend-app-1.0.0.jar .
 ```
-### ■ 2-4-3 コンテナレジストリの準備
+## 2-4-3 コンテナレジストリの準備
 作成したコンテナイメージは、作業端末上にしか存在しないため、EKS上にデプロイするには、コンテナレジストリに登録する必要があります。  
 AWSではECRというコンテナレジストリサービスを提供しているので、これを利用します。  
 ECRを利用するときは、コンテナイメージを登録する前に、コンテナイメージごとに`リポジトリ`を作成しておく必要があります。  
