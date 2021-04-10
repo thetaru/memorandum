@@ -6,7 +6,7 @@ APIアプリケーションは、構築したデータベースサーバに接�
 また、アプリケーションをEKSクラスタにデプロイするには、コンテナイメージを作成し、それをコンテナレジストリに登録する必要があります。
 ## 2-4-2 ソースコードのビルドとコンテナイメージの作成
 ### ■ 作業端末へ Amazon Corretto 11 を導入
-以下は、CentOS Streamでの実行した際のコマンドです。
+以下は、CentOS Streamで実行した際のコマンドです。
 ```
 # rpm --import https://yum.corretto.aws/corretto.key 
 # curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
