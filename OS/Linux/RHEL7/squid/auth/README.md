@@ -3,7 +3,6 @@
 |ユーザ名|パスワード|
 |:---|:---|
 |user01|password01|
-|user02|password02|
 
 ## パスワード設定
 user01のBasic認証のための設定をします。  
