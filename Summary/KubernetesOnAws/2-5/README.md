@@ -44,3 +44,12 @@ service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXX
 # BASE_URL=http://<EXTERNAL-IPの値>:8080
 # npm run build
 ```
+ビルド結果のファイルはdistフォルダの下に出力されます。  
+このフォルダをWebサーバに配置すると、フロントエンドアプリケーションを公開することができます。
+## 2-5-3 S3バケットとCloudFrontディストリビューションの作成
+コンテンツファイルを配置するS3バケットと、それを配信するためのCloudFrontディストリビューションを、CloudFormationで作成していきます。  
+  
+マネジメントコンソールからCloudFormationを開き、`スタックの作成`-`新しいリソースを使用(標準)`を押し、`テンプレートファイルのアップロード`から`30_s3_cloudfront_cfn.yaml`を選択して`次へ`を押します。  
+  
+![Image01](./images/2-5-1.png)
+  
