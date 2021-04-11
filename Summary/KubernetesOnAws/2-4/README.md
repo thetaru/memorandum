@@ -119,5 +119,18 @@ CURRENT   NAME                                                    CLUSTER       
   
 Namespace`eks-work`を使用するために、`eks-work`が指定されたコンテキストを作成し、有効化します。  
 ```
+# kubectl config set-context eks-work \
+--cluster <CLUSTER列の値> \
+--user <AUTHINFO列の値> \
+--namespace eks-work
+
+# kubectl config use-context eks-work
+```
+```
 # kubectl config get-contexts
+```
+```
+CURRENT   NAME                                                    CLUSTER                                     AUTHINFO                                                NAMESPACE
+*         eks-work                                                eks-work-cluster.ap-northeast-1.eksctl.io   k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   eks-work
+          k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   eks-work-cluster.ap-northeast-1.eksctl.io   k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   
 ```
