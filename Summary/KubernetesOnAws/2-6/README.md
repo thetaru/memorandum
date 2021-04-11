@@ -108,3 +108,6 @@ AWS_SECRETKEY=<シークレットアクセスキー> \
 envsubst < 42_batch_secrets_k8s.yaml.template | \
 kubectl apply -f -
 ```
+```
+secret/batch-secret-config created
+```
