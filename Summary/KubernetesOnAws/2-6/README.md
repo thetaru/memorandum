@@ -19,6 +19,20 @@
 ### ■ コンテナイメージの作成
 コンテナイメージを作成します。
 ```
-# docker build -t k8sbook/batch-app:1.0.0 --buid-arg JAR-FILE~build/libs/batch-app-1.0.0.jar .
+# docker build -t k8sbook/batch-app:1.0.0 --build-arg JAR-FILE~build/libs/batch-app-1.0.0.jar .
 ```
 ## 2-6-3 ECRレポジトリの作成
+作成したコンテナイメージをECR上に登録するため、バッチアプリケーション用のリポジトリを作成します。  
+マネジメントコンソールの`コンピューティング`から`Elastic Container Registry`を開き、`リポジトリの作成`を押してください。  
+  
+![Image01](./images/2-6-1.png)
+  
+`リポジトリ名`に`k8sbook/batch-app`と入力し、`リポジトリの作成`を押します。
+  
+![Image02](./images/2-6-2.png)
+  
+正常に作成できると、次のような画面が表示されます。
+  
+![Image03](./images/2-6-3.png)
+  
+## 2-6-4 コンテナイメージのpush
