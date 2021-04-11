@@ -168,3 +168,30 @@ deployment.apps/backend-app created
 ```
 これでデプロイが実施されました。  
 デプロイによって作成されたポッドを見ていきましょう。
+```
+# kubectl get all
+```
+```
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/backend-app-b9664d4c-j56nd   1/1     Running   0          5s
+pod/backend-app-b9664d4c-p52h6   1/1     Running   0          5s
+
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/backend-app   2/2     2            2           5s
+
+NAME                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/backend-app-b9664d4c   2         2         2       5s
+```
+※ 実はヘルスチェックでしくじっている
+## 2-4-6 APIアプリケーションの公開
+APIアプリケーションのデプロイができましたが、クラスタの外からAPIをコールすることはできません。 
+次は、デプロイしたAPIをクラスタ外からコールできるようにします。  
+k8sでは、デプロイされているポッドを公開するためにServiceと呼ばれるリソースが用意されています。  
+Serviceは、その公開範囲によりいくつかの種類が定義されていますが、ここで利用するのはLoadBalancerというServiceです。  
+これにより、ロードバランサをデプロイしたポッドの前面に配置し、インターネットからのリクエストを受け付けてポッド上のアプリケーションをコールすることができます。
+```
+# kubectl apply -f 23_service_api_k8s.yaml
+```
+```
+
+```
