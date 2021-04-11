@@ -47,3 +47,12 @@ S3バケットは、S3バケットが空の状態でCloudFormationスタック�
 # aws s3 rm s3://eks-work-frontend-<BucketSuffixの値> --recursive
 ```
 ### ■ バッチアプリケーション用S3バケットを削除する
+AWS CLIからCloudFormationスタックを削除します。(`aws cloudformation list-stacks`でスタック名を確認できます。)
+```
+# aws cloudformation delete-stack --stack-name eks-work-batch
+```
+### ■ フロントエンドアプリケーション用S3バケットとCloudFrontディストリビューションを削除する
+AWS CLIからCloudFormationスタックを削除します。(`aws cloudformation list-stacks`でスタック名を確認できます。)
+```
+# aws cloudformation delete-stack --stack-name eks-work-
+```
