@@ -147,7 +147,7 @@ Secretの作成には、以下の情報が必要に成ります。(それぞれ�
 
 これらの値が取得できたら、作業端末より以下のコマンドを実行してください。
 ```
-# DB_URL=jdbc:postgresq://<RDSエンドポイントアドレス>/myworkdb \
+# DB_URL=jdbc:postgresql://<RDSエンドポイントアドレス>/myworkdb \
 DB_PASSWORD='アプリケーション用データベースユーザのパスワード' \
 envsubst < 21_db_config_k8s.yaml.template | \
 kubectl apply -f -
