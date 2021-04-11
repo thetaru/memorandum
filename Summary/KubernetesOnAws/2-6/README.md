@@ -73,6 +73,6 @@ ConfigMapは、k8sで設定値を保持するための仕組みです。
 ConfigMapはkubectlで設定できますが、バケット名のサフィックスを指定する必要があるので、envsubstを利用した以下のコマンドを実行してください。
 ```
 # BUCKET_SUFFIX=<BucketSuffixの値> \
-envsubst < 41_config_map_k8s.yaml.template | \
+envsubst < 41_config_map_batch_k8s.yaml.template | \
 kubectl apply -f -
 ```
