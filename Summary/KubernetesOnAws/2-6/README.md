@@ -114,5 +114,6 @@ secret/batch-secret-config created
 ## 2-6-8 入力ファイルの配置
 AWS CLIを使って、バッチアプリケーションが利用する入力ファイルをバケットにアップロードしましょう。
 ```
-# aws s3 sync ../batch-app/sample_data/normal s3://eks-work-batch-<BucketSuffixの値>/locationData --delete --include "*" --acl public-read
+# BucketSuffix=aws cloudformation describe-stacks --stack-name eks-work-batch | jq '.Stacks[].Parameters[] | select(.ParameterKey == "BucketSuffix") | .ParameterValue'
+# aws s3 sync ../batch-app/sample_data/normal s3://eks-work-batch-${BucketSuffix}/locationData --delete --include "*" --acl public-read
 ```
