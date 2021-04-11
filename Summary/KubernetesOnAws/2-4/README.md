@@ -182,7 +182,6 @@ deployment.apps/backend-app   2/2     2            2           5s
 NAME                                   DESIRED   CURRENT   READY   AGE
 replicaset.apps/backend-app-b9664d4c   2         2         2       5s
 ```
-※ 実はヘルスチェックでしくじっている
 ## 2-4-6 APIアプリケーションの公開
 APIアプリケーションのデプロイができましたが、クラスタの外からAPIを呼び出せません。  
 LoadBalanceというServiceを使って、インターネットからのリクエストを受け付けてポッド上のアプリケーションを呼び出せるようにします。
@@ -200,3 +199,12 @@ Serviceが作成されていることを確認します。
 NAME                          TYPE           CLUSTER-IP      EXTERNAL-IP                                                                   PORT(S)          AGE
 service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com   8080:30714/TCP   31s
 ```
+マネジメントコンソールからロードバランサを確認します。  
+マネジメントコンソールの`コンピューティング`より`ECS`を選択します。  
+  
+![Image05](./images/2-4-5.png)
+  
+画面左側のメニューから`ロードバランサー`を選択します。
+  
+![Image06](./images/2-4-6.png)
+  
