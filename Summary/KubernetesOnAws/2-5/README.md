@@ -53,7 +53,8 @@ service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXX
   
 ![Image01](./images/2-5-1.png)
   
-`スタックの詳細を指定`画面では、スタックの名前を`eks-work-frontend`と指定し、パラメータ-BuchetSuffixに任意の文字列(ここではksを使用)を入力して`次へ`を押してください。
+`スタックの詳細を指定`画面では、スタックの名前を`eks-work-frontend`と指定し、パラメータ-BuchetSuffixに任意の文字列(ここではksを使用)を入力して`次へ`を押してください。  
+※ BucketSuffixは一意(他の人とかぶらないように)しなければなりません。
   
 ![Image02](./images/2-5-2.png)
   
