@@ -36,3 +36,13 @@
 ![Image03](./images/2-6-3.png)
   
 ## 2-6-4 コンテナイメージのpush
+### ■ ECRへのログイン
+```
+# docker login -u AWS -p $(aws ecr get-login-password) https://<リポジトリのURI>
+```
+### ■ コンテナイメージのタグ付けとpush
+```
+# docker tag k8sbook/batch-app:1.0.0 <レポジトリのURI>:1.0.0
+# docker push <レポジトリのURI>:1.0.0
+```
+## 2-6-5 S3バケットの作成
