@@ -116,3 +116,40 @@ AWS CLIを使って、バッチアプリケーションが利用する入力フ�
 ```
 # aws s3 sync ../batch-app/sample_data/normal s3://eks-work-batch-<BucketSuffixの値>/locationData --delete --include "*" --acl public-read
 ```
+## 2-6-9 バッチアプリケーションのデプロイ
+バッチプログラムを動かすための準備が完了しました。  
+バッチアプリケーション実行前のデータベースの内容とS3バケットの状態を確認します。  
+### ■ データベースの内容確認
+データベースの内容確認は、セッションマネージャで踏み台サーバに接続して行います。  
+以下、セッションマネージャから踏み台サーバにてコマンドを実行します。
+```
+$ psql -U mywork -h <RDSエンドポイントアドレス> myworkdb
+Password for user mywork: <- myworkのパスワード(RdsUserSecretのパスワードを使用する)
+```
+ログイン後、PostgreSQLのプロンプトが表示されます。
+```
+myworkdb=> select * from location limit 58;
+ location_id | location_name | region_id |                                            note
+-------------+---------------+-----------+--------------------------------------------------------------------------------------------
+           1 | 美ら海水族館  |         9 | 沖縄の代表的な水族館で、ジンベエザメをはじめ、様々な沖縄の海の生き物を見ることができます。
+           2 | 首里城        |         9 | 琉球王朝の王城で、世界遺産の1つです。
+(2 rows)
+```
+### ■ S3バケットの状態確認
+S3バケットの状態確認をします。  
+マネジメントコンソールより`ストレージ`から`S3`を選択してください。  
+  
+![Image11](./images/2-6-11.png)
+  
+すると、バケットの一覧が表示されるので、`eks-work-batch-`からはじまるバケットのバケット名をクリックします。
+  
+![Image12](./images/2-6-12.png)
+  
+バケット名をクリックすると、`locationData`フォルダが表示されます。  
+  
+![Image13](./images/2-6-13.png)
+  
+ここでlocationDataフォルダのフォルダ名をクリックすると、`sample_location1.csv`,`sample_location2.csv`の2ファイルが表示されます。  
+  
+![Image14](./images/2-6-14.png)
+  
