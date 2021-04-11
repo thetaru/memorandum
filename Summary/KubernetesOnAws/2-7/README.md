@@ -54,5 +54,5 @@ AWS CLIからCloudFormationスタックを削除します。(`aws cloudformation
 ### ■ フロントエンドアプリケーション用S3バケットとCloudFrontディストリビューションを削除する
 AWS CLIからCloudFormationスタックを削除します。(`aws cloudformation list-stacks`でスタック名を確認できます。)
 ```
-# aws cloudformation delete-stack --stack-name eks-work-
+# aws cloudformation delete-stack --stack-name eks-work-frontend
 ```
