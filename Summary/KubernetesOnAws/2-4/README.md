@@ -89,4 +89,20 @@ ECRへのログインが完了したら、コンテナイメージを格納し�
 ```
 すると、指定したタグに従ってECRにコンテナイメージが転送されます。
 ## 2-4-5 EKSクラスタへのAPIアプリケーションのデプロイ
-
+APIアプリケーションをEKSクラスタにデプロイします。
+### ■ Namespaceの作成
+k8sでは、1つのクラスタをNamespaceという論理的な区画に分割して管理できます。  
+ここでは、サンプルアプリケーション用に`eks-work`というNamespaceを作成し、そのNamespaceにAPIアプリケーションをデプロイします。  
+  
+Namespaceの作成は、kubectl applyコマンドでマニフェストを適用することで行います。  
+一度環境構築を行えば、マニフェストを使用することで何度でも同じ環境を再現できます。  
+  
+それでは、`eks-work`という名前のNamespaceを作成します。  
+マニフェストは[ここ](https://github.com/kazusato/k8sbook/tree/master/eks-env)から持ってきてください。
+```
+# kubectl apply -f 20_create_namespace_k8s.yaml
+```
+```
+namespace/eks-work created
+```
+### ■ kubeconfigへのNamespaceの反映
