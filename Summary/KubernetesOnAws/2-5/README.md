@@ -58,3 +58,4 @@ service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXX
 ![Image02](./images/2-5-2.png)
   
 次の`スタックオプションの設定`画面と`レビュー`画面では変更は不要なので`次へ`を押して進みます。  
+スタックの作成を開始したら、マネジメントコンソールのCloudFormation画面でステータスを確認し、`CREATE_COMPLETE`になるのを待ちます。
