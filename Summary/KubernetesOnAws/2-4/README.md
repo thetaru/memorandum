@@ -81,7 +81,7 @@ ECRへのログインが完了したら、コンテナイメージを格納し�
 作成したAPIアプリケーションのコンテナイメージ(k8sbook/backend-app:1.0.0)に対して、ECRのアドレスを含む形のタグを付与します。  
 やっていることは、コンテナイメージに別名を付けているだけです。
 ```
-# docker tag k8sbook/backend-app:1.0.0 <リポジトリのURI>
+# docker tag k8sbook/backend-app:1.0.0 <リポジトリのURI>/k8sbook/backend-app:1.0.0
 ```
 タグ付けしたら指定したタグに対してdocker pushコマンドを実行します。
 ```
