@@ -111,3 +111,5 @@ kubectl apply -f -
 ```
 secret/batch-secret-config created
 ```
+## 2-6-8 入力ファイルの配置
+AWS CLIを使って、バッチアプリケーションが利用する入力ファイルをバケットにアップロードしましょう。
