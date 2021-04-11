@@ -184,14 +184,19 @@ replicaset.apps/backend-app-b9664d4c   2         2         2       5s
 ```
 ※ 実はヘルスチェックでしくじっている
 ## 2-4-6 APIアプリケーションの公開
-APIアプリケーションのデプロイができましたが、クラスタの外からAPIをコールすることはできません。  
-次は、デプロイしたAPIをクラスタ外からコールできるようにします。  
-k8sでは、デプロイされているポッドを公開するためにServiceと呼ばれるリソースが用意されています。  
-Serviceは、その公開範囲によりいくつかの種類が定義されていますが、ここで利用するのはLoadBalancerというServiceです。  
-これにより、ロードバランサをデプロイしたポッドの前面に配置し、インターネットからのリクエストを受け付けてポッド上のアプリケーションをコールすることができます。
+APIアプリケーションのデプロイができましたが、クラスタの外からAPIを呼び出せません。  
+LoadBalanceというServiceを使って、インターネットからのリクエストを受け付けてポッド上のアプリケーションを呼び出せるようにします。
 ```
-# kubectl apply -f 23_service_api_k8s.yaml
+# kubectl apply -f 23_service_backend-app_k8s.yaml
 ```
 ```
-
+service/backend-app-service created
+```
+Serviceが作成されていることを確認します。
+```
+# kubectl get all
+```
+```
+NAME                          TYPE           CLUSTER-IP      EXTERNAL-IP                                                                   PORT(S)          AGE
+service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com   8080:30714/TCP   31s
 ```
