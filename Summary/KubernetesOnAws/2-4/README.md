@@ -219,8 +219,7 @@ service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXX
 ![Image08](./images/2-4-8.png)
   
 Serviceリソースを作成した直後は、インスタンスIDのステータスが`OutOfService`となっていますが、(これまでの手順通り実行していれば)時間経過後にステータスは`InService`に変わります。  
-以上でロードバランサがAPIアプリケーションを正常に認識していることがわかりました。  
-実際にロードバランサを介してAPIにアクセスしてみましょう。
+ロードバランサがAPIアプリケーションを正常に認識していることを確認したあとは、APIにアクセスしてみましょう。
 ```
 # curl -s http://<EXTERNAL-IPの値>:8080/health
 ```
