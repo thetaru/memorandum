@@ -56,3 +56,13 @@ AWS CLIからCloudFormationスタックを削除します。(`aws cloudformation
 ```
 # aws cloudformation delete-stack --stack-name eks-work-frontend
 ```
+### ■ データベースと踏み台サーバを削除する
+AWS CLIからCloudFormationスタックを削除します。(`aws cloudformation list-stacks`でスタック名を確認できます。)
+```
+# aws cloudformation delete-stack --stack-name eks-work-rds
+```
+### ■ ベースリソースを削除する
+AWS CLIからCloudFormationスタックを削除します。(`aws cloudformation list-stacks`でスタック名を確認できます。)
+```
+# aws cloudformation delete-stack --stack-name eks-work-base
+```
