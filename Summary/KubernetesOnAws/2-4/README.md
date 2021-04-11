@@ -106,3 +106,18 @@ Namespaceの作成は、kubectl applyコマンドでマニフェストを適用�
 namespace/eks-work created
 ```
 ### ■ kubeconfigへのNamespaceの反映
+kubeconfigに対して、作成したNamespaceを反映します。  
+kubeconfigファイルでは、コンテキストごとにNamespaceを指定することができます。  
+現在のコンテキストは以下のとおりです。(CURRENT列に`*`がついている行が、有効なコンテキストです。)
+```
+# kubectl config get-contexts
+```
+```
+CURRENT   NAME                                                    CLUSTER                                     AUTHINFO                                                NAMESPACE
+*         k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   eks-work-cluster.ap-northeast-1.eksctl.io   k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io
+```
+  
+Namespace`eks-work`を使用するために、`eks-work`が指定されたコンテキストを作成し、有効化します。  
+```
+# kubectl config get-contexts
+```
