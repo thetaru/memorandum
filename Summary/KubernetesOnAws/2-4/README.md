@@ -159,7 +159,7 @@ secret/db-config created
 APIアプリケーションをデプロイします。  
 デプロイ用のマニフェストを適用してください。  
 ```
-# ECR_HOST=<リポジトリのURI> \
+# ECR_HOST=<リポジトリのURIからリポジトリ名を除く> \
 envsubst < 22_deployment_backend-app_k8s.yaml.template | \
 kubectl apply -f -
 ```
