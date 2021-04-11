@@ -5,7 +5,7 @@
 - [ ] [Dockerから入るKubernetes](https://github.com/thetaru/memorandum/tree/master/Summary/DockerIntoKubernetes)
 ## J
 ## K
-- [ ] [Kubernetes on AWS]()
+- [ ] [Kubernetes on AWS](https://github.com/thetaru/memorandum/tree/master/Summary/KubernetesOnAws)
 ## L
 - [ ] [Linux Inside](https://github.com/thetaru/memorandum/tree/master/Summary/LinuxInside)
 - [ ] [Linuxプログラミング 〜例題で学ぶUNIXプログラミング環境のすべて〜]()
