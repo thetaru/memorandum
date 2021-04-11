@@ -175,3 +175,22 @@ batch-app   */5 * * * *   False     0        <none>          15s
 ```
 # kubectl get pod
 ```
+```
+NAME                         READY   STATUS      RESTARTS   AGE
+backend-app-b9664d4c-8jqdb   1/1     Running     0          7h8m
+backend-app-b9664d4c-hcnw7   1/1     Running     0          7h8m
+batch-app-1618143000-r7sf6   0/1     Completed   0          27s
+```
+### ■ バッチアプリケーション実行後の確認
+```
+myworkdb=> select * from location limit 58;
+ location_id |  location_name   | region_id |                                            note
+-------------+------------------+-----------+--------------------------------------------------------------------------------------------
+           1 | 美ら海水族館       |         9 | 沖縄の代表的な水族館で、ジンベエザメをはじめ、様々な沖縄の海の生き物を見ることができます。
+           2 | 首里城            |         9 | 琉球王朝の王城で、世界遺産の1つです。
+           3 | 東京スカイツリー  　|         3 | スカイツリーのコメント
+           4 | 東京タワー       　|         3 | 東京タワーのコメント
+           5 | 名古屋城       　　|         4 | 名古屋城のコメント
+           6 | 大阪城       　　　|         5 | 大阪城のコメント
+(6 rows)
+```
