@@ -100,3 +100,11 @@ Secretを作成する前に、認証情報を取得します。
 ![Image10](./images/2-6-10.png)
   
 ### ■ Secretの作成
+Secretを作成します。Secretはパスワードなどの機密情報を扱うときに使うリソースです。  
+先ほどパラメータストアから取得したアクセスキー、シークレットアクセスキーを指定して、以下のコマンドを実行してください。
+```
+# AWS_ACCESSKEY=<アクセスキー> \
+AWS_SECRETKEY=<シークレットアクセスキー> \
+envsubst < 42_batch_secrets_k8s.yaml.template | \
+kubectl apply -f -
+```
