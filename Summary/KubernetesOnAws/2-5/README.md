@@ -23,6 +23,9 @@ node.jsの[公式サイト](https://github.com/nodesource/distributions)よりLT
 ```
 # npm install
 ```
+```
+# npm update
+```
 ※ 場合によっては、`gcc-c++`をインストールする必要があります。
 ### ■ APIのベースURLの確認
 サンプルアプリケーションのフロントエンドでは、ビルドの際にAPIにアクセスするためのベースURLを指定し、その値をプログラムに埋め込む仕組みになっています。  
