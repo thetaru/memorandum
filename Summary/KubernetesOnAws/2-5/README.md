@@ -62,3 +62,24 @@ service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXX
 スタックの作成を開始したら、マネジメントコンソールのCloudFormation画面でステータスを確認し、`CREATE_COMPLETE`になるのを待ちます。
 ## 2-5-4 コンテンツのアップロード
 S3バケットに、フロントエンドアプリケーションのコンテンツをアップロードしましょう。
+```
+# aws s3 sync dist s3://eks-work-frontend-<BucketSuffixの値> --delete --include "*" --acl public-read
+```
+### ■ CloudFrontディストリビューションのキャッシュ無効化
+CloudFrontは、コンテンツをキャッシュすることで、バックエンドのストレージであるS3にアクセスせずにリクエストに返答できる仕組みになっています。  
+S3にコンテンツをアップロードした場合、CloudFront上に古いコンテンツがキャッシュされていると、キャッシュの有効期限が切れるまでの間は古いコンテンツを取得してしまいます。  
+  
+キャッシュの無効化は、マネジメントコンソールやAWS CLIで実施可能です。
+```
+# aws cloudfront create-invalidation --distribution-id <ディストリビューションID> --path "/*"
+```
+※ ディストリビューションIDは、マネジメントコンソールのCloudFormation画面にある`出力`タブの`DistributionID`の値から取得できます。
+## 2-5-5 フロントエンドからのアプリケーション動作確認
+以上でフロントエンドアプリケーションのデプロイが終了しました。  
+サンプルアプリケーションのフロントエンドは、デプロイしたAPIアプリケーションに接続するようになっています。  
+Webブラウザを開いて、アプリケーションの動作確認をしましょう。
+※ 接続先のURLはCloudFormation画面にある`出力`タブの`URL`の値から取得できます。
+  
+![Image03](./images/2-5-3.png)
+  
+これでフロント-バックエンド-データベースが連携できるようになりました。
