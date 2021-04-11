@@ -63,4 +63,16 @@
   
 ![Image06](./images/2-6-6.png)
   
-スタックの作成が開始されたら、マネジメントコンソールのCloudFormation画面でステータスを確認し、`CREATE_COMPLETE`になるのを待ちます。
+スタックの作成が開始されたら、マネジメントコンソールのCloudFormation画面でステータスを確認し、`CREATE_COMPLETE`になるのを待ちます。  
+これでバッチアプリケーション用のS3バケットが作成されました。
+### ■ 2-6-6 ConfigMapの作成
+バッチアプリケーションの設定値を格納するConfigMapを作成します。  
+ConfigMapは、k8sで設定値を保持するための仕組みです。  
+ここでは、先ほど作成したS3バケットの名称やS3内のフォルダ名などを保持するConfigMapを登録します。  
+  
+ConfigMapはkubectlで設定できますが、バケット名のサフィックスを指定する必要があるので、envsubstを利用した以下のコマンドを実行してください。
+```
+# BUCKET_SUFFIX=<BucketSuffixの値> \
+envsubst < 41_config_map_k8s.yaml.template | \
+kubectl apply -f -
+```
