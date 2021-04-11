@@ -119,18 +119,36 @@ CURRENT   NAME                                                    CLUSTER       
   
 Namespace`eks-work`を使用するために、`eks-work`が指定されたコンテキストを作成し、有効化します。  
 ```
+### コンテキストの作成
 # kubectl config set-context eks-work \
 --cluster <CLUSTER列の値> \
 --user <AUTHINFO列の値> \
 --namespace eks-work
 
+### コンテキストの有効化
 # kubectl config use-context eks-work
 ```
+コンテキストが有効になっていることを確認します。
 ```
 # kubectl config get-contexts
 ```
 ```
 CURRENT   NAME                                                    CLUSTER                                     AUTHINFO                                                NAMESPACE
 *         eks-work                                                eks-work-cluster.ap-northeast-1.eksctl.io   k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   eks-work
-          k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   eks-work-cluster.ap-northeast-1.eksctl.io   k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   
+          k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io   eks-work-cluster.ap-northeast-1.eksctl.io   k8seksadmin@eks-work-cluster.ap-northeast-1.eksctl.io
+```
+### ■ データベース接続用Secretの登録
+APIアプリケーションがデータベースに接続するためのパスワードなどを保存する`Secret`を作成します。  
+Secretとは、k8sクラスタの中にパスワードなどの機密情報を保管するためのものです。  
+  
+Secretの作成には、以下の情報が必要に成ります。(それぞれマネジメントコンソールから取得してください。)
+- RDSエンドポイントアドレス
+- アプリケーション用データベースユーザのパスワード
+
+これらの値が取得できたら、作業端末より以下のコマンドを実行してください。
+```
+# DB_URL=jdbc:postgresq://<RDSエンドポイントアドレス>/myworkdb \
+DB_PASSWORD='アプリケーション用データベースユーザのパスワード' \
+envsubst < 21_db_config_k8s.yaml.template | \
+kubectl apply -f -
 ```
