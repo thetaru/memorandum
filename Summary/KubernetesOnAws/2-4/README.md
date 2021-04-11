@@ -152,3 +152,19 @@ DB_PASSWORD='アプリケーション用データベースユーザのパスワ�
 envsubst < 21_db_config_k8s.yaml.template | \
 kubectl apply -f -
 ```
+```
+secret/db-config created
+```
+### ■ APIアプリケーションのデプロイ
+APIアプリケーションをデプロイします。  
+デプロイ用のマニフェストを適用してください。  
+```
+# ECR_HOST=<リポジトリのURI> \
+envsubst < 22_deployment_backend-app_k8s.yaml.template | \
+kubectl apply -f -
+```
+```
+deployment.apps/backend-app created
+```
+これでデプロイが実施されました。  
+デプロイによって作成されたポッドを見ていきましょう。
