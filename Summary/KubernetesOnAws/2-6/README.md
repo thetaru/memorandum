@@ -19,7 +19,7 @@
 ### ■ コンテナイメージの作成
 コンテナイメージを作成します。
 ```
-# docker build -t k8sbook/batch-app:1.0.0 --build-arg JAR-FILE=build/libs/batch-app-1.0.0.jar .
+# docker build -t k8sbook/batch-app:1.0.0 --build-arg JAR_FILE=build/libs/batch-app-1.0.0.jar .
 ```
 ## 2-6-3 ECRレポジトリの作成
 作成したコンテナイメージをECR上に登録するため、バッチアプリケーション用のリポジトリを作成します。  
