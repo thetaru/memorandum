@@ -153,3 +153,25 @@ S3バケットの状態確認をします。
   
 ![Image14](./images/2-6-14.png)
   
+### ■ バッチアプリケーションのデプロイ
+バッチアプリケーションをデプロイします。  
+バッチアプリケーションは、CronJobというk8sのリソースを用いて、5分ごとに起動するようにします。  
+以下のコマンドを実行してください。
+```
+# ECR_HOST=<リポジトリのURIからリポジトリ名を除く> \
+envsubst < 43_cronjob_k8s.yaml.template | \
+kubectl apply -f -
+```
+ここでk8s上に作成されているリソースを確認しましょう。  
+以下のコマンドを実行してください。
+```
+# kubectl get cronjob
+```
+```
+NAME        SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+batch-app   */5 * * * *   False     0        <none>          15s
+```
+一方、ポッドの状態を見ると、以下のとおりAPIアプリケーションのポッドのみが表示されています。
+```
+# kubectl get pod
+```
