@@ -208,3 +208,13 @@ service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXX
   
 ![Image06](./images/2-4-6.png)
   
+先ほどのSErviceリソースに連動して作成されたロードバランサが1つだけ存在することがわかります。  
+※ LoadBalancerタイプのServiceを作成した場合、Classic Load Balancerが作成されます。
+  
+![Image07](./images/2-4-7.png)
+  
+ロードバランサが背後のアプリケーションのステータスをどう認識しているかを確認します。  
+画面中央下の`インスタンス`タブを押してください。
+  
+![Image08](./images/2-4-8.png)
+  
