@@ -23,4 +23,21 @@ node.jsの[公式サイト](https://github.com/nodesource/distributions)よりLT
 ```
 # npm install
 ```
+※ 場合によっては、`gcc-c++`をインストールする必要があります。
 ### ■ APIのベースURLの確認
+サンプルアプリケーションのフロントエンドでは、ビルドの際にAPIにアクセスするためのベースURLを指定し、その値をプログラムに埋め込む仕組みになっています。  
+LoadBalancerの`EXTERNAL-IP`列の値を確認しましょう。
+```
+# kubectl get service
+```
+```
+NAME                          TYPE           CLUSTER-IP      EXTERNAL-IP                                                                   PORT(S)          AGE
+service/backend-app-service   LoadBalancer   10.100.218.65   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com   8080:30714/TCP   31s
+```
+### ■ ビルドの実行
+フロントエンドアプリケーションのビルドを行います。  
+ビルドは以下のコマンドで実行できます。
+```
+# BASE_URL=http://<EXTERNAL-IPの値>:8080
+# npm run build
+```
