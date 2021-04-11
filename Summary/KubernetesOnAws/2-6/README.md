@@ -82,4 +82,21 @@ kubectl apply -f -
   
 APIアプリケーションの場合と同様に、機密情報を管理するためのk8sリソースであるSecretを使用します。
 ### ■ アクセスキーの取得
+Secretを作成する前に、認証情報を取得します。  
+`管理とガバナンス`より`Systems Manager`を押します。
+  
+![Image07](./images/2-6-7.png)
+  
+画面左側のメニューより`パラメータストア`を開きます。
+  
+![Image08](./images/2-6-8.png)
+  
+すると、`BatchUserAccessKey`と`BatchUserSecretAccessKey`の2つの値が登録されていることがわかります。  
+  
+![Image09](./images/2-6-9.png)
+  
+それぞれの`名前`欄のリンクをクリックすると、詳細情報が表示され、`値`欄に登録されている値が表示されます。
+  
+![Image10](./images/2-6-10.png)
+  
 ### ■ Secretの作成
