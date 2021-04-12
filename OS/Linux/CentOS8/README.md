@@ -5,9 +5,10 @@ BIND
 logroate
 rsyslog
 postfix
-xfsquota
-mariadb
+xfsquota(プロジェクトクォータくらいかな)
+mariadb(やったほうがいいためになる)
 postgreSQL
+pacemaker(優先度: 低)
 AWX
 LDAP
 
