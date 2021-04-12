@@ -1,4 +1,17 @@
 # CentOS8
+## ■ MEMO
+```
+logroate
+rsyslog
+postfix
+xfsquota
+mariadb
+postgreSQL
+AWX
+
+tmpfs
+fragmentation
+```
 ## ■ Commands
 - [x] [chroot](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chroot)
 - [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
@@ -27,7 +40,6 @@
 - [ ] [(書きかけ)GitLab Runner](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab_Runner)
 - [ ] [(書きかけ)LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
-- [ ] [(書きかけ)Nginx](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Nginx)
 - [x] [NTP(chrony)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
 - [x] [NTP(ntpd)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/ntpd)
 - [ ] [(書きかけ)mariadb(mysql)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
