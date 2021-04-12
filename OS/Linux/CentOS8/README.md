@@ -8,6 +8,7 @@ postfix
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
 pacemaker(優先度: 低)
+xfsquota 挙動についての調査
 AWX
 LDAP
 
