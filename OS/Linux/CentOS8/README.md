@@ -47,5 +47,4 @@
 - [ ] [(書きかけ)tmpfsってなんなん?](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_tmpfs)
 - [ ] [(書きかけ)メモリ断片化について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/memory_fragmentation)
 - [ ] [アプデの際の注意](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/update_note)
-- [ ] [(書きかけ)systemdでアクセス制限](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/systemd_access_restrict)
-- [ ] [(書きかけ)名前解決について](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/about_name_resolution)
+
