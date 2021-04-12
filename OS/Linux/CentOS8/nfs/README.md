@@ -12,7 +12,7 @@
 |:---|:---|
 |マウントポイント|/share/nfs-client|
 
-## ■ Install
+## ■ Settings
 - [ ] [NFSサーバの構築]()
 - [ ] [NFSクライアントの設定]()
 
