@@ -55,10 +55,10 @@ fragmentation
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
 - [ ] [(書きかけ)デバイス名ずれ対策](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
-- [ ] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
+- [x] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
 - [ ] [(書きかけ)AnsibleとGitLabでCI/CD環境構築](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible+GitLab)
-- [ ] [tmux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/tmux)
+- [x] [tmux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/tmux)
 - [ ] [(書きかけ)tmpfsってなんなん?](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_tmpfs)
 - [ ] [(書きかけ)メモリ断片化について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/memory_fragmentation)
-- [ ] [アプデの際の注意](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/update_note)
+- [x] [アプデの際の注意](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/update_note)
 
