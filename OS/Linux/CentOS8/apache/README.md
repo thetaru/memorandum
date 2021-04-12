@@ -63,7 +63,7 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 ディレクトリリスティング(ブラウザからディレクトリ情報が筒抜けになる)を無効化します。
 #### FollowSymLinks
 シンボリックリンク先をApacheが見れるようになります。
-### CGI
+#### CGI
 CGIを実行しない場合は許可しないようにします。
 ```
 <IfModule alias_module>
