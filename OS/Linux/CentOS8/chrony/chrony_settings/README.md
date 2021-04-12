@@ -1,4 +1,4 @@
-# NTPクライアントとしての設定
+## NTPクライアントとしての設定
 #### Syntax - server
 ```
 server <NTPサーバ> [<option1> <option2> ... ]
