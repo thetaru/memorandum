@@ -77,5 +77,5 @@ CGIを実行しない場合は許可しないようにします。
 #</Directory>
 ```
 ## ■ セキュリティ
-- [ ] [セキュリティ設定]()
-- [ ] [HTTPS対応]()
+- [ ] [セキュリティ設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/security)
+- [ ] [HTTPS対応](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/)
