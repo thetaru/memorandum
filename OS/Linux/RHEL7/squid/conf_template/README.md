@@ -9,8 +9,6 @@ acl localnet src 192.168.137.0/24
 # SSL接続時に443ポート以外のCONNECTを拒否
 acl SSL_ports port 443
 acl CONNECT method CONNECT
-
-#
 http_access deny CONNECT !SSL_ports
 
 # 接続先として指定されているポート以外を拒否
@@ -24,11 +22,9 @@ acl Safe_ports port 280         # http-mgmt
 acl Safe_ports port 488         # gss-http
 acl Safe_ports port 591         # filemaker
 acl Safe_ports port 777         # multiling http
-
-# 
 http_access deny !Safe_ports
 
-# キャッシュの設定( manager を定義してないので無効な値)
+# キャッシュの設定(manager を定義してないので無効な値)
 http_access allow localhost manager
 http_access deny manager
 
