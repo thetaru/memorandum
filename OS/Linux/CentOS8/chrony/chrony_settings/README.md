@@ -1,4 +1,5 @@
 ## NTPクライアントとしての設定
+https://qiita.com/yunano/items/7883cf295f91f4ef716b
 #### Syntax - server
 ```
 server <NTPサーバ> [<option1> <option2> ... ]
