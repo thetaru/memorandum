@@ -32,9 +32,9 @@ fragmentation
 - [ ] [(書きかけ)xfsクォータ](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_quota)
 - [x] [xrdp](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xrdp)
 ## ■ Software Settings
-- [ ] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
+- [x] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
 - [ ] [(書きかけ)AWX](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/AWX)
-- [ ] [apache](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/apache)
+- [x] [apache](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/apache)
 - [ ] [BIND](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/BIND)
 - [ ] [Docker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Docker)
 - [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
