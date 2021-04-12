@@ -1,6 +1,6 @@
 # NTPクライアントとしての設定
 ## ■ Server
-### Syntax
+#### Syntax
 ```
 server <NTPサーバ> [<Option1> <Option2> ... ]
 デフォルト: 指定なし
