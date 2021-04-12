@@ -1,8 +1,8 @@
 # rsyslog設定
-## Settings
+## ■ Settings
 - [ ] [サーバ側の設定]()
 - [ ] [クライアント側の設定]()
-## Tips
+## ■ Tips
 
 :warning:書きかけ  
 https://www.server-world.info/query?os=CentOS_8&p=rsyslog&f=2  
