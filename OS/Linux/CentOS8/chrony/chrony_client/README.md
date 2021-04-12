@@ -1,4 +1,5 @@
 # chronyクライアントの設定
+## ■ chronyの設定
 ```
 # vi /etc/chrony.conf
 ```
