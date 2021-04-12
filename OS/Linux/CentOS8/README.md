@@ -5,7 +5,6 @@ BIND
 logroate
 rsyslog
 postfix
-xfsquota(プロジェクトクォータくらいかな)
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
 pacemaker(優先度: 低)
@@ -30,7 +29,7 @@ fragmentation
 - [x] [repository](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/repository)
 - [ ] [(書きかけ)syslog](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/syslog)
 - [x] [xfsファイルシステムのバックアップとリストア方法](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_backup)
-- [ ] [(書きかけ)xfsクォータ](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_quota)
+- [x] [xfsクォータ](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_quota)
 - [x] [xrdp](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xrdp)
 ## ■ Software Settings
 - [x] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
