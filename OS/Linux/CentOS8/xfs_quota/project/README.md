@@ -36,6 +36,7 @@ ProjectID:Directory
 ```
 ※ 1つのプロジェクトIDに対して、複数のディレクトリを指定することもできます。
 ### ■ プロジェクト作成
+#### Syntax - プロジェクト作成
 ```
 # xfs_quota -x -c 'project -s <ProjectName>' <Partition>
 ```
@@ -45,6 +46,7 @@ ProjectID:Directory
 ```
 ### ■ クォータ設定
 プロジェクトに対してクォータをかける場合は、`limit -p`でサイズを指定します。
+#### Syntax - クォータ設定
 ```
 # xfs_quota -x -c 'limit -p bsoft=<Size> bhard=<Size> <ProjectName>' <Partition>
 ```
@@ -55,6 +57,7 @@ ProjectID:Directory
 ### ■ クォータ解除
 プロジェクトにかかったクォータの設定を解除します。  
 ※ クォータを無効化しただけじゃ意味がなかった...
+#### Syntax - クォータ解除
 ```
 # xfs_quota -x -c "project -C <ProjectName>" <Partition>
 # xfs_quota -x -c 'limit -p bsoft=0 bhard=0 <ProjectName>' <Partition>
