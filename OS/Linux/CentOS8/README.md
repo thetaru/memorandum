@@ -7,7 +7,7 @@ rsyslog
 postfix
 xfsquota(プロジェクトクォータくらいかな)
 mariadb(やったほうがいいためになる)
-postgreSQL
+postgreSQL(やったほうがいいためになる)
 pacemaker(優先度: 低)
 AWX
 LDAP
