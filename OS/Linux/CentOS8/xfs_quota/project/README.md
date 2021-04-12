@@ -55,6 +55,11 @@ ProjectID:Directory
 ### ■ クォータ解除
 プロジェクトにかかったクォータの設定を解除します。
 ```
+# xfs_quota -x -c "project -C <ProjectName>" <Partition>
+# xfs_quota -x -c 'limit -p bsoft=0 bhard=0 <ProjectName>' <Partition>
+```
+プロジェクト`TestProj`を削除し、クォータを無効化します。
+```
 # xfs_quota -x -c "project -C TestProj" /home
 # xfs_quota -x -c 'limit -p bsoft=0 bhard=0 TestProj' /home
 ```
