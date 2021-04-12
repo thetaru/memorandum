@@ -53,7 +53,8 @@ ProjectID:Directory
 # xfs_quota -x -c 'limit -p bsoft=100m bhard=100m TestProj' /home
 ```
 ### ■ クォータ解除
+プロジェクトにかかったクォータの設定を解除します。
 ```
-# xfs_quota -x -c "project -C TestProj" /quota
-# xfs_quota -x -c 'limit -p bsoft=0 bhard=0 TestProj' /quota
+# xfs_quota -x -c "project -C TestProj" /home
+# xfs_quota -x -c 'limit -p bsoft=0 bhard=0 TestProj' /home
 ```
