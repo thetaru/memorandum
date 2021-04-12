@@ -36,7 +36,24 @@ ProjectID:Directory
 +  10:/home/test
 ```
 ※ 1つのプロジェクトIDに対して、複数のディレクトリを指定することもできます。
-## クォータ解除
+### ■ プロジェクト作成
+```
+# xfs_quota -x -c 'project -s <ProjectName>' <Partition>
+```
+先ほど作成したファイルをもとに、`TestProj`プロジェクトを作成します。
+```
+# xfs_quota -x -c 'project -s TestProj' /home
+```
+### ■ クォータ設定
+プロジェクトに対してクォータをかける場合は、`limit -p`でサイズを指定します。
+```
+# xfs_quota -x -c 'limit -p bsoft=<Size> bhard=<Size> <ProjectName>' <Partition>
+```
+先ほど作成したプロジェクト`TestProj`に対してクォータをかけます。
+```
+# xfs_quota -x -c 'limit -p bsoft=100m bhard=100m TestProj' /home
+```
+### ■ クォータ解除
 ```
 # xfs_quota -x -c "project -C TestProj" /quota
 # xfs_quota -x -c 'limit -p bsoft=0 bhard=0 TestProj' /quota
