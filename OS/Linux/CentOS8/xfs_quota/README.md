@@ -5,10 +5,37 @@
 |:---|:---|
 |プロジェクト名|TestProj|
 |プロジェクトID|10|
-|クォータ対象ディレクトリ|/quota/test|
-|クォータ対象パーティション|/quota|
+|クォータ対象ディレクトリ|/home/test|
+|クォータ対象パーティション|/home|
 
 ## クォータ設定
+### ■ /etc/projid
+`/etc/projid`ファイルにプロジェクト名とプロジェクトIDの対応を記述します。
+#### Syntax - projid
+```
+ProjectName:ProjectID
+```
+実際の場合は次のようになります。
+```
+# vi /etc/projid
+```
+```
++  TestProj:10
+```
+### ■ /etc/projects
+`/etc/projects`ファイルにプロジェクトIDとディレクトリの対応を記述します。
+#### Syntax - projects
+```
+ProjectID:Directory
+```
+実際の場合は次のようになります。
+```
+# vi /etc/projects
+```
+```
++  10:/home/test
+```
+※ 1つのプロジェクトIDに対して、複数のディレクトリを指定することもできます。
 ## クォータ解除
 ```
 # xfs_quota -x -c "project -C TestProj" /quota
