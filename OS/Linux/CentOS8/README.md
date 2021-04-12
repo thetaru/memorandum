@@ -8,6 +8,7 @@ xfsquota
 mariadb
 postgreSQL
 AWX
+LDAP
 
 tmpfs
 fragmentation
