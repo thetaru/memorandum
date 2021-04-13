@@ -53,6 +53,17 @@ hosts allow = 192.168.0.0/24
 ### プリンタ共有無効化
 load printers = no
 disable spoolss = yes
+
+### ログ設定
+log file = /var/log/samba/%m.log
+log level = 2
+
+### セキュリティ設定
+encrypt passwords = Yes
+
+### 認証設定
+security = user
+passdb backend = tdbsam
 ```
 ## Sambaの起動
 ```
