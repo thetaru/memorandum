@@ -1,8 +1,4 @@
 # postfix
-|役割|IPアドレス|
-|:---|:---|
-|Server|192.168.137.100|
-|Client|192.168.137.101|
 
 ## ■ Settings
 - [ ] [postfix中継サーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/postfix/postfix_server)
