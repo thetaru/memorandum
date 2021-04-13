@@ -11,3 +11,4 @@ https://syobon.jp/blog/2019/05/24/how-to-build-the-ad-server-using-windows-serve
 netsh 系とか net系とか route系とか
 - [ ] [ショートカットなど]()
 - [ ] [NTFSのクラスターサイズについて]()
+- [ ] [VMwareToolsが入った仮想マシンとホスト間での時刻同期を無効化する]()
