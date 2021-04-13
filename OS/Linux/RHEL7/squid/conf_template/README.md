@@ -24,7 +24,7 @@ acl Safe_ports port 591         # filemaker
 acl Safe_ports port 777         # multiling http
 http_access deny !Safe_ports
 
-# キャッシュの設定(manager を定義してないので無効な値)
+# キャッシュマネージャーのアクセス制限
 http_access allow localhost manager
 http_access deny manager
 
