@@ -70,3 +70,7 @@ reply_header_access X-Forwarded-For deny all
 reply_header_access Via deny all
 reply_header_access Cache-Control deny all
 ```
+Squidのキャッシュディレクトリを作成する際は、以下コマンドを実行すること。
+```
+# squid -z
+```
