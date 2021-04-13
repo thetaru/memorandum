@@ -58,24 +58,6 @@ refresh_pattern ^gopher:          1440    0%      1440
 refresh_pattern -i (/cgi-bin/|\?) 0       0%      0
 refresh_pattern .                 0       20%     4320
 
-### SECURITY
-# エラーページにバージョンを表示させない
-httpd_suppress_version_string on
-
-# アクセス元のIPを表示しない
-forwarded_for off
-
-# ローカルのホスト名の隠蔽
-visible_hostname unknown
-
-# Proxy経由であることを隠す(Squidのバージョンが3の場合)
-request_header_access X-Forwarded-For deny all
-request_header_access Via deny all
-request_header_access Cache-Control deny all
-reply_header_access X-Forwarded-For deny all
-reply_header_access Via deny all
-reply_header_access Cache-Control deny all
-
 ### LOG
 cache_log /var/log/squid/cache_log
 access_log /var/log/squid/access.log auto
