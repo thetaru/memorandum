@@ -10,7 +10,7 @@ forwarded_for off
 visible_hostname unknown
 
 # ユーザーエージェントの非表示
-# アクセス出来ないサイトが増えるのでオフ
+# アクセス出来ないサイトが増えるのでコメントアウト
 #header_access User-Agent deny all
 
 # Proxy経由であることを隠す(Squidのバージョンが3の場合)
