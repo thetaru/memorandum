@@ -34,6 +34,7 @@ include /etc/squid/conf.d/*.conf
 
 # ローカルネットワークからのアクセスを許可
 http_access allow localnet
+#http_access allow management
    
 # 自身からのアクセスを許可
 http_access allow localhost
