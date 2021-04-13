@@ -8,7 +8,8 @@
 Fatal error: Allowed memory size of xxxxxx bytes exhausted (tried to allocate 64 bytes)...
 ```
 原因はPHPのメモリ不足です。  
-メモリを割り当てられるように設定します。
+メモリを割り当てられるように設定します。  
+※ php.iniの設定に関しては不要かもです。
 ```
 # vi /etc/php.ini
 ```
