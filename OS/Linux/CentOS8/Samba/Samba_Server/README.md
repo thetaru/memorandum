@@ -32,10 +32,6 @@ retype new password: <Samba用パスワード>
 # pdbedit -L
 ```
 ## Sambaサーバの設定
-共有するディレクトリを作成します。
-```
-# mkdir /data
-```
 ```
 # vi /etc/samba/smb.conf
 ```
