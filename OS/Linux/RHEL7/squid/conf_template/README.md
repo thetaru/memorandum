@@ -43,7 +43,7 @@ http_access deny all
 # Squid が使用するポート
 http_port 8080
 
-# core 出力場所の設定
+# コアダンプを出力するディレクトリ
 coredump_dir /var/spool/squid
 
 # キャッシュ更新間隔の設定
