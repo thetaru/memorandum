@@ -48,6 +48,9 @@ http_port 8080
 # コアダンプを出力するディレクトリ
 coredump_dir /var/spool/squid
 
+# cgi-bin または ? を含むURLの場合はキャッシュを参照しない
+hierarchy_stoplist cgi-bin ?
+
 # キャッシュ更新間隔の設定
 refresh_pattern ^ftp:             1440    20%     10080
 refresh_pattern ^gopher:          1440    0%      1440
