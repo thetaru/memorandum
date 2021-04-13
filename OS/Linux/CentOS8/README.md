@@ -40,7 +40,6 @@ fragmentation
 - [ ] [Docker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Docker)
 - [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
 - [x] [GitLab](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab)
-- [ ] [(書きかけ)GitLab Runner](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab_Runner)
 - [ ] [(書きかけ)LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [x] [NTP(chrony)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
