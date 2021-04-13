@@ -61,9 +61,13 @@
 ※ `guest only`と`public`とではファイル作成時のUID/GIDで差がでる。
 
 ## ■ 認証の設定
+### security
 |security|説明|
 |:---|:---|
 |user|ユーザー名とパスワードでローカル認証を行う。|
 |share|パスワードのみで認証を行う。|
 |domain|ドメインコントローラにより認証を行う。|
 |ads|ADドメインのドメインコントローラにより認証を行う。|
+
+### passdb backend
+#### smbpasswd
