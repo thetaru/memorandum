@@ -47,6 +47,12 @@ catia:mappings = 0x22:0xa8,0x2a:0xa4,0x2f:0xf8,0x3a:0xf7,0x3c:0xab,0x3e:0xbb,0x3
 ### Windowsのワークグループ名を指定
 workgroup = WORKGROUP
 
+### 動作モードを指定
+server role = AUTO
+
+### NetBIOS名を指定(必要に応じて設定)
+#netbios name =
+
 ### アクセス制御
 hosts allow = 192.168.0.0/24
 
