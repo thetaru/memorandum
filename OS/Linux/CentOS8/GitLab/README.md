@@ -9,6 +9,9 @@
 |Storage|200GB|
 |Software|Gitlab 13.5.4-ee|
 
+## ■ Settings
+- [ ] [Gitlabサーバの構築]()
+
 ## ■ Install
 ### 1. パッケージインストール
 ```
