@@ -23,8 +23,8 @@
 |server role|sambaサーバの動作モードを指定する。|任意|
 |netbios name|sambaサーバのNetBIOS名を指定する。|文字列|
 |server string|サーバに関する説明を記述する。|文字列|
-|hosts allow|接続を許可するIPアドレスを指定する。|文字列(ホスト名のリストまたはIPアドレス)|
-|hosts deny|接続を拒否するIPアドレスを指定する。|文字列(ホスト名のリストまたはIPアドレス)|
+|hosts allow|接続を許可するIPアドレスを指定する。|文字列(IPアドレス)|
+|hosts deny|接続を拒否するIPアドレスを指定する。|文字列(IPアドレス)|
 |guest account|アカウントが存在しないユーザにゲストとしてアクセスする場合に利用する。|文字列(ユーザ名)|
 |map to guest|sambaユーザとして認証できなかった場合の動作を指定する|Never \| Bad User \| Bad Password|
 |log file|ログファイルを指定する。</br>ログフォーマットを変更することもできる。|文字列(フルパス名)|
