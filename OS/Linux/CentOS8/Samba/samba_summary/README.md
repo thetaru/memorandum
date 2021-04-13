@@ -23,7 +23,8 @@
 |server role|sambaサーバの動作モードを指定する。|
 |netbios name|sambaサーバのNetBIOS名を指定する。|
 |server string|サーバに関する説明を記述する。|
-|hosts allow|接続を許可するホストを指定する。(指定外のホストは拒否される。)|
+|hosts allow|接続を許可するIPアドレスを指定する|
+|hosts deny|接続を拒否するIPアドレスを指定する|
 |guest account|アカウントが存在しないユーザにゲストとしてアクセスする場合に利用する。|
 |map to guest|sambaユーザとして認証できなかった場合の動作を指定する(Never|Bad User|Bad Password)|
 |guest ok|共有のゲストアクセスを許すかどうか指定する。</br>この設定は、map to guestの指定がなされていないと有効にならない。|
