@@ -1,5 +1,5 @@
 # LinuxのSNMPについて
 ## ■ Settings
 - [ ] [SNMPクライアントの設定]()
-## Tips
+## ■ Tips
 - [ ] [SNMPの概要]()
