@@ -1,13 +1,4 @@
 # Sambaサーバの構築
-|項目|設定|
-|:---|:---|
-|ワークグループ|WORKGROUP|
-|IPアドレス|192.168.137.1|
-|共有名|Public|
-|共有ディレクトリ|/data|
-|認証|ユーザ名とパスワード|
-|権限|RW|
-
 ## Sambaのインストール
 ```
 # yum install samba
@@ -37,18 +28,30 @@ retype new password: <Samba用パスワード>
 ```
 ```
 [global]
-# ワークグループ名の指定(ドメイン名かワークグループ名をファイル共有するクライアントと揃える必要がある)
-    workgroup = WORKGROUP
-# NetBIOS名の指定(e.g. \\192.168.137.1\publicでアクセスできるようになる)
-    netbios name = public
-# ユーザー名とパスワードを使ってアクセス制御
-    security = user
-# パスワードを管理するデータベースを指定
-    passdb backend = tdbsam
-# ログ出力先
-    log file = /var/log/samba/sambalog.%m
-    log level = 5
-    max log size = 1024
+### Linux側日本語文字コード
+unix charset = UTF-8
+
+### Windows側日本語文字コード
+dos charset = CP932
+
+### 長いファイル名の文字化け対処
+mangled names = no
+
+### 上記対処でファイルアクセス不可になる一部文字の置換
+vfs objects = catia
+
+### 上記対処でファイルアクセス不可になる一部文字の置換
+catia:mappings = 0x22:0xa8,0x2a:0xa4,0x2f:0xf8,0x3a:0xf7,0x3c:0xab,0x3e:0xbb,0x3f:0xbf,0x5c:0xff,0x7c:0xa6
+
+### Windowsのワークグループ名を指定
+workgroup = WORKGROUP
+
+### アクセス制御
+hosts allow = 192.168.0.0/24
+
+### プリンタ共有無効化
+load printers = no
+disable spoolss = yes
 ```
 ## Sambaの起動
 ```
