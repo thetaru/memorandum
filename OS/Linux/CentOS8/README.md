@@ -6,6 +6,8 @@ samba
 logroate
 rsyslog
 postfix
+SNMpについて
+パケットキャプチャについて
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
 pacemaker(優先度: 低)
