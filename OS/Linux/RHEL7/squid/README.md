@@ -2,7 +2,7 @@
 ## ■ Setting
 - [ ] [squid.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/conf_template)
 - [ ] [security.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/security_template)
-- [ ] [cache.confのテンプレート]()
+- [ ] [cache.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/cache_template)
 - [ ] [log.confのテンプレート]()
 - [ ] [オレオレ ベストプラクティス](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/Bestpractice)
 ## ■ Tips
