@@ -11,3 +11,6 @@
 - [ ] [Basic認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth)
 - [ ] [(まだ)LDAP認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth_LDAP)
 - [ ] [(まだ)ホワイトリスト・ブラックリストの設定]()
+
+- [ ] [ログの設定]()
+- [ ] [セキュリティの設定]()
