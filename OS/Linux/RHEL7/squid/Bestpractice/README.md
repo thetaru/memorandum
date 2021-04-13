@@ -11,4 +11,5 @@
   
 作るべきファイル(というかプロキシとしての機能を除く設定)は次くらいかなと思います。
 - security.conf
+- cache.conf
 - log.conf
