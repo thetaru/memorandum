@@ -25,7 +25,9 @@ acl Safe_ports port 777         # multiling http
 http_access deny !Safe_ports
 
 # キャッシュマネージャーのアクセス制限
+# ACLに従ってキャッシュするかを決めること
 http_access allow localhost manager
+#http_access allow localnet manager
 http_access deny manager
 
 # /etc/squid/conf.d/配下の設定ファイルを読み込む
