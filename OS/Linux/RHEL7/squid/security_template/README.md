@@ -1,4 +1,5 @@
 # security.confのテンプレート
+匿名性を高めすぎても見れないサイトが多くなるだけなのでほどほどにしましょう。
 ```
 # エラーページにバージョンを表示させない
 httpd_suppress_version_string on
