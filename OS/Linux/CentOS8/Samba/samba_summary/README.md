@@ -19,3 +19,13 @@
 |パラメータ|説明|
 |:---|:---|
 |workgroup|sambaサーバが所属するワークグループ名もしくはドメイン名を指定する。|
+|server role|sambaサーバの動作モードを指定する。|
+|netbios name|sambaサーバのNetBIOS名を指定する。|
+|server string|サーバに関する説明を記述する。|
+|hosts allow|接続を許可するホストを指定する。(指定外のホストは拒否される。)|
+|guest account|アカウントが存在しないユーザにゲストとしてアクセスする場合に利用する。|
+|map to guest|sambaユーザとして認証できなかった場合の動作を指定する</br>Never: ゲスト認証を許可しない</br>Bad User: 存在しないユーザを指定した場合、guest accountで定義されたユーザでログイン</br>|
+|||
+|||
+|||
+|||
