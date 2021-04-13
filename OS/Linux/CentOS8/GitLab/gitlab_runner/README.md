@@ -25,5 +25,5 @@ Enter tags for the runner (comma-separated):
 Registering runner... succeeded                     runner=ze_Antye
 Enter an executor: custom, docker-ssh, ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, shell, virtualbox:
 kubernetes
-
+Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded! 
 ```
