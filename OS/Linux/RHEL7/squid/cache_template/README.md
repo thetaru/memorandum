@@ -17,6 +17,9 @@ fqdncache_size 10000
 # FQDNからIPアドレスに名前解決をした結果のキャッシュのエントリー数
 ipcache_size 10000
 
+# cgi-bin と ? を含むURLのキャッシュをしない
+hierarchy_stoplist cgi-bin ?
+
 # ディスク上のキャッシュディレクトリの設定
 # ストレージ書き込みの方式はaufs
 # 格納先ディレクトリは/var/spool/squid
