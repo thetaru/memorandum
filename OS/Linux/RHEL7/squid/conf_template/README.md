@@ -28,6 +28,9 @@ http_access deny !Safe_ports
 http_access allow localhost manager
 http_access deny manager
 
+# /etc/squid/conf.d/配下の設定ファイルを読み込む
+include /etc/squid/conf.d/*.conf
+
 # ローカルネットワークからのアクセスを許可
 http_access allow localnet
    
