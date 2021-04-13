@@ -48,20 +48,11 @@ http_port 8080
 # コアダンプを出力するディレクトリ
 coredump_dir /var/spool/squid
 
-### CACHE
-# cgi-bin または ? を含むURLの場合はキャッシュを参照しない
-hierarchy_stoplist cgi-bin ?
-
 # キャッシュ更新間隔の設定
 refresh_pattern ^ftp:             1440    20%     10080
 refresh_pattern ^gopher:          1440    0%      1440
 refresh_pattern -i (/cgi-bin/|\?) 0       0%      0
 refresh_pattern .                 0       20%     4320
-
-### LOG
-cache_log /var/log/squid/cache_log
-access_log /var/log/squid/access.log auto
-logformat combined %>a %ui %un [%tl] "%rm %ru HTTP/%rv" >Hs %h" "%{User-Agent}>h" %Ss:%Sh
 ```
 Squidのキャッシュディレクトリを作成する際は、以下コマンドを実行すること。
 ```
