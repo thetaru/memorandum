@@ -61,7 +61,7 @@
 ※ `guest only`と`public`とではファイル作成時のUID/GIDで差がでる。
 
 ## ■ 認証の設定
-### security
+## security
 |security|説明|
 |:---|:---|
 |user|ユーザー名とパスワードでローカル認証を行う。|
@@ -69,5 +69,18 @@
 |domain|ドメインコントローラにより認証を行う。|
 |ads|ADドメインのドメインコントローラにより認証を行う。|
 
-### passdb backend
-#### smbpasswd
+## passdb backend
+### tdbsam
+- バイナリ形式のデータベースファイル（/etc/samba/passdb.tdb）にユーザー情報を格納する。
+
+```
+passdb backend = tdbsam:/etc/samba/passdb.tdb
+```
+
+### ldapsam
+- LDAPサーバにユーザ情報を格納する。
+- 多数のユーザーを扱う場合に適している。
+
+```
+passdb backend = ldapsam:ldap://LDAPサーバー名[:ポート番号]
+```
