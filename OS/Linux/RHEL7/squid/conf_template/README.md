@@ -25,7 +25,7 @@ acl Safe_ports port 777         # multiling http
 http_access deny !Safe_ports
 
 # キャッシュマネージャーへのアクセス制限
-# キャッシュマネージャーとは、Squidの統計情報を表示するCGIユーティリティ
+# キャッシュマネージャー: squidの統計情報を表示するCGIユーティリティ
 http_access allow localhost manager
 http_access deny manager
 
