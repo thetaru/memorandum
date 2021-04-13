@@ -10,11 +10,13 @@ cache_mem 2048 MB
 maximum_object_size_in_memory 20480 KB
 
 # ディスク上に保存するキャッシュの最大値
-# キャッシュ可能性の底上げ
 maximum_object_size 20480 KB
 
-# FQDNの最大キャッシュ数
-fqdncache_size 1024
+# IPアドレスからFQDNに名前解決をした結果のキャッシュのエントリー数
+fqdncache_size 10000
+
+# FQDNからIPアドレスに名前解決をした結果のキャッシュのエントリー数
+ipcache_size 10000
 
 # キャッシュの保存先(100MBの容量を16分割しそれぞれに256のフォルダが切られその中にキャッシングされる)
 cache_dir ufs /var/spool/squid 100 16 256
