@@ -61,6 +61,7 @@
 ※ `guest only`と`public`とではファイル作成時のUID/GIDで差がでる。
 
 ## ■ 認証の設定
+`security`,`passdb backend`ともにglobalセクションに記述すること。
 ## security
 |security|説明|
 |:---|:---|
