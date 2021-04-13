@@ -2,6 +2,7 @@
 ## ■ MEMO
 ```
 BIND
+samba
 logroate
 rsyslog
 postfix
