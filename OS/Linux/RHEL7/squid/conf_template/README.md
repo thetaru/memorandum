@@ -4,7 +4,7 @@
 # ローカルネットワーク(localnet)の定義
 # 多くなる場合はファイルを作ってそれを読み込ませる
 acl localnet src 192.168.0.0/24
-acl localnet src 192.168.137.0/24
+acl management src 192.168.137.0/24
 
 # SSL接続時に443ポート以外のCONNECTを拒否
 acl SSL_ports port 443
