@@ -49,7 +49,6 @@ http_port 8080
 coredump_dir /var/spool/squid
 
 ### CACHE
-
 # cgi-bin または ? を含むURLの場合はキャッシュを参照しない
 hierarchy_stoplist cgi-bin ?
 
