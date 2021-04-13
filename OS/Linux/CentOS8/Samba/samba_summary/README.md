@@ -26,7 +26,7 @@
 |hosts allow|接続を許可するIPアドレスを指定する|
 |hosts deny|接続を拒否するIPアドレスを指定する|
 |guest account|アカウントが存在しないユーザにゲストとしてアクセスする場合に利用する。|
-|map to guest|sambaユーザとして認証できなかった場合の動作を指定する(Never|Bad User|Bad Password)|
+|map to guest|sambaユーザとして認証できなかった場合の動作を指定する(Never\|Bad User\|Bad Password)|
 |log file|ログファイルを指定する。</br>ログフォーマットを変更することもできる。|
 |log level|出力するログのレベルを指定する。|
 |max log size|ログファイルの最大サイズを指定する。0の場合は無制限となる。|
