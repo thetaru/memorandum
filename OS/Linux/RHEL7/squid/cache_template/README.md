@@ -27,3 +27,7 @@ hierarchy_stoplist cgi-bin ?
 # 階層ごとのディレクトリの数はそれぞれ32と512
 cache_dir aufs /var/spool/squid 30000 32 512
 ```
+Squidのキャッシュディレクトリを作成する際は、以下コマンドを実行すること。
+```
+# squid -z
+```
