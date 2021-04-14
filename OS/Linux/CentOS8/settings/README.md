@@ -267,6 +267,8 @@ CUI環境の場合は不要な手順です。
 systemdコントロール下のプロセスのデフォルト値を変更します。
 ```
 # mkdir /etc/systemd/system.conf.d
+# chown root:root /etc/systemd/system.conf.d
+# chmod 755 /etc/systemd/system.conf.d
 ```
 ```
 # vi /etc/systemd/system.conf.d/override.conf
