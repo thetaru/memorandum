@@ -263,6 +263,25 @@ CUI環境の場合は不要な手順です。
 # systemctl mask packagekit
 # systemctl mask packagekit-offline-update.service
 ```
+## ■ [Option] シェルの制限設定
+systemdコントロール下のプロセスのデフォルト値を変更します。
+```
+# mkdir /etc/systemd/system.conf.d
+```
+```
+# vi /etc/systemd/system.conf.d/override.conf
+```
+```
+[Manager]
+### ファイルディスクリプタ数
++  DefaultLimitNOFILE=65536
+### プロセス数
++  DefaultLimitNPROC=65536
+```
+設定を読み込ませます。
+```
+# systemctl daemon-reload
+```
 ## ■ sshdの設定
 ```
 # vi /etc/ssh/sshd_config
