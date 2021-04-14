@@ -567,6 +567,13 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
+
+### [Option] systemdコントロール下のプロセスのデフォルト値を変更する
+[Manager]
+### ファイルディスクリプタ数
++  DefaultLimitNOFILE=65536
+### プロセス数
++  DefaultLimitNPROC=65536
 ```
 ```
 ### 反映
