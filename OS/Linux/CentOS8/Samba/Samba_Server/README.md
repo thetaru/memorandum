@@ -53,8 +53,8 @@ server role = AUTO
 ### NetBIOS名を指定(必要に応じて設定)
 #netbios name =
 
-### アクセス制御
-hosts allow = 192.168.0.0/24
+### アクセス制御(環境に応じて設定)
+#hosts allow = 192.168.0.0/24
 
 ### プリンタ共有無効化
 load printers = no
