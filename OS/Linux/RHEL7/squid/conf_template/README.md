@@ -52,6 +52,8 @@ http_port 8080
 coredump_dir /var/spool/squid
 
 # キャッシュ更新間隔の設定
+# 鮮度 = キャッシュ経過時間 / 対象ファイルの作成日からの経過時間 とする。
+# 鮮度がX%を下回った場合にキャッシュの更新がかかる。
 refresh_pattern ^ftp:             1440    20%     10080
 refresh_pattern ^gopher:          1440    0%      1440
 refresh_pattern -i (/cgi-bin/|\?) 0       0%      0
