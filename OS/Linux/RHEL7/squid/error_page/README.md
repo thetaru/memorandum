@@ -9,3 +9,5 @@
 ```
 +  error_directory /usr/share/squid/errors/Japanese
 ```
+
+必要に応じてエラーページを編集してブラウザに表示させる文言等を変更してください。
