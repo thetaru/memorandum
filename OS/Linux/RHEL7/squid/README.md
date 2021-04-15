@@ -17,4 +17,5 @@
 - [ ] [(まだ)LDAP認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth_LDAP)
 - [ ] [(まだ)ホワイトリスト・ブラックリストの設定]()
 - [ ] [Kerberos認証＋AD連携プロキシの構築]()
+- [ ] [LDAP認証＋AD連携プロキシの構築]()
 - [ ] [https対応プロキシの構築]()
