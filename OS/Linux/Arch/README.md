@@ -1,5 +1,6 @@
 # Arch Linux
 ## ■ Commands
+- [ ] [pacman]()
 ## ■ OS Settings
 ## ■ Software Settings
 ## ■ Tips
