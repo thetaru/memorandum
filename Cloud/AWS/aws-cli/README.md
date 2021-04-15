@@ -1,5 +1,5 @@
 # AWS CLI
-# § INSTALL
+## ■ Install
 ```
 # curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 # unzip awscliv2.zip
@@ -22,4 +22,5 @@
 aws_access_key_id = XXXXXXXXXXXXXXXXXX
 aws_secret_access_key = YYYYYYYYYYYYYYYYYYY
 ```
+## ■ Ref
 https://docs.aws.amazon.com/cli/latest/reference/
