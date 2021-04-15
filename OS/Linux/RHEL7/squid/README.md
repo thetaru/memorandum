@@ -1,5 +1,6 @@
 # squid
 ## ■ Setting
+一通り検証すること
 - [ ] [squid.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/conf_template)
 - [ ] [security.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/security_template)
 - [ ] [cache.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/cache_template)
@@ -16,3 +17,4 @@
 - [ ] [(まだ)LDAP認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth_LDAP)
 - [ ] [(まだ)ホワイトリスト・ブラックリストの設定]()
 - [ ] [Kerberos＋AD連携]()
+- [ ] [https対応プロキシの構築]()
