@@ -8,6 +8,7 @@ rsyslog
 postfix
 SNMpについて
 パケットキャプチャについて
+コアダンプについて
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
 pacemaker(優先度: 低)
