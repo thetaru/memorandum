@@ -85,6 +85,7 @@ $ sudo vim /etc/profile.d/key-bind.sh
 #!/bin/bash
 
 ### CapsLock -> Ctrl
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 ```
 ## ショートカットの作成
