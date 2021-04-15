@@ -95,3 +95,5 @@ gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 `スクリーンショット`-`ウィンドウのスクリーンショットをPicturesフォルダに保存する`を`Shft+Ctrl+F9`に変更
 ## 電源
 環境に合わせて設定する。
+## バックアップ
+定期バックアップできるようにする。
