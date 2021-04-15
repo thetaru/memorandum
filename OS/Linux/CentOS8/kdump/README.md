@@ -55,14 +55,14 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 160MB予約していることがわかります。
 ## ■ クラッシュダンプの採取
 システムを故意にクラッシュさせダンプできていることを確認します。
-### §1. Magic SysRq Key
+### 1. Magic SysRq Key
 クラッシュさせるのに```Magic SysRq Key```の機能を使用します。  
 次のコマンドのいずれかを実行するとLinuxカーネルは強制的にクラッシュします。
 ```
 # echo 1 > /proc/sys/kernel/sysrq
 # echo c > /proc/sysrq-trigger
 ```
-### §2. クラッシュダンプの出力先
+### 2. クラッシュダンプの出力先
 デフォルトでは```/var/crash/address-YYYY-MM-DD-HH:MM:SS```配下にvmcoreとして出力されます。  
 
 #### 2.1 [Option] クラッシュダンプ出力先の変更方法
