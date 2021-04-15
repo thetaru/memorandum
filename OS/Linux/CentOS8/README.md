@@ -64,7 +64,7 @@ fragmentation
 - [ ] [(書きかけ)tmpfsってなんなん?](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_tmpfs)
 - [ ] [(書きかけ)メモリ断片化について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/memory_fragmentation)
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/update_note)
-- [ ] [SNMPについて]()
+- [ ] [SNMPについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_snmp)
 - [ ] [パケットキャプチャの使い方]()
-- [ ] [コアダンプについて]()
+- [ ] [コアダンプについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_coredump)
 
