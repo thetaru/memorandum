@@ -1,9 +1,8 @@
-# GitLab + Kustomize + CodePipeline + CodeBuild 連携
-```
-             push                     Build                  apply
-+--------+          +--------------+          +-----------+          +-----+
-| GitLab | -------> | CodePipeline | -------> | CodeBuild | -------> | EKS |
-+--------+          +--------------+          +-----------+          +-----+
-```
-## 前提条件
-EKSクラスタは既に構築してあるとします。
+# GitLab RunnerとAWS EKSの連携
+## ■ 前提条件
+- AWS EKSクラスタが構築済みであること
+- Helmがインストール済みであること
+## ■ 構成
+図1
+## ■ GitLab Runnerのデプロイ
+eksクラスタ上にGitLab Runnerをデプロイします。
