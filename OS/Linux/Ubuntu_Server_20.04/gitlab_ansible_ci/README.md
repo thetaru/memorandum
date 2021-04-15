@@ -1,1 +1,0 @@
-# Gitlab + Ansible で CI環境構築
