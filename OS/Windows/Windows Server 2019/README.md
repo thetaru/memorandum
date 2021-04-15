@@ -7,9 +7,6 @@
 https://www.rem-system.com/win2019-adsetup/
 https://syobon.jp/blog/2019/05/24/how-to-build-the-ad-server-using-windows-server-2019/  
 ## ■ Tips
-- [ ] [コマンドなど]()
-netsh 系とか net系とか route系とか
-- [ ] [ショートカットなど]()
 - [ ] [NTFSのクラスターサイズについて](https://github.com/thetaru/memorandum/tree/master/OS/Windows/Windows%20Server%202019/ntfs_clustersize)
 - [ ] [ファイアウォールについて](https://github.com/thetaru/memorandum/tree/master/OS/Windows/Windows%20Server%202019/firewall)
 - [ ] [VMwareToolsが入った仮想マシンとホスト間での時刻同期を無効化する](https://github.com/thetaru/memorandum/tree/master/OS/Windows/Windows%20Server%202019/VMwareTools_Disable_Timesync)
