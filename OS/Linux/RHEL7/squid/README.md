@@ -6,6 +6,9 @@
 - [ ] [cache.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/cache_template)
 - [ ] [log.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/log_template)
 - [ ] [オレオレ ベストプラクティス](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/Bestpractice)
+- [ ] [(未検証)Kerberos認証＋AD連携プロキシの構築]()
+- [ ] [(未検証)LDAP認証＋AD連携プロキシの構築]()
+- [ ] [(未検証)https対応プロキシの構築]()
 ## ■ Tips
 - [ ] [ファイルディスクリプタの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/filedescriptor)
 - [ ] [キャッシュの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/cache)
@@ -15,6 +18,3 @@
 - [ ] [(未検証)Basic認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth)
 - [ ] [(未検証)エラーページの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/error_page)
 - [ ] [(未検証)ホワイトリスト・ブラックリストの設定]()
-- [ ] [(未検証)Kerberos認証＋AD連携プロキシの構築]()
-- [ ] [(未検証)LDAP認証＋AD連携プロキシの構築]()
-- [ ] [(未検証)https対応プロキシの構築]()
