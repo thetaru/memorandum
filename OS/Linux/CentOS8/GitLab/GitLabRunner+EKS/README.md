@@ -34,6 +34,7 @@ default-token-79tsx   kubernetes.io/service-account-token   3      13m
 ![Image01](./images/01.png)
   
 ### EKSクラスタと連携
+`オペレーション`-`Kubernetes`-`Connect existing cluster`を選択肢、必要な情報を記入して登録します。
   
 ![Image02](./images/02.png)
   
