@@ -1,5 +1,5 @@
 # SUMMARY
 ## A
 ## B
-#= C
+## C
 - [ ] [Coq/SSReflect/MathCompによる定理証明]()
