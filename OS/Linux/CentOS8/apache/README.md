@@ -58,7 +58,7 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 
 </Directory
 ```
-### ■ Options
+### Directory - Options
 #### Indexs
 ディレクトリリスティング(ブラウザからディレクトリ情報が筒抜けになる)を無効化します。
 #### FollowSymLinks
