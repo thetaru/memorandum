@@ -66,4 +66,5 @@ fragmentation
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/update_note)
 - [ ] [SNMPについて]()
 - [ ] [パケットキャプチャの使い方]()
+- [ ] [コアダンプについて]()
 
