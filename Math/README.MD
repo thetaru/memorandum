@@ -1,2 +1,2 @@
 # 数学
-- [ ] [summary]()
+- [ ] [summary](https://github.com/thetaru/memorandum/tree/master/Math/summary)
