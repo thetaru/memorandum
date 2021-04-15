@@ -7,3 +7,6 @@
 ## GCP
 ### ■ BestPractice
 ### ■ Features
+## Azure
+### ■ BestPractice
+### ■ Features
