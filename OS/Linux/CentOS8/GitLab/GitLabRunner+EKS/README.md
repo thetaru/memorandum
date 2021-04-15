@@ -2,7 +2,4 @@
 ## ■ 前提条件
 - AWS EKSクラスタが構築済みであること
 ## ■ 構成
-図1  
-gitlab(srvA) - gitlab run(srvB)
-## ■ GitLab Runnerのデプロイ
-eksクラスタ上にGitLab Runnerをデプロイします。
+https://qiita.com/ynott/items/46d4b2926afec0d788f2
