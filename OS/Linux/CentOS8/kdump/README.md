@@ -1,17 +1,17 @@
 # Kdump
 クラッシュ時にメモリ内容をファイルへ保存するサービス
 ## ■ 設定方法
-### §1. サービスの確認
+### 1. サービスの確認
 ```
 # systemctl status kdump.service
 ```
-### 1.1 Kdumpを無効化していた場合
+#### 1.1 Kdumpを無効化していた場合
 Kdumpを有効化します(サービスの自動起動も)
 ```
 # systemctl start kdump.service
 # systemctl enable kdump.service
 ```
-### §2. [Option]カーネルパラメータの設定
+### 2. [Option]カーネルパラメータの設定
 Kdumpが有効になっていることを確認したら、カーネルダンプ出力に関する設定をします。  
 ```
 # vi /etc/default/grub
@@ -26,13 +26,13 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 ```
 また、このように手動で設定することもできます。  
 ## ■ 設定の反映
-### §1. 反映方法
+### 1. 反映方法
 編集した```default```ファイルを使用して、GRUB2 設定を再生成します。
-### 1.1 BIOSの場合
+#### 1.1 BIOSの場合
 ```
 # grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
-### 1.2 UEFIの場合
+#### 1.2 UEFIの場合
 ```
 # grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 ```
@@ -44,7 +44,7 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 ```
 # systemctl status kdump.service
 ```
-### §2. おまけ
+### 2. おまけ
 確保されているメモリ量は、```dmesg```から確認できます。
 ```
 # dmesg | grep Reserving
@@ -65,7 +65,7 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 ### §2. クラッシュダンプの出力先
 デフォルトでは```/var/crash/address-YYYY-MM-DD-HH:MM:SS```配下にvmcoreとして出力されます。  
 
-### 2.1 [Option] クラッシュダンプ出力先の変更方法
+#### 2.1 [Option] クラッシュダンプ出力先の変更方法
 ```
 # vi /etc/kdump.conf
 ```
