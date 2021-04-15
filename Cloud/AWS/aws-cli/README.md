@@ -10,8 +10,12 @@
 # aws --version
 ```
 ```
-### config
+### クレデンシャルの設定
 # aws configure
+AWS Access Key ID [None]: XXXX
+AWS Secret Access Key [None]: XXXX
+Default region name [None]: ap-northeast-1
+Default output format [None]: json
 ```
 ```
 ### 設定が入っていることを確認
