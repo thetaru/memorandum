@@ -23,3 +23,7 @@ default-token-79tsx   kubernetes.io/service-account-token   3      13m
 # kubectl get secret default-token-79tsx -o jsonpath="{['data']['ca\.crt']}" | base64
 ```
 ## ■ GitLabプロジェクトとEKSクラスタを連携
+### プロジェクトの作成
+`新規プロジェクト`-`テンプレートから作成`-`Ruby on Rails`を選択し新規プロジェクトを作成します。
+![Image01](./images/01.png)
+### EKSクラスタと連携
