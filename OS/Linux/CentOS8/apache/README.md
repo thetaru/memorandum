@@ -4,7 +4,7 @@
 |apache|2.4|
 
 ## ■ 設定項目
-### [Param] Listen
+### Listen
 Apacheのリッスンポートを指定します。  
 デフォルトでは80番のみですが、SSLサーバ証明書を使用する場合は443番をリッスンさせます。
 ```
@@ -76,6 +76,7 @@ CGIを実行しない場合は許可しないようにします。
 #    Require all granted
 #</Directory>
 ```
+## ■ 仮想ホストの設定
 ## ■ セキュリティ
 - [ ] [セキュリティ設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/security)
 - [ ] [HTTPS対応](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/)
