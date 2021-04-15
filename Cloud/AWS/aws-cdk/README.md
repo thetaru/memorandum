@@ -1,5 +1,5 @@
 # AWS CDK
-# § INSTALL
+## ■ Install
 Node.jsがインストールされていると仮定します。
 ```
 # npm install -g aws-cdk
