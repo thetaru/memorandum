@@ -14,12 +14,12 @@ visible_hostname unknown
 # アクセス出来ないサイトが増えるのでコメントアウト
 #header_access User-Agent deny all
 
-# Proxy経由であることを隠す(Squidのバージョンが3の場合)
-request_header_access Referer deny all
+# Proxy経由であることを隠す
+#request_header_access Referer deny all
 request_header_access X-Forwarded-For deny all
 request_header_access Via deny all
 request_header_access Cache-Control deny all
-reply_header_access Referer deny all
+#reply_header_access Referer deny all
 reply_header_access X-Forwarded-For deny all
 reply_header_access Via deny all
 reply_header_access Cache-Control deny all
