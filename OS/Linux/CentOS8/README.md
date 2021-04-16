@@ -70,4 +70,5 @@ fragmentation
 - [ ] [パケットキャプチャの使い方]()
 - [ ] [ゲートウェイサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/gateway_srv)
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/update_note)
+- [ ] [パスワードポリシーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/PasswordPolicy)
 
