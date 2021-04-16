@@ -77,7 +77,8 @@ LogLevel notice
 ```
 DirectoryIndex index.html
 ```
-## mime
+## AddType
+MIMEタイプを設定します。  
 html形式のファイル内でPHPの実行を有効にする場合は設定します。  
 ※ mime_moduleのロードが必要
 ```
