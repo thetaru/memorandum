@@ -52,7 +52,7 @@ fragmentation
 - [x] [NTP(ntpd)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/ntpd)
 - [ ] [(書きかけ)mariadb(mysql)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
 - [ ] [minecraft](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/minecraft)
-- [ ] [(書きかけ)postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
+- [ ] [(書きかけ)Postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
 - [ ] [(書きかけ)PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [(書きかけ)Pacemaker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Pacemaker)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
