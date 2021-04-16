@@ -70,5 +70,5 @@ fragmentation
 - [ ] [パケットキャプチャの使い方]()
 - [ ] [コアダンプについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_coredump)
 - [ ] [カーネルパラメータについて]()
-- [ ] [ゲートウェイサーバの構築]()
+- [ ] [ゲートウェイサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/gateway_srv)
 
