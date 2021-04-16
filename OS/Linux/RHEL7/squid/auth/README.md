@@ -4,7 +4,7 @@
 |:---|:---|
 |user01|password01|
 
-## パスワード設定
+## ■ パスワード設定
 user01のBasic認証のための設定をします。  
 設定したユーザ名とパスワードの対応は`/etc/squid/squid.pass`に保存されます。  
 ※ `/etc/squid/.htpasswd`のファイル名はなんでもよいです。(ただし、コマンド実行毎に変更するのはNG)
@@ -46,7 +46,9 @@ httpアクセスを許可するACL名(ここでは`basic_ncsa`)を指定して�
 ```
 http_access allow basic_ncsa
 ```
-## ユーザの追加・削除
+## ■ ロギング
+認証ログを残す。
+## ■ ユーザの追加・削除
 ### 新規作成
 ```
 # htpasswd -c /etc/squid/.htpasswd user01
