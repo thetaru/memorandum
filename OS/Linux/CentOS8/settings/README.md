@@ -332,6 +332,15 @@ systemdコントロール下のプロセスのデフォルト値を変更しま�
 ### Case5. 特定のネットワークからのみ接続許可
 +  AllowUsers <USER>@192.168.137.0/24
 ```
+このままだと設定したアルゴリズム以外のものも使おうとするので`/etc/sysconfig/sshd`を編集します。  
+この設定ファイルは`/etc/systemd/system/multi-user.target.wants/sshd.service`で読み取られます。
+```
+# vi /etc/sysconfig/sshd
+```
+```
+-  # CRYPTO_POLICY=
++  CRYPTO_POLICY=
+```
 ```
 ### sshdを再起動
 # systemctl restart sshd
