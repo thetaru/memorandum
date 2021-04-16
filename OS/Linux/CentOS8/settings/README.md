@@ -591,9 +591,11 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 # vi /etc/systemd/system.conf
 ```
 ```
+### コアダンプを出力する
 -  #DumpCore=yes
 +  DumpCore=yes
 
+### コアダンプのデフォルトの最大値を無制限にする
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
 ```
