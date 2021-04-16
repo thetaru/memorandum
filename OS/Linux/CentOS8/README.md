@@ -6,7 +6,7 @@ BIND
 samba
 logroate
 rsyslog
-postfix
+postfix 全部プラスじーめーる
 SNMpについて
 パケットキャプチャについて
 コアダンプについて
