@@ -341,6 +341,7 @@ systemdコントロール下のプロセスのデフォルト値を変更しま�
 -  # CRYPTO_POLICY=
 +  CRYPTO_POLICY=
 ```
+設定が完了したらサービスを再起動します。
 ```
 ### sshdを再起動
 # systemctl restart sshd
