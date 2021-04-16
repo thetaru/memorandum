@@ -14,7 +14,7 @@ visible_hostname unknown
 # アクセス出来ないサイトが増えるのでコメントアウト
 #header_access User-Agent deny all
 
-# Proxy経由であることを隠す
+# Proxy経由であることを隠す(v3以上)
 #request_header_access Referer deny all
 request_header_access X-Forwarded-For deny all
 request_header_access Via deny all
