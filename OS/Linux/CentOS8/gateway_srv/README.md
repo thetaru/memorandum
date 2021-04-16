@@ -27,7 +27,7 @@ firewalldでIPマスカレードの設定をします。
 ```
 external側のゾーンにIPマスカレードの設定をします。
 ```
-# firewall-cmd --zone=external --add-masquerade --permanent
+# firewall-cmd --permanent --zone=external --add-masquerade
 ```
 設定を反映させます。
 ```
@@ -37,7 +37,7 @@ external側のゾーンにIPマスカレードの設定をします。
 ## Gatewayとしての設定
 internal側のゾーンにIPマスカレードの設定をします。
 ```
-# firewall-cmd --zone=internal --add-masquerade --parmanent
+# firewall-cmd --permanent --zone=internal --add-masquerade
 ```
 ```
 # firewall-cmd --reload
