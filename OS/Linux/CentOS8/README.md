@@ -69,6 +69,6 @@ fragmentation
 - [ ] [SNMPについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_snmp)
 - [ ] [パケットキャプチャの使い方]()
 - [ ] [コアダンプについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_coredump)
-- [ ] [カーネルパラメータについて]()
+- [ ] [カーネルパラメータについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_KernelParam)
 - [ ] [ゲートウェイサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/gateway_srv)
 
