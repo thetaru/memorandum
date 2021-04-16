@@ -49,10 +49,10 @@ Errorlog "/var/log/httpd/error_log"
 ```
 ## AccessLog
 ログフォーマットを変更できます。  
-以下はデフォルトの値です。
+デフォルトだとわかりにくいので出力先を`/var/log/httpd/access_log`へ変更します。
 ```
 LogFormat "%h %l %u %t \"%r\" %t %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
-CustomLog "logs/access_log" combined
+CustomLog "/var/log/httpd/access_log" combined
 ```
 ## LogLevel
 エラーログへ記録するメッセージのレベルを指定できます。  
@@ -67,14 +67,13 @@ CustomLog "logs/access_log" combined
 |info|追加情報|
 |debug|デバッグメッセージ|
 
-
 ```
 LogLevel notice
 ```
 
 ## DirectoryIndex
 ディレクトリにファイル指定無しのアクセスがあった場合に、どのファイルを表示するかを設定します。  
-サーバの情報やapacheの情報を漏らしたくないので空の`index.html`を作ってしまいましょう。
+例えば、http://192.168.137.1/はファイルを指定してませんが、この設定を入れることでindex.htmlが表示されます。
 ```
 DirectoryIndex index.html
 ```
@@ -84,7 +83,7 @@ html形式のファイル内でPHPの実行を有効にする場合は設定し�
 ```
 AddType application/x-httpd-php .php
 ```
-## Directoryディレクティブ
+## Directory
 指定したディレクトリ配下に対してアクセス制限などを個別に細かく設定できる。  
 Document Rootを変更した場合は、そのDocument Rootに対するDirectory設定を忘れないようにします。
 ```
