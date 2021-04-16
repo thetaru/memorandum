@@ -19,42 +19,32 @@ Internal                       External
 ## ■ 構築
 ## IPマスカレードの設定
 firewalldでIPマスカレードの設定をします。  
-まずインターフェースのゾーンを確認します。(未設定ならPublicだと思います。)
-```
-# firewall-cmd --get-active-zone
-```
-```
-public
-  interfaces: ens192 ens224
-```
-インターフェースのゾーンをens192は`external`、ens224は`internal`に設定します。
+インターフェースのゾーンをens192は`external`、ens224は`internal`に設定します。  
+※ 未設定であればデフォルトのPublicだと思います。
 ```
 # nmcli connection modify ens192 connection.zone external
 # nmcli connection modify ens224 connection.zone internal
 ```
-変更できていることを確認します。
-```
-# firewall-cmd --get-active-zone
-```
-```
-external
-  interfaces: ens192
-internal
-  interfaces: ens224
-```
-次に、external側のゾーンにIPマスカレードの設定をします。
+external側のゾーンにIPマスカレードの設定をします。
 ```
 # firewall-cmd --zone=external --add-masquerade --permanent
-```
-変更できていることを確認します。
-```
-# firewall-cmd --zone=external --query-masquerade
-```
-```
-yes
 ```
 設定を反映させます。
 ```
 # firewall-cmd --reload
 ```
-IPフォワードの設定はIPマスカレード有効化により自動で有効になります。
+※ IPフォワードの設定はIPマスカレード有効化により自動で有効になります。(net.ipv4.ip_forward=1となっているはずです。)
+## Gatewayとしての設定
+internal側のゾーンにIPマスカレードの設定をします。
+```
+# firewall-cmd --zone=internal --add-masquerade --parmanent
+```
+```
+# firewall-cmd --reload
+```
+InternalインターフェースからExternalインターフェースへ転送する設定を入れます。
+```
+# firewall-cmd --direct --add-rule ipv4 nat POSTROUTING 0 -o eth192 -j MASQUERADE
+# firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -i eth224 -o eth192 -j ACCEPT
+# firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -i eth192 -o eth224 -m state --state RELATED,ESTABLISHED -j ACCEPT
+```
