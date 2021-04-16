@@ -10,6 +10,7 @@ postfix
 SNMpについて
 パケットキャプチャについて
 コアダンプについて
+カーネルパラメータについて
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
 pacemaker(優先度: 低)
@@ -59,7 +60,6 @@ fragmentation
 - [ ] [VirtualBox](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/virtualbox)
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
-- [ ] [(書きかけ)デバイス名ずれ対策](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/device_align)
 - [x] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
 - [ ] [(書きかけ)AnsibleとGitLabでCI/CD環境構築](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible+GitLab)
 - [x] [tmux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/tmux)
