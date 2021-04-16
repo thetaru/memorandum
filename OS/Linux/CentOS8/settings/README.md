@@ -577,7 +577,7 @@ https://note.com/ujisakura/n/n443807235887#o7Prw
 ```
 ```
 ### 設定の反映
-# systemctl -p
+# sysctl -p
 ```
 ## ■ コアダンプ出力設定
 ```
