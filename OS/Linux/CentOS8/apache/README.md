@@ -5,28 +5,27 @@
 
 ## ■ ディレクティブ
 ## ServerTokens
-|設定値|説明|
+|設定値|動作説明|
 |:---|:---|
 |Prod|Apacheであるということを表示|
 |Min|Apacheのバージョン情報を表示|
 |OS|Apacheのバージョン情報とOS情報を表示|
 |Full(デフォルト)|Apacheのバージョン情報、OS情報、モジュール情報を表示|
 
-クライアントに送り返すServer応答ヘッダ内に、サーバの一般的な**OS種別**や、**コンパイルされて組み込まれているモジュールの情報**を含めるかどうかを指定します。
+ServerTokensの内容はエラーページに表示されてしまうのでバージョン情報等は表示させないようにしましょう。
 ```
 ServerTokens Prod
 ```
 ## Listen
 Apacheのリッスンポートを指定します。  
-デフォルトでは80番のみですが、SSLサーバ証明書を使用する場合は443番をリッスンさせます。
+デフォルトでは80番でリッスンします。
 ```
 Listen 80
-Listen 443
 ```
 ## ServerAdmin
 連絡用メールアドレスの設定です。  
 エラーページに遷移した際に、問い合わせ先として設定したメールアドレスが表示されます。  
-つかわないのでコメントしてしまいます。
+使わないのでコメントしてしまいます。
 ```
 #ServerAdmin root@localhost
 ```
@@ -49,7 +48,30 @@ DocumentRoot "/var/www/html"
 Errorlog "/var/log/httpd/error_log"
 ```
 ## AccessLog
-ログフォーマットを変更できます。
+ログフォーマットを変更できます。  
+以下はデフォルトの値です。
+```
+LogFormat "%h %l %u %t \"%r\" %t %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+CustomLog "logs/access_log" combined
+```
+## LogLevel
+エラーログへ記録するメッセージのレベルを指定できます。  
+指定したレベル以上のメッセージがログに書き込まれます。
+|設定値|動作説明|
+|:---|:---|
+|emerg|直ちに対処が必要|
+|alert|致命的な状態|
+|crit|エラー|
+|warn|警告|
+|notice|重要な情報|
+|info|追加情報|
+|debug|デバッグメッセージ|
+
+
+```
+LogLevel notice
+```
+
 ## DirectoryIndex
 ディレクトリにファイル指定無しのアクセスがあった場合に、どのファイルを表示するかを設定します。  
 サーバの情報やapacheの情報を漏らしたくないので空の`index.html`を作ってしまいましょう。
