@@ -5,6 +5,7 @@
 |ens192|192.168.0.130|external|External Adapter|
 |ens224|192.168.137.254|internal|Internal Adapter|
 
+## ■ 構成概要
 ```
 Internal                       External
 |                              |
@@ -15,8 +16,6 @@ Internal                       External
 |        +------------+        |
 |                              |
 ```
-
-## ■ 構成概要
 ## ■ 構築
 ## IPマスカレードの設定
 firewalldでIPマスカレードの設定をします。  
