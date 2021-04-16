@@ -522,6 +522,7 @@ uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 +  Defaults:%wheel !requiretty
 ```
 ## ■ logrotateの設定
+要件に合わせて設定してください。
 ```
 # vi /etc/logrotate.conf
 ```
