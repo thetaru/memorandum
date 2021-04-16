@@ -49,7 +49,6 @@ fragmentation
 - [ ] [(書きかけ)LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [x] [NTP(chrony)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
-- [x] [NTP(ntpd)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/ntpd)
 - [ ] [(書きかけ)mariadb(mysql)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
 - [ ] [minecraft](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/minecraft)
 - [ ] [(書きかけ)Postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
