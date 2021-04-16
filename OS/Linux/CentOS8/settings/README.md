@@ -201,7 +201,7 @@ ethtoolでやるやつ `auto-negotitation`あたりを設定しよう
 # vi /etc/sysconfig/network
 ```
 ```
-### 不要なルーティングテーブルの作成を防ぐ
+### 不要なルーティングテーブルの作成を防ぐ(RHEL8では不要なルーティングが自動作成されないので不要です)
 +  NOZEROCONF=yes
 
 ### システム起動時にNWを有効化
