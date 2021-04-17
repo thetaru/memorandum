@@ -3,6 +3,11 @@
 指定したディレクトリ配下に対してアクセス制限などを個別に細かく設定できる。  
 Document Rootを変更した場合は、そのDocument Rootに対するDirectory設定を忘れてはいけません。
 ### Options
+|項目|動作説明|
+|:---|:---|
+|Indexes||
+|FollowSymLinks||
+
 #### Indexs
 ディレクトリリスティング(ブラウザからディレクトリ情報が筒抜けになる)を無効化します。
 #### FollowSymLinks
@@ -21,7 +26,7 @@ CGIを実行しない場合は許可しないようにします。
 #</Directory>
 ```
 ## ■ IfModule
-### [module] log_config_module
+## [module] log_config_module
 ログフォーマットを変更できます。  
 デフォルトだとわかりにくいので出力先を`/var/log/httpd/access_log`へ変更します。
 ```
