@@ -31,6 +31,13 @@ CGIを実行しない場合は許可しないようにします。
 #</Directory>
 ```
 ## ■ IfModule
+## [module] alias_module
+### CGI無効化
+```
+<IfModule alias_module>
+    #ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
+</IfModule>
+```
 ## [module] log_config_module
 ### access_log
 ログフォーマットを変更できます。  
