@@ -59,3 +59,10 @@ Errorlog "/var/log/httpd/error_log"
 ```
 LogLevel notice
 ```
+## AddDefaultCharset
+metaタグで文字コード指定しても、AddDefaultCharsetディレクティブで指定した文字コードを優先してしまいます。  
+なのでAddDefaultCharsetの機能を無効化しましょう。
+```
+AddDefaultCharset Off
+```
+レスポンスヘッダの`Content-Type`から変更内容が見て取れます。(`curl -I`などしてどうぞ)
