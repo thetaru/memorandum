@@ -67,5 +67,5 @@ mysql> quit;
 ```
 ## ■ サービスの起動
 ```
-# systemctl enable --now mariadb
+# systemctl enable --now zabbix-server zabbix-agent httpd php-fpm
 ```
