@@ -34,7 +34,7 @@ lo      loopback  管理無し  --
 ### ゲートウェイを設定する場合
 # nmcli connection modify ensxxx ipv4.gateway <gateway-address>
 ### ゲートウェイを設定しない場合
-# nmcli connection modify ensxxx ipv4.never-defaut yes
+# nmcli connection modify ensxxx ipv4.never-default yes
 ```
 ```
 ### DNSをNetworkManagerで管理する場合(しない場合は後述の方法で無効化すること)
