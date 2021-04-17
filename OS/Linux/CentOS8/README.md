@@ -3,8 +3,8 @@
 ```
 BIND
 samba
-logroate
-rsyslog
+logroate(やってもやらなくても...って感じググればどーにかなる)
+rsyslog(上に同じ)
 postfix 全部プラスじーめーる
 SNMpについて
 パケットキャプチャについて
