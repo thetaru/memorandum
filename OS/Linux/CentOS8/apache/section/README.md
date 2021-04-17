@@ -27,6 +27,7 @@ CGIを実行しない場合は許可しないようにします。
 ```
 ## ■ IfModule
 ## [module] log_config_module
+### access_log
 ログフォーマットを変更できます。  
 デフォルトだとわかりにくいので出力先を`/var/log/httpd/access_log`へ変更します。
 ```
@@ -34,4 +35,20 @@ CGIを実行しない場合は許可しないようにします。
     LogFormat "%h %l %u %t \"%r\" %t %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
     CustomLog "/var/log/httpd/access_log" combined
 </IfModule>
+```
+## [module] dir_module
+### DirectoryIndex
+ディレクトリにファイル指定無しのアクセスがあった場合に、どのファイルを表示するかを設定します。  
+例えば、`http://192.168.137.1/`はファイルを指定していませんが、この設定を入れてアクセスするとindex.htmlが表示されます。
+```
+<IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+```
+## AddType
+MIMEタイプを設定します。  
+html形式のファイル内でPHPの実行を有効にする場合は設定します。  
+※ mime_moduleのロードが必要
+```
+AddType application/x-httpd-php .php
 ```
