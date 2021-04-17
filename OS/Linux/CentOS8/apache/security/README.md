@@ -56,13 +56,13 @@ EOF
 iconsの設定等が記載されているが、ディレクトリ一覧は表示させないため原則的に利用しないので削除する。  
 ファイル自体を削除するとアップデート時に再作成されるので、空ファイルにする。
 ```
-echo "" > /etc/httpd/conf.d/autoindex.conf
+# echo "" > /etc/httpd/conf.d/autoindex.conf
 ```
 ### welcome.conf
 welcomeページに色々な情報がわかってしまうので削除する。  
 ファイル自体を削除するとアップデート時に再作成されるので、空ファイルにする。
 ```
-echo "" > /etc/httpd/conf.d/welcome.conf
+# echo "" > /etc/httpd/conf.d/welcome.conf
 ```
 ## ■ 任意設定
 ### `/etc/httpd/conf.d/security-strict.conf`
