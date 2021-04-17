@@ -3,7 +3,7 @@
   <!-- Policy -->
   <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j DROP</rule>
   <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j ACCEPT</rule>
-  <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j ACCEPT</rule>
   <!-- Gateway -->
   <rule priority="0" ipv="ipv4" table="nat" chain="POSTROUTING">-o ens192 -j MASQUERADE</rule>
   <rule priority="0" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -j ACCEPT</rule>
