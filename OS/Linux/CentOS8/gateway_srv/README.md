@@ -51,7 +51,7 @@ InternalインターフェースからExternalインターフェースへ転送�
 ## ■ Firewall設定例
 ### 全許可型
 ポートによる制限なし
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <direct>
   <!-- Policy -->
@@ -67,7 +67,7 @@ InternalインターフェースからExternalインターフェースへ転送�
 ### ポート制限型
 pingとDNS、HTTP、HTTPSを許可しています。  
 追加したい場合は、Forward ruleのところにいい感じに追加してどうぞ。
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <direct>
   <!-- Policy -->
