@@ -2,7 +2,7 @@
 ## ■ Directory
 指定したディレクトリ配下に対してアクセス制限などを個別に細かく設定できる。  
 Document Rootを変更した場合は、そのDocument Rootに対するDirectory設定を忘れてはいけません。
-### Options
+## Options
 任意のディレクトリに対して使用できる機能を設定する為のディレクティブです。
 |項目|動作説明|
 |:---|:---|
@@ -16,7 +16,7 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 |MultiViews||
 |SymLinksIfOwnerMatch||
 
-### [path] /var/www/html
+## [path] /var/www/html
 インデックス機能もシンボリックたどる機能もいらないのでNoneに設定します。
 ```
 <Directory "/var/www/html">
