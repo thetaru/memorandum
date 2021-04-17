@@ -109,8 +109,13 @@ messages等にfirewalldのログが行かないように出力先を変更しま
 ```
 ```
 ### messagesなどの出力設定の前に宣言すること
+### こちらはすこし古いかもなので下を参照
 +  :msg, contains, "FINAL_REJECT:"         -/var/log/firewall/firewalld.log
-+  &stop
++  & stop
+
+### 今はこっちのほうがいいかも
++  if $msg contains 'FINAL_REJECT' then /var/log/firewall.log
++  & stop
 ```
 ログローテーションされるように設定します。
 ```
