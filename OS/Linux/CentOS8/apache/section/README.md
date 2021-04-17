@@ -55,7 +55,7 @@ CGIを実行しない場合は許可しないようにします。
 
 ### AddType
 MIMEタイプを設定します。  
-html形式のファイル内でPHPの実行を有効にする場合は設定します。  
+html形式のファイル内でPHPの実行を有効にする場合に設定します。  
 ```
 <IfModule mime_module>
     AddType application/x-httpd-php .php
