@@ -41,7 +41,7 @@ mysql> quit;
 ```
 ```
 ## ■ apacheの設定
-[ここ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
 ## ■ Zabbixの設定
 以下は最低限の設定です。環境に応じて設定値を変更してください。
 ```
