@@ -59,17 +59,3 @@ Errorlog "/var/log/httpd/error_log"
 ```
 LogLevel notice
 ```
-
-## DirectoryIndex
-ディレクトリにファイル指定無しのアクセスがあった場合に、どのファイルを表示するかを設定します。  
-例えば、`http://192.168.137.1/`はファイルを指定していませんが、この設定を入れてアクセスするとindex.htmlが表示されます。
-```
-DirectoryIndex index.html
-```
-## AddType
-MIMEタイプを設定します。  
-html形式のファイル内でPHPの実行を有効にする場合は設定します。  
-※ mime_moduleのロードが必要
-```
-AddType application/x-httpd-php .php
-```
