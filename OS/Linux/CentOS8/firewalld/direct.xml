@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <direct>
-  <!-- default rule -->
+  <!-- Policy -->
   <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j DROP</rule>
   <rule priority="2" table="filter" ipv="ipv6" chain="INPUT">-j DROP</rule>
   <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j ACCEPT</rule>
   <rule priority="2" table="filter" ipv="ipv6" chain="OUTPUT">-j ACCEPT</rule>
   <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j DROP</rule>
   <rule priority="2" table="filter" ipv="ipv6" chain="FORWARD">-j DROP</rule>
-  <!-- common rule -->
+  <!-- Common rule -->
   <rule priority="0" table="filter" ipv="ipv4" chain="INPUT">-i lo -j ACCEPT</rule>
   <rule priority="0" table="filter" ipv="ipv4" chain="INPUT">-m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
   <rule priority="0" table="filter" ipv="ipv4" chain="INPUT">-p icmp -j ACCEPT</rule>
-  <!-- service rule -->
+  <!-- Service rule -->
   <rule priority="1" table="filter" ipv="ipv4" chain="INPUT_direct">-s 192.168.137.0/24 -p tcp -m state --state NEW --dport 22 -j ACCEPT</rule>
 </direct>
