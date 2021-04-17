@@ -10,7 +10,7 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 |All||
 |ExecCGI||
 |FollowSymLinks||
-|Includes|ディレクトリに対するリクエストに対して、DirectoryIndex で指定したファイル（index.html 等）が存在しない場合に、ディレクトリ内ファイルの一覧を表示します。|
+|Includes|ディレクトリに対するリクエストに対して、DirectoryIndexで指定したファイルが存在しない場合に、ディレクトリ内ファイルの一覧を表示します。|
 |IncludesNOEXEC||
 |Indexes||
 |MultiViews||
