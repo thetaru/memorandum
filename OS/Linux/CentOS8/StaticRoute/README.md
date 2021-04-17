@@ -34,10 +34,12 @@ Internal#1のネットワークとInternal#2のネットワークで通信でき
 やるべきことはスタティックルートでつなぐだけ。
 ## ■ 設定
 ### gw-srv1側の設定
+ネクストホップにgw-srv2のens192のIPを指定してやる。
 ```
-# nmcli connection modify ens224 +ipv4.routes "192.168.138.0/24 192.168.0.10"
+# nmcli connection modify ens192 +ipv4.routes "192.168.138.0/24 192.168.0.20"
 ```
 ### gw-srv2側の設定
+ネクストホップにgw-srvのens192のIPを指定してやる。
 ```
-# nmcli connection modify ens224 +ipv4.routes "192.168.137.0/24 192.168.0.20"
+# nmcli connection modify ens192 +ipv4.routes "192.168.137.0/24 192.168.0.10"
 ```
