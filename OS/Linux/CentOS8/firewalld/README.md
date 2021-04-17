@@ -6,6 +6,7 @@
 ```
 ### [Option] nftablesからiptablesに変更(DirectRuleのACCEPTに関する挙動が異なる)
 ### DirectRuleを使用する場合はiptablesに変更するのがいいと思います。
+### man firewalld.direct 5 見てみるといろいろ書いてあります。(Packet accept/drop precedenceの項)
 -  FirewallBackend=nftables
 +  FirewallBackend=iptables
 
@@ -76,7 +77,9 @@ firewall-cmd [--permanent] [--zone=zone] --remove-rich-rule = <Rule>
 読み込み優先度は`DirectRule > RichRule`であることを忘れないこと。  
 DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れていたりするとRichRuleまでいけません。  
 またDirectRuleはRichRuleと異なりゾーンに対してルールが設定されるわけではありません。  
-書き方は冗長ですがルールはすべてDirectRuleで管理したい気持ちがあります。
+  
+書き方は冗長ですがfirewalldを使うならルールはDirectRuleで管理したい気持ちがあります。  
+ちなみに`FirewallBackend`の値はiptablesにすると幸せになれます。
 ### Syntax - DirectRule
 ```
 ### 追加
