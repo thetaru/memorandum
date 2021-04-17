@@ -14,3 +14,4 @@ list_rules=$(firewall-cmd --zone=public --list-rich-rules)
 for rule in ${list_rules[@]}; do
   echo $rule
 done
+IFS=$OLF_IFS
