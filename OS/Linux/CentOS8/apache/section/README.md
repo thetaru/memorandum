@@ -45,10 +45,19 @@ CGIを実行しない場合は許可しないようにします。
     DirectoryIndex index.html
 </IfModule>
 ```
-## AddType
+## [module] mime_module
+|項目|動作説明|
+|:---|:---|
+|AddType||
+|AddHandler||
+|AddEncoding||
+|AddOutputFilter||
+
+### AddType
 MIMEタイプを設定します。  
 html形式のファイル内でPHPの実行を有効にする場合は設定します。  
-※ mime_moduleのロードが必要
 ```
-AddType application/x-httpd-php .php
+<IfModule mime_module>
+    AddType application/x-httpd-php .php
+</IfModule>
 ```
