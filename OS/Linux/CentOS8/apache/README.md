@@ -88,8 +88,9 @@ AddType application/x-httpd-php .php
 ## ■ セクション
 ## Directory
 指定したディレクトリ配下に対してアクセス制限などを個別に細かく設定できる。  
-Document Rootを変更した場合は、そのDocument Rootに対するDirectory設定を忘れないようにします。
+Document Rootを変更した場合は、そのDocument Rootに対するDirectory設定を忘れてはいけません。
 ```
+### 例
 <Directory "/var/www/htdocs">
 
 </Directory
