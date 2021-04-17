@@ -61,7 +61,7 @@ LogLevel notice
 ```
 ## AddDefaultCharset
 metaタグで文字コード指定しても、AddDefaultCharsetディレクティブで指定した文字コードを優先してしまいます。  
-なのでAddDefaultCharsetの機能を無効化しましょう。
+なのでAddDefaultCharsetを無効化しましょう。
 ```
 AddDefaultCharset Off
 ```
