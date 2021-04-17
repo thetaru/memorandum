@@ -48,3 +48,34 @@ InternalインターフェースからExternalインターフェースへ転送�
 # firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth224 -o eth192 -j ACCEPT
 # firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth192 -o eth224 -m state --state RELATED,ESTABLISHED -j ACCEPT
 ```
+## ■ Firewall設定例
+### 全許可型
+```
+```
+### ポート制限型
+pingとDNS、HTTP、HTTPSを許可しています。  
+追加したい場合は、Forward ruleのところにいい感じに追加してどうぞ。
+```
+<?xml version="1.0" encoding="utf-8"?>
+<direct>
+  <!-- Policy -->
+  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j DROP</rule>
+  <!-- Forward rule -->
+  <rule priority="1" ipv="ipv4" table="nat" chain="POSTROUTING">-o ens192 -j MASQUERADE</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p icmp -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p tcp -m state --state NEW --dport 53 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p udp -m state --state NEW --dport 53 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p tcp -m state --state NEW --dport 80 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p tcp -m state --state NEW --dport 443 -j ACCEPT</rule>
+  <!-- Common rule -->
+  <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-i lo -j ACCEPT</rule>
+  <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
+  <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-p icmp -j ACCEPT</rule>
+  <!-- Input rule -->
+  <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-s 192.168.138.0/24 -p tcp -m state --state NEW --dport 22 -j ACCEPT</rule>
+  <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-s 192.168.0.0/24 -p tcp -m state --state NEW --dport 22 -j ACCEPT</rule>
+</direct>
+```
