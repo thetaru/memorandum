@@ -9,7 +9,7 @@ done
 
 ## rich rule
 OLD_IFS=$IFS
-$IFS=$'\n'
+IFS=$'\n'
 list_rules=$(firewall-cmd --zone=public --list-rich-rules)
 for rule in ${list_rules[@]}; do
   echo $rule
