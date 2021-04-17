@@ -48,13 +48,6 @@ DocumentRoot "/var/www/html"
 #ErrorLog "logs/error_log"
 Errorlog "/var/log/httpd/error_log"
 ```
-## AccessLog
-ログフォーマットを変更できます。  
-デフォルトだとわかりにくいので出力先を`/var/log/httpd/access_log`へ変更します。
-```
-LogFormat "%h %l %u %t \"%r\" %t %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
-CustomLog "/var/log/httpd/access_log" combined
-```
 ## LogLevel
 エラーログへ記録するメッセージのレベルを指定できます。  
 指定したレベル以上のメッセージがログに書き込まれます。
@@ -112,6 +105,16 @@ CGIを実行しない場合は許可しないようにします。
 #    Options None
 #    Require all granted
 #</Directory>
+```
+## IfModule - log_config_module
+### AccessLog
+ログフォーマットを変更できます。  
+デフォルトだとわかりにくいので出力先を`/var/log/httpd/access_log`へ変更します。
+```
+<IfModule log_config_module>
+    LogFormat "%h %l %u %t \"%r\" %t %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+    CustomLog "/var/log/httpd/access_log" combined
+</IfModule>
 ```
 ## ■ 仮想ホストの設定
 ## ■ セキュリティ
