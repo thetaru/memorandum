@@ -12,6 +12,14 @@ OLD_IFS=$IFS
 IFS=$'\n'
 list_rules=$(firewall-cmd --zone=public --list-rich-rules)
 for rule in ${list_rules[@]}; do
-  echo $rule
+  firewall-cmd --permanent --zone=public --remove-rich-rule="${rule}"
 done
 IFS=$OLF_IFS
+
+## direct rule
+
+
+
+
+### reload
+firewall-cmd --reload
