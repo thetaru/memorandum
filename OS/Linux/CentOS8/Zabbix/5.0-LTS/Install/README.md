@@ -29,6 +29,10 @@ mysql> create user zabbix@localhost identified by 'password';
 mysql> grant all privileges on zabbix.* to zabbix@localhost;
 mysql> quit;
 ```
+### 設定ファイルの編集
+```
+# 
+```
 ## ■ apacheの設定
 [ここ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
 ## ■ Zabbixの設定
