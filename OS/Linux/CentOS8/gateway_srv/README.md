@@ -50,7 +50,19 @@ InternalインターフェースからExternalインターフェースへ転送�
 ```
 ## ■ Firewall設定例
 ### 全許可型
+ポートによる制限なし
 ```
+<?xml version="1.0" encoding="utf-8"?>
+<direct>
+  <!-- Policy -->
+  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j ACCEPT</rule>
+  <!-- Gateway -->
+  <rule priority="0" ipv="ipv4" table="nat" chain="POSTROUTING">-o ens192 -j MASQUERADE</rule>
+  <rule priority="0" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -j ACCEPT</rule>
+  <rule priority="0" ipv="ipv4" table="filter" chain="FORWARD">-i ens192 -o ens224 -m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
+</direct>
 ```
 ### ポート制限型
 pingとDNS、HTTP、HTTPSを許可しています。  
