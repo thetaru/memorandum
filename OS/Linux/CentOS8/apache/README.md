@@ -85,6 +85,7 @@ html形式のファイル内でPHPの実行を有効にする場合は設定し�
 ```
 AddType application/x-httpd-php .php
 ```
+## ■ セクション
 ## Directory
 指定したディレクトリ配下に対してアクセス制限などを個別に細かく設定できる。  
 Document Rootを変更した場合は、そのDocument Rootに対するDirectory設定を忘れないようにします。
