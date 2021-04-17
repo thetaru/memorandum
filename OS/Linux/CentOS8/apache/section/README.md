@@ -3,15 +3,20 @@
 指定したディレクトリ配下に対してアクセス制限などを個別に細かく設定できる。  
 Document Rootを変更した場合は、そのDocument Rootに対するDirectory設定を忘れてはいけません。
 ### Options
+任意のディレクトリに対して使用できる機能を設定する為のディレクティブです。
 |項目|動作説明|
 |:---|:---|
-|Indexes||
+|None||
+|All||
+|ExecCGI||
 |FollowSymLinks||
+|Includes|ディレクトリに対するリクエストに対して、DirectoryIndex で指定したファイル（index.html 等）が存在しない場合に、ディレクトリ内ファイルの一覧を表示します。|
+|IncludesNOEXEC||
+|Indexes||
+|MultiViews||
+|SymLinksIfOwnerMatch||
 
-#### Indexs
-ディレクトリリスティング(ブラウザからディレクトリ情報が筒抜けになる)を無効化します。
-#### FollowSymLinks
-シンボリックリンク先をApacheが見れるようになります。
+
 #### CGI
 CGIを実行しない場合は許可しないようにします。
 ```
