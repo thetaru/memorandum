@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <direct>
-  <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0">-o ens192 -j MASQUERADE</rule>
-  <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0">-i ens224 -o ens192 -j ACCEPT</rule>
-  <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0">-i ens192 -o ens224 -m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
+  <!-- default rule -->
+  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv6" chain="INPUT">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv6" chain="OUTPUT">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv6" chain="FORWARD">-j DROP</rule>
+  <!-- common rule -->
+  <rule priority="0" table="filter" ipv="ipv4" chain="INPUT">-i lo -j ACCEPT</rule>
+  <rule priority="0" table="filter" ipv="ipv4" chain="INPUT">-m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
+  <rule priority="0" table="filter" ipv="ipv4" chain="INPUT">-p icmp -j ACCEPT</rule>
+  <!-- service rule -->
+  <rule priority="1" table="filter" ipv="ipv4" chain="INPUT_direct">-s 192.168.137.0/24 -p tcp -m state --state NEW --dport 22 -j ACCEPT</rule>
 </direct>
