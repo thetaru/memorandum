@@ -6,13 +6,13 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 任意のディレクトリに対して使用できる機能を設定する為のディレクティブです。
 |項目|動作説明|
 |:---|:---|
-|None||
+|None|何も設定されません。特殊な機能を一切使わない時はこれを指定しましょう。|
 |All||
 |ExecCGI||
-|FollowSymLinks||
-|Includes|ディレクトリに対するリクエストに対して、DirectoryIndexで指定したファイルが存在しない場合に、ディレクトリ内ファイルの一覧を表示します。|
+|FollowSymLinks|シンボリックリンクのリンク先をApacheがたどれるようにします。|
+|Includes||
 |IncludesNOEXEC||
-|Indexes||
+|Indexes|ディレクトリに対するリクエストに対して、DirectoryIndexで指定したファイルが存在しない場合に、ディレクトリ内ファイルの一覧を表示します。|
 |MultiViews||
 |SymLinksIfOwnerMatch||
 
