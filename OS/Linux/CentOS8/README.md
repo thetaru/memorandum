@@ -1,7 +1,6 @@
 # CentOS8
 ## ■ MEMO
 ```
-apache 文章整理
 BIND
 samba
 logroate
