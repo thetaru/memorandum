@@ -9,7 +9,9 @@
 ## L
 - [ ] [Linux Inside](https://github.com/thetaru/memorandum/tree/master/Summary/LinuxInside)
 - [ ] [Linuxプログラミング 〜例題で学ぶUNIXプログラミング環境のすべて〜]()
-- [ ] [Linuxのしくみ ～実験と図解で学ぶOSとハードウェアの基礎知識～]() 
+- [ ] [Linuxのしくみ ～実験と図解で学ぶOSとハードウェアの基礎知識～]()
+#= P
+- [ ] [PICアセンブラ入門]()
 ## し
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
 ## た
