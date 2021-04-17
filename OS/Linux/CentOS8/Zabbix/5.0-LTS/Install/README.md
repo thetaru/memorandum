@@ -39,15 +39,11 @@
 +  php_value[date.timezone] = Asia/Tokyo
 ```
 ## ■ MariaDBの設定
-```
-# yum install mariadb-server
-```
 最低限のセキュリティ設定をしてくれるコマンドを実行します。
 ```
 # mysql_secure_installation
 ```
 ## ■ サービスの起動
 ```
-# systemctl start mariadb
-# systemctl enable mariadb
+# systemctl enable --now mariadb
 ```
