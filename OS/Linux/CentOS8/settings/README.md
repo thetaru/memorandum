@@ -118,11 +118,11 @@ IP6.GATEWAY:                            --
  スタティックルートの追加と削除は次の通りです。
  ```
  ### 追加
- # nmcli connection modify +ipv4.routes "192.168.137.0/24 192.168.1.1"
+ # nmcli connection modify ensXXX +ipv4.routes "192.168.137.0/24 192.168.1.1"
  ```
  ```
  ### 削除
- # nmcli connection modify -ipv4.routes "192.168.137.0/24 192.168.1.1"
+ # nmcli connection modify ensXXX -ipv4.routes "192.168.137.0/24 192.168.1.1"
  ```
    
 </details>
