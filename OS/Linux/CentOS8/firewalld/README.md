@@ -79,7 +79,7 @@ DirectRuleとRichRuleの混在環境でDirectRule側からDROP設定を入れて
 またDirectRuleはRichRuleと異なりゾーンに対してルールが設定されるわけではありません。  
   
 書き方は冗長ですがfirewalldを使うならルールはDirectRuleで管理したい気持ちがあります。  
-ちなみに`FirewallBackend`の値はiptablesにすると幸せになれます。
+`FirewallBackend`の値はiptablesにすると幸せになれます。(nftablesとiptablesでACCEPTの挙動が違う)
 ### Syntax - DirectRule
 ```
 ### 追加
