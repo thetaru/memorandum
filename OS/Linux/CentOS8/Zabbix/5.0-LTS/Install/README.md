@@ -12,6 +12,10 @@
 ```
 # yum install mariadb-server
 ```
+mariadbを起動します。
+```
+# systemctl enable --now mariadb
+```
 最低限のセキュリティ設定をしてくれるコマンドを実行します。
 ```
 # mysql_secure_installation
