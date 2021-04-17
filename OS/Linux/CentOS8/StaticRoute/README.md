@@ -7,12 +7,12 @@
 |Internal#2|192.168.138.0/24|
 |External|192.168.0.0/24|
 
-|項目|IP|
-|:---|:---|
-|Internal#1側のens192|192.168.137.254|
-|External側のens224|192.168.137.10|
-|Internal#2側のens192|192.168.138.254|
-|External側のens224|192.168.137.20|
+|NW|Interface|ホスト名|IP|
+|:---|:---|:---|:---|
+|Internal#1|ens224|gw-srv1|192.168.137.254|
+|External|ens192|gw-srv1|192.168.137.10|
+|Internal#2|ens224|gw-srv2|192.168.138.254|
+|External|ens192|gw-srv2|192.168.137.20|
 
 ## ■ 構成概要
 ```
