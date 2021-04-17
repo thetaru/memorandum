@@ -30,7 +30,8 @@ Listen 80
 #ServerAdmin root@localhost
 ```
 ## ServerName
-apacheサーバ自身のホスト名(FQDN)を指定します。
+Apacheサーバが自分自身のホスト名を示す時に使われるホスト名とポート番号を設定します。  
+指定しない場合は、Apacheサーバ自身のIPアドレスを逆引きしてホスト名を取得します。
 ```
 #ServerName www.example.com:80
 ServerName <hostname>
