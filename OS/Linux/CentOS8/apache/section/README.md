@@ -16,6 +16,15 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 |MultiViews||
 |SymLinksIfOwnerMatch||
 
+### [path] /var/www/html
+```
+<Directory "/var/www/html">
+    Options None
+    AllowOverride None
+    Require all granted
+</Directory>
+```
+
 ## ■ IfModule
 ## [module] alias_module
 ### CGIエイリアス無効化
