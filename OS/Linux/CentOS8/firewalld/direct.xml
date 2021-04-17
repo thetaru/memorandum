@@ -3,8 +3,8 @@
   <!-- default rule -->
   <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j DROP</rule>
   <rule priority="2" table="filter" ipv="ipv6" chain="INPUT">-j DROP</rule>
-  <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j DROP</rule>
-  <rule priority="2" table="filter" ipv="ipv6" chain="OUTPUT">-j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv6" chain="OUTPUT">-j ACCEPT</rule>
   <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j DROP</rule>
   <rule priority="2" table="filter" ipv="ipv6" chain="FORWARD">-j DROP</rule>
   <!-- common rule -->
