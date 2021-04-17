@@ -7,11 +7,23 @@
 -  SELINUX=enforcing
 +  SELINUX=disabled
 ```
-## ■ firewalldの設定
+## ■ MariaDBの設定
+### Mariadbのインストール
 ```
-### 無効化してしまう場合
-# systemctl stop firewalld
-# systemctl disable firewalld
+# yum install mariadb-server
+```
+最低限のセキュリティ設定をしてくれるコマンドを実行します。
+```
+# mysql_secure_installation
+```
+データベースの設定をします。
+```
+# mysql -uroot -p
+password(特に設定していない場合はEnterを押します。)
+mysql> create database zabbix character set utf8 collate utf8_bin;
+mysql> create user zabbix@localhost identified by 'password';
+mysql> grant all privileges on zabbix.* to zabbix@localhost;
+mysql> quit;
 ```
 ## ■ apacheの設定
 [ここ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
@@ -37,11 +49,6 @@
 ```
 -  ;php_value[date.timezone] = Euro/Riga
 +  php_value[date.timezone] = Asia/Tokyo
-```
-## ■ MariaDBの設定
-最低限のセキュリティ設定をしてくれるコマンドを実行します。
-```
-# mysql_secure_installation
 ```
 ## ■ サービスの起動
 ```
