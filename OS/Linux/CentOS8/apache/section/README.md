@@ -16,23 +16,10 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 |MultiViews||
 |SymLinksIfOwnerMatch||
 
-
-#### CGI
-CGIを実行しない場合は許可しないようにします。
-```
-<IfModule alias_module>
-    #ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
-</IfModule>
-
-#<Directory "/var/www/cgi-bin">
-#    AllowOverride None
-#    Options None
-#    Require all granted
-#</Directory>
-```
 ## ■ IfModule
 ## [module] alias_module
-### CGI無効化
+### CGIエイリアス無効化
+指定されたcgi-binディレクトリでCGIプログラムが実行できるように設定できます。  
 ```
 <IfModule alias_module>
     #ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
