@@ -49,6 +49,7 @@ InternalインターフェースからExternalインターフェースへ転送�
 # firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth192 -o eth224 -m state --state RELATED,ESTABLISHED -j ACCEPT
 ```
 ## ■ Firewall設定例
+INPUTなどはよしなに追加などしてください...
 ### 全許可型
 ポートによる制限なし
 ```xml
