@@ -17,6 +17,7 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 |SymLinksIfOwnerMatch||
 
 ### [path] /var/www/html
+インデックス機能もシンボリックたどる機能もいらないのでNoneに設定します。
 ```
 <Directory "/var/www/html">
     Options None
