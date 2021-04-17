@@ -1,5 +1,16 @@
 # セキュリティ設定
 ## ■ 必須設定
+### CGI無効化
+```
+# vi /etc/httpd/conf/httpd.conf
+```
+```
+#<Directory "/var/www/cgi-bin">
+#    AllowOverride None
+#    Options None
+#    Require all granted
+#</Directory>
+```
 ### `/etc/httpd/conf.d/security.conf`
 ```
 # cat << EOF > /etc/httpd/conf.d/security.conf
