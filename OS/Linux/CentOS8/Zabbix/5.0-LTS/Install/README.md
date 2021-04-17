@@ -31,7 +31,14 @@ mysql> quit;
 ```
 ### 設定ファイルの編集
 ```
-# 
+# vi /etc/my.cnf
+```
+```
+```
+```
+# vi /etc/my.cnf.d/
+```
+```
 ```
 ## ■ apacheの設定
 [ここ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache)を参考にしてください。
