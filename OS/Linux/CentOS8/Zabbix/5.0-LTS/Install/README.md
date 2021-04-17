@@ -62,6 +62,11 @@ mysql> quit;
 # vi /etc/php-fpm.d/zabbix.conf
 ```
 ```
+### メモリの最大値の設定(環境に応じて変更してください)
+-  php_value[memory_limit] = 128M
++  php_value[memory_limit] = 512M
+
+### timezoneの変更
 -  ;php_value[date.timezone] = Euro/Riga
 +  php_value[date.timezone] = Asia/Tokyo
 ```
