@@ -2,7 +2,7 @@
 ## ■ アップデートのテストをする
 本番前に、何のパッケージがアプデされるのか、依存関係は何でコケているかなどを調査しましょう。
 ```
-l yum check-update --releasever=ver
+ yum check-update --releasever=ver
 ```
 rpmの場合は以下です。
 ```
