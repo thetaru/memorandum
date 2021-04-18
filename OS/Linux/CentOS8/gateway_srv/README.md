@@ -70,7 +70,8 @@ INPUTなどはよしなに追加などしてください...
 ```
 ### ポート制限型
 pingとDNS、HTTP、HTTPSを許可しています。  
-追加したい場合は、Forward ruleのところにいい感じに追加してどうぞ。
+追加したい場合は、Forward ruleのところにいい感じに追加してどうぞ。  
+フォワード先を制限したい場合は`-d`などつけてください。
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <direct>
