@@ -84,4 +84,15 @@ GitLab Runnerをインストールします。
   
 ![Image06](./images/06.png)  
   
+## MEMO
+```
+### helm install
+# curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+# chmod 700 get_helm.sh
+# ./get_helm.sh
 
+### gitlab runner
+# helm inspect values gitlab/gitlab-runner > values.yaml
+# 
+# 
+```
