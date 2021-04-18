@@ -72,7 +72,7 @@ subjects:
 # kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab | awk '{print$1}') | grep 'token:' | tr -d ' ' | sed 's/^token://'
 ```
   
-GitLabに戻り取得した情報を入力します。
+GitLabに戻り、取得した情報を入力します。
   
 ![Image04](./images/04.png)  
   
@@ -80,4 +80,8 @@ GitLab Runnerをインストールします。
   
 ![Image05](./images/05.png)  
   
-https://qiita.com/ynott/items/46d4b2926afec0d788f2
+次のような画面になっていたら正常に登録できています。
+  
+![Image06](./images/06.png)  
+  
+
