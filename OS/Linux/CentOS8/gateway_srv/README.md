@@ -80,12 +80,12 @@ pingとDNS、HTTP、HTTPSを許可しています。
   <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j DROP</rule>
   <!-- Forward rule -->
   <rule priority="1" ipv="ipv4" table="nat" chain="POSTROUTING">-o ens224 -j MASQUERADE</rule>
-  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p icmp -j ACCEPT</rule>
-  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p tcp -m state --state NEW --dport 53 -j ACCEPT</rule>
-  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p udp -m state --state NEW --dport 53 -j ACCEPT</rule>
-  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p tcp -m state --state NEW --dport 80 -j ACCEPT</rule>
-  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -p tcp -m state --state NEW --dport 443 -j ACCEPT</rule>
   <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens192 -o ens224 -m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p icmp -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p tcp -m state --state NEW --dport 53 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p udp -m state --state NEW --dport 53 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p tcp -m state --state NEW --dport 80 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p tcp -m state --state NEW --dport 443 -j ACCEPT</rule>
   <!-- Common rule -->
   <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-i lo -j ACCEPT</rule>
   <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
