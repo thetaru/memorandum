@@ -69,7 +69,7 @@ INPUTなどはよしなに追加などしてください...
 </direct>
 ```
 ### ポート制限型
-pingとDNS、HTTP、HTTPSを許可しています。  
+pingとDNS(53/tcp,udp)、NTP(123/udp)、HTTP(80/tcp)、HTTPS(443/tcp)を許可しています。  
 追加したい場合は、Forward ruleのところにいい感じに追加してどうぞ。  
 フォワード元を制限したい場合は`-s`を、フォワード先を制限したい場合は`-d`をつけてください。  
 ```xml
