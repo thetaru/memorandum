@@ -22,6 +22,58 @@
 - CA Certificate
 - サービストークン
   
+### 情報の取得方法
+#### API URL
+```
+# kubectl config view | grep 'server:' | tr -d ' ' | sed 's/^server://'
+```
+#### CA Certificate
+`kubectl get secrets`で出てきたdefault-tokenから証明書を取得します。
+```
+# kubectl get secrets
+```
+```
+NAME                  TYPE                                  DATA   AGE
+default-token-XXXXX   kubernetes.io/service-account-token   3      50m
+```
+`default-token-XXXXX`から証明書を取得します。
+```
+# kubectl get secret default-token-XXXXX -o jsonpath="{['data']['ca\.crt']}" | base64 --decode
+```
+#### サービストークン
+サービストークンを取得するためにまず、gitlab登録用にサービスアカウントgitlabを以下のマニフェストで作成します。
+```
+### FileName: gitlab-admin-service-account.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: gitlab
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: gitlab-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: gitlab
+    namespace: kube-system
+```
+作成したマニフェストを適用します。
+```
+# kubectl apply -f gitlab-admin-service-account.yaml
+```
+サービスアカウントができたので、トークンを取得します。
+```
+# kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab | awk '{print$1}') | grep 'token:' | tr -d ' ' | sed 's/^token://'
+```
+  
+GitLabに戻り取得した情報を入力します。
+  
 ![Image04](./images/04.png)  
   
 GitLab Runnerをインストールします。
