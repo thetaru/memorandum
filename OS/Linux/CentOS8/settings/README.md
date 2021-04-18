@@ -452,7 +452,14 @@ systemdコントロール下のプロセスのデフォルト値を変更しま�
 -  #minsources 2
 +  minsources 2
 ```
-
+IPv4のみを使用するようにします。
+```
+# vi /etc/sysconfig/chronyd
+```
+```
+-  OPTIONS=""
++  OPTIONS="-4"
+```
 ```
 ### chronyサービスの起動
 # systemctl start chronyd
