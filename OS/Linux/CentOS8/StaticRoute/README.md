@@ -43,4 +43,4 @@ Internal#1のネットワークとInternal#2のネットワーク間で通信で
 ```
 # nmcli connection modify ens192 +ipv4.routes "192.168.137.0/24 192.168.0.10"
 ```
-設定後は`nmcli connection up <interface>`で反映してください。
+設定後は`nmcli connection up <interface>`で反映。
