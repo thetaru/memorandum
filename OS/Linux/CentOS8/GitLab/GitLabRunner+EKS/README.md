@@ -93,6 +93,11 @@ GitLab Runnerをインストールします。
 
 ### gitlab runner
 # helm inspect values gitlab/gitlab-runner > values.yaml
-# 
-# 
+# vi values.ymal
+## GitLab管理者エリアからRunnerで取得
+gitlabUrl : "https://abcabcabcabc/"
+runnerRegistrationToken : "xxxxxxxxxxxxxx"
+rbac:
+  create: true
+# helm install -n kube-system gitlab-runner -f values.yaml gitlab/gitlab-runner
 ```
