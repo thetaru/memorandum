@@ -460,11 +460,13 @@ IPv4のみを使用するようにします。
 -  OPTIONS=""
 +  OPTIONS="-4"
 ```
+chronyのサービスを起動します。
 ```
 ### chronyサービスの起動
 # systemctl start chronyd
 # systemctl enable chronyd
 ```
+指定したNTPサーバと同期できていることを確認します。
 ```
 ### 同期状態の確認
 # chronyc sources
