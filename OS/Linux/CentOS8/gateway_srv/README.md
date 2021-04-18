@@ -76,7 +76,7 @@ pingとDNS、HTTP、HTTPSを許可しています。
 <?xml version="1.0" encoding="utf-8"?>
 <direct>
   <!-- Policy -->
-  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-j DROP</rule>
   <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-j ACCEPT</rule>
   <rule priority="2" table="filter" ipv="ipv4" chain="FORWARD">-j DROP</rule>
   <!-- Forward rule -->
@@ -86,6 +86,7 @@ pingとDNS、HTTP、HTTPSを許可しています。
   <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p tcp -m state --state NEW --dport 53 -j ACCEPT</rule>
   <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p udp -m state --state NEW --dport 53 -j ACCEPT</rule>
   <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p tcp -m state --state NEW --dport 80 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p udp -m state --state NEW --dport 123 -j ACCEPT</rule>
   <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-p tcp -m state --state NEW --dport 443 -j ACCEPT</rule>
   <!-- Common rule -->
   <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-i lo -j ACCEPT</rule>
