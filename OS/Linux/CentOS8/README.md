@@ -13,7 +13,9 @@ SNMpについて
 パスワードポリシーについて(login.defs)
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
-pacemaker(優先度: 低)
+keepalive
+pacemaker
+haproxy
 LVS(優先度: 低)
 xfsquota 挙動についての調査
 AWX
