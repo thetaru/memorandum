@@ -4,7 +4,7 @@
 ```
 failed to accept an incoming connection: connection from "監視対象のIPアドレス" rejected, allowed hosts: "ZabbixサーバのIPアドレス"
 ```
-Firewallで引っかかってるのかと思ったけどちがうらしい。
+Firewallに引っかかってるのかと思ってルールの見直しをしてみたけどどうもちがうらしいので調べてみた。
 
 |NW|Interface|ホスト名|IP|
 |:---|:---|:---|:---|
