@@ -7,11 +7,16 @@
 -  SELINUX=enforcing
 +  SELINUX=disabled
 ```
-## ■ MariaDBの設定
-### Mariadbのインストール
+## ■ 各種インストール
 ```
 # yum install mariadb-server
+
+### 最新のリポジトリを参照するようにしてください
+# rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/8/x86_64/zabbix-release-5.0-1.el8.noarch.rpm
+
+# yum install zabbix-server-mysql zabbix-web-mysql zabbix-web-japanese zabbix-apache-conf zabbix-agent
 ```
+## ■ MariaDBの設定
 mariadbを起動します。
 ```
 # systemctl enable --now mariadb
