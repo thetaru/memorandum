@@ -11,7 +11,11 @@ https://www.netassist.ne.jp/blog/?p=2786
 https://qiita.com/katakura__pro/items/04e80a70b6d0e786255d  
   
 仮想ホストはディレクティブに  
-https://qiita.com/monaky/items/b5f589e59ee002a1d355
+https://qiita.com/monaky/items/b5f589e59ee002a1d355  
+  
+チューニング
+https://densan-hoshigumi.com/server/apache/performance-tuning-timeout-keepalive  
+
 |パッケージ|バージョン|
 |:---|:---|
 |apache|2.4|
