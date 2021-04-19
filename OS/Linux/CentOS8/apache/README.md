@@ -18,4 +18,4 @@ https://qiita.com/katakura__pro/items/04e80a70b6d0e786255d
 - [ ] [セクションの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/section)
 ## ■ Security
 - [ ] [セキュリティ設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/security)
-- [ ] [HTTPS対応](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/)
+- [ ] [HTTPS対応](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/ssl)
