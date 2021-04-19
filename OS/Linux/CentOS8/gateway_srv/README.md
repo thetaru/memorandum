@@ -44,9 +44,9 @@ internal側のゾーンにIPマスカレードの設定をします。
 ```
 InternalインターフェースからExternalインターフェースへ転送する設定を入れます。
 ```
-# firewall-cmd --permanent --direct --add-rule ipv4 nat POSTROUTING 0 -o eth192 -j MASQUERADE
-# firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth224 -o eth192 -j ACCEPT
-# firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth192 -o eth224 -m state --state RELATED,ESTABLISHED -j ACCEPT
+# firewall-cmd --permanent --direct --add-rule ipv4 nat POSTROUTING 0 -o eth224 -j MASQUERADE
+# firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth192 -o eth224 -j ACCEPT
+# firewall-cmd --permanent --direct --add-rule ipv4 filter FORWARD 0 -i eth224 -o eth192 -m state --state RELATED,ESTABLISHED -j ACCEPT
 ```
 ## ■ Firewall設定例
 INPUTなどはよしなに追加などしてください...
