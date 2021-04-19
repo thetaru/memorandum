@@ -1,6 +1,8 @@
 # apache
 https://blog.katsubemakito.net/apache/cache-with-mod_expires  
-https://weblabo.oscasierra.net/apache-httpd-mod_expires/
+https://weblabo.oscasierra.net/apache-httpd-mod_expires/  
+  
+https://rougeref.hatenablog.com/entry/2019/02/21/134124
 |パッケージ|バージョン|
 |:---|:---|
 |apache|2.4|
