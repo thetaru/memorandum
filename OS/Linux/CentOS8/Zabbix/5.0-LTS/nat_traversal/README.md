@@ -1,4 +1,11 @@
 # NAT越え監視
+いつもの設定でやったらエラーがでたのでメモです。
+## エラー内容
+```
+failed to accept an incoming connection: connection from "監視対象のIPアドレス" rejected, allowed hosts: "ZabbixサーバのIPアドレス"
+```
+Firewallで引っかかってるのかと思ったけどちがうらしい。
+
 |NW|Interface|ホスト名|IP|
 |:---|:---|:---|:---|
 |NW#1|eth0|zab-agent|192.168.137.1|
