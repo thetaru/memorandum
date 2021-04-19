@@ -85,3 +85,11 @@ reply_header_access X-Forwarded-For deny all
 reply_header_access Via deny all
 reply_header_access Cache-Control deny all
 ```
+ここが重要です。
+```
+# 上位プロキシーを経由しない通信を禁止
+never_direct allow all
+
+# 上位のSquidを参照(複数選択可)
+cache_peer 172.16.0.1 parent 8080 7 no-query
+```
