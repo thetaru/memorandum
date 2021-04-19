@@ -1,4 +1,5 @@
 # apache
+https://blog.katsubemakito.net/apache/cache-with-mod_expires
 |パッケージ|バージョン|
 |:---|:---|
 |apache|2.4|
