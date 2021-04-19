@@ -5,5 +5,5 @@
 - [ ] [ZBXランプについて]()
 - [ ] [mariaDBのチューニング](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Zabbix/5.0-LTS/db_tuning)
 - [ ] [DBの移行](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Zabbix/5.0-LTS/db_migration)
-- [ ] [IPマスカレードを挟んだ監視]()
+- [ ] [IPマスカレードを挟んだ監視](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Zabbix/5.0-LTS/nat_traversal)
 - [ ] [icmppingのエラー(fping6)]()
