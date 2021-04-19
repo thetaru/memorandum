@@ -6,6 +6,8 @@ failed to accept an incoming connection: connection from "監視対象のIPア�
 ```
 Firewallに引っかかってるのかと思ってルールの見直しをしてみたけどどうもちがうらしいので調べてみた。
 
+
+## ■ 構成概要
 |NW|Interface|ホスト名|IP|
 |:---|:---|:---|:---|
 |NW#1|eth0|zab-agent|192.168.137.1|
@@ -13,7 +15,6 @@ Firewallに引っかかってるのかと思ってルールの見直しをして
 |NW#2|ens192|gw-srv1|192.168.0.100|
 |NW#2|eth1|zab-serve|192.168.0.101|
 
-## ■ 構成概要
 GWをはさんでzabbixサーバと通信したい。  
 また、gw-srv1ではフォワーディングが行われており、zabbixサーバは10051/tcpでリッスンしているとする。
 ```
