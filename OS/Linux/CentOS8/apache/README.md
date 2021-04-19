@@ -15,7 +15,7 @@ https://qiita.com/monaky/items/b5f589e59ee002a1d355
   
 チューニング
 https://densan-hoshigumi.com/server/apache/performance-tuning-timeout-keepalive  
-
+https://densan-hoshigumi.com/server/apache/performance-tuning-deflate
 |パッケージ|バージョン|
 |:---|:---|
 |apache|2.4|
