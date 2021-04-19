@@ -16,6 +16,7 @@ https://qiita.com/katakura__pro/items/04e80a70b6d0e786255d
 ## ■ Settings
 - [ ] [ディレクティブの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/directive)
 - [ ] [セクションの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/section)
+- [ ] [仮想ホストの設定]()
 ## ■ Security
 - [ ] [セキュリティ設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/security)
 - [ ] [HTTPS対応](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/ssl)
