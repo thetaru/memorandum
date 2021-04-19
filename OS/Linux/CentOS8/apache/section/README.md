@@ -29,15 +29,16 @@ Document Rootを変更した場合は、そのDocument Rootに対するDirectory
 
 ## ■ IfModule
 ## [module] alias_module
-### CGIエイリアス無効化
+### ScriptAlias
 指定されたcgi-binディレクトリでCGIプログラムが実行できるように設定できます。  
+CGIエイリアスが不要なら無効化します。
 ```
 <IfModule alias_module>
     #ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
 </IfModule>
 ```
 ## [module] log_config_module
-### access_log
+### LogFormat & CustomLog
 ログフォーマットを変更できます。  
 デフォルトだとわかりにくいので出力先を`/var/log/httpd/access_log`へ変更します。
 ```
