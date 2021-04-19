@@ -1,11 +1,11 @@
-# NAT越え監視
+# IPマスカレードをはさんだ監視
 いつもの設定でやったらエラーがでたのでメモです。
 ## ■ エラー内容
 ```
 failed to accept an incoming connection: connection from "監視対象のIPアドレス" rejected, allowed hosts: "ZabbixサーバのIPアドレス"
 ```
-Firewallに引っかかってるのかと思ってルールの見直しをしてみたけどどうもちがうらしいので調べてみた。
-
+Firewallに引っかかってるのかと思ってルールの見直しをしてみたけどどうもちがうらしいので調べてみた。  
+原因はおそらく、IP変換が行われているからだと思う。
 
 ## ■ 構成概要
 |NW|Interface|ホスト名|IP|
