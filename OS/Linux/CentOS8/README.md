@@ -14,6 +14,7 @@ SNMpについて
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
 pacemaker(優先度: 低)
+LVS(優先度: 低)
 xfsquota 挙動についての調査
 AWX
 LDAP
@@ -47,6 +48,7 @@ fragmentation
 - [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
 - [x] [GitLab](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab)
 - [ ] [(書きかけ)LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
+- [ ] [(書きかけ)LVS]()
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [x] [NTP(chrony)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
 - [ ] [(書きかけ)mariadb](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
