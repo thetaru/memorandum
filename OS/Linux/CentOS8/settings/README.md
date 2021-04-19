@@ -346,7 +346,7 @@ systemdコントロール下のプロセスのデフォルト値を変更しま�
 ### sshdを再起動
 # systemctl restart sshd
 ```
-指定した`Ciphers`,`MACs`,`KexAlgorithms`,`PubkeyAcceptedKeyTypes`が適用されていることを確認する。
+ちなみに設定できる`Ciphers`,`MACs`,`KexAlgorithms`,`PubkeyAcceptedKeyTypes`は以下のコマンドで確認できます。
 ```
 # ssh -Q cipher
 # ssh -Q mac
