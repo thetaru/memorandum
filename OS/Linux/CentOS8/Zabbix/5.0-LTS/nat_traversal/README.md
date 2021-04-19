@@ -1,6 +1,6 @@
 # NAT越え監視
 いつもの設定でやったらエラーがでたのでメモです。
-## エラー内容
+## ■ エラー内容
 ```
 failed to accept an incoming connection: connection from "監視対象のIPアドレス" rejected, allowed hosts: "ZabbixサーバのIPアドレス"
 ```
@@ -13,7 +13,7 @@ Firewallに引っかかってるのかと思ってルールの見直しをして
 |NW#2|ens192|gw-srv1|192.168.0.100|
 |NW#2|eth1|zab-serve|192.168.0.101|
 
-## 構成概要
+## ■ 構成概要
 GWをはさんでzabbixサーバと通信したい。  
 また、gw-srv1ではフォワーディングが行われており、zabbixサーバは10051/tcpでリッスンしているとする。
 ```
@@ -27,7 +27,7 @@ GWをはさんでzabbixサーバと通信したい。
                      |                             |
                      |                             |
 ```
-## 設定
+## ■ 設定
 zabbixクライアントの方で以下の設定に変更する。
 ```
 # vi /etc/zabbix/zabbix-agent.conf
