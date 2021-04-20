@@ -1,11 +1,11 @@
 # BIND
 ## ■ Settings
-- [ ] [権威DNSサーバの構築]()
-- [ ] [キャッシュDNSサーバの構築]()
-- [ ] [ACL]()
-- [ ] [options]()
-- [ ] [logging]()
-- [ ] [view]()
+- [ ] [権威DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
+- [ ] [キャッシュDNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/cache_dns_server)
+- [ ] [ACL](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/acl)
+- [ ] [options](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/options)
+- [ ] [logging](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/logging)
+- [ ] [view](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/view)
 ## ■ Tips
 - [ ] [DNSの問い合わせと応答について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/about_query)
 - [ ] [chrootについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/chroot)
