@@ -67,3 +67,4 @@ CloudWatchエージェントを起動します。
 ```
 # kubectl delete -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cloudwatch-namespace.yaml
 ```
+マネジメントコンソールから作成したIAMポリシー(CloudWatchAgentServerPolicy)とDaemonSetにより自動生成されたCloudWatchLogsのロググループ(`/aws/containerinsights/eks-work-cluster/performance`)も削除します。
