@@ -1,3 +1,3 @@
 # view
-- [ ] [internal]()
-- [ ] [external]()
+- [ ] [内部用viewクラス]()
+- [ ] [外部用viewクラス]()
