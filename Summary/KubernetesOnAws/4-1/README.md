@@ -6,4 +6,8 @@ CloudWatch Container Insightsを使って、クラスタのNode、Pod、Namespac
 CloudWatchエージェントをDaemonSetとして起動して、必要なメトリクスをCloudWatchに転送する仕組みになっています。  
 ※ DeaemonSetとして起動するので各ノードに1つずるPodが配置されます。  
 ### データノードのIAMロールにポリシーを追加する
-EKS
+CloudWatch Container Insightsを使うには、データノードにアタッチしているIAMロールに、IAMポリシーをアタッチします。
+1. マネジメントコンソールからEC2のページを開く
+2. クラスタのデータノードの１つを選択し、詳細画面に表示されるIAMロールをクリックします。
+3. IAMロールのページが開くので、`ポリシーをアタッチします`を選択します。
+4. IAMポリシー一覧から`CloudWatchAgentServerPolicy`を選択し、`ポリシーのアタッチ`を選択します。
