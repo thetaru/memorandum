@@ -1,6 +1,4 @@
 # apache 
-https://weblabo.oscasierra.net/apache-httpd-mod_expires/  
-  
 クッキーセキュア属性、httponly属性を付与  
 有効期限の設定、なるべくしない  
 https://rougeref.hatenablog.com/entry/2019/02/21/134124  
