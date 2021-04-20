@@ -2,6 +2,7 @@
 ## ■ Settings
 - [ ] [権威DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
 - [ ] [キャッシュDNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/cache_dns_server)
+## ■ Statements
 - [ ] [acl](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/acl)
 - [ ] [options](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/options)
 - [ ] [logging](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/logging)
