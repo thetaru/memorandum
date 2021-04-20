@@ -1,1 +1,3 @@
-# スクリプト集
+# スクリプト
+## ■ ShellScript
+## ■ Powershell
