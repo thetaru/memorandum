@@ -72,3 +72,31 @@ html形式のファイル内でPHPの実行を有効にする場合は以下の�
     AddType application/x-httpd-php .php
 </IfModule>
 ```
+## [module] mod_expires.c
+レスポンスのHTTPヘッダに、`Expires`や`Cache-Control`を付けることでブラウザにキャッシュすることができます。
+```
+ExpiresDefault "<base> [plus] {<num> <type>}*"
+ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
+```
+
+以下の例は、現在時間から1年間キャッシュさせるヘッダを生成してくれます。
+### 特定ファイルに対して適用
+拡張子が`.html`のファイルを1年間キャッシュを行います。
+```
+<ifModule mod_expires.c>
+  ExpiresActive On
+  <FilesMatch "\.html$">
+    ExpiresDefault "access plus 1 year"
+  </FilesMatch>
+</ifModule>
+```
+### 特定ファイル形式に対して適用
+指定のContent-typeによってキャッシュを行います。
+```
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png  "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif  "access plus 1 year"
+</ifModule>
+```
