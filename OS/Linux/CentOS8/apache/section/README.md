@@ -78,9 +78,21 @@ html形式のファイル内でPHPの実行を有効にする場合は以下の�
 ExpiresDefault "<base> [plus] {<num> <type>}*"
 ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
 ```
+- <base>
+  - access
+  - modification
+
+- <type>
+  - years
+  - months
+  - weeks
+  - days
+  - hours
+  - minutes
+  - seconds
 
 以下の例は、現在時間から1年間キャッシュさせるヘッダを生成してくれます。
-### 特定ファイルに対して適用
+### 特定のファイルに対して適用
 拡張子が`.html`のファイルを1年間キャッシュを行います。
 ```
 <ifModule mod_expires.c>
@@ -90,7 +102,7 @@ ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
   </FilesMatch>
 </ifModule>
 ```
-### 特定ファイル形式に対して適用
+### 特定のファイル形式に対して適用
 指定のContent-typeによってキャッシュを行います。
 ```
 <ifModule mod_expires.c>
