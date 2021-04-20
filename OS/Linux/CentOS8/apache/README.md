@@ -1,5 +1,4 @@
-# apache
-https://blog.katsubemakito.net/apache/cache-with-mod_expires  
+# apache 
 https://weblabo.oscasierra.net/apache-httpd-mod_expires/  
   
 クッキーセキュア属性、httponly属性を付与  
