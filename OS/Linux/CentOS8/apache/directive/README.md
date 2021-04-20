@@ -76,3 +76,4 @@ Cookieもヘッダの一種なのでHeaderディレクティブを使えば属�
 ```
 Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
 ```
+※ `Secure`属性がついたクッキーはHTTPSプロトコル上の暗号化されたリクエストのみサーバに送信されるため、HTTPでは送信されないことに注意しましょう。
