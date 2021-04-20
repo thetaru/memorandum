@@ -79,17 +79,21 @@ ExpiresDefault "<base> [plus] {<num> <type>}*"
 ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
 ```
 ### \<base\>
-- access
-- modification
+|項目|動作説明|
+|:---|:---|
+|access|アクセスしてからの時間を指定|
+|modification|ファイルの更新日時から時間を指定する|
 
 ### \<type\>
-- years
-- months
-- weeks
-- days
-- hours
-- minutes
-- seconds
+|項目|動作説明|
+|:---|:---|
+|years|一年間単位|
+|months|一ヶ月単位|
+|weeks|一週間単位|
+|days|一日単位|
+|hours|一時間単位|
+|minutes|一分単位|
+|seconds|一秒単位|
 
 以下の例は、現在時間から1年間キャッシュさせるヘッダを生成してくれます。
 ### 特定のファイルに対して適用
