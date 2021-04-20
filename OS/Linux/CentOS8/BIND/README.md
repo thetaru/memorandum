@@ -14,7 +14,8 @@
 https://qiita.com/kite_999/items/f6a1b0662b42904545f5  
 https://www.google.com/url?sa=t&source=web&rct=j&url=https://dnsops.jp/event/20140626/cache-config.pdf&ved=2ahUKEwi7jfWLgozwAhWXA4gKHRt3CkoQFjAAegQIAxAC&usg=AOvVaw3wZmqijU_n6lxSb3KnEvkN  
 https://www.google.com/url?sa=t&source=web&rct=j&url=https://jprs.jp/tech/material/IW2003-DNS-DAY-secure-dns-minda.pdf&ved=2ahUKEwi7jfWLgozwAhWXA4gKHRt3CkoQFjACegQIGBAC&usg=AOvVaw1rYRnEuv0KsW6kH9-1Orxf  
-https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.nic.ad.jp/ja/materials/iw/2002/main/dns/PM3-minda.pdf&ved=2ahUKEwi7jfWLgozwAhWXA4gKHRt3CkoQFjABegQIBBAC&usg=AOvVaw3ZGDnZA58yhEHgV8rro1a0  
+https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.nic.ad.jp/ja/materials/iw/2002/main/dns/PM3-minda.pdf&ved=2ahUKEwi7jfWLgozwAhWXA4gKHRt3CkoQFjABegQIBBAC&usg=AOvVaw3ZGDnZA58yhEHgV8rro1a0 
+https://qiita.com/na0AaooQ/items/8fe5fca279449d96e277 
 
 
 tips  
