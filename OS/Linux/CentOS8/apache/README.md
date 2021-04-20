@@ -19,3 +19,4 @@ https://densan-hoshigumi.com/server/apache/performance-tuning-deflate
 - [ ] [セキュリティ設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/security)
 - [ ] [HTTPS対応](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/ssl)
 ## ■ Tips
+- [ ] [チューニング]()
