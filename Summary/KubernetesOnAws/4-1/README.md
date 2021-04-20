@@ -11,3 +11,36 @@ CloudWatch Container Insightsを使うには、データノードにアタッチ
 2. クラスタのデータノードの１つを選択し、詳細画面に表示されるIAMロールをクリックします。
 3. IAMロールのページが開くので、`ポリシーをアタッチします`を選択します。
 4. IAMポリシー一覧から`CloudWatchAgentServerPolicy`を選択し、`ポリシーのアタッチ`を選択します。
+
+### CloudWatch用のNamespaceを作成する
+EKSクラスタにCloudWatch用のNamespaceを作成します。
+```
+# kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cloudwatch-namespace.yaml
+```
+
+### CloudWatch用のService Accountを作成する
+CloudWatchエージェントのPodが使うService Accountを作成します。
+```
+# kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-serviceaccount.yaml
+```
+
+### CloudWatchエージェントが使用するConfigMapを作成する
+CloudWatchエージェントのPodは、ConfigMapを使って各種設定を読み込むので、このConfigMapを作成しておきます。  
+まず、ConfigMap作成用のマニフェストをダウンロードします。
+```
+# curl -O https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-configmap.yaml
+```
+ダウンロードしたマニフェスト内に、クラスタ名を設定する箇所があるので編集します。
+```
+# vi cwagent-configmap.yaml
+```
+```
+-  "cluster_name": "{{cluster_name}}",
++  "cluster_name": "eks-work-cluster",
+```
+編集後、マニフェストを適用してConfigMapを作成します。
+```
+# kubectl apply -f cwagent-configmap.yaml
+```
+
+### CloudWatchエージェントをDaemonSetとして起動する
