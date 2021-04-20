@@ -44,3 +44,9 @@ CloudWatchエージェントのPodは、ConfigMapを使って各種設定を読�
 ```
 
 ### CloudWatchエージェントをDaemonSetとして起動する
+CloudWatchエージェントを起動します。
+```
+# kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-daemonset.yaml
+```
+以上で、CloudWatch Container Insightsの設定は完了です。  
+正しく設定されていれば、マネジメントコンソールのCloudWatch Logsに以下のロググループ(`/aws/containerinsights/eks-work-cluster/performance`)が作成されているはずです。
