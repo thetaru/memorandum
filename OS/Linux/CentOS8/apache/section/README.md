@@ -73,7 +73,8 @@ html形式のファイル内でPHPの実行を有効にする場合は以下の�
 </IfModule>
 ```
 ## [module] mod_expires.c
-レスポンスのHTTPヘッダに、`Expires`や`Cache-Control`を付けることでブラウザにキャッシュすることができます。
+レスポンスのHTTPヘッダに、`Expires`や`Cache-Control`を付けることでブラウザにキャッシュすることができます。  
+以下の2つの書式で記述できます。
 ```
 ExpiresDefault "<base> [plus] {<num> <type>}*"
 ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
