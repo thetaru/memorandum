@@ -14,6 +14,10 @@ bind-9.11.13-5.el8_2.x86_64
 ## ■ Settings
 - [ ] [権威DNSサーバの構築]()
 - [ ] [キャッシュDNSサーバの構築]()
+- [ ] [ACL]()
+- [ ] [options]()
+- [ ] [logging]()
+- [ ] [view]()
 ## ■ Tips
 - [ ] [DNSの問い合わせと応答について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/about_query)
 - [ ] [chrootについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/chroot)
