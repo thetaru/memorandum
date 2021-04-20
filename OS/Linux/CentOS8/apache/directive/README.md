@@ -93,13 +93,13 @@ Timeout 30
 1つのTCPコネクションを使用して複数のHTTPリクエストを処理することができます。  
 複数の画像ファイルやCSSファイルを同時に読み込むWebページを配信する場合は、KeepAliveを使用することで性能が向上します。  
 KeepAliveに関する設定は以下のとおりです。  
-### KeepAlive
+#### KeepAlive
 デフォルトで有効ですが、明示的に設定しましょう。
 
-### MaxKeepAliveRequests
+#### MaxKeepAliveRequests
 TCPコネクション維持中に一度に処理できる最大リクエスト数を示す`MaxKeepAliveRequests`は、一般的に100程度を指定しておけば不足することはありません。
 
-### KeepAliveTimeout
+#### KeepAliveTimeout
 TCPコネクションを維持する最長時間(秒)を示す`KeepAliveTimeout`は、TCPコネクションを維持し続ける時間を指定します。一般的に数秒程度を指定します。  
   
 これらを設定することで`KeepAliveTimeout`の期間中は、1つのTCPコネクションで複数のHTTP通信が行えます。  
