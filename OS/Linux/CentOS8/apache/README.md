@@ -1,8 +1,4 @@
-# apache 
-クッキーセキュア属性、httponly属性を付与  
-有効期限の設定、なるべくしない  
-https://rougeref.hatenablog.com/entry/2019/02/21/134124   
-  
+# apache   
 https://www.netassist.ne.jp/blog/?p=2786  
 https://qiita.com/katakura__pro/items/04e80a70b6d0e786255d  
   
