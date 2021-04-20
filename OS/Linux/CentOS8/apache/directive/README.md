@@ -77,3 +77,30 @@ Cookieもヘッダの一種なのでHeaderディレクティブを使えば属�
 Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
 ```
 ※ `Secure`属性がついたクッキーはHTTPSプロトコル上の暗号化されたリクエストのみサーバに送信されるため、HTTPでは送信されないことに注意しましょう。
+
+## Timeout
+以下の処理のタイムアウト値を設定します。(デフォルトは60秒です。)
+- クライアントからのHTTPリクエスト受診時のTCPパケット受信待機時間
+- クライアントへのHTTPレスポンス送信時のTCPパケット送信(相手からACKを受信するまでの)待機時間
+- モジュール(mod_xxx)の処理待機時間
+
+WebサーバとAPサーバが連携している場合、APサーバ側の処理が遅れるとWebサーバがHTTPレスポンスをクライアントに送信するのも遅れてしまいます。  
+この場合、Timeoutの時間を短くすることで、TCPコネクションがWebサーバに滞留することを防止します。
+```
+Timeout 30
+```
+## KeepAlive
+1つのTCPコネクションを使用して複数のHTTPリクエストを処理することができます。  
+複数の画像ファイルやCSSファイルを同時に読み込むWebページを配信するWebサーバでは、KeepAliveを使用することで性能が向上します。  
+KeepAlive自体の機能はデフォルトで有効になっているため、KeepAliveに関する設定をします。  
+  
+TCPコネクション維持中に一度に処理できる最大リクエスト数を示す`MaxKeepAliveRequests`は、一般的に100程度を指定しておけば不足することはありません。  
+  
+TCPコネクションを維持する最長時間(秒)を示す`KeepAliveTimeout`は、TCPコネクションを維持し続ける時間を指定します。一般的に数秒程度を指定します。  
+
+どちらも設定することで`KeepAliveTimeout`の期間中は、1つのTCPコネクションで複数のHTTP通信が行えます。  
+```
+KeepAlive on
+MaxKeepAliveRequests 100
+KeepAliveTimeout 3
+```
