@@ -66,3 +66,11 @@ metaタグで文字コード指定しても、AddDefaultCharsetディレクテ�
 AddDefaultCharset Off
 ```
 レスポンスヘッダの`Content-Type`から変更内容が見て取れます。(`curl -I`などしてどうぞ)
+
+## Header
+応答ヘッダを追加することが出来ます。  
+Cookieもヘッダの一種なのでHeaderディレクティブを使えば属性をつけることができます。  
+以下では、Secure属性とHttpOnly属性を付与しています。
+```
+Header edit Set-Cookie .* $1;Secure; HttpOnly
+```
