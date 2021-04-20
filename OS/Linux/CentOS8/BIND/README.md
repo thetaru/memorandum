@@ -11,6 +11,7 @@
 - [ ] [chrootについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/chroot)
 
 # SANKO
+https://qiita.com/sanyamarseille/items/d3e030aaf02478072d61  
 https://qiita.com/kite_999/items/f6a1b0662b42904545f5  
 https://www.google.com/url?sa=t&source=web&rct=j&url=https://dnsops.jp/event/20140626/cache-config.pdf&ved=2ahUKEwi7jfWLgozwAhWXA4gKHRt3CkoQFjAAegQIAxAC&usg=AOvVaw3wZmqijU_n6lxSb3KnEvkN  
 https://www.google.com/url?sa=t&source=web&rct=j&url=https://jprs.jp/tech/material/IW2003-DNS-DAY-secure-dns-minda.pdf&ved=2ahUKEwi7jfWLgozwAhWXA4gKHRt3CkoQFjACegQIGBAC&usg=AOvVaw1rYRnEuv0KsW6kH9-1Orxf  
