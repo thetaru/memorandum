@@ -50,3 +50,20 @@ CloudWatchエージェントを起動します。
 ```
 以上で、CloudWatch Container Insightsの設定は完了です。  
 正しく設定されていれば、マネジメントコンソールのCloudWatch Logsにロググループ(`/aws/containerinsights/eks-work-cluster/performance`)が作成されているはずです。
+
+## ■ 4-1-3 CloudWatchアラームによる通知を行う
+閾値を設けて通知できるようにする。(アラームのところから設定可能)
+
+## ■ 4-1-4 リソースの削除
+```
+# kubectl delete -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-daemonset.yaml
+```
+```
+# kubectl delete -f cwagent-configmap.yaml
+```
+```
+# kubectl delete -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-serviceaccount.yaml
+```
+```
+# kubectl delete -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cloudwatch-namespace.yaml
+```
