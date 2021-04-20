@@ -103,8 +103,14 @@ TCPコネクション維持中に一度に処理できる最大リクエスト�
 TCPコネクションを維持する最長時間(秒)を示す`KeepAliveTimeout`は、TCPコネクションを維持し続ける時間を指定します。一般的に数秒程度を指定します。  
   
 これらを設定することで`KeepAliveTimeout`の期間中は、1つのTCPコネクションで複数のHTTP通信が行えます。  
+ただし、接続するクライアントが増えると(指定の時間の間はTCPコネクションが束縛されるため)TCPコネクションが不足する可能性があるので注意しましょう。
 ```
 KeepAlive on
 MaxKeepAliveRequests 100
 KeepAliveTimeout 3
+```
+  
+Webサーバに同時接続するクライアント数が多く、1クライアントあたりのHTTPリクエスト数が少ない場合は、TCPコネクションの滞留を防止するためにKeepAliveをOffにします。
+```
+KeepAlive off
 ```
