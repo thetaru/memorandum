@@ -72,5 +72,5 @@ AddDefaultCharset Off
 Cookieもヘッダの一種なのでHeaderディレクティブを使えば属性をつけることができます。  
 以下では、Secure属性とHttpOnly属性を付与しています。
 ```
-Header edit Set-Cookie .* $1;Secure;HttpOnly
+Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
 ```
