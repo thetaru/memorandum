@@ -79,13 +79,13 @@ html形式のファイル内でPHPの実行を有効にする場合は以下の�
 ExpiresDefault "<base> [plus] {<num> <type>}*"
 ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
 ```
-### \<base\>
+### base
 |項目|動作説明|
 |:---|:---|
 |access|アクセスしてからの時間を指定|
 |modification|ファイルの更新日時から時間を指定する|
 
-### \<type\>
+### type
 |項目|動作説明|
 |:---|:---|
 |years|一年間単位|
