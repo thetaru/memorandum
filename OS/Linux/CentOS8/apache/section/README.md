@@ -108,7 +108,7 @@ ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
 </ifModule>
 ```
 ### 特定のファイル形式に対して適用
-Content-typeの種類によってキャッシュします。
+MINIタイプを指定することでキャッシュを有効にするファイルタイプを決定します。
 ```
 <ifModule mod_expires.c>
   ExpiresActive On
