@@ -71,6 +71,9 @@ mysql> quit;
 -  expose_php = On
 +  expose_php = Off
 ```
+設定の反映には、`httpd`と`php-fpm`のサービス再起動が必要になります。  
+  
+  
 ```
 # vi /etc/php-fpm.d/zabbix.conf
 ```
