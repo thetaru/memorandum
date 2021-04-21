@@ -3,6 +3,7 @@
 ## ■ Tips
 - [ ] [aws-cli](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cli)
 - [ ] [aws-cdk](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cdk)
+- [ ] [eksctl](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/eksctl)
 ## ■ Software
 
 ## MEMO
