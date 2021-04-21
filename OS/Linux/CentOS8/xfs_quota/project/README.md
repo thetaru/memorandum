@@ -58,7 +58,6 @@ ProjectID:Directory
 ```
 ### ■ クォータ解除
 プロジェクトにかかったクォータの設定を解除します。  
-※ クォータを無効化しただけじゃ意味がなかった...
 #### Syntax - クォータ解除
 ```
 # xfs_quota -x -c "project -C <ProjectName>" <Partition>
