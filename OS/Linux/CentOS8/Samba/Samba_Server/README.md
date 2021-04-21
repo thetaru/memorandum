@@ -5,9 +5,10 @@
 # yum install samba
 ```
 ## Samba用ユーザ作成
-今回の作成するユーザはログインすることを考えないためログインできないようにします。
+今回の作成するユーザはログインすることを考えないためログインできないようにします。  
+ホーム領域公開する場合は、ホームディレクトリ指定した方がいいです。
 ```
-# useradd -l -s /sbin/nologin -M -c "Samba user" sambauser
+# useradd -l -s /sbin/nologin -c "Samba user" sambauser
 # passwd sambauser
 ```
 作成したユーザをSambaユーザに登録します。
