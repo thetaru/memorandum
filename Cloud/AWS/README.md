@@ -1,5 +1,9 @@
 # AWS
 ## ■ BestPractice
+- [ ] [AWSアカウントの設定]()
+- [ ] [ネットワークの設定]()
+- [ ] [サーバの設定]()
+- [ ] [データストアの設定]()
 ## ■ Settings
 - [ ] [aws-cli](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cli)
 - [ ] [aws-cdk](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cdk)
