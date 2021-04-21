@@ -98,7 +98,7 @@ ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
 
 以下の例は、現在時間から1年間キャッシュさせるヘッダを生成してくれます。
 ### 特定のファイルに対して適用
-拡張子が`.html`のファイルを1年間キャッシュを行います。
+拡張子が`.html`のファイルを1年間キャッシュします。
 ```
 <ifModule mod_expires.c>
   ExpiresActive On
@@ -108,7 +108,7 @@ ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
 </ifModule>
 ```
 ### 特定のファイル形式に対して適用
-指定のContent-typeによってキャッシュを行います。
+Content-typeの種類によってキャッシュします。
 ```
 <ifModule mod_expires.c>
   ExpiresActive On
