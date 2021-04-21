@@ -2,7 +2,7 @@
 ## ■ MEMO
 ```
 BIND
-samba
+samba 数パターンつくる
 logroate(やってもやらなくても...って感じググればどーにかなる)
 rsyslog(上に同じ)
 postfix 全部プラスじーめーる(優先度: 高)
