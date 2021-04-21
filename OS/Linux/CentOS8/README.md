@@ -23,6 +23,7 @@ LDAP
 
 tmpfs
 fragmentation
+lets encrypt でワイルドカード証明書
 ```
 ## ■ Commands
 - [x] [chroot](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chroot)
