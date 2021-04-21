@@ -28,8 +28,9 @@ https://www.google.com/url?sa=t&source=web&rct=j&url=https://jprs.jp/tech/materi
 https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.nic.ad.jp/ja/materials/iw/2002/main/dns/PM3-minda.pdf&ved=2ahUKEwi7jfWLgozwAhWXA4gKHRt3CkoQFjABegQIBBAC&usg=AOvVaw3ZGDnZA58yhEHgV8rro1a0 
 https://qiita.com/na0AaooQ/items/8fe5fca279449d96e277  
 https://qiita.com/qualitia_cdev/items/44a4b4289680649ea402  
-https://qiita.com/nk9bb8/items/5a52c8c5a5e14901775d
-
+https://qiita.com/nk9bb8/items/5a52c8c5a5e14901775d  
+https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.janog.gr.jp/meeting/janog47/wp-content/uploads/2020/11/janog47_maildns_hirano_1.pdf&ved=2ahUKEwiMtcaq5o7wAhWuBKYKHcrGC1UQFjAAegQIBRAC&usg=AOvVaw1IgRuk3mFcvdFGrlb66Nft
+  
 
 tips  
 https://www.gadgety.net/shin/tips/internet/dns9.html  
