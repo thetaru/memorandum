@@ -2,14 +2,17 @@
 https://dev.classmethod.jp/articles/mesoko-r53-cdn/  
 Freenomで取得したドメインをRoute53に委任します。
 ## ■ Route53 - ホストゾーン作成
+マネジメントコンソールから`ネットワーキングとコンテンツ配信`より`Route 53`を選択し、画面左側のホストゾーンを押します。
   
 ![image01](./images/01.png)
   
-![image02](./images/01.png)
+
   
-![image03](./images/01.png)
+![image02](./images/02.png)
+  
+![image03](./images/03.png)
     
-![image04](./images/01.png)
+![image04](./images/04.png)
     
 ## ■ Freenom - ドメイン取得
 ## ■ [Option] S3
