@@ -74,12 +74,14 @@ html形式のファイル内でPHPの実行を有効にする場合は以下の�
 ```
 ## [module] mod_expires.c
 レスポンスのHTTPヘッダに、`Expires`や`Cache-Control`を付けることでブラウザにキャッシュすることができます。  
-以下の2つの書式で記述できます。  
+  
+使用するディレクティブは以下です。
 |項目|動作説明|
 |:---|:---|
 |ExpiresDefault|全てのファイルがキャッシュ対象になります|
 |ExpiresByType|MINIタイプを指定し、キャッシュ対象となるファイルタイプを決定します|
 
+次の2つの書式で記述できます。  
 ```
 ExpiresDefault "<base> [plus] {<num> <type>}*"
 ExpiresByType type/encoding "<base> [plus] {<num> <type>}*"
