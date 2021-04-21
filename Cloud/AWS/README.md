@@ -9,7 +9,6 @@
 - [ ] [aws-cdk](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cdk)
 - [ ] [eksctl](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/eksctl)
 ## ■ Tips
-- [ ] [EKS + Codepipeline]()
 - [ ] [CloudFormation]()
 
 ## MEMO
