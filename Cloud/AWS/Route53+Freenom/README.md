@@ -6,9 +6,11 @@ Freenomで取得したドメインをRoute53に委任します。
   
 ![image01](./images/01.png)
   
-
+`ホストゾーンの作成`を押します。
   
 ![image02](./images/02.png)
+  
+`ドメイン名`と
   
 ![image03](./images/03.png)
     
