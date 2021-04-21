@@ -63,7 +63,7 @@ mysql> quit;
 +  CacheSize=32M
 ```
 ## ■ PHPの設定
-`curl -I http://ZabbixIPADDR/zabbix/zabbix.php`を実行し、HTTPヘッダを見るとPHPのバージョンが丸見えなので隠します。
+`curl -I http://ZabbixIPADDR/zabbix/zabbix.php`を実行し、HTTPヘッダ(の`X-Powered-By`)を見るとPHPのバージョンが丸見えなので隠します。
 ```
 # vi /etc/php.ini
 ```
