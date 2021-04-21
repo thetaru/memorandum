@@ -10,6 +10,7 @@
 - [ ] [eksctl](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/eksctl)
 ## ■ Tips
 - [ ] [CloudFormation](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/CloudFormation)
+- [ ] [Route53 + Freenom(無料ドメイン)]()
 
 ## MEMO
 環境  
