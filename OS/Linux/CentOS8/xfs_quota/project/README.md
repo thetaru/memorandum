@@ -40,6 +40,8 @@ ProjectID:Directory
 ```
 # xfs_quota -x -c 'project -s <ProjectName>' <Partition>
 ```
+※ Partitionはクォータをかけるディレクトリが存在するパーティションを選択します。
+  
 先ほど作成したファイルをもとに、`TestProj`プロジェクトを作成します。
 ```
 # xfs_quota -x -c 'project -s TestProj' /home
