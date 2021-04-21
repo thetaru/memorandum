@@ -1,10 +1,12 @@
 # AWS
 ## ■ BestPractice
-## ■ Tips
+## ■ Settings
 - [ ] [aws-cli](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cli)
 - [ ] [aws-cdk](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cdk)
 - [ ] [eksctl](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/eksctl)
-## ■ Software
+## ■ Tips
+- [ ] [EKS + Codepipeline]()
+- [ ] [CloudFormation]()
 
 ## MEMO
 環境  
