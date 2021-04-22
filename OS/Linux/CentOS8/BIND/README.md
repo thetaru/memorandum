@@ -3,6 +3,7 @@
 - [ ] [内部 権威DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
 - [ ] [外部 権威DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
 - [ ] [キャッシュDNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/cache_dns_server)
+- [ ] [chroot化](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/chroot)
 ## ■ Statements
 - [ ] [acl](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/acl)
 - [ ] [options](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/options)
@@ -19,7 +20,7 @@
 - [ ] [TXT]()
 ## ■ Tips
 - [ ] [DNSの問い合わせと応答について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/about_query)
-- [ ] [chrootについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/chroot)
+
 
 # SANKO
 https://qiita.com/sanyamarseille/items/d3e030aaf02478072d61  
