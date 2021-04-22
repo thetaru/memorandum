@@ -27,5 +27,6 @@ $ echo 'これはuserです'
 # ■ OS
 - [ ] [CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
 - [ ] [RHEL7](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7)
+- [ ] [RHEL8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL8)
 - [ ] [Ubuntu Server 20.04](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04)
 - [ ] [AWS Images](https://github.com/thetaru/memorandum/tree/master/OS/Linux/aws_image)
