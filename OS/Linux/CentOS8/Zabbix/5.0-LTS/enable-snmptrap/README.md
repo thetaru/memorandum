@@ -37,3 +37,15 @@ SNMPのバージョンとコミュニティ名を指定して編集します。
 ```
 # systemctl enable --now snmptrapd
 ```
+## Zabbixサーバの設定
+```
+# vi /etc/zabbix/zabbix_server.conf
+```
+```
+-  #StartSNMPTrapper=0
++  StartSNMPTrapper=1
+```
+zabbixの再起動を行います。
+```
+# systemctl restart zabbix-server
+```
