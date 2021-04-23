@@ -18,7 +18,7 @@ $ esxcli network firewall ruleset set --ruleset-id=snmp --enabled true
 ```
 ## SNMPサービスの起動
 ```
-$ etc/init.d/snmpd start
+$ /etc/init.d/snmpd start
 ```
 ## 設定の確認
 ```
