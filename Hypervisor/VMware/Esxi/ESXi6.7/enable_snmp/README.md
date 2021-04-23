@@ -3,13 +3,12 @@
 ```
 $ esxcli system snmp set --enable true
 ```
-## コミュニティ名の指定
+## SNMPサービスの設定
+`-e`: 有効/無効  
+`-c`: コミュニティ名  
+`-t`: Trap送信先(<IPARRR>@<Port>/<CommunityName>)
 ```
-$ esxcli system snmp set --communities <Community Name>
-```
-## SNMPマネージャの指定
-```
-$ esxcli system snmp set --targets <SNMP Manager IPADDR>/<Community Name>
+$ esxcli system snmp set -e=true -c=<CommunityName> -t=<IPARRR>@<Port>/<CommunityName>
 ```
 ## ファイアウォールの設定
 SNMPへのアクセスを許可します。
