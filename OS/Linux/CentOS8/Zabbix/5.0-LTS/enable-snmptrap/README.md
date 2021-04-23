@@ -24,3 +24,16 @@ zabbixのversionは`rpm -qa`などで確認してください。
 ```
 # chmod +x /usr/local/bin/zabbix_trap_receiver.pl
 ```
+## snmptrapdの設定
+SNMPのバージョンとコミュニティ名を指定して編集します。
+```
+# vi /etc/snmp/snmptrapd.conf
+```
+```
++  authCommunity log,execute,net <Community Name>
++  perl do "/usr/local/bin/zabbix_trap_receiver.pl"
+```
+## snmptrapdの起動
+```
+# systemctl enable --now snmptrapd
+```
