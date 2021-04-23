@@ -1,0 +1,26 @@
+# SNMPトラップの有効化
+## パッケージインストール
+```
+# dnf install net-snmp net-snmp-utils net-snmp-perl
+```
+## SNMPトラップハンドリング用スクリプトの配置と設定
+zabbixのversionは`rpm -qa`などで確認してください。
+```
+# wget https://cdn.zabbix.com/zabbix/sources/stable/5.0/zabbix-<version>.tar.gz
+# tar zxvf zabbix-<version>.tar.gz
+# cp -p zabbix-<version>/misc/snmptrap/zabbix_trap_receiver.pl /usr/local/bin/
+```
+スクリプト内にあるログファイルのパスを設定します。
+```
+# vi /usr/local/bin/zabbix_trap_receiver.pl
+```
+```
+-  $SNMPTrapperFile = '/tmp/zabbix_traps.tmp';
++  #$SNMPTrapperFile = '/tmp/zabbix_traps.tmp';
+
++  $SNMPTrapperFile = '/var/log/zabbix/snmptrap.log';
+```
+実行権限を付けます。
+```
+# chmod +x /usr/local/bin/zabbix_trap_receiver.pl
+```
