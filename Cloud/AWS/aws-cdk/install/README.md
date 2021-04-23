@@ -2,7 +2,7 @@
 Node.jsがインストールされていると仮定します。
 ```
 # npm install -g aws-cdk
-# pip install --upgrade aws-cdk.core
+# pip3 install --upgrade aws-cdk.core
 ```
 ```
 ### version確認
