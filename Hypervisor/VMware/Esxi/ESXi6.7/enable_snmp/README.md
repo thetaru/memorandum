@@ -6,7 +6,7 @@ $ esxcli system snmp set --enable true
 ## SNMPサービスの設定
 `-e`: 有効/無効  
 `-c`: コミュニティ名  
-`-t`: Trap送信先(<IPARRR>@<Port>\/<CommunityName>)
+`-t`: Trap送信先(\<IPADDR\>@\<Port\>/\<CommunityName\>)
 ```
 $ esxcli system snmp set -e=true -c=<CommunityName> -t=<IPARRR>@<Port>/<CommunityName>
 ```
