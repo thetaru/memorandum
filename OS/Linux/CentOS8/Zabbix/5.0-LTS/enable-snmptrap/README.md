@@ -18,10 +18,16 @@ zabbixのversionは`rpm -qa`などで確認してください。
 -  $SNMPTrapperFile = '/tmp/zabbix_traps.tmp';
 +  #$SNMPTrapperFile = '/tmp/zabbix_traps.tmp';
 
-+  $SNMPTrapperFile = '/var/log/zabbix/snmptrap.log';
++  $SNMPTrapperFile = '/var/log/snmptrap/snmptrap.log';
 ```
-実行権限を付けます。
+SNMPTrapperFileで指定したファイルが存在しないとエラーが吐かれるので空ファイルを作成します。
 ```
+# touch /var/log/zabbix/snmptrap.log
+# chown zabbix:zabbix /var/log/zabbix/snmptrap.log
+```
+所有者と実行権限を変更します。
+```
+# chown zabbix:zabbix /usr/local/bin/zabbix_trap_receiver.pl
 # chmod +x /usr/local/bin/zabbix_trap_receiver.pl
 ```
 ## snmptrapdの設定
@@ -32,6 +38,15 @@ SNMPのバージョンとコミュニティ名を指定して編集します。
 ```
 +  authCommunity log,execute,net <Community Name>
 +  perl do "/usr/local/bin/zabbix_trap_receiver.pl"
+```
+snmptrapdのパラメータを設定します。  
+MIBの読み込みとログ出力先ファシリティをlocal 6に変更します。
+```
+# vi /etc/sysconfig/snmptrapd
+```
+```
+-  OPTIONS="-Lsd"
++  OPTIONS="-m +ALL -Ls6 -On -p /var/run/snmptrapd.pid"
 ```
 ## snmptrapdの起動
 ```
