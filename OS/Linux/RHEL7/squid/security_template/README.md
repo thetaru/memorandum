@@ -15,10 +15,14 @@ visible_hostname unknown
 #header_access User-Agent deny all
 
 # Proxy経由であることを隠す(v3以上)
+# HTTPヘッダーのフィールドに干渉する
+## リクエストヘッダー
 #request_header_access Referer deny all
 request_header_access X-Forwarded-For deny all
 request_header_access Via deny all
 request_header_access Cache-Control deny all
+
+## レスポンスヘッダー
 #reply_header_access Referer deny all
 reply_header_access X-Forwarded-For deny all
 reply_header_access Via deny all
