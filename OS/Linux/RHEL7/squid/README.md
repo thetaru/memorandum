@@ -15,7 +15,6 @@
 - [ ] [名前解決の挙動設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/NameResolution)
 - [ ] [keep-aliveの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/keep-alive)
 - [ ] [OS・ブラウザの制限](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/os_browser)
-- [ ] [カーネルパラメータの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/KernelParameter)
 - [ ] [(未検証)Basic認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth)
 - [ ] [(未検証)エラーページの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/error_page)
 - [ ] [(未検証)ホワイトリスト・ブラックリストの設定]()
