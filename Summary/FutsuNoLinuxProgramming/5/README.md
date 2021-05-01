@@ -186,3 +186,66 @@ static void die(const char*s)
     exit(1);
 }
 ```
+## 5.6.2 main()
+```c
+int main(int argc, char *argv[])
+{
+    int i;
+    if (argc < 2) {
+        fprintf(stderr, "%s: file name not given\n", argv[0]);
+        exit(1);
+    }
+    for (i = 1; i < argc; i++) {
+        do_cat(argv[i]);
+    }
+    exit(0);
+}
+```
+コマンドライン引数に渡された引数の数(配列argvの長さ)をチェックしています。(1つも渡されていなかったらエラーとなります。)  
+※ argv[0]はプログラム名が入ることに注意します。
+## 5.6.3 do_cat() その1
+do_cat()の全体像です。
+```c
+#define BUFFER_SIZE 2048
+
+static void do_cat(const char *path)
+{
+    int fd;
+    unsigned char buf[BUFFER_SIZE];
+    int n;
+   
+    fd = open(path, O_RDONLY);
+    if (fd < 0) die(path);
+    for (;;) {
+        n = read(fd, buf, sizeof buf);
+        if (n < 0) die(path);
+        if (n == 0) break;
+        if (write(STDOUT_FILENO, buf, n) < 0) die(path);
+    }
+    
+    if (close(fd) < 0) die(path);
+}
+```
+## 5.6.4 do_cat() その2
+まず見るのは、open()とclose()のペアです。
+```c
+    fd = open(path, O_RDONLY);
+    if (fd < 0) die(path);
+    ...
+    if (close(fd) < 0) die(path);
+```
+open()でファイルを開いています。フラグの引数がO_RDONLYなので読み込み専用で開いていることがわかります。  
+次の行で、正常にファイルが開けていることを確認しています。
+最後に、ファイルを使い終わったのでclose()でファイルを閉じています。(close()はエラー時に-1を返すためif文の中に入れています。)
+## 5.6.5 do_cat() その3
+```c
+    for (;;) {
+        n = read(fd, buf, sizeof buf);
+        if (n < 0) die(path);
+        if (n == 0) break;
+        if (write(STDOUT_FILENO, buf, n) < 0) die(path);
+    }
+```
+はじめに、ファイルを読み込みます。  
+後の処理では、読み込みエラー(n<0)かファイル終端までいった(n==0)か書き込みエラー(write(STDOUT_FILENO, buf, n) < 0)になるまで無限ループします。
+## 5.6.6 do_cat() その4
