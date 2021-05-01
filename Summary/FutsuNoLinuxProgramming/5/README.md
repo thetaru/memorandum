@@ -78,4 +78,19 @@ ssize_t read(int fd, void *buf, size_t bufsize);
 ```
 read()は、ファイルディスクリプタfd番のストリームからバイト列を読み込むシステムコールです。  
 最大bufsizeバイト読み、bufに格納します。bufのサイズをそのままbufsizeに指定するのが一般的です。  
-※ ssize_tとsize_tは整数型の別名です。(つまり、int型やlong型です。)
+  
+read()は、読み込みが問題なく完了したときは読み込んだバイト数を返します。  
+ファイル終端に達したときは0を、エラーが起きたときは-1を返します。  
+  
+※ 文字列を扱うシステムコールを使用する場合は、NULL文字`/0`で終端が前提かどうかを確認しましょう。
+## 5.4.2 write(2)
+ストリームにバイト列を書き込むには、write()というシステムコールを使います。
+### Syntax - write
+```c
+#include <unistd.h>
+
+ssize_t write(int fd, const void *buf, size_t bufsize);
+```
+write()は、bufsizeバイト分をbufからファイルディスクリプタfd番のストリームに書き込みます。  
+  
+write()は、正常に書き込んだときは書いたバイト数を返します。エラーが起きたときは-1を返します。  
