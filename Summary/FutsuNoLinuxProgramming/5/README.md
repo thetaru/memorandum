@@ -246,6 +246,19 @@ open()でファイルを開いています。フラグの引数がO_RDONLYなの
         if (write(STDOUT_FILENO, buf, n) < 0) die(path);
     }
 ```
-はじめに、ファイルを読み込みます。  
-後の処理では、読み込みエラー(n<0)かファイル終端までいった(n==0)か書き込みエラー(write(STDOUT_FILENO, buf, n) < 0)になるまで無限ループします。
+ファイルを読み込んでいます。  
+読み込みエラー(n<0)かファイル終端までいった(n==0)か書き込みエラー(write(STDOUT_FILENO, buf, n) < 0)になるまで無限ループします。
 ## 5.6.6 do_cat() その4
+```c
+        n = read(fd, buf, sizeof buf);
+        if (n < 0) die(path);
+        if (n == 0) break;
+        if (write(STDOUT_FILENO, buf, n) < 0) die(path);
+```
+read()によって、ファイルディスクリプタfdが示すストリームからbufにバイト列を読み込みます。  
+読み込むサイズは最大でも配列bufのサイズ(`sizeof buf`)までです。 
+  
+write()でバッファbufの内容を標準出力(STDOUT_FILENO)に書き込みます。  
+今度はバッファ全体を書き込むのではなく、nバイト(read()で読み込んだバイト数)だけ書き込みます。
+  
+残りはエラー処理で上で説明した通りです。
