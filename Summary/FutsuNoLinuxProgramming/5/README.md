@@ -70,9 +70,13 @@
 ファイルディスクリプタについて説明したので、システムコールについて説明します。
 ## 5.4.1 read(2)
 ストリームからバイト列を読み込むには、read()というシステムコールを使います。
-#### Syntax - read
+### Syntax - read
 ```c
 #include <unistd.h>
 
 ssize_t read(int fd, void *buf, size_t bufsize);
 ```
+read()は、ファイルディスクリプタfd番のストリームからバイト列を読み込むシステムコールです。  
+最大bufsizeバイト読み、bufに格納します。  
+bufのサイズをそのままbufsizeに指定するのが一般的です。
+※ ssize_tとsize_tは整数型の別名です。(つまり、int型やlong型です。)
