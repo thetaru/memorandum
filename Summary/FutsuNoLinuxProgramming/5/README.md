@@ -94,3 +94,28 @@ ssize_t write(int fd, const void *buf, size_t bufsize);
 write()は、bufsizeバイト分をbufからファイルディスクリプタfd番のストリームに書き込みます。  
   
 write()は、正常に書き込んだときは書いたバイト数を返します。エラーが起きたときは-1を返します。  
+
+## 5.4.3 ストリームの定義
+ストリームは、ファイルディスクリプタで表現され、read()またはwrite()を呼べるもののことです。
+## 5.5 ファイルを開く
+## 5.5.1 open(2)
+ファイルに接続するストリームを用意するためには、システムコールopen()を使います。
+```c
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+int open(const char *path, int flags);
+int open(const char *path, int flags, mode_t mode);
+```
+open()は、パスpathで表されるファイルにつながるストリームを作成し、そのストリームを指すファイルディスクリプタを返します。  
+第2引数のflagsはストリームの性質を表すフラグです。
+|フラグ|意味|
+|:---|:---|
+|O_RDONLY|読み込み専用|
+|O_WRONLY|書き込み専用|
+|O_RDWR|読み書き両用|
+|O_CREAT|ファイルが存在しなければ新しいファイルを作る|
+|O_EXCL|O_CREATとともに指定すると、すでにファイルが存在するときはエラーになる|
+|O_TRUNC|O_CREATとともに指定すると、ファイルが存在するときはまずファイルの長さをゼロにする|
+|O_APPEND|write()が常にファイル末尾に書き込むよう指定する|
