@@ -36,7 +36,7 @@ fopen()は、stdioにおいてシステムコールのopen()に対応するAPI�
 ```c
 #include <stdio.h>
 
-FILE *fopne(const char*path, const car *mode);
+FILE *fopen(const char *path, const char *mode);
 ```
 fopen()は、ファイルをパスで指定し、そのファイルにつながるストリームをつくり、それを管理するFILE型へのポインタを返します。  
 何らかの理由で失敗した場合はNULLを返し、原因を表す定数をerrnoにセットします。  
@@ -56,7 +56,7 @@ fclose()は、stdioにおいてシステムコールのclose()に対応するAPI
 ```c
 #include <stdio.h>
 
-jnt fclose(FILE *stream);
+int fclose(FILE *stream);
 ```
 fclose()は、ストリームを閉じます。fopen()で開いたファイルはfclose()で閉じなければいけません。  
 fclose()は成功すれば0を返します。失敗すると定数EOFを返し、失敗の原因を表す定数をerrnoにセットします。  
