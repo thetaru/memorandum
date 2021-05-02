@@ -49,3 +49,15 @@ fopen()は、ファイルをパスで指定し、そのファイルにつなが�
 |"r+"|O_RDWR|読み書き両用</br>ファイルはあらかじめ存在しなくてはならない|
 |"w+"|O_RDWR\|O_CREAT\|O_TRUNC|読み書き両用</br>ファイルが存在しなければ作成し、存在する場合はサイズを0にして書き込む|
 |"a+"|O_RDWR\|O_CREAT\|O_APPEND|読み書き両用</br>ファイルが存在しなければ作成し、存在する場合はファイルの末尾から書き込む|
+
+## 6.1.6 fclose(3)
+fclose()は、stdioにおいてシステムコールのclose()に対応するAPIです。
+### Syntax - fclose
+```c
+#include <stdio.h>
+
+jnt fclose(FILE *stream);
+```
+fclose()は、ストリームを閉じます。fopen()で開いたファイルはfclose()で閉じなければいけません。  
+fclose()は成功すれば1を返し、失敗すると定数EOFを返て失敗の原因を表す定数をerrnoにセットします。  
+※ EOFはstdio.hで定義されるマクロで、通常は-1です。
