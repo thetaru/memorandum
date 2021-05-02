@@ -22,10 +22,30 @@ read()は、バイト単位の入力しかできないので、stdioは一時的
 ※ FILE型は、typedefで定義された型で、ファイルディスクリプタとstdioバッファの内部情報が入っています。
 
 ## 6.1.4 stdioでの標準入出力
-システムコールでは、標準入力や標準出力する際は、それぞれに対応するファイルディスクリプタ(やそのマクロ)が提供されていました。  
+システムコールでは、標準入力や標準出力するために、それぞれに対応するファイルディスクリプタ(やそのマクロ)が提供されていました。  
 それに対応する形でstdioにも標準入力や標準出力を表現するFILE\*型の変数が用意されています。
 |ファイルディスクリプタ|マクロ名|stdioでの変数名|意味|
 |:---|:---|:---|:---|
 |0|STDIN_FILENO|stdin|標準入力|
 |1|STDOUT_FILENO|stdout|標準出力|
 |2|STDERR_FILENO|stderr|標準エラー出力|
+
+## 6.1.5 fopen(3)
+fopen()は、stdioにおいてシステムコールのopen()に対応するAPIです。
+### Syntax - fopen
+```c
+#include <stdio.h>
+
+FILE *fopne(const char*path, const car *mode);
+```
+fopen()は、ファイルをパスで指定し、そのファイルにつながるストリームをつくり、それを管理するFILE型へのポインタを返します。  
+何らかの理由で失敗した場合はNULLを返し、原因を表す定数をerrnoにセットします。  
+第2引数modeにはストリームの性質を指定します。
+|値|対応するopen(2)のmode|意味|
+|:---|:---|:---|
+|"r"|O_RDONLY|読み込み専用|
+|"w"|O_WRONLY\|O_CREAT\|O_TRUNC|書き込み専用|
+|"a"|O_WRONLY\|O_CREAT\|O_APPEND|追加書き込み専用|
+|"r+"|O_RDWR|読み書き両用|
+|"w+"|O_RDWR\|O_CREAT\|O_TRUNC|読み書き両用
+|"a+"|O_RDWR\|O_CREAT\|O_APPEND|読み書き両用|
