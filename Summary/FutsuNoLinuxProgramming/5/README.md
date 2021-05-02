@@ -318,3 +318,38 @@ lseek()は、ファイルディスクリプタfd内部のファイルオフセ�
 |SEEK_CUR|現在のファイルオフセット+offsetに移動|現在のファイルオフセット|
 |SEEK_END|ファイル末尾+offsetに移動|ファイル末尾|
 
+## 5.7.3 dup(2), dup2(2)
+### Syntax - dup, dup2
+```c
+#include <unistd.h>
+
+int dup(int oldfd);
+int dup2(int oldfd, int newfd);
+```
+dup()とdup2()は、ファイルディスクリプタoldfdを複製するシステムコールです。  
+dup()とdup2()はプロセスにかかわるシステムコールと一緒に使うことが多いので、12章で改めて説明します。
+## 5.7.4 ioctl(2)
+### Syntax - ioctl
+```c
+#include <sys/ioctl.h>
+
+int ioctl(int fd, int request, ...);
+```
+ioctl()は、ストリームがつながる先にあるデバイスに特化した操作をすべて含めたシステムコールです。  
+例えば、次のような操作を行えます。
+- CD-ROMドライブのトレイの開閉、音楽CDの再生
+- プリンタの駆動や一時停止
+- SCSIデバイスのハードウェアオプションのセット
+- 端末の通信速度の設定
+
+第2引数のrequestにどのような操作をするかを定数で指定し、そのrequest特有の引数を第3引数以降に渡します。
+## 5.7.5 fcntl(2)
+特殊な操作はioctl()だけで行いましたが、その中からファイルディスクリプタ関連の操作を分離したのがfcntl()です。
+### Syntax - fcntl
+```c
+#include <unistd.h>
+#include <fcntl.h>
+
+int fcntl(int fd, int cmd, ...);
+```
+第2引数のcmdによって実際に行う操作を指定するようになっており、cmdの種類によって第3引数以降の使い方が決定します。
