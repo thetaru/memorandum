@@ -61,3 +61,12 @@ int fclose(FILE *stream);
 fclose()は、ストリームを閉じます。fopen()で開いたファイルはfclose()で閉じなければいけません。  
 fclose()は成功すれば0を返します。失敗すると定数EOFを返し、失敗の原因を表す定数をerrnoにセットします。  
 ※ EOFはstdio.hで定義されるマクロで、通常は-1です。
+## 6.2 バイト単位の入出力
+バイト単位の入出力APIで代表的なのはfgetc()とfputc()です。
+## 6.2.1 fgetc(3)、fputc(3)
+```c
+#include <stdio.h>
+
+int fgetc(FILE *stream);
+int fputc(int c, FILE *stream);
+```
