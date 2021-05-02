@@ -59,5 +59,5 @@ fclose()は、stdioにおいてシステムコールのclose()に対応するAPI
 jnt fclose(FILE *stream);
 ```
 fclose()は、ストリームを閉じます。fopen()で開いたファイルはfclose()で閉じなければいけません。  
-fclose()は成功すれば1を返し、失敗すると定数EOFを返て失敗の原因を表す定数をerrnoにセットします。  
+fclose()は成功すれば0を返します。失敗すると定数EOFを返し、失敗の原因を表す定数をerrnoにセットします。  
 ※ EOFはstdio.hで定義されるマクロで、通常は-1です。
