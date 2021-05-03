@@ -47,5 +47,5 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' -name 'DriverUpdateWizardWuSearchEnabled' -value '0' -type DWord
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata' -name 'PreventDeviceMetadataFromNetwork' -value '1' -type DWord
 ```
-### ■ パフォーマンス - 詳細設定 - 仮想メモリ
+### ■ 詳細設定 - パフォーマンス - 設定 - 詳細設定 - 仮想メモリ - 変更
 ### ■ リモート - リモートデスクトップ
