@@ -2,6 +2,9 @@
 なるべくPowershellで設定していきたい。
 ## ネットワーク接続 
 ### ■ IPv6無効化
+```ps1
+> Disable-NetAdapterBinding -Name <NetworkAdapter> -ComponentID ms_tcpip6
+```
 ## システムのプロパティ
 ### ■ コンピュータ名 - 変更
 #### コンピュータ名
@@ -31,6 +34,7 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 > (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata').'PreventDeviceMetadataFromNetwork'
 ```
 ```ps1
+### 「いいえ」に設定する
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' -name 'SearchOrderConfig' -value '0' -type DWord
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' -name 'DriverUpdateWizardWuSearchEnabled' -value '0' -type DWord
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata' -name 'PreventDeviceMetadataFromNetwork' -value '1' -type DWord
