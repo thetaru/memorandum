@@ -30,7 +30,7 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ```ps1
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' -name 'SearchOrderConfig' -value '0' -type DWord
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' -name 'DriverUpdateWizardWuSearchEnabled' -value '0' -type DWord
-> Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' -name 'PreventDeviceMetadataFromNetwork' -value '0' -type DWord
+> Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' -name 'PreventDeviceMetadataFromNetwork' -value '1' -type DWord
 ```
 ### ■ パフォーマンス - 詳細設定 - 仮想メモリ
 ### ■ リモート - リモートデスクトップ
