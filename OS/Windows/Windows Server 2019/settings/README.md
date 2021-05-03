@@ -14,6 +14,11 @@
 > 
 ```
 ### ■ デバイスのインストール設定
+|||
+|:---|:---|
+|キー|HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata|
+|値|SearchOrderConfig|
+
 |値|チェック|意味|
 |:---|:---|:---|
 |0|オフ|無効</br>Windows Updateによるデバイスドライバの自動インストールを行わない|
