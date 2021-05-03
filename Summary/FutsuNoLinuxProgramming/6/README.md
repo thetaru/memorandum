@@ -70,3 +70,8 @@ fclose()は成功すれば0を返します。失敗すると定数EOFを返し�
 int fgetc(FILE *stream);
 int fputc(int c, FILE *stream);
 ```
+fgetc()は、引数のstreamから1バイト読み込んで返し、ストリームが終了した場合はEOF(:=-1)を返します。  
+  
+fputc()は、引数のstreamにcバイトを書き込みます。  
+> fgetc()で取得したバイトをfputc()にそのまま渡すことができるようになっています。
+### ■ getc(3)、putc(3)
