@@ -1,6 +1,14 @@
 # Settings
 なるべくPowershellで設定していきたい。
-## ネットワーク接続 
+## ネットワーク接続
+### ■ IPアドレス設定
+```ps1
+> 
+```
+### ■ DNSサーバ設定
+```ps1
+> 
+```
 ### ■ IPv6無効化
 ```ps1
 > Disable-NetAdapterBinding -Name <NetworkAdapter> -ComponentID ms_tcpip6
