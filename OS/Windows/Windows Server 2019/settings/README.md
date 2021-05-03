@@ -14,9 +14,9 @@
 > 
 ```
 ### ■ デバイスのインストール設定
-|||
-|:---|:---|
+
 |キー|HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata|
+|:---|:---|
 |値|SearchOrderConfig|
 
 |値|チェック|意味|
