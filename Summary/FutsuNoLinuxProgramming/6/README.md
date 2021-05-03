@@ -84,10 +84,21 @@ int putc(int c, FILE *stream);
 ```
 機能に違いはありません。
 ### ■ getchar(3)、putchar(3)
-入力元・出力先が固定されているバイト単位の入出力APIです。
+入力元・出力先が固定(それぞれ、標準入力と標準出力)されているバイト単位の入出力APIです。
 ```c
 #include <stdio.h>
 
 int getchar(void);
 int putchar(int c);
 ```
+getchar()は、getc(stdin)と同じ意味です。  
+putchar()は、putc(c, stdout)と同じ意味です。
+### ■ ungetc(3)
+バイト単位で値をバッファに戻すAPIとしてungetc()があります。
+```c
+#include <stdio.h>
+
+int ungetc(int c, FILE *stream);
+```
+ungetc()は、バイトcをstreamのバッファに戻します。(つまり、次にfgetc()などでstreamから読み込むとcが返ります。)  
+※ ただし、1つのstreamに対して連続してungetc()することはできません。
