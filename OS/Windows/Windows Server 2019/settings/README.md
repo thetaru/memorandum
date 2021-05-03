@@ -16,9 +16,9 @@
 ### ■ デバイスのインストール設定
 |値|チェック|意味|
 |:---|:---|:---|
-|0|オフ|無効(Windows Updateによるデバイスドライバの自動インストールを行わない)|
-|1|オン|有効(Windows Updateによるデバイスドライバの自動インストールを行う)|
-|2|オン|有効(コンピュータ上にデイバイスドライバが見つからない場合、Windows Updateによるデバイスドライバの自動インストールを行う)|
+|0|オフ|無効</br>Windows Updateによるデバイスドライバの自動インストールを行わない|
+|1|オン|有効</br>Windows Updateによるデバイスドライバの自動インストールを行う|
+|2|オン|有効</br>コンピュータ上にデイバイスドライバが見つからない場合、Windows Updateによるデバイスドライバの自動インストールを行う|
 ```ps1
 > (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching').'SearchOrderConfig'
 ```
