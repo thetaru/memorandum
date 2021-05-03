@@ -102,3 +102,39 @@ int ungetc(int c, FILE *stream);
 ```
 ungetc()は、バイトcをstreamのバッファに戻します。(つまり、次にfgetc()などでstreamから読み込むとcが返ります。)  
 ※ ただし、1つのstreamに対して連続してungetc()することはできません。
+## 6.3 stdio版catコマンドを作る
+1バイト入出力関すを使ってcatコマンドを書き直します。
+```c
+### FileName: cat2.c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+    int i;
+    
+    for (i = 1; i < argc; i++) {
+        FILE *f;
+        int c;
+        
+        f = fopen(argv[i], "r");
+        if (!f) {
+            perror(argv[i]);
+            exit(1);
+        }
+        while ((c = fgetc(f)) != EOF) {
+            if (putchar(c) < 0) exit(1);
+        }
+        fclose(f);
+    }
+    exit(0);
+}
+```
+説明するところはwhile文のところくらいです。
+```c
+        while ((c = fgetc(f)) != EOF) {
+            if (putchar(c) < 0) exit(1);
+        }
+```
+やっていることは、ストリームが終了するまで(ファイル終端にいくまで)読み込んでから標準出力するループをしているだけです。  
+標準出力が失敗したらプログラムを終了するようにしています。
