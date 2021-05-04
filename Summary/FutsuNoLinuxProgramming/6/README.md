@@ -214,4 +214,13 @@ int fprintf(FILE *stream, const char *fmt, ...);
 size_t fread(void *buf, size_t size, size_t nmemb, FILE *stream);
 ```
 streamから (size \* nmemb)バイト読み込み、bufに格納します。  
-成功した場合はnmembを返し、失敗したか(size\*nmemb)バイト読む前にEOFに到達した場合はnmembより小さい値を返します。
+成功した場合はnmembを返し、失敗したか(size \* nmemb)バイト読む前にEOFに到達した場合はnmembより小さい値を返します。  
+fread()は'\0'終端を期待しないバイト例を扱うAPIなので、バッファ末尾に'\0'を書き込みません。
+### ■ fwrite(3)
+```c
+#include <stdio.h>
+
+size_t fwrite(const void *buf, size_t size, size_t nmemb, FILE *stream);
+```
+(size \* nmemb)バイト分のバイト列をbufからstreamに書き込みます。  
+成功した場合はnmembを返し、失敗した場合はnmembより小さい値を返し、原因を表す定数をerronoにセットします。
