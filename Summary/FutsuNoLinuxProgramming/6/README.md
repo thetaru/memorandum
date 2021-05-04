@@ -192,4 +192,16 @@ fputs()とほぼ同じ機能ですが、挙動がすこし違います。
 int puts(const char *buf);
 ```
 puts()は、文字列bufを標準出力に出力し、そのあと改行'\\n'を出力します。  
-fputs()との違いは、出力先が標準出力に固定されていることと、改行'\\n'が追加されることです。
+fputs()との違いは、出力先が標準出力に固定されていることと、改行'\\n'が追加されることです。  
+※ fgets()で入力した文字列には'\\n'がついているので、fgets()で読み込んだ行をそのままputs()に渡すと、'\\n'が1つ余分に付いてしまいます。  
+### ■ printf(3)、fprintf(3)
+```c
+#include <stdio.h>
+
+int printf(const char *fmt, ...);
+int fprintf(FILE *stream, const char *fmt, ...);
+```
+第1引数fmtは書式文字列です。(型指定子の説明は省きます。)  
+出力先は、printf()だと標準出力、fprintf()だと引数のstreamです。
+### ■ scanf(3)
+つかわないでください。
