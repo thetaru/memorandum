@@ -271,3 +271,14 @@ FILE *fdopen(int fd, const char *mode);
 ファイルディスクリプタfdをラップするFILE型の値を新しく作成してそのポインタを返します。  
 失敗したらNULLを返します。  
 第2引数modeの意味は、fopen()の第2引数と同じです。
+## 6.8 バッファリングの操作
+### ■ fflush(3)
+```c
+#include <stdio.h>
+
+int fflush(FILE *stream);
+```
+fflush()は、streamがバッファリングしている内容を即座にwrite()させます。  
+成功した場合は0を返し、失敗した場合はEOFを返して失敗の原因を表す定数をerrnoにセットします。  
+  
+fflush()は、改行せずに文字列を端末に出力したいときに使います。
