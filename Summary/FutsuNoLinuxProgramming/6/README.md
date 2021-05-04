@@ -205,3 +205,13 @@ int fprintf(FILE *stream, const char *fmt, ...);
 出力先は、printf()だと標準出力、fprintf()だと引数のstreamです。
 ### ■ scanf(3)
 つかわないでください。
+
+## 6.5 固定長の入出力
+### ■ fread(3)
+```c
+#include <stdio.h>
+
+size_t fread(void *buf, size_t size, size_t nmemb, FILE *stream);
+```
+streamから (size \* nmemb)バイト読み込み、bufに格納します。  
+成功したらnmembを返し、失敗したか(size\*nmemb)バイト読む前にEOFに到達した場合はnmembより小さい値を返します。
