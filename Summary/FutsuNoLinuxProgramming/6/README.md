@@ -229,4 +229,45 @@ size_t fwrite(const void *buf, size_t size, size_t nmemb, FILE *stream);
 ```c
 #include <stdio.h>
 
+int fseek(FILE *stream, log offset, int whence);
+int fseeko(FILE *stream, off_t offset, int whence);
 ```
+lseek()システムコールに対応するのがfseek()とfseeko()です。  
+streamのファイルオフセットを、whenceとoffsetで示される位置に移動します。  
+※ whenceで指定できる値はlseek(2)と同様です。  
+  
+### ■ ftell(3)、ftello(3)
+```c
+#include <stdio.h>
+
+log ftell(FILE *stream);
+off_t ftello(FILE *stream);
+```
+ftell()は、streamのファイルオフセットの値を返します。  
+
+### ■ rewind(3)
+```c
+#include <stdio.h>
+
+void rewind(FILE *stream);
+```
+rewind()は、streamのファイルオフセットをファイルの先頭に戻します。
+## 6.7 ファイルディスクリプタとFILE型
+FILEとは、生のストリームにバッファ機能を追加するラッパーのことでした。  
+つまり、FILEはファイルディスクリプタのラッパーです。
+### ■ fileno(3)
+```c
+#include <stdio.h>
+
+int fileno(FILE *stream);
+```
+streamがラップしているファイルディスクリプタを返します。
+### ■ fdopen(3)
+```c
+#include <stdio.h>
+
+FILE *fdopen(int fd, const char *mode);
+```
+ファイルディスクリプタfdをラップするFILE型の値を新しく作成してそのポインタを返します。  
+失敗したらNULLを返します。  
+第2引数modeの意味は、fopen()の第2引数と同じです。
