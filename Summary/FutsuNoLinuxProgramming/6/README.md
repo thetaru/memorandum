@@ -224,3 +224,9 @@ size_t fwrite(const void *buf, size_t size, size_t nmemb, FILE *stream);
 ```
 (size \* nmemb)バイト分のバイト列をbufからstreamに書き込みます。  
 成功した場合はnmembを返し、失敗した場合はnmembより小さい値を返し、原因を表す定数をerronoにセットします。
+## 6.6 ファイルオフセットの操作
+### ■ fseek(3)、fseeko(3)
+```c
+#include <stdio.h>
+
+```
