@@ -214,4 +214,4 @@ int fprintf(FILE *stream, const char *fmt, ...);
 size_t fread(void *buf, size_t size, size_t nmemb, FILE *stream);
 ```
 streamから (size \* nmemb)バイト読み込み、bufに格納します。  
-成功したらnmembを返し、失敗したか(size\*nmemb)バイト読む前にEOFに到達した場合はnmembより小さい値を返します。
+成功した場合はnmembを返し、失敗したか(size\*nmemb)バイト読む前にEOFに到達した場合はnmembより小さい値を返します。
