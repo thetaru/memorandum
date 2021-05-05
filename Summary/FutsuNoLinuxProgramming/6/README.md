@@ -356,8 +356,10 @@ static void do_wc_l(FILE *f);
 int main(int argc, char *argv[])
 {
     if (argc == 1) {
+        /* STDIN */
         do_wc_l(stdin);
     } else {
+        /* FILE */
         int i;
         for (i = 1; i < argc; i++) {
             FILE *f;
