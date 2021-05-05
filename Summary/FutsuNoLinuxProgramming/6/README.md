@@ -282,3 +282,31 @@ fflush()は、streamがバッファリングしている内容を即座にwrite(
 成功した場合は0を返し、失敗した場合はEOFを返して失敗の原因を表す定数をerrnoにセットします。  
   
 fflush()は、改行せずに文字列を端末に出力したいときに使います。
+### ■ setvbuf(3)
+setvbuf()というAPIを使うと、自前で用意したバッファをstdioに使わせることができます。  
+また、バッファリングモードを変更することもできます。
+
+## 6.9 EOFとエラー
+### ■ feof(3)
+```c
+#include <stdio.h>
+
+int feof(FILE *stream);
+```
+feof()は、直前の読み取り操作でstreamがEOFに達していたらtrueを返します。  
+※ 使ってはいけません。
+### ■ ferror(3)
+```c
+#include <stdio.h>
+
+int ferror(FILE *stream);
+```
+ferror()は、直前の入出力操作でエラーが起きたらtrueを返します。
+### ■ clearerr(3)
+```c
+#include <stdio.h>
+
+void clearerr(FILE *stream);
+```
+clearerr()は、streamのエラーフラグとEOFフラグをクリアします。  
+使いどころとしては、`tail -f`のようなリアルタイムに表示させる必要がある場合でしょうか。  
