@@ -395,4 +395,4 @@ static void do_wc_l(FILE *f)
 }
 ```
 `unsigned long n;`は行数カウンターです。  
-`int prev = '\n';`は空ファイル対策のため使用している。
+`int prev = '\n';`は空ファイル対策のために使用している。
