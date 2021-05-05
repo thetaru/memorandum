@@ -348,4 +348,36 @@ int main(int argc, char *argv[])
 ```
 ### 2
 ```c
+#include <stdio.h>
+#include <stdlib.h>
+
+static void do_wc_l(FILE *f);
+
+int main(int argc, char *argv[])
+{
+    if (argc == 1) {
+        do_wc_l(stdin);
+    } else {
+        exit(1);
+    }
+}
+
+static void do_wc_l(FILE *f)
+{
+    unsigned long n;
+    int c;
+    int prev = '\n';
+
+    n = 0;
+    while ((c = getc(f)) != EOF) {
+        if (c == '\n') {
+            n++;
+        }
+        prev = c;
+    }
+    if (prev != '\n') {
+        n++;
+    }
+    printf("\n%lu\n", n);
+}
 ```
