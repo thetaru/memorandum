@@ -206,7 +206,8 @@ getopt()とは、第4引数と第5引数が違います。
 |has_arg|int|no_argument(または0): パラメータを取らない</br>required_argument(または1): 必ずパラメータを取る</br>optional_argument(または2): パラメータを取るかもしれない|
 |flags|int|NULL: このオプションを発見したときgetopt_long()はvalメンバの値を返す</br>NULL以外: このオプションを発見したときgetopt_long()は0を返し、\*flagsにvalメンバの値を代入する|
 |val|int|flagsメンバで指定されたところに返す値|
-
+  
+  
 flagsメンバとvalメンバの使い方は主に2つあります。  
 1つ目は、flagsをNULLにしてvalにchar型の値を指定することです。  
 例えば、--helpオプションを発見したときにgetopt()が'h'を返すようにしたければ、flagsをNULLにしてvalを'h'にします。(ショートオプションと同じ意味を持つロングオプションがある場合に有効です。)  
