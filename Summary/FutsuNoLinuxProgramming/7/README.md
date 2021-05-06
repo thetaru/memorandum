@@ -218,8 +218,73 @@ flagsメンバとvalメンバの使い方は主に2つあります。
 int opt_all = 0;
 
 struct option[] = {
-    {"--all", no_argument, &opt_all, 1}
+    {"--all", no_argument, &opt_all, 1},
+    {0,0,0,0}
 }
 ```
-getopt_long()の第5引数がNULでない場合は、発見したロングオプションに対応するstruct optionのインデックスをそのアドレスに返します。  
+getopt_long()の第5引数がNULLでない場合は、発見したロングオプションに対応するstruct optionのインデックスをそのアドレスに返します。  
 この引数は、現在処理中のオプションに対応するstruct optionを得るために使います。
+
+### ■ オプションを扱うheadコマンド
+次のオプションを定義します。
+- 行数を指定`-n`
+- そのロングオプション版`--lines`
+- ヘルプを表示`--help`
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define _GNU_SOURCE
+#include <getopt.h>
+
+static void do_head(FILE *f, long nlines);
+
+#define DEFAULT_N_LINES 10
+
+static struct option longopts[] = {
+    {"lines", required_argument, NULL, 'n'},
+    {"help", no_argument, NULL, 'h'},
+    {0,0,0,0}
+};
+
+int main(int argc, char *argv[])
+{
+    int opt;
+    long nlines = DEFAULT_N_LINES;
+    
+    while ((opt = getopt_long(argc, argv, "n:", longopts, NULL)) != -1) {
+        switch(opt) {
+        case 'n':
+            nlines = atoi(optarg);
+            break;
+        case 'h':
+            fprintf(stdout, "Usage] %s [-n LINES] [FILE ...]\n", argv[0]);
+            exit(0);
+        case '?':
+            fprintf(stderr, "Usage: %s [-n LINES] [FILE ...]\n", argv[0]);
+            exit(1);
+        }
+    }
+    
+    if (optind == argc) {
+        do_head(stdin, nlines);
+    } else {
+        int i;
+        
+        for (i = optind; i < argc; i++) {
+            FILE *f;
+            
+            f = fopen(argv[i], "r");
+            if (!f) {
+                perror(argv[i]);
+                exit(1);
+            }
+            do_head(f, nlines);
+            fclose(f);
+        }
+    }
+    exit(0);
+}
+}
+```
