@@ -220,7 +220,7 @@ int opt_all = 0;
 struct option[] = {
     {"--all", no_argument, &opt_all, 1},
     {0,0,0,0}
-}
+};
 ```
 getopt_long()の第5引数がNULLでない場合は、発見したロングオプションに対応するstruct optionのインデックスをそのアドレスに返します。  
 この引数は、現在処理中のオプションに対応するstruct optionを得るために使います。
