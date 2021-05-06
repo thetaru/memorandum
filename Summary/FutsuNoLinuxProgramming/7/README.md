@@ -288,3 +288,78 @@ int main(int argc, char *argv[])
     exit(0);
 }
 ```
+### ■ 7.4 練習問題
+#### 1
+フラグ管理するだけ
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define _GNU_SOURCE
+#include <getopt.h>
+
+
+#define N_FLAG 1
+#define T_FLAG 2
+
+static struct option longopts[] = {
+    {"tab", no_argument, NULL, 't'},
+    {"new", no_argument, NULL, 'n'},
+    {0,0,0,0}
+};
+
+int main(int argc, char *argv[])
+{
+    int opt;
+    unsigned char flag = 0;
+    while ((opt = getopt_long(argc, argv, "nt", longopts, NULL)) != -1) {
+        switch(opt) {
+        case 'n':
+            flag |= N_FLAG;
+            break;
+        case 't':
+            flag |= T_FLAG;
+            break;
+        case '?':
+            fprintf(stderr, "Usage: %s [-n] [-t]\n", argv[0]);
+            exit(1);
+        }
+    }
+
+    int i;
+
+    for (i = optind; i < argc; i++) {
+        FILE *f;
+        int c;
+
+        f = fopen(argv[i], "r");
+        if (!f) {
+            perror(argv[i]);
+            exit(1);
+        }
+        while ((c = fgetc(f)) != EOF) {
+            switch (c) {
+            switch (c) {
+            case '\t':
+                if (flag & T_FLAG) {
+                    if (fputs("\\t", stdout) == EOF) exit(1);
+                } else {
+                    if (fputs("\t", stdout) == EOF) exit(1);
+                }
+                break;
+            case '\n':
+                if (flag & N_FLAG) {
+                    if (fputs("$\n", stdout) == EOF) exit(1);
+                } else {
+                    if (fputs("\n", stdout) == EOF) exit(1);
+                }
+                break;
+            default:
+                if (putchar(c) < 0) exit(1);
+            }
+        }
+        fclose(f);
+    }
+    exit(0);
+}
+```
