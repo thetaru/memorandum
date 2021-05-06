@@ -206,3 +206,19 @@ getopt()とは、第4引数と第5引数が違います。
 |has_arg|int|no_argument(または0): パラメータを取らない</br>required_argument(または1): 必ずパラメータを取る</br>optional_argument(または2): パラメータを取るかもしれない|
 |flags|int|NULL: このオプションを発見したときgetopt_long()はvalメンバの値を返す</br>NULL以外: このオプションを発見したときgetopt_long()は0を返し、\*flagsにvalメンバの値を代入する|
 |val|int|flagsメンバで指定されたところに返す値|
+
+flagsメンバとvalメンバの使い方は主に2つあります。  
+1つ目は、flagsをNULLにしてvalにchar型の値を指定することです。  
+例えば、--helpオプションを発見したときにgetopt()が'h'を返すようにしたければ、flagsをNULLにしてvalを'h'にします。(ショートオプションと同じ意味を持つロングオプションがある場合に有効です。)  
+  
+2つ目は、真偽値をとるオプションの値を、変数に反映させることです。  
+この場合は、struct optionを次のように設定します。
+```c
+int opt_all = 0;
+
+struct option[] = {
+    {"--all", no_argument, &opt_all, 1}
+}
+```
+getopt_long()の第5引数がNULでない場合は、発見したロングオプションに対応するstruct optionのインデックスをそのアドレスに返します。  
+この引数は、現在処理中のオプションに対応するstruct optionを得るために使います。
