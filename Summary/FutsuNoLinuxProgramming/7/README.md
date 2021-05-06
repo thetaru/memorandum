@@ -114,3 +114,43 @@ int main(int argc, char *argv[])
     exit(0);
 }
 ```
+ちなみに、`if (!f)`と`if (f == NULL)`は同じ意味です。
+## 7.2 オプションの解析
+### ■ オプションの慣習
+知ってた
+### ■ getopt(3)
+```c
+#include <unistd.h>
+
+int getopt(int argc, char * const argv[], const char *optdecl);
+
+extern char *optarg;
+extern int optind, opterr, optopt;
+```
+getopt()は、オプション解析APIです。ショートオプション(`-`)のみを認識します。  
+使い方は、使用例を見てください。
+```c
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+    int opt;
+    
+    while ((opt = getopt(argc, argv, "aaf:tx")) != -1) {
+        switch (opt) {
+        case 'a':
+            /* OPTION -a */
+            printf("option -a\n");
+            break
+        case 'f':
+            /* OPTION -f */
+            printf("option -f\n");
+            break
+        case '?':
+            /* OPTION UNKNOWN */
+            break
+        }
+    }
+    /* PROGRAM MAIN */
+}
+```
