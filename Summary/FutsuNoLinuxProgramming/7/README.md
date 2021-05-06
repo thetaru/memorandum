@@ -231,6 +231,7 @@ getopt_long()の第5引数がNULLでない場合は、発見したロングオ�
 - そのロングオプション版`--lines`
 - ヘルプを表示`--help`
 
+今回もmain()のみ変更すればいいのでmain()のみ抜粋しました。
 ```c
 #include <stdio.h>
 #include <stdlib.h>
