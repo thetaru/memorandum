@@ -176,6 +176,7 @@ getopt()がパラメータをとるオプションの文字を返した場合は
 |int|opterr|trueならばエラー時にgetopt()がメッセージを表示する|
 
 ### ■ getopt_long(3)
+getopt_long()は、オプション解析APIです。getopt()の機能に加えてロングオプション(`--`)も認識できます。  
 ```c
 #define _GNU_SOURCE
 #include <getopt.h>
@@ -195,3 +196,13 @@ struct option {
 extern char *optarg;
 extern int optind, opterr, optopt;
 ```
+getopt()とは、第4引数と第5引数が違います。  
+まず、第4引数が解析するロングオプションの定義です。struct optionという構造体の配列を使ってロングオプションの仕様を指示します。  
+この配列の最後のstruct optionはすべてのメンバを0にする必要があります。  
+
+|メンバ名|型|値と意味|
+|:---|:---|:---|
+|name|char\*|ロングオプション名|
+|has_arg|int|no_argument(または0): パラメータを取らない</br>required_argument(または1): 必ずパラメータを取る</br>optional_argument(または2): パラメータを取るかもしれない|
+|flags|int|NULL: このオプションを発見したときgetopt_long()はvalメンバの値を返す</br>NULL以外: このオプションを発見したときgetopt_long()は0を返し、\*flagsにvalメンバの値を代入する|
+|val|int|flagsメンバで指定されたところに返す値|
