@@ -16,7 +16,7 @@
 ## し
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
 ## た
-- [ ] [たのしいバイナリの歩き方]()
+- [ ] [たのしいバイナリの歩き方](https://github.com/thetaru/memorandum/tree/master/Summary/EnjoyBinary)
 - [ ] [食べる！SSL！]()
 ## ふ
 - [ ] [ふつうのLinuxプログラミング](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming)
