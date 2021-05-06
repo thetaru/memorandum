@@ -161,11 +161,10 @@ getopt()は、常にループと一緒に使います。getopt()は呼び出す�
 オプションがなくなった場合は-1を返します。(上のコードはオプションがなくなるまでループを続けます。)  
   
 getopt()の第3引数に注目します。この引数には解析するオプションをすべて文字列として指定します。  
+パラメータを取るオプションがあるときは、そのオプション文字の次にコロン(:)を付けます。  
   
 例えば、パラメータを取らないオプション`-a`、`-t`、`-x`を定義するには"atx"と指定します。  
-  
-パラメータを取るオプション`-f`があるときは、そのオプション文字の次にコロン(:)を付けます。  
-例えば、先ほどの3つのオプションに加えてパラメータを取るオプション`-f`を定義するには"af:tx"と指定します。  
+また、先ほどの3つのオプションに加えてパラメータを取るオプション`-f`を定義するには"af:tx"と指定します。  
   
 次に、オプションのパラメータを得る方法を説明します。  
 getopt()がパラメータをとるオプションの文字を返した場合は、グローバル変数`char *optarg`がパラメータを指しています。
@@ -176,3 +175,23 @@ getopt()がパラメータをとるオプションの文字を返した場合は
 |int|optopt|現在処理中のオプション文字|
 |int|opterr|trueならばエラー時にgetopt()がメッセージを表示する|
 
+### ■ getopt_long(3)
+```c
+#define _GNU_SOURCE
+#include <getopt.h>
+
+int getopt_long(int argc, char * const argv[],
+                const char *optdecl,
+                const struct option *longoptdecl,
+                int *longindex);
+                
+struct option {
+    const char *name;
+    int has_arg;
+    int *flags;
+    int val;
+}
+
+extern char *optarg;
+extern int optind, opterr, optopt;
+```
