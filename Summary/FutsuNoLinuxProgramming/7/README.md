@@ -141,14 +141,14 @@ int main(int argc, char *argv[])
         case 'a':
             /* OPTION -a */
             printf("option -a\n");
-            break
+            break;
         case 'f':
             /* OPTION -f */
             printf("option -f\n");
-            break
+            break;
         case '?':
             /* OPTION UNKNOWN */
-            break
+            break;
         }
     }
     /* PROGRAM MAIN */
