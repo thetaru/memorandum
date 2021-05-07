@@ -16,5 +16,5 @@ https://github.com/kenjiaiko/binarybook
 ```
 
 ## ■ Process Monitorのログから挙動を確認する
-今回は`chap01\sample_mal\Release\sample_mal.exe`を解析する。
+今回は`chap01\sample_mal\Release\sample_mal.exe`を解析する。  
 Process Monitorを実行し、ログを確認する。  
