@@ -5,8 +5,16 @@
 - ネットワーク通信
 
 これらを監視した状態でプログラムを実行することで挙動を確認する。  
-次の3つのツールを使用する。
+そのために次の3つのツールを使用する。
 - Stirling (バイナリエディタ)
 - Process Monitor (ファイルとレジストリの監視)
 - Wireshark (ネットワークの監視)
-## ■ Process Monitorのログから挙動を書くにする
+
+サンプルファイルは、以下からダウンロードすること。
+```
+https://github.com/kenjiaiko/binarybook
+```
+
+## ■ Process Monitorのログから挙動を確認する
+今回は`chap01\sample_mal\Release\sample_mal.exe`を解析する。
+Process Monitorを実行し、ログを確認する。  
