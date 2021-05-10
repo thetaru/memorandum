@@ -317,7 +317,7 @@ lseek()は、ファイルディスクリプタfd内部のファイルオフセ�
 |SEEK_CUR|現在のファイルオフセット+offsetに移動|現在のファイルオフセット|
 |SEEK_END|ファイル末尾+offsetに移動|ファイル末尾|
 
-## ■ dup(2), dup2(2)
+## ■ dup(2)、dup2(2)
 ### Syntax - dup, dup2
 ```c
 #include <unistd.h>
