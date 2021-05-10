@@ -132,7 +132,7 @@ int open(const char *path, int flags, mode_t mode);
 |:---|:---|
 |path|ファイルパス|
 |flags|オープンするファイルに許可を与えるモード|
-|mode|flags=O_CREATを指定した場合に設定できる</br>オープンするファイルのパーミッションを設定する|
+|mode|flagsにO_CREATを指定した場合に設定できる</br>オープンするファイルのパーミッションを設定する|
 
 第2引数のflagsは、ストリームの性質を表すフラグです。
 |フラグ|意味|
