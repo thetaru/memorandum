@@ -26,7 +26,7 @@
 > 
 ```
 ### ■ ハードウェア - デバイスのインストール設定
-Windows Updateによるデバイスの自動インストールの設定を変更します。
+Windows Updateによるデバイスの自動インストールの設定を変更する。
 |キー|HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching|
 |:---|:---|
 |値|SearchOrderConfig|
