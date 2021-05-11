@@ -5,18 +5,38 @@
 ### ■ IPアドレス設定
 |コマンドレット|説明|
 |:---|:---|
-|||
+|New-NetIPAddress|IPアドレスの設定を新規に作成する|
 
 |オプション|説明|
 |:---|:---|
-|||
+|AddressFamily|IPアドレスのタイプ(IPv4\|IPv6)を指定する|
+|DefaultGateway|デフォルトゲートウェイを指定する|
+|InterfaceAlias|インターフェースのエイリアス名を指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
+|InterfaceIndex|インターフェイスのインデックスを指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
+|IPAddress|IPアドレスを指定する|
+|PrefixLength|サブネットマスクのビット数を指定する|
 
 ```ps1
-> 
+> New-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -PrefixLength <Prefix> -AddressFamily "IPv4" -DefaultGateway <Gateway>
 ```
+
+IPアドレスがすでに設定されている場合は、既存の設定を下記のコマンドで削除してください。
+|コマンドレット|説明|
+|:---|:---|
+|Remove-NetIPAddress|IPアドレスの設定を削除する|
+
+|オプション|説明|
+|:---|:---|
+|AddressFamily|IPアドレスのタイプ(IPv4\|IPv6)を指定する|
+|IPAddress|IPアドレスを指定する|
+
+```ps1
+> Remove-NetIPAddress -IPAddress <IPaddr> -AddressFamily "IPv4" -Confirm
+> New-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -PrefixLength <Prefix> -AddressFamily "IPv4" -DefaultGateway <Gateway>
+```
+
 ### ■ DNSサーバ設定
 ```ps1
-> 
 ```
 ### ■ IPv6無効化
 ```ps1
