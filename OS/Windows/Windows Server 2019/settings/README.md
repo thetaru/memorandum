@@ -70,3 +70,5 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ### ■ 時刻同期の設定
 https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 ### ■ リモートデスクトップ制限の解除
+## プロキシの設定
+ieとwinhttp
