@@ -43,8 +43,20 @@ IPアドレスがすでに設定されている場合は、既存の設定を下
 ```
 
 ### ■ DNSサーバ設定
+|コマンドレット|説明|
+|:---|:---|
+|Set-DnsClientServerAddress|DNSサーバを設定する|
+
+|オプション|説明|
+|:---|:---|
+|InterfaceAlias|インターフェースのエイリアス名を指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
+|InterfaceIndex|インターフェイスのインデックスを指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
+|ServerAddress|DNSサーバを指定する|
+
 ```ps1
+> Set-DnsClientServerAddress -InterfaceAlias <Interface> -ServerAddress <IPaddr>
 ```
+
 ### ■ IPv6無効化
 ```ps1
 > Disable-NetAdapterBinding -Name <NetworkAdapter> -ComponentID ms_tcpip6
