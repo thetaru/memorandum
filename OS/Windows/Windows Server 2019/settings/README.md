@@ -9,6 +9,19 @@ DHCPを用いず、静的にIPアドレスを割り当てることとする。
 > Get-NetAdapter
 ```
 ### ■ NIC名の変更
+|コマンドレット|説明|
+|:---|:---|
+|Rename-NetAdapter|ネットワークアダプターの名前を変更する|
+
+|オプション|説明|
+|:---|:---|
+|Name|現在のアダプター名|
+|NewName|新しいアダプター名|
+
+```ps1
+> Rename-NetAdapter -Name <CurrentName> -NewName <NewName>
+```
+
 ### ■ IPアドレス設定
 |コマンドレット|説明|
 |:---|:---|
