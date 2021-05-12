@@ -127,15 +127,18 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 不要なサービスを無効化する。
 ### ■ ActiveX Installer (AxInstSV)
 ```ps1
-> Stop-Service -DisplayName 'ActiveX Installer (AxInstSV)'
+> Stop-Service -Name 'AxInstSV'
+> Set-Service 'AxInstSV' -StartupType Disabled
 ```
 ### ■ Bluetooth オーディオ ゲートウェイ サービス
 ```ps1
-> Stop-Service -DisplayName 'Bluetooth オーディオ ゲートウェイ サービス'
+> Stop-Service -Name 'BTAGService'
+> Set-Service 'BTAGService' -StartupType Disabled
 ```
 ### ■ Bluetooth サポート サービス
 ```ps1
-> Stop-Service -DisplayName 'Bluetooth サポート サービス'
+> Stop-Service -Name 'bthserv'
+> Set-Service 'bthserv' -StartupType Disabled
 ```
 ## イベントビューアー
 ## Windows Defender ファイアウォール
