@@ -23,6 +23,10 @@ $ sudo pacman -Syu code
 ```
 $ sudo pacman -S fcitx-im fcitx-mozc
 ```
+## Remmina をインストール
+```
+$ sudo pacman -S remmina freerdp
+```
 ## 隠しファイルの表示
 ファイルマネージャから`隠しファイルを表示`で設定
 ## ログインシェルの変更
