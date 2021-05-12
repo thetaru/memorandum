@@ -5,8 +5,11 @@
 DHCPを用いず、静的にIPアドレスを割り当てることとする。
 ### ■ NICの情報を取得
 設定するために必要となる情報を取得する。
-```ps1
-> Get-NetAdapter
+```ps1 
+> Get-NetAdapter | Select-Object InterfaceAlias,ifIndex
+ 
+### 詳細情報
+> Get-NetAdapter | Select-Object *
 ```
 ### ■ NIC名の変更
 |コマンドレット|説明|
