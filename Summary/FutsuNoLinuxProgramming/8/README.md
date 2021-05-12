@@ -17,23 +17,3 @@ int regexec(const regex_t *reg, const char *string, size_t nmatch, regmatch_t pm
 size_t regerror(int errcode, const regex_t *reg, char *msgbuf, size_t msgbuf_size);
 ```
 
-#### regcomp
-正規表現のコンパイルを行います。
-
-|引数|意味|
-|:---|:---|
-|reg|コンパイルされた正規表現へのポインタ|
-|pattern|正規表現を指定する|
-|flags|以下のフラグのORを指定する|
-
-|flags|意味|
-|:---|:---|
-|REG_EXTENDED|POSIX拡張正規表現を使用する|
-|REG_ICASE|大文字と小文字を区別しない|
-|REG_NOSUB||
-|REG_NEWLINE|改行文字の扱いを変更する|
-
-|戻り値|意味|
-|:---|:---|
-|成功|読み込んだバイト数|
-|失敗|-1|
