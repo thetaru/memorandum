@@ -40,7 +40,7 @@ DHCPを用いず、静的にIPアドレスを割り当てることとする。
 > New-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -PrefixLength <Prefix> -AddressFamily "IPv4" -DefaultGateway <Gateway>
 ```
 
-IPアドレスがすでに設定されている場合は、既存の設定を下記のコマンドで削除してください。  
+IPアドレスがすでに設定されている場合は、既存の設定を下記のコマンドで削除してから新しいIPアドレスを設定する。  
 ※ 明示的にデフォルトゲートウェイを削除しないと、デフォルトゲートウェイが残ることに注意する。
 |コマンドレット|説明|
 |:---|:---|
