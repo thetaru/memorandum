@@ -40,7 +40,8 @@ DHCPを用いず、静的にIPアドレスを割り当てることとする。
 > New-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -PrefixLength <Prefix> -AddressFamily "IPv4" -DefaultGateway <Gateway>
 ```
 
-IPアドレスがすでに設定されている場合は、既存の設定を下記のコマンドで削除してください。
+IPアドレスがすでに設定されている場合は、既存の設定を下記のコマンドで削除してください。  
+※ 明示的にデフォルトゲートウェイを削除しないと、デフォルトゲートウェイが残ることに注意する。
 |コマンドレット|説明|
 |:---|:---|
 |Remove-NetIPAddress|IPアドレスの設定を削除する|
@@ -48,11 +49,13 @@ IPアドレスがすでに設定されている場合は、既存の設定を下
 |オプション|説明|
 |:---|:---|
 |AddressFamily|IPアドレスのタイプ(IPv4\|IPv6)を指定する|
+|DefaultGateway|デフォルトゲートウェイを指定する|
+|InterfaceAlias|インターフェースのエイリアス名を指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
+|InterfaceIndex|インターフェイスのインデックスを指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
 |IPAddress|IPアドレスを指定する|
 
 ```ps1
-> Remove-NetIPAddress -IPAddress <IPaddr> -AddressFamily "IPv4" -Confirm
-> New-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -PrefixLength <Prefix> -AddressFamily "IPv4" -DefaultGateway <Gateway>
+> Remove-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -AddressFamily "IPv4" -DefaultGateway <Gateway>
 ```
 
 ### ■ DNSサーバ設定
