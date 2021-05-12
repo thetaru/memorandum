@@ -8,8 +8,8 @@
 ## 第3章 [Linuxを描き出す3つの概念](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/3)
 ## 第4章 [Linuxとユーザ](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/4)
 # 第2部 Linuxプログラミングの根幹
-## 第5章 (重要)[ストリームにかかわるシステムコール](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/5)
-## 第6章 (重要)[ストリームにかかわるライブラリ関数](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/6)
+## 第5章 [ストリームにかかわるシステムコール](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/5)
+## 第6章 [ストリームにかかわるライブラリ関数](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/6)
 ## 第7章 [haedコマンドを作る](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/7)
 ## 第8章 [grepコマンドを作る](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/8)
 ## 第9章 [Linuxのディレクトリ構造](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/9)
