@@ -500,7 +500,7 @@ int main()
   printf("ファイル名: ");
   fgets( filename, BUFMAX, stdin );
   
-  /* 改行を削除する */
+  /* 改行をNULL文字に置換する */
   i = strlen( filename ) - 1;
   if ( filename[i] == '\n' ) {
     filename[i] = '\0';
