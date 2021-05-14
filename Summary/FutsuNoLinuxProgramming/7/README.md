@@ -298,7 +298,6 @@ int main(int argc, char *argv[])
 #define _GNU_SOURCE
 #include <getopt.h>
 
-
 #define N_FLAG 1
 #define T_FLAG 2
 
@@ -338,7 +337,6 @@ int main(int argc, char *argv[])
             exit(1);
         }
         while ((c = fgetc(f)) != EOF) {
-            switch (c) {
             switch (c) {
             case '\t':
                 if (flag & T_FLAG) {
