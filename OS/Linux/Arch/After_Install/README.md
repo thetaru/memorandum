@@ -15,6 +15,10 @@ $ sudo pacman -Syyu
 ```
 $ sudo pacman -Syu yay
 ```
+## Google Chrome をインストール
+```
+# sudo pacman -S google-chrome
+```
 ## vscode をインストール
 ```
 $ sudo pacman -Syu code
