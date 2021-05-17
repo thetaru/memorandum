@@ -17,25 +17,25 @@ $ docker container ls
 $ docker exec -it posgre11 /bin/bash
 
 ### 各種コマンドがあることを確認
-# which psql createuser createdb
+$ which psql createuser createdb
 
 ### データベースユーザ"user1"を作成
-# createuser -U postgres user1
+$ createuser -U postgres user1
 
 ### 作成されたことを確認
-# psql -U postgres -c '\du'
+$ psql -U postgres -c '\du'
 
 ### データベース"testdb1"を作成
-# createdb -U postgres -O user1 -E UTF8 --locale=C -T template0 testdb1
+$ createdb -U postgres -O user1 -E UTF8 --locale=C -T template0 testdb1
 
 ### 作成されたことを確認
-# psql -U postgres -l
+$ psql -U postgres -l
 ```
 データベースユーザ"user1"とデータベース"testdb1"が作成できました。  
 アクセスできることを確認します。
 ```
 ### 作成したデータベースユーザで作成したデータベースにアクセス
-# psql -U user1 testdb1
+$ psql -U user1 testdb1
 
 ### 簡単なSQLが実行できることを確認
 testdb1=> select current_date;
