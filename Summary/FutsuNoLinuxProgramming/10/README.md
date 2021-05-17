@@ -135,4 +135,29 @@ mkdir()は、ディレクトリパスを作成します。
 - EPERM
 > 親ディレクトリを変更する権限がない
 ### ■ umask
+umaskはプロセスの属性の1つです。  
+open()やmkdir()で指定したパーミッションは、`mode & ~umask`で計算されます。
+```
+mode   111 111 111
+umask  000 010 010
+-------------------
+       111 101 101
+```
 ### ■ umask(2)
+```c
+#include <sys/stat.h>
+#include <sys/stat.h>
+
+mode_t umask(mode_t mask);
+```
+
+|引数|意味|
+|:---|:---|
+|mask|umask|
+
+|戻り値|意味|
+|:---|:---|
+|成功|直前のumaskの値|
+|失敗|-|
+
+umask()は、プロセスのumaskの値をmaskに変更します。
