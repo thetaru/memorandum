@@ -42,3 +42,65 @@ struct dirent *readdir(DIR *d);
 |失敗|NULL|
 
 readdir()は、ディレクトリストリームdからエントリを1つ読み込みます。
+
+### ■ closedir(3)
+```c
+#include <sys/types.h>
+#include <dirent.h>
+
+int closedir(DIR *d);
+```
+
+|引数|意味|
+|:---|:---|
+|d|ディレクトリストリーム|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+closedir()は、ディレクトリストリームdを閉じます。
+
+### ■ lsコマンドを作る
+```c
+# FileName: ls.c
+# ProgName: ls.o
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <dirent.h>
+
+static void do_ls(char *path);
+
+int main(int argc, char *argv[])
+{
+  int i;
+  
+  if (argc < 2) {
+    fprintf(stderr, "%s: no arguments\n", argv[0]);
+    exit(1);
+  }
+  for (i = 1; i < argc; i++) {
+    do_ls(argv[i]);
+  }
+  exit(0);
+}
+
+static void do_ls(char *path)
+{
+  DIR *d;
+  struct dirent *ent;
+  
+  d = opendir(path);
+  if (!d) {
+    perror(path);
+    exit(1);
+  }
+  while (ent = readdir(d)) {
+    printf("%s\n", ent->d_name);
+  }
+  closedir(d);
+}
+```
