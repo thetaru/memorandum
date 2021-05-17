@@ -104,3 +104,35 @@ static void do_ls(char *path)
   closedir(d);
 }
 ```
+
+## 10.2 ディレクトリを作る
+### ■ mkdir(2)
+```c
+#include <sys/stat.h>
+#include <sys/types.h>
+
+int mkdir(const char *path, mode_t mode);
+```
+
+|引数|意味|
+|:---|:---|
+|path|ディレクトリパス|
+|mode|パーミッション|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+mkdir()は、ディレクトリパスを作成します。  
+このシステムコールはかなり頻繁に失敗するためエラーとなる原因を挙げておきます。
+- ENOENT
+> 親ディレクトリがない
+- ENOTDIR
+> 親ディレクトリがディレクトリでない
+- EEXIST
+> すでに同名のファイルやディレクトリが存在する
+- EPERM
+> 親ディレクトリを変更する権限がない
+### ■ umask
+### ■ umask(2)
