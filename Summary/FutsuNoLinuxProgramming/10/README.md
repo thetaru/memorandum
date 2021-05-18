@@ -116,7 +116,7 @@ int mkdir(const char *path, mode_t mode);
 
 |引数|意味|
 |:---|:---|
-|path|ディレクトリパス|
+|path|ディレクトリへのパス|
 |mode|パーミッション|
 
 |戻り値|意味|
