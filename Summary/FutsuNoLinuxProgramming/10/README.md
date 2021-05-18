@@ -14,14 +14,14 @@ DIR *opendir(const char *path);
 
 |引数|意味|
 |:---|:---|
-|path|ファイルへのパス|
+|path|ディレクトリへのパス|
 
 |戻り値|意味|
 |:---|:---|
 |成功|ディレクトリストリームへのポインタ|
 |失敗|NULL|
 
-opendir()は、パスpathにあるディレクトリを読み込みのために開きます。  
+opendir()は、ディレクトリパスpathにあるディレクトリを読み込みのために開きます。  
 戻り値はDIRという型へのポインタで、これは構造体ストリームを管理するための構造体です。
 
 ### ■ readdir(3)
@@ -187,5 +187,52 @@ int main(int argc, char *argv[])
         }
     }
     exit(0);
+}
+```
+
+## 10.3 ディレクトリを削除する
+### ■ rmdir(2)
+```c
+#include <unistd.h>
+
+int rmdir(const char *path);
+```
+
+|引数|意味|
+|:---|:---|
+|path|ディレクトリへのパス|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+rmdir()は、ディレクトリパスpathを削除します。  
+ただし、ディレクトリは空でなくてはいけません。
+
+### ■ rmdirコマンドを作る
+```c
+### FileName: rmdir.c
+### ProgName: rmdir.o
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+  int i;
+  
+  if (argc < 2) {
+    fprintf(stderr, "%s: no arguments\n", argv[0]);
+    exit(1);
+  }
+  for (i = 1; i < argc; i++) {
+    if (rmdir(argv[i]) < 0) {
+      perror(argv[i]);
+      exit(1);
+    }
+  }
+  exit(0);
 }
 ```
