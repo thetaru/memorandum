@@ -16,4 +16,3 @@ https://qiita.com/monaky/items/b5f589e59ee002a1d355
 - [ ] [セキュリティ設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/security)
 - [ ] [HTTPS対応](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/apache/ssl)
 ## ■ Tips
-- [ ] [HTTP/2の設定]()
