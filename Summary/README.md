@@ -13,6 +13,7 @@
 ## P
 - [ ] [PICアセンブラ入門]()
 ## し
+- [ ] [自作エミュレータで学ぶx86アーキテクチャ](https://github.com/thetaru/memorandum/tree/master/Summary/)
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
 ## た
 - [ ] [たのしいバイナリの歩き方](https://github.com/thetaru/memorandum/tree/master/Summary/EnjoyBinary)
