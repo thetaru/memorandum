@@ -1,9 +1,0 @@
-# Logrotate
-## ■ Settings
-- [ ] [ログローテーションの設定]()
-## ■ Tips
-- [ ] [閾値を越えたらローテートさせる方法]()
-
-https://hackers-high.com/linux/man-jp-logrotate/  
-https://qiita.com/Esfahan/items/a8058f1eb593170855a1  
-https://hoge-hogeo-777.hatenablog.com/entry/2019/03/26/180000
