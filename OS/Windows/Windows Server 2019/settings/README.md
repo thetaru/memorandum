@@ -151,6 +151,13 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ## レジストリ
 ### ■ IPv6の無効化
 ### ■ 時刻同期の設定
+|オプション|名前|説明|
+|:---|:---|:---|
+|0x01|SpecialInterval||
+|0x02|UseAsFallbackOnly||
+|0x04|SymmetricActive||
+|0x08|NTP request in Client mode||
+
 https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 ### ■ リモートデスクトップ制限の解除
 ### ■ 組織名/所有者名の設定
