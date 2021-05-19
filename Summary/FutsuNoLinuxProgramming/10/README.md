@@ -386,6 +386,9 @@ unlink()は、ディレクトリは消せません。
 
 ### ■ rmコマンドを作る
 ```c
+### rm.c
+### rm.o
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
