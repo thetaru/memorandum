@@ -364,3 +364,46 @@ int main(int argc, char *argv[])
   exit(0);
 }
 ```
+## 10.6 ファイルを消す
+### ■ unlink(2)
+```c
+#include <unistd.h>
+
+int unlink(const char *path);
+```
+
+|引数|意味|
+|:---|:---|
+|path|リンクへのパス|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+unlink()は、ディレクトリは消せません。  
+また、シンボリックリンクをunlink()するとシンボリックリンクだけが消えます。
+
+### ■ rmコマンドを作る
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+  int i;
+  
+  if (argc < 2) {
+    fprintf(stderr, "%s: no arguments\n", argv[0]);
+    exit(1);
+  }
+  for (i = 1; i < argc; i++) {
+    if (unlink(argv[i]) < 0) {
+      perror(argv[i]);
+      exit(1);
+    }
+  }
+  exit(0);
+}
+```
