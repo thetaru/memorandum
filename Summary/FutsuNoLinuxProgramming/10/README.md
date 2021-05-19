@@ -519,7 +519,7 @@ int main(int argc, char *argv[])
   struct stat st;
   
   if (argc != 2) {
-    fprinitf(stderr, "wrong arguments\n");
+    fprintf(stderr, "wrong arguments\n");
     exit(1);
   }
   if (lstat(argv[1], &st) < 0) {
