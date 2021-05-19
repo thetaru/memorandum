@@ -358,7 +358,7 @@ int main(int argc, char *argv[])
     exit(1);
   }
   if (symlink(argv[1], argv[2]) < 0) {
-    perror(argv[i]);
+    perror(argv[1]);
     exit(1);
   }
   exit(0);
