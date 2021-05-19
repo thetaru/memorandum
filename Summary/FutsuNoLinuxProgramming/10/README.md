@@ -294,3 +294,73 @@ int main(int argc, char *argv[])
 ### ■ 10.5 シンボリックリンク
 シンボリックは、ファイルの実体に既に紐づいているファイル名に紐づく名前です。  
 つまり、ファイル名に対して複数の名前(シンボリックリンク)が紐づき、それぞれのシンボリックリンクはファイル名を通じて間接的にファイルの実体へアクセスします。
+  
+シンボリックリンクには次の特徴があります。
+- シンボリックリンクには対応する実体が存在しなくてもよい
+- ファイルシステムをまたいで別名を付けられる
+- ディレクトリにも別名が付けられる
+
+いずれもシンボリックリンクが直接実体にアクセスしないことで得られるメリットです。
+
+### ■ symlink(2)
+シンボリックリンクを作成するシステムコールはsymlink(2)です。
+```c
+#include <unistd.h>
+
+int symlink(const char *src, const char *dest);
+```
+
+|引数|意味|
+|:---|:---|
+|src|ファイルの実体|
+|dest|新しい名前(シンボリックリンク)|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+### ■ readlink(2)
+```c
+#include <unistd.h>
+
+int readlink(const char *path, char *buf, size_t bufsize);
+```
+
+|引数|意味|
+|:---|:---|
+|path|シンボリックリンクへのパス|
+|buf|バッファ|
+|bufsize|バッファサイズ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|bufに格納したバイト数|
+|失敗|-1|
+
+readlink()は、シンボリックリンクへのパスpathが指す名前をbufに格納します。  
+ただし、bufsizeバイトまでしか書き込めません。(そのため、bufsizeにはbufのサイズを渡すのが一般的です。)  
+また、readlink()では文字列の最後にNULL文字'\0'が書き込まれないことに注意します。
+
+### ■ symlinkコマンドを作る
+```c
+### FileName: symlink.c
+### ProgName: symlink.o
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+  if (argc != 3) {
+    fprintf(stderr, "%s: wrong number of arguments\n", argv[0]);
+    exit(1);
+  }
+  if (symlink(argv[1], argv[2]) < 0) {
+    perror(argv[i]);
+    exit(1);
+  }
+  exit(0);
+}
+```
