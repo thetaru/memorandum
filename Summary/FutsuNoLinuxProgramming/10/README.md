@@ -410,3 +410,50 @@ int main(int argc, char *argv[])
   exit(0);
 }
 ```
+
+## 10.7 ファイルを移動する
+Linuxにおいて「ファイルを移動する」ことは、ディレクトリ配列のディレクトリエントリの要素を他のディレクトリ配列へ移すことに等しいです。  
+つまり、別のハードリンクを作ってから元の名前を消すとも言えます。
+### ■ rename(2)
+ファイルを移動するAPIは、rename()です。
+```c
+#include <stdio.h>
+
+int rename(const char *src, conat char *dest);
+```
+
+|引数|意味|
+|:---|:---|
+|src|ファイル名|
+|dest|ファイル名|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+rename()は、ファイル名srcをファイル名destに変更します。  
+ただし、ファイルシステムをまたいで移動することはできません。
+
+### ■ mvコマンドを作る
+```c
+### FileName: mv.c
+### ProgName: mv.o
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+  if (argc != 3) {
+    fprintf(stderr, "%s: wrong arguments\n", argv[0]);
+    exit(1);
+  }
+  if (rename(argv[1], argv[2]) < 0) {
+    perror(argv[1]);
+    exit(1);
+  }
+  exit(0);
+}
+```
