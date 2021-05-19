@@ -457,3 +457,46 @@ int main(int argc, char *argv[])
   exit(0);
 }
 ```
+
+## 10.8 付帯情報を得る
+ファイルシステムにはデータ本体の他にも色々な情報も格納されています。  
+この情報を得るシステムコールがstat()とlstat()です。
+### ■ stat(2)
+```c
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+int stat(const char *path, struct stat *buf);
+int lstat(const char *path, struct stat *buf);
+```
+
+|引数|意味|
+|:---|:---|
+|path|オブジェクトへのパス|
+|buf|バッファ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+stat()は、pathで表されるエントリの情報を取得し、bufに書き込みます。  
+lstat()もstat()とほとんど同じですが、pathがシンボリックリンクのときはシンボリックリンク自身の情報を返します。  
+  
+Linuxのstruct stat型の内容を以下に示します。
+|型|メンバ名|説明|
+|:---|:---|:---|
+|dev_t|st_dev|デバイス番号|
+|ino_t|st_info|iノード番号|
+|mode_t|st_mode|ファイルタイプとパーミッションを含むフラグ|
+|nlink_t|st_nlink|リンクカウント|
+|uid_t|st_uid|所有ユーザID|
+|gid_t|st_gid|所有グループID|
+|dev_t|st_rdev|デバイスファイルの種別を表す番号|
+|off_t|st_size|ファイルサイズ(バイト単位)|
+|blksize_t|st_blksize|ファイルのブロックサイズ|
+|blkcnt_t|st_blocks|ブロック数|
+|time_t|st_atime|最終アクセス時刻|
+|time_t|st_mtime|最終更新時刻|
+|time_t|st_ctime|付帯情報が最後に変更された時刻|
