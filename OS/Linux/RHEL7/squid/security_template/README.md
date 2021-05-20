@@ -10,10 +10,6 @@ forwarded_for off
 # ローカルのホスト名の隠蔽
 visible_hostname unknown
 
-# ユーザーエージェントの非表示
-# アクセス出来ないサイトが増えるのでコメントアウト
-#header_access User-Agent deny all
-
 # Proxy経由であることを隠す(v3以上)
 # HTTPヘッダーのフィールドに干渉する
 ## リクエストヘッダー
