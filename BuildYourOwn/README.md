@@ -1,5 +1,5 @@
 # Build Your Own
-## Emulator / Virtual Machine
+## 自作仮想マシン
 - [ ] [Virtual machine in C]()
 
 ## 自作ブラウザ
