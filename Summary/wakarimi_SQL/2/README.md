@@ -32,7 +32,7 @@ $ createdb -U postgres -O user1 -E UTF8 --locale=C -T template0 testdb1
 $ psql -U postgres -l
 ```
 データベースユーザ"user1"とデータベース"testdb1"が作成できました。  
-アクセスできることを確認します。
+次にアクセスできることを確認します。
 ```
 ### 作成したデータベースユーザで作成したデータベースにアクセス
 $ psql -U user1 testdb1
