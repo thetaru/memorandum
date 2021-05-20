@@ -5,6 +5,8 @@
 ## 自作エディタ
 https://viewsourcecode.org/snaptoken/kilo/
 
+## 自作検索エンジン
+
 ## 自作ブラウザ
 
 ## 自作パーサー
