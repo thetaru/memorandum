@@ -112,9 +112,20 @@ kubeletサービスに設定を反映させます。
 # systemctl daemon-reload
 # systemctl restart kubelet
 ```
+podネットワーク(Podに割り当てあてられるIPアドレス範囲)を設定します。
 ```
 # kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
 ```
 kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
+kubenetesを管理するユーザ毎に次のコマンドを実行します。
+```
+### 非rootユーザに対して
+# mkdir -p $HOME/.kube
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# chown $(id -u):$(id -g) $HOME/.kube/config
+
+### rootユーザに対して
+# export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
