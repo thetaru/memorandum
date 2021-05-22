@@ -48,8 +48,9 @@ EOF
 # systemctl daemon-reload
 ```
 ## ■ k8sのインストール
+以下、SELinuxが無効になっていることを仮定して進めます。
 ### kubeadm、kubelet、kubectlのインストール 
-レポジトリ追加
+レポジトリ追加します。
 ```
 # cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
