@@ -12,6 +12,15 @@ swapファイルを作成している場合は別に操作が必要となるが�
 -  UUID=<UUID> none                    swap    defaults        0 0
 +  #UUID=<UUID> none                    swap    defaults        0 0
 ```
+## ■ hostsの追加
+```
+# vi /etc/hosts
+```
+```
+kube-master 192.168.0.1
+kube-node1  192.168.0.2
+kube-node2  192.168.0.3
+```
 ## ■ docker
 ### インストール
 podmanが入っている場合はアンインストールします。(OSを最小構成でインストールすればないはず...)
@@ -48,7 +57,7 @@ EOF
 # systemctl daemon-reload
 # systemctl restart docker
 ```
-## ■ k8sのインストール
+## ■ k8s
 以下、SELinuxが無効になっていることを仮定して進めます。
 ### kubeadm、kubelet、kubectlのインストール 
 レポジトリ追加します。
