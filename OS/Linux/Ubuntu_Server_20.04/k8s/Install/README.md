@@ -50,9 +50,7 @@ $ cat > /etc/docker/daemon.json <<EOF
 }
 EOF
 ```
-```
-$ mkdir -p /etc/systemd/system/docker.service.d
-```
+設定を反映させます。
 ```
 # Restart Docker
 $ sudo systemctl daemon-reload
