@@ -65,10 +65,10 @@ EOF
 ```
 `kubelet`、`kubeadm`、`kubectl`をインストールします。
 ```
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+# yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 ```
 kubeletサービスを起動します。
 ```
-systemctl enable --now kubelet
+# systemctl enable --now kubelet
 ```
 ## ■ 
