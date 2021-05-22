@@ -15,7 +15,7 @@ MariaDBにPowerDNS用のデータベースとユーザーを作成します。
 |:---|:---|
 |データベース名|powerdns|
 |ユーザ名|pdns|
-|パスワード|(任意設定)password|
+|パスワード|(任意)password|
 
 ```
 # mysql -u root -p
@@ -31,6 +31,6 @@ MariaDBにPowerDNS用のデータベースとユーザーを作成します。
 # yum install epel-release &&
 dnf install -y 'dnf-command(config-manager)' &&
 curl -o /etc/yum.repos.d/powerdns-auth-master.repo https://repo.powerdns.com/repo-files/centos-auth-master.repo &&
-yum install pdns
+yum install pdns pdns-backend-mysql
 ```
 
