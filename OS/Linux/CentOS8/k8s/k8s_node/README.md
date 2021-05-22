@@ -85,64 +85,22 @@ kubeletサービスに設定を反映させます。
 # systemctl daemon-reload
 # systemctl restart kubelet
 ```
-## ■ マスタとしての設定
+## ■ クライアントとしての設定
+### クラスタへの参加
+Podネットワークを作成した際に出力されたコマンドを実行します。
 ```
-# mkdir -p /etc/systemd/system/kubelet.service.d
-# cp -p /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+# kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 ```
+### トークンの失効時の対応
+マスタ側でトークンを再発行します。  
+以下はマスタでの操作です。
 ```
-# vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
-```
-```
-   # Note: This dropin only works with kubeadm and kubelet v1.11+
-   [Service]
-   Environment="KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --    kubeconfig=/etc/kubernetes/kubelet.conf"
-   Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
-+  Environment="KUBELET_EXTRA_ARGS=--fail-swap-on=false"
-   # This is a file that "kubeadm init" and "kubeadm join" generates at runtime, populating the KUBELET_KUBEADM_ARGS variable   dynamically
-   EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
-   # This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user should use
-   # the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be sourced from this file.
-   EnvironmentFile=-/etc/sysconfig/kubelet
-   ExecStart=
-   ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS
-```
-設定を反映します。
-```
-# systemctl daemon-reload
-# systemctl restart kubelet
-```
-podネットワーク(Podに割り当てあてられるIPアドレス範囲)を設定します。
-```
-# kubeadm init --pod-network-cidr=10.244.0.0/16
-```
-```
-kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
-```
-kubenetesを管理するユーザ毎に次のコマンドを実行します。
-```
-### 非rootユーザに対して
-# mkdir -p $HOME/.kube
-# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-# chown $(id -u):$(id -g) $HOME/.kube/config
+### トークンが失効していることを確認
+# kubeadm token list
 
-### rootユーザに対して
-# export KUBECONFIG=/etc/kubernetes/admin.conf
-```
-コマンドラインでの補完機能を使うために次を実行します。
-```
-# echo "source <(kubectl completion bash)" >> ~/.bashrc
-# source ~/.bashrc
-```
-コンテナ間の通信を行うための仮想ネットワークはFlannelを使用する。
-```
-# kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-```
-ノードを認識していることを確認します。
-```
-# kubectl get node
-```
-```
-NAME             STATUS     ROLES                  AGE     VERSION
-kube-master      Ready      control-plane,master   6m41s   v1.21.1
+### トークンの再発行
+# kubeadm token create
+
+### トークンからハッシュの生成
+# openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
