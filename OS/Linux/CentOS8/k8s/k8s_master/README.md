@@ -71,4 +71,12 @@ kubeletサービスを起動します。
 ```
 # systemctl enable --now kubelet
 ```
+### kubeletによって使用されるcgroupドライバーの設定
+```
+# vi /etc/sysconfig/kubelet
+```
+```
+-  KUBELET_EXTRA_ARGS=
++  KUBELET_EXTRA_ARGS=--cgroup-driver=systemd
+```
 ## ■ 
