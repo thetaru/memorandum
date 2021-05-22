@@ -29,6 +29,8 @@ dockerサービスを起動します。
 # systemctl enable --now docker
 ```
 ### 設定
+cgroupドライバを systemd 管理下に変更します。  
+参考: https://kubernetes.io/docs/setup/production-environment/container-runtimes/
 ```
 # cat > /etc/docker/daemon.json <<EOF
 {
@@ -40,6 +42,10 @@ dockerサービスを起動します。
   "storage-driver": "overlay2"
 }
 EOF
+```
+設定を反映します。
+```
+# systemctl daemon-reload
 ```
 ## ■ k8sのインストール
 ## ■ 
