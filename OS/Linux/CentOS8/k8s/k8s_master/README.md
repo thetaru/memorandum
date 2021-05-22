@@ -79,4 +79,9 @@ kubeletサービスを起動します。
 -  KUBELET_EXTRA_ARGS=
 +  KUBELET_EXTRA_ARGS=--cgroup-driver=systemd
 ```
+kubeletサービスに設定を反映させます。
+```
+# systemctl daemon-reload
+# systemctl restart kubelet
+```
 ## ■ 
