@@ -46,6 +46,7 @@ EOF
 設定を反映します。
 ```
 # systemctl daemon-reload
+# systemctl restart docker
 ```
 ## ■ k8sのインストール
 以下、SELinuxが無効になっていることを仮定して進めます。
