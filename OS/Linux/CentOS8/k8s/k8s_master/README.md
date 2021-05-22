@@ -12,7 +12,8 @@ swapファイルを作成している場合は別に操作が必要となるが�
 -  UUID=<UUID> none                    swap    defaults        0 0
 +  #UUID=<UUID> none                    swap    defaults        0 0
 ```
-## ■ dockerのインストール
+## ■ docker
+### インストール
 podmanが入っている場合はアンインストールします。(OSを最小構成でインストールすればないはず...)
 ```
 # yum remove podman buildah
@@ -26,6 +27,19 @@ podmanが入っている場合はアンインストールします。(OSを最�
 dockerサービスを起動します。
 ```
 # systemctl enable --now docker
+```
+### 設定
+```
+# cat > /etc/docker/daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
 ```
 ## ■ k8sのインストール
 ## ■ 
