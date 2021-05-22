@@ -112,3 +112,9 @@ kubeletサービスに設定を反映させます。
 # systemctl daemon-reload
 # systemctl restart kubelet
 ```
+```
+# kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+```
+kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
