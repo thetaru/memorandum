@@ -72,6 +72,7 @@ kubeletサービスを起動します。
 # systemctl enable --now kubelet
 ```
 ### kubeletによって使用されるcgroupドライバーの設定
+参考: https://kubernetes.io/ja/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 ```
 # vi /etc/sysconfig/kubelet
 ```
