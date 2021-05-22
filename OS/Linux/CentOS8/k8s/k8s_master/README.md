@@ -129,3 +129,20 @@ kubenetesを管理するユーザ毎に次のコマンドを実行します。
 ### rootユーザに対して
 # export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
+コマンドラインでの補完機能を使うために次を実行します。
+```
+# echo "source <(kubectl completion bash)" >> ~/.bashrc
+# source ~/.bashrc
+```
+ノードを認識していることを確認します。
+```
+# kubectl get node
+```
+```
+NAME             STATUS     ROLES                  AGE     VERSION
+kube-master      NotReady   control-plane,master   6m41s   v1.21.1
+```
+コンテナ間の通信を行うための仮想ネットワークはFlannelを使用する。
+```
+# kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
