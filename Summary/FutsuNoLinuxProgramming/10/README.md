@@ -624,7 +624,7 @@ int lchown(const char *path, uid_t owner, gid_t group);
 
 chown()は、ファイルpathの所有ユーザをownerに、所有グループをgroupに変更します。  
 ownerにはユーザID(UID)、groupにはグループID(GID)を指定します。  
-GIDかGIDのどちらか一方を変更したい場合は、変更したくないほうに-1を指定します。  
+UIDかGIDのどちらか一方を変更したい場合は、変更したくないほうに-1を指定します。  
   
 lchown()は、chown()とほぼ同じですが、pathがシンボリックリンクだった場合にそのシンボリックリンク自体の情報を変更します。  
 ※ chown()はシンボリックリンクの指すファイルの情報を変更します。
