@@ -656,10 +656,13 @@ bufがNULLの場合、両方を現在の時刻に変更します。
 
 ### ■ chmodコマンドを作る
 ```c
+### FileName: chmod.c
+### ProgName: chmod.o
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
-#include <sys.stat.h>
+#include <sys/stat.h>
 
 int main(int argc, char *argv[])
 {
@@ -678,5 +681,4 @@ int main(int argc, char *argv[])
   }
   exit(0);
 }
-    
 ```
