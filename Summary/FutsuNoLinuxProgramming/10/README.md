@@ -638,6 +638,7 @@ int utime(const char *path, struct utimbuf *buf);
 struct utimbuf {
   time_t actime;    /* 最終アクセス時刻 */
   time_t modetime;  /* 最終更新時刻 */
+}
 ```
 
 |引数|意味|
