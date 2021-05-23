@@ -570,3 +570,90 @@ st_modeメンバからファイル種類を取り出すためにビットマス�
 
 ## 10.9 付帯情報を変更する
 ### ■ chmod(2)
+```c
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int chmod(const char *path, mode_t mode);
+```
+
+|引数|意味|
+|:---|:---|
+|path|ファイルへのパス|
+|mode|ファイルのモード|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+chmod()は、ファイルpathのモードをmodeに変更します。  
+modeは定数のビットごとのORを使うか、数値を指定します。
+
+|定数|値|意味|
+|:---|:---|:---|
+|S_IRUSR、S_IREAD|00400|所有ユーザから読み込み可能|
+|S_IWUSR、S_IWRITE|00200|所有ユーザから書き込み可能|
+|S_IXUSR、S_IEXEC|00100|所有ユーザから実行可能|
+|S_IRGRP|00040|所有グループから読み込み可能|
+|S_IWGRP|00020|所有グループから書き込み可能|
+|S_IXGRP|00010|所有グループから実行可能|
+|S_IROTH|00004|それ以外のユーザから読み込み可能|
+|S_IWOTH|00002|それ以外のユーザから書き込み可能|
+|S_IXOTH|00001|それ以外のユーザから実行可能|
+
+### ■ chown(2)
+```c
+#include <sys/types.h>
+#include <unistd.h>
+
+int chown(const char *path, uid_t owner, gid_t group);
+int lchown(const char *path, uid_t owner, gid_t group);
+```
+
+|引数|意味|
+|:---|:---|
+|path|ファイルへのパス|
+|owner|ファイルの所有ユーザ|
+|group|ファイルの所有グループ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+chown()は、ファイルpathの所有ユーザをownerに、所有グループをgroupに変更します。  
+ownerにはユーザID(UID)、groupにはグループID(GID)を指定します。  
+GIDかGIDのどちらか一方を変更したい場合は、変更したくないほうに-1を指定します。  
+  
+lchown()は、chown()とほぼ同じですが、pathがシンボリックリンクだった場合にそのシンボリックリンク自体の情報を変更します。  
+※ chown()はシンボリックリンクの指すファイルの情報を変更します。
+### ■ utime(2)
+```c
+#include <sys/types.h>
+#include <utime.h>
+
+int utime(const char *path, struct utimbuf *buf);
+
+struct utimbuf {
+  time_t actime;    /* 最終アクセス時刻 */
+  time_t modetime;  /* 最終更新時刻 */
+```
+
+|引数|意味|
+|:---|:---|
+|path|ファイルへのパス|
+|buf|バッファ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+utime()は、ファイルpathの最終アクセス時刻(st_atime)と最終更新時刻(st_mtime)を変更します。  
+bufがNULLでない場合、最終アクセス時刻をbuf->actimeに、最終更新時刻をbuf->modtimeにそれぞれ変更します。  
+bufがNULLの場合、両方を現在の時刻に変更します。
+
+### ■ chmodコマンドを作る
+```c
+```
