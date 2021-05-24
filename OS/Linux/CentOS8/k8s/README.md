@@ -10,3 +10,4 @@
 - [ ] [k8sマスタの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/k8s_master)
 - [ ] [k8sノードの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/k8s_node)
 ## ■ Tips
+- [ ] [helm](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/helm)
