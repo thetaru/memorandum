@@ -690,7 +690,56 @@ int main(int argc, char *argv[])
 ## 10.11 練習問題
 ### 1
 コマンドライン引数で指定されたディレクトリ以下を再帰的にトラバースして見つかったファイルのパスをすべて表示するプログラムを書きなさい。(ただし、シンボリックリンクをたどってはいけません)  
-※ 再帰関数で実装したい。
 ```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <dirent.h>
+#include <string.h>
+
+#define MAX_LENGTH 1024
+
+static void lsrec(char *path);
+
+int main(int argc, char *argv[])
+{
+    int i;
+
+    if (argc < 2) {
+        fprintf(stderr, "%s: no arguments\n", argv[0]);
+    } else {
+        for (i = 1; i < argc; i++) {
+            lsrec(argv[i]);
+        }
+    }
+    exit(0);
+}
+
+static void lsrec(char *path)
+{
+    char changed_path[MAX_LENGTH];
+    DIR *d;
+    struct dirent *ent;
+
+    d = opendir(path);
+    if (!d) {
+        perror(path);
+        exit(1);
+    }
+
+    while (ent = readdir(d)) {
+        if (ent->d_type == DT_DIR) {
+            changed_path[0] = '\0';
+            if (strcmp(ent->d_name, ".") == 0 ||
+                strcmp(ent->d_name, "..") == 0) {
+                continue;
+            }
+            sprintf(changed_path, "%s/%s", path, ent->d_name);
+            lsrec(changed_path);
+        } else {
+            printf("%s\n", ent->d_name);
+        }
+    }
+    closedir(d);
+}
 ```
 参考: https://craftofcoding.wordpress.com/2020/04/02/writing-a-recursive-ls-in-c/
