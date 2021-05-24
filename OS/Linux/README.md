@@ -29,3 +29,4 @@ $ echo 'これはuserです'
 - [ ] [RHEL7](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7)
 - [ ] [RHEL8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL8)
 - [ ] [Ubuntu Server 20.04](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04)
+- [ ] [OS共通](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Common)
