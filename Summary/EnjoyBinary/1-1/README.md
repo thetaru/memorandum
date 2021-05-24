@@ -17,6 +17,7 @@ https://github.com/kenjiaiko/binarybook
 
 今回は`chap01\sample_mal\Release\sample_mal.exe`を解析する。  
 実行できない場合は、vcredist_x86.exeを[MS公式サイト](https://www.microsoft.com/en-us/download/details.aspx?id=26999)よりインストールすること。  
+  
 `sample_mal.exe`を実行すると、`Hello Malware!`という文字列が書かれたウィンドウが表示される。  
 そのウィンドウを閉じると、`sample_mal.exe`自体が消えていることがわかる。  
 
