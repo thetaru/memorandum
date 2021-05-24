@@ -7,6 +7,6 @@
 |kube-node2|192.168.137.3|2|
 
 ## ■ Settings
-- [ ] [k8sマスタの構築]()
-- [ ] [k8sノードの構築]()
+- [ ] [k8sマスタの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/k8s_master)
+- [ ] [k8sノードの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/k8s_node)
 ## ■ Tips
