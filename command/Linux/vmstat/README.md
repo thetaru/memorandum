@@ -1,6 +1,7 @@
 # vmstat
 https://tanke25616429.hatenablog.com/entry/2020/09/18/073056
 ## ■ About
+vmstatは、
 ## ■ Syntax
 s秒数ごとにn回vmstatコマンドを実行する。
 ```
