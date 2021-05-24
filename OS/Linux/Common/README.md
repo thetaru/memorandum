@@ -2,3 +2,4 @@
 ## ■ CPU
 ## ■ Memory
 ## ■ Storage
+## ■ Network
