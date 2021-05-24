@@ -1,7 +1,7 @@
 # vmstat
 ## ■ About
 ## ■ Syntax
-s秒数ごとにn回のvmstatコマンドを実行する。
+s秒数ごとにn回vmstatコマンドを実行する。
 ```
 $ vmstat [s秒数] [n回数]
 ```
