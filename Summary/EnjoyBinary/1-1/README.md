@@ -24,7 +24,7 @@ https://github.com/kenjiaiko/binarybook
 ## ■ Process Monitorのログから挙動を確認する
 Process Monitorを実行した後、ログを確認する。  
   
-![1-1-1]()
+![1-1-1](./images/1-1-1.png)
   
 Process Monitorのログを追うと、以下の実行ファイルへCreateFileでアクセスする箇所が見つかる。  
 ```
