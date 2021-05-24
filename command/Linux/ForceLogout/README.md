@@ -2,13 +2,13 @@
 sshセッションをexitしないでぶち切ると残るので対処する。  
 まず、ttyの確認をする。
 ```
-# w
+$ w
 ```
 該当プロセスのPIDを確認する
 ```
-# ps aux | grep sshd
+$ ps aux | grep sshd
 ```
 セッションのプロセスをキルする
 ```
-# kill -9 <Sesdion PID>
+$ kill -9 <Sesdion PID>
 ```
