@@ -31,6 +31,4 @@ Process Monitorのログを追うと、以下の実行ファイルへCreateFile�
 C:\Users\<User Name>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\0.exe
 ```
 `Process Name`や`Operation`でフィルタするとCreateFile、WriteFile、CloseFileの順番に呼び出されている。  
-このことから、上記のパスに0.exeというファイルが書き込まれたことがわかる。  
-  
-実際に該当フォルダを開くと、`0.exe`があることが確認できる。
+このことから、上記のパスに`0.exe`というファイルが書き込まれたことがわかる。  
