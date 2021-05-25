@@ -28,8 +28,12 @@ fork()は、カーネルはそのプロセスを複製し、2つのプロセス�
 ```c
 #include <unistd.h>
 
-int execl(const char *path, const char *arg0, ... /* NULL */);
+int execl(const char *path, const char *arg, ...);
+int execlp(const char *file, const char *arg, ...);
+int execle(const char *path, const char *arg, ..., char * const envp[]);
 int execv(const char *path, char *const argv[]);
+int execvp(const char *file, char *const argv[]);
+int execvpe(const char *file, char *const argv[], char *const envp[]);
 ```
 
 |引数|意味|
@@ -45,7 +49,10 @@ int execv(const char *path, char *const argv[]);
 execは、自プロセスを新しいプログラムで上書きするシステムコールです。  
 execを実行すると、その時点で実行しているプログラムが消失し、自プロセス上に新しいプログラムをロードします。  
 イメージとしては、プロセス上にもともとあるプログラムを新しいプログラムに上書きする感じです。  
-  
+
+#### execl
+aaaa
+
 #### 使用例
 ```c
 /* execl()の使用例 */
@@ -55,6 +62,7 @@ execl("/bin/cat", "cat", "hello.c", NULL);
 char *argv[3] = { "cat", "hello.c", NULL };
 execv("/bin/cat", argv);
 ```
+※ 起動するプログラムに渡すコマンドライン引数リストは、そのままmain()のargvになります。引数のリストの第1要素はプログラムの名前が入ります。
 
 ### ■ wait(2)
 ```c
