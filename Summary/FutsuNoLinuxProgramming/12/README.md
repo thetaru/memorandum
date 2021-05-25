@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
   } else {        /* 親プロセス */
     int status;
     
-    waitpid(pid, &status, 0);
+    waitpid(pid, &status, 0);  /* 子プロセスの終了を待つ */
     printf("child (PID=%d) finished; ", pid);
     if (WIFEXITED(status))
       printf("exit, status=%d\n", WEXITSTATUS(status));
