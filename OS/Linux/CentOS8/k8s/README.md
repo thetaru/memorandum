@@ -11,3 +11,7 @@
 - [ ] [k8sノードの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/k8s_node)
 ## ■ Tips
 - [ ] [helm](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/helm)
+
+## ■ Memo
+https://christina04.hatenablog.com/entry/2016/05/25/011129  
+https://christina04.hatenablog.com/entry/2016/05/26/193000
