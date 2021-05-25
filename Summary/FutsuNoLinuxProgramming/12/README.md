@@ -36,10 +36,30 @@ int execvp(const char *file, char *const argv[]);
 int execvpe(const char *file, char *const argv[], char *const envp[]);
 ```
 
-|引数|意味|
-|:---|:---|
-|path|プログラムへのパス|
-|第2引数以降|コマンドライン引数|
+#### execl
+コマンドの引数を可変長で取ります。  
+また、最後はNULLにする必要があります。
+```c
+execl("/bin/ls", "-a", "-l", NULL);
+```
+#### execv
+コマンドの引数をポインタの配列として取ります。  
+また、配列の最初はファイル名へのポインタ、配列の最後はNULLにする必要があります。
+```c
+char *argv[] = {"/bin/ls", "-a", "-l", NULL};
+res = execv(argv[0], argv);
+```
+#### execlp
+指定されたファイル名に/(スラッシュ)が含まれていない場合、実行ファイルを環境変数PATHから探索し、シェルと同じように動きます。
+```c
+execlp("ls", "-a", "-l", NULL);
+```
+#### execle
+環境変数を設定することができます。
+```c
+char *envp[] = {"ENV1=env1", "ENV2=env2", NULL};
+execle("/usr/bin/env", "", NULL, envp);
+```
 
 |戻り値|意味|
 |:---|:---|
@@ -49,9 +69,6 @@ int execvpe(const char *file, char *const argv[], char *const envp[]);
 execは、自プロセスを新しいプログラムで上書きするシステムコールです。  
 execを実行すると、その時点で実行しているプログラムが消失し、自プロセス上に新しいプログラムをロードします。  
 イメージとしては、プロセス上にもともとあるプログラムを新しいプログラムに上書きする感じです。  
-
-#### execl
-aaaa
 
 #### 使用例
 ```c
