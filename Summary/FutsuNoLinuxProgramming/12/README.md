@@ -111,12 +111,12 @@ int main(int argc, char *argv[])
     fprintf(stderr, "fork(2) failed\n");
     exit(1);
   }
-  if (pid == 0) {
+  if (pid == 0) { /* 子プロセス */
     execl(argv[1], argv[1], argv[2], NULL);
     /* execl()が呼び出しから戻ったら失敗 */
     perror(argv[1]);
     exit(99);
-  } else {
+  } else {        /* 親プロセス */
     int status;
     
     waitpid(pid, &status, 0);
