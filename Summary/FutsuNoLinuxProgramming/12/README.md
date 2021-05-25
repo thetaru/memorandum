@@ -123,7 +123,7 @@ int main(int argc, char *argv[])
     printf("child (PID=%d) finished; ", pid);
     if (WIFEXITED(status))
       printf("exit, status=%d\n", WEXITSTATUS(status));
-    else if (WIFSIFNALED(status))
+    else if (WIFSIGNALED(status))
       printf("signal, sig=%d\n", WTERMSIG(status));
     else
       printf("abnormal exit\n");
