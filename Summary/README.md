@@ -11,6 +11,8 @@
 - [ ] [Linuxのしくみ ～実験と図解で学ぶOSとハードウェアの基礎知識～]()
 ## P
 - [ ] [PICアセンブラ入門](https://github.com/thetaru/memorandum/tree/master/Summary/PIC_Assembler)
+## か
+- [ ] [解析魔法少女美咲ちゃん マジカル・オープン！](https://github.com/thetaru/memorandum/tree/master/Summary/MagicalOpen)
 ## し
 - [ ] [自作エミュレータで学ぶx86アーキテクチャ](https://github.com/thetaru/memorandum/tree/master/Summary/)
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
