@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
   if (pid == 0) { /* 子プロセス */
     execl(argv[1], argv[1], argv[2], NULL);
     /* execl()が呼び出しから戻ったら失敗 */
-    /* つまり成功する場合はperrorとexitに到達しない */
+    /* つまり成功した場合はperrorとexitに到達しない */
     perror(argv[1]);
     exit(99);
   } else {        /* 親プロセス */
