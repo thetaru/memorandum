@@ -24,7 +24,7 @@ fork()は、カーネルはそのプロセスを複製し、2つのプロセス�
 そして、2つのプロセスの両方にfork()の呼び出しが戻るので、両方のプロセスでfork()以後のコードが実行されます。  
 このとき、複製元のプロセスを親プロセス、複製されたプロセスを子プロセスといいます。
 
-### ■ exec
+### ■ exec(2)
 ```c
 #include <unistd.h>
 
@@ -85,3 +85,49 @@ statusは子プロセスからの終了ステータスを格納する変数を�
 |WEXITSTATUS(status)|exitで終了していたときに、その終了コードを返す|
 |WIFSIGNALED(status)|シグナルで終了していたら非0、それ以外なら0|
 |WTERMSIG(status)|シグナルで終了したときに、そのシグナル番号を返す|
+
+### ■ プログラムの実行
+以上のシステムコールを使って、プログラムを実行して結果を待つ操作を実行してみます。
+```c
+/* FileName: spawn.c */
+/* ProgName: spawn.o */
+
+#include <stdio.h>
+#include <stdli.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+int main(int argc, char *argv[])
+{
+  pid_t pid;
+  
+  if (argc != 3) {
+    fprintf(stderr, "Usage: %s <command> <arg>\n", argv[0]);
+    exit(1);
+  }
+  pid = fork();
+  if (pid < 0) {
+    fprintf(stderr, "fork(2) failed\n");
+    exit(1);
+  }
+  if (pid == 0) {
+    execl(argv[1], argv[1], argv[2], NULL);
+    /* execl()が呼び出しから戻ったら失敗 */
+    perror(argv[1]);
+    exit(99);
+  } else {
+    int status;
+    
+    waitpid(pid, &status, 0);
+    printf("child (PID=%d) finished; ", pid);
+    if (WIFEXITED(status))
+      printf("exit, status=%d\n", WEXITSTATUS(status));
+    else if (WIFSIFNALED(status))
+      printf("signal, sig=%d\n", WTERMSIG(status));
+    else
+      printf("abnormal exit\n");
+    exit(0);
+  }
+}
+```
