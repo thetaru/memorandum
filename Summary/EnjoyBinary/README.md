@@ -1,6 +1,6 @@
 # たのしいバイナリの歩き方
 OSはWindowsServer2019を使用する。  
-Winter Defenderは切ること。
+Windows Defenderは切ること。
 ## 第1章 リバースエンジニアリングでバイナリの読み方を身につける
 ### 1.1 [まずは解析の流れを体感してみよう](https://github.com/thetaru/memorandum/tree/master/Summary/EnjoyBinary/1-1)
 ### 1.2 静的解析をやってみよう
