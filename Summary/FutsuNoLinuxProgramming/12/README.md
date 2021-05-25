@@ -93,7 +93,7 @@ statusは子プロセスからの終了ステータスを格納する変数を�
 /* ProgName: spawn.o */
 
 #include <stdio.h>
-#include <stdli.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
