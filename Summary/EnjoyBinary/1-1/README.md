@@ -32,3 +32,11 @@ C:\Users\<User Name>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Start
 ```
 `Process Name`や`Operation`でフィルタするとCreateFile、WriteFile、CloseFileの順番に呼び出されている。  
 このことから、スタートアップフォルダに`0.exe`というファイルが書き込まれたことがわかる。  
+
+## ■ レジストリへのアクセスから読み取れること
+次はレジストリアクセスを確認する。  
+Process Monitorが出力するログで`Process Name`がsample_mal.exeであり、`Operation`がRegSetValueであるものを探してみる。  
+先ほどと同様に、条件でフィルタすると見つけやすい。  
+  
+![1-1-2](./images/1-1-2.png)
+  
