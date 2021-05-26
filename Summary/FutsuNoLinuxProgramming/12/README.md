@@ -147,3 +147,22 @@ int main(int argc, char *argv[])
   }
 }
 ```
+## 12.2 プロセスの一生
+### ■ \_exit(2)
+```c
+#include <unistd.h>
+
+void _exit(int status);
+```
+
+\_exit()は、statusを終了ステータスとしてプロセスを終了します。  
+\_exit()は絶対に失敗しないので、呼び出されたら戻りません。
+
+### ■ exit(3)
+```c
+#include <stdlib.h>
+
+void exit(int status);
+```
+exit()は、statusを終了ステータスとしてプロセスを終了します。  
+exit()は絶対に失敗しないので、呼び出されたら戻りません。
