@@ -1,4 +1,9 @@
 # 名前解決の挙動変更
+## dns_nameservers
+通常resolv.confに記載のDNSサーバを参照しますが、dns_nameserversで指定したDNSサーバで名前解決するようにできます。
+```
+dns_nameservers 8.8.8.8 9.9.9.9
+```
 ## dns_defnames
 FQDNで指定せずにアクセスする場合は注意が必要です。  
   
