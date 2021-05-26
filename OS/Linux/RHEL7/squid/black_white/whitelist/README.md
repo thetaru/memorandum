@@ -22,3 +22,5 @@ acl example_whitelist dstdom_regex "/etc/squid/whitelist"
 yahoo¥.co¥.jp
 .*¥.google¥.com
 ```
+正規表現でドメインを表します。  
+サブドメインまで含めたい場合は行頭に`.*`をつけます。
