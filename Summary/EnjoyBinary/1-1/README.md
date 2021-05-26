@@ -35,8 +35,9 @@ C:\Users\<User Name>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Start
 
 ## ■ レジストリへのアクセスから読み取れること
 次はレジストリアクセスを確認する。  
-Process Monitorが出力するログで`Process Name`がsample_mal.exeであり、`Operation`がRegSetValueであるものを探してみる。  
+Process Monitorが出力するログで`Process Name`がsample_mal.exeであり、`Operation`がRegSetValueであるものを探す。  
 先ほどと同様に、条件でフィルタすると見つけやすい。  
   
 ![1-1-2](./images/1-1-2.png)
   
+解析対象がファイルの生成や値の書き込みをする行為は明らかに怪しいので追跡対象となるのは自然である。
