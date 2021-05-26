@@ -58,7 +58,6 @@ lets encrypt でワイルドカード証明書
 - [ ] [(必要になったらヤル)haproxy](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/haproxy)
 - [ ] [(書きかけ)Postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
 - [ ] [(書きかけ)PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
-- [ ] [PowerDNS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PowerDNS)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
 - [ ] [Squid](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Squid)
 - [ ] [VirtualBox](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/virtualbox)
