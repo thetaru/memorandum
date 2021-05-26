@@ -17,4 +17,4 @@
 - [ ] [OS・ブラウザの制限](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/os_browser)
 - [ ] [(未検証)Basic認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth)
 - [ ] [(未検証)エラーページの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/error_page)
-- [ ] [(未検証)ホワイトリスト・ブラックリストの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/black_white)
+- [ ] [ホワイトリスト・ブラックリストの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/black_white)
