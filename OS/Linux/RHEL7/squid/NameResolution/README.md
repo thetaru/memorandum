@@ -8,3 +8,10 @@ FQDNで指定せずにアクセスする場合は注意が必要です。
 ```
 dns_defnames on
 ```
+
+l# dns_v4_first
+IPv4/IPv6デュアルスタックサーバに対してIPv4でアクセスするようにできる。  
+デフォルトでは無効になっています。
+```
+dns_ipv4_first on
+```
