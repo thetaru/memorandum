@@ -1,4 +1,5 @@
 # squid
+共通して言えることはルールの順番に気を使うことです。
 ## ■ Setting
 一通り検証すること
 - [ ] [squid.confのテンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/conf_template)
