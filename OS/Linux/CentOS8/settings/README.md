@@ -680,12 +680,21 @@ inet_protocols = ipv4
 ### 外部にメールを送信する際に、ローカルNW情報が流出しないよう書き換える
 header_checks = regexp:/etc/postfix/header_checks
 ```
+Fromヘッダーに含まれるIPアドレス部分を除去します。
 ```
 ### ヘッダーの変更だけでなく受信拒否もできる
 # vi /etc/postfix/header_checks
 ```
 ```
 /(^Received:.*) \[[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\](.*)/ REPLACE $1$2
+```
+次のコマンドで.dbファイルを生成して反映します。
+```
+# postmap /etc/postfix/header_checks
+```
+最後にサービスを再起動させます。
+```
+# systemctl restart postfix
 ```
 ## ■ [option]Proxyの設定
 ```
