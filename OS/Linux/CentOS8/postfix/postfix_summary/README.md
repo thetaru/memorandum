@@ -61,4 +61,4 @@
 ## smtp_tls_CAfile
 ## smtp_tls_security_level
 ## meta_directory
-## shlib_director
+## shlib_directory
