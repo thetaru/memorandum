@@ -75,5 +75,5 @@ lets encrypt でワイルドカード証明書
 - [x] [スタティックルートの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/StaticRoute)
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/update_note)
 - [ ] [(必要になったらヤル)パスワードポリシーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/PasswordPolicy)
-- [ ] [PowerDNS+BIND+k8sでDNSを構築する]()
+- [ ] [BIND+k8s+GitlabでDNSを構築する]()
 
