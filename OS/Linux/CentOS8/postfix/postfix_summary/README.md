@@ -1,5 +1,6 @@
 # postfixのまとめ
-主にデフォルトに記載の設定値についてまとめる。
+主にデフォルトに記載の設定値についてまとめる。  
+デフォルト値については`postconf -d`で確認すること。
 ## compatibility_level
 ## soft_bounce
 ## queue_directory
