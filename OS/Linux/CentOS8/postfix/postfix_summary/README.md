@@ -1,6 +1,7 @@
 # postfixのまとめ
 主にデフォルトに記載の設定値についてまとめる。  
-デフォルト値については`postconf -d`で確認すること。
+デフォルト値については`postconf -d`で確認すること。  
+https://exfield.jp/View/pid:1018/
 ## compatibility_level
 ## soft_bounce
 ## queue_directory
