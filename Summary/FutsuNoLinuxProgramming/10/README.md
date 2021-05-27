@@ -64,8 +64,8 @@ closedir()は、ディレクトリストリームdを閉じます。
 
 ### ■ lsコマンドを作る
 ```c
-# FileName: ls.c
-# ProgName: ls.o
+/* FileName: ls.c */
+/* ProgName: ls.o */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -94,7 +94,7 @@ static void do_ls(char *path)
   struct dirent *ent;
   
   d = opendir(path);
-  if (!d) {
+  if (!d) { /* NULL判定 */
     perror(path);
     exit(1);
   }
