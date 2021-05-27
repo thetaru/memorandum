@@ -1,4 +1,4 @@
 # haproxy
 ## ■ Settings
 ## ■ Tips
-- [ ] [Haproxy パラメータ一覧]()
+- [ ] [HAProxy パラメータ一覧]()
