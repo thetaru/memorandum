@@ -436,6 +436,7 @@ systemdコントロール下のプロセスのデフォルト値を変更しま�
 -  pool 2.centos.pool.ntp.org iburst
 +  server <ntp_server-address> iburst
 
+### クライアントならstepにするかslewにするかは要件による
 ### stepの無効化
 -  makestep 1.0 3
 +  #makestep 1.0 3
