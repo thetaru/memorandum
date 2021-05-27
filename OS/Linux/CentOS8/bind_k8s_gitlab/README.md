@@ -1,4 +1,5 @@
 # bind+k8s+gitlabでDNSサーバを構築する
+https://heartbeats.jp/hbblog/2020/02/octodns01.html
 ## ■ 構成
 gitlabでzoneファイルのようなyamlファイル(この際jsonでもいい)を管理して更新がかかったときに変換してbindコンテナが見てるディレクトリに投げつける。  
 更新もrndcでやる(スクリプトに組み込む)ためリアルタイムに更新がかかる。
