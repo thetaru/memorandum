@@ -9,4 +9,7 @@
 ## mail_owner
 ## default_privs
 ## myhostname
+|設定値|意味|
+|:---|:---|
+|||
 ##
