@@ -39,4 +39,26 @@
 ## fallback_transport
 ## luser_relay
 ## header_checks
-## 
+## fast_flush_domains
+## smtpd_banner
+## default_destination_concurrency_limit
+## debug_peer_level
+## debug_peer_list
+## debugger_command
+## sendmail_path
+## newaliases_path
+## mailq_path
+## setgid_group
+## html_directory
+## manpage_directory
+## sample_directory
+## readme_directory
+## smtpd_tls_cert_file
+## smtpd_tls_key_file
+## smtpd_tls_security_level
+## smtpd_tls_CApath
+## smtp_tls_CApath
+## smtp_tls_CAfile
+## smtp_tls_security_level
+## meta_directory
+## shlib_director
