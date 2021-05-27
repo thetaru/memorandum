@@ -34,4 +34,9 @@
 ## mail_spool_directory
 ## mailbox_command
 ## mailbox_transport
+## local_destination_recipient_limit
+## local_destination_concurrency_limit
+## fallback_transport
+## luser_relay
+## header_checks
 ## 
