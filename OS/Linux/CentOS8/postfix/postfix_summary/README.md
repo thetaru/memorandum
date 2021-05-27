@@ -12,4 +12,25 @@
 |設定値|意味|
 |:---|:---|
 |||
-##
+## mydomain
+## myorigin
+## inet_interfaces
+## inet_protocols
+## proxy_interfaces
+## mydestination
+## local_recipient_maps
+## unknown_recipient_reject_code
+## mynetwork_style
+## mynetworks
+## relay_domains
+## relayhost
+## relay_recipient_maps
+## in_flow_delay
+## alias_maps
+## alias_database
+## recipient_delimiter
+## home_mailbox
+## mail_spool_directory
+## mailbox_command
+## mailbox_transport
+## 
