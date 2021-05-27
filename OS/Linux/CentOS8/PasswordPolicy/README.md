@@ -1,5 +1,5 @@
 # パスワードポリシーの設定
-l# ■ pwqulity.conf
+## ■ pwqulity.conf
 ## ■ login.defs
-l# ■ systemauth
+## ■ systemauth
 ## ■ password-auth
