@@ -6,5 +6,7 @@ chrootを使っているかどうかを確認する。
 # systemctl status named
 # systemctl status named-chroot
 ```
-ゾーンファイルが置かれている場所がこれでわかった。
-## 2. 
+ゾーンファイルの配置場所がわかった。  
+以降、chroot環境下であっても起点は`/`として進める。  
+※ `/var/named/chroot/etc/named.conf`でも`/etc/named.conf`と書くという意味。
+## 2. named.conf
