@@ -6,6 +6,7 @@ BIND
 Postfix
 apache
 haproxy
+mariadb
 
 ## 機能調査
 BIND
@@ -20,11 +21,8 @@ SNMpについて
 mariadb(やったほうがいいためになる)
 postgreSQL(やったほうがいいためになる)
 keepalive
-pacemaker
 haproxy
-LVS(優先度: 低)
 xfsquota 挙動についての調査
-AWX
 LDAP
 
 tmpfs
