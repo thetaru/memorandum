@@ -20,6 +20,7 @@
 - [ ] [TXT]()
 ## ■ Tips
 - [ ] [DNSの問い合わせと応答について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/about_query)
+n [ ] [ゾーンファイルの更新]()
 
 
 # SANKO
