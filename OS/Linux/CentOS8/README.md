@@ -1,6 +1,12 @@
 # CentOS8
 ## ■ MEMO
 ```
+パラメータ調査
+BIND
+Postfix
+apache
+haproxy
+
 BIND
 samba 数パターンつくる
 rsyslog(上に同じ)
