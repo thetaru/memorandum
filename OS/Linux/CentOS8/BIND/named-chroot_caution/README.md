@@ -1,5 +1,5 @@
 # named-chrootを使うときに気を付けること
 
-設定値を編集するときは必ずnamed-chrootサービスを停止させる。  
-named.confやゾーンファイルを編集する  
-named-chrootを起動する。
+1. 設定値を編集するときは必ずnamed-chrootサービスを停止させる。  
+2. named.confやゾーンファイルを編集する  
+3. named-chrootを起動する。
