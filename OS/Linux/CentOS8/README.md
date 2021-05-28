@@ -3,6 +3,7 @@
 ```
 パラメータ調査
 BIND
+chrony
 Postfix
 apache
 haproxy
