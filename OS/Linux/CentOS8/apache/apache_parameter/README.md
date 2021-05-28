@@ -1,3 +1,4 @@
 # apache パラメータ一覧
 ## ■ 用語集
-## ■ Bind
+## ■ Binding to Address and Ports
+## ■ Configuration Files
