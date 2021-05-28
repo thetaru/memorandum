@@ -6,4 +6,7 @@ hoge.example.com. IN A 192.168.0.1
 hoge.example.com. IN A 192.168.0.2
 hoge.example.com. IN A 192.168.0.3
 ```
-クライアントは代表となるFQDN(ここではhoge.example.com)でアクセスする方法です。
+クライアントは代表となるFQDN(ここではhoge.example.com)でアクセスする方法です。  
+  
+この方法ではクライアントにキャッシュ(FQDNとIPアドレスの対応)が残ります。  
+そのためキャッシュが残っている限りは同じサーバへアクセスします。(この時点で冗長とは...)
