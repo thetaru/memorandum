@@ -11,7 +11,6 @@ mariadb
 ## 機能調査
 BIND
 samba 数パターンつくる
-rsyslog(上に同じ)
 postfix 全部プラスじーめーる(優先度: 高)
 SNMpについて
 パケットキャプチャについて
