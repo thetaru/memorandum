@@ -19,3 +19,4 @@
 - [ ] [(未検証)Basic認証](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/auth)
 - [ ] [(未検証)エラーページの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/error_page)
 - [ ] [ホワイトリスト・ブラックリストの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7/squid/black_white)
+- [ ] [プロキシの冗長構成について](redundancy)
