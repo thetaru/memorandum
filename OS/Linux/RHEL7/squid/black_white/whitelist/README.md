@@ -4,7 +4,7 @@ aclディレクティブを使ってwhitelistを定義します。
 ```
 acl example_whitelist dstdomain "/etc/squid/whitelist"
 ```
-`/etc/squid/whitelist`
+以下、`/etc/squid/whitelist`の記述例
 ```
 yahoo.co.jp
 .google.com
@@ -17,7 +17,7 @@ aclディレクティブを使ってwhitelistを定義します。
 ```
 acl example_whitelist dstdom_regex "/etc/squid/whitelist"
 ```
-`/etc/squid/whitelist`
+以下、`/etc/squid/whitelist`の記述例
 ```
 yahoo¥.co¥.jp
 .*¥.google¥.com
