@@ -7,6 +7,7 @@ Postfix
 apache
 haproxy
 
+## 機能調査
 BIND
 samba 数パターンつくる
 rsyslog(上に同じ)
