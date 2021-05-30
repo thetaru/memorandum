@@ -10,6 +10,8 @@ gitlabでzoneファイルをyaml形式で管理し、更新時に逆変換して
 
 ## ■ BINDコンテナのマニフェスト
 ```yaml
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: bind-deployment
   labels:
