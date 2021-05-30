@@ -1,4 +1,4 @@
-# bind+k8s+gitlabでDNSサーバを構築する
+# MetalLBのローバラでマルチプロトコル対応
 https://heartbeats.jp/hbblog/2020/02/octodns01.html
 ## ■ 前提条件
 - Kubernetesクラスタが構築済みであること
