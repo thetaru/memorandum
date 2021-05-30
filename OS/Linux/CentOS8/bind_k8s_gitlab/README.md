@@ -4,11 +4,7 @@ https://heartbeats.jp/hbblog/2020/02/octodns01.html
 - Kubernetesクラスタが構築済みであること
 - MetalLBが導入済みであること
 
-## ■ 構成
-gitlabでzoneファイルをyaml形式で管理し、更新時に逆変換してbindコンテナのディレクトリに投げつける。  
-更新もrndcでやる(スクリプトに組み込む)ためリアルタイムに更新がかかる。
-
-## ■ BINDコンテナのマニフェスト
+## ■ マニフェスト例
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
