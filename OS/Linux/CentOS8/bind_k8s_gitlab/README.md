@@ -1,5 +1,6 @@
 # MetalLBのローバラでマルチプロトコル対応
-https://heartbeats.jp/hbblog/2020/02/octodns01.html
+共有IPを許可擂る必要がある。 
+ただし、これが正解というわけではなさそう。
 ## ■ 前提条件
 - Kubernetesクラスタが構築済みであること
 - MetalLBが導入済みであること
