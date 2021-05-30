@@ -7,4 +7,4 @@
 - 展開
 > 用語の発展性や他分野での使われ方、他の用語との結びつきを示す。
 ## キーワード
-- [ ] [アイデンティティ]()
+- [ ] [アイデンティティ](https://github.com/thetaru/memorandum/tree/master/Summary/hyoron_keyword/identity)
