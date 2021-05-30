@@ -135,7 +135,7 @@ kubenetesを管理するユーザ毎に次のコマンドを実行します。
 # source ~/.bashrc
 ```
 コンテナ間の通信を行うための仮想ネットワークはFlannelを使用する。  
-バージョンに互換性のあるものを導入すること。
+バージョンごとに互換性のあるものを導入すること。
 ```
 # kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
