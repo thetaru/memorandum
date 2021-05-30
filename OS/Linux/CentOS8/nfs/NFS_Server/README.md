@@ -75,7 +75,7 @@ port = 2051
 ## § サービスの起動
 ```
 # systemctl start nfs-server
-# systemctl start nfs-idmap
+# systemctl start nfs-idmapd
 # systemctl enable nfs-server
 ```
 ```
