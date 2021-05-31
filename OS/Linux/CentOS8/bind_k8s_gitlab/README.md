@@ -35,6 +35,10 @@ data:
       allow-transfer { localhost; };
       forwarders { 192.168.0.1; };
     };
+  named.conf.controls: |-
+    controls {
+      inet 127.0.0.1 allow { localhost; };
+    };
 ---
 ```
 ### BINDデプロイ
