@@ -49,10 +49,11 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\Run\sample_mal
 HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\sample_mal
 ```
 `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run`以下に`sample_mal`というレジストリキーを作成していることがわかる。  
-※ `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run`もスタートアップフォルダと同じく、Windows再起動時に実行すべきプログラムを登録するレジストリである。  
   
 Windows再起動時に実行するプログラムは、次のいずれかのレジストリに登録される。
 - HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 - HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 - HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
 - HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+
+※ 32bit環境と64bit環境で一部パスが異なることに注意する
