@@ -1,4 +1,4 @@
-# MetalLB+BINDで内部権威DNSサーバ構築
+# MetalLB+BINDで内部DNSサーバ構築
 MetalLBの設定から共有IPを許可する必要がある。  
 ただし、これが正解というわけではなさそう。
 ## ■ 前提条件
