@@ -1,4 +1,4 @@
-# MetalLBのローバラでマルチプロトコル対応
+# MetalLB+BIND
 共有IPを許可擂る必要がある。  
 ただし、これが正解というわけではなさそう。
 ## ■ 前提条件
@@ -6,6 +6,7 @@
 - MetalLBが導入済みであること
 
 ## ■ マニフェスト例
+### BINDコンテナ & BINDサービス
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -62,4 +63,10 @@ spec:
       protocol: TCP
   selector:
     app: bind
+```
+### BIND設定ファイル管理
+ConfigMapにゾーンやらなんやらを押し込める。
+```yaml
+apiVersion: v1
+kind: ConfigMap
 ```
