@@ -18,3 +18,6 @@
 ## 第12章 [プロセスにかかわるAPI](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/12)
 ## 第13章 [シグナルにかかわるAPI](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/13)
 ## 第14章 [プロセスの環境](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming/14)
+
+# MEMO
+6章関数の戻り値を表にする。
