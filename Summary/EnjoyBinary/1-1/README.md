@@ -52,7 +52,7 @@ HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\sample_mal
 ※ `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run`もスタートアップフォルダと同じく、Windows再起動時に実行すべきプログラムを登録するレジストリである。  
   
 Windows再起動時に実行するプログラムは、次のいずれかのレジストリに登録される。
-- `HKLM\Software\Microsoft\Windows\CurrentVersion\Run`
-- `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`
-- `HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce`
-- `HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce`
+- HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+- HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+- HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
+- HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
