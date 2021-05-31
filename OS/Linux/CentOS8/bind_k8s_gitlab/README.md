@@ -33,6 +33,7 @@ data:
       allow-recursion { none; };
       allow-query-cache { none; };
       allow-transfer { localhost; };
+      forwarders { 192.168.0.1; };
     };
 ---
 ```
