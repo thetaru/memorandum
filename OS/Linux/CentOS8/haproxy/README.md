@@ -4,4 +4,6 @@
 ## ■ Settings
 - [ ] [HAProxyサーバの構築]()
 ## ■ Tips
+- [ ] [L4ロードバランサのについて]()
+- [ ] [L7ロードバランサのについて]()
 - [ ] [HAProxy パラメータ一覧](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_parameter)
