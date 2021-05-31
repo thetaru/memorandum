@@ -29,6 +29,7 @@ data:
       version "unknown";
       directory "/etc/bind"
       recursion no;
+      allow-update { none; };
       allow-query { localhost; internal-network; };
       allow-recursion { none; };
       allow-query-cache { none; };
@@ -39,6 +40,29 @@ data:
     controls {
       inet 127.0.0.1 allow { localhost; };
     };
+  view "internal" {
+    match-clients {
+      localhost;
+      internal-network;
+    };
+    zone "." IN {
+      type hint;
+      file "/etc/bind/named.ca";
+    };
+    zone "local" IN {
+      type master;
+      file "/etc/bind/local.zone";
+    };
+    zone "137.168.192.in-addr.arpa" IN {
+      type master;
+      file "/etc/bind/137.168.192.rev";
+    };
+    zone "138.168.192.in-addr.arpa" IN {
+      type master;
+      file "/etc/bind/138.168.192.rev";
+    };
+  };
+  view "external" {};
 ---
 ```
 ### BINDデプロイ
