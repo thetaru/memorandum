@@ -50,10 +50,6 @@ data:
       match-clients { localhost; internal-networks; };
       allow-query { localhost; internal-networks; };
       recursion yes;
-      zone "." IN {
-        type hint;
-        file "/etc/bind/named.ca";
-      };
       include "/etc/bind/named.conf.views.internal.zones";
     };
   named.conf.views.internal.zones: |-
