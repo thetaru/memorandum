@@ -27,6 +27,8 @@ data:
   named.conf.options: |-
     options {
       version "unknown";
+      listen-on port { any; };
+      listen-on-v6 { none; };
       directory "/etc/bind";
       recursion no;
       allow-update { none; };
