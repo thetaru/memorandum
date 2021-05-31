@@ -31,7 +31,7 @@ data:
     options {
       version "";
       hostname "";
-      listen-on port { any; };
+      listen-on port 53 { any; };
       listen-on-v6 { none; };
       directory "/etc/bind";
       allow-update { none; };
