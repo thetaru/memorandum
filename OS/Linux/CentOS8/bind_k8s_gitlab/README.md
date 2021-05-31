@@ -19,6 +19,11 @@ data:
     include "/etc/bind/named.conf.options";
     include "/etc/bind/named.conf.controls";
     include "/etc/bind/named.conf.views";
+  named.conf.acls: |-
+    acl "internal" {
+      192.168.137.0/24;
+      192.168.138.0/24;
+    }
 ---
 ```
 ### BINDデプロイ
