@@ -72,7 +72,25 @@ data:
 ```
 ### BINDゾーンファイル
 ```yaml
-
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: internal-zones
+data:
+  local.zone: |-
+    $TTL    3600
+    $ORIGIN local.
+    @       IN SOA dns-01.local. root.local. (
+            2021053101;
+            3600      ;
+            900       ;
+            604800    ;
+            3600      ;
+    )
+    @       IN A dns-01.local.
+    dns-01  IN A 192.168.137.1
+    dns-02  IN A 192.168.137.2
+    dns-03  IN A 192.168.137.3
 ```
 ### BINDデプロイ
 サービスを起こすためのマニフェスト。
