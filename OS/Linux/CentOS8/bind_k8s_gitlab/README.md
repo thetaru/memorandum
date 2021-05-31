@@ -1,6 +1,6 @@
 # MetalLB+BINDで内部DNSサーバ構築
 MetalLBの設定から共有IPを許可する必要がある。  
-ただし、これが正解というわけではなさそう。
+ただし、これが正解というわけではない。
 ## ■ 前提条件
 - Kubernetesクラスタが構築済みであること
 - MetalLBが導入済みであること
@@ -9,7 +9,7 @@ MetalLBの設定から共有IPを許可する必要がある。
 ### BIND設定ファイル
 ConfigMapに設定ファイルを押し込める。  
 内部DNSのため再帰問い合わせ(recursion yes)を有効にしている。  
-権威DNSわ構築する場合は必ず無効にすること。
+権威DNSを構築する場合は必ず無効にすること。
 ```yaml
 apiVersion: v1
 kind: ConfigMap
