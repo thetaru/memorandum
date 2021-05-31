@@ -63,7 +63,9 @@ data:
         file "/etc/bind/138.168.192.rev";
       };
     };
-    view "external" {};
+    view "external" {
+      match-clients { any; };
+    };
 ---
 ```
 ### BINDデプロイ
