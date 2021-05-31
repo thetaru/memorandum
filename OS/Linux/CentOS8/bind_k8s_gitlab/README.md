@@ -63,11 +63,11 @@ data:
       };
       zone "137.168.192.in-addr.arpa" IN {
         type master;
-        file "/etc/bind/137.168.192.rev";
+        file "/etc/bind/192.168.137.rev";
       };
       zone "138.168.192.in-addr.arpa" IN {
         type master;
-        file "/etc/bind/138.168.192.rev";
+        file "/etc/bind/192.168.138.rev";
       };
 ```
 ### BINDゾーンファイル
