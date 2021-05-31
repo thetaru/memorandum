@@ -27,7 +27,7 @@ data:
   named.conf.options: |-
     options {
       version "unknown";
-      directory "/etc/bind"
+      directory "/etc/bind";
       recursion no;
       allow-update { none; };
       allow-query { localhost; internal-network; };
