@@ -70,6 +70,9 @@ data:
       match-clients { any; };
     };
 ```
+### BINDゾーンファイル
+```yaml
+```
 ### BINDデプロイ
 サービスを起こすためのマニフェスト。
 ```yaml
