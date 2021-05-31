@@ -7,5 +7,6 @@ https://qiita.com/yoshi-taka/items/d0b9efe696dcaa64e63b
 ## ■ net
 - [ ] [net.netfilter.nf_conntrack_tcp_timeout_time_wait](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Common/net.netfilter.nf_conntrack_tcp_timeout_time_wait)
 - [ ] [net.ipv4.ip_local_port_range]()
+- [ ] [net.ipv4.ip_local_reserved_ports]()
 ## ■ user
 ## ■ vm
