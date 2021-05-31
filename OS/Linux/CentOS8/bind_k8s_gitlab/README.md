@@ -87,6 +87,19 @@ data:
     dns-01  IN A 192.168.137.1
     dns-02  IN A 192.168.137.2
     dns-03  IN A 192.168.137.3
+  192.168.137.rev: |-
+    $TTL    3600
+    @       IN SOA dns-01.local. root.local. (
+            2021053101;
+            3600      ;
+            900       ;
+            604800    ;
+            3600      ;
+    )
+    @       IN PTR dns-01.local.
+    1       IN PTR dns-01.local.
+    2       IN PTR dns-02.local.
+    3       IN PTR dns-03.local.
 ```
 ### BINDデプロイ
 サービスを起こすためのマニフェスト。  
