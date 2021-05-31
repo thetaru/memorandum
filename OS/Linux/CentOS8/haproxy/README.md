@@ -5,6 +5,6 @@
 - [ ] [HAProxyサーバの構築]()
 - [ ] [keepalivedとの連携]()
 ## ■ Tips
-- [ ] [L4ロードバランサのについて]()
-- [ ] [L7ロードバランサのについて]()
+- [ ] [L4ロードバランサについて]()
+- [ ] [L7ロードバランサについて]()
 - [ ] [HAProxy パラメータ一覧](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_parameter)
