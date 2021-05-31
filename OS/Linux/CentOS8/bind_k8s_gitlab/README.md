@@ -22,7 +22,7 @@ data:
     include "/etc/bind/named.conf.controls";
     include "/etc/bind/named.conf.views";
   named.conf.acls: |-
-    acl "internal-network" {
+    acl "internal-networks" {
       192.168.137.0/24;
       192.168.138.0/24;
     };
@@ -32,13 +32,15 @@ data:
       listen-on port { any; };
       listen-on-v6 { none; };
       directory "/etc/bind";
-      recursion yes;
       allow-update { none; };
-      allow-query { localhost; internal-network; };
+      allow-query { localhost; internal-networks; };
       allow-recursion { none; };
       allow-query-cache { none; };
       allow-transfer { localhost; };
       forwarders { 192.168.0.1; };
+      recursion yes;
+      dnssec-enable yes;
+      dnssec-validation yes;
     };
   named.conf.controls: |-
     controls {
@@ -46,10 +48,7 @@ data:
     };
   named.conf.views: |-
     view "internal" {
-      match-clients {
-        localhost;
-        internal-network;
-      };
+      match-clients { localhost; internal-networks; };
       zone "." IN {
         type hint;
         file "/etc/bind/named.ca";
@@ -70,7 +69,6 @@ data:
     view "external" {
       match-clients { any; };
     };
----
 ```
 ### BINDデプロイ
 サービスを起こすためのマニフェスト。
