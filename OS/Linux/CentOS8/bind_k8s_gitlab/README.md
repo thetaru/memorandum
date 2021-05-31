@@ -24,6 +24,12 @@ data:
       192.168.137.0/24;
       192.168.138.0/24;
     }
+  named.conf.options: |-
+    options {
+      directory "/etc/bind";
+      allow-query { localhost; };
+      allow-transfer { none; };
+    }
 ---
 ```
 ### BINDデプロイ
