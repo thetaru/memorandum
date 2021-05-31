@@ -55,9 +55,6 @@ data:
       };
       include "/etc/bind/named.conf.views.internal.zones";
     };
-    view "external" {
-      match-clients { any; };
-    };
   named.conf.views.internal.zones: |-
       zone "local" IN {
         type master;
