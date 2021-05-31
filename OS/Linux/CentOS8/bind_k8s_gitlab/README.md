@@ -1,4 +1,4 @@
-# MetalLB+BINDで内部DNSサーバ構築
+# MetalLB+BINDで内部権威DNSサーバ構築
 MetalLBの設定から共有IPを許可する必要がある。  
 ただし、これが正解というわけではなさそう。
 ## ■ 前提条件
@@ -23,15 +23,17 @@ data:
     acl "internal-network" {
       192.168.137.0/24;
       192.168.138.0/24;
-    }
+    };
   named.conf.options: |-
     options {
       version "unknown";
+      directory "/etc/bind"
       recursion no;
-      directory "/etc/bind";
       allow-query { localhost; internal-network; };
+      allow-recursion { none; };
+      allow-query-cache { none; };
       allow-transfer { localhost; };
-    }
+    };
 ---
 ```
 ### BINDデプロイ
