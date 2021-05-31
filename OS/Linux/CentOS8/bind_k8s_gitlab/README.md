@@ -7,7 +7,9 @@ MetalLBの設定から共有IPを許可する必要がある。
 
 ## ■ マニフェスト例
 ### BIND設定ファイル
-ConfigMapに設定ファイルを押し込める。 
+ConfigMapに設定ファイルを押し込める。  
+内部DNSのため再帰問い合わせ(recursion yes)を有効にしている。  
+権威DNSわ構築する場合は必ず無効にすること。
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -30,7 +32,7 @@ data:
       listen-on port { any; };
       listen-on-v6 { none; };
       directory "/etc/bind";
-      recursion no;
+      recursion yes;
       allow-update { none; };
       allow-query { localhost; internal-network; };
       allow-recursion { none; };
