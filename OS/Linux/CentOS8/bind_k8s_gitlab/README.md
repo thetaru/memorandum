@@ -18,6 +18,7 @@ data:
     include "/etc/bind/named.conf.acls";
     include "/etc/bind/named.conf.options";
     include "/etc/bind/named.conf.controls";
+    include "/etc/bind/named.conf.views";
     include "/etc/bind/named.conf.zones";
 ---
 ```
