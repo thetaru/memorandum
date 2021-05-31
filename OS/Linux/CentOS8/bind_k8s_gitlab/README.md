@@ -53,6 +53,12 @@ data:
         type hint;
         file "/etc/bind/named.ca";
       };
+      include "/etc/bind/named.conf.views.internal.zones";
+    };
+    view "external" {
+      match-clients { any; };
+    };
+  named.conf.views.internal.zones: |-
       zone "local" IN {
         type master;
         file "/etc/bind/local.zone";
@@ -65,13 +71,10 @@ data:
         type master;
         file "/etc/bind/138.168.192.rev";
       };
-    };
-    view "external" {
-      match-clients { any; };
-    };
 ```
 ### BINDゾーンファイル
 ```yaml
+
 ```
 ### BINDデプロイ
 サービスを起こすためのマニフェスト。
