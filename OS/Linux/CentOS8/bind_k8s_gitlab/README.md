@@ -93,7 +93,8 @@ data:
     dns-03  IN A 192.168.137.3
 ```
 ### BINDデプロイ
-サービスを起こすためのマニフェスト。
+サービスを起こすためのマニフェスト。  
+https://urotasm.hatenablog.com/entry/2018/02/16/001300
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
