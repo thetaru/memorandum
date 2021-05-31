@@ -20,15 +20,17 @@ data:
     include "/etc/bind/named.conf.controls";
     include "/etc/bind/named.conf.views";
   named.conf.acls: |-
-    acl "internal" {
+    acl "internal-network" {
       192.168.137.0/24;
       192.168.138.0/24;
     }
   named.conf.options: |-
     options {
+      version "unknown";
+      recursion no;
       directory "/etc/bind";
-      allow-query { localhost; };
-      allow-transfer { none; };
+      allow-query { localhost; internal-network; };
+      allow-transfer { localhost; };
     }
 ---
 ```
