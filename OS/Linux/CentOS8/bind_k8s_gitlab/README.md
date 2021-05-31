@@ -7,8 +7,7 @@ MetalLBの設定から共有IPを許可する必要がある。
 
 ## ■ マニフェスト例
 ### BIND設定ファイル
-ConfigMapにゾーンやらなんやらを押し込める。  
-gitlabで管理などする。
+ConfigMapに設定ファイルを押し込める。 
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -20,8 +19,7 @@ data:
 ---
 ```
 ### BINDデプロイ
-サービスを起こすマニフェスト。  
-これもgitlabで管理すること。
+サービスを起こすためのマニフェスト。
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
