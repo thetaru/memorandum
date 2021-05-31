@@ -6,7 +6,16 @@
 - MetalLBが導入済みであること
 
 ## ■ マニフェスト例
+### BIND設定ファイル管理
+ConfigMapにゾーンやらなんやらを押し込める。  
+gitlabで管理などする。
+```yaml
+apiVersion: v1
+kind: ConfigMap
+```
 ### BINDコンテナ & BINDサービス
+サービスを起こすマニフェスト。  
+これもgitlabで管理すること。
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -63,10 +72,4 @@ spec:
       protocol: TCP
   selector:
     app: bind
-```
-### BIND設定ファイル管理
-ConfigMapにゾーンやらなんやらを押し込める。
-```yaml
-apiVersion: v1
-kind: ConfigMap
 ```
