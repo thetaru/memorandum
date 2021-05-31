@@ -10,7 +10,6 @@ MetalLBの設定から共有IPを許可する必要がある。
 ConfigMapに設定ファイルを押し込める。  
 内部DNSのため再帰問い合わせ(recursion yes)を有効にしている。  
 権威DNSを構築する場合は必ず無効にすること。  
-includeの入れ子になってしまっているあまりよくない。
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -103,7 +102,6 @@ data:
 ```
 ### BINDデプロイ
 サービスを起こすためのマニフェスト。  
-https://urotasm.hatenablog.com/entry/2018/02/16/001300
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
