@@ -6,14 +6,20 @@ MetalLBの設定から共有IPを許可する必要がある。
 - MetalLBが導入済みであること
 
 ## ■ マニフェスト例
-### BIND設定ファイル管理
+### BIND設定ファイル
 ConfigMapにゾーンやらなんやらを押し込める。  
 gitlabで管理などする。
 ```yaml
 apiVersion: v1
 kind: ConfigMap
+metadata:
+  name: named.conf
+data:
+  named.conf: |-
+    include "/etc/bind/named.conf.zones";
+---
 ```
-### BINDコンテナ & BINDサービス
+### BINDデプロイ
 サービスを起こすマニフェスト。  
 これもgitlabで管理すること。
 ```yaml
