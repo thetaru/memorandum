@@ -35,12 +35,9 @@ data:
       listen-on-v6 { none; };
       directory "/etc/bind";
       allow-update { none; };
-      allow-query { localhost; internal-networks; };
-      allow-recursion { none; };
       allow-query-cache { none; };
       allow-transfer { localhost; };
       forwarders { 192.168.0.1; };
-      recursion yes;
       dnssec-enable yes;
       dnssec-validation yes;
     };
@@ -51,6 +48,8 @@ data:
   named.conf.views: |-
     view "internal" {
       match-clients { localhost; internal-networks; };
+      allow-query { localhost; internal-networks; };
+      recursion yes;
       zone "." IN {
         type hint;
         file "/etc/bind/named.ca";
