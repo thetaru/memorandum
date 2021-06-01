@@ -27,6 +27,8 @@ backendセクションで使えるパラメータは[こちら]()にまとめま
 ### resolversセクション
 resolversセクションで使えるパラメータは[こちら]()にまとめました。
 ### 設定例
+```
+```
 ### 文法チェック
 ```
 # haproxy -f /etc/haproxy/haproxy.cfg -c
