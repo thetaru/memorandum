@@ -1,4 +1,4 @@
 # Global parameters
-## ca-base
+## (Option)ca-base
 ## (Required) chroot
 ## (Recommended) tune.
