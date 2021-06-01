@@ -20,7 +20,7 @@
 - [ ] [TXT]()
 ## ■ Tips
 - [ ] [DNSの問い合わせと応答について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/about_query)
-- [ ] [ゾーンファイルの更新]()
+- [ ] [ゾーンファイルの更新](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/update_zonefile)
 - [ ] [named-chrootを使うときに気を付けること]()
 
 
