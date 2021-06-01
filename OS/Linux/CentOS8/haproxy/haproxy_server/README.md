@@ -12,7 +12,11 @@
 |haproxy.service|任意||
 
 ## ■ 主設定ファイル haproxy.cfg
-### キーワード
+### globalセクション
+### defaultsセクション
+### frontendセクション
+### backendセクション
+l## resolversセクション
 ### 設定例
 ## ■ セキュリティ
 ### firewall
