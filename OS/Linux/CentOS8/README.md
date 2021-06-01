@@ -84,4 +84,5 @@ lets encrypt でワイルドカード証明書
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/update_note)
 - [ ] [(必要になったらヤル)パスワードポリシーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/PasswordPolicy)
 - [ ] [~~MetalLB+BINDで内部DNSサーバ構築~~](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/bind_k8s_gitlab)
+- [ ] [CoreDNS+k8sで作る内部DNSサーバ]()
 
