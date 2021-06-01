@@ -1,6 +1,7 @@
 # k8sで管理する内部DNSサーバ構築
 corednsとk8sを利用して小規模DNSサーバとして運用してみます。  
-ここではマニフェスト(corednsサービス用とcorefile用)だけを載せます。
+ここではマニフェスト(corednsサービス用とcorefile用)だけを載せます。  
+レコードの追加などはCoreDNS公式サイトを参照するとわかります。
 ## マニフェスト例
 ```yaml
 apiVersion: apps/v1
