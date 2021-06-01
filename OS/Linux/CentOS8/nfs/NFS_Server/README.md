@@ -63,7 +63,7 @@ port = 2050
 port = 2051
 ```
 ### ドメイン設定
-`/etc/idmapd.conf`を編集します。`DOMAIN`の値はサーバとクライアントで共通のドメイン名を指定します。
+`DOMAIN`の値はサーバとクライアントで共通のドメイン名を指定します。
 以下は、`DOMAIN`が`WORKGROUP`であると仮定しています。
 ```
 # vi /etc/idmapd.conf
@@ -75,12 +75,11 @@ port = 2051
 ## § サービスの起動
 ```
 # systemctl start nfs-server
-# systemctl start nfs-idmapd
 # systemctl enable nfs-server
 ```
 ```
 ### 起動確認
-# systemctl status nfs-server.service
+# systemctl status nfs-server
 ```
 ## § チューニング
 #### スレッド数
