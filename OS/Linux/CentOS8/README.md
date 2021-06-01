@@ -2,13 +2,16 @@
 - [ ] [テンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/_Template)
 ## ■ MEMO
 ```
-パラメータ調査
+## 新テンプレートに移行
+NFS
+SMB
+HAProxy
 BIND
-chrony
-Postfix
 apache
-haproxy
+postfix
+chrony
 mariadb
+squid
 
 ## 機能調査
 BIND
