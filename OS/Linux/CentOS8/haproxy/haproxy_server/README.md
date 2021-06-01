@@ -22,6 +22,9 @@
 ### resolversセクション
 ### 設定例
 ### 文法チェック
+```
+# haproxy -f /etc/haproxy/haproxy.cfg -c
+```
 ## ■ セキュリティ
 ### firewall
 ### 証明書
