@@ -10,7 +10,8 @@
 ## ■ 主設定ファイル xxx.conf
 ### xxxセクション
 ### yyyディレクティブ
-- aaa
+- aaa(recommended)
+- bbb
 ### zzzパラメータ
 ### 設定例
 ### 文法チェック
