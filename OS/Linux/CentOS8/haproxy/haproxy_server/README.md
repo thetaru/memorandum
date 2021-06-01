@@ -5,7 +5,7 @@
 # yum install haproxy
 ```
 ## ■ 関連デーモン
-## ■ 設定ファイル haproxy.cfg
+## ■ 設定ファイル: haproxy.cfg
 ### 設定例
 ## ■ セキュリティ
 ## ■ チューニング
