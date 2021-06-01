@@ -1,5 +1,5 @@
 # CentOS8
-- [ ] [テンプレート]()
+- [ ] [テンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/_Template)
 ## ■ MEMO
 ```
 パラメータ調査
