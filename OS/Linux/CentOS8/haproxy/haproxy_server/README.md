@@ -10,7 +10,7 @@
 |haproxy.service|任意||
 
 
-## ■ 設定ファイル haproxy.cfg
+## ■ 主設定ファイル haproxy.cfg
 ### 設定例
 ## ■ セキュリティ
 ### firewall
