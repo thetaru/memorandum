@@ -34,9 +34,9 @@ resolversセクションで使えるパラメータは[こちら]()にまとめ�
 # haproxy -f /etc/haproxy/haproxy.cfg -c
 ```
 ## ■ セキュリティ
-### firewall
-### 証明書
-### 認証
+## firewall
+## 証明書
+## 認証
 ## ■ ログ
 ## ■ ログローテーション
 ## ■ チューニング
