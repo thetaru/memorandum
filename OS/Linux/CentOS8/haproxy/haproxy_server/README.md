@@ -5,7 +5,7 @@
 # yum install haproxy
 ```
 ## ■ サービスの起動
-起動と共に自動起動の有効化もします。
+サービスの起動と共に自動起動の有効化もします。
 ```
 # systemctl enable --now haproxy.service
 ```
