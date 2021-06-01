@@ -16,7 +16,7 @@
 ### defaultsセクション
 ### frontendセクション
 ### backendセクション
-l## resolversセクション
+### resolversセクション
 ### 設定例
 ## ■ セキュリティ
 ### firewall
