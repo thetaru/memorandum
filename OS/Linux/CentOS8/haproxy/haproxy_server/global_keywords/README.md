@@ -1,3 +1,4 @@
 # Global parameters
-## (Required) ca-base
-## (Recommended) chroot
+## ca-base
+## (Required) chroot
+## (Recommended) tune.
