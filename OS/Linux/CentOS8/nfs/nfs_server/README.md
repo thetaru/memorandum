@@ -1,7 +1,7 @@
 # NFSサーバの構築
 ## ■ インストール
 ```
-# yum install rpcbind nfs-utils
+# yum install nfs-utils
 ```
 ## ■ バージョンの確認
 ```
