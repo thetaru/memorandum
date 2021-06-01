@@ -4,6 +4,6 @@
 ```
 # yum install haproxy
 ```
-## ■ 設定ファイル /etc/haproxy/haproxy.cfg
+## ■ 設定ファイル haproxy.cfg
 ### 設定例
 ## ■ チューニング
