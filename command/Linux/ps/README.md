@@ -4,7 +4,7 @@ psは、
 ## ■ Syntax
 ## ■ Viewpoint
 ## ■ Tips
-### oオプションによる加工
+### `-o`オプションによる加工
 ```
 $ ps -o user,pid,ppid,c,stime,tname,time,cmd
 ```
