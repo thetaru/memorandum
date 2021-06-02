@@ -284,4 +284,5 @@ popen()は、commandで渡された文字列を/bin/sh(正確には/bin/sh -c)�
 
 int pclose(FILE *stream);
 ```
-pclose()は、popen()でfork()した子プロセスをwait()し、そのあとにストリームを閉じます。
+pclose()は、popen()でfork()した子プロセスをwait()し、そのあとにストリームを閉じます。  
+popen()で開いたFILE\*は必ずpclose()で閉じなければなりません。
