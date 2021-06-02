@@ -14,3 +14,4 @@ $ vmstat [s秒数] [n回数]
 ### io
 ### system
 ### cpu
+## ■ Tips
