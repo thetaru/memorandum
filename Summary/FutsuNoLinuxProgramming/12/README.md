@@ -275,3 +275,13 @@ FILE *popen(const char *command, const char *mode);
 |:---|:---|
 |成功|子プロセス(コマンド)へのパイプを表すstdioストリーム|
 |失敗|NULL|
+
+popen()は、commandで渡された文字列を/bin/sh(正確には/bin/sh -c)に渡すことでコマンドを実行します。  
+
+### ■ pclose(3)
+```c
+#include <stdio.h>
+
+int pclose(FILE *stream);
+```
+pclose()は、popen()でfork()した子プロセスをwait()し、そのあとにストリームを閉じます。
