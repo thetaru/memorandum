@@ -355,4 +355,54 @@ setsid()は、新しいセッションを作成します。実行プロセスの
 
 ## 12.5 練習問題
 1. fork()とexec()を使ってプログラムを起動する、シェルを書いてみよう。
-2. 難) 1.で作ったシェルにパイプとリダイレクトを実装してみよう。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <string.h>
+
+#define BUFFER 1024
+#define MAX_ARGS 11 /* 引数の最大数 */
+
+int main(int agrc, char *argv[])
+{
+    int i;
+    char line[BUFFER];
+    char *p;
+    pid_t pid;
+
+    while(1) {
+        printf("$ ");
+        if (!fgets(line, BUFFER, stdin)) break;
+        /* 文字列から改行を探してそのアドレスの値('\n')をNULL文字('\0')に変換 */
+        p = strchr(line, '\n');
+        if (p) *p = '\0';
+
+        if (strcmp(line, "exit") == 0) break;
+
+        /* 空白区切りで引数を得る args = {..., NULL} */
+        char **args = malloc(sizeof(char*) * MAX_ARGS);
+        args[0] = strtok(line, " ");
+        for (i = 1; i < MAX_ARGS-1; i++)
+            args[i] = strtok(NULL, " ");
+        args[MAX_ARGS-1] = NULL;
+
+        pid = fork();
+        if (pid < 0) {
+            fprintf(stderr, "fork(2) failed\n");
+            exit(1);
+        }
+        if (pid == 0) {    /* child */
+            execvp(line, args);
+            perror("exec");
+            exit(1);
+        } else {           /* parent */
+            wait(NULL);
+        }
+    }
+    return 0;
+}
+```
+3. 難) 1.で作ったシェルにパイプとリダイレクトを実装してみよう。
