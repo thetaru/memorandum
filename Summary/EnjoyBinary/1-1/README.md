@@ -62,4 +62,5 @@ x64
 - HKCU\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
 - HKLM\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnce
 - HKCU\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnce
+
 ※ 32bit環境と64bit環境で一部パスが異なることに注意する
