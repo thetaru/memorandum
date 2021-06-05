@@ -42,22 +42,22 @@ Process Monitorが出力するログで`Process Name`がsample_mal.exe、`Operat
   
 解析対象がファイルの生成や値の書き込みをする行為は明らかに怪しいためその周辺から調査するのは自然である。  
 次は`Operation`がRegSetValueであるときの`Path`の値である。  
-x64
+x64の場合
 - HKLM\Software\Microsoft\Windows\CurrentVersion\Run\sample_mal
 
-x86
+x86の場合
 - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\sample_mal
 
 `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run`以下に`sample_mal`というレジストリキーを作成していることがわかる。  
   
 Windows再起動時に実行するプログラムは、次のいずれかのレジストリに登録される。  
-x86
+x86の場合
 - HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 - HKCU\Software\Microsoft\Windows\CurrentVersion\Run
 - HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
 - HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
 
-x64
+x64の場合
 - HKLM\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
 - HKCU\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Run
 - HKLM\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnce
