@@ -74,6 +74,9 @@ signal()は、シグナル番号sigのシグナルを受けたときの挙動を
 関数ポインタについて説明します。  
 使用例
 ```c
+#include <stdio.h>
+#include <stdlib.h>
+
 int plus1(int n)
 {
   return n + 1;
