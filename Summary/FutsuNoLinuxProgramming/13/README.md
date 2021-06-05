@@ -38,3 +38,9 @@
 
 void (*signal(int sig, void (*func) (int)))(int);
 ```
+見づらいのでtypedefを使って整形します。
+```c
+typedef void (*sighandler_t)(int);
+sighandler_t signal(int sig, sighandler_t func);
+```
+sighandler_tのtypedefについて説明します。
