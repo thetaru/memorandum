@@ -40,7 +40,7 @@ Process Monitorが出力するログで`Process Name`がsample_mal.exe、`Operat
   
 ![1-1-2](./images/1-1-2.png)
   
-解析対象がファイルの生成や値の書き込みをする行為は明らかに怪しいためその周辺から調査するのは自然である。  
+解析対象がファイルの生成(CreateFile、RegCreateKey)や値の書き込み(WriteFile、RegSetValue)をする行為は明らかに怪しいためその周辺から調査するのは自然である。  
 次は`Operation`がRegSetValueであるときの`Path`の値である。  
 x64の場合
 - HKLM\Software\Microsoft\Windows\CurrentVersion\Run\sample_mal
@@ -64,3 +64,13 @@ x64の場合
 - HKCU\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnce
 
 ※ 32bit環境と64bit環境で一部パスが異なることに注意する
+  
+![1-1-3](./images/1-1-3.png)
+  
+また、`C:\Users\<User Name>\Documents`以下に1.exeというファイルを作成している。  
+この1.exeも、0.exe同様、sample_mal.exeのコピーである。  
+  
+![1-1-4](./images/1-1-4.png)
+  
+実際、1.exeのパスが(RegSetValueで)レジストリ`HKLM\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Run`へ登録されている。  
+確認にはregeditでレジストリを見てもよい。
