@@ -50,7 +50,7 @@ HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\sample_mal
 ```
 `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run`以下に`sample_mal`というレジストリキーを作成していることがわかる。  
   
-Windows再起動時に実行するプログラムは、次のいずれかのレジストリに登録される。
+Windows再起動時に実行するプログラムは、次のいずれかのレジストリに登録される。  
 x86
 - HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 - HKCU\Software\Microsoft\Windows\CurrentVersion\Run
