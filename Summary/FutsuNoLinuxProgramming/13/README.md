@@ -71,4 +71,22 @@ signal()は、シグナル番号sigのシグナルを受けたときの挙動を
 最後に、signal()は直前までのシグナルハンドラを返します。
 
 ### ■ 関数ポインタ
-関数ポインタについて説明します。
+関数ポインタについて説明します。  
+使用例
+```c
+int plus1(int n)
+{
+  return n + 1;
+}
+
+int main(int argc, char *argv[])
+{
+  int (*f)(int);      /* 関数を指すポインタ変数fを定義 */
+  int result;
+  
+  f = plus1;
+  result = f(5);
+  printf("%d\n", result);
+  exit(0);
+}
+```
