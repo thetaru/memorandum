@@ -84,12 +84,13 @@ int plus1(int n)
 
 int main(int argc, char *argv[])
 {
-  int (*f)(int);      /* 関数を指すポインタ変数fを定義 */
+  int (*f)(int);          /* 関数を指すポインタ変数fを定義 */
   int result;
   
-  f = plus1;
-  result = f(5);
+  f = plus1;              /* ポインタ変数fに関数plus1のポインタを代入している */
+  result = f(5);          /* fに代入した関数(plus1)を実行 */
   printf("%d\n", result);
   exit(0);
 }
 ```
+注意ですが、`f = plus1`はplus1()を呼び出しているのではなく、plus1のポインタを代入しています。
