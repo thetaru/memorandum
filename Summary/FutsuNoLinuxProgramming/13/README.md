@@ -46,6 +46,17 @@ sighandler_t signal(int sig, sighandler_t func);
 sighandler_tのtypedefについて説明します。  
 sighandler_t型とは、引数がint型で戻り値がvoidの関数へのポインタです。  
   
+
+|引数|意味|
+|:---|:---|
+|sig|シグナル番号|
+|func|シグナルハンドラ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|引数sigのシグナル番号に以前に設定されていたシグナルハンドラ|
+|失敗|SIG_ERR|
+  
 signal()は、シグナル番号sigのシグナルを受けたときの挙動を変更します。  
 具体的には、シグナルを受けた時に第2引数funcの関数を呼ぶように挙動を変更します。  
   
