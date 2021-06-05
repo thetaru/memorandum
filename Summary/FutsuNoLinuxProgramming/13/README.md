@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
   
   f = plus1;              /* ポインタ変数fに関数plus1のポインタを代入している */
   result = f(5);          /* fに代入した関数(plus1)を実行 */
-  printf("%d\n", result);
+  printf("f result: %d\n", result);
   printf("plus1 address: %p\n", plus1);
   printf("f address: %p\n", f);
   exit(0);
