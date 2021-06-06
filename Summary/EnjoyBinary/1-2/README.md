@@ -48,4 +48,40 @@ sub_401000関数内の処理を眺めていると、`Hello! Windows`、`MESSAGE`
 ```
 C:\> wsample01a.exe 2012
 ```
-実際に実行してみると、引数を渡さずに実行した場合は`Hello! Windows`を表示し、引数に2012を渡して実行した場合は`Hello! 2012`と表示されることが分かる。
+実際に実行してみると、引数を渡さずに実行した場合は`Hello! Windows`を表示し、引数に2012を渡して実行した場合は`Hello! 2012`と表示されることが分かる。  
+  
+以下は、wsample01a.exeのアセンブルコードである。
+```
+00401000 sub_401000      proc near               ; CODE XREF: start-138↓p
+00401000
+00401000 arg_8           = dword ptr  10h
+00401000
+00401000                 push    ebp
+00401001                 mov     ebp, esp
+00401003                 mov     eax, [ebp+arg_8]
+00401006                 push    offset a2012    ; "2012"
+0040100B                 push    eax
+0040100C                 call    ds:lstrcmpW
+00401012                 push    0
+00401014                 push    offset aMessage ; "MESSAGE"
+00401019                 test    eax, eax
+0040101B                 jnz     short loc_401035
+0040101D                 push    offset aHello2012 ; "Hello! 2012"
+00401022                 call    ds:GetActiveWindow
+00401028                 push    eax
+00401029                 call    ds:MessageBoxW
+0040102F                 xor     eax, eax
+00401031                 pop     ebp
+00401032                 retn    10h
+00401035 ; ---------------------------------------------------------------------------
+00401035
+00401035 loc_401035:                             ; CODE XREF: sub_401000+1B↑j
+00401035                 push    offset aHelloWindows ; "Hello! Windows"
+0040103A                 call    ds:GetActiveWindow
+00401040                 push    eax
+00401041                 call    ds:MessageBoxW
+00401047                 xor     eax, eax
+00401049                 pop     ebp
+0040104A                 retn    10h
+0040104A sub_401000      endp
+```
