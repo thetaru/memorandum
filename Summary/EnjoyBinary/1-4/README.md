@@ -40,7 +40,8 @@ wsample01a.exeでは次のようになっている。
 0040100B                 push    eax
 0040100C                 call    ds:lstrcmpW
 ```
-一方、サブルーチンに渡す引数はpush命令を使ってスタックに格納される。
+  
+一方、サブルーチンに渡す引数はpush命令を使ってスタックに格納される。  
 以上から、サブルーチンの呼び出しは次のように考えればよい。  
 ```c
 /* C言語の関数呼び出し */
@@ -54,3 +55,64 @@ push 1
 call function
 ```
 ※ スタック(FIFO)なので引数の順序とは逆にpushする。
+
+## ■ アセンブラからC言語のソースコードをイメージできるか
+wsample01b.exeのアセンブラコードも眺めてみる。
+```
+00401000 sub_401000      proc near               ; CODE XREF: sub_401080↓p
+00401000
+00401000 var_2004        = byte ptr -2004h
+00401000 var_1004        = byte ptr -1004h
+00401000 var_4           = dword ptr -4
+00401000
+00401000                 push    ebp
+00401001                 mov     ebp, esp
+00401003                 mov     eax, 2004h
+00401008                 call    __alloca_probe
+0040100D                 mov     eax, ___security_cookie
+00401012                 xor     eax, ebp
+00401014                 mov     [ebp+var_4], eax
+00401017                 push    1000h
+0040101C                 lea     eax, [ebp+var_2004]
+00401022                 push    eax
+00401023                 push    0
+00401025                 call    ds:GetModuleFileNameW
+0040102B                 lea     ecx, [ebp+var_1004]
+00401031                 push    ecx
+00401032                 push    0
+00401034                 push    0
+00401036                 push    7
+00401038                 push    0
+0040103A                 call    ds:SHGetFolderPathW
+00401040                 push    offset aWsample01bExe ; "\\wsample01b.exe"
+00401045                 lea     edx, [ebp+var_1004]
+0040104B                 push    edx
+0040104C                 call    ds:lstrcatW
+00401052                 push    0
+00401054                 lea     eax, [ebp+var_1004]
+0040105A                 push    eax
+0040105B                 lea     ecx, [ebp+var_2004]
+00401061                 push    ecx
+00401062                 call    ds:CopyFileW
+00401068                 mov     ecx, [ebp+var_4]
+0040106B                 xor     ecx, ebp
+0040106D                 xor     eax, eax
+0040106F                 call    @__security_check_cookie@4 ; __security_check_cookie(x)
+00401074                 mov     esp, ebp
+00401076                 pop     ebp
+00401077                 retn
+00401077 sub_401000      endp
+00401077 ; ---------------------------------------------------------------------------
+00401078                 align 10h
+00401080 sub_401080      proc near               ; CODE XREF: start-138↓p
+00401080                 call    sub_401000
+00401085                 push    0
+00401087                 push    offset aMessage ; "MESSAGE"
+0040108C                 push    offset aCopied  ; "Copied!"
+00401091                 call    ds:GetActiveWindow
+00401097                 push    eax
+00401098                 call    ds:MessageBoxW
+0040109E                 xor     eax, eax
+004010A0                 retn    10h
+004010A0 sub_401080      endp
+```
