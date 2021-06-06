@@ -8,5 +8,5 @@
 `chap01\wsample01b\Release`にあるサンプルプログラムwsample01b.exeを解析する。  
 実際に実行してみると次のように表示される。  
   
-![]()
+![1-3-1](./images/1-3-1.png)
   
