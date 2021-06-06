@@ -61,9 +61,12 @@ wsample01b.exeのアセンブラコードも眺めてみる。
 ```
 00401000 sub_401000      proc near               ; CODE XREF: sub_401080↓p
 00401000
+
+; cpy関数が使うローカル変数
 00401000 var_2004        = byte ptr -2004h
 00401000 var_1004        = byte ptr -1004h
 00401000 var_4           = dword ptr -4
+
 00401000
 00401000                 push    ebp
 00401001                 mov     ebp, esp
@@ -91,6 +94,8 @@ wsample01b.exeのアセンブラコードも眺めてみる。
 00401052                 push    0
 
 ; eaxレジスタにvar_1004領域のアドレスを格納している?
+; char var_1004[2048];
+; eax = var_1004;
 00401054                 lea     eax, [ebp+var_1004]
 0040105A                 push    eax
 0040105B                 lea     ecx, [ebp+var_2004]
