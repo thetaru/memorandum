@@ -87,3 +87,47 @@ wsample01b.exeをIDAのアイコンにドラッグする。
 4. 00401062                 call    ds:CopyFileW
 
 ある程度、アセンブラコードのやっていることを推測することができたらステップ実行することで検証できる。  
+※ IDAだとステップ実行は有料版のみかも?
+
+## ■ 解析結果とソースコードを見比べる
+wsample01b.exeのソースコードとこれまで解析した結果や推測した処理と比べてみるとよい。
+```cpp
+
+#include <Windows.h>
+#include <tchar.h>
+#include <shlobj.h>
+
+int cpy(void)
+{
+	// 自ファイルパス取得
+	TCHAR szThis[2048];
+	GetModuleFileName(NULL, szThis, sizeof(szThis));
+	// スタートアップファイルパス取得
+	TCHAR szStartup[2048];
+	SHGetFolderPath(NULL, CSIDL_STARTUP, 
+		NULL, SHGFP_TYPE_CURRENT, szStartup);
+	lstrcat(szStartup, _T("\\wsample01b.exe"));
+	// スタートアップへ自分をコピー
+	CopyFile(szThis, szStartup, FALSE);
+	return 0;
+}
+
+int APIENTRY _tWinMain(
+	HINSTANCE hInstance, 
+	HINSTANCE hPrevInstance, 
+	LPTSTR    lpCmdLine, 
+	int       nCmdShow)
+{
+	cpy();
+	MessageBox(GetActiveWindow(), 
+		_T("Copied!"), _T("MESSAGE"), MB_OK);
+	return 0;
+}
+```
+静的解析と動的解析は、目的に応じて使い分ける必要がある。  
+静的解析は「全体を広く眺めるイメージ」、動的解析は「局所的に集中して見つめるイメージ」である。  
+解析手順は、
+1. StirlingやIDAで全体を把握
+2. 気になる点をステップ実行
+
+という流れとなる。
