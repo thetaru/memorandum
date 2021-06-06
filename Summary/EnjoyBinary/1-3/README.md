@@ -15,3 +15,15 @@ Process Monitorを起動し、フィルター機能を使って`Process Name`が
   
 ![1-3-2](./images/1-3-2.png)
   
+次に`Operation`が`CreateFile`であるという条件も加えてフィルターする。  
+  
+![1-3-3](./images/1-3-3.png)
+  
+ログを眺めると、wsample01b.exeが以下のファイルへアクセスしていることがわかります。
+```
+C:\Users\<User Name>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+```
+実際にスタートアップフォルダを開くと、wsample01b.exeがあることがわかる。
+
+## ■ デバッガの役割とは
+## ■ OllyDbgでより詳細な動作を見極める
