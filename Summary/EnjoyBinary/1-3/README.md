@@ -11,4 +11,7 @@
 ![1-3-1](./images/1-3-1.png)
   
 `Copied`と表示されるだけで、裏で何をしているか分からないので調べていく。  
-Process Monitorを使い、サンプルプログラムwsample01b.exeの実行ログを出力する。
+Process Monitorを起動し、フィルター機能を使って`Process Name`が`wsample01b.exe`であるログのみに絞って出力する。  
+  
+![1-3-2](./images/1-3-2.png)
+  
