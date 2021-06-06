@@ -43,8 +43,9 @@ sub_401000関数内の処理を眺めていると、`Hello! Windows`、`MESSAGE`
 - lstrcmpW
 - GetActiveWindow
 
-文字列`Hello Windows!`と`Hello! 2012`が分岐したところに表示されていることに注目する。  
+文字列`Hello! Windows`と`Hello! 2012`が分岐したところに表示されていることに注目する。  
 ためしに、コマンドプロンプトから、2012という文字列を引数に渡して、wsample01a.exeを実行する。
 ```
 C:\> wsample01a.exe 2012
 ```
+実際に実行してみると、引数を渡さずに実行した場合は`Hello! Windows`を表示し、引数に2012を渡して実行した場合は`Hello! 2012`と表示されることが分かる。
