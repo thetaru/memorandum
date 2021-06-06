@@ -36,3 +36,15 @@ IDAのアイコンへwsample01a.exeをドラッグすると次のような画面
 ![1-2-4](./images/1-2-4.png)
     
 なお、表示形式を右クリックして表示されるメニューから`Text view`もしくは`Graph view`を選択することで変えることができる。
+
+## ■ ソースコードがない状態から動作を把握する
+sub_401000関数内の処理を眺めていると、`Hello! Windows`、`MESSAGE`、`MessageBoxW`といった文字列の他にも、以下の文字列が見つかる。
+- 2012
+- lstrcmpW
+- GetActiveWindow
+
+文字列`Hello Windows!`と`Hello! 2012`が分岐したところに表示されていることに注目する。  
+ためしに、コマンドプロンプトから、2012という文字列を引数に渡して、wsample01a.exeを実行する。
+```
+C:\> wsample01a.exe 2012
+```
