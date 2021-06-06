@@ -89,10 +89,13 @@ wsample01b.exeのアセンブラコードも眺めてみる。
 0040104B                 push    edx
 0040104C                 call    ds:lstrcatW
 00401052                 push    0
+
+; eaxレジスタにvar_1004領域のアドレスを格納している?
 00401054                 lea     eax, [ebp+var_1004]
 0040105A                 push    eax
 0040105B                 lea     ecx, [ebp+var_2004]
 00401061                 push    ecx
+
 00401062                 call    ds:CopyFileW
 00401068                 mov     ecx, [ebp+var_4]
 0040106B                 xor     ecx, ebp
