@@ -92,7 +92,6 @@ wsample01b.exeをIDAのアイコンにドラッグする。
 ## ■ 解析結果とソースコードを見比べる
 wsample01b.exeのソースコードとこれまで解析した結果や推測した処理と比べてみるとよい。
 ```cpp
-
 #include <Windows.h>
 #include <tchar.h>
 #include <shlobj.h>
