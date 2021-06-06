@@ -370,7 +370,7 @@ int main(int agrc, char *argv[])
 {
     int i;
     char line[BUFFER];
-    char *p;
+    char* p;
     pid_t pid;
 
     while(1) {
