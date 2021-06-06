@@ -11,9 +11,11 @@
 |LEA|LEA EAX,[ECZ+4]|EAX = ECX+4|ECX+4をEAXへ格納|
 |CMP|CMP EAX,ECX|if&nbsp;(EAX == ECX)</br>&nbsp;&nbsp;&nbsp;&nbsp;ZF=1</br>else</br>&nbsp;&nbsp;&nbsp;&nbsp;ZF=0|値を比較してフラグへ反映</br>EAXとECXが同じならZF=1</br>EAXとECXが違うならZF=0|
 |TEST|TEST EAX,EAX|if&nbsp;(EAX == 0)</br>&nbsp;&nbsp;&nbsp;&nbsp;ZF=1</br>else</br>&nbsp;&nbsp;&nbsp;&nbsp;ZF=0|値を0と比較してフラグへ反映</br>EAXが0ならZF=1</br>EAXが0以外ならZF=0|
-|JE(JZ)|JE 04001000|if&nbsp;(ZF == 1)</br>&nbsp;&nbsp;&nbsp;&nbsp;GOTO 04001000||
-|JNE(JNZ)|JNE 04001000|if&nbsp;(ZF == 0)</br>&nbsp;&nbsp;&nbsp;&nbsp;GOTO 04001000||
-|JMP|JMP 04001000|GOTO 04001000||
-|CALL|CALL lstrcmpW|||
-|PUSH|PUSH 00000001|||
-|POP|POP EAX|||
+|JE(JZ)|JE 04001000|if&nbsp;(ZF == 1)</br>&nbsp;&nbsp;&nbsp;&nbsp;GOTO 04001000|ZFが1なら04001000へジャンプ|
+|JNE(JNZ)|JNE 04001000|if&nbsp;(ZF == 0)</br>&nbsp;&nbsp;&nbsp;&nbsp;GOTO 04001000|ZFが0なら04001000へジャンプ|
+|JMP|JMP 04001000|GOTO 04001000|無条件で04001000へジャンプ|
+|CALL|CALL lstrcmpW||lstrcmpWの呼び出し|
+|PUSH|PUSH 00000001||スタックへ00000001を格納|
+|POP|POP EAX||スタックからEAXへ値を取得|
+
+## ■ アセンブラではどのように条件分岐が実現されているのか
