@@ -99,7 +99,19 @@ int main(int argc, char* argv[])
 これは、char\*とchar[]の関係に似ていて、実際にplus1と書くだけで関数の(機械語列)先頭へのポインタが得られます。  
 ※ `char* buf`や`char buf[64]`と定義した際、bufと書けばどちらの場合でも配列先頭へのポインタを得られます。
 
-### ■ signal(2)の実装上の問題
-signal(2)は使わないようにしましょう。
+### ■ sigaction(2)
+```c
+#include <signal.h>
+
+int sigaction(int sig, const struct sigaction *act, struct sigaction *oldact);
+
+struct sigaction {
+  /* sa_handler, sa_sigactionは片方のみ使う */
+  void (*sa_handler)(int);
+  void (*sa_sigaction)(int siginfo_t*, void*);
+  sigset_t sa_mask;
+  int sa_flags;
+};
+```
 
 ### ■
