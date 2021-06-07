@@ -2,6 +2,10 @@
 corednsとk8sを利用して小規模DNSサーバとして運用してみます。  
 ここではマニフェスト(corednsサービス用とcorefile用)だけを載せます。  
 レコードの追加などはCoreDNS公式サイトを参照するとわかります。
+## 前提条件
+- k8sクラスタ構築済み
+- MetalLB導入済み
+
 ## マニフェスト例
 ```yaml
 apiVersion: apps/v1
