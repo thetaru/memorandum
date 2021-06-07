@@ -16,7 +16,7 @@
 |:---|:---|:---|
 ||||
 
-## ■ 主設定ファイル xxx.conf
+## ■ 主設定ファイル /etc/exports
 ### xxxセクション
 ### yyyディレクティブ
 - aaa(recommended)
