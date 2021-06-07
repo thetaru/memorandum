@@ -100,6 +100,7 @@ int main(int argc, char* argv[])
 ※ `char* buf`や`char buf[64]`と定義した際、bufと書けばどちらの場合でも配列先頭へのポインタを得られます。
 
 ### ■ sigaction(2)
+signal(2)を使わずにsigacion(2)でいきましょう。
 ```c
 #include <signal.h>
 
@@ -113,5 +114,5 @@ struct sigaction {
   int sa_flags;
 };
 ```
-
+sigaction()は、シグナルsigのハンドラを登録します。
 ### ■
