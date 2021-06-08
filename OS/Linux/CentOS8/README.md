@@ -13,6 +13,7 @@ mariadb
 squid
 nfs
 firewalld
+nftables
 
 ## 機能調査
 BIND
