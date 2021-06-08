@@ -9,12 +9,12 @@
 ```
 ## ■ サービスの起動
 ```
-# systemctl enable --now XXX.service
+# systemctl enable --now apache.service
 ```
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-||||
+|apache.service|25||
 
 ## ■ 主設定ファイル /etc/exports
 ### xxxセクション
