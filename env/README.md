@@ -1,4 +1,6 @@
 # 開発環境
-- [ ] [C]()
-- [ ] [React+JavaScript]()
-- [ ] [React+TypeScript]()
+- [ ] [C(yyyymmdd)]()
+- [ ] [Go(yyyymmdd)]()
+- [ ] [Python(yyyymmdd)]()
+- [ ] [React+JavaScript(yyyymmdd)]()
+- [ ] [React+TypeScript(yyyymmdd)]()
