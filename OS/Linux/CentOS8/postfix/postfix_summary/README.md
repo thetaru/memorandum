@@ -2,4 +2,9 @@
 主にデフォルトに記載の設定値についてまとめる。  
 デフォルト値については`postconf -d`で確認すること。  
 https://exfield.jp/View/pid:1018/
-## 2bounce_notice_recipient
+## (option)2bounce_notice_recipient
+## ()access_map_defer_code
+## ()access_map_reject_code
+## ()address_verify_cache_cleanup_interval
+## ()address_verify_local_transport
+## ()address_verify_map
