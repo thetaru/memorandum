@@ -20,3 +20,9 @@ http://www.postfix.org/postconf.5.html
 ## () address_verify_poll_delay
 ## () address_verify_positive_expire_time
 ## () address_verify_positive_refresh_time
+## () address_verify_relay_transport
+## () address_verify_relayhost
+## () address_verify_sender
+## () address_verify_sender_dependent_default_transport_maps
+## () address_verify_sender_dependent_relayhost_maps
+## () address_verify_sender_ttl
