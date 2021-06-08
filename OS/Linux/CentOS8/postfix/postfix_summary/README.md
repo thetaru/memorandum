@@ -12,3 +12,11 @@ http://www.postfix.org/postconf.5.html
 ## (option) address_verify_cache_cleanup_interval
 ## (option) address_verify_local_transport
 ## (option) address_verify_map
+## () address_verify_negative_cache
+## () address_verify_expire_time
+## () address_verify_negative_refresh_time
+## () address_verify_pending_request_limit
+## () address_verify_poll_count
+## () address_verify_poll_delay
+## () address_verify_positive_expire_time
+## () address_verify_positive_refresh_time
