@@ -14,9 +14,9 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|apache.service|25||
+|apache.service|80||
 
-## ■ 主設定ファイル /etc/postfix/main.cf
+## ■ 主設定ファイル /etc/apache/conf.d/httpd.conf
 ### xxxセクション
 ### yyyディレクティブ
 - aaa(recommended)
