@@ -159,8 +159,55 @@ sighandler_t trap_signal(int sig, sighandler_t handler)
 ```
 まず、シグナルハンドラをsa_handlerにセットします。  
 sa_handlerとsa_sigactionは片方しか使えないので、sa_sigactionは無視します。  
-  
 一般にシステムコールは自動的に再起動されたほうが便利なので、sa_flagsにはSA_RESTARTをセットします。  
-  
 最後に、sa_maskは空にしておけばよいので、sigemptyset()で空のままにしておきます。
-### ■
+
+### ■ sigset_t操作API
+```c
+int sigemptyset(sigset_t *set);
+int sigfillset(sigset_t *set);
+int sigaddset(sigset_t *set, int sig);
+int sigdelset(sigset_t *set, int sig);
+int sigismember(const sigset_t *set, int sig);
+```
+sigemptyset()は、setを空に初期化します。  
+sigfillset()は、setをすべてのシグナルを含む状態にします。  
+sigaddset()は、シグナルsigをsetに追加します。  
+sigdelset()は、シグナルsigをsetから削除します。  
+sigismember()は、シグナルsigがsetに含まれるとき真を返します。
+
+### ■ シグナルのブロック
+シグナルのブロックの設定は、sigaction()のsa_maskメンバでできました。  
+他に必要なのは、ブロックしていたシグナルを配送してもらうためのAPIです。  
+```c
+#include <signal.h>
+
+int sigprocmask(int how, sigset_t *set, sigset_t *oldset);
+int sigpending(sigset_t *set);
+int sigsuspend(const sigset_t *mask);
+```
+#### sigprocmask
+sigprocmask()は、自プロセスのシグナルマスクをセットします。  
+セット方法はフラグhowで決まります。howに指定できる値は次の表の通りです。
+|値|説明|
+|:---|:---|
+|SIG_BLOCK|setに含まれるシグナルをシグナルマスクに追加する|
+|SIG_UNBLOCK|setに含まれるシグナルをシグナルマスクから削除する|
+|SIG_SETMASK|シグナルマスクをsetに置き換える|
+
+#### sigpending
+保留されているシグナルをsetに書き込みます。
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+#### sigsuspend
+シグナルマスクmaskをセットすると同時にプロセスをシグナル待ちにします。  
+ブロックしていたシグナルを解除して、保留されていたシグナルを処理するときに使います。
+|戻り値|意味|
+|:---|:---|
+|成功|-1|
+|失敗|-1|
+
+※ いつでもシグナルに割り込まれて終了するため
