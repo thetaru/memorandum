@@ -14,14 +14,10 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|apache.service|25||
+|postfix.service|25||
 
 ## ■ 主設定ファイル /etc/postfix/main.cf
-### xxxセクション
-### yyyディレクティブ
-- aaa(recommended)
-- bbb
-### zzzパラメータ
+### パラメータ一覧
 ### 設定例
 ### 文法チェック
 ## ■ 設定ファイル yyy
