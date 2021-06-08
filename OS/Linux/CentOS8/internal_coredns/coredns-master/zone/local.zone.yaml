@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: local.zone
+data:
+  local.zone: |
+    $ORIGIN local.
+    @   3600 IN SOA dns-service.local. dns-service.local. 2021060901 7200 3600 1209600 3600
+                     IN NS  dns-service.local.
+    dns-01           IN A   192.168.137.1
+    dns-02           IN A   192.168.137.2
+    dns-03           IN A   192.168.137.3
+    dns-service      IN A   192.168.137.101
+    dns-management   IN A   192.168.137.240

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: corefile
+data:
+  Corefile: |
+    local:53 {
+      file "/etc/coredns/zone/local.zone"
+      reload
+      cache 30
+      log
+      errors
+    }
+    .:53 {
+      forward . 192.168.0.1 8.8.8.8
+    }
