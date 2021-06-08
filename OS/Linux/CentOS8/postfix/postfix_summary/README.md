@@ -36,3 +36,7 @@ http://www.postfix.org/postconf.5.html
 ## () allow_percent_hack
 ## () allow_untrusted_routing
 ## () alternate_config_directories
+## () always_add_missing_headers
+## () always_bcc
+## () anvil_rate_time_unit
+## () anvil_status_update_time
