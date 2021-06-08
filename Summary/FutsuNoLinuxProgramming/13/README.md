@@ -125,6 +125,7 @@ struct sigaction {
 |成功||
 |失敗||
 
+sigaction()は、シグナルsigのハンドラを登録します。  
 struct sigactionの役割について触れます。
 - ハンドラの再設定
 > sigaction()は、OSにかかわらずシグナルハンドラの設定を保持し続けることが保証されます。
@@ -139,6 +140,27 @@ struct sigactionの役割について触れます。
 ## ■ sigactionの使用例
 一般的なsigaction()の使用例を次に示します。
 ```c
+#include <signal.h>
+
+typedef void (*sighandler_t)(int);
+
+sighandler_t trap_signal(int sig, sighandler_t handler)
+{
+  struct sigaction act, old;
+  
+  act.sa_handler = handler;
+  sigemptyset(&act.sa_mask);
+  act.sa_flags = SA_RESTART;
+  if (sigaction(sig, &act, &old) < 0)
+    return NULL;
+    
+  return old.sa_handler;
+}
 ```
-sigaction()は、シグナルsigのハンドラを登録します。
+まず、シグナルハンドラをsa_handlerにセットします。  
+sa_handlerとsa_sigactionは片方しか使えないので、sa_sigactionは無視します。  
+  
+一般にシステムコールは自動的に再起動されたほうが便利なので、sa_flagsにはSA_RESTARTをセットします。  
+  
+最後に、sa_maskは空にしておけばよいので、sigemptyset()で空のままにしておきます。
 ### ■
