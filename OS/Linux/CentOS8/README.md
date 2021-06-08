@@ -3,7 +3,6 @@
 ## ■ MEMO
 ```
 ## 新テンプレートに移行
-NFS
 SMB
 HAProxy
 BIND
@@ -12,6 +11,8 @@ postfix
 chrony
 mariadb
 squid
+nfs
+firewalld
 
 ## 機能調査
 BIND
