@@ -26,3 +26,13 @@ http://www.postfix.org/postconf.5.html
 ## () address_verify_sender_dependent_default_transport_maps
 ## () address_verify_sender_dependent_relayhost_maps
 ## () address_verify_sender_ttl
+## () address_verify_service_name
+## () address_verify_transport_maps
+## () address_verify_virtual_transport
+## () alias_database
+## () alias_maps
+## () allow_mail_to_commands
+## () allow_min_user
+## () allow_percent_hack
+## () allow_untrusted_routing
+## () alternate_config_directories
