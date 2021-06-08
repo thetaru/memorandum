@@ -1,6 +1,7 @@
 # /etc/postfix/main.cf
 デフォルト値については`postconf -d`で確認すること。  
 https://exfield.jp/View/pid:1018/  
+http://www.postfix.org/postconf.5.html
 
 ## (option) 2bounce_notice_recipient
 |デフォルト値|対応バージョン|
