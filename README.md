@@ -3,6 +3,7 @@
 - [ ] [Cloud](https://github.com/thetaru/memorandum/tree/master/Cloud)
 - [ ] [Command](https://github.com/thetaru/memorandum/tree/master/command)
 - [ ] [Document](https://github.com/thetaru/memorandum/tree/master/design_document)
+- [ ] [Env](https://github.com/thetaru/memorandum/tree/master/env)
 - [ ] [Hypervisor](https://github.com/thetaru/memorandum/tree/master/Hypervisor)
 - [ ] [OS](https://github.com/thetaru/memorandum/tree/master/OS)
 - [ ] [Scripts](https://github.com/thetaru/memorandum/tree/master/Scripts)
