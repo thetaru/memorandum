@@ -16,7 +16,7 @@
 |:---|:---|:---|
 |apache.service|25||
 
-## ■ 主設定ファイル /etc/exports
+## ■ 主設定ファイル /etc/postfix/main.cf
 ### xxxセクション
 ### yyyディレクティブ
 - aaa(recommended)
@@ -27,7 +27,6 @@
 ## ■ 設定ファイル yyy
 ## ■ セキュリティ
 ### firewall
-### NFSv4専用
 ### 証明書
 ### 認証
 ## ■ ログ
