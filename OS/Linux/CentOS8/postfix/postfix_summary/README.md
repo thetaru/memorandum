@@ -40,3 +40,4 @@ http://www.postfix.org/postconf.5.html
 ## () always_bcc
 ## () anvil_rate_time_unit
 ## () anvil_status_update_time
+## () append_at_myorigin
