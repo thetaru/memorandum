@@ -224,3 +224,16 @@ http://www.postfix.org/postconf.5.html
 ## () lmtp_pix_workarounds
 ## () lmtp_quit_timeout
 ## () lmtp_quote_rfc821_envelope
+## () lmtp_randomize_addresses
+## () lmtp_rcpt_filter
+## () lmtp_reply_filter
+## () lmtp_rset_timeout
+## () lmtp_sasl_auth_cache_name
+## () lmtp_sasl_auth_cache_time
+## () lmtp_sasl_auth_enable
+## () lmtp_sasl_auth_soft_bounce
+## () lmtp_sasl_mechanism_filter
+## () lmtp_sasl_password_maps
+## () lmtp_sasl_path
+## () lmtp_sasl_security_options
+## () lmtp_sasl_tls_securiry_options
