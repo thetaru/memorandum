@@ -195,3 +195,14 @@ http://www.postfix.org/postconf.5.html
 ## () lmtp_connection_reuse_time_limit
 ## () lmtp_data_done_timeout
 ## () lmtp_data_init_timeout
+## () lmtp_data_xfer_timeout
+## () lmtp_defer_if_no_mx_address_found
+## () lmtp_delivery_status_filter
+## () lmtp_destination_concurrency_limit
+## () lmtp_destination_recipient_limit
+## () lmtp_discard_lhlo_keyword_address_maps
+## () lmtp_discard_lhlo_keywords
+## () lmtp_dns_reply_filter
+## () lmtp_dns_resolver_options
+## () lmtp_dns_support_level
+## () lmtp_enforce_tls
