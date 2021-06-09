@@ -72,3 +72,16 @@ http://www.postfix.org/postconf.5.html
 ## () confirm_delay_cleared
 ## () connection_cache_protocol_timeout
 ## () connection_cache_service_name
+## () connection_cache_status_update_time
+## () connection_cache_ttl_limit
+l# () content_filter
+l# () cyrus_sasl_config_path
+## () daemon_directory
+## () daemon_table_open_error_is_fatal
+## () daemon_timeout
+## () data_directory
+## () debug_peer_level
+## () debug_peer_list
+## () debugger_command
+## () default_database_type
+## () default_delivery_slot_cost
