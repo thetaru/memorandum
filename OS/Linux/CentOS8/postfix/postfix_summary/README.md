@@ -89,3 +89,14 @@ http://www.postfix.org/postconf.5.html
 ## () default_delivery_slot_loan
 ## () default_delivery_status_filter
 ## () default_destination_concurrency_failed_cohort_limit
+## () default_destination_concurrency_limit
+## () default_destination_concurrency_negative_feedback
+## () default_destination_concurrency_positive_feedback
+## () default_destination_rate_delay
+## () default_destination_recipient_limit
+## () default_extra_recipient_limit
+## () default_filter_nexthop
+## () default_minimum_delivery_slots
+## () default_privs
+## () default_process_limit
+## () default_rbl_reply
