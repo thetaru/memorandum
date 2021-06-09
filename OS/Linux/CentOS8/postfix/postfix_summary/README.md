@@ -74,8 +74,8 @@ http://www.postfix.org/postconf.5.html
 ## () connection_cache_service_name
 ## () connection_cache_status_update_time
 ## () connection_cache_ttl_limit
-l# () content_filter
-l# () cyrus_sasl_config_path
+## () content_filter
+## () cyrus_sasl_config_path
 ## () daemon_directory
 ## () daemon_table_open_error_is_fatal
 ## () daemon_timeout
@@ -85,3 +85,7 @@ l# () cyrus_sasl_config_path
 ## () debugger_command
 ## () default_database_type
 ## () default_delivery_slot_cost
+## () default_delivery_slot_discost
+## () default_delivery_slot_loan
+## () default_delivery_status_filter
+## () default_destination_concurrency_failed_cohort_limit
