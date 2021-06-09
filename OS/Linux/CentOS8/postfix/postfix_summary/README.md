@@ -62,3 +62,6 @@ http://www.postfix.org/postconf.5.html
 ## () broken_sasl_auth_clients
 ## (recommended) canonical_classes
 ## (recommended) canonical_maps
+## () cleanup_service_name
+## () command_directory
+## () command_execution_directory
