@@ -116,3 +116,17 @@ http://www.postfix.org/postconf.5.html
 ## () delivery_lock_delay
 ## () destination_concurrency_feedback_debug
 ## () detect_8bit_encoding_header
+## () disable_dns_lookups
+## () disable_mime_input_processing
+## () disable_mime_output_conversion
+## () disable_verp_bounces
+## () disable_vrfy_command
+## () dns_ncache_ttl_fix_enable
+## () dnsblog_reply_delay
+## () dnssec_probe
+## () dont_remove
+## () double_bounce_sender
+## () duplicate_filter_limit
+## () empty_address_default_transport_maps_lookup_key
+## () empty_address_recipient
+## () empty_address_relayhost_maps_lookup_key
