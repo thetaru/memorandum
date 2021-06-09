@@ -249,4 +249,65 @@ pidが負数のときは、IDが-pidのプロセスグループ全体にシグ�
 ## 13.5 練習問題
 1. SIGINTシグナルを受けたらメッセージを出力するプログラムを書きなさい。シグナルを待つにはpause()というAPIが使えます。
 ```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <errno.h>
+#include <signal.h>
+
+void handler(int no);
+
+int main()
+{
+   struct sigaction sa;
+   sigset_t unblock_mask, block_mask;
+
+   // シグナル受信時のハンドラ(呼び出される関数)関連の設定
+   sa.sa_handler = handler;
+   sa.sa_flags = SA_RESTART;
+
+   // シグナルマスク(ブロックするシグナルの集合)を初期化
+   sigemptyset(&block_mask);
+
+   // ブロックするシグナルをシグナルマスクとして設定(ここではSIGINT)
+   // 対象となるシグナルセットするだけでまだブロックさせない
+   sigaddset(&block_mask, SIGINT);
+   // 直接sigactionのmaskに設定もできるので以下でもOK
+   // sigaddset(&sa.sa_mask, SIGINT);
+
+   // 設定したシグナルセットを有効化
+   // マスクされたシグナルはブロック(正確には保留)される
+   // 現在のマスク(未ブロックマスクセット)は第3引数に保持される
+   sigprocmask(SIG_SETMASK, &block_mask, &unblock_mask);
+
+   // 特定シグナル受信時の動作指示
+   // SIGINTは先にマスク(ブロック対象)にしているので、この段階ではSIGINTのシグナルハンドラは動作しない
+   sigaction(SIGINT, &sa, 0);
+
+   // 標準入力を待つ間はSIGINTを受け付けるように変更
+   // ブロックしないシグナルセットへ変更
+   // sigactionで設定したSIGINTシグナルを受信時に指定したハンドラが呼び出される
+   sigprocmask(SIG_SETMASK, &unblock_mask, NULL);
+
+   // SIGINT 受付中...
+   pause();
+
+   // 標準入力を待つ間はSIGINTを受け付けないように変更
+   // -> ブロックするシグナルセットへ変更
+   //sigprocmask(SIG_SETMASK, &block_mask, &unblock_mask);
+
+   // SIGINT 拒絶中...
+   // この間にCtrl+Cを送ってもハンドラは動作しない(確認のため意図的にsleepする(その間にCtrl+Cを押してもハンドラは動作しない))
+   //sleep(10);
+
+   return 0;
+}
+
+void handler(int num)
+{
+    char *mes = "signal get\n";
+    write(1, mes, strlen(mes));
+}
 ```
+Ref: https://alpha-netzilla.blogspot.com/2014/10/signal.html
