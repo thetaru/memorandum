@@ -65,3 +65,10 @@ http://www.postfix.org/postconf.5.html
 ## () cleanup_service_name
 ## () command_directory
 ## () command_execution_directory
+## () command_expansion_filter
+## () command_time_limit
+## (required) compatibility_level
+## () config_directory
+## () confirm_delay_cleared
+## () connection_cache_protocol_timeout
+## () connection_cache_service_name
