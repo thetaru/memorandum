@@ -166,3 +166,13 @@ http://www.postfix.org/postconf.5.html
 ## () html_directory
 ## () ignore_mx_lookup_error
 ## () import_environment
+## () in_flow_delay
+## (recommended) inet_interfaces
+## (recommended) inet_protocols
+## () info_log_address_format
+## () initial_destination_concurrency
+## () internal_mail_filter_classes
+## () invalid_hostname_reject_code
+## () ipc_idle
+## () ipc_timeout
+## () ipc_ttl
