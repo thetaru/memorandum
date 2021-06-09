@@ -130,3 +130,14 @@ http://www.postfix.org/postconf.5.html
 ## () empty_address_default_transport_maps_lookup_key
 ## () empty_address_recipient
 ## () empty_address_relayhost_maps_lookup_key
+## () enable_errors_to
+## () enable_idna2003_compatibility
+## () enable_long_queue_ids
+## () enable_original_recipient
+## () enable_threaded_bounces
+## () error_notice_recipient
+## () error_service_name
+## () execution_directory_expansion_filter
+## () expand_owner_alias
+## () export_environment
+## () extract_recipient_limit
