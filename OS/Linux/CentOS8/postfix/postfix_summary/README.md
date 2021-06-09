@@ -176,3 +176,9 @@ http://www.postfix.org/postconf.5.html
 ## () ipc_idle
 ## () ipc_timeout
 ## () ipc_ttl
+## () known_tcp_ports
+## () line_length_limit
+## () lmdb_map_size
+## () lmtp_address_preference
+## () lmtp_address_verify_target
+## () lmtp_assume_final
