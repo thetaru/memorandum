@@ -141,3 +141,13 @@ http://www.postfix.org/postconf.5.html
 ## () expand_owner_alias
 ## () export_environment
 ## () extract_recipient_limit
+## () fallback_relay
+## () fallback_transport
+## () fallback_transport_maps
+## () fallback_flush_domains
+## () fast_flush_purge_time
+## () fast_flush_refresh_time
+## () fault_injection_code
+## () flush_service_name
+l# () fork_attempts
+## () fork_delay
