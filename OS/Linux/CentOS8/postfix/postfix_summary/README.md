@@ -182,3 +182,16 @@ http://www.postfix.org/postconf.5.html
 ## () lmtp_address_preference
 ## () lmtp_address_verify_target
 ## () lmtp_assume_final
+## () lmtp_balance_inet_protocols
+## () lmtp_bind_address
+## () lmtp_bind_address6
+## () lmtp_body_checks
+## () lmtp_cache_connection
+## () lmtp_cname_overrides_servername
+## () lmtp_connect_timeout
+## () lmtp_connection_cache_destinations
+## () lmtp_connection_cache_on_demand
+## () lmtp_connection_reuse_count_limit
+## () lmtp_connection_reuse_time_limit
+## () lmtp_data_done_timeout
+## () lmtp_data_init_timeout
