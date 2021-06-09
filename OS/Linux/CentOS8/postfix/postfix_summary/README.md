@@ -149,5 +149,5 @@ http://www.postfix.org/postconf.5.html
 ## () fast_flush_refresh_time
 ## () fault_injection_code
 ## () flush_service_name
-l# () fork_attempts
+## () fork_attempts
 ## () fork_delay
