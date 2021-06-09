@@ -100,3 +100,13 @@ http://www.postfix.org/postconf.5.html
 ## () default_privs
 ## () default_process_limit
 ## () default_rbl_reply
+## () default_recipient_limit
+## () default_recipient_refill_delay
+## () default_recipient_refill_limit
+## () default_transport
+## () default_transport_rate_delay
+## () default_verp_delimiters
+## () defer_code
+## () defer_service_name
+## () defer_transports
+## () defer_logging_
