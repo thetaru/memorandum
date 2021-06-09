@@ -109,4 +109,10 @@ http://www.postfix.org/postconf.5.html
 ## () defer_code
 ## () defer_service_name
 ## () defer_transports
-## () defer_logging_
+## () defer_logging_resolution_limit
+## () delay_notice_recipient
+## () delay_warning_time
+## () delivery_lock_attempts
+## () delivery_lock_delay
+## () destination_concurrency_feedback_debug
+## () detect_8bit_encoding_header
