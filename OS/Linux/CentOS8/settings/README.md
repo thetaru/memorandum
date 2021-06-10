@@ -495,6 +495,8 @@ or
 ```
 uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
 ```
+wheelグループに所属するユーザのみsuができるように設定します。  
+※ これらユーザのみrootや他のユーザへの昇格が可能です。(rootのみ昇格できるようにする場合はroot_onlyを追記します。)
 ```
 # vi /etc/pam.d/su
 ```
