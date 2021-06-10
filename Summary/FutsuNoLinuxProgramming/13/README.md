@@ -286,7 +286,7 @@ int main()
    sigaction(SIGINT, &sa, 0);
 
    // 標準入力を待つ間はSIGINTを受け付けるように変更
-   // -> ブロックしないシグナルセットを変更
+   // -> ブロックしないシグナルセットに変更
    // sigactionで設定したSIGINTシグナルを受信時に指定したハンドラが呼び出される
    sigprocmask(SIG_SETMASK, &unblock_mask, NULL);
 
@@ -294,7 +294,7 @@ int main()
    pause();
 
    // 標準入力を待つ間はSIGINTを受け付けないように変更
-   // -> ブロックするシグナルセットを変更
+   // -> ブロックするシグナルセットに変更
    //sigprocmask(SIG_SETMASK, &block_mask, &unblock_mask);
 
    // SIGINT 拒絶中...
