@@ -95,3 +95,21 @@ APIで変更できるのは自プロセスのカレントディレクトリだ�
 |    NULL   |
 +-----------+
 ```
+
+例えば、自プロセスの環境変数をすべて表示してみます。
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+extern char **environ;
+
+int main(int argc, char *argv[])
+{
+  char **p;
+  
+  for (p = environ; *p; p++) {
+    printf("%s\n", *p);
+  }
+  exit(0);
+}
+```
