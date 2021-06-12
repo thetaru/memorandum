@@ -186,7 +186,7 @@ set-uidプログラムから起動されたプロセスには、2種類のクレ
 #### getuid(2)、geteuid(2)、getgid(2)、getegid(2)
 ```c
 #include <unistd.h>
-#inlcude <sys/types.h>
+#include <sys/types.h>
 
 uid_t getuid(void);
 uid_t geteuid(void);
