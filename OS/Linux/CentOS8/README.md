@@ -58,6 +58,7 @@ lets encrypt でワイルドカード証明書
 - [ ] [(書きかけ)AWX](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/AWX)
 - [x] [apache](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/apache)
 - [ ] [BIND](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/BIND)
+- [ ] [Digdag](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Digdag)
 - [ ] [Docker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Docker)
 - [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
 - [x] [GitLab](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab)
