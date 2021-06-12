@@ -183,6 +183,7 @@ set-uidプログラムから起動されたプロセスには、2種類のクレ
 
 ### ■ 現在のクレデンシャルを得る
 まずは現在のクレデンシャルを得るシステムコールを説明します。
+#### getuid(2)、geteuid(2)、getgid(2)、getegid(2)
 ```c
 #include <unistd.h>
 #inlcude <sys/types.h>
@@ -197,7 +198,8 @@ geteuid()は、自プロセスの実効ユーザIDを返します。
 getgid()は、自プロセスの実グループIDを返します。  
 getegid()は、自プロセスの実効グループIDを返します。  
 以上、4つのシステムコールは失敗しません。  
-  
+
+#### getgroups(2)
 ```c
 #include <unistd.h>
 #include <sys/types.h>
@@ -206,10 +208,29 @@ int getgroups(int bufsize, gid_t *buf);
 ```
 |引数|意味|
 |:---|:---|
-|bufsize||
+|bufsize|保持できる補足グループIDの最大値|
 |buf|バッファ|
 
 |戻り値|意味|
 |:---|:---|
-|成功|0|
+|成功|補足グループIDの数(0以上)|
 |失敗|-1|
+
+getgroup()は、自プロセスの補足グループIDをbufに書き込みます。  
+ただし、プロセスの補足グループIDがbufsize個より多い場合は、書き込まずエラーとなります。
+
+### ■ 別のクレデンシャルに移行する
+現在の権限を捨てて新しいクレデンシャルに移行するには、setuid()、setgid()、initgroups()の3つをセットで使います。
+
+#### setuid(2)、setgid(2)
+```c
+#include <unistd.h>
+#include <sys/types.h>
+
+int setuid(uid_t id);
+int setgid(gid_t id);
+```
+setuid()は、自プロセスの実ユーザIDと実効ユーザIDをidに変更します。
+setgid()は、自プロセスのグループIDと実効グループIDをidに変更します。
+
+#### initgroups(2)
