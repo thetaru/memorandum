@@ -234,3 +234,10 @@ setuid()は、自プロセスの実ユーザIDと実効ユーザIDをidに変更
 setgid()は、自プロセスのグループIDと実効グループIDをidに変更します。
 
 #### initgroups(2)
+```c
+#define _BSD_SOURCE
+#include <grp.h>
+#include <sys/types.h>
+
+int initgroups(const char *user, gid_t group);
+```
