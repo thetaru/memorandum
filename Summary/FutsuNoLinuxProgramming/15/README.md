@@ -165,6 +165,7 @@ resに書き込まれるのはstruct addrinfoのリンクリストです。
 本節では、ソケットに接続すると現在時刻を返すサーバプログラムを作成します。
 
 ### ■ daytime.c
-:warning: daytimeサービスはxinetd時代の代物なので準備する必要があります。
+:warning: daytimeサービスはxinetd時代の代物なので準備する必要があります。  
+また、`/etc/services`でchronyに対応させようとしたがchrony側はUDPでListenしていたのでダメだった。(TCPでListenできるやつはいないのか...?)
 ```c
 ```
