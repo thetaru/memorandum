@@ -72,9 +72,9 @@ int bind(int sock, struct sockaddr *addr, socklen_t addrlen);
 ```
 |引数|意味|
 |:---|:---|
-|sock|ソケット|
-|addr|IPアドレス|
-|addrlen|addrのサイズ|
+|sock|ソケットを示すファイルディスクリプタ|
+|addr|ソケットに割り当てるアドレス|
+|addrlen|addrの指す構造体のサイズ|
 
 |戻り値|意味|
 |:---|:---|
@@ -91,8 +91,8 @@ int listen(int sock, int backlog);
 ```
 |引数|意味|
 |:---|:---|
-|sock|ソケット|
-|backlog|同時に受け付けるコネクションの最大値|
+|sock|ソケットを示すファイルディスクリプタ|
+|backlog|同時に受け付けるコネクションの最大値(保留中のキューの最大長)|
 
 |戻り値|意味|
 |:---|:---|
@@ -110,9 +110,9 @@ int accept(int sock, struct sockaddr *addr, socklen_t *addrlen);
 ```
 |引数|意味|
 |:---|:---|
-|sock|ソケット|
-|addr|IPアドレス|
-|addrlen|addrのサイズ|
+|sock|ソケットを示すファイルディスクリプタ|
+|addr|接続した相手のIPアドレスやポート番号などの情報を含む|
+|addrlen|addrの指す構造体のサイズ|
 
 |戻り値|意味|
 |:---|:---|
@@ -120,5 +120,26 @@ int accept(int sock, struct sockaddr *addr, socklen_t *addrlen);
 |失敗|-1|
 
 accept()は、sockにクライアントが接続してくるのを待ち、接続が完了したら、接続完了済みストリームのファイルディスクリプタを返します。  
-addrにはクライアントのアドレスが書き込まれます。  
-addrlenには\*addrのサイズが書き込まれます。
+
+## 15.4 名前解決
+getaddrinfo()は正引き、getnameinfo()は逆引きができます。
+### ■ getaddrinfo(3)
+```c
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netdb.h>
+
+int getaddrinfo(const char *node, const char *service, const struct addrinfo *hints, struct addrinfo **res);
+void freeaddrinfo(struct addrinfo *res);
+char *gai_strerro(int err);
+
+struct addrinfo {
+  int             ai_flags;
+  int             ai_family;
+  int             ai_socktype;
+  int             ai_protocol;
+  socklen_t       ai_addrlen;
+  struct sockaddr *ai_addr;
+  char            *ai_canonname;
+  struct addrinfo *ai_next;
+```
