@@ -241,3 +241,27 @@ setgid()は、自プロセスのグループIDと実効グループIDをidに変
 
 int initgroups(const char *user, gid_t group);
 ```
+|引数|意味|
+|:---|:---|
+|user|ユーザ|
+|group|グループ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+initgroups()は、/etc/groupなどのデータベースを見て、ユーザuserの補足グループを自プロセスに設定します。  
+また、グループgroupはユーザのグループ(primary group)を補足グループに追加するために使います。  
+なお、initgroups()はスーパーユーザでないと成功しません。
+
+#### 別ユーザになる手順
+1. スーパーユーザ(root)として起動する(起動してもらう)
+2. なりたいユーザのユーザ名とユーザID、グループIDを取得する
+3. setgid(target_gid);
+4. initgroups(target_username, target_gid);
+5. setuid(target_uid);
+
+initgroups()は、スーパーユーザで実行する必要があるので、setuid()は必ず最後に実行する必要があります。
+
+## 14.4 ユーザとグループ
