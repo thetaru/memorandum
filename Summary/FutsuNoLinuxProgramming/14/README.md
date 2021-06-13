@@ -306,6 +306,45 @@ getpwid()は、ユーザ情報をユーザIDから検索します。
 |戻り値|意味|
 |:---|:---|
 |成功|ユーザ情報をstruct passwd形式で返す|
-|失敗|-1|
+|失敗|NULL|
 
 getpwnam()は、ユーザ情報をユーザ名から検索します。
+
+### ■ getgruid(3)、getgrnname(3)
+```c
+#include <grp.h>
+#include <sys/types.h>
+
+struct group *getgrgid(gid_t id);
+struct group *getgrnam(const char *name);
+
+struct group {
+  char *gr_name;      /* グループ名 */
+  char *gr_passwd;    /* グループのパスワード */
+  gid_t gr_gid;       /* グループID */
+  char **gr_mem;      /* グループのメンバ(ユーザ名のリスト) */
+};
+```
+#### getgruid(3)
+|引数|意味|
+|:---|:---|
+|id|ユーザID(UID)|
+
+|戻り値|意味|
+|:---|:---|
+|成功|グループ情報をstruct group形式で返す|
+|失敗|NULL|
+
+getgruid()は、グループ情報をグループIDから検索します。
+
+#### getgrname(3)
+|引数|意味|
+|:---|:---|
+|name|ユーザ名|
+
+|戻り値|意味|
+|:---|:---|
+|成功|グループ情報をstruct group形式で返す|
+|失敗|NULL|
+
+getgrname()は、グループ情報をグループ名から検索します。
