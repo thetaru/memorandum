@@ -615,7 +615,7 @@ int main(void)
 
     getrusage(RUSAGE_SELF, &start_resource_usage);
 
-    /* SLEEP */
+    /* CALC */
     int i;
     for (i=0; i<10000; i++) {
         printf("cnt = %d\n", i);
@@ -635,4 +635,25 @@ int main(void)
 ```
 2. 実時間を測定しましょう。
 ```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/time.h>
+
+int main(void)
+{
+    struct timeval start_real_time, end_real_time;
+
+    gettimeofday(&start_real_time, NULL);
+
+    /* SLEEP */
+    sleep(10);
+
+    gettimeofday(&end_real_time, NULL);
+
+    printf("real\t%lfs\n",
+        (end_real_time.tv_sec - start_real_time.tv_sec) +
+        (end_real_time.tv_usec - start_real_time.tv_usec)*1.0E-6);
+
+    return 0;
+}
 ```
