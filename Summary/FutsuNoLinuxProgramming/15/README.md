@@ -70,4 +70,55 @@ socket(2)については説明したので省略します。
 
 int bind(int sock, struct sockaddr *addr, socklen_t addrlen);
 ```
-bind()は、接続を待つアドレスaddrをソケットsockに割り当てます。
+|引数|意味|
+|:---|:---|
+|sock|ソケット|
+|addr|IPアドレス|
+|addrlen|addrのサイズ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+bind()は、接続を待つアドレスaddrをソケットsockに割り当てます。  
+
+### ■ listen(2)
+```c
+#include <sys/socket.h>
+
+int listen(int sock, int backlog);
+```
+|引数|意味|
+|:---|:---|
+|sock|ソケット|
+|backlog|同時に受け付けるコネクションの最大値|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+listen()は、ソケットsockがサーバ用のソケット(接続を待つソケット)であることをカーネルに伝えます。
+
+### ■ accept(2)
+```c
+#include <sys/socket.h>
+#include <sys/types.h>
+
+int accept(int sock, struct sockaddr *addr, socklen_t *addrlen);
+```
+|引数|意味|
+|:---|:---|
+|sock|ソケット|
+|addr|IPアドレス|
+|addrlen|addrのサイズ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|接続完了済みストリームのファイルディスクリプタ|
+|失敗|-1|
+
+accept()は、sockにクライアントが接続してくるのを待ち、接続が完了したら、接続完了済みストリームのファイルディスクリプタを返します。  
+addrにはクライアントのアドレスが書き込まれます。  
+addrlenには\*addrのサイズが書き込まれます。
