@@ -14,9 +14,7 @@ Linuxでソケット通信に使うのがソケットです。
 ### ■ クライアント側のソケットAPI
 クライアント側からサーバにストリームを接続するには、次の2つのシステムコール呼び出しが必要です。
 - socket(2)
-> ソケットを作るシステムコールです。
 - connect(2)
-> 接続する相手を指定し、ストリームをつなぎます。
 
 ### ■ socket(2)
 ```c
@@ -63,3 +61,13 @@ int connect(int sock, const struct sockaddr *addr, socklen_t addrlen);
 - bind(2)
 - listen(2)
 - accept(2)
+
+socket(2)については説明したので省略します。
+### ■ bind(2)
+```c
+#include <sys/socket.h>
+#include <sys/types.h>
+
+int bind(int sock, struct sockaddr *addr, socklen_t addrlen);
+```
+bind()は、接続を待つアドレスaddrをソケットsockに割り当てます。
