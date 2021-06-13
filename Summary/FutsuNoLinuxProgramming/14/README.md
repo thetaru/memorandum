@@ -372,6 +372,8 @@ int getrusage(int who, struct rusage *usage);
 |失敗|-1|
 
 getrusage()は、プロセスのリソース使用量を第2引数usageに書き込みます。  
-第1引数whoがRUSAGE_SELFならば自プロセスのリソース使用量を書き込みます。  
-第1引数whoがRUSAGE_CHILDRENならば子プロセスのリソース使用量を書き込みます。  
+- 第1引数whoがRUSAGE_SELF
+> 自プロセスのリソース使用量を書き込みます。  
+- 第1引数whoがRUSAGE_CHILDREN
+> 子プロセスのリソース使用量を書き込みます。  
 ※ ここでいう子プロセスは自プロセスからfork()した子プロセスすべてのうち、wait()したものを意味します。
