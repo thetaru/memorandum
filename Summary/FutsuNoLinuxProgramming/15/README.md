@@ -143,6 +143,11 @@ struct addrinfo {
   char            *ai_canonname;
   struct addrinfo *ai_next;
 ```
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|エラーの種類を示す0以外の値|
+
 getaddrinfo()は、接続対象nodeのアドレスの候補をresに書き込みます。  
 必要な情報を限定したいときはserviceとhistsで絞り込みます。  
 resに書き込まれるのはstruct addrinfoのリンクリストです。
@@ -151,4 +156,14 @@ resに書き込まれるのはstruct addrinfoのリンクリストです。
            |           |   |    |           |   |    |           |   |    
            |  ai_next  | --+    |  ai_next  | --+    |  ai_next  | --+    
            +-----------+        +-----------+        +-----------+
+```
+また、このstruct addrinfoのメモリ領域はmalloc()で割り当てられているので、明示的に開放する必要があります。  
+そのために使うAPIがfreeaddrinfo()です。
+
+## 15.5 daytimeクライアントを作る
+実際にソケット周りのAPIを使ってみます。  
+本節では、ソケットに接続すると現在時刻を返すサーバプログラムを作成します。
+
+### ■ daytime.c
+```c
 ```
