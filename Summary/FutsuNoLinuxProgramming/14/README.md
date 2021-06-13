@@ -359,4 +359,5 @@ getrusage()を使うと、様々なリソース使用量が得られます。
 #include <sys/resource.h>
 #include <sys/time.h>
 
+int getrusage(int who, struct rusage *usage);
 ```
