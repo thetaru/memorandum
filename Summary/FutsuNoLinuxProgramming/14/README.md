@@ -265,3 +265,47 @@ initgroups()は、/etc/groupなどのデータベースを見て、ユーザuser
 initgroups()は、スーパーユーザで実行する必要があるので、setuid()は必ず最後に実行する必要があります。
 
 ## 14.4 ユーザとグループ
+クレデンシャルとはプロセスの属性であり、その管理はカーネルです。  
+一方、ユーザ・グループについての情報はカーネルがかかわっていません。
+### ■ getpwuid(3)、getpwnam(3)
+ユーザ情報を検索するAPIを紹介します。
+```c
+#include <pwd.h>
+#include <sys/types.h>
+
+struct passwd *getpwuid(uid_t id);
+struct passwd *getpwnam(const char *name);
+
+struct passwd {
+  char *pw_name;    /* ユーザ名 */
+  char *pw_passwd;  /* パスワード */
+  uid_t pw_uid;     /* ユーザID */
+  gid_t pw_gid;     /* グループID */
+  char *pw_gecos;   /* 本名 */
+  char *pw_dir;     /* ホームディレクトリ */
+  char *pw_shell;   /* シェル */
+};
+```
+#### getpwuid(3)
+|引数|意味|
+|:---|:---|
+|id|ユーザID(UID)|
+
+|戻り値|意味|
+|:---|:---|
+|成功|ユーザ情報をstruct passwd形式で返す|
+|失敗|NULL|
+
+getpwid()は、ユーザ情報をユーザIDから検索します。
+
+#### getpwnam(3)
+|引数|意味|
+|:---|:---|
+|name|ユーザ名|
+
+|戻り値|意味|
+|:---|:---|
+|成功|ユーザ情報をstruct passwd形式で返す|
+|失敗|-1|
+
+getpwnam()は、ユーザ情報をユーザ名から検索します。
