@@ -600,3 +600,39 @@ execl("/bin/sh", "-sh", ...);
 
 ### ■ ログインの記録
 どこでログイン情報について管理しているのか?
+
+## 14.8 練習問題
+1. プロセス・システム時間測定してみましょう。
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/time.h>
+#include <sys/resource.h>
+
+int main(void)
+{
+    struct rusage start_resource_usage, end_resource_usage;
+
+    getrusage(RUSAGE_SELF, &start_resource_usage);
+
+    /* SLEEP */
+    int i;
+    for (i=0; i<10000; i++) {
+        printf("cnt = %d\n", i);
+    }
+
+    getrusage(RUSAGE_SELF, &end_resource_usage);
+
+    printf("user\t%lfs\n",
+        (end_resource_usage.ru_utime.tv_sec  - start_resource_usage.ru_utime.tv_sec) +
+        (end_resource_usage.ru_utime.tv_usec - start_resource_usage.ru_utime.tv_usec)*1.0E-6);
+    printf("sys\t%lfs\n",
+        (end_resource_usage.ru_stime.tv_sec  - start_resource_usage.ru_stime.tv_sec) +
+        (end_resource_usage.ru_stime.tv_usec - start_resource_usage.ru_stime.tv_usec)*1.0E-6);
+
+    return 0;
+}
+```
+2. 実時間を測定しましょう。
+```c
+```
