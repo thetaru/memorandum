@@ -143,3 +143,12 @@ struct addrinfo {
   char            *ai_canonname;
   struct addrinfo *ai_next;
 ```
+getaddrinfo()は、接続対象nodeのアドレスの候補をresに書き込みます。  
+必要な情報を限定したいときはserviceとhistsで絞り込みます。  
+resに書き込まれるのはstruct addrinfoのリンクリストです。
+```
+*res ----> +-----------+   +--> +-----------+   +--> +-----------+   +--> NULL
+           |           |   |    |           |   |    |           |   |    
+           |  ai_next  | --+    |  ai_next  | --+    |  ai_next  | --+    
+           +-----------+        +-----------+        +-----------+
+```
