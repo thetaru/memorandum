@@ -25,3 +25,41 @@ Linuxでソケット通信に使うのがソケットです。
 
 int socket(int domain, int type, int protocol);
 ```
+|引数|意味|
+|:---|:---|
+|domain||
+|type||
+|protocol||
+
+|戻り値|意味|
+|:---|:---|
+|成功|ファイルディスクリプタ(0以上の整数)|
+|失敗|-1|
+
+socket()は、ソケットを作成し、それに対応するファイルディスクリプタを返します。  
+※ ファイルディスクリプタはストリーム以外にも対応することができることに注意しましょう。
+
+### ■ connect(2)
+```c
+#include <sys/socket.h>
+#include <sys/types.h>
+
+int connect(int sock, const struct sockaddr *addr, socklen_t addrlen);
+```
+|引数|意味|
+|:---|:---|
+|sock|ソケット|
+|addr|IPアドレス|
+|addrlen|addrのサイズ|
+
+|戻り値|意味|
+|:---|:---|
+|成功|0|
+|失敗|-1|
+
+### ■ サーバ側のソケットAPI
+サーバ側(ストリームの接続を待つ側)は、次の4つのシステムコール呼び出しが必要です。
+- socket(2)
+- bind(2)
+- listen(2)
+- accept(2)
