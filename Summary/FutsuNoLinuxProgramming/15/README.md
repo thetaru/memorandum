@@ -143,6 +143,7 @@ struct addrinfo {
   char            *ai_canonname;
   struct addrinfo *ai_next;
 ```
+#### getaddrinfo(3)
 |戻り値|意味|
 |:---|:---|
 |成功|0|
@@ -157,8 +158,12 @@ resに書き込まれるのはstruct addrinfoのリンクリストです。
            |  ai_next  | --+    |  ai_next  | --+    |  ai_next  | --+    
            +-----------+        +-----------+        +-----------+
 ```
-また、このstruct addrinfoのメモリ領域はmalloc()で割り当てられているので、明示的に開放する必要があります。  
+
+#### freeaddrinfo(3)
+struct addrinfoのメモリ領域はmalloc()で割り当てられているので、明示的に開放する必要があります。  
 そのために使うAPIがfreeaddrinfo()です。
+
+#### gai_strerro(3)
 
 ## 15.5 daytimeクライアントを作る
 実際にソケット周りのAPIを使ってみます。  
