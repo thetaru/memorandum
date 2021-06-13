@@ -166,7 +166,7 @@ resに書き込まれるのはstruct addrinfoのリンクリストです。
 
 ### ■ daytime.c
 :warning: daytimeサービスはxinetd時代の代物なので準備する必要があります。  
-また、`/etc/services`でchronyに対応させようとしたがchrony側はUDPでListenしていたのでダメだった。(TCPでListenできるやつはいないのか...?)
+また、`/etc/services`でchronyに対応させようとしたがchrony側はUDPでListenしていたのでダメでした。
 ```c
 /* daytime.c */
 
