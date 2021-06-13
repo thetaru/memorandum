@@ -161,7 +161,7 @@ resに書き込まれるのはstruct addrinfoのリンクリストです。
 そのために使うAPIがfreeaddrinfo()です。
 
 ## 15.5 daytimeクライアントを作る
-:warning: daytimeサービスはxinetd時代の代物なので準備する必要があります。
+:warning: daytimeサービスはxinetd時代の代物なので準備する必要があります。  
 実際にソケット周りのAPIを使ってみます。  
 本節では、ソケットに接続すると現在時刻を返すサーバプログラムを作成します。
 
