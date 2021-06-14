@@ -160,10 +160,10 @@ resに書き込まれるのはstruct addrinfoのリンクリストです。
 ```
 
 #### freeaddrinfo(3)
-struct addrinfoのメモリ領域はmalloc()で割り当てられているので、明示的に開放する必要があります。  
-そのために使うAPIがfreeaddrinfo()です。
+freeaddrinfo()は、struct addrinfoのメモリ領域がmalloc()で割り当てられているので、明示的に開放するために使います。  
 
 #### gai_strerro(3)
+エラーハンドリング用
 
 ## 15.5 daytimeクライアントを作る
 実際にソケット周りのAPIを使ってみます。  
