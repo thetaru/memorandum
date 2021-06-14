@@ -59,6 +59,7 @@ int main(void) {
 
     while (1) {
         /* accept TCP connection from client */
+        /* 引数がポインタだからわざわざ変数を定義している */
         len = sizeof(client);
         wsock = accept(rsock, (struct sockaddr *)&client, &len);
 
