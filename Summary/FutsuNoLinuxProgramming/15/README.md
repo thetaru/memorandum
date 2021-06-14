@@ -211,6 +211,7 @@ open_connection(char *host, char *service)
     struct addrinfo hints, *res, *ai;
     int err;
 
+    /* hintsのメモリブロックを0で初期化 */
     memset(&hints, 0, sizeof(struct addrinfo));
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
