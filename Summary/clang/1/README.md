@@ -10,6 +10,7 @@
 次のソースコード`main.c`を書きます。
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 int main(void)
 {
   printf("Hello World!");
