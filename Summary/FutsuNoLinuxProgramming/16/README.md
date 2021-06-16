@@ -9,6 +9,8 @@
 #include <unistd.h>
 
 #define CLIENT_LIMIT 5
+#define MSGSIZE 1024
+#define BUFSIZE (MSGSIZE + 1)
 
 int main(int argc, char* argv[])
 {
@@ -18,6 +20,8 @@ int main(int argc, char* argv[])
     struct sockaddr_in clientSockAddr; // client internet socket address
     unsigned short serverPort; // server port number
     unsigned int   clientLen; // client internet socket address length
+    char recvBuffer[BUFSIZE];
+    int recvMsgSize, sendMsgSize;
 
     if ( argc != 2 ) {
         fprintf(stderr, "argument count mismatch error.\n");
@@ -65,9 +69,29 @@ int main(int argc, char* argv[])
         }
 
         printf("connected from %s.\n", inet_ntoa(clientSockAddr.sin_addr));
+
+        while(1) {
+            /* コネクションが切れたらループを抜けて再びacceptする */
+            if ( (recvMsgSize = recv(clientSock, recvBuffer, BUFSIZE, 0)) < 0 ) {
+                perror("recv() failed.");
+                exit(EXIT_FAILURE);
+            } else if ( recvMsgSize == 0 ) {
+                fprintf(stderr, "connection closed by foreign host.\n");
+                break;
+            }
+
+            /* コネクションが切れたらループを抜けて再びacceptする */
+            if ( (sendMsgSize = send(clientSock, recvBuffer, recvMsgSize, 0)) < 0 ) {
+                perror("send() failed.");
+                exit(EXIT_FAILURE);
+            } else if ( sendMsgSize == 0 ) {
+                fprintf(stderr, "connection closed by foreign host.\n");
+                break;
+            }
+        }
         close(clientSock);
     }
-
+    close(serverSock);
     return EXIT_SUCCESS;
 }
 ```
@@ -91,7 +115,7 @@ int main(int argc, char* argv[])
     struct sockaddr_in serverSockAddr;
     unsigned short serverPort;
     char recvBuffer[BUFSIZE]; // receive buffer
-    int byteRcvd, totalBytesRcvd; // received buffer size
+    char sendBuffer[BUFSIZE]; // send buffer
 
     if ( argc != 3 ) {
         fprintf(stderr, "argument count mismatch error.\n");
@@ -124,24 +148,46 @@ int main(int argc, char* argv[])
 
     printf("connect to %s\n", inet_ntoa(serverSockAddr.sin_addr));
 
-    totalBytesRcvd = 0;
-    while (totalBytesRcvd < MAX_MSGSIZE) {
-        if ( (byteRcvd = recv(sock, recvBuffer, MSGSIZE, 0)) > 0 ) {
-            recvBuffer[byteRcvd] = '\0';
-            printf("%s", recvBuffer);
-            totalBytesRcvd += byteRcvd;
-        } else if ( byteRcvd == 0 ) {
-            perror("ERR_EMPTY_RESPONSE");
-            exit(EXIT_FAILURE);
-        } else {
-            perror("recv() failed.");
+    while (1) {
+        printf("please enter the charcters: ");
+        if ( fgets(sendBuffer, BUFSIZE, stdin) == NULL ) {
+            fprintf(stderr, "Invalid input string.\n");
             exit(EXIT_FAILURE);
         }
+
+        /* strlen -> BUFSIZEでよくね? */
+        /* Ans. fgetsで追加されたNULL文字を除外するため(NULL文字を含めないので) */
+        if ( send(sock, sendBuffer, strlen(sendBuffer), 0) <= 0 ) {
+            perror("send() failed.");
+            exit(EXIT_FAILURE);
+        }
+
+        int byteRcvd  = 0;
+        int byteIndex = 0;
+        while (byteIndex < MSGSIZE) {
+            /* 1byteずつrecvBufferからデータを受け取る */
+            byteRcvd  = recv(sock, &recvBuffer[byteIndex], 1, 0);
+            if ( byteRcvd > 0 ) {
+                if ( recvBuffer[byteIndex] == '\n' ) {
+                    recvBuffer[byteIndex] = '\0';
+                    if ( strcmp(recvBuffer, "quit") == 0 ) {
+                        close(sock);
+                        return EXIT_SUCCESS;
+                    } else {
+                        break;
+                    }
+                }
+                byteIndex += byteRcvd;
+            } else if ( byteRcvd == 0 ) {
+                perror("ERR_EMPTY_RESPONSE");
+                exit(EXIT_FAILURE);
+            } else {
+                perror("recv() failed.");
+                exit(EXIT_FAILURE);
+            }
+        }
+        printf("server return: %s\n", recvBuffer);
     }
-    printf("\n");
-
-    close(sock);
-
     return EXIT_SUCCESS;
 }
 ```
