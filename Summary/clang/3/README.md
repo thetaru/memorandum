@@ -182,7 +182,7 @@ int main(void)
 {
   int hoge;
   
-  for ( hoge = 10; hoge > 10; hoge-- ) {
+  for ( hoge = 10; hoge > 0; hoge-- ) {
     printf("%d回目: Hello World\n", 11 - hoge);
   }
   return 0;
