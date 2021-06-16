@@ -1,5 +1,5 @@
 # HTTPサーバを作る
-### ■ server.c
+### ■ server
 ```c
 #include <stdio.h>
 #include <sys/socket.h>
