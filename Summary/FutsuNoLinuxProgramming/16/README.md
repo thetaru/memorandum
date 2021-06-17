@@ -1,5 +1,155 @@
 # HTTPサーバを作る
-### ■ server
+### ■ server(新)
+```c
+#include <sys/socket.h>
+#include <stdlib.h>
+#include <netdb.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdio.h>
+
+#define MAX_BUFSIZE 1024
+
+int create_socket(const char*);
+void do_service(int);
+static void do_main_service(int);
+static void usage(int);
+void echo_back(int);
+
+int main(int argc, char *argv[])
+{
+    int sock;
+
+    if (argc != 2) {
+        usage(EXIT_FAILURE);
+    }
+
+    if ((sock = create_socket(argv[1])) == -1) {
+        fprintf(stderr, "create_socket() failed.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    do_service(sock);
+
+    close(sock);
+
+    return EXIT_SUCCESS;
+}
+
+int create_socket(const char *port) {
+    int sock;
+    struct addrinfo hints, *res, *ai;
+    int err;
+    char hbuf[NI_MAXHOST], sbuf[NI_MAXSERV]; // ??
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family   = AF_INET;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags    = AI_PASSIVE; // ??
+
+    if ((err = getaddrinfo(NULL, port, &hints, &res)) != 0) {
+        fprintf(stderr, "getaddrinfo() failed: %s\n", gai_strerror(err));
+        return -1;
+    }
+
+    for (ai = res; ai; ai = ai->ai_next) {
+        if ((err = getnameinfo( \
+                ai->ai_addr, \
+                ai->ai_addrlen, \
+                hbuf, sizeof(hbuf), \
+                sbuf, \
+                sizeof(sbuf), \
+                NI_NUMERICHOST | NI_NUMERICSERV)) != 0) {
+            fprintf(stderr, "failed getnameinfo() %s\n", gai_strerror(err));
+            continue;
+        }
+
+        fprintf(stdout, "port is %s\n", sbuf);
+        fprintf(stdout, "host is %s\n", hbuf);
+
+        if ((sock = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) < 0) {
+            perror("socket() failed.");
+            continue;
+        }
+
+        if (bind(sock, ai->ai_addr, ai->ai_addrlen) < 0) {
+            perror("bind() failed.");
+            close(sock);
+            continue;
+        }
+
+        if (listen(sock, SOMAXCONN) < 0) {
+            perror("listen() failed.");
+            close(sock);
+            continue;
+        }
+        /* SUCCESS */
+        freeaddrinfo(res);
+        return sock;
+    }
+    fprintf(stderr, "sock() failed.");
+    freeaddrinfo(res);
+    return -1;
+}
+
+void do_service(int sock) {
+    char hbuf[NI_MAXHOST], sbuf[NI_MAXSERV];
+    struct sockaddr_storage from_sock_addr;
+    int clientSock;
+    socklen_t addr_len;
+
+    for (;;) {
+        addr_len = sizeof(from_sock_addr);
+        if ((clientSock = accept(sock, (struct sockaddr*) &from_sock_addr, &addr_len)) == -1) {
+            perror("accept() failed.");
+            continue;
+        } else {
+            getnameinfo((struct sockaddr*) &from_sock_addr, addr_len, hbuf, sizeof(hbuf), sbuf, sizeof(sbuf), NI_NUMERICHOST | NI_NUMERICSERV);
+
+            fprintf(stderr, "port is %s\n", sbuf);
+            fprintf(stderr, "host is %s\n", hbuf);
+
+            do_main_service(clientSock);
+
+            close(clientSock);
+        }
+    }
+}
+
+static void do_main_service (int sock) {
+    echo_back(sock);
+}
+
+void echo_back (int sock) {
+
+    char buf[MAX_BUFSIZE];
+    ssize_t len;
+
+    for (;;) {
+        if ((len = recv(sock, buf, sizeof(buf), 0)) == -1) {
+            perror("recv() failed.");
+            break;
+        } else if (len == 0) {
+            fprintf(stderr, "connection closed by remote host.\n");
+            break;
+        }
+
+        if (send(sock, buf, (size_t) len, 0) != len) {
+            perror("send() failed.");
+            break;
+        }
+    }
+}
+
+static void usage (int status) {
+    fputs("\
+        argument count mismatch error\n\
+        please input a service name or port number.\n\
+        ", stderr);
+    exit(status);
+}
+```
+### ■ server(旧)
 ```c
 #include <stdio.h>
 #include <sys/socket.h>
