@@ -11,18 +11,18 @@ void func(void) {
 ```
 55 89 e5 83 ec 10 c7 45 fc 00 00 00 00 ff 45 fc c9 c3
 ```
-(16進数表示ですが)0と1の列で解釈されることがわかります。  
+(16進数表示ですが)0と1の列に変換されたことがわかります。  
 CPUはこのような0と1だけからなる機械語しか解釈・実行できません。  
 
 # 1.2 機械語とアセンブリ言語
 機械語は人間にとってわかりずらいので、比較的読みやすいアセンブリ言語が作られました。  
-上で挙げたソースコードをアセンブラ言語に変換したものを示します。
+上で挙げたソースコードをアセンブラ言語に変換し機械語と対応させたものを示します。
 ```asm
-push ebp
-mov ebp, esp
-sub esp, byte +0x10
-mov dword [ebp-0x4], 0x0
-int dword [ebp-0x4]
-leave
-ret
+push ebp                    55
+mov ebp, esp                89 e5
+sub esp, byte +0x10         83 ec 10
+mov dword [ebp-0x4], 0x0    c7 45 fc 00 00 00 00
+int dword [ebp-0x4]         ff 45 fc
+leave                       c9
+ret                         c3
 ```
