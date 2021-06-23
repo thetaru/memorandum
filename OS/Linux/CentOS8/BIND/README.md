@@ -4,7 +4,6 @@
 - [ ] [外部DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
 - [ ] [内部兼外部DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/view_dns_server)
 - [ ] [キャッシュDNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/cache_dns_server)
-- [ ] [chroot化](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/chroot)
 ## ■ Statements
 - [ ] [acl](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/acl)
 - [ ] [options](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/options)
