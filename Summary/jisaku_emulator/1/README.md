@@ -35,7 +35,23 @@ ret                         ; c3
 ```
 # gcc -Wl,--entry=func,--oformat=binary -nostdlib -fno-asynchronous-unwind-tables -m32 -o casm-c-sample.bin casm-c-sample.c
 ```
-次に、32bitバイナリcasm-c-sample.binを逆アセンブルし、アセンブリ言語表示します。
+次に、32bitバイナリcasm-c-sample.binを逆アセンブルし、アセンブリ言語表示します。  
+※ ndisasmはnasmをインストールすると入ります。
 ```
-# 
+# ndisasm -b 32 casm-c-sample.bin
+```
+```
+00000000  55                push ebp
+00000001  89E5              mov ebp,esp
+00000003  83EC10            sub esp,byte +0x10
+00000006  C745FC00000000    mov dword [ebp-0x4],0x0
+0000000D  8345FC01          add dword [ebp-0x4],byte +0x1
+00000011  90                nop
+00000012  C9                leave
+00000013  C3                ret
+```
+最後に、C言語プログラムをデバッグ情報付きでコンパイルし、出力されたオブジェクトファイルを見てみましょう。
+```
+# gcc -c -g -o casm-c-sample.o casm-c-sample.c
+# objdump -d -S -M intel casm-c-sample.o
 ```
