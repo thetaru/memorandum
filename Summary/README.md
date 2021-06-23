@@ -15,7 +15,7 @@
 - [ ] [解析魔法少女美咲ちゃん マジカル・オープン！](https://github.com/thetaru/memorandum/tree/master/Summary/MagicalOpen)
 - [ ] [高校生のための評論文キーワード100](https://github.com/thetaru/memorandum/tree/master/Summary/hyoron_keyword)
 ## し
-- [ ] [自作エミュレータで学ぶx86アーキテクチャ](https://github.com/thetaru/memorandum/tree/master/Summary/)
+- [ ] [自作エミュレータで学ぶx86アーキテクチャ](https://github.com/thetaru/memorandum/tree/master/Summary/jisaku_emulator)
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
 ## た
 - [ ] [たのしいバイナリの歩き方](https://github.com/thetaru/memorandum/tree/master/Summary/EnjoyBinary)
