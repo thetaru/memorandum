@@ -50,7 +50,7 @@ ret                         ; c3
 00000012  C9                leave
 00000013  C3                ret
 ```
-最後に、C言語プログラムをデバッグ情報付きでコンパイルし、出力されたオブジェクトファイルを見てみましょう。
+最後に、C言語プログラムをデバッグ情報付きでコンパイルし、出力されたオブジェクトファイルを見てみます。
 ```
 # gcc -c -g -o casm-c-sample.o casm-c-sample.c
 # objdump -d -S -M intel casm-c-sample.o
