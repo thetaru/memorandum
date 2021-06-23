@@ -31,4 +31,11 @@ ret                         ; c3
   
 # 1.3 機械語に飛び込む
 機械語をアセンブリ言語に変換することを逆アセンブルといいます。  
-実際に逆アセンブルをしてみます。  
+まず、C言語ファイルcasm-c-sample.cを32bitバイナリcasm-c-sample.binにコンパイルします。
+```
+# gcc -Wl,--entry=func,--oformat=binary -nostdlib -fno-asynchronous-unwind-tables -m32 -o casm-c-sample.bin casm-c-sample.c
+```
+次に、32bitバイナリcasm-c-sample.binを逆アセンブルし、アセンブリ言語表示します。
+```
+# 
+```
