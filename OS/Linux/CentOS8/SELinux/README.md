@@ -1,6 +1,6 @@
 # SELinux
 ## ■ 機能の概要
-[こちら]()に記載しました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/SELinux/abstract)に記載しました。
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
