@@ -61,6 +61,10 @@ lo      loopback  管理無し  --
 <summary>[option]IPv6の無効化</summary>
 
 ```
+### rhel8.3からはdisabledができるようになりました！
+# nmcli connection modify ensxxx ipv6.method disabled
+
+### 旧来の方法なので無視してください
 # nmcli connection modify ensxxx ipv6.method ignore
 ```
 ```
