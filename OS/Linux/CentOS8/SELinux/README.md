@@ -1,4 +1,5 @@
 # SELinux
+## ■ 機能の概要
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
@@ -6,13 +7,11 @@
 |selinux-autorelabel.service|なし||
 
 ## ■ 主設定ファイル /etc/selinux/config
-### xxxセクション
-### yyyディレクティブ
-- aaa(recommended)
-- bbb
-### zzzパラメータ
+### SELINUXパラメータ
+### SELINUXTYPEパラメータ
 ### 設定例
-### 文法チェック
+```
+```
 ## ■ 設定ファイル yyy
 ## ■ セキュリティ
 ### 認証
