@@ -7,7 +7,7 @@
 |selinux-autorelabel.service|なし||
 
 ## ■ 主設定ファイル /etc/selinux/config
-### パラメータ
+### ● パラメータ
 #### SELINUX
 #### SELINUXTYPE
 ### 設定例
