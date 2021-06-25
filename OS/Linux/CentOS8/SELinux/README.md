@@ -1,13 +1,11 @@
 # SELinux
-## ■ インストール
-## ■ バージョンの確認
-## ■ サービスの起動
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-||||
+|selinux-autorelabel-mark.service|なし||
+|selinux-autorelabel.service|なし||
 
-## ■ 主設定ファイル xxx.conf
+## ■ 主設定ファイル /etc/selinux/config
 ### xxxセクション
 ### yyyディレクティブ
 - aaa(recommended)
@@ -17,8 +15,6 @@
 ### 文法チェック
 ## ■ 設定ファイル yyy
 ## ■ セキュリティ
-### firewall
-### 証明書
 ### 認証
 ## ■ ログ
 ## ■ ログローテーション
