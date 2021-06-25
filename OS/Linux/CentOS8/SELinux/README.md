@@ -10,6 +10,7 @@
 ### ● パラメータ
 #### SELINUX
 |設定値|説明|
+|:---|:---|
 |enforcing|SELinuxの機能を有効にする|
 |permissive|SELinuxの機能を有効にするが、ログのみ出力する(試験用)|
 |disabled|SELinuxの機能を無効にする|
