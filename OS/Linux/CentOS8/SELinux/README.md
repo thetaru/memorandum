@@ -13,7 +13,7 @@
 |設定値|説明|
 |:---|:---|
 |enforcing|SELinuxの機能を有効にする|
-|permissive|SELinuxの機能を有効にするが、監査ログのみ記録する(試験用)|
+|permissive|SELinuxの機能を有効にするが機能制限はせず、監査ログのみ記録する(試験用)|
 |disabled|SELinuxの機能を無効にする|
 
 #### SELINUXTYPE
