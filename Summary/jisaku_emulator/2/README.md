@@ -60,13 +60,16 @@ void func(void)
 push ebp
 mov ebp,esp
 sub esp,byte +0x10
+
                         ; int val;
                         ; int *ptr = &val;
-lea eax,[ebp-0x8]       ; (1)
-mov [ebp-0x4],eax       ; (2)
+lea eax,[ebp-0x8]       ; 変数val([ebp-8])の番地がeaxに格納されます
+mov [ebp-0x4],eax       ; eaxの値が変数ptr([ebp-4])に格納されます
+
                         ; *ptr = 41;
-mov eax,[ebp-0x4]       ; (3)
-mov dword [eax],0x29    ; (4)
+mov eax,[ebp-0x4]       ; 変数ptrの値をeaxに読み出しします
+mov dword [eax],0x29    ; eaxの値で示される4バイトのメモリ領域に41を書き込みます
+
                         ; }
 leave
 ret
