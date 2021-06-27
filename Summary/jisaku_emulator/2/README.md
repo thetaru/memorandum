@@ -160,4 +160,60 @@ int main(int argc, char *argv[])
 関数ポインタは、おおざっぱに言うと関数を登録するための配列です。  
 オペコードの値を添え字に指定すると、そのオペコードに対応する処理を行う関数を呼び出せる仕組みとなります。
 ```c
+void mov_r32_imm32(Emulator* emu)
+{
+    uint8_t reg = get_code8(emu, 0) - 0xB8;
+    uint32_t value = get_code32(emu, 1);
+    emu->registers[reg] = value;
+    emu->eip += 5;
+}
+
+void short_jump(Emulator* emu)
+{
+    int8_t diff = get_sign_code8(emu, 1);
+    emu->eip += (diff + 2);
+}
+
+typedef void instruction_func_t(Emulator*);
+instruction_func_t* instructions[256];
+void init_instructions(void)
+{
+    int i;
+    memset(instructions, 0, sizeof(instructions));
+    for (i = 0; i < 8; i++) {
+        instructions[0xB8 + i] = mov_r32_imm32;
+    }
+    instructions[0xEB] = short_jump;
+}
+
+int main(int argc, char* argv[])
+{
+    /* 中略 */
+    init_instructions();
+
+    while (emu->eip < MEMORY_SIZE) {
+        uint8_t code = get_code8(emu, 0);
+        /* 現在のプログラムカウンタと実行されるバイナリを出力する */
+        printf("EIP = %X, Code = %02X\n", emu->eip, code);
+
+        if (instructions[code] == NULL) {
+            /* 実装されてない命令が来たらVMを終了する */
+            printf("\n\nNot Implemented: %x\n", code);
+            break;
+        }
+
+        /* 命令の実行 */
+        instructions[code](emu);
+
+        /* EIPが0になったらプログラム終了 */
+        if (emu->eip == 0x00) {
+            printf("\n\nend of program.\n\n");
+            break;
+        }
+    }
+
+    dump_registers(emu);
+    destroy_emu(emu);
+    return 0;
+}
 ```
