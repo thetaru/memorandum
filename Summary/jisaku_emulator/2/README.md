@@ -43,3 +43,27 @@ mov eax, [ebx+0x200]
 mov [ebx], eax
 ```
 0x7a00と0x7c00がメモリ番地であることをアセンブラに伝えるには、それぞれ`[]`で囲みます。
+
+## 例2
+以下のソースコードをアセンブルするとlea命令という命令があることがわかります。  
+この命令は、指定されたメモリ番地を計算し、その結果の番地をレジスタに書き込みます。
+```c
+void func(void)
+{
+  int val;
+  int *ptr = &val;
+  *ptr = 41;
+}
+```
+```
+push ebp
+mov ebp,esp
+sub esp,byte +0x10
+lea eax,[ebp-0x8]
+mov [ebp-0x4],eax
+mov eax,[ebp-0x4]
+mov dword [eax],0x29
+nop
+leave
+ret
+```
