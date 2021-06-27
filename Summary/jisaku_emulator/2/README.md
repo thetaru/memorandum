@@ -278,7 +278,7 @@ start:
 ```
 次に、エミュレータをコンパイルして実行ファイルpx86を生成します。
 ```
-# gcc -o px86 main.c
+# gcc -Wl,--entry=func,--oformat=binary -nostdlib -fno-asynchronous-unwind-tables -m32 -o px86 main.c
 ```
 そして、
 ```
