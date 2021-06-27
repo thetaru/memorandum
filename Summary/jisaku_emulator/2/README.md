@@ -101,27 +101,25 @@ typedef struct {
 } Emulator;
 ```
 次に、create_emuでエミュレータ構造隊を生成して初期化し、機械語ファイルを開き、freadでemy->memoryに読み取ります。  
-※ コマンドライン引数に機械語プログラムが格納されたファイルを指定する仕様としました
+※ コマンドライン引数に機械語プログラムが格納されたファイルを指定する仕様としました。
 ```c
-typedef struct {
-    uint32_t registers[REGISTERS_COUNT];
-    uint32_t eflags;
-    uint8_t* memory;
-    uint32_t eip;
-} Emulator;
-
+/* エミュレータを作成する */
 Emulator* create_emu(size_t size, uint32_t eip, uint32_t esp)
 {
     Emulator* emu = malloc(sizeof(Emulator));
     emu->memory = malloc(size);
 
+    /* 汎用レジスタの初期値をすべて0にする */
     memset(emu->registers, 0, sizeof(emu->registers));
+    
+    /* レジスタの初期値を指定されたものにする */
     emu->eip = eip;
     emu->registers[ESP] = esp;
 
     return emu;
 }
 
+/* エミュレータを破棄する */
 void destroy_emu(Emulator* emu)
 {
     free(emu->memory);
@@ -138,6 +136,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    /* EIPが0、ESPが0x7C00の状態のエミュレータを生成する */
     emu = create_emu(MEMORY_SIZE, 0x0000, 0x7c00);
 
     binary = fopen(argv[1], "rb");
@@ -146,6 +145,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    /* 機械語ファイルを読み込む(最大512バイト) */
     fread(emu->memory, 1, 0x200, binary);
     fclose(binary);
 
