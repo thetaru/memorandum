@@ -276,7 +276,7 @@ start:
 ```
 # gcc -nostdlib -fno-asynchronous-unwind-tables -g -fno-stack-protector -c helloworld.asm
 # ld --entry=func --oformat=binary -o helloworld.bin helloworld.o
-# nasm -f bin -o helloworld helloworld.bin
+# nasm -f bin -o helloworld.bin helloworld.asm
 ```
 次に、エミュレータをコンパイルして実行ファイルpx86を生成します。
 ```
