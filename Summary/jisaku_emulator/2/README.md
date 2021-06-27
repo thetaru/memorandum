@@ -172,7 +172,7 @@ void short_jump(Emulator* emu)
     /* オペランドを8ビット符号付き整数としてdiffに読み込む */
     int8_t diff = get_sign_code8(emu, 1);
     /* 次の命令の番地を基点にジャンプ先を計算する */
-    /* ショートジャンプは2バイト命令のため、eipにdiff + 2を格納すればよい */
+    /* ショートジャンプは2バイト命令のため、eipにdiff + 2を格納する */
     emu->eip += (diff + 2);
 }
 
