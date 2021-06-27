@@ -56,14 +56,18 @@ void func(void)
 }
 ```
 ```asm
+                        ; void func(void) {
 push ebp
 mov ebp,esp
 sub esp,byte +0x10
-lea eax,[ebp-0x8]
-mov [ebp-0x4],eax
-mov eax,[ebp-0x4]
-mov dword [eax],0x29
-nop
+                        ; int val;
+                        ; int *ptr = &val;
+lea eax,[ebp-0x8]       ; (1)
+mov [ebp-0x4],eax       ; (2)
+                        ; *ptr = 41;
+mov eax,[ebp-0x4]       ; (3)
+mov dword [eax],0x29    ; (4)
+                        ; }
 leave
 ret
 ```
