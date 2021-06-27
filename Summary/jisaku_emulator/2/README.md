@@ -274,7 +274,9 @@ start:
 実際にエミュレータで動かすために、プログラムとエミュレータ本体をビルドしましょう。  
 まず、コンパイル・リンクして実行ファイルを生成します。
 ```
-# nasm -g -f elf -o helloworld.bin helloworld.asm
+# gcc -nostdlib -fno-asynchronous-unwind-tables -g -fno-stack-protector -c helloworld.asm
+# ld --entry=func --oformat=binary -o helloworld.bin helloworld.o
+# nasm -f bin -o helloworld helloworld.bin
 ```
 次に、エミュレータをコンパイルして実行ファイルpx86を生成します。
 ```
@@ -284,4 +286,21 @@ start:
 そして、
 ```
 # ./px86 helloworld.bin
+```
+```
+EIP = 0, Code = B8
+EIP = 5, Code = EB
+
+
+end of program.
+
+EAX = 00000029
+ECX = 00000000
+EDX = 00000000
+EBX = 00000000
+ESP = 00007c00
+EBP = 00000000
+ESI = 00000000
+EDI = 00000000
+EIP = 00000000
 ```
