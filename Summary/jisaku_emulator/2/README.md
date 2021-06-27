@@ -274,7 +274,7 @@ start:
 実際にエミュレータで動かすために、プログラムとエミュレータ本体をビルドしましょう。  
 まず、コンパイル・リンクして実行ファイルを生成します。
 ```
-# nasm -g -f elf32 -o helloworld.bin helloworld.asm
+# nasm -g -f elf -o helloworld.bin helloworld.asm
 ```
 次に、エミュレータをコンパイルして実行ファイルpx86を生成します。
 ```
