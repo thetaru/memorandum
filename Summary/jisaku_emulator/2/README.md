@@ -274,14 +274,11 @@ start:
 実際にエミュレータで動かすために、プログラムとエミュレータ本体をビルドしましょう。  
 まず、コンパイル・リンクして実行ファイルを生成します。
 ```
-# gcc -nostdlib -fno-asynchronous-unwind-tables -g -fno-stack-protector -c helloworld.asm
-# ld --entry=func --oformat=binary -o helloworld.bin helloworld.o
-# nasm -f bin -o helloworld.bin helloworld.asm
+# make
 ```
 次に、エミュレータをコンパイルして実行ファイルpx86を生成します。
 ```
-# gcc -Wall -c main.c
-# gcc -o main.o px86
+# make
 ```
 そして、
 ```
