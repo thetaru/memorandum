@@ -55,7 +55,7 @@ void func(void)
   *ptr = 41;
 }
 ```
-```
+```asm
 push ebp
 mov ebp,esp
 sub esp,byte +0x10
