@@ -59,7 +59,7 @@ void func(void)
                         ; void func(void) {
 push ebp
 mov ebp,esp
-sub esp,byte +0x10
+sub esp,16
 
                         ; int val;
                         ; int *ptr = &val;
@@ -67,10 +67,36 @@ lea eax,[ebp-0x8]       ; 変数val([ebp-8])の番地がeaxに格納されます
 mov [ebp-0x4],eax       ; eaxの値が変数ptr([ebp-4])に格納されます
 
                         ; *ptr = 41;
-mov eax,[ebp-0x4]       ; 変数ptrの値をeaxに読み出しします
+mov eax,[ebp-0x4]       ; 変数ptrの値をeaxに読み出してから、
 mov dword [eax],0x29    ; eaxの値で示される4バイトのメモリ領域に41を書き込みます
 
                         ; }
 leave
 ret
+```
+レジスタはeax、ebpのように名前で指定するのに対し、メモリは[ebp-4]のように番地を使って指定します。  
+アセンブリ言語ではレジスタは名前で、メモリは番地でその場所を表します。
+
+# 2.3 初めてのエミュレータ
+データの演算装置(加算器や論理演算器など)は、エミュレータが動くパソコンのCPUの演算装置をそのまま使います。  
+※ つまり、加算`+`や論理積`&`は流用します  
+  
+まず、エミュレータ本体を表す構造体Emulatorを定義します。  
+構造体Emulatorは基本型変数、配列変数、ポインタ変数という複数種類の変数を含んでいます。  
+この中でeipやeflagsはCPUの特殊なレジスタを表します。  
+※ eipは、実行中の機械語が置かれてあるメモリ番地を記憶するレジスタです
+```c
+typedef struct {
+  /* 汎用レジスタ */
+  uint32_t registers[REGISTERS_COUNT];
+  
+  /* EFLAGSレジスタ */
+  uint32_t eflags;
+  
+  /* メモリ(バイト列) */
+  uint8_t* memory;
+  
+  /* プログラムカウンタ */
+  uint32_t eip;
+} Emulator;
 ```
