@@ -236,7 +236,7 @@ short_jumpは1バイトのメモリ番地を取るjmp命令、ショートジャ
 したがって、現在地から前に127バイト、後ろに128バイトの範囲内でジャンプすることができます。  
 
 ### その他
-get_code8やget_sign_code8、get_code32はmemory配列の指定した番地から8ビットや32ビットの値を取得する関数です。  
+get_code8、get_sign_code8、get_code32はmemory配列の指定した番地から8ビットや32ビットの値を取得する関数です。  
 関数の第二引数にそのときのeipからのオフセットを指定すると、その番地から値を読み取って返します。  
 ```c
 uint32_t get_code8(Emulator* emu, int index)
