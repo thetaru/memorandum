@@ -3,9 +3,6 @@
 ### ● Type Enforcement (TE)
 ファイルのパーミッションとは別のアクセス制御です。  
 プロセスがアクセスできるリソース(ファイル、ディレクトリ、ソケットなどの総称)を制限できます。
-- SELinuxコンテキストとしてタイプ(Type)を定義する
-- プロセスに割り当てられるタイプのことをドメインとして宣言する
-- タイプとドメインを使い、許可する動作をルールとして記述する
 
 ### ● Role-based Access Control (RBAC)
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
