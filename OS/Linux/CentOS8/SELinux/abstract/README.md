@@ -3,7 +3,6 @@
 ### ● Type Enforcement (TE)
 ファイルのパーミッションとは別のアクセス制御です。  
 プロセスがアクセスできるリソース(ファイル、ディレクトリ、ソケットなどの総称)を制限できます。
-### ドメインとタイプ
 ### ● Role-based Access Control (RBAC)
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
 ## ■ ref
