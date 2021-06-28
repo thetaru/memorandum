@@ -7,9 +7,13 @@
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
 ## ■ SELinuxコンテキスト
 任意のプロセスとリソースにはSELinuxコンテキストがラベル付けされています。  
-### Syntax SELinux contexts
+#### Syntax SELinux contexts
 ```
 <SELinux User>:<RBAC Role>:<TE Type>:<MLS/MCS Security level>
+```
+#### 例
+```
+
 ```
 ## ■ TE
 ### ドメインとタイプ
