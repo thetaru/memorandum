@@ -6,7 +6,7 @@
 ### ● Role-based Access Control (RBAC)
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
 ## ■ TE
-### ● ドメインとタイプ
+### ドメインとタイプ
 ドメインとタイプを使い、許可する動作をルールとして記述します。
 ## ■ RBAC
 ## ■ MLS/MCS
