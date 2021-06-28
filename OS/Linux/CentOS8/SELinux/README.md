@@ -45,4 +45,12 @@ SELINUXTYPE=targeted
 ```
 # ausearch -m avc
 ```
+#### サマリ出力
+```
+# aureport --avc
+```
+#### aaa
+```
+# sealert -l
+```
 ## ■ 参考
