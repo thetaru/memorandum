@@ -5,8 +5,8 @@
 プロセスがアクセスできるリソース(ファイル、ディレクトリ、ソケットなどの総称)を制限できます。
 ### ● Role-based Access Control (RBAC)
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
-#= ■ TE
-l# ■ RBAC
+## ■ TE
+## ■ RBAC
 ## ■ MLS/MCS
 ## ■ ref
 https://www.ffri.jp/assets/files/monthly_research/MR201406_A%20Re-introduction%20to%20SELinux_JPN.pdf  
