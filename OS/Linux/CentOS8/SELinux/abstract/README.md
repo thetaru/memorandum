@@ -4,6 +4,7 @@
 ファイルのパーミッションとは別のアクセス制御です。  
 プロセスがアクセスできるリソース(ファイル、ディレクトリ、ソケットなどの総称)を制限できます。
 ### ● Role-based Access Control (RBAC)
+ロールという役割に応じたアクセス権をユーザに付与することでアクセス制御を行います。
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
 ## ■ SELinuxコンテキスト
 任意のプロセスとリソースはSELinuxコンテキストがラベル付けされています。
