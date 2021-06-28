@@ -24,7 +24,10 @@
 |MLS|strict+RBACで動作する|
 
 ### ● 設定例
+以下の設定だとSELinuxは有効となります。
 ```
+SELINUX=enforcing
+SELINUXTYPE=targeted
 ```
 ## ■ 設定ファイル yyy
 ## ■ セキュリティ
