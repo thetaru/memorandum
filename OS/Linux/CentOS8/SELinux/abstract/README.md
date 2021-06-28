@@ -33,11 +33,17 @@ system_u:object_r:admin_home_t:s0
 ### アクセス制御
 ホワイトリスト方式によるアクセス制御を行います。  
 「誰が」「何に対し」「何ができるか」をルールとして記述します。
+#### Syntax
+```
+allow アクセス元ドメイン アクセスタイプ : ファイル種別 { 許可するパーミッション };
+```
 #### 例 - webサーバがHTML文章を読み込めるルール
 ```
+ドメイン: httpd_t -> タイプ: httpd_sys_content_t
 allow httpd_t httpd_sys_content_t : file { read };
 ```
 ## ■ RBAC
+OSにログインするLinuxユーザにSELinuxの制限を掛けるため、LinuxユーザはSELinuxポリシーによりSELinuxユーザ、ロール、ドメインにマッピングされます。
 ## ■ MLS/MCS
 ## ■ ref
 https://www.ffri.jp/assets/files/monthly_research/MR201406_A%20Re-introduction%20to%20SELinux_JPN.pdf  
