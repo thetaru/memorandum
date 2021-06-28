@@ -49,6 +49,10 @@ OSにログインするLinuxユーザにSELinuxの制限を掛けるには、Lin
   
 ![Image02](./images/security10_05.png)
   
+rootユーザとマッピングされている各要素を`id -Z`コマンドで確認します。
+  
+![Image03](./images/security10_06.png)
+  
 ## ■ MLS/MCS
 ## ■ ref
 https://www.ffri.jp/assets/files/monthly_research/MR201406_A%20Re-introduction%20to%20SELinux_JPN.pdf  
