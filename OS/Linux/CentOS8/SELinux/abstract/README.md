@@ -5,6 +5,12 @@
 プロセスがアクセスできるリソース(ファイル、ディレクトリ、ソケットなどの総称)を制限できます。
 ### ● Role-based Access Control (RBAC)
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
+## ■ SELinuxコンテキスト
+任意のプロセスとリソースにはSELinuxコンテキストがラベル付けされています。  
+### Syntax SELinux contexts
+```
+<SELinux User>:<RBAC Role>:<TE Type>:<MLS/MCS Security level>
+```
 ## ■ TE
 ### ドメインとタイプ
 ドメインとタイプを使い、許可する動作をルールとして記述します。  
