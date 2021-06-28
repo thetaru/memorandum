@@ -1,6 +1,10 @@
 # SELinux機能の概要
 ## ■ アクセス制限モデル
 ### ● Type Enforcement (TE)
+- SELinuxコンテキストとしてタイプ(Type)を定義します
+- プロセスに割り当てられるタイプのことをドメインとして宣言する
+- タイプとドメインを使い、許可する動作をルールとして記述する
+
 ### ● Role-based Access Control (RBAC)
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
 ## ■ ref
