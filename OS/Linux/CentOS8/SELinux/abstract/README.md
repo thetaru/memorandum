@@ -43,7 +43,7 @@ allow アクセス元ドメイン アクセスタイプ : ファイル種別 { �
 allow httpd_t httpd_sys_content_t : file { read };
 ```
 ## ■ RBAC
-OSにログインするLinuxユーザにSELinuxの制限を掛けるには、LinuxユーザSELinuxポリシーによりSELinuxユーザ、ロール、ドメインにマッピングされます。
+OSにログインするLinuxユーザにSELinuxの制限を掛けるには、LinuxユーザとSELinuxユーザをマッピングします。
 ## ■ MLS/MCS
 ## ■ ref
 https://www.ffri.jp/assets/files/monthly_research/MR201406_A%20Re-introduction%20to%20SELinux_JPN.pdf  
