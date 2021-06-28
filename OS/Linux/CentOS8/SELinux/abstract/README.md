@@ -7,7 +7,7 @@
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
 ## ■ SELinuxコンテキスト
 任意のプロセスとリソースはSELinuxコンテキストがラベル付けされています。  
-「誰が」「何に対して」「何ができる」かを記述します。
+「誰が」「何に対し」「何ができる」かを記述します。
 #### Syntax - SELinux contexts
 ```
 <SELinux User>:<RBAC Role>:<TE Type>:<MLS/MCS Security level>
@@ -31,7 +31,11 @@ system_u:object_r:admin_home_t:s0
 ドメインとタイプを使い、許可する動作をルールとして記述します。  
 ※ ドメインとはプロセスのタイプを指し、リソースのタイプと区別します。
 ### アクセス制御
-
+ホワイトリスト方式によるアクセス制御を行います。  
+「誰が」「何に対し」「何ができるか」をルールとして記述します。
+```
+allow httpd_t httpd_sys_content_t : file { read };
+```
 ## ■ RBAC
 ## ■ MLS/MCS
 ## ■ ref
