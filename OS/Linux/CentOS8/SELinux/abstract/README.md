@@ -43,11 +43,11 @@ allow アクセス元ドメイン アクセスタイプ : ファイル種別 { �
 allow httpd_t httpd_sys_content_t : file { read };
 ```
 ## ■ RBAC
-![Image01](./images/)  
+![Image01](./images/security10_04.png)  
   
 OSにログインするLinuxユーザにSELinuxの制限を掛けるには、LinuxユーザとSELinuxユーザをマッピングします。  
   
-![Image02](./images/)
+![Image02](./images/security10_05.png)
   
 ## ■ MLS/MCS
 ## ■ ref
