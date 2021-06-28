@@ -6,11 +6,21 @@
 ### ● Role-based Access Control (RBAC)
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
 ## ■ SELinuxコンテキスト
-任意のプロセスとリソースにはSELinuxコンテキストがラベル付けされています。  
+任意のプロセスとリソースはSELinuxコンテキストがラベル付けされています。  
+「誰が」「何に対して」「何ができる」かを記述します。
 #### Syntax - SELinux contexts
 ```
 <SELinux User>:<RBAC Role>:<TE Type>:<MLS/MCS Security level>
 ```
+- ユーザ属性
+> サブジェクトやオブジェクトに付けるSELinuxのユーザID
+- ロール属性
+>
+- タイプ属性
+>
+- 機密ラベル
+>
+
 #### 例 - SELinux contexts
 ```
 system_u:object_r:admin_home_t:s0
@@ -19,6 +29,8 @@ system_u:object_r:admin_home_t:s0
 ### ドメインとタイプ
 ドメインとタイプを使い、許可する動作をルールとして記述します。  
 ※ ドメインとはプロセスのタイプを指し、リソースのタイプと区別します。
+### アクセス制御
+
 ## ■ RBAC
 ## ■ MLS/MCS
 ## ■ ref
