@@ -38,7 +38,14 @@ SELINUXTYPE=targeted
 # systemctl reboot
 ```
 ## ■ コマンド
+### restorecon
+```
+# restorecon -Rv file
+```
 ### semanage
+```
+# semanage fcontext -l
+```
 ### ausearch
 ```
 # ausearch -m avc
