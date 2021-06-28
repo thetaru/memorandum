@@ -29,7 +29,6 @@
 SELINUX=enforcing
 SELINUXTYPE=targeted
 ```
-## ■ 設定ファイル yyy
 ## ■ セキュリティ
 ### ● 認証
 ## ■ ログ
