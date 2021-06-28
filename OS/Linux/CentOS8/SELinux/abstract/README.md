@@ -39,8 +39,7 @@ allow アクセス元ドメイン アクセスタイプ : ファイル種別 { �
 ```
 #### 例 - webサーバがHTML文章を読み込めるルール
 ```
-ドメイン: httpd_t -> タイプ: httpd_sys_content_t
-allow httpd_t httpd_sys_content_t : file { read };
+allow httpd_t httpd_sys_content_t : file { ioctl read getattr lock open };
 ```
 ## ■ RBAC
 ![Image01](./images/security10_04.png)  
