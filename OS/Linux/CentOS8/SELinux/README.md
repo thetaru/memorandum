@@ -38,16 +38,16 @@ SELINUXTYPE=targeted
 # systemctl reboot
 ```
 ## ■ コマンド
-### ● ausearch
-#### ログの検索
+### semanage
+### ausearch
 ```
 # ausearch -m avc
 ```
-#### サマリ出力
+### aureport
 ```
 # aureport --avc
 ```
-#### aaa
+### sealert
 ```
 # sealert -l
 ```
