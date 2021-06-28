@@ -32,6 +32,7 @@ system_u:object_r:admin_home_t:s0
 ### アクセス制御
 ホワイトリスト方式によるアクセス制御を行います。  
 「誰が」「何に対し」「何ができるか」をルールとして記述します。
+#### 例 - webサーバがHTML文章を読み込めるルール
 ```
 allow httpd_t httpd_sys_content_t : file { read };
 ```
