@@ -31,4 +31,10 @@
 ```
 # systemctl reboot
 ```
+## ■ コマンド
+### ● ausearch
+#### ログの検索
+```
+# ausearch -m avc
+```
 ## ■ 参考
