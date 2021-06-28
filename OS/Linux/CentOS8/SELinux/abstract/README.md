@@ -53,6 +53,8 @@ rootユーザとマッピングされている各要素を`id -Z`コマンドで
   
 ![Image03](./images/security10_06.png)
   
+この場合、rootユーザはSELinuxユーザ:unconfined_u、ロール:unconfined_r、ドメイン:unconfined_tにマッピングされています。  
+このマッピングされたドメインをサブジェクト(動作主体)として、TEによるアクセス制御が行われます。
 ## ■ MLS/MCS
 ## ■ ref
 https://www.ffri.jp/assets/files/monthly_research/MR201406_A%20Re-introduction%20to%20SELinux_JPN.pdf  
