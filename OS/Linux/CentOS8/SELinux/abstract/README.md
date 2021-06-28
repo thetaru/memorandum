@@ -13,7 +13,7 @@
 ```
 #### 例 - SELinux contexts
 ```
-system_u:object_u:object_r:admin_home_t:s0
+system_u:object_r:admin_home_t:s0
 ```
 ## ■ TE
 ### ドメインとタイプ
