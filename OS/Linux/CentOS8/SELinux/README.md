@@ -29,14 +29,8 @@
 SELINUX=enforcing
 SELINUXTYPE=targeted
 ```
-## ■ セキュリティ
-### ● 認証
 ## ■ ログ
 ## ■ トラブルシューティング
-## ■ 設定の反映
-```
-# systemctl reboot
-```
 ## ■ コマンド
 ### restorecon
 ```
@@ -58,4 +52,3 @@ SELINUXTYPE=targeted
 ```
 # sealert -l
 ```
-## ■ 参考
