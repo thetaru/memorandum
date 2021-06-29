@@ -8,7 +8,7 @@ $ w
 ```
 $ ps aux | grep sshd
 ```
-セッションのプロセスをキルする
+セッションのプロセスをキルする(killシグナル)
 ```
 $ kill -9 <Sesdion PID>
 ```
