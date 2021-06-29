@@ -161,6 +161,7 @@ int main(int argc, char *argv[])
 ```c
 void mov_r32_imm32(Emulator* emu)
 {
+    /* レジスタ番号regの取得 0xB8+reg=opecodeより */
     uint8_t reg = get_code8(emu, 0) - 0xB8;
     uint32_t value = get_code32(emu, 1);
     emu->registers[reg] = value;
