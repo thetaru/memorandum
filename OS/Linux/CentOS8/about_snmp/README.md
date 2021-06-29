@@ -2,6 +2,7 @@
 ## ■ Commands
 - [ ] [snmpwalk]()
 ## ■ Settings
-- [ ] [SNMPクライアントの設定]()
+- [ ] [SNMPマネージャの設定]()
+- [ ] [SNMPエージェントの設定]()
 ## ■ Tips
 - [ ] [SNMPの概要]()
