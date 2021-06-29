@@ -319,11 +319,13 @@ Emulator構造体では、それぞれのオフセットは以下の通りです
 |メンバ変数|registers|eflags|memory|eip|
 |:---:|:---:|:---:|:---:|:---:|
 |範囲|0~31|32~35|36~39|40~43|
-|offset|+0|+32|+36|+40|
+|オフセット|+0|+32|+36|+40|
 
 - registers
-> 先頭に位置するのでオフセットは0です
+> uint32_t型の配列なので、(32bit/8 = 4byte) * REGISTERS_COUNT(=8) = 32byte分の領域を持ちます
 - eflags
-> registers
+> uint32_t型の変数なので、4byte
 - memory
+> uint8_t\*型の変数なので、4byte
 - eip
+> uint32_t型の変数なので、4byte
