@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
 ```c
 void mov_r32_imm32(Emulator* emu)
 {
-    /* レジスタ番号regの取得 0xB8+reg=opecodeより */
+    /* レジスタ番号regの取得 0xB8+reg=opecode(1byte)より */
     uint8_t reg = get_code8(emu, 0) - 0xB8;
     uint32_t value = get_code32(emu, 1);
     emu->registers[reg] = value;
@@ -228,7 +228,8 @@ int main(int argc, char* argv[])
 ### mov_r32_imm32
 mov_r32_imm32は汎用レジスタに32ビットの即値をコピーするmov命令に対応します。  
 このmov命令のオペコードは、`r`をレジスタ番号とすると0xB8+rとなります。  
-※ この関数は`r`のレジスタ番号によってコピー先のレジスタが決定するということです  
+※1 この関数は`r`のレジスタ番号によってコピー先のレジスタが決定するということです  
+※2 movのオペコードのサイズは1byteです
 オペコードのすぐ後に32ビットの即値がくるので、get_code32で32ビット値を読み取ってレジスタに代入します。  
 
 ### short_jump
