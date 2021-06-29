@@ -5,4 +5,4 @@
 ## ■ Software Settings
 ## ■ Tips
 - [ ] [OSインストール後にやること](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Arch/After_Install)
-- [ ] [isoイメージをdvdに焼く方法]()
+- [ ] [isoイメージをdvdに焼く方法](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Arch/dvd_burn)
