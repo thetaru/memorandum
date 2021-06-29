@@ -6,6 +6,7 @@
 ### ● Role-based Access Control (RBAC)
 ロールという役割に応じたアクセス権をユーザに付与することでアクセス制御を行います。
 ### ● Multi-level Security/Multi-category Security (MLS/MCS)
+機密レベルとカテゴリを用いたアクセス制御を行います。
 ## ■ SELinuxコンテキスト
 任意のプロセスとリソースはSELinuxコンテキストがラベル付けされています。
 #### Syntax - SELinux contexts
@@ -55,7 +56,8 @@ rootユーザとマッピングされている各要素を`id -Z`コマンドで
 この場合、rootユーザはSELinuxユーザ:unconfined_u、ロール:unconfined_r、ドメイン:unconfined_tにマッピングされています。  
 このマッピングされたドメインをサブジェクト(動作主体)として、TEによるアクセス制御が行われます。
 ## ■ MLS/MCS
-この機能を使用することはないと思われるので省略する
+ユーザやリソースに対して機密レベルとカテゴリを割り当てます。  
+特に、ユーザにはクリアランス(アクセス可能な機密レベルとカテゴリ)も指定します。
 ## ■ ref
 https://www.ffri.jp/assets/files/monthly_research/MR201406_A%20Re-introduction%20to%20SELinux_JPN.pdf  
 https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.nic.ad.jp/ja/materials/iw/2017/proceedings/d1/d1-3-moriwaka-1.pdf&ved=2ahUKEwjd3q7mlrLxAhV3wosBHcYDDS8QFjAAegQIAxAC&usg=AOvVaw0TUVpDyiwyrAjDCCapIycc  
