@@ -258,6 +258,7 @@ uint32_t get_code32(Emulator* emu, int index)
 
     /* リトルエンディアンでメモリの値を取得する */
     for (i = 0; i < 4; i++) {
+        /* 回すごとに左に8bit寄せる */
         ret |= get_code8(emu, index + i) << (i * 8);
     }
 
