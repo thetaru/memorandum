@@ -4,3 +4,6 @@
 # pkill -SIGSEGV sleep
 # coredumpctl list
 ```
+```
+# coredumpctl dump <PID>
+```
