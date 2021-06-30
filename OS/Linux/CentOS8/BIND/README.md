@@ -1,6 +1,6 @@
 # BIND
 ## ■ Commands
-- [ ] [dig]() 
+- [ ] [dig](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/dig) 
 ## ■ Settings
 - [ ] [内部DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
 - [ ] [外部DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
