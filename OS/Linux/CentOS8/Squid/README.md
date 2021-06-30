@@ -24,6 +24,7 @@
 ### 文法チェック
 ```
 # squid -k parse
+# squid -k check
 ```
 ## ■ セキュリティ
 ### firewall
