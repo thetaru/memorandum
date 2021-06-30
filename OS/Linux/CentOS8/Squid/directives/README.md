@@ -14,5 +14,4 @@
 ## cache_log
 ## cache_mem
 ## chroot
-## client_ip_max_connections
 ## client_lifetime
