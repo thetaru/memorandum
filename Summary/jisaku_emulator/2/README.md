@@ -357,4 +357,4 @@ typedef struct fuga_t
   struct hoge_t* hoge;
 } Fuga;
 ```
-Fuga構造体のメンバはHoge構造体の実体ではなくポインタなので、Fuga構造体を定義するだけならHoge構造体の具体的な定義は不要となります。
+Fuga構造体のメンバはhoge_t構造体の実体ではなくポインタなので、Fuga構造体を定義するだけならhoge_t構造体の具体的な定義は不要となります。
