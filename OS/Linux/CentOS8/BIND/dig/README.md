@@ -3,4 +3,8 @@
 |オプション|説明|
 |:---|:---|
 |-t|クエリのタイプを指定する|
-|+short|簡略表示|
+|+short|結果を簡略表示する|
+|+identity||
+|+trace||
+|+norecurse||
+|+nssearch||
