@@ -13,10 +13,10 @@
 
 ### バージョン確認
 ```
-# dig @<DNSサーバ> -t txt chaos version.bind
+# dig @<DNSサーバ> chaos version.bind -t txt
 ```
 
 ### ホスト名確認
 ```
-# dig @<DNSサーバ> -t txt chaos hostname.bind
+# dig @<DNSサーバ> chaos hostname.bind -t txt
 ```
