@@ -1,17 +1,16 @@
 # directives
-## access_log
+## ● access_log
 |デフォルト値|対応バージョン|
 |:---|:---|
 |||
 
 ### - 設定例 -
 
-## acl
-## always_direct
+## ● acl
+## ● always_direct
 使えそうなので記載。バイパスできる
-## cache
+## ● cache
 ## cache_dir
 ## cache_log
 ## cache_mem
-## chroot
 ## client_lifetime
