@@ -10,3 +10,13 @@
 |+norecurse|再起問い合わせをさせない(問い合わせ先が権威DNSサーバのときに有効)|
 |+nssearch|ドメインの権威DNSサーバを探す|
 |@|参照先のDNSサーバを指定する|
+
+### バージョン確認
+```
+# dig @<DNSサーバ> -t txt version.bind
+```
+
+### ホスト名確認
+```
+# dig @<DNSサーバ> -t txt hostname.bind
+```
