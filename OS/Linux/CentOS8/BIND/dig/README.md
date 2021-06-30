@@ -11,6 +11,9 @@
 |+nssearch|ドメインの権威DNSサーバを探す|
 |@|参照先のDNSサーバを指定する|
 
+## おぼえておくべきフラグ
+
+## Tips
 ### バージョン確認
 ```
 # dig [@DNSサーバ] chaos version.bind -t txt
