@@ -389,8 +389,10 @@ typedefを使うと見通しがよくなります。
 
 ## 例3
 ```c
+/* typedefを使わずに宣言 */
 int (*arr1[2])(int) = {&inc, NULL};
 
+/* typedefを使って宣言 */
 typedef int func_t(int);
 func_t *arr2[2] = {&inc, NULL};
 ```
