@@ -360,30 +360,17 @@ typedef struct fuga_t
 Fuga構造体のメンバはhoge_t構造体の実体ではなくポインタなので、Fuga構造体を定義するだけならhoge_t構造体の具体的な定義は不要となります。
 
 # 2.8 関数ポインタ
-## サブルーチンについて
-サブルーチンは複数のアセンブリ命令をまとめた、何らかの機能を持つかたまりです。  
-サブルーチンはcallで呼び出され、retで元の場所に戻ります。  
-汎用レジスタSIに設定した文字列をBIOSの機能を使って表示するサブルーチンputsと、その呼び出しの例を示します。
-```asm
-start:                  ; プログラムの開始
-    mov si, msg         ; siに文字列を設定し
-    call puts           ; サブルーチンを呼び出す
-fin:
-    hit
-    jmp fin             ; 永久ループ
-    
-puts:
-    mov al, [si]        ; 1文字読み込む
-    inc si              ; siを1文字分進める
-    cmp al, 0           ; 文字列の末尾
-    je  puts end        ; に来たら終了
-    mov ah, 0x0e
-    mov bx, 15
-    int 0x10            ; BIOSの機能を呼び出す
-    jmp puts
-puts_end:
-    ret
-    
-msg:
-    db "hello, world", 0x0d, 0x0a, 0
+まず関数ポインタの例を示します。
+```c
+int inc(int v)
+{
+  return v + 1;
+}
+
+int (*ptr)(int) = &inc;
 ```
+ptrが関数ポインタ変数です。  
+関数は戻り値と引数をもつので、それらを型として表現する必要があり、このような形になっています。
+```
+|int|(*ptr)|(int)|=|&inc|
+|:---|:---|:---|:---|
