@@ -10,7 +10,8 @@
 ```
 # rndc dumpdb -cache
 ```
-SERVFAIL cacheやBad cacheあたりを調査してみましょう。
+SERVFAIL cacheやBad cacheあたりを調査してみましょう。  
+以下コマンドだと全キャッシュ削除するので注意です。
 ```
 # rndc flush
 ```
