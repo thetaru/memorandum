@@ -21,6 +21,8 @@
 ### ディレクティブ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/directives)にまとめました。
 
+### 設定例
+
 ### 文法チェック
 ```
 # squid -k parse
