@@ -50,5 +50,5 @@ SELINUXTYPE=targeted
 ```
 ### sealert
 ```
-# sealert -l
+# sealert -l id
 ```
