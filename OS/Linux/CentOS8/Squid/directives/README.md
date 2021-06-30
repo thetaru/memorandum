@@ -5,6 +5,9 @@
 |||
 
 ### 設定例
+```
+access_log /var/log/squid/access.log
+```
 
 ## ● acl
 ## ● always_direct
