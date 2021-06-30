@@ -19,7 +19,7 @@
 
 ## ■ 主設定ファイル squid.conf
 ### ディレクティブ
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/directives)にまとめました。
 
 ### 文法チェック
 ```
