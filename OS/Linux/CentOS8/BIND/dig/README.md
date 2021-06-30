@@ -3,8 +3,8 @@
 |オプション|説明|
 |:---|:---|
 |-t|クエリのタイプを指定する|
-|+short|結果を簡略表示する|
-|+identity||
-|+trace||
-|+norecurse||
-|+nssearch||
+|+short|回答を簡略表示する|
+|+identity|回答を返したDNSサーバを出力する|
+|+trace|再起問い合わせの様子を追える|
+|+norecurse|権威DNSサーバに問い合わせする|
+|+nssearch|ドメインの権威DNSサーバを探す|
