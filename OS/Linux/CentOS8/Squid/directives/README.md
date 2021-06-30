@@ -17,3 +17,8 @@ access_log /var/log/squid/access.log
 ## ● cache_log
 ## ● cache_mem
 ## ● client_lifetime
+## ● client_persistent_connections
+## ● coredump_dir
+## ● 
+## ● 
+## ● 
