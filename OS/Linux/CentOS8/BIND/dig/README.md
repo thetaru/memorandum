@@ -13,7 +13,7 @@
 
 ## ■ おぼえておくべきフラグ
 |フラグ|説明|
-|:---|:---|:---|
+|:---|:---|
 |qr|クエリかレスポンスか|
 |rd|Recursion Desired|
 |ra|Recursion Available|
