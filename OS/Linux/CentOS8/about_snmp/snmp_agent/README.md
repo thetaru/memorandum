@@ -13,7 +13,7 @@
 |:---|:---|:---|
 |snmpd.service|161/udp||
 
-## ■ 主設定ファイル snmpd.conf
+## ■ 主設定ファイル /etc/snmp/snmpd.conf
 ### ● パラメータ
 #### com2sec
 #### group
@@ -30,7 +30,9 @@ group   MyGroup  v2c      public
 view    view_all included .1
 access  MyGroup  "" any noauth exact view_all none none
 ```
-## ■ 設定ファイル snmptrapd.conf
+## ■ 設定ファイル /etc/snmp/snmptrapd.conf
+## ■ 設定ファイル /etc/sysconfig/snmpd
+### ● 設定例
 ## ■ セキュリティ
 ### firewall
 ## ■ ログ
