@@ -23,7 +23,13 @@
 #### syscontact
 #### dontLogTCPWrappersConnect
 ### ● 設定例
-### ● 文法チェック
+```
+com2sec MyUser   default  public
+group   MyGroup  v1       MyUser
+group   MyGroup  v2c      public
+view    view_all included .1
+access  MyGroup  "" any noauth exact view_all none none
+```
 ## ■ 設定ファイル snmptrapd.conf
 ## ■ セキュリティ
 ### firewall
