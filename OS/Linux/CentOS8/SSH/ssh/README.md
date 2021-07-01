@@ -14,6 +14,13 @@ ssh [オプション] [ユーザ名@]ホスト名 [コマンド]
 
 ## ■ おぼえておくべきパラメータ
 ### StrictHostKeyChecking
+ホスト鍵のチェック方法を指定します。
+|設定値|説明|
+|:---|:---|
+|ask||
+|yes||
+|no||
+
 ### UserKnownHostsFile
 
 ## ■ Tips
