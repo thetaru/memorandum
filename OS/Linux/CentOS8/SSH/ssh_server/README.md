@@ -22,7 +22,7 @@
 ### 設定例
 ### 文法チェック
 ```
-# ssh -t
+# sshd -t
 ```
 ## ■ 設定ファイル /etc/sysconfig/sshd
 ## ■ セキュリティ
@@ -34,5 +34,14 @@
 ## ■ ログローテーション
 ## ■ トラブルシューティング
 ## ■ 設定の反映
+サービスの再起動を実施し、設定を読み込みます。
+```
+# systemctl restart sshd.service
+```
+設定が読み込まれていることを確認します。
+```
+# sshd -T
+```
+grepなどして変更箇所を確認しましょう。
 ## ■ 参考
 https://straypenguin.winfield-net.com/
