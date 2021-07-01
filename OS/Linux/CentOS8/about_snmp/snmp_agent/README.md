@@ -14,8 +14,7 @@
 |snmpd.service|161/udp||
 
 ## ■ 主設定ファイル /etc/snmp/snmpd.conf
-### ● パラメータ
-### com2sec
+### ● com2sec
 #### Syntax
 ```
 com2sec sec.name source community
