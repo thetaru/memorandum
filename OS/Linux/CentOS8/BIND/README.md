@@ -45,3 +45,8 @@ https://www.ipentec.com/document/linux-centos-7-bind-configuration
 http://cos.linux-dvr.biz/archives/87  
 http://park12.wakwak.com/~eslab/pcmemo/linux/bind/index.html#1  
 https://www.eis.co.jp/bind9_src_build_2/
+  
+委譲  
+https://ez-net.jp/article/3B/o3s3Rk9L/Yo_HJNZOqigA/  
+https://ez-net.jp/article/9B/-jxQ0KhD/lKxLRo5HN7z1/  
+
