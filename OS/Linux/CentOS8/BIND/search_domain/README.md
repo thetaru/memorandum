@@ -17,7 +17,13 @@ search example.com s1.example.com s2.example.com
 ```
 
 ## searchとdomainの優先順位
-searchとdomainを同時に記述するとsearchのみ適用されます。(domainに記載の名前解決は行われない)
+searchとdomainを同時に記述すると、最後に記述した方のみ適用されます。(適用されなかった方のドメインを付加した名前解決は行われない)
+
+## manによると
+```
+The domain and search keywords are mutually exclusive.  
+if more than one instance of them keywords is present, the last instance wins.
+```
 
 ## まとめ
 引くだけならsearchで十分だが、所属ドメインを主張したいならdomainを記載するべきかも。
