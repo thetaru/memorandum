@@ -14,7 +14,14 @@
 |snmpd.service|161/udp||
 
 ## ■ 主設定ファイル snmpd.conf
-### ● zzzパラメータ
+### ● パラメータ
+#### com2sec
+#### group
+#### view
+#### access
+#### syslocation
+#### syscontact
+#### dontLogTCPWrappersConnect
 ### 設定例
 ### 文法チェック
 ## ■ 設定ファイル snmptrapd.conf
