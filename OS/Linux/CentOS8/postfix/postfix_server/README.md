@@ -5,7 +5,7 @@
 ```
 ## ■ バージョンの確認
 ```
-# 
+# postconf | grep mail_version
 ```
 ## ■ サービスの起動
 ```
@@ -14,7 +14,7 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|postfix.service|25||
+|postfix.service|25/tcp||
 
 ## ■ 主設定ファイル /etc/postfix/main.cf
 ### ● パラメータ
@@ -31,5 +31,15 @@
 ## ■ チューニング
 ## ■ トラブルシューティング
 ## ■ 設定の反映
+```
+# systemctl restart postfix.service
+```
+```
+### すべてのパラメータを表示
+# postconf
+
+### デフォルト値から変更されたパラメータを表示
+# postconf -n
+```
 ## ■ 参考
 
