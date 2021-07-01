@@ -19,13 +19,13 @@
 ```
 com2sec sec.name source community
 ```
-### group
-### view
-### access
-### syslocation
-### syscontact
-### dontLogTCPWrappersConnect
-### ● 設定例
+### ● group
+### ● view
+### ● access
+### ● syslocation
+### ● syscontact
+### ● dontLogTCPWrappersConnect
+### 設定例
 ```
 com2sec MyUser   default  public
 group   MyGroup  v1       MyUser
@@ -35,7 +35,7 @@ access  MyGroup  "" any noauth exact view_all none none
 ```
 ## ■ 設定ファイル /etc/snmp/snmptrapd.conf
 ## ■ 設定ファイル /etc/sysconfig/snmpd
-### ● 設定例
+### 設定例
 ## ■ セキュリティ
 ### firewall
 ## ■ ログ
