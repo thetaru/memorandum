@@ -17,7 +17,8 @@ search example.com s1.example.com s2.example.com
 ```
 
 ## searchとdomainの優先順位
-searchとdomainを同時に記述すると、最後に記述した方のみ適用されます。(適用されなかった方のドメインを付加した名前解決は行われない)
+searchとdomainを同時に記述すると、最後に記述した方のみ適用されます。(適用されなかった方のドメインを付加した名前解決は行われない)  
+※ ソースは`man resolv.conf`
 
 ## manによると
 ```
