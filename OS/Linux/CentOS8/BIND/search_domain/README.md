@@ -4,9 +4,16 @@ resolv.confに記述するsearch/domainについての補足です。
 ## domain
 ドメインを１つだけとれます。  
 主に所属ドメインを指定します。
+```
+domain example.com
+```
 
 ## search
 ドメインを複数とれます。  
 ドメインを2つ以上指定した場合、優先順位は引数の順番に依存します。(引数の順番が若いほど優先されます)  
 
-主に複数のサブドメインを指定する際に使います。
+主に複数の所属ドメインのサブドメインを指定する際に使います。
+```
+domain example.com
+search s1.example.com s2.example.com
+```
