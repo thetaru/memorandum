@@ -17,7 +17,8 @@
 |sshd.service|22||
 
 ## ■ 主設定ファイル /etc/ssh/sshd_config
-### ● xxxセクション
+### パラメータ
+[こちら]()にまとめました。
 ### ● 設定例
 ### ● 文法チェック
 ## ■ 設定ファイル /etc/sysconfig/sshd
