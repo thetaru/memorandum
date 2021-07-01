@@ -1,24 +1,28 @@
 # sshサーバの構築
 ## ■ インストール
+```
+# yum install openssh-server
+```
 ## ■ バージョンの確認
+```
+# ssh -V
+```
 ## ■ サービスの起動
+```
+# systemctl enable --now sshd.service
+```
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-||||
+|sshd.service|22||
 
-## ■ 主設定ファイル xxx.conf
+## ■ 主設定ファイル /etc/ssh/sshd_config
 ### ● xxxセクション
-### ● yyyディレクティブ
-- aaa(recommended)
-- bbb
-### ● zzzパラメータ
 ### ● 設定例
 ### ● 文法チェック
-## ■ 設定ファイル yyy
+## ■ 設定ファイル /etc/sysconfig/sshd
 ## ■ セキュリティ
 ### ● firewall
-### ● 証明書
 ### ● 認証
 ## ■ ログ
 ## ■ ログローテーション
