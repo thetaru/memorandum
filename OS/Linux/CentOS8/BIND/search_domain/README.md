@@ -19,4 +19,4 @@ search s1.example.com s2.example.com
 ```
 
 ## searchとdomainの優先順位
-searchとdomainを同時に記述するとsearchが優先されます。
+searchとdomainを同時に記述するとsearchのみ適用されます。(domainに記載の名前解決は行われない)
