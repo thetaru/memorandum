@@ -1,4 +1,4 @@
-# postfixサーバーの構築
+# postfixサーバの構築
 ## ■ インストール
 ```
 # yum install postfix
