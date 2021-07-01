@@ -13,3 +13,7 @@ ssh [オプション] [ユーザ名@]ホスト名 [コマンド]
 |-o|設定パラメータを指定する(優先度高)|
 
 ## ■ Tips
+### 警告メッセージを出さないようにする
+```
+# ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null [ユーザ名@]ホスト名
+```
