@@ -24,7 +24,7 @@
 ```
 # postfix check
 ```
-## ■ 設定ファイル yyy
+## ■ 設定ファイル /etc/postfix/transport
 ## ■ セキュリティ
 ### ● firewall
 ### ● 証明書
