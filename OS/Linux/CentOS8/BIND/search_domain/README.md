@@ -11,7 +11,6 @@ domain example.com
 ## search
 ドメインを複数(最大6つ)とれます。  
 ドメインを2つ以上指定した場合、優先順位は引数の順番に依存します。(引数の順番が若いほど優先されます)  
-また、
 主に検索リストとしての役割があります。
 ```
 domain example.com
@@ -20,3 +19,7 @@ search s1.example.com s2.example.com
 
 ## searchとdomainの優先順位
 searchとdomainを同時に記述するとsearchのみ適用されます。(domainに記載の名前解決は行われない)
+
+## manによると
+domainディレクティブはsearchディレクティブの古い名前らしいです。  
+そのため、searchで一本化していいかもしれません。
