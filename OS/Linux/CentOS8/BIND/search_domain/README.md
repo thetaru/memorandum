@@ -22,3 +22,7 @@ searchとdomainを同時に記述するとsearchのみ適用されます。(doma
 ## manによると
 domainディレクティブはsearchディレクティブの古い名前らしいです。  
 そのため、searchで一本化していいかもしれません。
+
+## まとめ
+domainとsearchをどちらも書く必要はない。  
+が、所属ドメインを主張したいならdomsinを記載するのが分かりやすい。
