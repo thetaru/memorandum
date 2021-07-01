@@ -9,14 +9,14 @@ domain example.com
 ```
 
 ## search
-ドメインを複数とれます。  
+ドメインを複数(最大6つ)とれます。  
 ドメインを2つ以上指定した場合、優先順位は引数の順番に依存します。(引数の順番が若いほど優先されます)  
-
+また、
 主に複数の所属ドメインのサブドメインを指定する際に使います。
 ```
 domain example.com
 search s1.example.com s2.example.com
 ```
 
-## あれ
-たまにdomainとsearchに同じドメインを指定しているサーバを見かけますが意味がないのでやめましょう。
+## searchとdomainの優先順位
+searchが優先されます。
