@@ -21,6 +21,9 @@
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/postfix/postfix_summary)にまとめました。
 ### ● 設定例
 ### ● 文法チェック
+```
+# postfix check
+```
 ## ■ 設定ファイル yyy
 ## ■ セキュリティ
 ### ● firewall
