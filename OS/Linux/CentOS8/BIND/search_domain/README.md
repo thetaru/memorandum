@@ -3,7 +3,7 @@ resolv.confに記述するsearch/domainについての補足です。
 どちらの設定も名前解決の際、指定したドメインを付加して実行します。
 ## domain
 ドメインを１つだけとれます。  
-主に所属ドメインを指定します。
+所属ドメインを指定します。
 ```
 domain example.com
 ```
@@ -11,7 +11,7 @@ domain example.com
 ## search
 ドメインを複数(最大6つ)とれます。  
 ドメインを2つ以上指定した場合、優先順位は引数の順番が若いほど高くなります。  
-主に検索リストとしての役割があります。
+検索リストとして複数のドメインを指定します。
 ```
 search example.com s1.example.com s2.example.com
 ```
@@ -20,9 +20,8 @@ search example.com s1.example.com s2.example.com
 searchとdomainを同時に記述するとsearchのみ適用されます。(domainに記載の名前解決は行われない)
 
 ## manによると
-domainディレクティブはsearchディレクティブの古い名前らしいです。  
-そのため、searchで一本化していいかもしれません。
+d
 
 ## まとめ
-domainとsearchをどちらも書く必要はない。  
-が、所属ドメインを主張したいならdomsinを記載するのが分かりやすい。
+引くだけならdomainとsearchをどちらも書く必要はない。  
+が、所属ドメインを主張したいならdomainを記載するのが分かりやすい。
