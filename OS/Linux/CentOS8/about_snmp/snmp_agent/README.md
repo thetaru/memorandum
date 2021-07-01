@@ -22,8 +22,8 @@
 #### syslocation
 #### syscontact
 #### dontLogTCPWrappersConnect
-### 設定例
-### 文法チェック
+### ● 設定例
+### ● 文法チェック
 ## ■ 設定ファイル snmptrapd.conf
 ## ■ セキュリティ
 ### firewall
