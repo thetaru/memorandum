@@ -10,4 +10,5 @@
 ```
 Banner /etc/issue.net
 ```
-※ ここでは、/etc/issue.netと揃えることにしました
+※1 ここでは、/etc/issue.netと揃えることにしました  
+※2 シーケンスは使用できないことに注意
