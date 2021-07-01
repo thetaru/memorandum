@@ -25,6 +25,7 @@
 - [ ] [ゾーンファイルの更新](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/update_zonefile)
 - [ ] [named-chrootを使うときに気を付けること](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/named-chroot_caution)
 - [ ] [SERVFAIL時の対処](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/servfail)
+n [ ] [search/domainについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/search_domain)
 
 
 # SANKO
