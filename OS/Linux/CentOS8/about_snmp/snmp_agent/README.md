@@ -12,6 +12,7 @@
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
 |snmpd.service|161/udp||
+|snmptrapd.service|162/udp|
 
 ## ■ 主設定ファイル /etc/snmp/snmpd.conf
 ### ● com2sec
