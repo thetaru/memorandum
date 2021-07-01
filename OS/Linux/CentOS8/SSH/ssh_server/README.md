@@ -19,8 +19,8 @@
 ## ■ 主設定ファイル /etc/ssh/sshd_config
 ### パラメータ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/SSH/ssh_server/parameters)にまとめました。
-### ● 設定例
-### ● 文法チェック
+### 設定例
+### 文法チェック
 ```
 # ssh -t
 ```
