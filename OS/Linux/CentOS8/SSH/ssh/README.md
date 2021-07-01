@@ -13,6 +13,8 @@ ssh [オプション] [ユーザ名@]ホスト名 [コマンド]
 |-o|設定パラメータを指定する(優先度高)|
 
 ## ■ おぼえておくべきパラメータ
+### StrictHostKeyChecking
+### UserKnownHostsFile
 
 ## ■ Tips
 ### 警告メッセージを出さないようにする
