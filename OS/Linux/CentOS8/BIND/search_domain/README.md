@@ -10,11 +10,10 @@ domain example.com
 
 ## search
 ドメインを複数(最大6つ)とれます。  
-ドメインを2つ以上指定した場合、優先順位は引数の順番に依存します。(引数の順番が若いほど優先されます)  
+ドメインを2つ以上指定した場合、優先順位は引数の順番が若いほど高くなります。  
 主に検索リストとしての役割があります。
 ```
-domain example.com
-search s1.example.com s2.example.com
+search example.com s1.example.com s2.example.com
 ```
 
 ## searchとdomainの優先順位
