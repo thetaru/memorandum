@@ -20,6 +20,6 @@ access_log /var/log/squid/access.log
 ## ● client_persistent_connections
 ## ● coredump_dir
 ## ● dns_defnames
-ローカルネットでの名前解決にsearch/domainを使用できるようにする。
+名前解決にsearch/domainを使用できる
 ## ● 
 ## ● 
