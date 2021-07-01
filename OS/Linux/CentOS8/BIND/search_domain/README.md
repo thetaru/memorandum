@@ -17,3 +17,6 @@ domain example.com
 domain example.com
 search s1.example.com s2.example.com
 ```
+
+## あれ
+たまにdomainとsearchに同じドメインを指定しているサーバを見かけますが意味がないのでやめましょう。
