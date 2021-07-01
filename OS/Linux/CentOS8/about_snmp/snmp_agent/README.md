@@ -15,13 +15,17 @@
 
 ## ■ 主設定ファイル /etc/snmp/snmpd.conf
 ### ● パラメータ
-#### com2sec
-#### group
-#### view
-#### access
-#### syslocation
-#### syscontact
-#### dontLogTCPWrappersConnect
+### com2sec
+#### Syntax
+```
+com2sec sec.name source community
+```
+### group
+### view
+### access
+### syslocation
+### syscontact
+### dontLogTCPWrappersConnect
 ### ● 設定例
 ```
 com2sec MyUser   default  public
