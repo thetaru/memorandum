@@ -61,15 +61,17 @@ SELINUXTYPE=targeted
 ※ ファイルは絶対パスで指定すること
 
 ### ● SELinuxユーザ
-#### SELinuxユーザの確認
+#### ◆ SELinuxユーザの確認
 ```
 # semanage user -l
 ```
-### マッピング情報の確認
+### ◆ マッピング情報の確認
 ```
 # semanage login -l
 ```
-### LinuxユーザとSELinuxユーザをマッピング
+### ◆ LinuxユーザとSELinuxユーザをマッピング
 ```
 # semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
 ```
+
+### ブール値
