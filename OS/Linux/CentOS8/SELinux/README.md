@@ -76,7 +76,7 @@ SELINUXTYPE=targeted
 # semanage login -d <Linuxユーザ>
 ```
 
-### ● ブール値
+### ● ブール値の設定
 #### ◆ ブール値の確認
 ```
 # semanage boolean -l
