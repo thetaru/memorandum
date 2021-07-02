@@ -27,7 +27,9 @@
 ```
 system_u:object_r:admin_home_t:s0
 ```
-### ● SELinuxユーザ
+### ● SELinuxユーザと権限
+
+
 ## ■ TE
 ### ドメインとタイプ
 ドメインとタイプを使い、許可する動作をルールとして記述します。  
