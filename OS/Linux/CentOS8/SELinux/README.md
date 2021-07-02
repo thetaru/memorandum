@@ -29,9 +29,14 @@
 SELINUX=enforcing
 SELINUXTYPE=targeted
 ```
-## ■ ログ
-## ■ トラブルシューティング
+
 ## ■ コマンド
+### ● LinuxユーザとSELinuxユーザをマッピング
+```
+# semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
+```
+
+
 ### restorecon
 ```
 # restorecon -Rv file
