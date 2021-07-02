@@ -88,6 +88,13 @@ SELINUXTYPE=targeted
 ```
 # cat /etc/selinux/targeted/contexts/users/<SELinuxユーザ>
 ```
+### ● タイプ
+#### ◆ タイプの確認
+```
+# seinfo -t -x
+```
+※ かなりたくさん出力せれるので注意
+
 ### ● ドメイン
 #### ◆ ドメインの確認
 ```
