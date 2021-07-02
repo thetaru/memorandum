@@ -89,7 +89,12 @@ SELINUXTYPE=targeted
 # cat /etc/selinux/targeted/contexts/users/<SELinuxユーザ>
 ```
 ### ● ドメイン
-#### ◆ ドメイン遷移の確認
+#### ◆ ドメイン遷移先の確認
+```
+# sepolicy transition -s <遷移元ドメイン>
+```
+
+#### ◆ ドメイン遷移可能性の確認
 ```
 # sepolicy transition -s <遷移元ドメイン> -t <遷移先ドメイン>
 ```
