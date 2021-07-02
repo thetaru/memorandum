@@ -30,5 +30,12 @@
 ## ■ チューニング
 ## ■ トラブルシューティング
 ## ■ 設定の反映
+```
+# systemctl restart rsyslog.service
+```
+```
+# rsyslogd -N 1
+# rsyslogd -N 1 -c <config file>
+```
 ## ■ 参考
 https://straypenguin.winfield-net.com/
