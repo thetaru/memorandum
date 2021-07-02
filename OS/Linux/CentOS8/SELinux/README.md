@@ -29,8 +29,11 @@
 SELINUX=enforcing
 SELINUXTYPE=targeted
 ```
+## ■ Commands
+- [ ] [sesearch]()
+- [ ] [sepolicy]()
 
-## ■ コマンド
+## ■ 調査・確認用コマンド
 ### ● ファイルコンテキスト
 #### ◆ ファイル/ディレクトリのタイプの確認
 ```
