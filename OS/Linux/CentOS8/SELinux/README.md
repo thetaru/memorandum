@@ -65,11 +65,11 @@ SELINUXTYPE=targeted
 ```
 # semanage user -l
 ```
-### ◆ マッピング情報の確認
+#### ◆ マッピング情報の確認
 ```
 # semanage login -l
 ```
-### ◆ LinuxユーザとSELinuxユーザをマッピング
+#### ◆ LinuxユーザとSELinuxユーザをマッピング
 ```
 # semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
 ```
