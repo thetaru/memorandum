@@ -31,7 +31,7 @@ SELINUXTYPE=targeted
 ```
 
 ## ■ 設定用コマンド
-### ● セキュリティコンテキストの変更
+### ● セキュリティコンテキストの設定
 #### ◆ ファイル/ディレクトリのタイプの確認
 ```
 # semanage fcontext -l
@@ -66,7 +66,15 @@ SELINUXTYPE=targeted
 ```
 ※ ワイルドカードを使った指定もできます
 
-### ●
+### ● マッピングの設定
+#### ◆ LinuxユーザとSELinuxユーザをマッピング
+```
+# semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
+```
+#### ◆ マッピングの削除
+```
+# semanage login -d <Linuxユーザ>
+```
 
 ## ■ 調査・確認用コマンド
 ### ● SELinuxユーザ
@@ -77,14 +85,6 @@ SELINUXTYPE=targeted
 #### ◆ マッピング情報の確認
 ```
 # semanage login -l
-```
-#### ◆ LinuxユーザとSELinuxユーザをマッピング
-```
-# semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
-```
-#### ◆ マッピングの削除
-```
-# semanage login -d <Linuxユーザ>
 ```
 
 ### ● ロール
