@@ -15,21 +15,22 @@
 |haproxy.service|任意||
 
 ## ■ 主設定ファイル haproxy.cfg
-### globalセクション
+### ● 設定項目
+#### globalセクション
 このセクションで設定するパラメータは、プロセス全体、OS固有のものであり、他のセクションで再設定する必要はありません。  
 globalセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/global_keywords)にまとめました。
-### defaultsセクション
+#### defaultsセクション
 defaultsセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/other_keywords)にまとめました。
-### frontendセクション
+#### frontendセクション
 frontendセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/other_keywords)にまとめました。
-### backendセクション
+#### backendセクション
 backendセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/other_keywords)にまとめました。
-### resolversセクション
+#### resolversセクション
 resolversセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/other_keywords)にまとめました。
-### 設定例
+### ● 設定例
 ```
 ```
-### 文法チェック
+### ● 文法チェック
 ```
 # haproxy -f /etc/haproxy/haproxy.cfg -c
 ```
