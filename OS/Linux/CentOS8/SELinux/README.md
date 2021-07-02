@@ -89,3 +89,19 @@ SELINUXTYPE=targeted
 ```
 # semanage boolean -l --locallist
 ```
+
+### ● auditログ
+#### ◆ すべてのauditログを出力
+```
+# ausearch -m avc
+```
+
+#### ◆ 期間制限をしたauditログを出力
+```
+# ausearch -m avc -ts <today|recent>
+```
+
+#### ◆ プロセス指定をしたauditログを出力
+```
+# ausearch -m avc -c <プロセス名>
+```
