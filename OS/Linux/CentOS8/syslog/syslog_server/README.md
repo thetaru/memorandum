@@ -1,12 +1,15 @@
 # syslogサーバの構築
 ## ■ インストール
 ```
+# yum install rsyslog
 ```
 ## ■ バージョンの確認
 ```
+# rsyslogd -v
 ```
 ## ■ サービスの起動
 ```
+# systemctl enable --now rsyslog.service
 ```
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
