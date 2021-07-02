@@ -29,9 +29,6 @@
 SELINUX=enforcing
 SELINUXTYPE=targeted
 ```
-## ■ Commands
-- [ ] [sesearch]()
-- [ ] [sepolicy]()
 
 ## ■ 調査・確認用コマンド
 ### ● ファイルコンテキスト
