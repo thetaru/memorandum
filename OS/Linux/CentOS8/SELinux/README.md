@@ -100,6 +100,7 @@ SELINUXTYPE=targeted
 ```
 # ausearch -m avc -ts <today|recent>
 ```
+※ todayは今日のログでrecentは最新10分間のログです
 
 #### ◆ プロセス指定をしたauditログを出力
 ```
