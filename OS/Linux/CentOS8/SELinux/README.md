@@ -88,6 +88,9 @@ SELINUXTYPE=targeted
 ```
 # cat /etc/selinux/targeted/contexts/users/<SELinuxユーザ>
 ```
+### ● ドメイン
+#### ◆ ドメイン遷移の確認
+
 
 ### ● ブール値
 #### ◆ ブール値の確認
