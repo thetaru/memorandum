@@ -31,7 +31,7 @@ SELINUXTYPE=targeted
 ```
 
 ## ■ RBACの設定
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/SELinux/rbac)にまとめました。
 
 ## ■ 設定用コマンド
 ### ● セキュリティコンテキストの設定
