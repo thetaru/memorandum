@@ -74,10 +74,15 @@ SELINUXTYPE=targeted
 # semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
 ```
 
-### ブール値
+### ● ブール値
 #### ◆ ブール値の確認
 ```
 # semanage boolean -l
+```
+
+#### ◆ ブール値の変更
+```
+# setsebool -P <ブール値> <on|off>
 ```
 
 #### ◆ 変更したブール値の確認
