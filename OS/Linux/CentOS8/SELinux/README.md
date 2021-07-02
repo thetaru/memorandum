@@ -78,6 +78,17 @@ SELINUXTYPE=targeted
 # semanage login -d <Linuxユーザ>
 ```
 
+### ● ロール
+#### ◆ 利用可能なロールを確認
+```
+# seinfo -r
+```
+
+#### ◆ SELinuxユーザに割り当てられるロールを確認
+```
+# cat /etc/selinux/targeted/contexts/users/<SELinuxユーザ>
+```
+
 ### ● ブール値
 #### ◆ ブール値の確認
 ```
