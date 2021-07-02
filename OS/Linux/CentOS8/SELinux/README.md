@@ -31,6 +31,14 @@ SELINUXTYPE=targeted
 ```
 
 ## ■ コマンド
+### ● ファイルのタイプの確認
+```
+# semanage fcontext -l
+```
+### ● ファイルのタイプの変更
+```
+# semanage fcontext -a -t <タイプ> <対象のファイル>
+```
 ### ● SELinuxユーザの確認
 ```
 # semanage user -l
