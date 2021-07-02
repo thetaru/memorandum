@@ -23,7 +23,7 @@
 - 機密ラベル
 > 組織・役職などで分ける識別子
 
-※ 多くの場合、タイプ属性が問題になることが多いです。`semanage fcontext -l`で確認しましょう
+※ 多くの場合、タイプ属性が問題になることが多いです。適切であることを`semanage fcontext -l`で確認しましょう
 #### 例 - SELinux contexts
 ```
 system_u:object_r:admin_home_t:s0
