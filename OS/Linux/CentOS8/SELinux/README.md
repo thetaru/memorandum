@@ -107,5 +107,3 @@ SELINUXTYPE=targeted
 # ausearch -m avc -c <プロセス名>
 ```
 
-### ● ドメイン遷移
-#### ◆ ドメイン
