@@ -39,6 +39,8 @@ SELINUXTYPE=targeted
 ```
 # semanage fcontext -a -t <タイプ> <対象のファイル>
 ```
+※1 ファイルは絶対パスで指定すること  
+※2
 ### ● SELinuxユーザの確認
 ```
 # semanage user -l
