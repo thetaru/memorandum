@@ -31,12 +31,12 @@ SELINUXTYPE=targeted
 ```
 
 ## ■ コマンド
-### ファイルコンテキスト
-### ● ファイル/ディレクトリのタイプの確認
+### ● ファイルコンテキスト
+#### ファイル/ディレクトリのタイプの確認
 ```
 # semanage fcontext -l
 ```
-### ● ファイル/ディレクトリのタイプの変更
+#### ファイル/ディレクトリのタイプの変更
 ```
 # semanage fcontext -a -t <タイプ> <対象のファイル>
 ```
@@ -48,7 +48,7 @@ SELINUXTYPE=targeted
 ```
 ※ ファイルは絶対パスで指定すること
 
-### ● ファイル/ディレクトリのタイプの削除
+#### ファイル/ディレクトリのタイプの削除
 追加されたタイプを削除します。
 ```
 # semanage fcontext -d <対象のファイル>
@@ -60,16 +60,16 @@ SELINUXTYPE=targeted
 ```
 ※ ファイルは絶対パスで指定すること
 
-### SELinuxユーザ
-### ● SELinuxユーザの確認
+### ● SELinuxユーザ
+#### SELinuxユーザの確認
 ```
 # semanage user -l
 ```
-### ● マッピング情報の確認
+### マッピング情報の確認
 ```
 # semanage login -l
 ```
-### ● LinuxユーザとSELinuxユーザをマッピング
+### LinuxユーザとSELinuxユーザをマッピング
 ```
 # semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
 ```
