@@ -24,6 +24,7 @@
 # rsyslogd -N 1
 ```
 ## ■ 設定ファイル /etc/sysconfig/rsyslog
+### SYSLOGD_OPTIONS
 ## ■ セキュリティ
 ### ● firewall
 ### ● 証明書
