@@ -31,29 +31,11 @@ SELINUXTYPE=targeted
 ```
 
 ## ■ コマンド
+### ● SELinuxユーザの確認
+```
+# semanage user -l
+```
 ### ● LinuxユーザとSELinuxユーザをマッピング
 ```
 # semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
-```
-
-
-### restorecon
-```
-# restorecon -Rv file
-```
-### semanage
-```
-# semanage fcontext -l
-```
-### ausearch
-```
-# ausearch -m avc
-```
-### aureport
-```
-# aureport --avc
-```
-### sealert
-```
-# sealert -l id
 ```
