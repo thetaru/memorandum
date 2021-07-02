@@ -133,6 +133,13 @@ SELINUXTYPE=targeted
 # semanage boolean -l --locallist
 ```
 
+### ● ルール
+#### ◆ ルールの確認
+ドメインAからタイプBにアクセス可能であることを記したルールがあるかを確認する。
+```
+# sesearch -A -s <ドメイン> -t <タイプ>
+```
+
 ### ● auditログ
 #### ◆ すべてのauditログを出力
 ```
