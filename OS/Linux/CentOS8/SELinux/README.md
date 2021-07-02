@@ -40,7 +40,13 @@ SELINUXTYPE=targeted
 # semanage fcontext -a -t <タイプ> <対象のファイル>
 ```
 ※1 ファイルは絶対パスで指定すること  
-※2
+※2 内容は`/etc/selinux/targeted/contexts/files/file_contexts.local`に保存されます
+
+```
+# restorecon -v <対象のファイル>
+```
+※ ファイルは絶対パスで指定すること
+
 ### ● SELinuxユーザの確認
 ```
 # semanage user -l
