@@ -73,6 +73,10 @@ SELINUXTYPE=targeted
 ```
 # semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
 ```
+#### ◆ マッピングの削除
+```
+# semanage login -d <Linuxユーザ>
+```
 
 ### ● ブール値
 #### ◆ ブール値の確認
