@@ -31,16 +31,28 @@ SELINUXTYPE=targeted
 ```
 
 ## ■ コマンド
-### ● ファイルのタイプの確認
+### ● ファイル/ディレクトリのタイプの確認
 ```
 # semanage fcontext -l
 ```
-### ● ファイルのタイプの変更
+### ● ファイル/ディレクトリのタイプの変更
 ```
 # semanage fcontext -a -t <タイプ> <対象のファイル>
 ```
 ※1 ファイルは絶対パスで指定すること  
 ※2 内容は`/etc/selinux/targeted/contexts/files/file_contexts.local`に保存されます
+
+```
+# restorecon -v <対象のファイル>
+```
+※ ファイルは絶対パスで指定すること
+
+### ● ファイル/ディレクトリのタイプの削除
+`/etc/selinux/targeted/contexts/files/file_contexts.local`の項目から削除するだけなので、元に戻すという方が適切かも。
+```
+# semanage fcontext -d <対象のファイル>
+```
+※ ファイルは絶対パスで指定すること  
 
 ```
 # restorecon -v <対象のファイル>
