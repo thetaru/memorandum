@@ -48,7 +48,7 @@ SELINUXTYPE=targeted
 ※ ファイルは絶対パスで指定すること
 
 ### ● ファイル/ディレクトリのタイプの削除
-`/etc/selinux/targeted/contexts/files/file_contexts.local`の項目から削除するだけなので、元に戻すという方が適切かも。
+追加されたタイプを削除します。
 ```
 # semanage fcontext -d <対象のファイル>
 ```
