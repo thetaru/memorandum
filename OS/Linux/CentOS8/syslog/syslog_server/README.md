@@ -17,7 +17,7 @@
 |rsyslog.service|514/tcp,udp||
 
 ## ■ 主設定ファイル /etc/rsyslog.conf
-### ● zzzパラメータ
+### ● 
 ### ● 設定例
 ### ● 文法チェック
 ```
