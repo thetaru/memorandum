@@ -20,6 +20,9 @@
 ### ● zzzパラメータ
 ### ● 設定例
 ### ● 文法チェック
+```
+# rsyslogd -N 1
+```
 ## ■ 設定ファイル /etc/sysconfig/rsyslog
 ## ■ セキュリティ
 ### ● firewall
@@ -32,10 +35,6 @@
 ## ■ 設定の反映
 ```
 # systemctl restart rsyslog.service
-```
-```
-# rsyslogd -N 1
-# rsyslogd -N 1 -c <config file>
 ```
 ## ■ 参考
 https://straypenguin.winfield-net.com/
