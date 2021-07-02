@@ -91,7 +91,7 @@ SELINUXTYPE=targeted
 ### ● ドメイン
 #### ◆ ドメイン遷移の確認
 ```
-# sepolicy transition -s <遷移元> -t <遷移先>
+# sepolicy transition -s <遷移元ドメイン> -t <遷移先ドメイン>
 ```
 
 ### ● ブール値
