@@ -28,8 +28,6 @@
 ```
 system_u:object_r:admin_home_t:s0
 ```
-### ● SELinuxユーザと権限
-rootでファイルを作成しない場合は、unconfinedにならなくねー？
 
 ## ■ TE
 ### ドメインとタイプ
