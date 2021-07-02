@@ -17,6 +17,7 @@
 ## し
 - [ ] [自作エミュレータで学ぶx86アーキテクチャ](https://github.com/thetaru/memorandum/tree/master/Summary/jisaku_emulator)
 - [ ] [詳細システム・パフォーマンス](https://github.com/thetaru/memorandum/tree/master/Summary/SystemPerformance)
+- [ ] [受験脳の作り方](https://github.com/thetaru/memorandum/tree/master/Summary/jukennou)
 ## た
 - [ ] [たのしいバイナリの歩き方](https://github.com/thetaru/memorandum/tree/master/Summary/EnjoyBinary)
 - [ ] [食べる！SSL！]()
