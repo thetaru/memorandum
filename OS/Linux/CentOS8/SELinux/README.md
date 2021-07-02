@@ -89,6 +89,11 @@ SELINUXTYPE=targeted
 # cat /etc/selinux/targeted/contexts/users/<SELinuxユーザ>
 ```
 ### ● ドメイン
+#### ◆ ドメインの確認
+```
+# seinfo -a domain -x
+```
+
 #### ◆ ドメイン遷移先の確認
 ```
 # sepolicy transition -s <遷移元ドメイン>
