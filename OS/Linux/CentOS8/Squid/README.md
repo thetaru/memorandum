@@ -37,5 +37,8 @@
 ## ■ チューニング
 ## ■ トラブルシューティング
 ## ■ 設定の反映
+```
+# systemctl restart squid.service
+```
 ## ■ 参考
 https://straypenguin.winfield-net.com/
