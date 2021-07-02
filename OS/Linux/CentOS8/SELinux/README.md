@@ -76,6 +76,22 @@ SELINUXTYPE=targeted
 # semanage login -d <Linuxユーザ>
 ```
 
+### ● ブール値
+#### ◆ ブール値の確認
+```
+# semanage boolean -l
+```
+
+#### ◆ ブール値の変更
+```
+# setsebool -P <ブール値> <on|off>
+```
+
+#### ◆ 変更したブール値の確認
+```
+# semanage boolean -l --locallist
+```
+
 ## ■ 調査・確認用コマンド
 ### ● SELinuxユーザ
 #### ◆ SELinuxユーザの確認
@@ -119,22 +135,6 @@ SELINUXTYPE=targeted
 #### ◆ ドメイン遷移可能性の確認
 ```
 # sepolicy transition -s <遷移元ドメイン> -t <遷移先ドメイン>
-```
-
-### ● ブール値
-#### ◆ ブール値の確認
-```
-# semanage boolean -l
-```
-
-#### ◆ ブール値の変更
-```
-# setsebool -P <ブール値> <on|off>
-```
-
-#### ◆ 変更したブール値の確認
-```
-# semanage boolean -l --locallist
 ```
 
 ### ● ルール
