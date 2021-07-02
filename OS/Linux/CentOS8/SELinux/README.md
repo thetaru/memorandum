@@ -75,3 +75,12 @@ SELINUXTYPE=targeted
 ```
 
 ### ブール値
+#### ◆ ブール値の確認
+```
+# semanage boolean -l
+```
+
+#### ◆ 変更したブール値の確認
+```
+# semanage boolean -l --locallist
+```
