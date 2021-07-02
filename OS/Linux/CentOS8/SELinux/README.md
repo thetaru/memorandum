@@ -31,6 +31,7 @@ SELINUXTYPE=targeted
 ```
 
 ## ■ コマンド
+### ファイルコンテキスト
 ### ● ファイル/ディレクトリのタイプの確認
 ```
 # semanage fcontext -l
@@ -59,6 +60,7 @@ SELINUXTYPE=targeted
 ```
 ※ ファイルは絶対パスで指定すること
 
+### SELinuxユーザ
 ### ● SELinuxユーザの確認
 ```
 # semanage user -l
