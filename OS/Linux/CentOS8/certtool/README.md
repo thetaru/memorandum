@@ -36,6 +36,8 @@ certtool [オプション]
 |[ X.503 v3 extensions ]|-|
 |signing_key|データの署名に証明書を使用する|
 |encryption_key|データの暗号化に証明書を使用する|
+|cert_signing_key||
+|crl_signing_key||
 |tls_www_server||
 
 ### 例: 自己署名証明書用
@@ -48,6 +50,8 @@ state = "Tokyo"
 country = JP
 cn = "client"
 expiration_days = 365
+
+# X.509 v3 extensions
 cert_signing_key
 crl_signing_key
 ```
