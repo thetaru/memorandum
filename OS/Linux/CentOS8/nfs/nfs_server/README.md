@@ -56,6 +56,7 @@
 # exportfs -rav
 ```
 このとき、不必要な領域を晒していないことを確認しましょう。  
+  
 サービスの再起動を実施し、設定を読み込みます。
 ```
 # systemctl restart nfs-server.service
