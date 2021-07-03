@@ -9,27 +9,36 @@
 ```
 ## ■ サービスの起動
 ```
-# systemctl enable --now XXX.service
+# systemctl enable --now nfs-server.service
 ```
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-||||
+|nfs-server.service||
+|rpcbind.service|||
 
-## ■ 主設定ファイル /etc/exports
+## ■ 設定ファイル /etc/exports
 ### zzzパラメータ
 ### 設定例
 ### 文法チェック
-## ■ 設定ファイル yyy
+
+## ■ 設定ファイル /etc/nfs.conf
+### zzzパラメータ
+### 設定例
+### 文法チェック
+
+## ■ 設定ファイル /etc/nfsmount.conf
+### zzzパラメータ
+### 設定例
+### 文法チェック
+
 ## ■ セキュリティ
 ### firewall
-### NFSv4専用
 ## ■ ログ
 ## ■ ログローテーション
 ## ■ チューニング
-ソフトマウント、ハードマウント
-## ■ トラブルシューティング
+ソフトマウント、ハードマウント、ネットワーク系とか
 ## ■ 設定の反映
 ```
-# systemctl restart XXX.service
+# systemctl restart nfs-server.service
 ```
