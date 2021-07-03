@@ -18,7 +18,9 @@
 |rpcbind.service|111/tcp, 111/udp||
 
 ## ■ 設定ファイル /etc/exports
-### zzzパラメータ
+### セクション
+#### generalセクション
+#### nfsdclttrackセクション
 ### 設定例
 ### 文法チェック
 
