@@ -12,7 +12,7 @@ certtool [オプション]
 ## ■ 便利なオプション
 |オプション|説明|
 |:---|:---|
-|-q, --generate-request||
+|-q, --generate-request|CSR(証明書署名要求)を生成する|
 |-p, --generate-privkey|公開鍵を生成する|
 |--bits|公開鍵のビット数を指定する|
 |-s, --generate-self-signed|自己証明書を生成する|
