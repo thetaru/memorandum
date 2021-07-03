@@ -12,6 +12,7 @@ certtool [オプション]
 ## ■ 便利なオプション
 |オプション|説明|
 |:---|:---|
+|-q, --generate-request||
 |-p, --generate-privkey|公開鍵を生成する|
 |--bits|公開鍵のビット数を指定する|
 |-s, --generate-self-signed|自己証明書を生成する|
@@ -36,3 +37,22 @@ certtool [オプション]
 |tls_www_server||
 
 ## ■ Tips
+### 公開鍵を生成する
+|オプション|説明|
+|:---|:---|
+|ビット数|4096|
+|出力先|/tmp/priv.key|
+
+```
+# certtool -p --bits 4096 --outfile /tmp/priv.key
+```
+
+### CSR(証明書の署名リクエスト)を生成する
+```
+# certtool -q --hash SHA512 --load-privkey "/tmp/priv.key" --template "$template_file" --outfile "/tmp/test.csr"
+```
+
+### 自己証明書を生成する
+```
+# certtool -s --hash SHA512 --load-privkey "$key_file" --template "$template_file" --outfile "$crt_file"
+```
