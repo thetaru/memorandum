@@ -14,8 +14,8 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|nfs-server.service||
-|rpcbind.service|||
+|nfs-server.service|-|rpc.statd, rpc.mount|
+|rpcbind.service|111/tcp, 111/udp||
 
 ## ■ 設定ファイル /etc/exports
 ### zzzパラメータ
