@@ -46,10 +46,10 @@ certtool [オプション]
 # X.509 Certificate options
 
 # DN options
+cn = "fqdn"
 organization = "Some Organization"
 state = "Tokyo"
 country = JP
-cn = "client"
 expiration_days = 365
 ca
 
@@ -63,10 +63,10 @@ crl_signing_key
 # X.509 Certificate options
 
 # DN options
+cn = "fqdn"
 organization = "Some Organization"
 state = "Tokyo"
 country = JP
-cn = "client"
 expiration_days = 365
 
 # X.509 v3 extensions
