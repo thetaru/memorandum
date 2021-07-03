@@ -33,6 +33,7 @@ certtool [オプション]
 |country|国名|
 |cn|(一般に)FQDNまたはIPアドレス|
 |expiration_days|証明書の有効期限|
+|ca|証明書がCA証明書であるかどうか|
 |[ X.503 v3 extensions ]|-|
 |signing_key|データの署名に証明書を使用する|
 |encryption_key|データの暗号化に証明書を使用する|
@@ -50,6 +51,7 @@ state = "Tokyo"
 country = JP
 cn = "client"
 expiration_days = 365
+ca
 
 # X.509 v3 extensions
 cert_signing_key
