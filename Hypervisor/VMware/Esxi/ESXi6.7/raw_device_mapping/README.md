@@ -25,15 +25,15 @@ VMの参照先に指定する物理HDDの識別子を確認します。
 ## ■ マッピングファイルの保存先
 ```
 ### 物理互換
-# vmkfstools -z <対象HDDのパス情報> </vmfs/volumes/<任意のパス>/rdm_disk.vmdk>
+# vmkfstools -z <対象HDDのパス情報> </vmfs/volumes/<任意のボリューム>/rdm_disk.vmdk>
 
 ### 仮想互換
-# vmkfstools -r <対象HDDのパス情報> </vmfs/volumes/<任意のパス>/rdm_disk.vmdk>
+# vmkfstools -r <対象HDDのパス情報> </vmfs/volumes/<任意のボリューム>/rdm_disk.vmdk>
 ```
 物理互換モードのvmdkはパススルー、仮想互換モードのvmdkは非パススルーであることが確認でき、いずれも「Raw Device Mapping」であることが確認できます。
 ```
 ### 確認
-# vmkfstools -q /vmfs/volumes/<任意のパス>/rdm_disk.vmdk>
+# vmkfstools -q /vmfs/volumes/<任意のボリューム>/rdm_disk.vmdk>
 ```
 ## ■ VMへの割り当て
 「設定の編集」-「ハードディスクの追加」-「既存のハードディスク」より作成したvmdkを選択して割り当てます。 
