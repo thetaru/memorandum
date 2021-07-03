@@ -1,7 +1,8 @@
 # Linux コマンド
 ## ■ Commands
-- [ ] [top]()
-- [ ] [vmstat]()
+- [ ] [ps](https://github.com/thetaru/memorandum/tree/master/command/Linux/ps)
+- [ ] [top](https://github.com/thetaru/memorandum/tree/master/command/Linux/top)
+- [ ] [vmstat](https://github.com/thetaru/memorandum/tree/master/command/Linux/vmstat)
 ## ■ Tips
 - [ ] [コマンドの一覧を取得](https://github.com/thetaru/memorandum/tree/master/command/Linux/GetCommands)
 - [ ] [ユーザの強制ログアウト](https://github.com/thetaru/memorandum/tree/master/command/Linux/ForceLogout)
