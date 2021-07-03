@@ -46,7 +46,7 @@ certtool [オプション]
 ```
 
 ### CSR(証明書署名要求)の生成
-証明書署名要求は、認証局にサーバの公開鍵に署名してもらうよう要求するメッセージです。
+証明書署名要求は、CA(認証局)にサーバの公開鍵に署名してもらうよう要求するメッセージです。
 ```
 # certtool --generate-request --load-privkey key.pem --outfile request.pem
 ```
