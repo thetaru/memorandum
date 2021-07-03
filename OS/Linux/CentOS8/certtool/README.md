@@ -71,10 +71,7 @@ tls_www_server
 ### 自己署名証明書の生成
 
 ```
-### 自己認証局用の秘密鍵を生成
 # certtool --generate-privkey --outfile ca-key.pem
-
-### 自己認証局用の証明書を生成
 # certtool --generate-self-signed --load-privkey ca-key.pem --outfile ca-cert.pem
 ```
 
