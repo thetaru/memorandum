@@ -38,7 +38,21 @@ certtool [オプション]
 |encryption_key|データの暗号化に証明書を使用する|
 |tls_www_server||
 
-### 例: 
+### 例: 自己署名証明書用
+```
+# X.509 Certificate options
+
+# DN options
+organization = "Some Organization"
+state = "Tokyo"
+country = JP
+cn = "client"
+expiration_days = 365
+cert_signing_key
+crl_signing_key
+```
+
+### 例: サーバ証明書用
 ```
 # X.509 Certificate options
 
