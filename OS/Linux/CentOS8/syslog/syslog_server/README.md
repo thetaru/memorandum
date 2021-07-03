@@ -61,10 +61,6 @@
 ## ■ セキュリティ
 ### ● firewall
 ### ● 証明書
-#### certtoolの導入
-```
-# yum install gnutls-utils
-```
 ## ■ チューニング
 ## ■ 設定の反映
 ```
