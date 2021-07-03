@@ -46,6 +46,10 @@
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/Modules)にまとめました。
 
 ### ● 設定例
+||設定値|
+|:---|:---|
+|Listenポート|514/tcp|
+
 ```
 ```
 ### ● 文法チェック
@@ -62,10 +66,7 @@
 # yum install gnutls-utils
 ```
 ## ■ チューニング
-## ■ トラブルシューティング
 ## ■ 設定の反映
 ```
 # systemctl restart rsyslog.service
 ```
-## ■ 参考
-https://straypenguin.winfield-net.com/
