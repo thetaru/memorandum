@@ -16,6 +16,7 @@ certtool [オプション]
 |-p, --generate-privkey|公開鍵を生成する|
 |--bits|公開鍵のビット数を指定する|
 |-s, --generate-self-signed|自己証明書を生成する|
+|-c, --generate-certificate|証明書に署名する|
 |--hash|署名に使用するハッシュアルゴリズムを指定する|
 |--load-privkey|読み込む公開鍵を指定する|
 |--load-ca-privkey|読み込む公開鍵証明書を指定する|
@@ -38,34 +39,30 @@ certtool [オプション]
 |tls_www_server||
 
 ## ■ Tips
-### 公開鍵を生成する
-|オプション|説明|
-|:---|:---|
-|ビット数|4096|
-|出力先|key.pem|
+### 秘密鍵の生成
 
 ```
-# certtool -p --bits 4096 --outfile "key.pem"
+# certtool --generate-privkey --bits 4096 --rsa --outfile "key.pem"
 ```
 
-### CSR(証明書の署名リクエスト)を生成する
+### CSRの生成
 
 ```
-# certtool -q --hash SHA512 --load-privkey "key.pem" --template "template" --outfile "request.pem"
+# certtool --generate-request --hash SHA512 --load-privkey "key.pem" --template "template" --outfile "request.pem"
 ```
 
-### 自己証明書を生成する
+### 自己署名証明書の生成
 
 ```
-# certtool -c --hash SHA512 --load-ca-privkey "$ca_key" --load-ca-certificate "$ca_crt" --load-request "$csr_file" --outfile "$crt_file"
+# certtool --generate-self-signed --hash SHA512 --load-ca-privkey "ca-key.pem" --load-ca-certificate "ca-crt.pem" --load-request "request.pem" --outfile "cert.pem"
 ```
 
-### 証明書を生成する
+### 証明書の生成
 CSRを使用して証明書を生成する場合
 ```
-# certtool -s --hash SHA512 --load-privkey "/tmp/priv.key" --template "/tmp/template" --outfile "self-signed.pem"
+# certtool --generate-certificate --hash SHA512 --load-privkey "key.pem" --template "template" --outfile "ca-cert.pem"
 ```
 秘密鍵を使用して証明書を生成する場合
 ```
-# certtool --generate-certificate --load-privkey key.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem  --outfile cert.pem
+# certtool --generate-certificate --hash SHA512 --load-privkey "key.pem" --template "template" --load-ca-certificate ca-cert.pem --load-ca-privkey "ca-key.pem"  --outfile "ca-cert.pem"
 ```
