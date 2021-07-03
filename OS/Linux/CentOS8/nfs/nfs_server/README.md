@@ -22,6 +22,17 @@
 #### generalセクション
 #### nfsdclttrackセクション
 ### 設定例
+```
+/               master(rw) trusty(rw,no_root_squash)
+/projects       proj*.local.domain(rw)
+/usr            *.local.domain(ro) @trusted(rw)
+/home/joe       pc001(rw,all_squash,anonuid=150,anongid=100)
+/pub            *(ro,insecure,all_squash)
+/srv/www        -sync,rw server @trusted @external(ro)
+/foo            2001:db8:9:e54::/64(rw) 192.0.2.0/24(rw)
+/build          buildhost[0-9].local.domain(rw)
+```
+
 ### 文法チェック
 
 ## ■ 設定ファイル /etc/nfs.conf
@@ -36,10 +47,16 @@
 
 ## ■ セキュリティ
 ### firewall
-ファイアウォールを使用する場合は、nfs-server.serviceが使用するポートの固定は必須となります。
+ファイアウォールを使用する場合は、nfs-server.serviceが使用するポートの固定が必須となります。
 ## ■ チューニング
 ソフトマウント、ハードマウント、ネットワーク系とか
 ## ■ 設定の反映
+`/etc/exports`で指定したNFSの公開領域を反映させます。
+```
+# exportfs -rav
+```
+このとき、不必要な領域を晒していないことを確認しましょう。  
+サービスの再起動を実施し、設定を読み込みます。
 ```
 # systemctl restart nfs-server.service
 ```
