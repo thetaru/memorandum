@@ -22,12 +22,15 @@
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/directives)にまとめました。
 
 ### 設定例
+#### 指定したドメインのみアクセス可能とする(ホワイトリスト方式)
+#### 指定したドメインのみアクセス不可とする(ブラックリスト方式)
 
 ### 文法チェック
 ```
 # squid -k parse
 # squid -k check
 ```
+
 ## ■ セキュリティ
 ### firewall
 ### 認証
@@ -41,5 +44,3 @@
 ```
 # systemctl restart squid.service
 ```
-## ■ 参考
-https://straypenguin.winfield-net.com/
