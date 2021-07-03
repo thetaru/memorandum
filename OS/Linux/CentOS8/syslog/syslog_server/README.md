@@ -18,7 +18,23 @@
 
 ## ■ 主設定ファイル /etc/rsyslog.conf
 ### ● 説明項目
-#### 
+#### Converting older formats to advanced
+[こちら]()にまとめました。
+
+#### Basic Structure
+
+#### Templates
+
+#### rsyslog Properties
+
+#### Filter Conditions
+
+#### RainerScript
+
+#### Actions
+
+#### timezone
+
 ### ● 設定例
 ### ● 文法チェック
 ```
