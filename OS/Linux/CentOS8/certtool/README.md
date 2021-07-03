@@ -22,6 +22,13 @@ certtool [オプション]
 ## ■ テンプレートファイル
 |オプション|説明|
 |:---|:---|
-|||
+|organization||
+|state||
+|country||
+|cn||
+|expiration_days||
+|signing_key||
+|encryption_key||
+|tls_www_server||
 
 ## ■ Tips
