@@ -28,14 +28,14 @@ certtool [オプション]
 |オプション|説明|
 |:---|:---|
 |[ DN options ]|-|
-|organization||
-|state||
-|country||
-|cn||
-|expiration_days||
+|organization|組織名|
+|state|都道府県|
+|country|国名|
+|cn|(一般に)FQDNまたはIPアドレス|
+|expiration_days|証明書の有効期限|
 |[ X.503 v3 extensions ]|-|
-|signing_key||
-|encryption_key||
+|signing_key|データの署名に証明書を使用する|
+|encryption_key|データの暗号化に証明書を使用する|
 |tls_www_server||
 
 ### 例
