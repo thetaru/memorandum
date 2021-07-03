@@ -42,27 +42,28 @@ certtool [オプション]
 ### 秘密鍵の生成
 
 ```
-# certtool --generate-privkey --bits 4096 --rsa --outfile "key.pem"
+# certtool --generate-privkey --outfile key.pem --rsa
 ```
 
 ### CSRの生成
 
 ```
-# certtool --generate-request --hash SHA512 --load-privkey "key.pem" --template "template" --outfile "request.pem"
+# certtool --generate-request --load-privkey key.pem --outfile request.pem
 ```
 
 ### 自己署名証明書の生成
 
 ```
-# certtool --generate-self-signed --hash SHA512 --load-ca-privkey "ca-key.pem" --load-ca-certificate "ca-crt.pem" --load-request "request.pem" --outfile "cert.pem"
+# certtool --generate-privkey --outfile ca-key.pem
+# certtool --generate-self-signed --load-privkey ca-key.pem --outfile ca-cert.pem
 ```
 
 ### 証明書の生成
 CSRを使用して証明書を生成する場合
 ```
-# certtool --generate-certificate --hash SHA512 --load-privkey "key.pem" --template "template" --outfile "ca-cert.pem"
+# certtool --generate-certificate --load-request request.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
 ```
 秘密鍵を使用して証明書を生成する場合
 ```
-# certtool --generate-certificate --hash SHA512 --load-privkey "key.pem" --template "template" --load-ca-certificate ca-cert.pem --load-ca-privkey "ca-key.pem"  --outfile "ca-cert.pem"
+# certtool --generate-certificate --load-privkey key.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
 ```
