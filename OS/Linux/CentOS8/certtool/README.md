@@ -13,6 +13,7 @@ certtool [オプション]
 |オプション|説明|
 |:---|:---|
 |-p, --generate-privkey|公開鍵を生成する|
+|--bits|公開鍵のビット数を指定する|
 |-s, --generate-self-signed|自己証明書を生成する|
 |--hash|署名に使用するハッシュアルゴリズムを指定する|
 |--load-privkey|読み込む公開鍵を指定する|
