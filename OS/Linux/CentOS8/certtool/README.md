@@ -75,7 +75,7 @@ tls_www_server
 # certtool --generate-self-signed --load-privkey ca-key.pem --outfile ca-cert.pem
 ```
 
-### サーバ証明書の生成(一般的には不要)
+### サーバ証明書の生成
 CSRを使用して証明書を生成する場合
 ```
 # certtool --generate-certificate --load-request request.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
