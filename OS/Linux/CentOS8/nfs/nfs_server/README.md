@@ -18,9 +18,11 @@
 |rpcbind.service|111/tcp, 111/udp||
 
 ## ■ 設定ファイル /etc/exports
-### セクション
-#### generalセクション
-#### nfsdclttrackセクション
+### シンタックス
+```
+
+```
+### パラメータ
 ### 設定例
 ```
 /               master(rw) trusty(rw,no_root_squash)
@@ -36,7 +38,9 @@
 ### 文法チェック
 
 ## ■ 設定ファイル /etc/nfs.conf
-### zzzパラメータ
+### セクション
+#### generalセクション
+#### nfsdclttrackセクション
 ### 設定例
 ### 文法チェック
 
