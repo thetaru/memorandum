@@ -48,11 +48,22 @@ certtool [オプション]
 ```
 
 ### CSR(証明書の署名リクエスト)を生成する
+|オプション|説明|
+|:---|:---|
+|アルゴリズム|SHA512|
+|公開鍵|/tmp/priv.key|
+|テンプレートファイル|/tmp/template|
+|出力先|/tmp/|
+
 ```
 # certtool -q --hash SHA512 --load-privkey "/tmp/priv.key" --template "$template_file" --outfile "/tmp/test.csr"
 ```
 
 ### 自己証明書を生成する
+|オプション|説明|
+|:---|:---|
+|||
+
 ```
 # certtool -s --hash SHA512 --load-privkey "$key_file" --template "$template_file" --outfile "$crt_file"
 ```
