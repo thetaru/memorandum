@@ -20,7 +20,7 @@ certtool [オプション]
 |--hash|署名に使用するハッシュアルゴリズムを指定する|
 |--load-privkey|読み込む公開鍵を指定する|
 |--load-ca-privkey|読み込む公開鍵証明書を指定する|
-|--load-ca-certificate||
+|--load-ca-certificate|読み込むCA証明書を指定する|
 |--template|使用するテンプレートファイルを指定する|
 |--outfile|出力ファイル名を指定する|
 
@@ -75,7 +75,7 @@ tls_www_server
 # certtool --generate-self-signed --load-privkey ca-key.pem --outfile ca-cert.pem
 ```
 
-### サーバ証明書の生成
+### サーバ証明書の生成(一般的には不要)
 CSRを使用して証明書を生成する場合
 ```
 # certtool --generate-certificate --load-request request.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
