@@ -38,6 +38,23 @@ certtool [オプション]
 |encryption_key||
 |tls_www_server||
 
+### 例
+```
+# X.509 Certificate options
+
+# DN options
+organization = "Some Organization"
+state = "Tokyo"
+country = JP
+cn = "client"
+expiration_days = 365
+
+# X.509 v3 extensions
+signing_key
+encryption_key
+tls_www_server
+```
+
 ## ■ Tips
 ### 秘密鍵の生成
 
@@ -46,7 +63,7 @@ certtool [オプション]
 ```
 
 ### CSR(証明書署名要求)の生成
-証明書署名要求は、CA(認証局)にサーバの公開鍵に署名してもらうよう要求するメッセージです。
+
 ```
 # certtool --generate-request --load-privkey key.pem --outfile request.pem
 ```
