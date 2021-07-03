@@ -87,3 +87,9 @@ CSRを使用してサーバ証明書(公開鍵)を生成する場合
 ```
 # certtool --generate-certificate --load-privkey key.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
 ```
+
+## ■ Ref
+- https://straypenguin.winfield-net.com/389ds4.html
+- https://qiita.com/TakahikoKawasaki/items/4c35ac38c52978805c69
+- https://qiita.com/sanyamarseille/items/46fc6ff5a0aca12e1946
+- https://int128.hatenablog.com/entry/2015/07/27/224351
