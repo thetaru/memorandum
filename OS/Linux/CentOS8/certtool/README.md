@@ -24,11 +24,13 @@ certtool [オプション]
 ## ■ テンプレートファイル
 |オプション|説明|
 |:---|:---|
+|DN options|-|
 |organization||
 |state||
 |country||
 |cn||
 |expiration_days||
+|X.503 v3 extensions|-|
 |signing_key||
 |encryption_key||
 |tls_www_server||
