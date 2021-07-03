@@ -44,7 +44,7 @@ certtool [オプション]
 |出力先|/tmp/priv.key|
 
 ```
-# certtool -p --bits 4096 --outfile /tmp/priv.key
+# certtool -p --bits 4096 --outfile "/tmp/priv.key"
 ```
 
 ### CSR(証明書の署名リクエスト)を生成する
@@ -56,7 +56,7 @@ certtool [オプション]
 |出力先|/tmp/|
 
 ```
-# certtool -q --hash SHA512 --load-privkey "/tmp/priv.key" --template "$template_file" --outfile "/tmp/test.csr"
+# certtool -q --hash SHA512 --load-privkey "/tmp/priv.key" --template "/tmp/template" --outfile "/tmp/priv.csr"
 ```
 
 ### 自己証明書を生成する
@@ -65,5 +65,5 @@ certtool [オプション]
 |||
 
 ```
-# certtool -s --hash SHA512 --load-privkey "$key_file" --template "$template_file" --outfile "$crt_file"
+# certtool -s --hash SHA512 --load-privkey "/tmp/priv.key" --template "/tmp/template" --outfile "self-signed.pem"
 ```
