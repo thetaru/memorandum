@@ -23,6 +23,7 @@
 
 ```
 ### パラメータ
+#### ● 
 ### 設定例
 ```
 /               master(rw) trusty(rw,no_root_squash)
