@@ -19,31 +19,31 @@
 ## ■ 主設定ファイル /etc/rsyslog.conf
 ### ● 説明項目
 #### Converting older formats to advanced
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/ConvertingOlderFormatsToAdvanced)にまとめました。
 
 #### Basic Structure
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/BasicStructure)にまとめました。
 
 #### Templates
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/Templates)にまとめました。
 
 #### rsyslog Properties
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/RsyslogProperties)にまとめました。
 
 #### Filter Conditions
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/FilterConditions)にまとめました。
 
 #### RainerScript
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/RainerScript)にまとめました。
 
 #### Actions
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/Actions)にまとめました。
 
 #### timezone
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/Timezone)にまとめました。
 
 #### Modules
-[こちら]()にまとめました。
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/Modules)にまとめました。
 
 ### ● 設定例
 ```
