@@ -38,7 +38,7 @@ certtool [オプション]
 |encryption_key|データの暗号化に証明書を使用する|
 |tls_www_server||
 
-### 例
+### 例: 
 ```
 # X.509 Certificate options
 
@@ -71,16 +71,19 @@ tls_www_server
 ### 自己署名証明書の生成
 
 ```
+### CA(秘密鍵)の生成
 # certtool --generate-privkey --outfile ca-key.pem
+
+### 自己署名証明書(公開鍵)の生成
 # certtool --generate-self-signed --load-privkey ca-key.pem --outfile ca-cert.pem
 ```
 
 ### サーバ証明書の生成
-CSRを使用して証明書を生成する場合
+CSRを使用してサーバ証明書(公開鍵)を生成する場合
 ```
 # certtool --generate-certificate --load-request request.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
 ```
-秘密鍵を使用して証明書を生成する場合
+秘密鍵を使用してサーバ証明書(公開鍵)を生成する場合
 ```
 # certtool --generate-certificate --load-privkey key.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
 ```
