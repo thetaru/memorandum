@@ -45,8 +45,8 @@ certtool [オプション]
 # certtool --generate-privkey --outfile key.pem --rsa
 ```
 
-### CSRの生成
-
+### CSR(証明書署名要求)の生成
+証明書署名要求は、認証局にサーバの公開鍵に電子署名してもらうよう要求するメッセージです。
 ```
 # certtool --generate-request --load-privkey key.pem --outfile request.pem
 ```
@@ -58,7 +58,7 @@ certtool [オプション]
 # certtool --generate-self-signed --load-privkey ca-key.pem --outfile ca-cert.pem
 ```
 
-### 証明書の生成
+### サーバ証明書の生成
 CSRを使用して証明書を生成する場合
 ```
 # certtool --generate-certificate --load-request request.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --outfile cert.pem
