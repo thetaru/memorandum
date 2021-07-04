@@ -95,4 +95,5 @@ lets encrypt でワイルドカード証明書
 - [ ] [~~MetalLB+BINDで内部DNSサーバ構築~~](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/bind_k8s_gitlab)
 - [ ] [CoreDNS+k8sで作る内部DNSサーバ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/internal_coredns)
 - [ ] [ログイン時の警告バナーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/login_banner)
+- [ ] [ファイルシステムのマウント順序を指定する方法]()https://tech-lab.sios.jp/archives/12506
 
