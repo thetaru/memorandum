@@ -23,7 +23,19 @@
 directory client(option,option...) client(option,option...) ...
 ```
 ### パラメータ
-#### ● 
+|オプション|説明|
+|:---|:---|
+|fsid=num||
+|ro||
+|rw||
+|sync</br>async||
+|root_squash</br>no_root_squash||
+|all_squash</br>no_all_squash||
+|anonuid=xxx</br>anongid=xxx||
+|no_subtree_check</br>subtree_check||
+|secure</br>insecure||
+|hide</br>nohide||
+
 ### 設定例
 ```
 /               master(rw) trusty(rw,no_root_squash)
