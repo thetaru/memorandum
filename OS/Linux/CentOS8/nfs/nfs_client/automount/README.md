@@ -7,10 +7,10 @@
 
 ## fstabの設定
 ```
-### NFSv3
+### NFSv3以上
 nfs-srv:/mnt/data          /mnt/data         nfs noauto,noatime,rsize=32768,wsize=32768 0 0
 
-### NFSv4
+### NFSv4のみ
 nfs-srv:/mnt/data          /mnt/data         nfs4 noauto,noatime,rsize=32768,wsize=32768 0 0
 ```
 ※1 `noauto`マウントオプションはOS起動時に自動的に共有をマウントしないようします  
