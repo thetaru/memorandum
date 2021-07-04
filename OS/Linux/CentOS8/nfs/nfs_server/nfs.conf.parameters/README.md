@@ -18,7 +18,9 @@
 
 # ■ lockd
 ## port (★)
+
 ## udp-port (★)
+
 # ■ mountd
 ## debug
 ## manage-gids
