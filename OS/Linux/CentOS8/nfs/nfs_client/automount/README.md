@@ -83,6 +83,9 @@ Description=Check the network mounts
 [Service]
 Type=simple
 ExecStart=/usr/local/bin/auto_share
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 ### サービスの有効化
