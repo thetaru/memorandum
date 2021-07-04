@@ -8,3 +8,4 @@
 ## ■ Tips
 - [ ] [NFSv4専用サーバの構築]()
 - [ ] [NFSv4用 公開ディレクトリの集約]()
+https://www.torutk.com/projects/swe/wiki/CentOS_6%E3%81%A7NFS
