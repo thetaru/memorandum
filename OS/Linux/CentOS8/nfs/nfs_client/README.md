@@ -17,5 +17,5 @@ NFSマウントの際のデフォルト値を変更
 
 ## ■ 検証用コマンド
 ```
-# mount 
+# mount -t nfs -o vers=(3|4) <nfs server>:<export> <マウント先ディレクトリ>
 ```
