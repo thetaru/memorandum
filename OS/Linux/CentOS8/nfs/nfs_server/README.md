@@ -23,11 +23,11 @@
 ※ NFSv4プロトコルでは、`rpcbind`サービス、`lockd`サービス、`rpc-statd`サービスが不要となります。
 
 ## ■ 設定ファイル /etc/exports
-### シンタックス
+### ● シンタックス
 ```
 directory client(option,option...) client(option,option...) ...
 ```
-### オプション
+### ● オプション
 |オプション|説明|
 |:---|:---|
 |ro|読み取り専用で共有する|
@@ -50,7 +50,7 @@ directory client(option,option...) client(option,option...) ...
 
 ※ all_squashを使用する場合は、anonuidとanongidと一緒に設定するべきだと思います。
 
-### 設定例
+### ● 設定例
 ```
 ### NFSv3
 /export 192.168.137.0/24(rw,no_root_squash) 192.168.138.0/24(rw,no_root_squash)
@@ -58,6 +58,13 @@ directory client(option,option...) client(option,option...) ...
 ### NFSv4
 /export 192.168.137.0/24(rw,async,fsid=0) 192.168.138.0/24(rw,async,fsid=0)
 ```
+
+### ● 反映方法
+`/etc/exports`で指定したNFSの公開領域を反映させます。
+```
+# exportfs -rav
+```
+このとき、不必要な領域を晒していないことを確認しましょう。
 
 ## ■ 設定ファイル /etc/nfs.conf
 nfsサーバ全般に関する設定を行います。
@@ -67,6 +74,11 @@ nfsサーバ全般に関する設定を行います。
 
 ### ● 設定例
 
+### ● 反映方法
+```
+# systemctl restart nfs-server.service
+```
+
 ## ■ 設定ファイル /etc/idmapd.conf
 NFSv4ではidmapdを利用したIDマッピングを行うため、NFSv4を使用する場合に設定を行います。  
 少なくともドメイン名の設定を行う必要があります。
@@ -75,6 +87,13 @@ NFSv4ではidmapdを利用したIDマッピングを行うため、NFSv4を使�
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/idmapd.conf.parameter)にまとめました。
 
 ### ● 設定例
+
+### ● 反映方法
+```
+# echo N > /sys/module/nfsd/parameters/nfs4_disable_idmapping
+# nfsidmap -c
+# systemctl restart nfs-idmapd.service
+```
 
 ## ■ セキュリティ
 ### firewall
@@ -91,17 +110,7 @@ NFS version4では利用ポートが固定されています。
 候補: ファイルディスクリプタ、IO系、帯域幅系、カーネルスレッド系、コネクション系、iノード系  
 キープライブとかも考慮?てかtcp全般は手を付けたほうがいいのかも?
 
-## ■ 設定の反映
-`/etc/exports`で指定したNFSの公開領域を反映させます。
-```
-# exportfs -rav
-```
-このとき、不必要な領域を晒していないことを確認しましょう。(worldとなっていたら特に注意)  
-  
-サービスの再起動を実施し、設定を読み込みます。
-```
-# systemctl restart nfs-server.service
-```
+## ■ 設定の確認
 最後に、指定したポートを利用していることを確認します。
 ```
 # rpcinfo -p
