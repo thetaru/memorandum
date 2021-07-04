@@ -63,7 +63,9 @@ directory client(option,option...) client(option,option...) ...
 ### firewall
 ファイアウォールを使用する場合は、nfs-server.serviceが使用するポートの固定が必須となります。
 #### ● NFS version3
+NFS version3では利用ポートを固定する必要があります。
 #### ● NFS version4
+NFS version4では利用ポートが固定されています。
 
 ## ■ チューニング
 ### ● I/Oのサイズ(最大ブロックサイズ)の変更
