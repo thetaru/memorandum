@@ -59,7 +59,7 @@
 # ■ statd
 ## debug
 ## port (★)
-## outgoing-port
+## outgoing-port (★)
 ## name
 ## state-directory
 ## ha-callout
