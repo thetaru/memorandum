@@ -6,6 +6,6 @@
 - [ ] [NFSクライアントの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_client)
 
 ## ■ Tips
-- [ ] [NFSv4専用サーバの構築]()
+- [ ] [セキュアNFSサーバの構築]()
 - [ ] [NFSv4用 公開ディレクトリの集約]()
 https://www.torutk.com/projects/swe/wiki/CentOS_6%E3%81%A7NFS
