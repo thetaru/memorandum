@@ -41,6 +41,7 @@
 ## ■ 設定ファイル /etc/nfs.conf
 ### ● 設定項目
 #### generalセクション
+[こちら]()にまとめました
 #### nfsdclttrackセクション
 #### gssdセクション
 #### lockdセクション
