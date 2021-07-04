@@ -26,8 +26,7 @@ directory client(option,option...) client(option,option...) ...
 |オプション|説明|
 |:---|:---|
 |fsid=num||
-|ro||
-|rw||
+|ro</br>rw|読み取り専用で共有する</br>読み書き両用で共有する|
 |sync</br>async||
 |root_squash</br>no_root_squash||
 |all_squash</br>no_all_squash||
