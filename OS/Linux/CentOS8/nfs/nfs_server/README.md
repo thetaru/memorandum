@@ -73,6 +73,8 @@ nfsサーバ全般に関する設定を行います。
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
 
 ### ● 設定例
+```
+```
 
 ### ● 反映方法
 ```
@@ -87,6 +89,8 @@ NFSv4ではidmapdを利用したIDマッピングを行うため、NFSv4を使�
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/idmapd.conf.parameter)にまとめました。
 
 ### ● 設定例
+```
+```
 
 ### ● 反映方法
 ```
