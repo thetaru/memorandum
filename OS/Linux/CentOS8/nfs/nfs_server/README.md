@@ -97,3 +97,6 @@ NFS version4では利用ポートが固定されています。
 ```
 # rpcinfo -p
 ```
+
+## ■ Ref
+- https://redj.hatenablog.com/entry/2019/03/30/134041
