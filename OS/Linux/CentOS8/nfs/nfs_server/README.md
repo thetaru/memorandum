@@ -56,12 +56,16 @@ directory client(option,option...) client(option,option...) ...
 #### ● 複数のディレクトリを別々にエクスポート
 
 ## ■ 設定ファイル /etc/nfs.conf
+nfsサーバ全般に関する設定を行います。
+
 ### ● 設定項目
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
 
 ### ● 設定例
 
 ## ■ 設定ファイル /etc/idmapd.conf
+NFSv4を使用する場合に設定を行います。  
+
 ### ● 設定項目
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/idmapd.conf.parameter)にまとめました。
 
