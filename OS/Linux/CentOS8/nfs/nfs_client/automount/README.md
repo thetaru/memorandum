@@ -7,7 +7,8 @@
 
 ## fstabの設定
 ```
-nfs-srv:/mnt/data          /mnt/data         nfs noauto,noatime,rsize=32768,wsize=32768 0 0
+#nfs-srv:/mnt/data          /mnt/data         nfs nfsv3,noauto,noatime,rsize=32768,wsize=32768 0 0
+nfs-srv:/mnt/data          /mnt/data         nfs nfsv4,noauto,noatime,rsize=32768,wsize=32768 0 0
 ```
 ※1 `noauto`マウントオプションはOS起動時に自動的に共有をマウントしないようします  
 ※2 mountコマンドでマウントしても共有できないので試験しようとして驚かないこと
