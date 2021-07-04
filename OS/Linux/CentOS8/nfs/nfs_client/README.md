@@ -20,6 +20,14 @@ OS起動時にシステムがどのデバイスがどのディレクトリにマ
 ### ● 設定項目
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_client/fstab.parameter)にまとめました。
 
+## ■ 自動マウントについて
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_client/automount)にまとめました。
+### ● fstab
+```
+ithium:/mnt/data          /mnt/data         nfs noauto,noatime,rsize=32768,wsize=32768 0 0
+```
+※ `noauto`マウントオプションはOS起動時に自動的に共有をマウントしないようします
+
 ## ■ 検証用コマンド
 ```
 # mount -v -t nfs -o vers=(3|4) <nfs server>:<export> マウントポイント
