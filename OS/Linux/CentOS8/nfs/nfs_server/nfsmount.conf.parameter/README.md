@@ -1,5 +1,6 @@
 # [ NFSMount_Global_Options ]
 ## Defaultvers
+デフォルトで使用するプロトコルのバージョンを指定する
 ## Nfsvers
 ## Defaultproto
 ## Proto
