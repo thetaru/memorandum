@@ -12,13 +12,13 @@
 # systemctl enable --now nfs-server.service
 ```
 ## ■ 関連サービス
-|サービス名|ポート番号|役割|
+|サービス名|ポート番号|備考|
 |:---|:---|:---|
-|portmapper|111/tcp, 111/udp|
-|nfs|2049/tcp, 2049/udp|
-|statd|不定/tcp, 不定/udp|
-|mountd|不定/tcp, 不定/udp|
-|nlockmgr|不定/tcp, 不定/udp|
+|portmapper|111/tcp, 111/udp|NFSv4専用の場合は不要|
+|nfs|2049/tcp, 2049/udp||
+|statd|不定/tcp, 不定/udp|必要に応じて固定|
+|mountd|不定/tcp, 不定/udp|必要に応じて固定|
+|nlockmgr|不定/tcp, 不定/udp|必要に応じて固定|
 
 ※ NFSv4プロトコルでは、`rpcbind`サービス、`lockd`サービス、`rpc-statd`サービスが不要となります。
 
