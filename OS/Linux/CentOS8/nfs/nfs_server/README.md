@@ -40,26 +40,8 @@
 
 ## ■ 設定ファイル /etc/nfs.conf
 ### ● 設定項目
-#### generalセクション
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### nfsdclttrackセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### gssdセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### lockdセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### mountdセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### nfsdcldセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### nfsdcltrackセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### nfsdセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### statdセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
-#### sm-notifyセクション
-[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/nfs.conf.parameters)にまとめました。
+
 ### ● 設定例
 ### ● 文法チェック
 
