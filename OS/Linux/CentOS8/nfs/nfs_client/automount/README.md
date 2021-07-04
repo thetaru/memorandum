@@ -11,6 +11,9 @@
 ### NFSv3以上
 nfs-srv:/mnt/data          /mnt/data         nfs noauto,noatime,rsize=32768,wsize=32768 0 0
 
+### NFSv3のみ
+nfs-srv:/mnt/data          /mnt/data         nfs noauto,noatime,rsize=32768,wsize=32768 0 0
+
 ### NFSv4のみ
 nfs-srv:/mnt/data          /mnt/data         nfs4 noauto,noatime,rsize=32768,wsize=32768 0 0
 ```
