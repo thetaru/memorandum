@@ -42,6 +42,14 @@
 ### セクション
 #### generalセクション
 #### nfsdclttrackセクション
+#### gssdセクション
+#### lockdセクション
+#### mountdセクション
+#### nfsdcldセクション
+#### nfsdcltrackセクション
+#### nfsdセクション
+#### statdセクション
+#### sm-notifyセクション
 ### 設定例
 ### 文法チェック
 
