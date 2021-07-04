@@ -20,6 +20,8 @@
 |mountd|不定/tcp, 不定/udp|
 |nlockmgr|不定/tcp, 不定/udp|
 
+※ NFSv4プロトコルでは、`rpcbind`サービス、`lockd`サービス、`rpc-statd`サービスが不要となります。
+
 ## ■ 設定ファイル /etc/exports
 ### シンタックス
 ```
