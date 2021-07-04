@@ -1,5 +1,5 @@
 # ■ General
-## Domain
+## Domain (★)
 ## No-Strip
 ## Reformat-Group
 ## Local-Realms
