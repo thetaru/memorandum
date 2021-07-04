@@ -111,10 +111,25 @@ NFS version4では利用ポートが固定されています。
 キープライブとかも考慮?てかtcp全般は手を付けたほうがいいのかも?
 
 ## ■ 設定の確認
-最後に、指定したポートを利用していることを確認します。
+### exports
+```
+# exportfs -v
+```
+
+### nfs.conf
+指定したポートを利用していることを確認します。
 ```
 # rpcinfo -p
 ```
+
+### idmapd.conf
+NFSv4の場合に確認してください。
+```
+# cd マウントポイント
+# touch hoge
+# ls -l hoge
+```
+指定のUID/GIDになっていることを確認してください。
 
 ## ■ Ref
 - https://redj.hatenablog.com/entry/2019/03/30/134041
