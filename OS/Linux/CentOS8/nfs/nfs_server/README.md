@@ -62,6 +62,9 @@ directory client(option,option...) client(option,option...) ...
 ## ■ セキュリティ
 ### firewall
 ファイアウォールを使用する場合は、nfs-server.serviceが使用するポートの固定が必須となります。
+#### ● NFS version3
+#### ● NFS version4
+
 ## ■ チューニング
 ### ● I/Oのサイズ(最大ブロックサイズ)の変更
 ### ● 自動マウントの処理
