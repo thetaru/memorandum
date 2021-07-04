@@ -17,14 +17,14 @@
 ## set-home
 
 # ■ lockd
-## port
-## udp-port
+## port (★)
+## udp-port (★)
 # ■ mountd
 ## debug
 ## manage-gids
 ## descriptors
-## port
-## threads
+## port (★)
+## threads (★)
 ## reverse
 ## state-directory-path
 ## ha-callout
@@ -39,9 +39,9 @@
 
 # ■ nfsd
 ## debug
-## threads
+## threads (★)
 ## host
-## port
+## port (★)
 ## grace-time
 ## lease-time
 ## tcp
@@ -56,7 +56,7 @@
 
 # ■ statd
 ## debug
-## port
+## port (★)
 ## outgoing-port
 ## name
 ## state-directory
