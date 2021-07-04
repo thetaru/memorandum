@@ -24,10 +24,10 @@
 ```
 # postfix check
 ```
+## ■ 設定ファイル /etc/postfix/canonical
 ## ■ 設定ファイル /etc/postfix/transport
 ## ■ セキュリティ
 ### ● firewall
-### ● 証明書
 ### ● 認証
 ## ■ ログ
 ## ■ ログローテーション
