@@ -50,6 +50,11 @@ directory client(option,option...) client(option,option...) ...
 ### 設定例
 ### 文法チェック
 
+## ■ 設定ファイル /etc/idmapd.conf
+### zzzパラメータ
+### 設定例
+### 文法チェック
+
 ## ■ セキュリティ
 ### firewall
 ファイアウォールを使用する場合は、nfs-server.serviceが使用するポートの固定が必須となります。
