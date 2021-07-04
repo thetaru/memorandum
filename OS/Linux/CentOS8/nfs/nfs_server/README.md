@@ -58,14 +58,18 @@ directory client(option,option...) client(option,option...) ...
 ### ● 文法チェック
 
 ## ■ 設定ファイル /etc/nfsmount.conf
-### zzzパラメータ
-### 設定例
-### 文法チェック
+### ● 設定項目
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/)にまとめました。
+
+### ● 設定例
+### ● 文法チェック
 
 ## ■ 設定ファイル /etc/idmapd.conf
-### zzzパラメータ
-### 設定例
-### 文法チェック
+### ● 設定項目
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/)にまとめました。
+
+### ● 設定例
+### ● 文法チェック
 
 ## ■ セキュリティ
 ### firewall
