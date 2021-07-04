@@ -99,3 +99,4 @@ WantedBy=multi-user.target
 # systemctl enable --now auto_share.service
 # systemctl enable --now auto_share.timer
 ```
+マウントポイントをumountした後、自動的にマウントされていることを確認できればOKです。
