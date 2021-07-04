@@ -66,7 +66,8 @@ done
 # chmod +x /usr/local/bin/auto_share
 ```
 ### タイマーの作成
-以下のユニットファイルは`/etc/systemd/system/auto_share.timer`に格納します。
+以下のユニットファイルは`/etc/systemd/system/auto_share.timer`に格納します。  
+今回のタイマーは1分毎にスクリプトを実行します。
 ```
 [Unit]
 Description=Check the network mounts
