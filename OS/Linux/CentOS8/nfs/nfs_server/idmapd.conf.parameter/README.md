@@ -24,10 +24,8 @@ NFSv4ではユーザを`user@domain`の形式で扱うため必須となりま�
 `/etc/exports`ファイルのオプション`root_squash`, `all_squash`を指定した場合に割り当てられるデフォルトのグループを指定します。 
 
 # ■ Translation
-## Method (★)
+## Method
 |デフォルト値|nsswitch|
 |:---|:---|
 
 UNIX側ユーザID/グループIDの取得方法を指定します。
-
-## GSS-Methods
