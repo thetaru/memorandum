@@ -56,6 +56,12 @@ directory client(option,option...) client(option,option...) ...
 
 ### ● 設定例
 
+## ■ 設定ファイル /etc/modprobe.d/lockd.conf
+### ● 設定項目
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/lockd.conf.parameters)にまとめました。
+
+### ● 設定例
+
 ## ■ 設定ファイル /etc/idmapd.conf
 ### ● 設定項目
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/idmapd.conf.parameter)にまとめました。
