@@ -14,3 +14,8 @@ NFSマウントの際のデフォルト値を変更
 
 ### ● 設定項目
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_client/nfsmount.conf.parameter)にまとめました。
+
+## ■ 検証用コマンド
+```
+# mount 
+```
