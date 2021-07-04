@@ -50,6 +50,9 @@ directory client(option,option...) client(option,option...) ...
 
 ### 設定例
 #### ● 単純なエクスポート
+```
+
+```
 #### ● 複数のディレクトリを別々にエクスポート
 
 ## ■ 設定ファイル /etc/nfs.conf
