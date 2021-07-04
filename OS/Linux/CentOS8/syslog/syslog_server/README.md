@@ -46,10 +46,6 @@
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server/Modules)にまとめました。
 
 ### ● 設定例
-|項目|設定値|
-|:---|:---|
-|Listenポート|514/tcp|
-
 ```
 ```
 ### ● 文法チェック
