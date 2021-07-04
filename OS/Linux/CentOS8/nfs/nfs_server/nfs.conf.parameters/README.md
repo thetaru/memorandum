@@ -42,7 +42,7 @@
 # ■ nfsd
 ## debug
 ## threads (★)
-## host
+## host (★)
 ## port (★)
 ## grace-time
 ## lease-time
