@@ -28,4 +28,6 @@ NFSv4ではユーザを`user@domain`の形式で扱うため必須となりま�
 |デフォルト値|nsswitch|
 |:---|:---|
 
+UNIX側ユーザID/グループIDの取得方法を指定します。
+
 ## GSS-Methods
