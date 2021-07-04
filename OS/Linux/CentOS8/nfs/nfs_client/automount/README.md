@@ -86,5 +86,6 @@ ExecStart=/usr/local/bin/auto_share
 
 ### サービスの有効化
 ```
-# systemctl enable auto_share.timer
+# systemctl enable --now auto_share.service
+# systemctl enable --now auto_share.timer
 ```
