@@ -25,15 +25,24 @@ directory client(option,option...) client(option,option...) ...
 ### パラメータ
 |オプション|説明|
 |:---|:---|
-|fsid=num||
-|ro</br>rw|読み取り専用で共有する</br>読み書き両用で共有する|
-|sync</br>async|同期書き込みを有効にする</br>非同期書き込みを有効にする|
-|root_squash</br>no_root_squash||
-|all_squash</br>no_all_squash||
-|anonuid=xxx</br>anongid=xxx||
-|no_subtree_check</br>subtree_check||
-|secure</br>insecure||
-|hide</br>nohide||
+|ro||
+|rw||
+|secure||
+|insecure||
+|sync||
+|async||
+|wdelay||
+|no_wdelay||
+|hide||
+|nohide||
+|subtree_check||
+|no_subtree_check||
+|root_squash||
+|no_root_squash||
+|all_squash||
+|no_all_squash||
+|anonuid=UID</br>anongid=GID||
+
 
 ### 設定例
 ```
