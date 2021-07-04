@@ -1,33 +1,28 @@
 # ■ General
 ## Domain (★)
+|デフォルト値|-|
+|:---|:---|
+
+ドメイン名を指定します。  
+NFSv4ではユーザを`user@domain`の形式で扱うため必須となります。
+
 ## No-Strip
 ## Reformat-Group
 ## Local-Realms
 
 # ■ Mapping
 ## Nobody-User
+|デフォルト値|nobody|
+|:---|:---|
+
+`/etc/exports`ファイルのオプション`root_squash`, `all_squash`を指定した場合に割り当てられるデフォルトのユーザを指定します。 
+
 ## Nobody-Group
+|デフォルト値|nobody|
+|:---|:---|
+
+`/etc/exports`ファイルのオプション`root_squash`, `all_squash`を指定した場合に割り当てられるデフォルトのグループを指定します。 
 
 # ■ Translation
 ## Method
 ## GSS-Methods
-
-# ■ Static
-
-# ■ UMICH_SCHEMA
-## LDAP_server
-## LDAP_base
-## LDAP_canonicalize_name
-## LDAP_people_base
-## LDAP_group_base
-## LDAP_use_ssl
-## LDAP_ca_cert
-## NFSv4_person_objectclass
-## NFSv4_name_attr
-## NFSv4_uid_attr
-## GSS_principal_attr
-## NFSv4_acctname_attr
-## NFSv4_group_objectclass
-## NFSv4_gid_attr
-## NFSv4_group_attr
-## NFSv4_member_attr
