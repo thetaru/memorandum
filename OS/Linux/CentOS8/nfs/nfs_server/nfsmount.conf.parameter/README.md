@@ -33,7 +33,3 @@
 ## Intr
 ## Lookupcache
 ## noatime
-
-# [ Server  “Server_Name” ]
-
-# [ MountPoint “Mount_Point” ]
