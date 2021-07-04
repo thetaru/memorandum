@@ -45,16 +45,9 @@ directory client(option,option...) client(option,option...) ...
 
 
 ### 設定例
-```
-/               master(rw) trusty(rw,no_root_squash)
-/projects       proj*.local.domain(rw)
-/usr            *.local.domain(ro) @trusted(rw)
-/home/joe       pc001(rw,all_squash,anonuid=150,anongid=100)
-/pub            *(ro,insecure,all_squash)
-/srv/www        -sync,rw server @trusted @external(ro)
-/foo            2001:db8:9:e54::/64(rw) 192.0.2.0/24(rw)
-/build          buildhost[0-9].local.domain(rw)
-```
+#### 単純なエクスポート
+#### 複数のディレクトリを別々にエクスポート
+
 
 ### 文法チェック
 
