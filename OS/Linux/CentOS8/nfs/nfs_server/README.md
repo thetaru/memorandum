@@ -33,15 +33,15 @@ directory client(option,option...) client(option,option...) ...
 |async|クライアントから書き込まれたデータをメモリ上のバッファにキャッシュしてから、ディスクに書き込む|
 |wdelay|複数の書き込み処理が発生したとき、ディスクへの書き込みをまとめて行う|
 |no_wdelay|wdealy のオプション機能を無効にする</br>sync オプション指定時のみ有効|
-|hide||
-|nohide||
-|subtree_check||
-|no_subtree_check||
-|root_squash||
-|no_root_squash||
-|all_squash||
-|no_all_squash||
-|anonuid=UID</br>anongid=GID||
+|hide|親子関係にある2つのディレクトリが「/etc/exports」ファイルで別々に設定されているとき、親ディレクトリをマウントしたクライアントに対し、子ディレクトリの中身は参照できないようにする|
+|nohide|hide オプション機能の無効化</br>このオプションは単独のホストに対してのみ有効|
+|subtree_check|ファイルシステム全体でなく、一部のディレクトリのみが公開されている場合に、クライアントからの要求されたファイルが公開ディレクトリに含まれるかどうかチェックされるようになる|
+|no_subtree_check|sub_tree_check オプション機能の無効化|
+|root_squash|クライアント側の root からのファイルの読み出し/書き込み要求を、匿名ユーザからの要求として扱う|
+|no_root_squash|root_squash オプション機能の無効化</br>クライアント側の root からのファイルの読み出し/書き込み要求を root からの要求として扱う|
+|all_squash|クライアント側のすべてのユーザーからの読み出し/書き込み要求を、匿名ユーザーからの要求として扱う|
+|no_all_squash|クライアント側の root 以外のユーザーからの読み出し/書き込み要求を、クライアントからの要求として扱う</br>ただしクライアント側とサーバ側で、UIDとGIDを一致させておく必要がある|
+|anonuid=UID</br>anongid=GID|クライアントからの読み出し/書き込み要求があったとき、そのクライアントは、このオプションで設定されたUID,GIDを持つ匿名ユーザーとして扱われる|
 
 
 ### 設定例
