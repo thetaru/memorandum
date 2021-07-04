@@ -14,8 +14,11 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|nfs-server.service|-|rpc.statd, rpc.mount|
-|rpcbind.service|111/tcp, 111/udp||
+|portmapper|111/tcp, 111/udp|
+|nfs|2049/tcp, 2049/udp|
+|statd|不定/tcp, 不定/udp|
+|mountd|不定/tcp, 不定/udp|
+|nlockmgr|不定/tcp, 不定/udp|
 
 ## ■ 設定ファイル /etc/exports
 ### シンタックス
