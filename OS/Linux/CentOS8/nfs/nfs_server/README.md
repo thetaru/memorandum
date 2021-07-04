@@ -49,6 +49,13 @@ directory client(option,option...) client(option,option...) ...
 |anonuid=UID</br>anongid=GID|クライアントからの読み出し/書き込み要求があったとき、そのクライアントは、このオプションで設定されたUID,GIDを持つ匿名ユーザーとして扱われる</br>UID/GIDの仕組みを持たないOS（Windowsなど）をNFSクライアントとする場合、それらのOSが利用する公開ディレクトリの設定に適用する|
 
 ### 設定例
+```
+### NFSv3
+/export 192.168.137.0/24(rw,no_root_squash) 192.168.138.0/24(rw,no_root_squash)
+
+### NFSv4
+/export 192.168.137.0/24(rw,async,fsid=0) 192.168.138.0/24(rw,async,fsid=0)
+```
 
 ## ■ 設定ファイル /etc/nfs.conf
 nfsサーバ全般に関する設定を行います。
