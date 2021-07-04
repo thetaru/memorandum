@@ -14,7 +14,7 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|rsyslog.service|514/tcp,udp||
+|rsyslog.service|514/tcp, 514/udp||
 
 ## ■ 主設定ファイル /etc/rsyslog.conf
 ### ● 説明項目
