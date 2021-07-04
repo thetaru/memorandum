@@ -1,0 +1,36 @@
+# [ NFSMount_Global_Options ]
+## Defaultvers (★)
+デフォルトで使用するプロトコルのバージョンを指定する
+## Nfsvers
+## Defaultproto
+## Proto
+## Retrans
+## Retry
+## acregmin
+## acregmax
+## acdirmin
+## acdirmax
+## Acl
+## Ac
+## Background
+## Cto
+## Foreground
+## Soft
+## Lock
+## Rdirplus
+## Rsize
+## Wsize
+## Bsize
+## Sloppy
+## Sharecache
+## Timeo
+## actimeo
+## mountport
+## mountproto
+## mountvers
+## mounthost
+## Port
+## Sec
+## Intr
+## Lookupcache
+## noatime
