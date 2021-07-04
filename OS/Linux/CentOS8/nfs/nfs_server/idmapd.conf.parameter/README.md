@@ -11,18 +11,21 @@ NFSv4ではユーザを`user@domain`の形式で扱うため必須となりま�
 ## Local-Realms
 
 # ■ Mapping
-## Nobody-User
+## Nobody-User (★)
 |デフォルト値|nobody|
 |:---|:---|
 
 `/etc/exports`ファイルのオプション`root_squash`, `all_squash`を指定した場合に割り当てられるデフォルトのユーザを指定します。 
 
-## Nobody-Group
+## Nobody-Group (★)
 |デフォルト値|nobody|
 |:---|:---|
 
 `/etc/exports`ファイルのオプション`root_squash`, `all_squash`を指定した場合に割り当てられるデフォルトのグループを指定します。 
 
 # ■ Translation
-## Method
+## Method (★)
+|デフォルト値|nsswitch|
+|:---|:---|
+
 ## GSS-Methods
