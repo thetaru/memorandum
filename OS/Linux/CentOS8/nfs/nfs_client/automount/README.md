@@ -17,7 +17,7 @@ nfs-srv:/mnt/data          /mnt/data         nfs4 noauto,noatime,rsize=32768,wsi
 ※1 `noauto`マウントオプションはOS起動時に自動的に共有をマウントしないようします  
 ※2 mountコマンドでマウントしても共有できないので試験しようとして驚かないこと
 
-## ■ cronの設定
+## ■ cron(タイマー)の設定
 ### シェルの作成
 NFSサーバに到達可能であることをチェックするスクリプトを作成し、cronを使って定期的に実行します。  
 以下のシェルは`/usr/local/bin/auto_share`に格納します。
