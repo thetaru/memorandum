@@ -20,7 +20,7 @@
 ## ■ 設定ファイル /etc/exports
 ### シンタックス
 ```
-
+directory client(option,option...) client(option,option...) ...
 ```
 ### パラメータ
 #### ● 
