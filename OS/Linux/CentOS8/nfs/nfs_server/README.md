@@ -25,14 +25,14 @@ directory client(option,option...) client(option,option...) ...
 ### パラメータ
 |オプション|説明|
 |:---|:---|
-|ro||
-|rw||
-|secure||
-|insecure||
-|sync||
-|async||
-|wdelay||
-|no_wdelay||
+|ro|読み取り専用で共有する|
+|rw|読み書き両用で共有する|
+|secure|クライアントからのポート番号が1023以下の場合のみ接続を許可|
+|insecure|クライアントのポート番号によるアクセス制御を行わない|
+|sync|クライアントから書き込まれたデータを即座にディスクに書き込む|
+|async|クライアントから書き込まれたデータをメモリ上のバッファにキャッシュしてから、ディスクに書き込む|
+|wdelay|複数の書き込み処理が発生したとき、ディスクへの書き込みをまとめて行う|
+|no_wdelay|wdealy のオプション機能を無効にする</br>sync オプション指定時のみ有効|
 |hide||
 |nohide||
 |subtree_check||
