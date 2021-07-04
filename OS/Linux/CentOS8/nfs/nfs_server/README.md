@@ -85,3 +85,7 @@ NFS version4では利用ポートが固定されています。
 ```
 # systemctl restart nfs-server.service
 ```
+最後に、指定したポートを利用していることを確認します。
+```
+# rpcinfo -p
+```
