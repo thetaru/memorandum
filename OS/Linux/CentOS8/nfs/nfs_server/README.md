@@ -48,7 +48,7 @@ directory client(option,option...) client(option,option...) ...
 |no_all_squash|クライアント側の root 以外のユーザーからの読み出し/書き込み要求を、クライアントからの要求として扱う</br>ただしクライアント側とサーバ側で、UIDとGIDを一致させておく必要がある|
 |anonuid=UID</br>anongid=GID|クライアントからの読み出し/書き込み要求があったとき、そのクライアントは、このオプションで設定されたUID,GIDを持つ匿名ユーザーとして扱われる</br>UID/GIDの仕組みを持たないOS（Windowsなど）をNFSクライアントとする場合、それらのOSが利用する公開ディレクトリの設定に適用する|
 
-※ all_squashを使用する場合は、anonuidとanongidを一緒に設定するべきだと思います。
+※ NFSv3においてall_squashを使用する場合は、anonuidとanongidを一緒に設定するべきだと思います。
 
 ### ● 設定例
 ```
