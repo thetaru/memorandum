@@ -29,8 +29,14 @@ OS起動時にシステムがどのデバイスがどのディレクトリにマ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_client/automount)にまとめました。
 
 ## ■ 検証用コマンド
+### Linux
 ```
 # mount -v -t nfs -o vers=(3|4) <nfs server>:<export> マウントポイント
+```
+
+### Windows
+```
+# mount <nfs server>:<export> マウントドライブ:\
 ```
 
 ## ■ トラブルシューティング
@@ -38,3 +44,10 @@ OS起動時にシステムがどのデバイスがどのディレクトリにマ
 NFSサーバ側のexportsファイルでfsid=0を指定したら失敗する
 > NFSサーバー側のマウントを`/`にしてみてください。  
 > fsid=0は疑似ルートの設定なので`/`を指定してあげる必要があります。
+
+### ● Windowsでマウントできない
+共有の詳細設定から`ネットワーク検索を有効にする`にチェックを入れる  
+設定をしても元に戻る場合は以下のサービスをいじる
+- Function Discovery Resource Publication
+- SSDP Discovery
+- UPnP Device Host
