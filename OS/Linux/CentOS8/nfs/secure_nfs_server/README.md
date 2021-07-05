@@ -8,3 +8,7 @@
 v3は完全無効へ
 
 ### rpcbind.serviceの停止(mask)
+```
+# systemctl disable --now rpcbind.socket
+# systemctl disable --now rpcbind.service
+```
