@@ -45,9 +45,14 @@ NFSサーバ側のexportsファイルでfsid=0を指定したら失敗する
 > NFSサーバー側のマウントを`/`にしてみてください。  
 > fsid=0は疑似ルートの設定なので`/`を指定してあげる必要があります。
 
-### ● Windowsでマウントできない
+### ● Windowsでマウントできない#1
 共有の詳細設定から`ネットワーク検索を有効にする`にチェックを入れる  
 設定をしても元に戻る場合は以下のサービスを自動にする
 - Function Discovery Resource Publication
 - SSDP Discovery
 - UPnP Device Host
+
+### ● Windowsでマウントできない#2
+Windowsの標準NFSクライアントはNFSv3のみなのでNFSv4でマウントできないことに注意しましょう。  
+Windows用NFSv4クライアントは以下のサイトで提供されいています。
+- https://www.cohortfs.com/project/windows-nfs-clients
