@@ -47,7 +47,7 @@ NFSサーバ側のexportsファイルでfsid=0を指定したら失敗する
 
 ### ● Windowsでマウントできない
 共有の詳細設定から`ネットワーク検索を有効にする`にチェックを入れる  
-設定をしても元に戻る場合は以下のサービスをいじる
+設定をしても元に戻る場合は以下のサービスを自動にする
 - Function Discovery Resource Publication
 - SSDP Discovery
 - UPnP Device Host
