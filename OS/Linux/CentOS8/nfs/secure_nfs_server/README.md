@@ -7,8 +7,14 @@
 ### NFSv4専用
 v3は完全無効へ
 
-### rpcbind.serviceの停止(mask)
+### ■ rpcbind.serviceの停止
 ```
 # systemctl disable --now rpcbind.socket
 # systemctl disable --now rpcbind.service
+```
+
+### ■ ファイアウォール
+2049/tcpを開けてあげる必要があります。  
+rpc.mountは必要?
+```
 ```
