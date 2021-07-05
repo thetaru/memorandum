@@ -56,3 +56,5 @@ NFSサーバ側のexportsファイルでfsid=0を指定したら失敗する
 Windowsの標準NFSクライアントはNFSv3のみなのでNFSv4でマウントできないことに注意しましょう。  
 Windows用NFSv4クライアントは以下のサイトで提供されいています。
 - https://www.cohortfs.com/project/windows-nfs-clients
+
+※ ただし、サーバ機能としてNFSv4はサポートしています
