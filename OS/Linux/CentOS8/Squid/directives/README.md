@@ -27,8 +27,20 @@ access_log /var/log/squid/access.log
 xffによるアクセス制限 ここからきたやつはおけだよーてきな
 ## ● forwarded_for
 ## ● fqdncache_size
+## ● hosts_file
+hostsファイルを参照する
+```
+hosts_file /etc/hosts
+```
+## ● http_access
+## ● http_port
+## ● http_reply_access
+クライアントへのレスポンスを制限できます。  
+主にMIMEタイプの制限などに使用される？
+```
+acl deny_mime_type rep_mime_type ^video
+
+http_reply_access deny deny_mime_type
+```
 ## ● 
-## ● 
-## ● 
-## ● 
-## ● 
+## ●
