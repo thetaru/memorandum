@@ -40,6 +40,7 @@
 ## ■ ログローテーション
 ## ■ チューニング
 ### ● カーネルパラメータ
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/kernelparameter)にまとめました。
 ## ■ トラブルシューティング
 - クライアントの問い合わせに対する名前解決は
 サーバ側で行う件について  
