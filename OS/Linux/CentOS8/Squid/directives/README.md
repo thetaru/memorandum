@@ -43,8 +43,10 @@ acl deny_mime_type rep_mime_type ^video
 http_reply_access deny deny_mime_type
 ```
 ## ● httpd_suppress_version_string
-## ● 
-## ● 
+## ● icp_acess
+ICPリクエストを受ける兄弟プロキシサーバを制限します。
+## ● icp_port
+ICPリクエストをリッスンするudpポート番号を指定する
 ## ● 
 ## ● 
 ## ● 
