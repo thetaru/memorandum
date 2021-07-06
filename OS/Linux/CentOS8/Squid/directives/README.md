@@ -47,6 +47,12 @@ http_reply_access deny deny_mime_type
 ICPリクエストを受ける兄弟プロキシサーバを制限します。
 ## ● icp_port
 ICPリクエストをリッスンするudpポート番号を指定する
+## ● ipcache_high
+ipcache_sizeで指定した最大保存アドレス数と実際に保存しているアドレス数の百分率がipcache_highで指定した値を越えたらその値がipcache_lowになるまで古いアドレスから削除する。
+## ● ipcache_low
+同上
+## ● ipcache_size
+squidが名前解決した結果をメモリ上に保存するアドレスの最大数を指定する。
 ## ● logfile_rotate
 ログの世代数(間隔はdaily)を設定する。  
 ここで設定したならば`squid -k rotate`コマンドを実行しないといけない。  
