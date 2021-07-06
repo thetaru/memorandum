@@ -21,5 +21,13 @@ access_log /var/log/squid/access.log
 ## ● coredump_dir
 ## ● dns_defnames
 名前解決にsearch/domainを使用できる
+## ● dns_nameservers
+## ● dns_v4_first
+## ● 
+## ● 
+## ● 
+## ● 
+## ● 
+## ● 
 ## ● 
 ## ● 
