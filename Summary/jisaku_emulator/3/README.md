@@ -40,4 +40,4 @@ WindowsならPE形式、MacならMach-O形式、Unix系ならELF形式が主流�
 例えば、`org 0x7c00`と書けば、そのプログラムを0x7c00に配置したときにうまく動くように、アセンブラがラベルの番地を計算します。
   
 ちなみに、0x7c00はBIOSが補助記憶装置のMBRから読み出したプログラムを配置する標準的な番地です。  
-したがって、[このプログラム]()をアセンブルしてMBRに書き込み、パソコンを起動させれば、OSの力を借りずにハローワールドできます。
+したがって、[このプログラム](https://github.com/thetaru/memorandum/blob/master/Summary/jisaku_emulator/3/HelloWorld.asm)をアセンブルしてMBRに書き込み、パソコンを起動させれば、OSの力を借りずにハローワールドできます。
