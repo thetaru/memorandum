@@ -218,6 +218,7 @@ kube-master:~/# curl http://localhost:30315
 <以下省略>
 ```
 ## 9.10 ロードバランサー
-クラウドサービス使うので実施できず。
+MetalLB導入すれば実行可能
+
 ## 9.11 ExternalNameの利用
 あまり興味なし
