@@ -110,5 +110,4 @@ offの場合、親プロキシで接続を試みます。
 ## ● snmp_port
 ## ● strip_query_terms
 urlからクエリ用語が一部抜ける
-## ● 
-## ● 
+## ● visible_hostname
