@@ -1,4 +1,4 @@
-# squidサーバの構築
+# squidサーバ(フォワードプロキシ)の構築
 ## ■ インストール
 ```
 # yum install squid
