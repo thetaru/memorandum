@@ -14,8 +14,8 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|squid.service|3128|squidのlistenポート|
-|squid.service|3401|snmpエージェントのlistenポート|
+|squid.service|3128/tcp|squidのlistenポート|
+|squid.service|3401/udp|snmpエージェントのlistenポート|
 
 ## ■ 主設定ファイル squid.conf
 ### ディレクティブ
