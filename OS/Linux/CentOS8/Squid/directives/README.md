@@ -109,6 +109,6 @@ offの場合、親プロキシで接続を試みます。
 ## ● snmp_access
 ## ● snmp_port
 ## ● strip_query_terms
-urlから一部抜ける
+urlからクエリ用語が一部抜ける
 ## ● 
 ## ● 
