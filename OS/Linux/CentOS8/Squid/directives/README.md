@@ -16,6 +16,9 @@ access_log /var/log/squid/access.log
 ## ● cache_dir
 ## ● cache_log
 ## ● cache_mem
+## ● cache_peer
+プロキシサーバ同士で親子関係または兄弟関係を結ぶ時につかいます。
+## ● cache_peer_access
 ## ● client_lifetime
 ## ● client_persistent_connections
 ## ● coredump_dir
@@ -44,7 +47,7 @@ http_reply_access deny deny_mime_type
 ```
 ## ● httpd_suppress_version_string
 ## ● icp_acess
-ICPリクエストを受ける兄弟プロキシサーバを制限します。
+ICPリクエストをする他プロキシサーバを制限します。
 ## ● icp_port
 ICPリクエストをリッスンするudpポート番号を指定する
 ## ● ipcache_high
@@ -79,7 +82,7 @@ squidが名前解決した結果をメモリ上に保存するアドレスの最
 ディスク上にキャッシュされるオブジェクトの最小サイズ(byte)を指定する。  
 ※ メモリにはされる...ってコト！？
 ## ● miss_access
-他プロキシから
+自身を親とする他プロキシサーバの
 ## ● 
 ## ● 
 ## ● 
