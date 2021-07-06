@@ -9,10 +9,10 @@
 access_log /var/log/squid/access.log
 ```
 
-## ● acl
+## ● acl (common)
 ## ● always_direct
 使えそうなので記載。バイパスできる
-## ● cache
+## ● cache (cache)
 ## ● cache_dir
 ## ● cache_log
 ## ● cache_mem
@@ -95,12 +95,20 @@ squidが名前解決した結果をメモリ上に保存するアドレスの最
 自身を親とする子プロキシサーバからのアクセスを制御します。
 ## ● never_direct
 指定されたドメインへのリクエストは必ず親プロキシサーバに転送します。
-## ● 
-## ● 
-## ● 
-## ● 
-## ● 
-## ● 
-## ● 
+## ● nonhierarchical_direct
+onの場合、リクエストを直接送信します。  
+offの場合、親プロキシに転送します。  
+※ 障害などで親プロキシがいなくなった場合に使えそう  
+もっとくわしく！
+## ● prefer_direct
+onの場合、はじめに直接接続を試みて、失敗したら親プロキシを使います。  
+offの場合、親プロキシで接続を試みます。  
+※ offのとき、親で失敗したら直でいく？
+## ● request_header_access
+## ● server_persistent_connections
+## ● snmp_access
+## ● snmp_port
+## ● strip_query_terms
+urlから一部抜ける
 ## ● 
 ## ● 
