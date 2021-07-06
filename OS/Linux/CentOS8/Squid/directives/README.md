@@ -23,9 +23,10 @@ access_log /var/log/squid/access.log
 名前解決にsearch/domainを使用できる
 ## ● dns_nameservers
 ## ● dns_v4_first
-## ● 
-## ● 
-## ● 
+## ● follow_x_forwarded_for
+xffによるアクセス制限 ここからきたやつはおけだよーてきな
+## ● forwarded_for
+## ● fqdncache_size
 ## ● 
 ## ● 
 ## ● 
