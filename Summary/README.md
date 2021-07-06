@@ -20,7 +20,6 @@
 - [ ] [受験脳の作り方](https://github.com/thetaru/memorandum/tree/master/Summary/jukennou)
 ## た
 - [ ] [たのしいバイナリの歩き方](https://github.com/thetaru/memorandum/tree/master/Summary/EnjoyBinary)
-- [ ] [食べる！SSL！]()
 ## ふ
 - [ ] [ふつうのLinuxプログラミング](https://github.com/thetaru/memorandum/tree/master/Summary/FutsuNoLinuxProgramming)
 - [x] [プログラマのためのDockerの教科書](https://github.com/thetaru/memorandum/tree/master/Summary/programmer_docker)
