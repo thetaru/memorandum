@@ -23,9 +23,11 @@ access_log /var/log/squid/access.log
 |snmp_community||
 |any-of||
 |all-of||
+|proxy_auth||
 
 ## ● always_direct
 使えそうなので記載。バイパスできる
+## ● auth_params
 ## ● cache (cache)
 ## ● cache_dir
 ## ● cache_log
