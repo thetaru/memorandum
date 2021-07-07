@@ -1,5 +1,4 @@
 BITS 32
-org 0x7c00
-start:
+    org 0x7c00
     mov eax, 41
-    jmp short start
+    jmp 0
