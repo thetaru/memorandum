@@ -10,8 +10,6 @@ apache
 postfix
 chrony
 mariadb
-squid
-nfs
 firewalld
 nftables
 
