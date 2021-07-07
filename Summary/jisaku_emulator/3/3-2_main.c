@@ -104,6 +104,7 @@ void short_jump(Emulator* emu)
 void near_jump(Emulator* emu)
 {
     int32_t diff = get_sign_code32(emu, 1);
+    /* 読み込んだ4byte(=32bit)を飛び越えるために5byte加算する */
     emu->eip += (diff + 5);
 }
 
