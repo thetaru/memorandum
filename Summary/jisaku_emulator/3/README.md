@@ -173,5 +173,22 @@ int main(int argc, char* argv[])
 ## 3.2.3 実行
 修正後、makeでhelloworldプログラムとエミュレータを作りなおしましょう。
 ```
-# ./px86 
+# ./px86 helloworld.bin
+```
+```
+EIP = 7C00, Code = B8
+EIP = 7C05, Code = E9
+
+
+end of program.
+
+EAX = 00000029
+ECX = 00000000
+EDX = 00000000
+EBX = 00000000
+ESP = 00007c00
+EBP = 00000000
+ESI = 00000000
+EDI = 00000000
+EIP = 00000000
 ```
