@@ -1,5 +1,5 @@
 # directives
-## ● access_log
+## ● access_log (common)
 |デフォルト値|対応バージョン|
 |:---|:---|
 |||
@@ -10,6 +10,20 @@ access_log /var/log/squid/access.log
 ```
 
 ## ● acl (common)
+### ◆ 便利なacltype
+|acltype|説明|
+|:---|:---|
+|src||
+|dstdomain||
+|dstdom_regex||
+|port||
+|method||
+|req_mime_type||
+|rep_mime_type||
+|snmp_community||
+|any-of||
+|all-of||
+
 ## ● always_direct
 使えそうなので記載。バイパスできる
 ## ● cache (cache)
