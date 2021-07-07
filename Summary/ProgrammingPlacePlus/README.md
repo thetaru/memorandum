@@ -1,1 +1,0 @@
-# Programming Place Plus
