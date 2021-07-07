@@ -11,6 +11,7 @@
 - [ ] [Linuxのしくみ ～実験と図解で学ぶOSとハードウェアの基礎知識～]()
 ## P
 - [ ] [PICアセンブラ入門](https://github.com/thetaru/memorandum/tree/master/Summary/PIC_Assembler)
+- [ ] [Programming Place Plus C言語]()
 ## か
 - [ ] [解析魔法少女美咲ちゃん マジカル・オープン！](https://github.com/thetaru/memorandum/tree/master/Summary/MagicalOpen)
 - [ ] [高校生のための評論文キーワード100](https://github.com/thetaru/memorandum/tree/master/Summary/hyoron_keyword)
