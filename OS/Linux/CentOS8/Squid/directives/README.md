@@ -10,7 +10,11 @@ access_log /var/log/squid/access.log
 ```
 
 ## ● acl (common)
-### ◆ 便利なacltype
+#### Syntax
+```
+acl aclname acltype argument...
+acl aclname acltype "file"
+```
 |acltype|説明|
 |:---|:---|
 |src||
