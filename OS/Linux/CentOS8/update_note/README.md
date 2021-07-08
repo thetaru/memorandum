@@ -6,11 +6,11 @@
 ## ■ アップデートのテストをする
 本番前に、何のパッケージがアプデされるのか、依存関係は何でコケているかなどを調査しましょう。
 ```
- yum check-update --releasever=ver
+ yum check-update --releasever=ver | tee check_update_$(date +%Y%m%d).log
 ```
 rpmの場合は以下です。
 ```
-# rpm --test <pkg>
+# rpm --test <pkg> | tee check_update_$(date +%Y%m%d).log
 ```
 ## ■ `nohup`コマンドを使う
 サーバに`teraterm`などで接続して`yum update`をしていたときに接続が切れて(切って)しまったなどの経験があるかと思います。  
