@@ -90,7 +90,6 @@ lets encrypt でワイルドカード証明書
 - [x] [ゲートウェイサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/gateway_srv)
 - [x] [スタティックルートの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/StaticRoute)
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/update_note)
-- [ ] [パッケージインストールの際の注意](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/install_note)
 - [ ] [~~MetalLB+BINDで内部DNSサーバ構築~~](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/bind_k8s_gitlab)
 - [ ] [CoreDNS+k8sで作る内部DNSサーバ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/internal_coredns)
 - [ ] [ログイン時の警告バナーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/login_banner)
