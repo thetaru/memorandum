@@ -6,7 +6,7 @@
 ## ■ アップデートのテストをする
 本番前に、何のパッケージがアプデされるのか、依存関係は何でコケているかなどを調査しましょう。
 ```
- yum check-update --releasever=ver | tee check_update_$(date +%Y%m%d).log
+# yum check-update --releasever=ver | tee check_update_$(date +%Y%m%d).log
 ```
 rpmの場合は以下です。
 ```
