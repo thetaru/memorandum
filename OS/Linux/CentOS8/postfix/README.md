@@ -7,3 +7,4 @@
 - [ ] [メール認証について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/postfix/mail_auth)
 - [ ] [GmailのSMTPサーバへリレーする方法]()
 - [ ] [SSL/TLSの設定]()
+- [ ] [バージョン隠しの確認]()
