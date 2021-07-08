@@ -117,6 +117,7 @@ void init_instructions(void)
     for (i = 0; i < 8; i++) {
         instructions[0xB8 + i] = mov_r32_imm32;
     }
+    /* 1byteのオペコードなので飛び越えるために0xE9 -> 0xEBとなっている */
     instructions[0xE9] = near_jump;
     instructions[0xEB] = short_jump;
 }
