@@ -17,7 +17,7 @@ rpmの場合は以下です。
 サーバに`teraterm`などで接続して`yum update`をしていたときに接続が切れて(切って)しまったなどの経験があるかと思います。  
 以下のコマンドで裏で流せます。(セッションが途切れてもそのまま実行されます。)
 ```
-# nohup bash -c 'yum -y --releasever=ver update | tee update_$(date +%Y%m%d).log' &
+# nohup yum -y --releasever=ver update > update_$(date +%Y%m%d).log' &
 ```
 というかアプデに限らず長時間かかる処理を実行する際は`nohup <command> &`を使って裏で走らせましょう。
 ## ■ アプデ後にすること
