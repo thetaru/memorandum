@@ -44,7 +44,7 @@
 ## § サブスクリプション割り当て
 ```
 ### 割り当て対象のサブスクリプションのPool IDを入れて実行
-# subscription-manager subscribe --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# subscription-manager attach --pool=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 ```
 サブスクリプションが正しく割り当てられました: <サブスクリプション名>
