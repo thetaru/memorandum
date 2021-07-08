@@ -6,17 +6,17 @@
 ## ■ アップデートのテストをする
 本番前に、何のパッケージがアプデされるのか、依存関係は何でコケているかなどを調査しましょう。
 ```
-# yum check-update --releasever=ver | tee check_update_$(date +%Y%m%d).log
+# yum check-update --releasever=ver 2>&1 | tee check_update_$(date +%Y%m%d).log
 ```
 rpmの場合は以下です。
 ```
-# rpm --test <pkg> | tee check_update_$(date +%Y%m%d).log
+# rpm --test <pkg> 2>&1 | tee check_update_$(date +%Y%m%d).log
 ```
 ## ■ `nohup`コマンドを使う
 サーバに`teraterm`などで接続して`yum update`をしていたときに接続が切れて(切って)しまったなどの経験があるかと思います。  
 以下のコマンドで裏で流せます。(セッションが途切れてもそのまま実行されます。)
 ```
-# nohup yum update &
+# nohup yum update | tee update_$(date +%Y%m%d).log &
 ```
 というかアプデに限らず長時間かかる処理を実行する際は`nohup <command> &`を使って裏で走らせましょう。
 ## ■ アプデ後にすること
