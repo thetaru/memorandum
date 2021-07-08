@@ -5,3 +5,4 @@ teratermとかでログを残しているのは当たり前ですが、明示的
 ```
 # yum install <パッケージ名> | tee <パッケージ>_install_$(date +%Y%m%d).log
 ```
+
