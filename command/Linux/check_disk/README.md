@@ -21,6 +21,7 @@ hdparmは、HDDのパラメータの設定・確認するコマンドです。
 ```
 # yum install hdparm
 ```
+デバイスの情報を出してみます。
 ```
 # hdparm -I /dev/sdX
 ```
