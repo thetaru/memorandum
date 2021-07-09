@@ -39,8 +39,15 @@ acl aclname acltype "file"
 ## ● cache_peer (cache)
 #### Syntax
 ```
-cache_peer hostname <parent|sibling|multicast> http_port icp-port [options]
+cache_peer hostname type http_port icp-port [options]
 ```
+
+|type|説明|
+|:---|:---|
+|parent|hostnameで指定したプロキシサーバを親とする|
+|sibling|hostnameで指定したプロキシサーバと兄弟関係となる|
+
+
 プロキシサーバ同士で親子関係または兄弟関係を結ぶ時につかいます。  
   
 parentで設定すると、親プロキシに問い合わせを転送し、そこからデータを受けとることになります。  
