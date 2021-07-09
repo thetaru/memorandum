@@ -60,6 +60,17 @@ hostnameで指定したプロキシサーバが利用するICPポートを指定
 ICPポートを利用しない場合は、0を指定すること。
 
 #### options
+主に使いそうなオプションは以下の通り。  
+認証用のオプションもある。
+|オプション|説明|
+|:---|:---|
+|ICP OPTIONS|-|
+|no-query||
+|PEER SELECTION METHODS|-|
+|default||
+|round-robin||
+|GENERAL OPTIONS|-|
+|proxy-only|プロキシのキャッシュオブジェクト|
 
 ## ● cache_peer_access (cache)
 親プロキシが複数ある場合の、アクセス制御ができます(正確ではない、、、  
@@ -132,6 +143,10 @@ squidが名前解決した結果をメモリ上に保存するアドレスの最
 自身を親とする子プロキシサーバからのアクセスを制御します。
 ## ● never_direct
 指定されたドメインへのリクエストは必ず親プロキシサーバに転送します。
+```
+never_direct allow all
+never_direct allow CONNECT
+```
 ## ● nonhierarchical_direct
 onの場合、リクエストを直接送信します。  
 offの場合、親プロキシに転送します。  
