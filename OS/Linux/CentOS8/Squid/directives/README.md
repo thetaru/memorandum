@@ -99,7 +99,8 @@ ICPポートを利用しない場合は、0を指定すること。
 ## ● dns_nameservers
 ## ● dns_v4_first (common)
 ## ● follow_x_forwarded_for
-xffによるアクセス制限 ここからきたやつはおけだよーてきな
+xffによるアクセス制限 ここからきたやつはおけだよーてきな  
+プロキシの後ろにLBがいるときに有効そう
 ## ● forwarded_for (security)
 ## ● fqdncache_size
 ## ● hosts_file
