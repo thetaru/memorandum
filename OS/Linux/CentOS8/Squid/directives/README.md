@@ -1,13 +1,17 @@
 # directives
 ## ● access_log (common)
-|デフォルト値|対応バージョン|
-|:---|:---|
-|||
+### Syntax
+```
+access_log <module>:<place> [option...] [acl...]
+```
 
-### 設定例
-```
-access_log /var/log/squid/access.log
-```
+#### module
+|module|place|説明|
+|:---|:---|:---|
+|none|-|ACLに一致するリクエストはログに記録しない|
+|stdio|ログのファイルパス|すべてのリクエストをログに同期書き込みで記録する|
+|daemon|ログのファイルパス|すべてのリクエストをログに非同期書き込みで記録する|
+|syslog|facility.priority|syslogのファシリティとプライオリティを指定して記録する|
 
 ## ● acl (common)
 ### Syntax
