@@ -20,6 +20,12 @@ access_log <module>:<place> [option...] [acl...]
 
 ※ logformatディレクティブを使用することでカスタムしたログフォーマットを設定することができる
 
+### よくある設定
+```
+access_log stdio:/var/log/squid/access.log
+access_log syslog:local1.info
+```
+
 ## ● acl (common)
 ### Syntax
 ```
