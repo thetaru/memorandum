@@ -65,10 +65,10 @@ ICPポートを利用しない場合は、0を指定すること。
 |オプション|説明|
 |:---|:---|
 |ICP OPTIONS|-|
-|no-query||
+|no-query|ピアへのICPクエリを無効化する|
 |PEER SELECTION METHODS|-|
-|default||
-|round-robin||
+|default|(悩み中: ピアの選出アルゴリズムで選出できなかったときに使われるピアを指定する？)|
+|round-robin|ラウンドロビン方式で親プロキシをロードバランスする|
 |GENERAL OPTIONS|-|
 |proxy-only|ピアのキャッシュオブジェクトをローカルに保存しない|
 
