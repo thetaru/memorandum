@@ -15,6 +15,9 @@ access_log /var/log/squid/access.log
 acl aclname acltype argument...
 acl aclname acltype "file"
 ```
+#### aclname
+ACL名を指定する。
+
 #### acltype
 |acltype|説明|
 |:---|:---|
@@ -67,7 +70,7 @@ ICPポートを利用しない場合は、0を指定すること。
 |ICP OPTIONS|-|
 |no-query|ピアへのICPクエリを無効化する|
 |PEER SELECTION METHODS|-|
-|default|(悩み中: ピアの選出アルゴリズムで選出できなかったときに使われるピアを指定する？)|
+|default|ピアを選出アルゴリズムで得られなかったときに使うピアを指定する|
 |round-robin|ラウンドロビン方式で親プロキシをロードバランスする|
 |GENERAL OPTIONS|-|
 |proxy-only|ピアのキャッシュオブジェクトをローカルに保存しない|
@@ -104,10 +107,16 @@ acl deny_mime_type rep_mime_type ^video
 http_reply_access deny deny_mime_type
 ```
 ## ● httpd_suppress_version_string (security)
+
 ## ● icp_acess (cache)
 ICPリクエストをする他プロキシサーバを制限します。
+
 ## ● icp_port (cache)
-ICPリクエストをリッスンするudpポート番号を指定する
+### Syntax
+```
+icp_port icp-port
+```
+ICPクエリをリッスンするudpポート番号(標準では3130)を指定する
 ## ● ipcache_high (cache)
 ipcache_sizeで指定した最大保存アドレス数と実際に保存しているアドレス数の百分率がipcache_highで指定した値を越えたらその値がipcache_lowになるまで古いアドレスから削除する。
 ## ● ipcache_low (cache)
