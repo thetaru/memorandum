@@ -10,11 +10,12 @@ access_log /var/log/squid/access.log
 ```
 
 ## ● acl (common)
-#### Syntax
+### Syntax
 ```
 acl aclname acltype argument...
 acl aclname acltype "file"
 ```
+#### acltype
 |acltype|説明|
 |:---|:---|
 |src||
@@ -37,7 +38,7 @@ acl aclname acltype "file"
 ## ● cache_log (cache)
 ## ● cache_mem (cache)
 ## ● cache_peer (cache)
-#### Syntax
+### Syntax
 ```
 cache_peer hostname type proxy-port icp-port [options]
 ```
