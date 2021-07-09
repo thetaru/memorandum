@@ -39,22 +39,26 @@ acl aclname acltype "file"
 ## ● cache_peer (cache)
 #### Syntax
 ```
-cache_peer hostname type http_port icp-port [options]
+cache_peer hostname type proxy-port icp-port [options]
 ```
 
+#### hostname
+プロキシサーバのホスト名やIPアドレスを指定する。
+
+#### type
 |type|説明|
 |:---|:---|
 |parent|hostnameで指定したプロキシサーバを親とする|
 |sibling|hostnameで指定したプロキシサーバと兄弟関係となる|
 
+#### proxy-port
+hostnameで指定したプロキシサーバがHTTPリクエストをlistenするポートを指定する。
 
-プロキシサーバ同士で親子関係または兄弟関係を結ぶ時につかいます。  
-  
-parentで設定すると、親プロキシに問い合わせを転送し、そこからデータを受けとることになります。  
-また、親プロキシ側でキャッシュにヒットした場合はそのデータを返します。  
-  
-siblingで設定すると、兄弟プロキシに問い合わせを転送し、キャッシュにヒットした場合はそのデータを返します。  
-ヒットしなかった場合は、転送元プロキシ自身がデータをとりにいきます。  
+#### icp-port
+hostnameで指定したプロキシサーバが利用するICPポートを指定する。  
+ICPポートを利用しない場合は、0を指定すること。
+
+#### options
 
 ## ● cache_peer_access (cache)
 親プロキシが複数ある場合の、アクセス制御ができます(正確ではない、、、  
