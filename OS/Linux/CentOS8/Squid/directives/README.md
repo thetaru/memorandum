@@ -37,6 +37,10 @@ acl aclname acltype "file"
 ## ● cache_log (cache)
 ## ● cache_mem (cache)
 ## ● cache_peer (cache)
+#### Syntax
+```
+cache_peer hostname <parent|sibling|multicast> http_port icp-port [options]
+```
 プロキシサーバ同士で親子関係または兄弟関係を結ぶ時につかいます。  
   
 parentで設定すると、親プロキシに問い合わせを転送し、そこからデータを受けとることになります。  
@@ -44,6 +48,7 @@ parentで設定すると、親プロキシに問い合わせを転送し、そ�
   
 siblingで設定すると、兄弟プロキシに問い合わせを転送し、キャッシュにヒットした場合はそのデータを返します。  
 ヒットしなかった場合は、転送元プロキシ自身がデータをとりにいきます。  
+
 ## ● cache_peer_access (cache)
 親プロキシが複数ある場合の、アクセス制御ができます(正確ではない、、、  
 ※ 親プロキシの振り分けは重要だよねー
