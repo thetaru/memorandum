@@ -13,6 +13,13 @@ access_log <module>:<place> [option...] [acl...]
 |daemon|ログのファイルパス|すべてのリクエストをログに非同期書き込みで記録する|
 |syslog|facility.priority|syslogのファシリティとプライオリティを指定して記録する|
 
+#### option
+|option|説明|
+|:---|:---|
+|logformat|指定のログフォーマットでログを記録する|
+
+※ logformatディレクティブを使用することでカスタムしたログフォーマットを設定することができる
+
 ## ● acl (common)
 ### Syntax
 ```
