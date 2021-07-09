@@ -44,16 +44,16 @@ cache_peer hostname type proxy-port icp-port [options]
 ```
 
 #### hostname
-プロキシサーバのホスト名やIPアドレスを指定する。
+ピアとするプロキシサーバのホスト名やIPアドレスを指定する。
 
 #### type
 |type|説明|
 |:---|:---|
-|parent|hostnameで指定したプロキシサーバを親とする|
-|sibling|hostnameで指定したプロキシサーバと兄弟関係となる|
+|parent|hostnameで指定したピアを親とする|
+|sibling|hostnameで指定したピアと兄弟関係となる|
 
 #### proxy-port
-hostnameで指定したプロキシサーバがHTTPリクエストをlistenするポートを指定する。
+hostnameで指定したピアがHTTPリクエストをlistenするポートを指定する。
 
 #### icp-port
 hostnameで指定したプロキシサーバが利用するICPポートを指定する。  
@@ -70,7 +70,7 @@ ICPポートを利用しない場合は、0を指定すること。
 |default||
 |round-robin||
 |GENERAL OPTIONS|-|
-|proxy-only|プロキシのキャッシュオブジェクト|
+|proxy-only|ピアのキャッシュオブジェクトをローカルに保存しない|
 
 ## ● cache_peer_access (cache)
 親プロキシが複数ある場合の、アクセス制御ができます(正確ではない、、、  
