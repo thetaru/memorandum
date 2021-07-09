@@ -14,3 +14,14 @@
 ```
 # lshw -c disk
 ```
+
+## ■ hdparm
+`which hdparm`でコマンドがなかったら次でインストールできます。  
+hdparmは、HDDのパラメータの設定・確認するコマンドです。
+```
+# yum install hdparm
+```
+```
+# hdparm -I /dev/sdX
+```
+※ SSDならここからtrimに対応しているか確認できます
