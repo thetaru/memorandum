@@ -1,6 +1,6 @@
 # defaults
-## mode
-## log
-## option
-## retries
-## timeout
+## ● mode
+## ● log
+## ● option
+## ● retries
+## ● timeout
