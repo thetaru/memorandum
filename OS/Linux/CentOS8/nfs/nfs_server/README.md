@@ -22,6 +22,17 @@
 
 ※ NFSv4プロトコルでは、`rpcbind`サービス、`lockd`サービス、`rpc-statd`サービスが不要となります。
 
+## ■ 共有ディレクトリの作成
+```
+### For Windows
+# mkdir -p /exports/Windows
+# chown 65534:65534 /exports/Windows
+# chmod 777 /exports/Windows
+
+### For Linux
+# mkdir -p /exports/Linux
+```
+
 ## ■ 設定ファイル /etc/exports
 ### ● シンタックス
 ```
