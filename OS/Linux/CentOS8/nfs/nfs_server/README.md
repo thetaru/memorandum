@@ -31,11 +31,13 @@
 
 ### For Linux
 # mkdir -p /exports/Linux
+## [OPTION] NFSユーザを指定する場合は以下を実行する
 # groupadd -g 8888 nfsclient
 # useradd -s /sbin/nologin -M -u 8888 -g 8888 nfsclient
 # chown nfsclient:nfsclient /exports/Linux
 ```
 ※ UID(8888)やGID(8888)、ユーザ名(nfsclient)は必要に応じて変更してください
+※ また、nfsclientユーザをクライアント側で作成する必要がある
 
 ## ■ 設定ファイル /etc/exports
 ### ● シンタックス
