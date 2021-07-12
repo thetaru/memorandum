@@ -24,11 +24,29 @@
 com2sec sec.name source community
 ```
 ### ● group
+#### Syntax
+```
+```
 ### ● view
+#### Syntax
+```
+```
 ### ● access
+#### Syntax
+```
+```
 ### ● syslocation
+#### Syntax
+```
+```
 ### ● syscontact
+#### Syntax
+```
+```
 ### ● dontLogTCPWrappersConnect
+#### Syntax
+```
+```
 ### 設定例
 ```
 com2sec MyUser   default  public
