@@ -4,10 +4,10 @@ bondに1つ以上のタグVLANを付与して通信する。
 
 |interface name|
 |:---|
-|eth1|
-|eth2|
-|eth3|
-|eth4|
+|eno1|
+|eno2|
+|eno3|
+|eno4|
 
 |connection|type|
 |:---|:---|
