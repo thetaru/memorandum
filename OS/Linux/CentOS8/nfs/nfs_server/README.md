@@ -68,10 +68,11 @@ directory client(option,option...) client(option,option...) ...
 ### ● 設定例
 ```
 ### NFSv3
-/export 192.168.137.0/24(rw,no_root_squash) 192.168.138.0/24(rw,no_root_squash)
+/export 192.168.137.0/24(rw,no_root_squash)
+/export 192.168.137.0/24(rw,root_squash,anonuid=1000,anongid=1000)
 
 ### NFSv4
-/export 192.168.137.0/24(rw,async,fsid=0) 192.168.138.0/24(rw,async,fsid=0)
+/export 192.168.137.0/24(rw,fsid=0)
 ```
 
 ### ● 反映方法
