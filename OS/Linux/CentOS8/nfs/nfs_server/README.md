@@ -37,7 +37,7 @@
 # chown nfsclient:nfsclient /exports/Linux
 ```
 ※ UID(8888)やGID(8888)、ユーザ名(nfsclient)は必要に応じて変更してください  
-※ NFSユーザを指定してマウントする場合は、nfsclientユーザ(と同じUID/GIDを持つユーザ)をクライアント側でも作成する必要がある
+※ NFSユーザを指定してマウントする場合、nfsclientユーザ(と同じUID/GIDを持つユーザ)をクライアント側も作成する必要がある
 
 ## ■ 設定ファイル /etc/exports
 ### ● シンタックス
