@@ -53,6 +53,30 @@ syscontact
 ```
 dontLogTCPWrappersConnects (yes|no)
 ```
+### ● proc
+#### Syntax
+```
+```
+### ● exec
+#### Syntax
+```
+```
+### ● disk
+#### Syntax
+```
+```
+### ● load
+#### Syntax
+```
+```
+### ● exec
+#### Syntax
+```
+```
+### ● pass
+#### Syntax
+```
+```
 ### 設定例
 ```
 com2sec MyUser   default  public
