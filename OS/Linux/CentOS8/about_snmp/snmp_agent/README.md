@@ -66,6 +66,8 @@ access  MyGroup  "" any noauth exact view_all none none
 ### 設定例
 ## ■ セキュリティ
 ### firewall
-## ■ ログ
-## ■ ログローテーション
+## ■ ロギング
 ## ■ 設定の反映
+```
+# systemctl restart snmpd.service
+```
