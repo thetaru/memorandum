@@ -35,6 +35,7 @@
 # useradd -s /sbin/nologin -M -u <UID> -g <GID> nfsclient
 # chown nfsclient:nfsclient /exports/Linux
 ```
+※ UIDやGID、ユーザ名(nfsclient)は必要に応じて変更してください
 
 ## ■ 設定ファイル /etc/exports
 ### ● シンタックス
