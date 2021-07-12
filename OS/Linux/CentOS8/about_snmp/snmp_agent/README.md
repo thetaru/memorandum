@@ -87,11 +87,11 @@ access  MyGroup  "" any noauth exact view_all none none
 ```
 ## ■ 設定ファイル /etc/snmp/snmptrapd.conf
 ## ■ 設定ファイル /etc/sysconfig/snmpd
+SMUXを無効化する
 ### 設定例
 ```
 OPTIONS="-Lsd -Lf /dev/null -p /var/run/snmpd -a -I -smux"
 ```
-### 設定例
 ## ■ セキュリティ
 ### firewall
 ## ■ ロギング
