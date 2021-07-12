@@ -27,7 +27,6 @@ frontendセクションで使えるパラメータは[こちら](https://github.
 backendセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/other_keywords)にまとめました。
 #### resolversセクション
 resolversセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/other_keywords)にまとめました。
-### ● 設定例
 ```
 ```
 ### ● 文法チェック
@@ -38,8 +37,7 @@ resolversセクションで使えるパラメータは[こちら](https://github
 ## firewall
 ## 証明書
 ## 認証
-## ■ ログ
-## ■ ログローテーション
+## ■ ロギング
 ## ■ チューニング
 ## ■ 設定の反映
 ```
