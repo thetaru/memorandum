@@ -70,14 +70,14 @@ directory client(option,option...) client(option,option...) ...
 ### NFSv3
 ## For Linux
 /exports/Linux 192.168.137.0/24(rw,no_root_squash)
-/exports/Windows 192.168.137.0/24(rw,root_squash,anonuid=8888,anongid=8888)
+/exports/Linux 192.168.137.0/24(rw,root_squash,anonuid=8888,anongid=8888)
 
 ## For Windows
 /exports/Windows 192.168.137.0/24(rw,no_root_squash)
 
 ### NFSv4
 ## For Linux
-/export 192.168.137.0/24(rw,fsid=0)
+/exports/Linux 192.168.137.0/24(rw,fsid=0)
 ```
 
 ### ● 反映方法
