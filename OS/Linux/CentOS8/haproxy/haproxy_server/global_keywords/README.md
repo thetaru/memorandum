@@ -1,9 +1,9 @@
 # global
 ## ■ パラメータ
 ### ● log
-### ● maxconn 4000
+### ● maxconn
 ### ● user
-### ● group haproxy
+### ● group
 ### ● daemon
 
 ## ■ 設定例
