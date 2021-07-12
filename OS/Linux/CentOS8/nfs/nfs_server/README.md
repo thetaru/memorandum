@@ -31,6 +31,9 @@
 
 ### For Linux
 # mkdir -p /exports/Linux
+# groupadd -g <GID> nfsclient
+# useradd -s /sbin/nologin -M -u <UID> -g <GID> nfsclient
+# chown nfsclient:nfsclient /exports/Linux
 ```
 
 ## ■ 設定ファイル /etc/exports
