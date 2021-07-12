@@ -14,7 +14,7 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|snmpd.service|161/udp||
+|snmpd.service|161/udp,199/tcp||
 |snmptrapd.service|162/udp|
 
 ## ■ 主設定ファイル /etc/snmp/snmpd.conf
@@ -26,26 +26,32 @@ com2sec sec.name source community
 ### ● group
 #### Syntax
 ```
+group groupName securityModel securityName
 ```
 ### ● view
 #### Syntax
 ```
+view name incl/excl subtree mask(optional)
 ```
 ### ● access
 #### Syntax
 ```
+access group context sec.model sec.level prefix read write notif
 ```
 ### ● syslocation
 #### Syntax
 ```
+syslocation
 ```
 ### ● syscontact
 #### Syntax
 ```
+syscontact
 ```
 ### ● dontLogTCPWrappersConnect
 #### Syntax
 ```
+dontLogTCPWrappersConnects (yes|no)
 ```
 ### 設定例
 ```
