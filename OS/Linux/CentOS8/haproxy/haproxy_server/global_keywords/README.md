@@ -1,4 +1,6 @@
 # Global parameters
-## (Option) ca-base
-## (Required) chroot
-## (Recommended) tune.
+## ● log
+## ● maxconn 4000
+## ● user
+## ● group haproxy
+## ● daemon
