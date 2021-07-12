@@ -69,7 +69,7 @@ lets encrypt でワイルドカード証明書
 - [x] [NTP(chrony)](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
 - [ ] [(書きかけ)mariadb](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
 - [ ] [minecraft](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/minecraft)
-- [ ] [(書きかけ)haproxy](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/haproxy)
+- [ ] [(書きかけ)HAProxy](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/haproxy)
 - [ ] [(書きかけ)Postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
 - [ ] [(書きかけ)PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
