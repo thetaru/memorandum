@@ -198,7 +198,7 @@ http_reply_access deny deny_mime_type
 ```
 httpd_suppress_version_string (on|off)
 ```
-エラーページにSquidのバージョンを表示させないようにする。
+HTTPヘッダとHTMLエラーページに表示されるSquidのバージョン情報を抑制する。
 
 ### ■ 使用例
 ```
