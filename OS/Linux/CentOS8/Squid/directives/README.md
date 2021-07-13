@@ -194,6 +194,16 @@ acl deny_mime_type rep_mime_type ^video
 http_reply_access deny deny_mime_type
 ```
 ## ● httpd_suppress_version_string (security)
+### ■ Syntax
+```
+httpd_suppress_version_string (on|off)
+```
+エラーページにSquidのバージョンを表示させないようにする。
+
+### ■ 使用例
+```
+httpd_suppress_version_string on
+```
 
 ## ● icp_acess (cache)
 ICPリクエストをする他プロキシサーバを制限します。
