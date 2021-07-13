@@ -245,3 +245,15 @@ offの場合、親プロキシで接続を試みます。
 ## ● strip_query_terms (log)
 urlからクエリ用語が一部抜ける
 ## ● visible_hostname (security)
+### ■ Syntax
+```
+visible_hostname hostname
+```
+単体プロキシサーバの動く環境では、unknownと設定してホスト名を隠蔽する。  
+複数プロキシサーバの動く環境では、hostnameにどのプロキシサーバであるか識別できる文字列を設定する。  
+
+### ■ 使用例
+```
+### ホスト名の非表示
+visible_hostname unknown
+```
