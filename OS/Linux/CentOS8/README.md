@@ -56,7 +56,7 @@ lets encrypt でワイルドカード証明書
 ## ■ Software Settings
 - [ ] [(やる気次第)389-ds](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/389-ds)
 - [x] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
-- [ ] [(書きかけ)AWX](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/AWX)
+- [ ] [(雑)AWX](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/AWX)
 - [x] [apache](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/apache)
 - [ ] [BIND](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/BIND)
 - [ ] [(やる気次第)Digdag](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Digdag)
