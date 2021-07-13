@@ -147,11 +147,19 @@ xffによるアクセス制限 ここからきたやつはおけだよーてき�
 ## ● forwarded_for (security)
 ## ● fqdncache_size
 ## ● hosts_file
-hostsファイルを参照する
+### ■ Syntax
+```
+hosts_file "file"
+```
+fileにホスト名とIPアドレスの関連付いたファイルを指定する。
+
+### ■ 設定例
 ```
 hosts_file /etc/hosts
 ```
+
 ## ● http_access (common)
+
 ## ● http_port (common)
 ### ■ Syntax
 ```
