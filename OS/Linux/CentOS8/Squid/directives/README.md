@@ -1,6 +1,6 @@
 # directives
 ## ● access_log (common)
-### Syntax
+### ■ Syntax
 ```
 access_log <module>:<place> [option...] [acl...]
 ```
@@ -20,9 +20,12 @@ access_log <module>:<place> [option...] [acl...]
 
 ※ logformatディレクティブを使用することでカスタムしたログフォーマットを設定することができる
 
-### よくある設定
+### ■ 設定例
 ```
+### ローカルのログファイルに記録
 access_log stdio:/var/log/squid/access.log
+
+### syslogサーバに記録
 access_log syslog:local1.info
 ```
 
@@ -54,8 +57,10 @@ ACL名を指定する。
 使えそうなので記載。バイパスできる
 ## ● auth_params (auth)
 ## ● cache (cache)
-### Syntax
-### 使用例
+### ■ Syntax
+```
+```
+### ■ 使用例
 ```
 ### キャッシュ機能を無効化する
 cache deny all
@@ -64,7 +69,7 @@ cache deny all
 ## ● cache_log (cache)
 ## ● cache_mem (cache)
 ## ● cache_peer (cache)
-### Syntax
+### ■ Syntax
 ```
 cache_peer hostname type proxy-port icp-port [options]
 ```
@@ -97,6 +102,10 @@ ICPポートを利用しない場合は、0を指定すること。
 |round-robin|ラウンドロビン方式で親プロキシをロードバランスする|
 |GENERAL OPTIONS|-|
 |proxy-only|ピアのキャッシュオブジェクトをローカルに保存しない|
+
+### ■ 使用例
+```
+```
 
 ## ● cache_peer_access (cache)
 親プロキシが複数ある場合の、アクセス制御ができます(正確ではない、、、  
@@ -136,11 +145,17 @@ http_reply_access deny deny_mime_type
 ICPリクエストをする他プロキシサーバを制限します。
 
 ## ● icp_port (cache)
-### Syntax
+### ■ Syntax
 ```
 icp_port icp-port
 ```
-ICPクエリをリッスンするudpポート番号(標準では3130)を指定する
+ICPクエリをリッスンするudpポート番号(標準では3130)を指定する。
+
+### ■ 使用例
+```
+icp_port 3130
+```
+
 ## ● ipcache_high (cache)
 ipcache_sizeで指定した最大保存アドレス数と実際に保存しているアドレス数の百分率がipcache_highで指定した値を越えたらその値がipcache_lowになるまで古いアドレスから削除する。
 ## ● ipcache_low (cache)
