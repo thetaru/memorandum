@@ -30,20 +30,21 @@ access_log syslog:local1.info
 ```
 
 ## ● acl (common)
-### Syntax
+### ■ Syntax
 ```
 acl aclname acltype argument...
 acl aclname acltype "file"
 ```
 #### aclname
-ACL名を指定する。
+ACL名を指定する。  
+※ ただし、ビルトインのACL名(localhostなど)もあるので注意すること
 
 #### acltype
 |acltype|説明|
 |:---|:---|
-|src||
-|dstdomain||
-|dstdom_regex||
+|src|送信元|
+|dstdomain|送信先ドメイン|
+|dstdom_regex|正規表現を使用した送信先ドメイン|
 |port||
 |method||
 |req_mime_type||
@@ -52,6 +53,17 @@ ACL名を指定する。
 |any-of||
 |all-of||
 |proxy_auth||
+
+### ■ 使用例
+```
+acl localnet src 192.168.0.0/16
+
+acl Safe_ports port 80
+acl SSL_ports port 443
+acl CONNECT method CONNECT
+
+acl whitelist dstdomain "/etc/squid/whitelist"
+```
 
 ## ● always_direct
 使えそうなので記載。バイパスできる
@@ -119,6 +131,16 @@ ICPポートを利用しない場合は、0を指定すること。
 名前解決にsearch/domainを使用できる
 ## ● dns_nameservers
 ## ● dns_v4_first (common)
+### ■ Syntax
+```
+dns_v4_first (on|off)
+```
+
+### ■ 使用例
+```
+dns_v4_first on
+```
+
 ## ● follow_x_forwarded_for
 xffによるアクセス制限 ここからきたやつはおけだよーてきな  
 プロキシの後ろにLBがいるときに有効そう
@@ -131,6 +153,18 @@ hosts_file /etc/hosts
 ```
 ## ● http_access (common)
 ## ● http_port (common)
+### ■ Syntax
+```
+http_port port [mode] [options]
+http_port 1.2.3.4:port [mode] [options]
+```
+※ modeやoptionはssl bump設定時に使用するため、ここでは省略する
+
+### ■ 設定例
+```
+http_port 8081
+```
+
 ## ● http_reply_access
 クライアントへのレスポンスを制限できます。  
 主にMIMEタイプの制限などに使用される？
