@@ -17,31 +17,6 @@ kind: Namespace
 metadata:
   name: awx
 ```
-### AWXリソース
-```yaml
----
-apiVersion: awx.ansible.com/v1beta1
-kind: AWX
-metadata:
-  name: awx
-spec:
-  admin_user: admin
-  admin_password_secret: awx-admin-password
- 
-  ingress_type: ingress
-  ingress_tls_secret: awx-secret-tls
-  hostname: awx.example.com
- 
-  postgres_configuration_secret: awx-postgres-configuration
- 
-  postgres_storage_class: awx-postgres-volume
-  postgres_storage_requirements:
-    requests:
-      storage: 2Gi
- 
-  projects_persistence: true
-  projects_existing_claim: awx-projects-claim
-```
 ### PV
 ```yaml
 ---
@@ -89,6 +64,31 @@ spec:
     requests:
       storage: 2Gi
   storageClassName: awx-projects-volume
+```
+### AWXリソース
+```yaml
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx
+spec:
+  admin_user: admin
+  admin_password_secret: awx-admin-password
+ 
+  ingress_type: ingress
+  ingress_tls_secret: awx-secret-tls
+  hostname: awx.example.com
+ 
+  postgres_configuration_secret: awx-postgres-configuration
+ 
+  postgres_storage_class: awx-postgres-volume
+  postgres_storage_requirements:
+    requests:
+      storage: 2Gi
+ 
+  projects_persistence: true
+  projects_existing_claim: awx-projects-claim
 ```
 ### Kustomize
 ```yaml
