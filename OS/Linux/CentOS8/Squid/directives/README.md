@@ -54,6 +54,12 @@ ACL名を指定する。
 使えそうなので記載。バイパスできる
 ## ● auth_params (auth)
 ## ● cache (cache)
+### Syntax
+### 使用例
+```
+### キャッシュ機能を無効化する
+cache deny all
+```
 ## ● cache_dir (cache)
 ## ● cache_log (cache)
 ## ● cache_mem (cache)
