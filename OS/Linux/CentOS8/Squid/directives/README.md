@@ -130,6 +130,18 @@ ICPポートを利用しない場合は、0を指定すること。
 ## ● dns_defnames
 名前解決にsearch/domainを使用できる
 ## ● dns_nameservers
+### ■ Syntax
+```
+dns_nameservers nameserver...
+```
+resolv.confで定義されたDNSサーバ以外を参照したいという場合に使用する。  
+dns_nameserversで指定したDNSサーバを優先して利用する。
+
+### ■ 設定例
+```
+dns_nameservers 8.8.8.8 8.8.4.4
+```
+
 ## ● dns_v4_first (common)
 ### ■ Syntax
 ```
