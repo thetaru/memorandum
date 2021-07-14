@@ -1,13 +1,37 @@
 # global
 ## ■ パラメータ
 ### ● log
+#### Syntax
+```
+```
 ### ● chroot
+#### Syntax
+```
+```
 ### ● pidfile
+#### Syntax
+```
+```
 ### ● maxconn
+#### Syntax
+```
+```
 ### ● user
+#### Syntax
+```
+```
 ### ● group
+#### Syntax
+```
+```
 ### ● daemon
+#### Syntax
+```
+```
 ### ● stats
+#### Syntax
+```
+```
 
 ## ■ 設定例
 ```
