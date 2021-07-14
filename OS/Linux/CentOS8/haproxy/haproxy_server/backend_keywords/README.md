@@ -1,7 +1,14 @@
 # backend
 ## ■ パラメータ
 ### ● balance
+#### Syntax
+```
+```
+
 ### ● server
+#### Syntax
+```
+```
 
 ## ■ 設定例
 ```
