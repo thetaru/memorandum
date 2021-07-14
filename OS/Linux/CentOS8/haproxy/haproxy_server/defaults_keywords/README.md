@@ -8,10 +8,15 @@
 
 ## ■ 設定例
 ```
-global
-    log 127.0.0.1 local2
-    maxconn 4000
-    user haproxy
-    group haproxy
-    daemon
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
 ```
