@@ -7,6 +7,7 @@
 ### ● user
 ### ● group
 ### ● daemon
+### ● stats
 
 ## ■ 設定例
 ```
@@ -18,4 +19,5 @@ global
     user       haproxy
     group      haproxy
     daemon
+    stats      socket /var/lib/haproxy/stats
 ```
