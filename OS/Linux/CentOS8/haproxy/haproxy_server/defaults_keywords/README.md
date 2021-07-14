@@ -1,10 +1,25 @@
 # defaults
 ## ■ パラメータ
 ### ● mode
+#### Syntax
+```
+```
 ### ● log
+#### Syntax
+```
+```
 ### ● option
+#### Syntax
+```
+```
 ### ● retries
+#### Syntax
+```
+```
 ### ● timeout
+#### Syntax
+```
+```
 
 ## ■ 設定例
 ```
