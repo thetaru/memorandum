@@ -42,6 +42,15 @@
 ## ■ チューニング
 ### ● カーネルパラメータ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/kernelparameters)にまとめました。
+### ● ファイルディスクリプタ
+```
+# mkdir -p /etc/systemd/system/squid.service.d
+# cat <<EOF > /etc/systemd/system/squid.service.d/override.conf
+[Service]
+LimitNOFILE=100000
+EOF
+# systemctl daemon-reload
+```
 ## ■ トラブルシューティング
 - クライアントの問い合わせに対する名前解決は
 サーバ側で行う件について  
