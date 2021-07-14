@@ -81,7 +81,7 @@ dontLogTCPWrappersConnects (yes|no)
 ```
 com2sec MyUser   default  public
 group   MyGroup  v1       MyUser
-group   MyGroup  v2c      public
+group   MyGroup  v2c      MyUser
 view    view_all included .1
 access  MyGroup  "" any noauth exact view_all none none
 ```
