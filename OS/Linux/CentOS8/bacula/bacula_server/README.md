@@ -4,13 +4,13 @@ Web GUIを導入するため
 ### ● MySQLのインストール
 以下のコマンドでMySQLをインストールします。
 ```
-# dnf module install mysql:8.0
+# yum install mariadb-server
 ```
 
 ### ● MySQLサーバの起動
 ```
-# systemctl enable --now mysqld.service
-# systemctl status mysqld.service
+# systemctl enable --now mariadb.service
+# systemctl status mariadb.service
 ```
 
 ### ● MySQLサーバの初期化
@@ -19,58 +19,32 @@ mysql_secure_installationコマンドでMySQLサーバの初期化を実施し�
 # mysql_secure_installation
 ```
 ```
-Securing the MySQL server deployment.
+Enter current password for root (enter for none): ← Enter
 
-Connecting to MySQL using a blank password.
+<省略>
 
-VALIDATE PASSWORD COMPONENT can be used to test passwords
-and improve security. It checks the strength of password
-and allows the users to set only those passwords which are
-secure enough. Would you like to setup VALIDATE PASSWORD component?
+Set root password? [Y/n] Y ← 「Y」を入力
 
-Press y|Y for Yes, any other key for No: y　　　      ← yを押下してEnterキー
-
-There are three levels of password validation policy:
-
-LOW    Length >= 8
-MEDIUM Length >= 8, numeric, mixed case, and special characters
-STRONG Length >= 8, numeric, mixed case, special characters and dictionary                  
-
-Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 0　　← 0を入力してEnterキー
-Please set the password for root here.
-
-New password: p@s5W0rd　　　                          ← 任意のパスワードを入力
-
-Re-enter new password: p@s5W0rd　　                   ← パスワードを再入力
-
-Estimated strength of the password: 100
-Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y   ← yを入力してEnterキー
+New password: ← rootのパスワードを入力
+Re-enter new password: ← rootのパスワードを再入力
+Password updated successfully!
+Reloading privilege tables..
+ ... Success!
 
 以降はEnterキー押下の連打で問題ありません
 <省略>
 
-All done!
+Thanks for using MariaDB!
 ```
-
-### ● アクセスキーの取得
-データベースのインストールが完了したらBaculaリポジトリのアクセスキーを取得します。
 
 ### ● Baculaのインストール
-まず、レポジトリを作成します。  
-[access_key]部分は取得したアクセスキーに書き換えてください。
+レポジトリをダウンロードします。
 ```
-# cat < EOF > /etc/yum.repos.d/Bacula.repo
-[Bacula-Community]
-name=CentOS - Bacula - Community
-baseurl=http://bacula.org/packages/[access_key]/rpms/9.6.5/el8/x86_64/
-enabled=1
-protect=0
-gpgcheck=0
-EOF
+# wget -P /etc/yum.repos.d https://copr.fedorainfracloud.org/coprs/slaanesh/Bacula/repo/epel-7/slaanesh-Bacula-epel-7.repo
 ```
 
 ```
-# yum -y install bacula-mysql
+#  yum -y install bacula-director bacula-client bacula-storage bacula-console
 ```
 
 ```
