@@ -1,12 +1,25 @@
 # Bacukaサーバの構築
+Web GUIを導入するため
 ## ■ インストール
 ### ● MySQLのインストール
 ```
 ```
 
-### ● アクセスキー取得
+### ● アクセスキーの取得
 
-### ● Baculaインストール
+### ● Baculaのインストール
+
+### ● [option] Baculumのインストール
+BaculaのWeb GUIである`Baculum`をインストールします。
+```
+# cat < EOF > /etc/yum.repos.d/baculum.repo
+[baculumrepo]
+name=Baculum CentOS repository
+baseurl=http://bacula.org/downloads/baculum/stable/centos
+gpgcheck=1
+enabled=1
+EOF
+```
 
 ## ■ バージョンの確認
 ## ■ サービスの起動
