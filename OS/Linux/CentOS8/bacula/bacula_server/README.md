@@ -28,7 +28,7 @@ and improve security. It checks the strength of password
 and allows the users to set only those passwords which are
 secure enough. Would you like to setup VALIDATE PASSWORD component?
 
-Press y|Y for Yes, any other key for No: <pre style="color:red">y</pre>　　　←yを押下してEnterキー
+Press y|Y for Yes, any other key for No: y　　　      ← yを押下してEnterキー
 
 There are three levels of password validation policy:
 
@@ -36,15 +36,15 @@ LOW    Length >= 8
 MEDIUM Length >= 8, numeric, mixed case, and special characters
 STRONG Length >= 8, numeric, mixed case, special characters and dictionary                  
 
-Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 0　　←0を入力してEnterキー
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 0　　← 0を入力してEnterキー
 Please set the password for root here.
 
-New password:DBpass1!　　　←パスワードを入力(ここではDBpass1!というパスワードを入力していますが任意もので構いません)
+New password: p@s5W0rd　　　                          ← 任意のパスワードを入力
 
-Re-enter new password:DBpass1!　　←パスワードを入力
+Re-enter new password: p@s5W0rd　　                   ← パスワードを再入力
 
 Estimated strength of the password: 100
-Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y   ←yを入力してEnterキー
+Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y   ← yを入力してEnterキー
 
 以降はEnterキー押下の連打で問題ありません
 <省略>
