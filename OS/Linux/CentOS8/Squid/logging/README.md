@@ -1,11 +1,12 @@
 # ロギング
 ## アクセスログをsyslogサーバへ転送する
-### ■ (squidサーバ側の設定)squid
+### ■ (squidサーバ側の設定) squid
+access_logでsyslogモジュールを使用するように設定します。(詳しくはディレクティブを参照)
 ```
 access_log syslog:local1.info combined
 ```
 
-### ■ (squidサーバ側の設定)rsyslog
+### ■ (squidサーバ側の設定) rsyslog
 /var/log/messagesにアクセスログが書き込まれないように修正します。
 ```
 -  *.info;mail.none;authpriv.none;cron.none                /var/log/messages
