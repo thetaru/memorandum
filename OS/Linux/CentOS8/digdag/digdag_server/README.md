@@ -3,7 +3,7 @@
 ### ● ユーザ/グループ作成
 ```
 # groupadd digdag
-# useradd -m -g digdag -s /sbin/nologin digdag
+# useradd -M -g digdag -s /sbin/nologin digdag
 ```
 
 ## ■ インストール
