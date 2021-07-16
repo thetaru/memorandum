@@ -38,15 +38,7 @@
 #### ◆ Kerberos認証
 #### ◆ LDAP認証
 ## ■ ロギング
-### syslogサーバへの転送
-access_logでモジュールにsyslog、ファシリティとプライオリティにlocal1とinfoを指定したと仮定して進めます。
-```
-# vi /etc/rsyslog.conf
-```
-```
--  *.info;mail.none;authpriv.none;cron.none                /var/log/messages
-+  *.info;mail.none;authpriv.none;cron.none;local1.info    /var/log/messages
-```
+
 ## ■ チューニング
 ### ● カーネルパラメータ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/kernelparameters)にまとめました。
@@ -59,6 +51,7 @@ LimitNOFILE=100000
 EOF
 # systemctl daemon-reload
 ```
+
 ## ■ トラブルシューティング
 - クライアントの問い合わせに対する名前解決は
 サーバ側で行う件について  
