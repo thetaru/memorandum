@@ -25,6 +25,11 @@
 # yum install postgresql-server
 ```
 
+## ■ PostgreSQLの設定
+```
+# postgresql-setup  --initdb
+```
+
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ## ■ 関連サービス
