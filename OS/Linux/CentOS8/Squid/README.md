@@ -37,8 +37,15 @@
 #### ◆ Basic認証
 #### ◆ Kerberos認証
 #### ◆ LDAP認証
-## ■ ログ
-## ■ ログローテーション
+## ■ ロギング
+### syslogサーバへの転送
+```
+# vi /etc/rsyslog.conf
+```
+```
+-  *.info;mail.none;authpriv.none;cron.none                /var/log/messages
++  *.info;mail.none;authpriv.none;cron.none;local1.info    /var/log/messages
+```
 ## ■ チューニング
 ### ● カーネルパラメータ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/kernelparameters)にまとめました。
