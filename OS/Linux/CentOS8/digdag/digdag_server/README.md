@@ -9,9 +9,9 @@
 ## ■ インストール
 ### ● digdagのインストール
 ```
-# curl -o ~/bin/digdag --create-dirs -L "https://dl.digdag.io/digdag-latest"
-# chmod +x ~/bin/digdag
-# echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
+# curl -o /usr/local/bin/digdag --create-dirs -L "https://dl.digdag.io/digdag-latest"
+# chmod +x /usr/local/bin/digdag
+# echo 'export PATH="/usr/local/bin/digdag:$PATH"' >> ~/.bashrc
 # source ~/.bashrc
 ```
 
