@@ -38,6 +38,7 @@
 #### ◆ Kerberos認証
 #### ◆ LDAP認証
 ## ■ ロギング
+[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/logging)にまとめました。
 
 ## ■ チューニング
 ### ● カーネルパラメータ
