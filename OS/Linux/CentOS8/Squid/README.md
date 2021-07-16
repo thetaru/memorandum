@@ -22,8 +22,8 @@
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/directives)にまとめました。
 
 ### ● 設定例
-#### 指定したドメインのみアクセス可能とする(ホワイトリスト方式)
-#### 指定したドメインのみアクセス不可とする(ブラックリスト方式)
+- 指定したドメインのみアクセス可能とする(ホワイトリスト方式)
+- 指定したドメインのみアクセス不可とする(ブラックリスト方式)
 
 ### ● 文法チェック
 ```
@@ -34,15 +34,17 @@
 ## ■ セキュリティ
 ### ● firewall
 ### ● 認証
-#### ◆ Basic認証
-#### ◆ Kerberos認証
-#### ◆ LDAP認証
+- Basic認証
+- Kerberos認証
+- LDAP認証
+
 ## ■ ロギング
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/logging)にまとめました。
 
 ## ■ チューニング
 ### ● カーネルパラメータ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/Squid/kernelparameters)にまとめました。
+
 ### ● ファイルディスクリプタ
 ```
 # mkdir -p /etc/systemd/system/squid.service.d
