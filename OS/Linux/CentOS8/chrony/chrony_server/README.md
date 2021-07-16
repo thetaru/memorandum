@@ -18,18 +18,16 @@
 
 ## ■ 主設定ファイル /etc/chrony.conf
 ### ● xxxセクション
+
 ### ● 文法チェック
 ```
+# chronyd -p
 ```
 
 ## ■ 設定ファイル /etc/sysconfig/chronyd
 
 ## ■ セキュリティ
 ### ● firewall
-
-## ■ ロギング
-
-## ■ チューニング
 
 ## ■ 設定の反映
 ```
