@@ -41,12 +41,12 @@ access group context sec.model sec.level prefix read write notif
 ### ● syslocation
 #### Syntax
 ```
-syslocation
+sysContact STRING
 ```
 ### ● syscontact
 #### Syntax
 ```
-syscontact
+sysLocation STRING
 ```
 ### ● dontLogTCPWrappersConnect
 #### Syntax
@@ -56,26 +56,27 @@ dontLogTCPWrappersConnects (yes|no)
 ### ● proc
 #### Syntax
 ```
-```
-### ● exec
-#### Syntax
-```
+proc NAME [MAX [MIN]]
 ```
 ### ● disk
 #### Syntax
 ```
+disk PATH [ MINSPACE | MINPERCENT% ]
 ```
 ### ● load
 #### Syntax
 ```
+load MAX1 [MAX5 [MAX15]]
 ```
 ### ● exec
 #### Syntax
 ```
+exec [MIBOID] NAME PROG ARGS
 ```
 ### ● pass
 #### Syntax
 ```
+pass [-p priority] MIBOID PROG
 ```
 ### 設定例
 ```
