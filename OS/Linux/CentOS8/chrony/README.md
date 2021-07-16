@@ -1,6 +1,6 @@
 # chrony
 ## ■ Settings
-- [ ] [chronyサーバの構築 version 4.1](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/chrony/chrony_server)
+- [ ] [chronyサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/chrony/chrony_server) version 4.1
 - [ ] [chronyクライアントの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/chrony/chrony_client)
 ## ■ Tips
 - [ ] [(途中)よく扱う設定についてのまとめ](https://github.com/thetaru/memorandum/blob/master/OS/Linux/CentOS8/chrony/chrony_settings)
