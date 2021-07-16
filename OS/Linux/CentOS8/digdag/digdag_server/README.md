@@ -20,6 +20,11 @@
 # yum install java
 ```
 
+### ● PostgreSQLのインストール
+```
+# yum install postgresql-server
+```
+
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ## ■ 関連サービス
