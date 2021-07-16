@@ -1,36 +1,63 @@
 # global
-## ■ パラメータ
-### ● log
-#### Syntax
-```
-```
+## ■ Process management and security
 ### ● chroot
 #### Syntax
 ```
+chroot <jail dir>
 ```
-### ● pidfile
-#### Syntax
-```
-```
-### ● maxconn
-#### Syntax
-```
-```
-### ● user
-#### Syntax
-```
-```
-### ● group
-#### Syntax
-```
-```
+
 ### ● daemon
 #### Syntax
 ```
+daemon
 ```
+
+### ● group
+#### Syntax
+```
+group <group name>
+```
+
+### ● log
+#### Syntax
+```
+log <address> [len <length>] [format <format>] <facility> [max level [min level]]
+```
+
+### ● nbproc
+#### Syntax
+```
+nbproc <number>
+```
+### ● nbthread
+#### Syntax
+```
+nbthread <number>
+```
+
+### ● pidfile
+#### Syntax
+```
+pidfile <pidfile>
+```
+
 ### ● stats
 #### Syntax
 ```
+stats socket [<address:port>|<path>] [param*]
+```
+
+### ● user
+#### Syntax
+```
+user <user name>
+```
+
+## ■ Performance tuning
+### ● maxconn
+#### Syntax
+```
+maxconn <number>
 ```
 
 ## ■ 設定例
