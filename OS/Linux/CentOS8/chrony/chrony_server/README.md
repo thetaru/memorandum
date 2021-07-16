@@ -18,7 +18,7 @@
 
 ## ■ 主設定ファイル /etc/chrony.conf
 ### ● 設定項目
-ディレクティブは[こちら]()にまとめました。
+ディレクティブは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/chrony/chrony_server/directives)にまとめました。
 
 ### ● 文法チェック
 ```
@@ -36,5 +36,3 @@
 ```
 
 ## ■ 設定の確認
-
-## ■ 参考
