@@ -39,6 +39,7 @@
 #### ◆ LDAP認証
 ## ■ ロギング
 ### syslogサーバへの転送
+access_logでsyslogモジュールを指定し、ファシリティとプライオリティにlocal1とinfoを指定したと仮定して進めます。
 ```
 # vi /etc/rsyslog.conf
 ```
