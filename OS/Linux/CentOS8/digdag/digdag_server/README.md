@@ -23,11 +23,19 @@
 ### ● PostgreSQLのインストール
 ```
 # yum install postgresql-server
+# yum install postgresql-contrib
 ```
 
 ## ■ PostgreSQLの設定
 ```
 # postgresql-setup  --initdb
+```
+```
+# systemctl enable --now postgresql.service
+# systemctl status postgresql.service
+```
+```
+# 
 ```
 
 ## ■ バージョンの確認
