@@ -12,7 +12,7 @@ access_log syslog:local1.info combined
 +  *.info;mail.none;authpriv.none;cron.none;local1.info    /var/log/messages
 ```
 
-syslogサーバに転送します。
+syslogサーバに転送します。(あくまで例です)
 ```
 +  action(Target="SYSLOG-SERVER" Port="514" Protocol="tcp")
 ```
