@@ -18,26 +18,31 @@
 |snmptrapd.service|162/udp|
 
 ## ■ 主設定ファイル /etc/snmp/snmpd.conf
+# ACCESS CONTROL
+## VACM Configuration
 ### ● com2sec
 #### Syntax
 ```
-com2sec sec.name source community
+com2sec [-Cn CONTEXT] SECNAME SOURCE COMMUNITY
 ```
 ### ● group
 #### Syntax
 ```
-group groupName securityModel securityName
+group GROUP {v1|v2c|usm|tsm|ksm} SECNAME
 ```
 ### ● view
 #### Syntax
 ```
-view name incl/excl subtree mask(optional)
+view VNAME TYPE OID [MASK]
 ```
 ### ● access
 #### Syntax
 ```
-access group context sec.model sec.level prefix read write notif
+access GROUP CONTEXT {any|v1|v2c|usm|tsm|ksm} LEVEL PREFX READ WRITE NOTIFY
 ```
+
+# SYSTEM INFORMATION
+## System Group
 ### ● syslocation
 #### Syntax
 ```
@@ -48,11 +53,8 @@ sysContact STRING
 ```
 sysLocation STRING
 ```
-### ● dontLogTCPWrappersConnect
-#### Syntax
-```
-dontLogTCPWrappersConnects (yes|no)
-```
+
+## Process Monitoring
 ### ● proc
 #### Syntax
 ```
@@ -77,6 +79,13 @@ exec [MIBOID] NAME PROG ARGS
 #### Syntax
 ```
 pass [-p priority] MIBOID PROG
+```
+
+# OTHER CONFIGURATION
+### ● dontLogTCPWrappersConnect
+#### Syntax
+```
+dontLogTCPWrappersConnects (yes|no)
 ```
 ### 設定例
 ```
