@@ -72,6 +72,8 @@ postgres=# \q
 postgres=# select installed_version from pg_catalog.pg_available_extensions where name = 'uuid-ossp';
 postgres=# \q
 ```
+
+## ■ Digdagの設定
 ```
 # mkdir /etc/digdag
 ```
@@ -127,7 +129,7 @@ WantedBy=multi-user.target
 ```
 ```
 # mkdir -p /var/log/digdag-server/access /var/log/digdag-server/task
-# chown -R bigdata:bigdata /var/log/digdag-server
+# chown -R digdag:digdag /var/log/digdag-server
 ```
 ```
 # systemctl restart digdag-server
