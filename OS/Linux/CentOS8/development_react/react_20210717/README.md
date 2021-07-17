@@ -21,5 +21,8 @@
 
 ## ■ アプリの作成
 ### ● 
+```
+# npx create-react-app <application name>
+```
 ### ● 
 ### ● 
