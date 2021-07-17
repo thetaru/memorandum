@@ -7,11 +7,15 @@
 ```
 #### 最新のNode.jsのインストール
 ```
+### Node.jsのバージョンを管理するライブラリnをインストール
 # npm install n -g
+
+### 安定版のNode.jsをインストール
+# n stable
 ```
 #### 古いNode.jsのアンインストール
 ```
-# n stable
+### 古いパッケージのアンインストール
 # yum remove nodejs npm
 ```
 #### create-react-appのインストール
