@@ -1,7 +1,7 @@
 # SNMPエージェントの設定
 ## ■ インストール
 ```
-# yum install net-snmp
+# yum install net-snmp net-snmp-utils
 ```
 ## ■ バージョンの確認
 ```
