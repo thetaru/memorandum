@@ -28,8 +28,9 @@
 ```
 # npx create-react-app <project name>
 ```
-### ● [Option] Redux Toolkitのインストール
+### ● [Option] 新規プロジェクトの作成(Redux Toolkit)
 ```
-# npm install @reduxjs/toolkit react-redux
+# npx create-react-app <project name> --template redux
+# npm install @reduxjs/toolkit
 ```
 ### ● 
