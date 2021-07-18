@@ -31,6 +31,7 @@
 ### ● [Option] 新規プロジェクトの作成(Redux Toolkit)
 ```
 # npx create-react-app <project name> --template redux
+# cd <project name>
 # npm install @reduxjs/toolkit
 ```
 ### ● 
