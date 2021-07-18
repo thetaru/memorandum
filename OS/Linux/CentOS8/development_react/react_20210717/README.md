@@ -23,10 +23,13 @@
 # npm install create-react-app -g
 ```
 
-## ■ アプリの作成
-### ● 
+## ■ プロジェクトの作成
+### ● 新規プロジェクトの作成
 ```
-# npx create-react-app <application name>
+# npx create-react-app <project name>
 ```
-### ● 
+### ● [Option] Redux Toolkitのインストール
+```
+# npm install @reduxjs/toolkit react-redux
+```
 ### ● 
