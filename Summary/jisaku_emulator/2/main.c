@@ -87,13 +87,14 @@ void mov_r32_imm32(Emulator* emu)
     uint8_t reg = get_code8(emu, 0) - 0xB8;
     uint32_t value = get_code32(emu, 1);
     emu->registers[reg] = value;
-    /* mov_r32_imm32命令は全体で5byte */
+    /* mov_r32_imm32命令は全体で5byte(uint8_t + uint32_tで5byte) */
     emu->eip += 5;
 }
 
 void short_jump(Emulator* emu)
 {
     int8_t diff = get_sign_code8(emu, 1);
+    /* short_jump命令は全体で2byte(int8_t + ?) */
     emu->eip += (diff + 2);
 }
 
