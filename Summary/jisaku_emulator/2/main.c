@@ -94,7 +94,7 @@ void mov_r32_imm32(Emulator* emu)
 void short_jump(Emulator* emu)
 {
     int8_t diff = get_sign_code8(emu, 1);
-    /* short_jump命令は全体で2byte(int8_t + ?) */
+    /* short_jump命令は全体で2byte(int8_t + get_sign_codeで指定したindex(1byte)で2byte) */
     emu->eip += (diff + 2);
 }
 
