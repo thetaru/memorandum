@@ -12,7 +12,7 @@
 ## ■ smtpd_helo_restrictions
 ### reject_invalid_helo_hostname
 ```
-# telet <mail server> 25
+# telet メールサーバ 25
 ```
 ```
 ### 私はこういうものですという挨拶(HELO)をする
