@@ -180,6 +180,7 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ```
 
 ## ● smtpd_sender_restrictions
+https://qiita.com/tukiyo3/items/902b3c859346f6c00168
 ### ■ 設定例
 ```
 ```
@@ -188,3 +189,9 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ### ■ 設定例
 ```
 ```
+
+## ● transport_maps
+### ■ 設定例
+```
+```
+
