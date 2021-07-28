@@ -4,26 +4,26 @@
 ## ■ Required
 ### compatibility_level
 ### header_checks
-### inet_interfaces
-### inet_protocols
+### inet_interfaces (★)
+### inet_protocols (★)
 ### local_recipient_maps
-### mydestination
-### mydomain
-### myhostname
-### myorigin
-### mynetworks
-### relay_domains
+### mydestination (★)
+### mydomain (★)
+### myhostname (★)
+### myorigin (★)
+### mynetworks (★)
+### relay_domains (★)
 ### relay_recipient_maps
-### relayhost
+### relayhost (★)
 ### smtp_tls_security_level
-### smtp_use_tls = yes
-### smtpd_banner
+### smtp_use_tls
+### smtpd_banner (★)
 ### smtpd_tls_cert_file
 ### smtpd_tls_key_file
 ### smtpd_tls_security_level
 
 ## ■ Option
-### biff
+### biff (★)
 ### body_checks
 ### body_checks_size_limit
 ### canonical_classes
