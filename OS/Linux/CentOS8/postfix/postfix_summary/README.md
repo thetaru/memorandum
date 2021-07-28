@@ -2,18 +2,17 @@
 ## ● header_checks
 ヘッダ情報によるフィルタリング(OK|REJECT)やヘッダ情報の書き換え(REPLACE)を設定できます。
 ### ■ ヘッダフィールド
-|フィールド|説明|
+|ヘッダ|説明|
 |:---|:---|
-|Date:|メッセージ送信を開始した時間を表す|
-|From:||
-|Sender:||
+|Return-Path:|メール送信元へのリターンアドレスを示す</br>最後にメールを受け取ったSMTP/ESMTPサーバが付加する|
+|Received:||
 |Reply-to:||
+|From:||
 |To:||
 |Cc:||
 |Bcc:||
 |Subject:||
-|Return-Path:||
-|Received:||
+|Date:|メッセージ送信を開始した時間を表す|
 
 ### ■ 設定例
 #### /etc/postfix/main.cf
