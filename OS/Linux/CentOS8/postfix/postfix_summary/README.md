@@ -36,7 +36,9 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 
 ### ■ header_checks.dbの作成
+postmapコマンドでheader_checksファイルをhash化したDBを作成します。
 ```
+# cp -p /etc/postfix/header_checks{,.$(date +%Y%m%d)}
 # postmap /etc/postfix/header_checks
 ```
 
