@@ -35,6 +35,11 @@ header_checks = regexp:/etc/postfix/header_checks
 /^Received:\sfrom .*\[127\.0\.0\.1\]|^Received:\sfrom .*\[192\.168.*\]|^Received:\sfrom .*\[172\.16.*\]/ IGNORE
 ```
 
+### ■ header_checks.dbの作成
+```
+# postmap /etc/postfix/header_checks
+```
+
 ## ● inet_interfaces (★)
 ### ■ 設定例
 ```
@@ -137,6 +142,7 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 
 ## ● canonical_classes
+https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ### ■ 設定例
 ```
 ```
