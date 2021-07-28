@@ -24,7 +24,6 @@ header_checks = regexp:/etc/postfix/header_checks
 #### /etc/postfix/header_checks
 ルールは上から適用されます。
 ```
-### OK=>マッチしたメールは許可 REJECT=>マッチしないメールは拒否
 /^To: hoge@example.com/ OK
 /^To: .*@example.jp/ OK
 /^To: .*/ REJECT
@@ -33,6 +32,8 @@ header_checks = regexp:/etc/postfix/header_checks
 /^Subject: TEST(.*)/ REPLACE Subject: TEST $1
 
 /^From: .*@gmail\.com/ REJECT
+
+/^Received:\sfrom .*\[127\.0\.0\.1\]|^Received:\sfrom .*\[192\.168.*\]|^Received:\sfrom .*\[172\.16.*\]/ IGNORE
 ```
 
 ## ● inet_interfaces (★)
