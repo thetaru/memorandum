@@ -9,19 +9,26 @@
 # postsuper -d ALL
 ```
 
-## ■ smtpd_helo_restrictions
-### reject_invalid_helo_hostname
+## ■ telnetでメール送信
 ```
-# telet メールサーバ 25
+# telnet mail-srv.example.com 25
 ```
 ```
-### 私はこういうものですという挨拶(HELO)をする
-> HELO 送信元ホスト名(FQDN)
-< 250
-
-> mail from:
-< 250 2.1.0 Ok
-
-> rcpt to: <>
-
+Trying XXX.XXX.XXX.XXX...
+Connected to XXX.XXX.XXX.XXX.
+Escape character is '^]'.
+220 mail-srv.example.com ESMTP Postfix
+HELO example.com
+250 mail-srv.example.com
+MAIL FROM: user@example.com
+250 2.1.0 Ok
+RCPT TO: thetaru@test.com
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+From: user@example.com
+Subjet: test
+Hello world.
+.
+250 2.0.0 Ok: queued as XXXXXXXXXXX
 ```
