@@ -151,7 +151,12 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 ```
 
-## ● sender_canonical
+## ● sender_canonical_classes
+### ■ 設定例
+```
+```
+
+## ● sender_canonical_maps
 ### ■ 設定例
 ```
 ```
