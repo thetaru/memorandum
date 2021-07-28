@@ -1,5 +1,20 @@
 # Required
 ## ● header_checks
+ヘッダ情報によるフィルタリング(OK|REJECT)やヘッダ情報の書き換え(REPLACE)を設定できます。
+### ■ ヘッダフィールド
+|フィールド|説明|
+|:---|:---|
+|Date:||
+|From:||
+|Sender:||
+|Reply-to:||
+|To:||
+|Cc:||
+|Bcc:||
+|Subject:||
+|Return-Path:||
+|Received:||
+
 ### ■ 設定例
 #### /etc/postfix/main.cf
 ```
@@ -7,9 +22,17 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 
 #### /etc/postfix/header_checks
+ルールは上から適用されます。
 ```
-/^Subject:.*Document2.*/ REJECT
-/^Subject:.*Payment Receipt.*/ REJECT
+### OK=>マッチしたメールは許可 REJECT=>マッチしないメールは拒否
+/^To: hoge@example.com/ OK
+/^To: .*@example.jp/ OK
+/^To: .*/ REJECT
+
+/^Subject: .*MOUKEBANASI.*/ REJECT
+/^Subject: TEST(.*)/ REPLACE Subject: TEST $1
+
+/^From: .*@gmail\.com/ REJECT
 ```
 
 ## ● inet_interfaces (★)
