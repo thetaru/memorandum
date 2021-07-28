@@ -1,8 +1,15 @@
 # Required
 ## ● header_checks
 ### ■ 設定例
+#### /etc/postfix/main.cf
 ```
 header_checks = regexp:/etc/postfix/header_checks
+```
+
+#### /etc/postfix/header_checks
+```
+/^Subject:.*Document2.*/ REJECT
+/^Subject:.*Payment Receipt.*/ REJECT
 ```
 
 ## ● inet_interfaces (★)
