@@ -43,6 +43,7 @@ postmapコマンドでheader_checksファイルをhash化したDBを作成しま
 ```
 
 ## ● inet_interfaces (★)
+https://qiita.com/bezeklik/items/438eadbdb06672f3c3b6#inet_interfaces
 ### ■ 設定例
 ```
 ```
