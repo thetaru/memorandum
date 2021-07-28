@@ -4,7 +4,7 @@
 ### ■ ヘッダフィールド
 |フィールド|説明|
 |:---|:---|
-|Date:||
+|Date:|メッセージ送信を開始した時間を表す|
 |From:||
 |Sender:||
 |Reply-to:||
@@ -147,6 +147,11 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 
 ## ● disable_vrfy_command
+### ■ 設定例
+```
+```
+
+## ● sender_canonical
 ### ■ 設定例
 ```
 ```
