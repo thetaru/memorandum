@@ -1,4 +1,4 @@
-# Required
+# Common
 ## ● header_checks
 ヘッダ情報によるフィルタリング(OK|REJECT)やヘッダ情報の書き換え(REPLACE)を設定できます。
 ### ■ ヘッダフィールド
