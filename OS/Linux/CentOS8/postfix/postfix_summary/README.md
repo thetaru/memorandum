@@ -43,7 +43,7 @@ postmapコマンドでheader_checksファイルをhash化したDBを作成しま
 ```
 
 ## ● inet_interfaces (★)
-Postfixサービスがメールを受け取るネットワークインターフェースアドレスを設定します。  
+Postfixサービスがメールを受け取るネットワークインターフェースアドレスを指定します。  
 https://qiita.com/bezeklik/items/438eadbdb06672f3c3b6#inet_interfaces
 ### ■ 設定例
 ```
@@ -58,7 +58,7 @@ inet_interfaces = localhost
 ```
 
 ## ● inet_protocols (★)
-Postfixサービスが使用するインターネットプロトコルを設定します。  
+Postfixサービスが使用するインターネットプロトコルを指定します。  
 ### ■ 設定例
 ```
 ### IPv4のみ
@@ -83,13 +83,13 @@ http://www.ice.is.kit.ac.jp/~umehara/misc/comp/20091218c.html
 ```
 
 ## ● mydomain (★)
-サーバが所属するドメイン名を設定する。
+サーバが所属するドメイン名を指定します。
 ### ■ 設定例
 ```
 ```
 
 ## ● myhostname (★)
-サーバのホスト名をFQDNで設定する。
+サーバのホスト名をFQDNで指定します。
 ### ■ 設定例
 ```
 ```
@@ -108,6 +108,7 @@ myorigin = $mydomain
 ```
 
 ## ● mynetworks (★)
+外部ドメインへのメールをリレーを許可するクライアントを指定します。
 ### ■ 設定例
 ```
 ```
@@ -123,6 +124,7 @@ myorigin = $mydomain
 ```
 
 ## ● relayhost (★)
+転送先の上位メールサーバを指定します。
 ### ■ 設定例
 ```
 ```
