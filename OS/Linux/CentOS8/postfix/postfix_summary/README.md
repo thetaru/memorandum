@@ -205,10 +205,29 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ```
 
 ## ● smtp_tls_loglevel
+### ■ 設定例
+```
+```
+
 ## ● smtp_tls_mandatory_ciphers
+### ■ 設定例
+```
+```
+
 ## ● smtp_tls_mandatory_exclude_ciphers
+### ■ 設定例
+```
+```
+
 ## ● smtp_tls_mandatory_protocols
+### ■ 設定例
+```
+```
+
 ## ● smtp_tls_protocols
+### ■ 設定例
+```
+```
 
 ## ● smtpd_client_restrictions
 ### ■ 設定例
@@ -242,10 +261,29 @@ https://qiita.com/tukiyo3/items/902b3c859346f6c00168
 ```
 
 ## ● smtpd_tls_loglevel
+### ■ 設定例
+```
+```
+
 ## ● smtpd_tls_mandatory_ciphers
+### ■ 設定例
+```
+```
+
 ## ● smtpd_tls_mandatory_exclude_ciphers
+### ■ 設定例
+```
+```
+
 ## ● smtpd_tls_mandatory_protocols
+### ■ 設定例
+```
+```
+
 ## ● smtpd_tls_protocols
+### ■ 設定例
+```
+```
 
 ## ● smtpd_use_tls
 ### ■ 設定例
@@ -256,4 +294,3 @@ https://qiita.com/tukiyo3/items/902b3c859346f6c00168
 ### ■ 設定例
 ```
 ```
-
