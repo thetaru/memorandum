@@ -43,14 +43,22 @@ postmapコマンドでheader_checksファイルをhash化したDBを作成しま
 ```
 
 ## ● inet_interfaces (★)
+メールを受け取るネットワークインターフェースアドレスを設定します。  
 https://qiita.com/bezeklik/items/438eadbdb06672f3c3b6#inet_interfaces
 ### ■ 設定例
 ```
+inet_interfaces = all
+inet_interfaces = 192.168.138.15, 127.0.0.1
+inet_interfaces = localhost
 ```
 
 ## ● inet_protocols (★)
+Postfixが使用するインターネットプロトコルを設定します。  
 ### ■ 設定例
 ```
+inet_protocols = ipv4
+inet_protocols = ipv6
+inet_protocols = all
 ```
 
 ## ● local_recipient_maps
