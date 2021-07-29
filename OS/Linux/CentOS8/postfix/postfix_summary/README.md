@@ -131,6 +131,7 @@ myorigin = $mydomain
 ```
 relayhost = [smtp-relay.example.com]
 ```
+※ [ ]有りはAレコードで解決し、[ ]無しはMXレコードで解決することに注意
 
 ## ● smtp_tls_security_level
 SMTPクライアントが使用するTLSセキュリティレベルを指定します。
@@ -303,6 +304,18 @@ https://qiita.com/tukiyo3/items/902b3c859346f6c00168
 ```
 
 ## ● transport_maps
+リレー先メールサーバのリストファイルを指定します。
 ### ■ 設定例
+#### /etc/postfix/main.cf
 ```
+transport_maps = /etc/postfix/transport
 ```
+
+#### /etc/postfix/transport
+```
+example.com        :
+.example.com   smtp:[relay-smtp.example.com]
+example.jp     smtp:[relay-smtp.example.jp]
+*              smtp:[relay-smtp.example.co.jp]
+```
+※ [ ]有りはAレコードで解決し、[ ]無しはMXレコードで解決することに注意
