@@ -308,14 +308,21 @@ https://qiita.com/tukiyo3/items/902b3c859346f6c00168
 ### ■ 設定例
 #### /etc/postfix/main.cf
 ```
-transport_maps = /etc/postfix/transport
+transport_maps = hash:/etc/postfix/transport
 ```
 
 #### /etc/postfix/transport
 ```
-example.com        :
-.example.com   smtp:[relay-smtp.example.com]
+### example.jpドメイン宛のメールをrelay-smtp.example.jpへリレーする
 example.jp     smtp:[relay-smtp.example.jp]
+
+### example.comドメイン宛のメールはリレーしない
+example.com        :
+
+### example.comのサブドメイン宛のメールをrelay-smtp.example.comへリレーする
+.example.com   smtp:[relay-smtp.example.com]
+
+### 上記のルールに引っかからなかったドメイン宛のメールをrelay-smtp.example.co.jpへリレーする
 *              smtp:[relay-smtp.example.co.jp]
 ```
 ※ [ ]有りはAレコードで解決し、[ ]無しはMXレコードで解決することに注意
