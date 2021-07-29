@@ -326,3 +326,10 @@ example.com        :
 *              smtp:[relay-smtp.example.co.jp]
 ```
 ※ [ ]有りはAレコードで解決し、[ ]無しはMXレコードで解決することに注意
+
+### ■ transport.dbの作成
+postmapコマンドでtransportファイルをhash化したDBを作成します。
+```
+# cp -p /etc/postfix/transport{,.$(date +%Y%m%d)}
+# postmap /etc/postfix/transport
+```
