@@ -43,7 +43,7 @@ postmapコマンドでheader_checksファイルをhash化したDBを作成しま
 ```
 
 ## ● inet_interfaces (★)
-メールを受け取るネットワークインターフェースアドレスを設定します。  
+Postfixサービスがメールを受け取るネットワークインターフェースアドレスを設定します。  
 https://qiita.com/bezeklik/items/438eadbdb06672f3c3b6#inet_interfaces
 ### ■ 設定例
 ```
@@ -53,7 +53,7 @@ inet_interfaces = localhost
 ```
 
 ## ● inet_protocols (★)
-Postfixが使用するインターネットプロトコルを設定します。  
+Postfixサービスが使用するインターネットプロトコルを設定します。  
 ### ■ 設定例
 ```
 inet_protocols = ipv4
@@ -62,6 +62,7 @@ inet_protocols = all
 ```
 
 ## ● local_recipient_maps
+知らないローカルユーザを拒否する設定ができます。
 ### ■ 設定例
 ```
 ```
@@ -152,6 +153,11 @@ inet_protocols = all
 ```
 ```
 
+## ● bounce_queue_lifetime
+### ■ 設定例
+```
+```
+
 ## ● canonical_classes
 https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ### ■ 設定例
@@ -164,6 +170,16 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ```
 
 ## ● disable_vrfy_command
+### ■ 設定例
+```
+```
+
+## ● maximal_queue_lifetime
+### ■ 設定例
+```
+```
+
+## ● message_size_limit
 ### ■ 設定例
 ```
 ```
@@ -183,7 +199,17 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ```
 ```
 
+## ● smtpd_helo_restrictions
+### ■ 設定例
+```
+```
+
 ## ● smtpd_recipient_restrictions
+### ■ 設定例
+```
+```
+
+## ● smtpd_relay_restrictions
 ### ■ 設定例
 ```
 ```
