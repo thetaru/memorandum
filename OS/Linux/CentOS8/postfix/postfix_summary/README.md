@@ -125,15 +125,15 @@ myorigin = $mydomain
 ```
 
 ## ● relayhost (★)
-リレー先のメールサーバを指定します。
+リレー先のメールサーバを指定します。  
+ただし、`transport_maps`でドメインごとにリレー先を振り分ける場合は`relayhost`は不要です。
 ### ■ 設定例
 ```
+relayhost = [smtp-relay.example.com]
 ```
 
 ## ● smtp_tls_security_level
-SMTPクライアントが使用するTLSセキュリティレベルを指定します。 
-※ 中継メールサーバでも必須
-
+SMTPクライアントが使用するTLSセキュリティレベルを指定します。
 ### ■ 設定例
 ```
 smtp_tls_security_level = may
