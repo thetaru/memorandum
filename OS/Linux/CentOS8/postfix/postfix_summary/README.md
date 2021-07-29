@@ -114,6 +114,7 @@ myorigin = $mydomain
 ```
 
 ## ● relay_domains (★)
+サーバがリレーする配送先のドメインを指定します。
 ### ■ 設定例
 ```
 ```
@@ -124,19 +125,18 @@ myorigin = $mydomain
 ```
 
 ## ● relayhost (★)
-転送先の上位メールサーバを指定します。
+リレー先のメールサーバを指定します。
 ### ■ 設定例
 ```
 ```
 
 ## ● smtp_tls_security_level
-### ■ 設定例
-```
-```
+SMTPクライアントが使用するTLSセキュリティレベルを指定します。 
+※ 中継メールサーバでも必須
 
-## ● smtp_use_tls
 ### ■ 設定例
 ```
+smtp_tls_security_level = may
 ```
 
 ## ● smtpd_banner (★)
