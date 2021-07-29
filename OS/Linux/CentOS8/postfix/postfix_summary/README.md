@@ -73,9 +73,9 @@ inet_protocols = all
 
 ## ● local_recipient_maps
 知らないローカルユーザを拒否する設定ができます。  
-※ 逆に言えば、許可することも可能です  
-  
-[こちら]()を参照してください。
+https://tksm.org/wp/archives/450  
+http://www.ice.is.kit.ac.jp/~umehara/misc/comp/20091218c.html  
+
 
 ## ● mydestination (★)
 ### ■ 設定例
@@ -83,18 +83,28 @@ inet_protocols = all
 ```
 
 ## ● mydomain (★)
+サーバが所属するドメイン名を設定する。
 ### ■ 設定例
 ```
 ```
 
 ## ● myhostname (★)
+サーバのホスト名をFQDNで設定する。
 ### ■ 設定例
 ```
 ```
 
-## ● myorigin (★)
+## ● myorigin
+ローカルで送信されたメールがどのドメインから来るように見えるかを設定する。  
+一般的に、$myhostname(デフォルト)か$mydomainを指定します。  
+  
+送信者のアドレスがユーザ名のみの場合、<ユーザ名>@<$myorigin>のように@以降に設定値が補完されます。  
+※ 例えば、maillogに`From: root@localhost.localdomain`といった風に記載されます
+
 ### ■ 設定例
+デフォルトでは$myhostname(ホスト名)で補完されてしまうので、$mydomain(ドメイン名)で補完されるようにします。
 ```
+myorigin = $mydomain
 ```
 
 ## ● mynetworks (★)
