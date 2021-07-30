@@ -9,8 +9,26 @@ SOA(Start of Authority)レコードは、ゾーン全体に影響するパラメ
 - 名前解決の際のキャッシング
 - セカンダリDNSの情報更新に関する設定
 
+### ■ Syntax
+```
+@ IN SOA MNAME RNAME (
+  SERIAL
+  REFRESH
+  RETRY
+  EXPIRE
+  MINIMUM
+)
+```
+
 ### ■ 設定例
 ```
+@ IN SOA ns.example.com. root.example.com. (
+  2021073001 ; Serial
+  10800 ; Refresh
+  600 ; Retry
+  86400 ; Expire
+  3600 ; Negative TTL
+)
 ```
 
 ## NSレコード
@@ -21,6 +39,8 @@ NS(Name Server)レコードは、ドメインのゾーン情報が登録され�
 
 ### ■ 設定例
 ```
+examle.com. IN NS ns.example.com
+examle.com. IN NS ns2.example.com
 ```
 
 ## Aレコード
