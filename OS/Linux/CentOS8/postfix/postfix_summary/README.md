@@ -17,7 +17,7 @@
 ### ■ 設定例
 #### /etc/postfix/main.cf
 ```
-header_checks = regexp:/etc/postfix/header_checks
+# postconf -e 'header_checks = regexp:/etc/postfix/header_checks'
 ```
 
 #### /etc/postfix/header_checks
