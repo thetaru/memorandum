@@ -83,7 +83,7 @@ Aレコードは、ホスト名とIPアドレスの関連付けを定義する�
 OWNER [TTL] IN A ADDRESS
 ```
 - OWNER
-> ゾーン名を指定します。
+> ドメイン名を指定します。
 
 - ADDRESS
 > IPv4のIPアドレスを指定します。
@@ -102,7 +102,7 @@ AAAAレコードは、ホスト名とIPv6アドレスの関連付けを定義す
 OWNER [TTL] IN AAAA ADDRESS
 ```
 - OWNER
-> ゾーン名を指定します。
+> ドメイン名を指定します。
 
 - ADDRESS
 > IPv6のIPアドレスを指定します。
