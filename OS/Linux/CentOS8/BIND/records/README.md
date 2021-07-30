@@ -62,7 +62,6 @@ NS(Name Server)レコードは、ドメインのゾーン情報が登録され�
 ### ■ 設定例
 ```
 examle.com. IN NS ns.example.com
-examle.com. IN NS ns2.example.com
 ```
 
 ## Aレコード
@@ -71,6 +70,7 @@ Aレコードは、ホスト名とIPアドレスの関連付けを定義する�
 
 ### ■ 設定例
 ```
+www.example.com. IN A 192.168.137.1
 ```
 
 ## AAAAレコード
@@ -87,6 +87,7 @@ MX(Mail eXchanger)レコードは、メールのリレー先となるホスト�
 
 ### ■ 設定例
 ```
+example.com. IN MX 10 smtp.example.com.
 ```
 
 ## CNAMEレコード
