@@ -56,8 +56,18 @@ SOA(Start of Authority)レコードは、ゾーン全体に影響するパラメ
 ## NSレコード
 ### ■ 解説
 NS(Name Server)レコードは、ドメインのゾーン情報が登録されているDNSサーバを定義するレコードです。  
-利用するドメイン名のサブドメイン名を他のDNSサーバで運用する場合は、NSレコードを追加します。
-- 登録するDNSサーバのホスト名には、Aレコードが登録されているホスト名のみ設定できます
+利用するドメイン名のサブドメイン名を他のDNSサーバで運用する場合は、NSレコードを追加します。  
+登録するDNSサーバのホスト名には、Aレコードが登録されているホスト名のみ設定できます。
+
+### ■ Syntax
+```
+OWNER [TTL] IN NS NSDNAME
+```
+- OWNER
+> ゾーン名を指定します。
+
+- NSDNAME
+> ゾーンの権威DNSサーバのドメイン名を指定します。
 
 ### ■ 設定例
 ```
@@ -68,17 +78,38 @@ examle.com. IN NS ns.example.com
 ### ■ 解説
 Aレコードは、ホスト名とIPアドレスの関連付けを定義するレコードです。
 
+### ■ Syntax
+```
+OWNER [TTL] IN A ADDRESS
+```
+- OWNER
+> ゾーン名を指定します。
+
+- ADDRESS
+> IPv4のIPアドレスを指定します。
+
 ### ■ 設定例
 ```
-www.example.com. IN A 192.168.137.1
+www.example.com. 86400 IN A 192.168.137.1
 ```
 
 ## AAAAレコード
 ### ■ 解説
 AAAAレコードは、ホスト名とIPv6アドレスの関連付けを定義するレコードです。
 
+### ■ Syntax
+```
+OWNER [TTL] IN AAAA ADDRESS
+```
+- OWNER
+> ゾーン名を指定します。
+
+- ADDRESS
+> IPv6のIPアドレスを指定します。
+
 ### ■ 設定例
 ```
+www.example.com. 86400 IN AAAA 2001:db8:dead:beef::1
 ```
 
 ## MXレコード
@@ -93,10 +124,20 @@ example.com. IN MX 10 smtp.example.com.
 ## CNAMEレコード
 ### ■ 解説
 CNAME(Canonical NAME)レコードは、正規のホスト名とホストの別名との関連付けを定義するレコードです。  
-※ CNAMEで設定したホスト名が正規のホスト名となります
+
+### ■ Syntax
+```
+OWNER [TTL] IN CNAME CNAME
+```
+- OWNER
+> 正式名に対する別名を指定します。
+- CNAME
+> 別名に対する正式名を指定します。
 
 ### ■ 設定例
 ```
+foo.example.com. IN A     192.168.137.1
+www.example.com. IN CNAME foo.example.com.
 ```
 
 ## SRVレコード
@@ -127,6 +168,16 @@ DS(Delegation Signer)レコードは、サブドメインでDNSSECを利用す�
 ### ■ 解説
 PTR(PoinTR)レコードは、IPアドレスとホスト名の関連付けを定義するレコードです。  
 1つのIPアドレスに対して、1つのホスト名を登録できます。
+
+### ■ Syntax
+```
+OWNER [TTL] IN PTR PTRDNAME
+```
+- OWNER
+> in-addr.arpa.やip6.arpa.の名前空間でのIPアドレスを指定します。
+
+- PTRDNAME
+> IPアドレスに対するドメイン名を指定します。
 
 ### ■ 設定例
 ```
