@@ -181,4 +181,5 @@ OWNER [TTL] IN PTR PTRDNAME
 
 ### ■ 設定例
 ```
+1 IN PTR www.example.com.
 ```
