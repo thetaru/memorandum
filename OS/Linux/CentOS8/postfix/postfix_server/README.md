@@ -24,14 +24,10 @@
 ```
 # postfix check
 ```
-## ■ 設定ファイル /etc/postfix/canonical
-## ■ 設定ファイル /etc/postfix/header_checks
-## ■ 設定ファイル /etc/postfix/transport
 ## ■ セキュリティ
 ### ● firewall
 ### ● 認証
 - SASL認証
-## ■ ロギング
 ## ■ チューニング
 ## ■ トラブルシューティング
 ## ■ 設定の反映
