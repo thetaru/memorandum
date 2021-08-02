@@ -101,3 +101,11 @@ PBRは、個々のパーティションの先頭に位置するセクタのこ�
 3. PBRに書かれた第2のローダプログラムは、パーティションに含まれるOSを探す
 
 # 4.5 PBRを見てみよう
+
+```
+### USBメモリをマウント
+# mount -t vfat /dev/sdX /media
+
+### USBメモリに書き込み
+# dd if=/dev/sdX of=pbr.bin bs=512 count=1
+```
