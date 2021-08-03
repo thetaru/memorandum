@@ -116,6 +116,14 @@ include "/etc/named.root.key";
 
 #### /var/named/named.zones
 ```
+zone "example.com." IN {
+  type master;
+  file "example.com.net";
+  notify yes;
+  allow-query { localhost; internalnet; };
+  allow-transfer { 192.168.138.21; };
+  allow-update { none; };
+};
 ```
 
 ### ● 文法チェック
@@ -126,14 +134,6 @@ include "/etc/named.root.key";
 ```
 ## ■ 設定ファイル /etc/sysconfig/named
 ```
-zone "example.com." IN {
-  type master;
-  file "example.com.net";
-  notify yes;
-  allow-query { localhost; internalnet; };
-  allow-transfer { 192.168.138.21; };
-  allow-update { none; };
-};
 ```
 ## ■ セキュリティ
 ### ● firewall
