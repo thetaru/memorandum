@@ -23,7 +23,7 @@
   
 ## ■ サービスの起動
 ```
-# systemctl enable --now bind-chroot.service
+# systemctl enable --now -chroot.service
 ```
   
 ## ■ 事前設定
