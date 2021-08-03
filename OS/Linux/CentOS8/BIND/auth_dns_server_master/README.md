@@ -17,7 +17,8 @@
 |named-chroot.service|53/tcp,udp||
 
 ## ■ 主設定ファイル /etc/named.conf
-### ● xxxセクション
+### ● 設定項目
+[こちら]()にまとめました。
 
 ### ● 設定例
 ### ● 文法チェック
