@@ -25,6 +25,11 @@
 ```
 # systemctl enable --now bind-chroot.service
 ```
+  
+## ■ rndc用の共有鍵の生成
+```
+# rndc-confgen -a -A hmac-sha512 -b 512 -u named
+```
 
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
