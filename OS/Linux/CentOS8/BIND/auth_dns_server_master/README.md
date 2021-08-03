@@ -88,6 +88,8 @@ options {
   recursion no;
   allow-recursion { none; };
   
+  empty-zones-enable yes;
+  
   dnssec-enable yes;
   dnssec-validation yes;
   
