@@ -40,6 +40,14 @@
 # touch /var/named/chroot/var/log/named/security.log
 # chown -R named:named /var/named/chroot/var/log/named
 ```
+  
+### ゾーンファイルの作成
+```
+# touch /var/named/example.com.zone
+# touch /var/named/named.zones
+# chown root:named /var/named/example.com.zone
+# chown root:named /var/named/named.zones
+```
 
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
