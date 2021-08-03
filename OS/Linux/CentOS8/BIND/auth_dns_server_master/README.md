@@ -97,7 +97,7 @@ logging {
     print-severity yes;
     print-category yes;
   };
-  channel query_log {
+  channel queries_log {
     file "/var/log/named/query.log" versions 5 size 50M;
     severity info;
     print-time yes;
