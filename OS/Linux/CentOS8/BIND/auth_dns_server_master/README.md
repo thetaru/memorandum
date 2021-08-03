@@ -170,7 +170,7 @@ zone "138.168.192.in-addr.arpa" {
 $ORIGIN example.com.
 $TTL 900       ; 15 min.
 @ IN SOA dns-01.example.com. postmaster.example.com. (
-        2015020110  ; serial
+        2021080301  ; serial
         3600        ; refresh (1 hour)
         1200        ; retry (20 min.)
         1209600     ; expire (2 weeks)
@@ -179,8 +179,6 @@ $TTL 900       ; 15 min.
 ;;
 @       IN  NS      dns-01.example.com.
 @       IN  NS      dns-02.example.com.
-@       IN  TXT     "v=spf1 mx ~all"    ; TXT
-@       IN  SPF     "v=spf1 mx ~all"    ; SPF
 
 dns-01     IN  A       192.168.138.20
 dns-02     IN  A       192.168.138.21
