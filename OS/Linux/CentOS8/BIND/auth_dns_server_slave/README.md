@@ -160,8 +160,9 @@ zone "138.168.192.in-addr.arpa" {
 # named-checkconf /etc/named.conf
 ```
 
-## ■ ロギング
 ## ■ チューニング
+### ● ワーカー数
+
 ## ■ 設定の反映
 ```
 # systemctl restart named-chroot.service
