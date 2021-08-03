@@ -50,8 +50,8 @@ controls {
 };
 
 options {
-  version: "";
-  hostname: "";
+  version "";
+  hostname "";
   listen-on port 53 {
     127.0.0.1;
     192.168.138.20;
