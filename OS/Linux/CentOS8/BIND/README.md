@@ -2,9 +2,8 @@
 ## ■ Commands
 - [x] [dig](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/dig) 
 ## ■ Settings
-- [ ] [内部DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
-- [ ] [外部DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server)
-- [ ] [内部兼外部DNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/view_dns_server)
+- [ ] [権威DNSサーバ(マスター)の構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server_master)
+- [ ] [権威DNSサーバ(スレーブ)の構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/auth_dns_server_slave)
 - [ ] [キャッシュDNSサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/cache_dns_server)
 ## ■ Statements
 - [ ] [acl](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/acl)
