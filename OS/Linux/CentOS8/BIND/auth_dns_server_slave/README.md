@@ -35,9 +35,7 @@
 ### ログファイルの作成
 ```
 # mkdir -p /var/named/chroot/var/log/named
-# touch /var/named/chroot/var/log/named/default.log
-# touch /var/named/chroot/var/log/named/query.log
-# touch /var/named/chroot/var/log/named/security.log
+# touch /var/named/chroot/var/log/named/{default,query,security}.log
 # chown -R named:named /var/named/chroot/var/log/named
 ```
 
@@ -168,7 +166,9 @@ zone "138.168.192.in-addr.arpa" {
 ```
 # systemctl restart named-chroot.service
 ```
+
 ## ■ 設定の確認
 ### ● ゾーン転送の確認
 ```
+# dig @192.168.138.20 example.com. axfr
 ```
