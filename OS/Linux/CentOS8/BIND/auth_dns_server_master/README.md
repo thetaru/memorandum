@@ -31,7 +31,7 @@
 ```
 # rndc-confgen -a -A hmac-sha512 -b 512 -u named
 ```
-
+  
 ### ログファイルの作成
 ```
 # mkdir -p /var/named/chroot/var/log/named
@@ -39,6 +39,14 @@
 # touch /var/named/chroot/var/log/named/query.log
 # touch /var/named/chroot/var/log/named/security.log
 # chown -R named:named /var/named/chroot/var/log/named
+```
+  
+### ゾーンファイルの作成
+```
+# touch /var/named/example.com.zone
+# touch /var/named/named.zones
+# chown root:named /var/named/example.com.zone
+# chown root:named /var/named/named.zones
 ```
 
 ## ■ 関連サービス
