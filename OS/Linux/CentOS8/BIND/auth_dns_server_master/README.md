@@ -8,7 +8,8 @@
 
 ### ● 設定方針
 - optionsでは、基本的に無効にするよう設定し、各ゾーンで詳細に設定する。
-※ optionsステートメントに同じoptionの記述があった場合、zone-optionが優先されます。  
+※ optionsステートメントに同じoptionの記述があった場合、zone-optionが優先されます。
+- ゾーンファイルの命名規則: <domain>.zone
 
 ## ■ インストール
 ```
