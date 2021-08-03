@@ -154,7 +154,6 @@ zone "138.168.192.in-addr.arpa" {
   notify yes;
   allow-query { localhost; internalnet; };
   allow-transfer { none; };
-  allow-update { none; };
 };
 ```
 
