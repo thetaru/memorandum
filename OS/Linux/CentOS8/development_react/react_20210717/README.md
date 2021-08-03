@@ -34,4 +34,9 @@
 # cd <project name>
 # npm install @reduxjs/toolkit
 ```
-### ● 
+## ■ おすすめライブラリ
+### ● react-icons
+アイコンを使うなら推奨します。
+```
+# npm install react-icons
+```
