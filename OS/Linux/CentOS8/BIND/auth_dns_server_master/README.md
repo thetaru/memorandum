@@ -21,6 +21,54 @@
 [こちら]()にまとめました。
 
 ### ● 設定例
+```
+acl internalnet {
+  127.0.0.1;
+  192.168.137.0/24;
+  192.168.138.0/24;
+};
+
+include "/etc/rndc.key";
+controls {
+  inet 127.0.0.1 port 953 allow { 127.0.0.1; } keys { "rndn-key"; };
+};
+
+options {
+  version: "";
+  hostname: "";
+  listen-on port 53 {
+    127.0.0.1;
+    192.168.138.20;
+  };
+  listen-on-v6 port 53 { none; };
+  directory       "/var/named";
+  dump-file       "/var/named/data/cache_dump.db";
+  statistics-file "/var/named/data/named_stats.txt";
+  memstatistics-file "/var/named/data/named_mem_stats.txt";
+  secroots-file   "/var/named/data/named.secroots";
+  recursing-file  "/var/named/data/named.recursing";
+  
+  allow-query       { internalnet; localhost; };
+  allow-query-cache { none; };
+  
+  allow-transfer { 192.168.138.21; };
+  allow-update { none; };
+  
+  recursion no;
+  allow-recursion { none; };
+  
+  dnssec-enable yes;
+  dnssec-validation yes;
+  
+  managed-keys-directory "/var/named/dynamic";
+
+  pid-file "/run/named/named.pid";
+  session-keyfile "/run/named/session.key";
+
+   include "/etc/crypto-policies/back-ends/bind.config";
+}
+```
+
 ### ● 文法チェック
 ```
 # named-checkconf /etc/named.conf
