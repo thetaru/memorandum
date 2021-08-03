@@ -27,21 +27,19 @@
 ```
   
 ## ■ 事前設定
-### rndc用の共有鍵の生成
+### ● rndc用の共有鍵の生成
 ```
 # rndc-confgen -a -A hmac-sha512 -b 512 -u named
 ```
   
-### ログファイルの作成
+### ● ログファイルの作成
 ```
 # mkdir -p /var/named/chroot/var/log/named
-# touch /var/named/chroot/var/log/named/default.log
-# touch /var/named/chroot/var/log/named/query.log
-# touch /var/named/chroot/var/log/named/security.log
+# touch /var/named/chroot/var/log/named/{default,query,security}.log
 # chown -R named:named /var/named/chroot/var/log/named
 ```
   
-### ゾーンファイルの作成
+### ● ゾーンファイルの作成
 ```
 # touch /var/named/example.com.zone
 # touch /var/named/named.zones
@@ -189,21 +187,11 @@ dns-02     IN  A       192.168.138.21
 
 # named-checkzone example.com. /var/named/example.com.zone
 ```
-## ■ 設定ファイル /etc/sysconfig/named
-```
-```
 
-## ■ ロギング
 ## ■ チューニング
 ## ■ 設定の反映
 ```
 # systemctl restart named-chroot.service
 ```
 ## ■ 設定の確認
-### ● ゾーン転送の確認
-```
-```
 
-### ●
-```
-```
