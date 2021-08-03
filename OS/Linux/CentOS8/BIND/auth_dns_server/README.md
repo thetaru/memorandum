@@ -5,7 +5,7 @@
 ```
 ## ■ バージョンの確認
 ```
-# bind -v
+# named -v
 ```
 ## ■ サービスの起動
 ```
@@ -14,14 +14,21 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-||||
+|named-chroot.service|53/tcp,udp||
 
-## ■ 主設定ファイル xxx.conf
+## ■ 主設定ファイル /etc/named.conf
 ### ● xxxセクション
 
 ### ● 設定例
 ### ● 文法チェック
-## ■ 設定ファイル yyy
+```
+# named-checkconf /etc/named.conf
+
+# named-checkzone "{domain}" /path/to/{domain}.zone
+```
+## ■ 設定ファイル /etc/sysconfig/named
+```
+```
 ## ■ セキュリティ
 ### ● firewall
 
