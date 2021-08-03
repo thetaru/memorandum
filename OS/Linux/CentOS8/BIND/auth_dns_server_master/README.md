@@ -51,7 +51,7 @@ acl internalnet {
 
 include "/etc/rndc.key";
 controls {
-  inet 127.0.0.1 port 953 allow { 127.0.0.1; } keys { "rndn-key"; };
+  inet 127.0.0.1 port 953 allow { 127.0.0.1; } keys { "rndc-key"; };
 };
 
 options {
