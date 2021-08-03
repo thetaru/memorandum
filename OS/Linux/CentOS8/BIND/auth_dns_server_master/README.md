@@ -1,9 +1,14 @@
 # 権威DNSサーバ(マスター)の構築
 ## ■ 前提条件
+### ● 動作環境
 |項目|IPアドレス|
 |:---|:---|
 |権威DNS(マスター)サーバ|192.168.138.20|
 |権威DNS(スレーブ)サーバ|192.168.138.21|
+
+### ● 設定方針
+- optionsでは、基本的に無効にするよう設定し、各ゾーンで詳細に設定する。
+※ optionsステートメントに同じoptionの記述があった場合、zone-optionが優先されます。  
 
 ## ■ インストール
 ```
@@ -27,6 +32,7 @@
 [こちら]()にまとめました。
 
 ### ● 設定例
+#### /etc/named.conf
 ```
 acl internalnet {
   127.0.0.1;
@@ -97,22 +103,19 @@ logging {
     print-category yes;
   };
   
-  category resolver { null; };
-  category database { null; };
   category lame-servers { null; };
-  category edns-disabled { null; };
-  category default {
-    default_debug;
-  };
-  category queries {
-    queries_log;
-  };
-  category security {
-    security_log;
-  };
+  category default { default_debug; };
+  category queries { queries_log; };
+  category security { security_log; };
 };
 
-include ""
+include "named.zones";
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";
+```
+
+#### /var/named/named.zones
+```
 ```
 
 ### ● 文法チェック
@@ -123,6 +126,10 @@ include ""
 ```
 ## ■ 設定ファイル /etc/sysconfig/named
 ```
+zone "." IN {
+  type hint;
+  file "named.ca";
+};
 ```
 ## ■ セキュリティ
 ### ● firewall
