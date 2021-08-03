@@ -79,6 +79,7 @@ options {
     192.168.138.20;
   };
   listen-on-v6 port 53 { none; };
+  notify no;
   directory       "/var/named";
   dump-file       "/var/named/data/cache_dump.db";
   statistics-file "/var/named/data/named_stats.txt";
