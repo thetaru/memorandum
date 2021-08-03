@@ -60,10 +60,10 @@ options {
   secroots-file   "/var/named/data/named.secroots";
   recursing-file  "/var/named/data/named.recursing";
   
-  allow-query       { internalnet; localhost; };
+  allow-query       { none; };
   allow-query-cache { none; };
   
-  allow-transfer { 192.168.138.21; };
+  allow-transfer { none; };
   allow-update { none; };
   
   recursion no;
@@ -126,9 +126,13 @@ include "/etc/named.root.key";
 ```
 ## ■ 設定ファイル /etc/sysconfig/named
 ```
-zone "." IN {
-  type hint;
-  file "named.ca";
+zone "example.com." IN {
+  type master;
+  file "example.com.net";
+  notify yes;
+  allow-query { localhost; internalnet; };
+  allow-transfer { 192.168.138.21; };
+  allow-update { none; };
 };
 ```
 ## ■ セキュリティ
