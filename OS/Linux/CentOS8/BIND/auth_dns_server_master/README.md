@@ -146,15 +146,6 @@ zone "example.com." IN {
   allow-update { none; };
 };
 
-zone "137.168.192.in-addr.arpa" {
-  type master;
-  file "137.168.192.rev";
-  notify yes;
-  allow-query { localhost; internalnet; };
-  allow-transfer { 192.168.138.21; };
-  allow-update { none; };
-};
-
 zone "138.168.192.in-addr.arpa" {
   type master;
   file "138.168.192.rev";
