@@ -77,7 +77,7 @@ options {
   pid-file "/run/named/named.pid";
   session-keyfile "/run/named/session.key";
 
-   include "/etc/crypto-policies/back-ends/bind.config";
+  include "/etc/crypto-policies/back-ends/bind.config";
 };
 
 logging {
