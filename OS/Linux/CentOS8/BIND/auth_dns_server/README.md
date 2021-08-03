@@ -24,7 +24,7 @@
 ```
 # named-checkconf /etc/named.conf
 
-# named-checkzone "{domain}" /path/to/{domain}.zone
+# named-checkzone <ドメイン> <(ドメインに対応する)ゾーンファイル>
 ```
 ## ■ 設定ファイル /etc/sysconfig/named
 ```
@@ -34,6 +34,15 @@
 
 ## ■ ロギング
 ## ■ チューニング
-## ■ トラブルシューティング
 ## ■ 設定の反映
+```
+# systemctl restart named-chroot.service
+```
 ## ■ 設定の確認
+### ● ゾーン転送の確認
+```
+```
+
+### ●
+```
+```
