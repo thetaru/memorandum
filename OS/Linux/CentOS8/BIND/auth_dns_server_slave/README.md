@@ -40,14 +40,6 @@
 # touch /var/named/chroot/var/log/named/security.log
 # chown -R named:named /var/named/chroot/var/log/named
 ```
-  
-### ゾーンファイルの作成
-```
-# touch /var/named/example.com.zone
-# touch /var/named/named.zones
-# chown root:named /var/named/example.com.zone
-# chown root:named /var/named/named.zones
-```
 
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
@@ -146,48 +138,29 @@ include "/etc/named.root.key";
 #### /var/named/named.zones
 ```
 zone "example.com." IN {
-  type master;
-  file "example.com.zone";
+  type slave;
+  masters { 192.168.138.20; };
+  file "slaves/example.com.zone";
   notify yes;
   allow-query { localhost; internalnet; };
-  allow-transfer { 192.168.138.21; };
+  allow-transfer { none; };
   allow-update { none; };
 };
 
 zone "138.168.192.in-addr.arpa" {
-  type master;
-  file "138.168.192.rev";
+  type slave;
+  masters { 192.168.138.20; };
+  file "slaves/138.168.192.rev";
   notify yes;
   allow-query { localhost; internalnet; };
-  allow-transfer { 192.168.138.21; };
+  allow-transfer { none; };
   allow-update { none; };
 };
-```
-
-#### /var/named/example.com.zone
-```
-$ORIGIN example.com.
-$TTL 900       ; 15 min.
-@ IN SOA dns-01.example.com. postmaster.example.com. (
-        2021080301  ; serial
-        3600        ; refresh (1 hour)
-        1200        ; retry (20 min.)
-        1209600     ; expire (2 weeks)
-        900         ; minimum (15 min.)
-        )
-;;
-@       IN  NS      dns-01.example.com.
-@       IN  NS      dns-02.example.com.
-
-dns-01     IN  A       192.168.138.20
-dns-02     IN  A       192.168.138.21
 ```
 
 ### ● 文法チェック
 ```
 # named-checkconf /etc/named.conf
-
-# named-checkzone example.com. /var/named/example.com.zone
 ```
 ## ■ 設定ファイル /etc/sysconfig/named
 ```
