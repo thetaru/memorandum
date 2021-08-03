@@ -15,14 +15,17 @@
 ```
 # yum install bind bind-chroot bind-utils
 ```
+  
 ## ■ バージョンの確認
 ```
 # named -v
 ```
+  
 ## ■ サービスの起動
 ```
 # systemctl enable --now bind-chroot.service
 ```
+
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
@@ -143,6 +146,27 @@ zone "138.168.192.in-addr.arpa" {
   allow-transfer { 192.168.138.21; };
   allow-update { none; };
 };
+```
+
+#### /var/named/example.com.zone
+```
+$ORIGIN example.com.
+$TTL 900       ; 15 min.
+@ IN SOA dns-01.example.com. postmaster.example.com. (
+        2015020110  ; serial
+        3600        ; refresh (1 hour)
+        1200        ; retry (20 min.)
+        1209600     ; expire (2 weeks)
+        900         ; minimum (15 min.)
+        )
+;;
+@       IN  NS      dns-01.example.com.
+@       IN  NS      dns-02.example.com.
+@       IN  TXT     "v=spf1 mx ~all"    ; TXT
+@       IN  SPF     "v=spf1 mx ~all"    ; SPF
+
+dns-01     IN  A       192.168.138.20
+dns-02     IN  A       192.168.138.21
 ```
 
 ### ● 文法チェック
