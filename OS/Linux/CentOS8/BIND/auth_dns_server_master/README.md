@@ -26,9 +26,19 @@
 # systemctl enable --now bind-chroot.service
 ```
   
-## ■ rndc用の共有鍵の生成
+## ■ 事前設定
+### rndc用の共有鍵の生成
 ```
 # rndc-confgen -a -A hmac-sha512 -b 512 -u named
+```
+
+### ログファイルの作成
+```
+# mkdir -p /var/named/chroot/var/log/named
+# touch /var/named/chroot/var/log/named/default.log
+# touch /var/named/chroot/var/log/named/query.log
+# touch /var/named/chroot/var/log/named/security.log
+# chown -R named:named /var/named/chroot/var/log/named
 ```
 
 ## ■ 関連サービス
