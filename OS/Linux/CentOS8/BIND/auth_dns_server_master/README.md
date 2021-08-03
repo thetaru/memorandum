@@ -179,13 +179,11 @@ dns-02     IN  A       192.168.138.21
 ```
 # named-checkconf /etc/named.conf
 
-# named-checkzone <ドメイン> <(ドメインに対応する)ゾーンファイル>
+# named-checkzone example.com. /var/named/example.com.zone
 ```
 ## ■ 設定ファイル /etc/sysconfig/named
 ```
 ```
-## ■ セキュリティ
-### ● firewall
 
 ## ■ ロギング
 ## ■ チューニング
