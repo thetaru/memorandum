@@ -161,9 +161,6 @@ zone "138.168.192.in-addr.arpa" {
 ```
 # named-checkconf /etc/named.conf
 ```
-## ■ 設定ファイル /etc/sysconfig/named
-```
-```
 
 ## ■ ロギング
 ## ■ チューニング
@@ -173,9 +170,5 @@ zone "138.168.192.in-addr.arpa" {
 ```
 ## ■ 設定の確認
 ### ● ゾーン転送の確認
-```
-```
-
-### ●
 ```
 ```
