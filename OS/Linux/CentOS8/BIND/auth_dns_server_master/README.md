@@ -118,7 +118,7 @@ include "/etc/named.root.key";
 ```
 zone "example.com." IN {
   type master;
-  file "example.com.net";
+  file "example.com.zone";
   notify yes;
   allow-query { localhost; internalnet; };
   allow-transfer { 192.168.138.21; };
