@@ -72,7 +72,47 @@ options {
   session-keyfile "/run/named/session.key";
 
    include "/etc/crypto-policies/back-ends/bind.config";
-}
+};
+
+logging {
+  channel default_debug {
+    file "/var/log/named/default.log" versions 5 size 50M;
+    severity dynamic;
+    print-time yes;
+    print-severity yes;
+    print-category yes;
+  };
+  channel query_log {
+    file "/var/log/named/query.log" versions 5 size 50M;
+    severity info;
+    print-time yes;
+    print-severity yes;
+    print-category yes;
+  };
+  channel security_log {
+    file "/var/log/named/security.log" versions 5 size 50M;
+    severity info;
+    print-time yes;
+    print-severity yes;
+    print-category yes;
+  };
+  
+  category resolver { null; };
+  category database { null; };
+  category lame-servers { null; };
+  category edns-disabled { null; };
+  category default {
+    default_debug;
+  };
+  category queries {
+    queries_log;
+  };
+  category security {
+    security_log;
+  };
+};
+
+include ""
 ```
 
 ### ● 文法チェック
