@@ -187,6 +187,7 @@ dns-02     IN  A       192.168.138.21
 ```
 # named-checkconf /etc/named.conf
 
+### 例 domain=example.com. zonefile=/var/named/example.com.zone
 # named-checkzone example.com. /var/named/example.com.zone
 ```
 
