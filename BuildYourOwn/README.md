@@ -1,4 +1,6 @@
 # Build Your Own
+## ★ 心得 ★
+- [ ] [ソースコードを読むために]()
 ## 自作仮想マシン
 - [ ] [Virtual machine in C]()
 
