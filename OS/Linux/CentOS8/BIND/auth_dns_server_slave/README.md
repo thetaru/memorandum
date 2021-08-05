@@ -7,10 +7,10 @@
 |権威DNS(スレーブ)サーバ|dns-02(.example.com)|192.168.138.21|
 
 ### ● 設定方針
-- optionsでは、基本的に無効にするよう設定し、各ゾーンで詳細に設定する。
+- optionsステートメントでは、例外を除き無効にするよう設定し、各viewやzoneで個別に設定する。\*1)
+- ゾーンファイルの命名規則: `<domain>.zone`
 
-※ optionsステートメントに同じoptionの記述があった場合、zone-optionが優先されます。
-- ゾーンファイルの命名規則: <domain>.zone
+\*1) optionsステートメントに同じoptionの記述があった場合、view-optionまたはzone-optionが優先されます。
 
 ## ■ インストール
 ```
