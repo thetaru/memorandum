@@ -3,7 +3,7 @@
 過去問の対象範囲は令和(R1\~R3年)、平成(H28\~H31)までの10年間とします。
 ## ■ 午前
 ### テクノロジ系
-- [ ] [基礎理論](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/01)
+- [ ] [基礎理論](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/01) 31問
 - [ ] [アルゴリズムとプログラミング](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/02)
 - [ ] [コンピュータ構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/03)
 - [ ] [システム構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/04)
