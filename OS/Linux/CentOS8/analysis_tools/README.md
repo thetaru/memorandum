@@ -3,7 +3,12 @@
 ### インストール
 ```
 # cd /usr/local/src
-# 
+# wget https://ftp.gnu.org/pub/gnu/global/global-6.6.7.tar.gz
+# tar xvfz global-6.6.7.tar.gz
+# cd global-6.6.7
+# ./configure
+# make
+# make install
 ```
 
 ## ■ Graphviz
