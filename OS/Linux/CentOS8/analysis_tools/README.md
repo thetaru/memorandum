@@ -18,4 +18,7 @@
 # yum install graphviz
 ```
 
-## ■ 使い方(vscode)
+## ■ vscode
+### インストール
+以下のエクステンションをインストールします。
+- Graphviz (dot) language support for Visual Studio Code
