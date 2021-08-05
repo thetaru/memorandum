@@ -98,4 +98,5 @@ lets encrypt でワイルドカード証明書
 
 ## ■ Development
 - [ ] [React 開発環境構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/development_react)
+- [ ] [解析用ツールの導入(global+Graphviz)](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/analysis_tools)
 
