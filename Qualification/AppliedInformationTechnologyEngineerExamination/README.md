@@ -1,6 +1,7 @@
 # 応用情報技術者試験
 項目の割り振りは応用情報技術者試験ドットコムを参照しています。  
-過去問の対象範囲は令和(R1\~R3年)、平成(H28\~H31)までの10年間とします。
+過去問の対象範囲は令和(R1\~R3年)、平成(H28\~H31)までの10年間とします。  
+※ ただし、令和(R1,R2)の過去問は直前期にやることにします。
 ## ■ 午前
 ### テクノロジ系
 - [ ] [基礎理論](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/01) 31問
