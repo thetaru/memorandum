@@ -4,7 +4,7 @@
 ※ ただし、令和(R1,R2)の過去問は直前期にやることにします。
 ## ■ 午前
 ### テクノロジ系
-- [ ] [基礎理論](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/01) 31問
+- [ ] [基礎理論](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/01) 31問 8/6
 - [ ] [アルゴリズムとプログラミング](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/02) 25問
 - [ ] [コンピュータ構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/03) 25問
 - [ ] [システム構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/04) 29問
