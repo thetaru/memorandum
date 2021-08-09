@@ -59,3 +59,5 @@ SDXCは、ファイルシステムにexFATを採用し記憶容量の上限を2T
 |著作権保護|CPRM|CPRM|CPXM|
 |カードサイズ|標準,mini,micro|標準,mini,micro|標準,micro|
 
+## H28F P21
+フラッシュメモリは、区分的にはEEPROM(Electrically Erasable Programmable ROM)の一種ですが、1バイト単位の書込みを行う従来のEEPROMとは異なりブロック単位での書き換えを行います。
