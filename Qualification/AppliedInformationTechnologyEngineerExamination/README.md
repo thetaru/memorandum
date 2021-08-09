@@ -6,8 +6,8 @@
 ### テクノロジ系
 - [ ] [基礎理論](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/01) 31問 8/6(77.4%)
 - [ ] [アルゴリズムとプログラミング](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/02) 25問 8/7(64%)
-- [ ] [コンピュータ構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/03) 25問
-- [ ] [システム構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/04) 29問
+- [ ] [コンピュータ構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/03) 25問 8/9
+- [ ] [システム構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/04) 29問 
 - [ ] [ソフトウェア](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/05) 25問
 - [ ] [ハードウェア](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/06) 19問
 - [ ] [ヒューマンインタフェース](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/07) 5問
