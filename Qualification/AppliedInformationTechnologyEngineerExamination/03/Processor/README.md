@@ -19,3 +19,16 @@ VLIWでは、あらかじめ依存関係のない複合命令になっている�
 > 複雑で多機能な命令セットでコンピュータを構成する設計方法
 - RISC
 > CPUに与える明理恵を短く固定長化し、専用の論理回路で高速に実行できるようにした命令セットでコンピュータを構成する設計方法
+
+## H28S P9
+並列処理を実現するプロセッサのアーキテクチャは、同時に実行できる命令数及びデータ数によって以下の4種類に分類されます。
+- SISD(Single Instruction Single Data)
+> 単一の命令で単一のデータを処理する方式
+- SIMD(Single Instruction Multiple Data)
+> 単一の命令で複数のデータを処理する方式
+- MISD(Multiple Instruction Single Data)
+> 複数の命令で単一のデータを処理する方式
+- MIMD(Multiple Instruction Multiple Data)
+> 複数の命令で複数のデータを処理する方式
+
+S(Single),M(Multiple)の頭文字だけ覚えておけばOKかな
