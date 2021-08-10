@@ -1,4 +1,5 @@
 # Build Your Own
+検索ワード: build your own XXX, tiny XXX
 ## 自作仮想マシン
 - [ ] [Virtual machine in C]()
 
