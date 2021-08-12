@@ -9,7 +9,7 @@
 - [ ] [コンピュータ構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/03) 25問 8/9
 - [ ] [システム構成要素](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/04) 29問 8/10
 - [ ] [ソフトウェア](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/05) 25問 8/11
-- [ ] [ハードウェア](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/06) 19問
+- [ ] [ハードウェア](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/06) 問
 - [ ] [ヒューマンインタフェース](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/07) 5問
 - [ ] [マルチメディア](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/08) 7問
 - [ ] [データベース](https://github.com/thetaru/memorandum/tree/master/Qualification/AppliedInformationTechnologyEngineerExamination/09) 37問
