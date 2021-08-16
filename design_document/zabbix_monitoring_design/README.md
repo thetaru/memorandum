@@ -81,8 +81,16 @@ Windwosは除く
 ### アイテム
 - IPアドレス
   - XXX.XXX.XXX.XXX
+- URL
+  - http://example.com
+- リクエストメソッド
+  - (GET|POST|PUT|HEAD)
+- タイムアウト
+  - N(s|m|h)
 - 監視間隔
   - N(s|m|h)
+- 要求ステータスコード
+  - 200
 ### トリガー
 - 連続発生回数
   - N
