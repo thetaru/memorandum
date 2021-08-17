@@ -165,7 +165,20 @@ IP6.GATEWAY:                            --
 </details>
 </details>
   
-## ■ hostsの設定
+## ■ 名前解決の設定
+### /etc/resolv.conf
+resolv.confがsystemd-resolv.serviceによって動的更新されるファイルのシンボリックリンクとなっているため一度削除します。
+```
+$ rm /etc/resolv.conf
+```
+resolv.confを再作成します。
+```
+$ vi /etc/resolv.conf
+```
+```
+nameserver <nameserver1>
+```
+### /etc/hostsの設定
 ```
 $ sudo vi /etc/hosts
 ```
