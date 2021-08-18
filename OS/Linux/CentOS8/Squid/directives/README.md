@@ -42,9 +42,9 @@ ACL名を指定する。
 #### acltype
 |acltype|説明|
 |:---|:---|
-|src|送信元|
-|dstdomain|送信先ドメイン|
-|dstdom_regex|正規表現を使用した送信先ドメイン|
+|src|送信元を指定する|
+|dstdomain|送信先ドメインを指定する|
+|dstdom_regex|正規表現を使用し送信先ドメインを指定する|
 |port||
 |method||
 |req_mime_type||
