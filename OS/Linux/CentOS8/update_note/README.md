@@ -23,7 +23,7 @@ rpmの場合は以下です。
 ## ■ アプデ後にすること
 confファイルが置き換わってないことを確認する。
 ```
-# find / -name "*.rpmsave" -or -name ".rpmnew"
+# find / -name "*.rpmsave" -or -name "*.rpmnew"
 ```
 - .rpmsave
 
