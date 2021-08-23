@@ -47,4 +47,4 @@ postgresqlサーバのセットアップ(confファイルの生成など)を行�
 ```
 # sudo -u postgres psql -U postgres
 ```
-※ https://stackoverflow.com/questions/7695962/password-authentication-failed-for-user-postgres
+※ Ref: https://stackoverflow.com/questions/7695962/password-authentication-failed-for-user-postgres
