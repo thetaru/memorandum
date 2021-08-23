@@ -41,7 +41,7 @@ postgresqlサーバのセットアップ(confファイルの生成など)を行�
 ```
 # systemctl restart postgresql.service
 ```
-## ■ 設定の確認
+## ■ 設定・機能の確認
 ### ● PostgreSQLへの接続(ログイン)
 ログイン方法はpg_hba.confに沿うべきですが、例を示します。
 ```
