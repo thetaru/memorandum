@@ -90,13 +90,11 @@ lets encrypt でワイルドカード証明書
 - [x] [ゲートウェイサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/gateway_srv)
 - [x] [スタティックルートの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/StaticRoute)
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/update_note)
-- [ ] [~~MetalLB+BINDで内部DNSサーバ構築~~](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/bind_k8s_gitlab)
 - [ ] [CoreDNS+k8sで作る内部DNSサーバ](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/internal_coredns)
 - [ ] [ログイン時の警告バナーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/login_banner)
 - [ ] [ファイルシステムのマウント順序を指定する方法](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/mount_order)
 - [ ] [パッケージ群](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/required_packages)
+- [ ] [~~MetalLB+BINDで内部DNSサーバ構築~~](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/bind_k8s_gitlab)
 
 ## ■ Development
 - [ ] [React 開発環境構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/development_react)
-- [ ] [解析用ツールの導入(global+Graphviz)](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/analysis_tools)
-
