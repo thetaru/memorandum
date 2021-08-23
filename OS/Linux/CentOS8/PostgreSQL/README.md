@@ -27,11 +27,13 @@ postgresqlサーバのセットアップ(confファイルの生成など)を行�
 ## ■ postgresql.conf
 ### ● XXXセクション
 ### ● 設定例
-
+```
+```
 ## ■ pg_hba.conf
 ### ● XXXセクション
 ### ● 設定例
-
+```
+```
 ## ■ セキュリティ
 ### ● firewall
 ### ● 認証
