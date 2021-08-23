@@ -10,14 +10,14 @@
 ```
 psql (PostgreSQL) 10.17
 ```
+## ■ サービスの起動
+```
+# systemctl enable --now postgresql.service
+```
 ## ■ 事前準備
 postgresqlサーバのセットアップ(confファイルの生成など)を行います。
 ```
 # /usr/bin/postgresql-setup --initdb
-```
-## ■ サービスの起動
-```
-# systemctl enable --now postgresql.service
 ```
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
