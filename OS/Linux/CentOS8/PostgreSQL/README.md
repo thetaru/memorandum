@@ -42,7 +42,7 @@ postgresqlサーバのセットアップ(confファイルの生成など)を行�
 # systemctl restart postgresql.service
 ```
 ## ■ 設定の確認
-### ログイン
+### PostgreSQLへの接続(ログイン)
 ```
 # psql -U postgres
 ```
