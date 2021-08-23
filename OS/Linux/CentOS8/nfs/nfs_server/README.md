@@ -74,12 +74,13 @@ directory client(option,option...) client(option,option...) ...
 /exports/Linux 192.168.137.0/24(rw,no_root_squash)
 /exports/Linux 192.168.137.0/24(rw,root_squash,anonuid=8888,anongid=8888)
 
-## For Windows
-/exports/Windows 192.168.137.0/24(rw,no_root_squash)
-
 ### NFSv4
 ## For Linux
 /exports/Linux 192.168.137.0/24(rw,fsid=0)
+
+### NFSv(3|4)
+## For Windows
+/exports/Windows 192.168.137.0/24(rw,no_root_squash)
 ```
 
 ### ● 反映方法
