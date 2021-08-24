@@ -18,11 +18,6 @@
 |smb.service|445/tcp||
 
 ## ■ アカウント作成
-sambauserはログインすることを考えないためシェルに`/sbin/nologin`を設定します。  
-またsambauserは管理アカウントとして使用するため、ホームディレクトリも作成しません。
-```
-# useradd -M -s /sbin/nologin -c "Samba user" sambauser
-```
 sambauserをSambaユーザに登録します。
 ```
 # pdbedit -a sambauser
@@ -32,7 +27,9 @@ new password: <Samba用パスワード>
 retype new password: <Samba用パスワード>
 ...
 ```
-登録されていることを確認します。
+システム上のユーザー作成は必要ありません。  
+
+sambauserが登録されたことを確認します。
 ```
 # pdbedit -L
 ```
