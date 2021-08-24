@@ -74,7 +74,7 @@ disable spoolss = yes
 
 ### ログ設定
 log file = /var/log/samba/%m.log
-log level = 2
+log level = 5
 
 ### セキュリティ設定
 encrypt passwords = Yes
