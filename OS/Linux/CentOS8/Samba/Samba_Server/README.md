@@ -114,5 +114,5 @@ sambauserが登録されたことを確認します。
 ## ■ チューニング
 ## ■ 設定の反映
 ```
-# systemctl restart smb.service
+# smbcontrol all reload-config
 ```
