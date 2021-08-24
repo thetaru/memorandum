@@ -38,41 +38,52 @@ sambauserが登録されたことを確認します。
 #### globalセクション
 ```
 [global]
-### Linux側日本語文字コード
-unix charset = UTF-8
+    ### Linux側日本語文字コード
+    unix charset = UTF-8
 
-### Windows側日本語文字コード
-dos charset = CP932
+    ### Windows側日本語文字コード
+    dos charset = CP932
 
-### 長いファイル名の文字化け対処
-mangled names = no
+    ### 長いファイル名の文字化け対処
+    mangled names = no
 
-### 上記対処でファイルアクセス不可になる一部文字の置換
-vfs objects = catia
+    ### 上記対処でファイルアクセス不可になる一部文字の置換
+    vfs objects = catia
 
-### 上記対処でファイルアクセス不可になる一部文字の置換
-catia:mappings = 0x22:0xa8,0x2a:0xa4,0x2f:0xf8,0x3a:0xf7,0x3c:0xab,0x3e:0xbb,0x3f:0xbf,0x5c:0xff,0x7c:0xa6
+    ### 上記対処でファイルアクセス不可になる一部文字の置換
+    catia:mappings = 0x22:0xa8,0x2a:0xa4,0x2f:0xf8,0x3a:0xf7,0x3c:0xab,0x3e:0xbb,0x3f:0xbf,0x5c:0xff,0x7c:0xa6
 
-### Windowsのワークグループ名を指定
-workgroup = WORKGROUP
+    ### Windowsのワークグループ名を指定
+    workgroup = WORKGROUP
 
-### アクセス制御(環境に応じて設定)
-hosts allow = 192.168.0.0/16
+    ### アクセス制御(環境に応じて設定)
+    hosts allow = 192.168.0.0/16
 
-### プリンタ共有無効化
-load printers = no
-disable spoolss = yes
+    ### プリンタ共有無効化
+    load printers = no
+    disable spoolss = yes
 
-### ログ設定
-log file = /var/log/samba/%m.log
-log level = 5
+    ### ログ設定
+    log file = /var/log/samba/%m.log
+    log level = 5
+    max log size = 50
 
-### 認証設定
-security = user
-passdb backend = tdbsam
+    ### 認証設定
+    security = user
+    passdb backend = tdbsam
 ```
 \*1) encrypt passwords is deprecated(samba 4.14.5>?)
-#### セクション
+#### homesセクション
+```
+[homes]
+        path=/home/%S
+        browseable = no
+        writable = yes
+;       valid users = %S
+;       valid users = MYDOMAIN\%S
+        create mask 0644
+        directory mask = 0755
+```
 
 ### ● 文法チェック
 ```
