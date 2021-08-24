@@ -76,13 +76,13 @@ sambauserが登録されたことを確認します。
 #### homesセクション
 ```
 [homes]
-        path=/home/%S
-        browseable = no
-        writable = yes
-;       valid users = %S
-;       valid users = MYDOMAIN\%S
-        create mask 0644
-        directory mask = 0755
+    path=/home/%S
+    browseable = no
+    writable = yes
+;   valid users = %S
+;   valid users = WORKDOMAIN\%S
+    create mask 0644
+    directory mask = 0755
 ```
 
 ### ● 文法チェック
