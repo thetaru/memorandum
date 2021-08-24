@@ -22,7 +22,6 @@ sambauserはログインすることを考えないためシェルに`/sbin/nolo
 またsambauserは管理アカウントとして使用するため、ホームディレクトリも作成しません。
 ```
 # useradd -M -s /sbin/nologin -c "Samba user" sambauser
-# passwd sambauser
 ```
 作成したユーザをSambaユーザに登録します。
 ```
