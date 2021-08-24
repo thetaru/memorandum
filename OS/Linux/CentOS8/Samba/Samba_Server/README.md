@@ -56,8 +56,13 @@ sambauserが登録されたことを確認します。
     ### Windowsのワークグループ名を指定
     workgroup = WORKGROUP
 
+    ### インターフェース制御(環境に応じて設定)
+;   interfaces = 127.0.0.0/8 ens192
+;   bind interfaces only = yes
+
     ### アクセス制御(環境に応じて設定)
     hosts allow = 192.168.0.0/16
+    hosts deny = all
 
     ### プリンタ共有無効化
     load printers = no
@@ -74,16 +79,28 @@ sambauserが登録されたことを確認します。
 ```
 \*1) encrypt passwords is deprecated(samba 4.14.5>?)
 #### homesセクション
+各UNIXユーザとそのパスワードで認証する共有フォルダを作る場合、pdbeditコマンドを用いて既存のUNIXユーザごとにSamba用のアカウントを作成する必要があります。
 ```
 [homes]
+    ### ホームディレクトリ/home/userをエクスポート
     path=/home/%S
+;   path=%H
+    
+    ### 
     browseable = no
+    
+    ### 書き込みの設定
     writable = yes
+    
+    ### アクセス可能ユーザを指定
 ;   valid users = %S
 ;   valid users = WORKDOMAIN\%S
+
+    ### パーミッションを指定
     create mask 0644
     directory mask = 0755
 ```
+※ `useradd -m -k /dev/null -c /sbin/nologin TestUser`でホームディレクトリを作成しつつskelはコピーしないユーザ作成ができます
 
 ### ● 文法チェック
 ```
