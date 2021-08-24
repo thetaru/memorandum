@@ -92,8 +92,3 @@ passdb backend = tdbsam
 ```
 # systemctl restart smb.service
 ```
-## ■ 設定の確認
-## Sambaの起動
-```
-# systemctl restart smb.servce
-```
