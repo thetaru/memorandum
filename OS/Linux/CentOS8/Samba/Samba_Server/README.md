@@ -111,7 +111,6 @@ sambauserが登録されたことを確認します。
 - 445/tcp
 
 を開放します。
-## ■ チューニング
 ## ■ 設定の反映
 ```
 # smbcontrol all reload-config
