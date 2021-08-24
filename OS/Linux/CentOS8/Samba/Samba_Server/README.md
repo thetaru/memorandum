@@ -35,6 +35,7 @@ sambauserが登録されたことを確認します。
 ```
 ## ■ 主設定ファイル /etc/samba/smb.conf
 ### ● 設定例
+#### globalセクション
 ```
 [global]
 ### Linux側日本語文字コード
@@ -56,7 +57,7 @@ catia:mappings = 0x22:0xa8,0x2a:0xa4,0x2f:0xf8,0x3a:0xf7,0x3c:0xab,0x3e:0xbb,0x3
 workgroup = WORKGROUP
 
 ### アクセス制御(環境に応じて設定)
-#hosts allow = 192.168.0.0/24
+hosts allow = 192.168.0.0/16
 
 ### プリンタ共有無効化
 load printers = no
@@ -71,6 +72,8 @@ security = user
 passdb backend = tdbsam
 ```
 \*1) encrypt passwords is deprecated(samba 4.14.5>?)
+#### セクション
+
 ### ● 文法チェック
 ```
 # testparm
