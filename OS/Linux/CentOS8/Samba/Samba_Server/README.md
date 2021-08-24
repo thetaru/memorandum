@@ -58,9 +58,6 @@ catia:mappings = 0x22:0xa8,0x2a:0xa4,0x2f:0xf8,0x3a:0xf7,0x3c:0xab,0x3e:0xbb,0x3
 ### Windowsのワークグループ名を指定
 workgroup = WORKGROUP
 
-### 動作モードを指定
-server role = AUTO
-
 ### NetBIOS名を指定(必要に応じて設定)
 #netbios name =
 
@@ -75,13 +72,11 @@ disable spoolss = yes
 log file = /var/log/samba/%m.log
 log level = 5
 
-### セキュリティ設定
-encrypt passwords = Yes
-
 ### 認証設定
 security = user
 passdb backend = tdbsam
 ```
+\*1) encrypt passwords is deprecated(samba 4.14.5>?)
 ### ● 文法チェック
 ```
 # testparm
