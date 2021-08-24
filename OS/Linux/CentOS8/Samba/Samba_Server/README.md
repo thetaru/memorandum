@@ -18,10 +18,10 @@
 |smb.service|445/tcp||
 
 ## ■ アカウント作成
-今回の作成するユーザはログインすることを考えないためログインできないようにします。  
-ホーム領域公開する場合は、ホームディレクトリ指定した方がいいです。
+sambauserはログインすることを考えないためシェルに`/sbin/nologin`を設定します。  
+またsambauserは管理アカウントとして使用するため、ホームディレクトリも作成しません。
 ```
-# useradd -s /sbin/nologin -c "Samba user" sambauser
+# useradd -M -s /sbin/nologin -c "Samba user" sambauser
 # passwd sambauser
 ```
 作成したユーザをSambaユーザに登録します。
