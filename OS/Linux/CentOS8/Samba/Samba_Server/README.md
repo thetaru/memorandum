@@ -77,7 +77,8 @@ sambauserが登録されたことを確認します。
     security = user
     passdb backend = tdbsam
 ```
-\*1) encrypt passwords is deprecated(samba 4.14.5>?)
+※ encrypt passwords is deprecated(samba 4.14.5ではすでにdeprecated)
+
 #### homesセクション
 各UNIXユーザとそのパスワードで認証する共有フォルダを作る場合、pdbeditコマンドを用いて既存のUNIXユーザごとにSamba用のアカウントを作成する必要があります。
 ```
