@@ -23,7 +23,7 @@ sambauserはログインすることを考えないためシェルに`/sbin/nolo
 ```
 # useradd -M -s /sbin/nologin -c "Samba user" sambauser
 ```
-作成したユーザをSambaユーザに登録します。
+sambauserをSambaユーザに登録します。
 ```
 # pdbedit -a sambauser
 ```
