@@ -83,7 +83,7 @@ encrypt passwords = Yes
 security = user
 passdb backend = tdbsam
 ```
-### ● 構文チェック
+### ● 文法チェック
 ```
 # testparm
 ```
