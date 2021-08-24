@@ -75,10 +75,6 @@ log level = 5
 ### 認証設定
 security = user
 passdb backend = tdbsam
-
-### プロトコル制限
-client min protocol = SMB2
-client max protocol = SMB3
 ```
 \*1) encrypt passwords is deprecated(samba 4.14.5>?)
 ### ● 文法チェック
