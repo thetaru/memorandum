@@ -1,10 +1,23 @@
 # Sambaサーバの構築
 ここでは共有を出さずに一般的な設定のみを扱うことにします。(具体的には、globalセクションのみを扱います。)
-## Sambaのインストール
+## ■ インストール
 ```
 # yum install samba
 ```
-## Samba用ユーザ作成
+## ■ バージョンの確認
+```
+# smbd -V
+```
+## ■ サービスの起動
+```
+# systemctl enable --now smb.service
+```
+## ■ 関連サービス
+|サービス名|ポート番号|役割|
+|:---|:---|:---|
+|smb.service|445/tcp||
+
+## ■ アカウント作成
 今回の作成するユーザはログインすることを考えないためログインできないようにします。  
 ホーム領域公開する場合は、ホームディレクトリ指定した方がいいです。
 ```
@@ -24,10 +37,8 @@ retype new password: <Samba用パスワード>
 ```
 # pdbedit -L
 ```
-## Sambaサーバの設定
-```
-# vi /etc/samba/smb.conf
-```
+## ■ 主設定ファイル /etc/samba/smb.conf
+### ● 設定例
 ```
 [global]
 ### Linux側日本語文字コード
@@ -72,9 +83,17 @@ encrypt passwords = Yes
 security = user
 passdb backend = tdbsam
 ```
+## ■ セキュリティ
+### ● firewall
+### ● 証明書
+### ● 認証
+## ■ チューニング
+## ■ 設定の反映
+```
+# systemctl restart smb.service
+```
+## ■ 設定の確認
 ## Sambaの起動
 ```
-# systemctl start smb.servce
-# systemctl status smb.service
-# systemctl enable smb.service
+# systemctl restart smb.servce
 ```
