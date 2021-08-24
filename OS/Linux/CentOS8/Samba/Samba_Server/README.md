@@ -1,4 +1,4 @@
-# Sambaサーバの構築
+# sambaサーバの構築
 ここでは共有を出さずに一般的な設定のみを扱うことにします。(具体的には、globalセクションのみを扱います。)
 ## ■ インストール
 ```
@@ -18,7 +18,7 @@
 |smb.service|445/tcp||
 
 ## ■ アカウント作成
-sambauserをSambaユーザに登録します。
+sambauserをsambaユーザに登録します。
 ```
 # pdbedit -a sambauser
 ```
@@ -27,7 +27,7 @@ new password: <Samba用パスワード>
 retype new password: <Samba用パスワード>
 ...
 ```
-システム上のユーザー作成は必要ありません。  
+※ smbpasswdによりsambaユーザのパスワードを変更することができます。 
 
 sambauserが登録されたことを確認します。
 ```
