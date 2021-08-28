@@ -26,3 +26,7 @@
 - [ ] [Visitor]()
 
 ## Tier4
+
+## Ref
+- https://www.techscore.com/tech/DesignPattern/index.html/
+- https://yukblog.net/c-gof-design-pattern/
