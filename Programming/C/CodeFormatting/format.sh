@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 if [[ $# -gt 1 ]]; then
   echo "Syntax error." 1>&2
