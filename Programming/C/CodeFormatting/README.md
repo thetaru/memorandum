@@ -2,7 +2,9 @@
 ## ■ インストール
 ### CentOS RHEL
 ```
-# yum install clang-format
+# yum module install llvm-toolset
+# yum install cmake cmake-doc
+# yum install llvm llvm-doc
 ```
 ### Ubuntu
 ```
