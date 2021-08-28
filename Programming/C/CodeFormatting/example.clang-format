@@ -1,0 +1,35 @@
+---
+BasedOnStyle: 'Google'
+
+AccessModifierOffset -2
+AlignEscapedNewlinesLeft: true
+AlignConsecutiveAssignments: false
+AlignEscapedNewlinesLeft: true
+AlignTrailingComments: true
+AllowShortBlocksOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterDefinitionReturnType: false
+AlwaysBreakBeforeMultilineStrings: true
+BinPackArguments: true
+BinPackParameters: true
+BreakBeforeBinaryOperators: 'None'
+BreakBeforeBraces: 'Allman'
+ColumnLimit: 80
+ContinuationIndentWidth: 2
+DerivePointerBinding: true
+IndentCaseLabels: true
+IndentWidth: 2
+IndentWrappedFunctionNames: false
+KeepEmptyLinesAtTheStartOfBlocks: true
+MaxEmptyLinesToKeep: 1
+PointerAlignment: 'Left'
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: 'ControlStatements'
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+TabWidth: 4
+UseTab: 'Never'
