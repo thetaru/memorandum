@@ -2,12 +2,12 @@
 
 if [[ $# -ne 1 ]]; then
   echo "usage: format.sh DIRECTORY" 1>&2
-  return 1
+  exit 1
 fi
 
 if [[ ! -d "$1" ]]; then
   echo "usage: format.sh DIRECTORY" 1>&2
-  return 1
+  exit 1
 fi
 
 echo "Formatting Code..."
