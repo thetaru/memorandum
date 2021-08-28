@@ -1,6 +1,6 @@
 # clang-formatを使ったコード整形
 ## ■ インストール
-### CentOS RHEL
+### CentOS/RHEL
 ```
 # yum module install llvm-toolset
 # yum install cmake cmake-doc
@@ -12,4 +12,9 @@
 ```
 
 ## ■ 設定
-1. 
+1. formatを設定したいプロジェクトのフォルダ内に.clang-formatを作成する
+2. 以下のコマンドを実行するとコード整形が行われる
+```
+# clang-format -i -style=file XXX.c
+```
+※ スクリプトに組み込んでしまうとよい
