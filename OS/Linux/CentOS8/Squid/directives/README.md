@@ -78,8 +78,14 @@ acl whitelist dstdomain "/etc/squid/whitelist"
 cache deny all
 ```
 ## ● cache_dir (cache)
+(オンディスク)キャッシュとして使用するディスク量を指定する。  
+以下のコマンドでキャッシュディレクトリを作成する。
+```
+# squid -z
+```
 ## ● cache_log (cache)
 ## ● cache_mem (cache)
+(インメモリ)キャッシュとして使用するメモリ量(デフォルトは256MB)を指定する。
 ## ● cache_peer (cache)
 ### ■ Syntax
 ```
