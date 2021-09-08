@@ -9,6 +9,7 @@ URLS+=("http://winhelp2002.mvps.org/hosts.txt")
 URLS+=("https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext")
 URLS+=("https://raw.githubusercontent.com/multiverse2011/adawaylist-jp/master/hosts")
 URLS+=("https://warui.intaa.net/adhosts/hosts.txt")
+URLS+=("https://raw.githubusercontent.com/Ewpratten/youtube_ad_blocklist/master/blocklist.txt")
 
 for URL in "${URLS[@]}"; do
   # GET HTTP STATUS
