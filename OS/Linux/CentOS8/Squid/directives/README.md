@@ -276,6 +276,15 @@ onの場合、はじめに直接接続を試みて、失敗したら親プロキ
 offの場合、親プロキシで接続を試みます。  
 ※ offのとき、親で失敗したら直でいく？
 ## ● request_header_access (security)
+### ■ 使用例
+要件に応じて許可・拒否を設定します。
+```
+request_header_access Referer deny all
+request_header_access User-Agent deny all
+request_header_access X-Forwarded-For deny all
+request_header_access Via deny all
+request_header_access Cache-Control deny all
+```
 ## ● server_persistent_connections
 ## ● snmp_access (monitoring)
 ## ● snmp_port (monitoring)
