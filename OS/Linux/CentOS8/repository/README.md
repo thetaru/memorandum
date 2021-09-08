@@ -49,3 +49,21 @@ InstallMedia-AppStream       Red Hat Enterprise Linux 8 - AppStream        4,681
 InstallMedia-BaseOS          Red Hat Enterprise Linux 8 - BaseOS           1,655
 ```
 こんな感じになっていればOKです。
+
+## §3. おまけ
+以降の内容はCentOS8からの内容となります。
+### 3.1 リポジトリの有効化
+EPELやPowerToolsなどのリポジトリはデフォルトで利用できないので、有効化します。
+#### EPEL
+```
+# yum install epel-release
+```
+#### PowerTools
+```
+# vi /etc/yum.repos.d/CentOS-Stream-PowerTools.repo
+```
+```
+### 無効: 0 有効: 1
+-  enabled=0
++  enabled=1
+```
