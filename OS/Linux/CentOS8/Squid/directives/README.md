@@ -164,6 +164,10 @@ dns_v4_first on
 xffによるアクセス制限 ここからきたやつはおけだよーてきな  
 プロキシの後ろにLBがいるときに有効そう
 ## ● forwarded_for (security)
+### ■ 使用例
+```
+forwarded_for off
+```
 ## ● fqdncache_size
 ## ● hosts_file
 ### ■ Syntax
