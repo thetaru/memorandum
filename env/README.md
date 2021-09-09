@@ -8,7 +8,11 @@
 > gcc version
 ### Coq
 - [ ] [Coq (yyyymmdd)]()
-> version
+> OS:  
+> opam:  
+> ocaml:  
+> coq:  
+> mathcomp:
 ### Go
 - [ ] [Go (yyyymmdd)]()
 > version
