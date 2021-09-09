@@ -3,13 +3,21 @@
 ## 構築以前
 - [ ] [docker-composeの導入]()
 ## 環境
+### C
 - [ ] [C (yyyymmdd)]()
 > gcc version
+### Coq
+- [ ] [Coq (yyyymmdd)]()
+> version
+### Go
 - [ ] [Go (yyyymmdd)]()
 > version
-- [ ] [Django+Python (yyyymmdd)]()
+### Python
+- [ ] [Python (yyyymmdd)]()
 > version
+### JavaScript
 - [ ] [React+JavaScript (yyyymmdd)]()
 > React version
+### TypeScript
 - [ ] [React+TypeScript (yyyymmdd)]()
 > React version
