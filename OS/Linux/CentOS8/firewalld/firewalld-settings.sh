@@ -3,6 +3,7 @@ set -eu
 
 #
 # ダイレクトルールは非対応
+# -> /etc/firewalld/direct.xmlに記述することを推奨します
 #
 
 ZONE="public"
@@ -11,42 +12,42 @@ ZONE="public"
 echo "- Initializing..."
 ## Ports
 for port in $(firewall-cmd --list-ports); do
-  firewall-cmd --remove-port="$port" --zone="$ZONE" --permanent
+  firewall-cmd --permanent --zone="$ZONE" --remove-port="$port"
 done
 
 ## Services
 for service in $(firewall-cmd --list-services); do
-  firewall-cmd --remove-service="$service" --zone="$ZONE" --permanent
+  firewall-cmd --permanent --zone="$ZONE" --remove-service="$service"
 done
 
 ## Sources
 for source in $(firewall-cmd --list-sources); do
-  firewall-cmd --remove-source="$source" --zone="$ZONE" --permanent
+  firewall-cmd --permanent --zone="$ZONE" --remove-source="$source"
 done
 
 ## Rich-Rules
 OLDIFS=$IFS
 IFS=$'\n'
 for rule in $(firewall-cmd --list-rich-rules); do
-  firewall-cmd --remove-rich-rule="$rule" --zone="$ZONE" --permanent
+  firewall-cmd --permanent --zone="$ZONE" --remove-rich-rule="$rule"
 done
 IFS=$OLDIFS
 
 # Add Ports
 echo "- Adding Ports..."
-#firewall-cmd --add-port=22/tcp --zone="$ZONE" --permanent
+#firewall-cmd --permanent --zone="$ZONE" --add-port=22/tcp
 
 # Add Services
 echo "- Adding Services..."
-#firewall-cmd --add-service=ssh --zone="$ZONE" --permanent
+#firewall-cmd --permanent --zone="$ZONE" --add-service=ssh
 
 # Add Sources
 echo "- Adding Sources..."
-#firewall-cmd --add-source=192.168.137.0/24 --zone="$ZONE" --permanent
+#firewall-cmd --permanent --zone="$ZONE" --add-source=192.168.137.0/24
 
 # Add Rich-Rules
 echo "- Adding Rich Rules..."
-firewall-cmd --add-rich-rule='rule family=ipv4 source address=192.168.137.0/24 port port=22 protocol=tcp accept' --zone="$ZONE" --permanent
+firewall-cmd --permanent --zone="$ZONE" --add-rich-rule='rule family=ipv4 source address=192.168.137.0/24 port port=22 protocol=tcp accept'
 
 # Reload
 echo "- Reloading..."
