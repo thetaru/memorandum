@@ -21,9 +21,6 @@ done
 # Add Ports
 echo "- Adding Ports..."
 firewall-cmd --add-port=22/tcp --zone="$ZONE" --permanent
-firewall-cmd --add-port=3401/udp --zone="$ZONE" --permanent
-firewall-cmd --add-port=8081/tcp --zone="$ZONE" --permanent
-firewall-cmd --add-port=10051/tcp --zone="$ZONE" --permanent
 
 # Add Services
 echo "- Adding Services..."
