@@ -36,7 +36,6 @@ firewall-cmd --reload
 # Check Port/Service
 echo "+ Allow Ports"
 firewall-cmd --list-ports
-echo
 echo "+ Allow Services"
 firewall-cmd --list-services
 
