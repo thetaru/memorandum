@@ -217,7 +217,12 @@ dns-02     IN  A       192.168.138.21
 # less /var/named/data/named_stats.txt
 ```
 
-### ● ポートランダマイゼーションがされていること
-### ● 
+### ● Source Port Randomness
+以下サイトより確認します。
+- https://www.dns-oarc.net/oarc/services/dnsentropy
+
+### ● Transaction ID Randomness
+以下サイトより確認します。
+- https://www.dns-oarc.net/oarc/services/dnsentropy
 
 ## ■ 負荷テスト項目
