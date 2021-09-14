@@ -26,5 +26,5 @@
 ## ■ トラブルシューティング
 ## ■ 設定の反映
 ## ■ 設定の確認
+## ■ 負荷テスト項目
 ## ■ 参考
-https://straypenguin.winfield-net.com/
