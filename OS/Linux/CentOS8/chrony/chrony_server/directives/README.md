@@ -37,11 +37,7 @@ serverディレクティブと同様です。
 ### ■ Syntax
 ### ■ Option
 
-## ● allow
-### ■ Syntax
-### ■ Option
-
-## ● deny
+## ● allow/deny
 ### ■ Syntax
 ### ■ Option
 
