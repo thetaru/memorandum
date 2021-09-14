@@ -26,6 +26,9 @@
 ```
 
 ## ■ 設定ファイル /etc/sysconfig/chronyd
+```
+
+```
 
 ## ■ セキュリティ
 ### ● firewall
@@ -37,6 +40,17 @@
 ```
 
 ## ■ 設定の確認
+### ● 設定値の確認
 ```
 # chronyd -p
+```
+
+### ● 上位NTPサーバとの同期確認
+```
+# chronyc sources
+```
+
+### ● NTPクライアントとの同期確認
+```
+# chronyc clients
 ```
