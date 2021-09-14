@@ -217,12 +217,15 @@ dns-02     IN  A       192.168.138.21
 # less /var/named/data/named_stats.txt
 ```
 
-### ● Source Port Randomness
-以下サイトより確認します。
-- https://www.dns-oarc.net/oarc/services/dnsentropy
+### ● ログローテーションが行われていること
+設定によって、ログサイズでローテーションを行う場合とlogrotatedでローテーションを行う場合があるため注意します。
 
-### ● Transaction ID Randomness
-以下サイトより確認します。
-- https://www.dns-oarc.net/oarc/services/dnsentropy
+### ● ソースポートランダマイゼーションが行われていること
+キャッシュサーバではないため、権威DNSサーバで実施する必要はない認識です。
+
+### ● トランザクションIDのランダム化が行われていること
+キャッシュサーバではないため、権威DNSサーバで実施する必要はない認識です。
 
 ## ■ 負荷テスト項目
+- XXXrpsのクエリ処理に耐えられること
+- クライアントN台からの同時接続に耐えられること
