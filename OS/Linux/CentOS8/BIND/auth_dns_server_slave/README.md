@@ -176,3 +176,5 @@ zone "138.168.192.in-addr.arpa" {
 ```
 # dig @192.168.138.20 example.com. axfr
 ```
+
+## ■ 負荷テスト項目
