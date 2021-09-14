@@ -116,6 +116,18 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata' -name 'PreventDeviceMetadataFromNetwork' -value '1' -type DWord
 ```
 ### ■ 詳細設定 - パフォーマンス - 設定 - 詳細設定 - 仮想メモリ - 変更
+|キー|HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management|
+|:---|:---|
+|値|PagingFiles|
+
+```ps1
+### デフォルトの設定値を確認する
+> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management').'PagingFiles'
+```
+```ps1
+> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -name 'PagingFiles' -value '<ページファイル保存先> <初期サイズ(MB)> <最大サイズ(MB)>' -type REG_MULTI_SZ
+```
+
 ### ■ リモート - リモートデスクトップ
 ## 機能と役割
 ### ■ SNMPクライアント
