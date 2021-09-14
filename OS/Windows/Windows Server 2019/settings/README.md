@@ -104,7 +104,7 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 |値|PreventDeviceMetadataFromNetwork|
 
 ```ps1
-### デフォルトの設定値を確認する
+### 設定値を確認する
 > (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching').'SearchOrderConfig'
 > (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching').'DriverUpdateWizardWuSearchEnabled'
 > (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata').'PreventDeviceMetadataFromNetwork'
@@ -121,9 +121,17 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 |値|PagingFiles|
 
 ```ps1
-### デフォルトの設定値を確認する
+### 設定値を確認する
 > (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management').'PagingFiles'
 ```
+
+|PagingFiles|説明|
+|:---|:---|
+|?:\pagefile.sys|`すべてのドライブのページング ファイルのサイズを自動的に管理する`が有効|
+|c:\pagefile.sys 0 0|`すべてのドライブのページング ファイルのサイズを自動的に管理する`が無効</br>`システム管理サイズ`が有効|
+|c:\pagefile.sys X Y|`すべてのドライブのページング ファイルのサイズを自動的に管理する`が無効</br>`カスタムサイズ`が有効|
+|(空)|`すべてのドライブのページング ファイルのサイズを自動的に管理する`が無効</br>`ページング ファイルなし`が有効|
+
 ```ps1
 > Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -name 'PagingFiles' -value '<ページファイル保存先> <初期サイズ(MB)> <最大サイズ(MB)>' -type REG_MULTI_SZ
 ```
