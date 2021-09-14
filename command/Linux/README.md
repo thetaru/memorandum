@@ -11,3 +11,4 @@
 - [ ] [パッケージインストール時に導入される設定ファイルの確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/confirm_conf)
 - [ ] [ディスクがHDDかSSDか確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/check_disk)
 - [ ] [NICの製品名を確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/nic_product_logical_map)
+- [ ] [ネットワークの統計情報を取得する](https://github.com/thetaru/memorandum/tree/master/command/Linux/network_statistics)
