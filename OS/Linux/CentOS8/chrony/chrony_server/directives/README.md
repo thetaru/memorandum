@@ -4,7 +4,6 @@
 ```
 server hostname [option]...
 ```
-
 ### ■ Option
 #### minpoll *poll*
 #### maxpoll *poll*
@@ -13,7 +12,39 @@ server hostname [option]...
 ## ● pool
 ### ■ Syntax
 ```
-pool hostname [option]...
+pool name [option]...
 ```
+### ■ Option
+serverディレクティブと同様です。
 
+## ● makestep
+### ■ Syntax
+### ■ Option
+
+## ● leapsecmode
+### ■ Syntax
+### ■ Option
+
+## ● maxslewrate
+### ■ Syntax
+### ■ Option
+
+## ● smoothtime
+### ■ Syntax
+### ■ Option
+
+## ● port
+### ■ Syntax
+### ■ Option
+
+## ● allow
+### ■ Syntax
+### ■ Option
+
+## ● deny
+### ■ Syntax
+### ■ Option
+
+## ● local
+### ■ Syntax
 ### ■ Option
