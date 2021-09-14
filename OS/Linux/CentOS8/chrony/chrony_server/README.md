@@ -1,4 +1,5 @@
 # chronyサーバの構築
+ntpdサービスとは共存できないため、サービスが動作している場合は停止します。
 ## ■ インストール
 ```
 # yum install chrony
@@ -26,8 +27,10 @@
 ```
 
 ## ■ 設定ファイル /etc/sysconfig/chronyd
+IPv6を使用しない場合は、IPv4のみを指定します。
 ```
-
+-  OPTIONS=""
++  OPTIONS="-4"
 ```
 
 ## ■ セキュリティ
@@ -46,11 +49,23 @@
 ```
 
 ### ● 上位NTPサーバとの同期確認
+時刻同期可能な上位NTPサーバが想定通りであることを確認します。
 ```
-# chronyc sources
+# chronyc sources -v
+```
+各上位NTPサーバとやりとりできることを確認します。
+```
+# chronyc ntpdata
 ```
 
 ### ● NTPクライアントとの同期確認
+NTPクライアントとやりとりできることを確認します。
 ```
 # chronyc clients
+```
+
+### パフォーマンスの確認
+想定するstratum(上位NTPサーバのstratum-1)であることや、時刻遅延が起きていないことなどを確認します。
+```
+# chronyc tracking
 ```
