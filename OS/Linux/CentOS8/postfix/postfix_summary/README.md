@@ -120,16 +120,34 @@ mynetworks = 128.0.0.1/32,192.168.137.0/24,192.168.138.0/24
 
 ## ● relay_domains (★)
 サーバがリレーする配送先のドメイン(適用範囲はサブドメインを含む)を指定します。  
-mynetworksで指定したIPアドレス範囲に含まれる送信元IPアドレスの場合、relay_domainsで指定したドメインと関係なく中継されることに注意します。  
-※ mynetworksで指定したIPアドレス範囲に含まれない場合、relay_domainsの設定が適用されます。
+mynetworksで指定したIPアドレス範囲に含まれる送信元IPアドレスの場合、relay_domainsで指定したドメインと関係なく中継されます。  
+※ mynetworksで指定したIPアドレス範囲に含まれない場合、relay_domainsの設定が適用される
 ### ■ 設定例
 ```
-relay_domains = [example.com], example.jp
+relay_domains = example.com,example.jp
 ```
 
 ## ● relay_recipient_maps
+relay_domainsにマッチするドメインを持つメールアドレスのリストファイルを指定します。
 ### ■ 設定例
+#### /etc/postfix/main.cf
 ```
+relay_recipient_maps = hash:/etc/postfix/relay_recipients
+```
+#### /etc/postfix/relay_recipients
+```
+### 任意のexample.comをドメインに持つメールアドレス
+@example.com
+
+### 決め打ちされたメールアドレス
+test1@example.jp
+```
+
+### ■ relay_recipients.dbの作成
+postmapコマンドでrelay_recipientsファイルをhash化したDBを作成します。
+```
+# cp -p /etc/postfix/relay_recipients{,.$(date +%Y%m%d)}
+# postmap /etc/postfix/relay_recipients
 ```
 
 ## ● relayhost (★)
