@@ -80,18 +80,21 @@ http://www.ice.is.kit.ac.jp/~umehara/misc/comp/20091218c.html
 ## ● mydestination (★)
 ### ■ 設定例
 ```
+$myhostname, localhost.$mydomain, localhost
 ```
 
 ## ● mydomain (★)
 サーバが所属するドメイン名を指定します。
 ### ■ 設定例
 ```
+mydomain = example.com
 ```
 
 ## ● myhostname (★)
 サーバのホスト名をFQDNで指定します。
 ### ■ 設定例
 ```
+myhostname = mail-01.example.com
 ```
 
 ## ● myorigin
@@ -108,15 +111,20 @@ myorigin = $mydomain
 ```
 
 ## ● mynetworks (★)
-外部ドメインへのメールをリレーを許可するクライアントを指定します。
+外部ドメインへのメールをリレーを許可するクライアントを指定します。  
+また、mynetworksの設定の優先度は高いためリレーを許可する場合は必要最小限に留めましょう。
 ### ■ 設定例
 ```
+mynetworks = 128.0.0.1/32,192.168.137.0/24,192.168.138.0/24
 ```
 
 ## ● relay_domains (★)
-サーバがリレーする配送先のドメインを指定します。
+サーバがリレーする配送先のドメイン(適用範囲はサブドメインを含む)を指定します。  
+mynetworksで指定したIPアドレス範囲に含まれる送信元IPアドレスの場合、relay_domainsで指定したドメインと関係なく中継されることに注意します。  
+※ mynetworksで指定したIPアドレス範囲に含まれない場合、relay_domainsの設定が適用されます。
 ### ■ 設定例
 ```
+relay_domains = [example.com], example.jp
 ```
 
 ## ● relay_recipient_maps
