@@ -14,7 +14,7 @@
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|sshd.service|22||
+|sshd.service|22/tcp||
 
 ## ■ 主設定ファイル /etc/ssh/sshd_config
 ### パラメータ
