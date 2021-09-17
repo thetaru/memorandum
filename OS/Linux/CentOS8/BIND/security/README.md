@@ -29,6 +29,10 @@ ns1_auth.toyota.co.jp.	900	IN	A	192.168.10.204 <- プライベートアドレス
 - ドメインに対し、複数のSPFレコードを設定していないこと
 ```
 ### インターネットから対象ドメインの権威DNSサーバを検索
+# dig <domain> +nssearch
+
+### ドメインのTXTレコードを確認
+# dig @<ns-srv> <domain> txt
 ```
 
 ## DMARCレコード
