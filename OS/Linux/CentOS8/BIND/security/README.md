@@ -3,7 +3,7 @@
 ## A/AAAAレコード
 - インターネットからの名前解決の際に、プライベートアドレスを返さないこと
 ```
-### インターネットから対象ドメインの権威DNSサーバを調べる
+### インターネットから対象ドメインの権威DNSサーバを検索
 # dig toyota.co.jp +nssearch
 SOA ns1_auth.toyota.co.jp. postmaster.toyota.co.jp. 2020051899 900 3600 1209600 3600 from server 210.175.128.35 in 13 ms.
 SOA ns1_auth.toyota.co.jp. postmaster.toyota.co.jp. 2020051899 900 3600 1209600 3600 from server 210.175.152.115 in 13 ms.
