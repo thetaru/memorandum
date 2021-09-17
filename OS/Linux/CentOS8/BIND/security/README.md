@@ -21,7 +21,7 @@ toyota.co.jp.		900	IN	SOA	ns1_auth.toyota.co.jp. postmaster.toyota.co.jp. 202005
 # dig @210.175.129.70 ns1_auth.toyota.co.jp.
 ...
 ;; ANSWER SECTION:
-ns1_auth.toyota.co.jp.	900	IN	A	192.168.10.204
+ns1_auth.toyota.co.jp.	900	IN	A	192.168.10.204 <- プライベートアドレスが見えている
 ...
 ```
 
