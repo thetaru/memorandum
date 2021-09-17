@@ -3,8 +3,14 @@
 ## lame delegation
 - ゾーンの委任元の委任設定が正しいこと
 ```
+### インターネットから対象ドメインの権威DNSサーバを検索
+# dig +nssearch example.com
+
 ### ドメインの委任元DNSサーバのNSレコードを確認
-# dig example.com. ns
+# dig +norec @199.43.133.53 example.com. ns
+
+### 正しいグローバルアドレスであることを確認
+# dig +norec @199.43.133.53 a.iana-servers.net. a
 ```
 - ゾーンの委任先の設定が正しいこと
 - ゾーン転送が行われていること
