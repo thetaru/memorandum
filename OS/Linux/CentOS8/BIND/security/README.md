@@ -10,9 +10,18 @@ SOA ns.icann.org. noc.dns.icann.org. 2021090202 7200 3600 1209600 3600 from serv
 
 ### ドメインの委任元DNSサーバのNSレコードを確認
 # dig +norec @199.43.133.53 example.com. ns
+(snip)
+;; ANSWER SECTION:
+example.com.		86400	IN	NS	a.iana-servers.net.
+example.com.		86400	IN	NS	b.iana-servers.net.
+(snip)
 
 ### 正しいグローバルアドレスであることを確認
 # dig +norec @199.43.133.53 a.iana-servers.net. a
+(snip)
+;; ANSWER SECTION:
+a.iana-servers.net.	1800	IN	A	199.43.135.53
+(snip)
 ```
 - ゾーンの委任先の設定が正しいこと
 - ゾーン転送が行われていること
