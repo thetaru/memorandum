@@ -27,6 +27,27 @@ a.iana-servers.net.	1800	IN	A	199.43.135.53
 (snip)
 ```
 - ゾーンの委任先の設定が正しいこと
+
+委任元で...
+```
+### 対象ドメインのゾーンファイルを確認
+# less example.com.zone
+(snip)
+sub.example.com.     IN NS ns1.sub.example.com. <- サブドメインsub.example.com.はns1.sub.example.com.が回答(委任)する
+(snip)
+ns1.sub.example.com. IN A  192.0.2.80
+(snip)
+```
+委任先で...
+```
+# less sub.example.com
+(snip)
+sub.example.com.     IN NS ns1.sub.example.com. <- サブドメインsub.example.com.は自身で回答する
+(snip)
+ns1.sub.example.com. IN A  192.0.2.80
+(snip)
+www.sub.example.com. IN A  192.0.2.81
+```
 - ゾーン転送が行われていること
 
 ## ■ ゾーン更新
