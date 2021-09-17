@@ -83,10 +83,33 @@ SPFレコードの文法チェック用サイト(`https://vamsoft.com/support/to
 - ドメインに対し、複数のSPFレコードを設定していないこと
 ```
 ### インターネットから対象ドメインの権威DNSサーバを検索
-# dig +nssearch <domain>
+# dig +nssearch google.com
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.34.10 in 40 ms.
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.38.10 in 40 ms.
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.36.10 in 46 ms.
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.32.10 in 80 ms.
 
 ### ドメインのTXTレコードを確認
-# dig +norec @<ns-srv> <domain> txt
+# dig +norec @216.239.32.10 google.com txt
+(snip)
+google.com.		3600	IN	TXT	"v=spf1 include:_spf.google.com ~all"
+(snip)
 ```
 
 ## DMARCレコード
+- レポート
+```
+### インターネットから対象ドメインの権威DNSサーバを検索
+# dig +nssearch google.com
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.34.10 in 40 ms.
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.38.10 in 40 ms.
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.36.10 in 46 ms.
+SOA ns1.google.com. dns-admin.google.com. 397037882 900 900 1800 60 from server 216.239.32.10 in 80 ms.
+
+### ドメインのTXTレコードを確認
+# dig +norec @216.239.32.10 _dmarc.google.com. txt
+(snip)
+;; ANSWER SECTION:
+_dmarc.google.com.	300	IN	TXT	"v=DMARC1; p=reject; rua=mailto:mailauth-reports@google.com"
+(snip)
+```
