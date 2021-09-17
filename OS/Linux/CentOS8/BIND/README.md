@@ -25,6 +25,7 @@
 - [ ] [named-chrootを使うときに気を付けること](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/named-chroot_caution)
 - [ ] [SERVFAIL時の対処](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/servfail)
 - [ ] [search/domainについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/search_domain)
+- [ ] [セキュリティ事項](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/security)
 
 
 # SANKO
