@@ -17,7 +17,7 @@ SOA ns1_auth.toyota.co.jp. postmaster.toyota.co.jp. 2020051899 900 3600 1209600 
 toyota.co.jp.		900	IN	SOA	ns1_auth.toyota.co.jp. postmaster.toyota.co.jp. 2020051899 900 3600 1209600 3600
 ...
 
-### プライマリDNSサーバから名前解決を実施
+### プライマリDNSサーバの名前解決を実施
 # dig @210.175.129.70 ns1_auth.toyota.co.jp.
 ...
 ;; ANSWER SECTION:
