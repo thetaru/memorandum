@@ -5,6 +5,8 @@
 ```
 ### インターネットから対象ドメインの権威DNSサーバを検索
 # dig +nssearch example.com
+SOA ns.icann.org. noc.dns.icann.org. 2021090202 7200 3600 1209600 3600 from server 199.43.135.53 in 110 ms.
+SOA ns.icann.org. noc.dns.icann.org. 2021090202 7200 3600 1209600 3600 from server 199.43.133.53 in 110 ms.
 
 ### ドメインの委任元DNSサーバのNSレコードを確認
 # dig +norec @199.43.133.53 example.com. ns
@@ -31,17 +33,17 @@ SOA ns1_auth.toyota.co.jp. postmaster.toyota.co.jp. 2020051899 900 3600 1209600 
 
 ### ドメインのSOAレコードを確認
 # dig +norec @210.175.129.70 toyota.co.jp. soa
-...
+(snip)
 ;; ANSWER SECTION:
 toyota.co.jp.		900	IN	SOA	ns1_auth.toyota.co.jp. postmaster.toyota.co.jp. 2020051899 900 3600 1209600 3600
-...
+(snip)
 
 ### プライマリDNSサーバの名前解決を実施
 # dig +norec @210.175.129.70 ns1_auth.toyota.co.jp.
-...
+(snip)
 ;; ANSWER SECTION:
 ns1_auth.toyota.co.jp.	900	IN	A	192.168.10.204 <- プライベートアドレスが見えている
-...
+(snip)
 ```
 
 ## SPFレコード
