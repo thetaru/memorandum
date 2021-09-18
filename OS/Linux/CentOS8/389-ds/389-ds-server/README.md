@@ -3,54 +3,27 @@
 ### cockpit
 # dnf install cockpit
 
-### 389-ds (推奨)
+### 389-ds
 # dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 # dnf config-manager --set-enabled powertools
 # dnf module install 389-directory-server:stable/default
-
-### 389-ds (非推奨)
-# dnf module list | grep 389
-# dnf module enable 389-ds
-# dnf install 389-ds-base
 ```
 ## ■ 初期設定
-```
-# dscreate interactive
-```
-```
-Install Directory Server (interactive mode)
-===========================================
-selinux is disabled, will not relabel ports or files.
+### インスタンス作成
+Cockpitから作成します。  
+ツール - 389 Directory Server - Create New Instance
+|項目名|設定例|説明|備考|
+|:---|:---|:---|:---|
+|Instance Name||||
+|Port||||
+|Secure Port	||||
+|||||
+|||||
+|||||
+|||||
+|||||
+|||||
 
-Selinux support will be disabled, continue? [yes]:
-
-Enter system's hostname [ldap-01]:
-
-Enter the instance name [ldap-01]:
-
-Enter port number [389]:
-
-Create self-signed certificate database [yes]:
-
-Enter secure port number [636]:
-
-Enter Directory Manager DN [cn=Directory Manager]:
-
-Enter the Directory Manager password:
-Confirm the Directory Manager Password:
-
-Enter the database suffix (or enter "none" to skip) [dc=ldap-01]: dc=ldap-01,dc=jp
-
-Create sample entries in the suffix [no]:
-
-Create just the top suffix entry [no]: yes
-
-Do you want to start the instance after the installation? [yes]:
-
-Are you ready to install? [no]: yes
-Starting installation...
-Completed installation for ldap-01
-```
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ```
