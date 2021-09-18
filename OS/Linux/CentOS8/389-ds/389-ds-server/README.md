@@ -7,6 +7,11 @@
 # dnf module list | grep 389
 # dnf module enable 389-ds
 # dnf install 389-ds-base
+
+### 389-ds(epel)
+# dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+# dnf config-manager --set-enabled powertools
+# dnf module install 389-directory-server:stable/default
 ```
 ## ■ 初期設定
 ```
