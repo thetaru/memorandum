@@ -24,6 +24,22 @@ Cockpitから作成します。
 |||||
 |||||
 
+### ルート証明書のインポート
+cockpitからインポートします。  
+ツール - 389 Directory Server - Server Setting - Secutiry - Security Setting - Certificate Management - Trusted Certificate Authorites - Add CA Certificate
+|項目名|設定例|説明|備考|
+|:---|:---|:---|:---|
+|Certificate File||||
+|Certificate Nickname||||
+
+### サーバ証明書のインポート
+PKCS#12形式の証明書を作成します。
+```
+# openssl pkcs12 -export -in server.crt -inkey server.key -out server.p12 -nodes -name Server-Cert
+Enter Export Password: password
+Verifying - Enter Export Password: password
+```
+
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ```
