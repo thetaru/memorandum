@@ -9,7 +9,6 @@
 # dscreate interactive
 ```
 ```
-# dscreate interactive
 Install Directory Server (interactive mode)
 ===========================================
 selinux is disabled, will not relabel ports or files.
