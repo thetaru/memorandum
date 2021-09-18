@@ -3,7 +3,7 @@
 ### cockpit
 # dnf install cockpit
 
-### 389-ds (推奨 - epel)
+### 389-ds (推奨)
 # dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 # dnf config-manager --set-enabled powertools
 # dnf module install 389-directory-server:stable/default
