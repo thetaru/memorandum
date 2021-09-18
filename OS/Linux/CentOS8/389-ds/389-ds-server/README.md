@@ -8,44 +8,6 @@
 # dnf module enable 389-ds
 # dnf install 389-ds-base
 ```
-## ■ 初期設定
-```
-# dscreate interactive
-```
-```
-Install Directory Server (interactive mode)
-===========================================
-selinux is disabled, will not relabel ports or files.
-
-Selinux support will be disabled, continue? [yes]: 
-
-Enter system's hostname [ldap-01]: 
-
-Enter the instance name [ldap-01]: 
-
-Enter port number [389]: 
-
-Create self-signed certificate database [yes]:
-
-Enter secure port number [636]:
-
-Enter Directory Manager DN [cn=Directory Manager]:
-
-Enter the Directory Manager password:
-Confirm the Directory Manager Password:
-
-Enter the database suffix (or enter "none" to skip) [dc=ldap-01]: dc=ldap-01,dc=jp
-
-Create sample entries in the suffix [no]:
-
-Create just the top suffix entry [no]: yes
-
-Do you want to start the instance after the installation? [yes]:
-
-Are you ready to install? [no]: yes
-Starting installation...
-Completed installation for ldap-01
-```
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ```
