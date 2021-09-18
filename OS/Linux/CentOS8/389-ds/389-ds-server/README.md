@@ -1,5 +1,9 @@
 ## ■ インストール
 ```
+### cockpit
+# dnf install cockpit
+
+### 389-ds
 # dnf module list | grep 389
 # dnf module enable 389-ds
 # dnf install 389-ds-base
@@ -45,7 +49,11 @@ Completed installation for ldap-01
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ```
-# 
+### cockpit
+# systemctl enable --now cockpit.socket
+
+### 389-ds
+#
 ```
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
