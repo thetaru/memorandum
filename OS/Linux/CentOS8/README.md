@@ -65,7 +65,6 @@ lets encrypt でワイルドカード証明書
 - [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
 - [x] [GitLab](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab)
 - [ ] [Kubernetes](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/k8s)
-- [ ] [(やる気次第)LDAP](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LDAP)
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [ ] [(書きかけ)mariadb](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/mariadb)
 - [ ] [minecraft](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/minecraft)
