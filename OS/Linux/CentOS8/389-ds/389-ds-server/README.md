@@ -40,6 +40,10 @@ Enter Export Password: password
 Verifying - Enter Export Password: password
 ```
 
+### LDAPSの有効化
+cockpitから有効化します。  
+ツール - 389 Directory Server - Server Setting - Secutiry - Security Setting - Security Configuration - Security Enabled
+
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ```
