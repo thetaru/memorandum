@@ -7,18 +7,33 @@ deploy-server.sh
 ```
 
 ### 変数名
-- ローカル変数
-
-`_`区切りの小文字英数字を使う。
-```sh
-local local_var="local"
-```
 - グローバル変数
 
 `_`区切りの大文字英数字を使う。
 ```sh
 GLOBAL_VAR="global"
 ```
+- ローカル変数
+
+`_`区切りの小文字英数字を使う。
+```sh
+local local_var="local"
+```
+### ループ変数
+`_`区切りの小文字英数字を使う。
+```sh
+for rule in rules; do
+  echo "${rule}"
+done
+```
+指定回数分のループ処理の場合は`_`のみを使う。
+```sh
+for _ in $(seq 1 10); do
+  echo "hoge"
+done
+```
+※ python感がでてしまう
+
 ### 関数名
 `_`区切りの小文字英数字を使う。
 ```sh
