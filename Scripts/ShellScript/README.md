@@ -1,6 +1,6 @@
 # ShellScript
 ## ■
-- [ ] [お作法]()
+- [ ] [ShellScriptのお作法](manners)
 ## ■ Tips
 - [ ] [多重起動の防止方法について]()
 https://qiita.com/mogulla3/items/0a955196c524712f48ba  
