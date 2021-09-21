@@ -1,6 +1,6 @@
 # ShellScript
 ## ■
-- [ ] [ShellScriptのお作法](manners)
+- [ ] [ShellScriptのお作法](https://github.com/thetaru/memorandum/tree/master/Scripts/ShellScript/manners)
 ## ■ Tips
 - [ ] [多重起動の防止方法について]()
 https://qiita.com/mogulla3/items/0a955196c524712f48ba  
