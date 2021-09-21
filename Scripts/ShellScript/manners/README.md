@@ -123,6 +123,13 @@ curl -X POST "${API_ENDPOINT}/users/${USER_ID}/status" \
 ```
 ## ■ 制御構文
 ### if文
+```sh
+if 条件; then
+  処理1
+else
+  処理2
+fi
+```
 ### while文
 ```sh
 while read line; do
