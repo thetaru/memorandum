@@ -100,6 +100,10 @@ function 関数名() {
 関数内では変数宣言時に`local`をつけてローカル変数として扱うことができる。
 ## ■ 呼び出し
 ### 変数の呼び出し
+- `${}`で囲む
+```sh
+diff "test-${DATE}-before" "test-${DATE}-after"
+```
 - `""`で囲む
 ```sh
 diff "test-${DATE}-before" "test-${DATE}-after"
