@@ -80,13 +80,43 @@ MESSAGE="Hello World!"
 NOW=$(date)
 ```
 ### 変数展開
+例外を除き`${}`で囲う。(例外は`$0`,`$1`,`$@`,`$?`などの特殊変数)
+```sh
+RESULT="success"
+LOG_DIR="/var/log/hoge"
+ARG="$1"
+echo "Result is ${RESULT}" | tee "${LOG_DIR}/result.log"
+```
 ## ■ 関数
 ### 関数定義
+`function`をつけて定義する。
+```sh
+function 関数名() {
+  処理
+}
+```
+※ `function`を使わなくてもよいが、統一するため
 ### 変数宣言
 関数内では変数宣言時に`local`をつけてローカル変数として扱うことができる。
 ## ■ 呼び出し
 ### 変数の呼び出し
+- `""`で囲む
+```sh
+diff "test-${DATE}-before" "test-${DATE}-after"
+```
 ### コマンドの呼び出し
+- `""`で囲む
+```sh
+chown "$(whoami)" /tmp/workdir
+```
+- 改行を入れる
+
+80文字-120文字を越えるコマンドは改行`\`を入れる。
+```sh
+curl -X POST "${API_ENDPOINT}/users/${USER_ID}/status" \
+  -F "status=I'm so happy" \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}" 
+```
 ## ■ 制御構文
 ### if文
 ### while文
