@@ -124,7 +124,24 @@ curl -X POST "${API_ENDPOINT}/users/${USER_ID}/status" \
 ## ■ 制御構文
 ### if文
 ### while文
+```sh
+while read line; do
+  処理
+done < (入力生成)
+```
+テキストデータの読み込みやコマンド展開をする場合に使う。
+```sh
+while read line; do
+  (snip)
+done < $(find . -name '*.log')
+```
 ### for文
+```sh
+for 変数 in 範囲; do
+  処理
+done
+```
+※ 範囲はglob(`*.txt`など)かbrace expansion(`{1..5}`など)  
 ## ■ エラーハンドリング
 ## ■ ロギング
 ## ■ オプション
