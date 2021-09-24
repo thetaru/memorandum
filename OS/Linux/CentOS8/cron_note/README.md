@@ -10,11 +10,19 @@
 ## ■ ジョブの追加・削除
 ### ● バックアップ
 ```
+### ジョブの実行ユーザがログインユーザの場合
 # crontab -l > ~/crontab-$(date +%Y%m%d).bk
+
+### ジョブの実行ユーザを指定する場合
+# crontab -u <user> -l > ~/crontab-$(date +%Y%m%d).bk
 ```
 ### ● ジョブの編集
 ```
+### ジョブの実行ユーザがログインユーザの場合
 # crontab -e
+
+### ジョブの実行ユーザを指定する場合
+# crontab -u <user> -e
 ```
 ```
 +  00 20 * * 1-5 /usr/bin/systemctl stop  squid.service
