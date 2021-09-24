@@ -161,8 +161,16 @@ dns_v4_first on
 ```
 
 ## ● follow_x_forwarded_for
-xffによるアクセス制限 ここからきたやつはおけだよーてきな  
-プロキシの後ろにLBがいるときに有効そう
+XFF(X-Forwarded-For)ヘッダから、リクエストの送信ホストを調べます。  
+XFFヘッダに複数のアドレスが含まれている場合、リストの最初のアドレスを送信ホストとして利用します。
+### ■ 使用例
+```
+### ロードバランサのACLを追加
+acl LoadBalancer src 192.168.137.25/32
+
+### 
+follow_x_forwarded_for allow LoadBalancer
+```
 ## ● forwarded_for (security)
 ### ■ 使用例
 ```
