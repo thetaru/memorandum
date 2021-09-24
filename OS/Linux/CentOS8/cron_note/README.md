@@ -1,10 +1,26 @@
 # cronについて
-## ■ 更新時にやること
-### バックアップ
-以下の処理をcronで設定してもいいです。
+## ■ バージョン確認
+```
+# crontab -V
+```
+## ■ サービスの確認
+```
+# systemctl status crond.service
+```
+## ■ ジョブの追加・削除
+### ● バックアップ
 ```
 # crontab -l > ~/crontab-$(date +%Y%m%d).bk
 ```
+### ● ジョブの編集
+```
+# crontab -e
+```
+```
++  00 20 * * 1-5 /usr/bin/systemctl stop  squid.service
++  00 09 * * 1-5 /usr/bin/systemctl start squid.service
+```
+※ パスは例外を除き絶対パスで記述すること。また、シェルを実行する場合は実行権限があることを確認する。
 
 ## ■ 注意事項
 ### ● 条件がorになる
