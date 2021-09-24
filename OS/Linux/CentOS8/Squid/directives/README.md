@@ -162,7 +162,8 @@ dns_v4_first on
 
 ## ● follow_x_forwarded_for
 XFF(X-Forwarded-For)ヘッダから、リクエストの送信ホストを調べます。  
-XFFヘッダに複数のアドレスが含まれている場合、リストの最初のアドレスを送信ホストとして利用します。
+XFFヘッダに複数のアドレスが含まれている場合、リストの最初のアドレスを送信ホストとして利用します。  
+※ 例えば、ロードバランサがXFFに送信元IPアドレスを加える場合、XFFのリストの先頭に追加される(ことを利用する)
 ### ■ Syntax
 ```
 follow_x_forwarded_for (allow|deny) acl
