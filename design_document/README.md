@@ -3,4 +3,4 @@
 # 詳細設計書
 - [ ] [ファイアウォール]()
 # 監視項目一覧
-- [ ] [Zabbix]()
+- [ ] [Zabbix](https://github.com/thetaru/memorandum/tree/master/design_document/zabbix_monitoring_design)
