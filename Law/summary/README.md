@@ -1,3 +1,0 @@
-# SUMMARY
-## ほ
-- [ ] [法律学習マニュアル\[第4版\]](HowToStudyTheLaw)
