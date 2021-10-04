@@ -65,7 +65,7 @@ Description=Jupyter Notebook
 [Service]
 Type=simple
 WorkingDirectory=/opt/jupyter
-ExecStart=/opt/jupyter/.local/bin/jupyter --config=/opt/jupyter/.jupyter/jupyter_notebook_config.py
+ExecStart=/opt/jupyter/.local/bin/jupyter-notebook --config=/opt/jupyter/.jupyter/jupyter_notebook_config.py
 
 User=jupyter
 Group=jupyter
