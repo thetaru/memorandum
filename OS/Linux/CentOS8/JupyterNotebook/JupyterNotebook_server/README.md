@@ -78,6 +78,15 @@ OOMPolicy=continue
 [Install]
 WantedBy=multi-user.target
 ```
+## ■ ユニットファイル /etc/systemd/system/xxx.service
+```
+```
+## ■ スクリプト
+```sh
+```
+## ■ 設定ファイル /etc/jupyter.files
+```
+```
 ## ■ セキュリティ
 ### ● firewall
 - 8888/tcp
