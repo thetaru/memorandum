@@ -65,8 +65,6 @@ Description=Jupyter Notebook
 [Service]
 Type=simple
 WorkingDirectory=/opt/jupyter
-ReadOnlyDirectories=/opt/jupyter
-RootDirectory=/opt/jupyter
 ExecStart=/opt/jupyter/.local/bin/jupyter-notebook --config=/opt/jupyter/.jupyter/jupyter_notebook_config.py
 
 User=jupyter
