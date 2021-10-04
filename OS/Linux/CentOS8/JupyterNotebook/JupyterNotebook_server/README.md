@@ -75,6 +75,8 @@ Group=jupyter
 Restart=always
 RestartSec=10
 
+OOMPolicy=continue
+
 [Install]
 WantedBy=multi-user.target
 ```
