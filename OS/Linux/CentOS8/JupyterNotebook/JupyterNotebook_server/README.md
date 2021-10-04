@@ -3,13 +3,15 @@
 ```
 ### サービス用ユーザの作成
 # useradd -s /sbin/nologin -d /opt/jupyter jupyter
-
-### 通常ログイン不可なのでbashを指定して実行
-# su -s /bin/bash - jupyter -c "pip3 install -U pip --user"
 ```
 ## ■ インストール
 ```
+### pipのインストール
 # yum install python3-pip
+
+### notebookのインストール(ログイン不可なのでbashを指定して実行)
+# su -s /bin/bash - jupyter -c "pip3 install -U pip --user"
+# su -s /bin/bash - jupyter -c "pip3 install -U notebook --user"
 ```
 ## ■ バージョンの確認
 ```
