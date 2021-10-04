@@ -78,7 +78,13 @@ WantedBy=multi-user.target
 ```
 ## ■ セキュリティ
 ### ● firewall
+- 8888/tcp
+
 ## ■ ロギング
 ## ■ チューニング
 ## ■ 設定の反映
+```
+# systemctl daemon-reload
+# systemctl enable --now jupyter.service
+```
 ## ■ 設定の確認
