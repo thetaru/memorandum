@@ -102,6 +102,7 @@ ExecStop=/usr/lib/exec/setup-named-chroot.sh /var/named/chroot off /etc/named-ch
 ```sh
 ```
 </details>
+
 ## ■ セキュリティ
 ### ● firewall
 - 8888/tcp
