@@ -89,8 +89,8 @@ BindsTo=named-chroot.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/lib/exec/setup-named-chroot.sh /var/named/chroot on /etc/named-chroot.files
-ExecStop=/usr/lib/exec/setup-named-chroot.sh /var/named/chroot off /etc/named-chroot.files
+ExecStart=/usr/libexec/setup-named-chroot.sh /var/named/chroot on /etc/named-chroot.files
+ExecStop=/usr/libexec/setup-named-chroot.sh /var/named/chroot off /etc/named-chroot.files
 ```
 ## ■ 設定ファイル /etc/jupyter.files
 ```
