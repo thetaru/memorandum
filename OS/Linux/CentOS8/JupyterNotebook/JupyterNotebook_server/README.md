@@ -1,7 +1,21 @@
 # Jupyter Notebookサーバの構築
-## ■ 事前準備系(特になければ消してok)
+## ■ 事前準備
+```
+### サービス用ユーザの作成
+# useradd -M -s /sbin/nologin jupyter
+
+### 設定ファイル格納用ディレクトリの作成
+# mkdir -p /opt/jupyter
+```
 ## ■ インストール
+```
+# yum install python3-pip
+```
 ## ■ バージョンの確認
+```
+### python
+# python3 --version
+```
 ## ■ サービスの起動
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
