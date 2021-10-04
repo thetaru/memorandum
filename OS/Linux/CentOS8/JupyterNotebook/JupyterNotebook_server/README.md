@@ -78,10 +78,10 @@ OOMPolicy=continue
 [Install]
 WantedBy=multi-user.target
 ```
-## ■ ユニットファイル /etc/systemd/system/named-chroot-setup.service
+## ■ ユニットファイル /etc/systemd/system/chroot-setup.service
 ```
 [Unit]
-Description=Set-up/destroy chroot environment for named
+Description=Set-up/destroy chroot environment
 BindsTo=named-chroot.service
 #(NEEDLESS)Wants=named-setup-rndc.service
 #(NEEDLESS)After=named-setup-rndc.service
