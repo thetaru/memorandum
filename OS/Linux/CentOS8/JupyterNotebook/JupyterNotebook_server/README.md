@@ -17,6 +17,9 @@
 ```
 ### python
 # python3 --version
+
+### notebook
+# su -s /bin/bash - jupyter -c "jupyter notebook --version"
 ```
 ## ■ サービスの起動
 ## ■ 関連サービス
