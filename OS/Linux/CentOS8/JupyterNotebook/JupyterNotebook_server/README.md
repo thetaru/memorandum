@@ -57,8 +57,6 @@ c.NotebookApp.terminals_enabled = False
 ### ポート指定
 c.NotebookApp.port = 8888
 ```
-### ● 文法チェック
-## ■ 設定ファイル yyy
 ## ■ セキュリティ
 ### ● firewall
 ## ■ ロギング
