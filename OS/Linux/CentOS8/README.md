@@ -96,4 +96,5 @@ lets encrypt でワイルドカード証明書
 - [ ] [~~MetalLB+BINDで内部DNSサーバ構築~~](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/bind_k8s_gitlab)
 
 ## ■ Development
+- [ ] [Jupyter Notebook](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/JupyterNotebook)
 - [ ] [React 開発環境構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/development_react)
