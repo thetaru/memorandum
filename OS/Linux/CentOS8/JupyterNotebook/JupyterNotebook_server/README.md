@@ -30,12 +30,33 @@
 |:---|:---|:---|
 ||||
 
-## ■ 主設定ファイル xxx.conf
-### ● xxxセクション
-### ● yyyディレクティブ
-- aaa(recommended)
-- bbb
-### ● zzzパラメータ
+## ■ 主設定ファイル /opt/jupyter/.jupyter/jupyter_notebook_config.py
+```py
+
+c = get_config()
+
+### 接続元IPの制限
+c.NotebookApp.ip = '*'
+
+### token passwordの設定(パスワードなしは非推奨)
+c.NotebookApp.token = ''
+c.NotebookApp.password = ''
+
+### [Option] ディレクトリの指定(無効化する場合はコメントアウト)
+c.NotebookApp.notebook_dir = '/opt/jupyter'
+
+### ブラウザの立ち上げ
+c.NotebookApp.open_browser = False
+
+### Quitボタンを隠す
+c.NotebookApp.quit_button = False
+
+### terminalメニューを無効化
+c.NotebookApp.terminals_enabled = False
+
+### ポート指定
+c.NotebookApp.port = 8888
+```
 ### ● 文法チェック
 ## ■ 設定ファイル yyy
 ## ■ セキュリティ
