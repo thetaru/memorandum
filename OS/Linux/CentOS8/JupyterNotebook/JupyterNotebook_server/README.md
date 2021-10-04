@@ -57,6 +57,25 @@ c.NotebookApp.terminals_enabled = False
 ### ポート指定
 c.NotebookApp.port = 8888
 ```
+## ■ ユニットファイル /etc/systemd/system/jupyter.service
+```
+[Unit]
+Description=Jupyter Notebook
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/jupyter
+ExecStart=/opt/jupyter/.local/bin/jupyter --config=/opt/jupyter/.jupyter/jupyter_notebook_config.py
+
+User=jupyter
+Group=jupyter
+
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
 ## ■ セキュリティ
 ### ● firewall
 ## ■ ロギング
