@@ -92,12 +92,16 @@ RemainAfterExit=yes
 ExecStart=/usr/lib/exec/setup-named-chroot.sh /var/named/chroot on /etc/named-chroot.files
 ExecStop=/usr/lib/exec/setup-named-chroot.sh /var/named/chroot off /etc/named-chroot.files
 ```
-## ■ スクリプト /usr/lib/exec/xxx.sh
-```sh
-```
 ## ■ 設定ファイル /etc/jupyter.files
 ```
 ```
+## ■ スクリプト /usr/lib/exec/xxx.sh
+<details>
+<summary>スクリプト内容</summary>
+
+```sh
+```
+</details>
 ## ■ セキュリティ
 ### ● firewall
 - 8888/tcp
