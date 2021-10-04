@@ -4,6 +4,8 @@
 ### サービス用ユーザの作成
 # useradd -s /sbin/nologin -d /opt/jupyter jupyter
 
+### 通常ログイン不可なのでbashを指定して実行
+# su -s /bin/bash - jupyter -c "pip3 install -U pip --user"
 ```
 ## ■ インストール
 ```
