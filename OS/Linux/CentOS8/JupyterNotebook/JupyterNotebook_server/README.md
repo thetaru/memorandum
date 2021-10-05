@@ -6,6 +6,9 @@
 
 ### 設定ファイル格納用ディレクトリの作成(ログイン不可なのでbashを指定して実行)
 # su -s /bin/bash - jupyter -c 'mkdir ~/.jupyter/'
+
+### 
+# mkdir -p /opt/jupyter/playground
 ```
 ## ■ インストール
 ```
@@ -42,8 +45,8 @@ c.NotebookApp.ip = '*'
 c.NotebookApp.token = ''
 c.NotebookApp.password = ''
 
-### [Option] ディレクトリの指定(無効化する場合はコメントアウト)
-c.NotebookApp.notebook_dir = '/opt/jupyter'
+### ディレクトリの指定
+c.NotebookApp.notebook_dir = '/opt/jupyter/playground'
 
 ### ブラウザの立ち上げ
 c.NotebookApp.open_browser = False
@@ -78,31 +81,6 @@ OOMPolicy=continue
 [Install]
 WantedBy=multi-user.target
 ```
-## ■ ユニットファイル /etc/systemd/system/chroot-setup.service
-```
-[Unit]
-Description=Set-up/destroy chroot environment
-BindsTo=named-chroot.service
-#(NEEDLESS)Wants=named-setup-rndc.service
-#(NEEDLESS)After=named-setup-rndc.service
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-ExecStart=/usr/libexec/setup-named-chroot.sh /var/named/chroot on /etc/named-chroot.files
-ExecStop=/usr/libexec/setup-named-chroot.sh /var/named/chroot off /etc/named-chroot.files
-```
-## ■ 設定ファイル /etc/jupyter.files
-```
-```
-## ■ スクリプト /usr/lib/exec/xxx.sh
-<details>
-<summary>スクリプト内容</summary>
-
-```sh
-```
-</details>
-
 ## ■ セキュリティ
 ### ● firewall
 - 8888/tcp
