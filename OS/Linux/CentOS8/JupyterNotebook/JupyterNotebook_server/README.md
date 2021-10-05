@@ -2,14 +2,12 @@
 ## ■ 事前準備
 ```
 ### サービス用ユーザの作成
-# useradd -k /dev/null -s /sbin/nologin -d /opt/jupyter jupyter
+# useradd -M -s /sbin/nologin jupyter
 
-### 設定ファイル格納用ディレクトリの作成(ログイン不可なのでbashを指定して実行)
-# su -s /bin/bash - jupyter -c 'mkdir ~/.jupyter/'
-
-### 
+### 設定ファイル格納用ディレクトリの作成
+# mkdir -p /opt/jupyter/.jupyter
 # mkdir -p /opt/jupyter/playground
-# chown jupyter:jupyter /opt/jupyter/playground
+# chown -R jupyter:jupyter /opt/jupyter
 ```
 ## ■ インストール
 ```
