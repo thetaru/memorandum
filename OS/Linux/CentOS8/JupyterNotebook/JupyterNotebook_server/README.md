@@ -102,10 +102,8 @@ WantedBy=multi-user.target
     missingok
 }
 ```
-## ■ チューニング
 ## ■ サービスの起動
 ```
 # systemctl daemon-reload
 # systemctl enable --now jupyter.service
 ```
-## ■ 設定の確認
