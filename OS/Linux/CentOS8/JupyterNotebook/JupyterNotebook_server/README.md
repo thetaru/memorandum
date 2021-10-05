@@ -8,8 +8,7 @@
 # chown -R jupyter:jupyter /opt/jupyter
 
 ### サービス用ユーザの作成
-# useradd -M -s /sbin/nologin jupyter
-# useradd -d /opt/jupyter jupyter
+# useradd -k /dev/null -s /sbin/nologin -d /opt/jupyter -m jupyter
 ```
 ## ■ インストール
 ```
