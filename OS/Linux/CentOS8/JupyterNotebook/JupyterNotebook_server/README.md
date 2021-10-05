@@ -9,6 +9,7 @@
 
 ### 
 # mkdir -p /opt/jupyter/playground
+# chown jupyter:jupyter /opt/jupyter/playground
 ```
 ## ■ インストール
 ```
