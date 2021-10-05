@@ -61,6 +61,7 @@ Description=Jupyter Notebook
 
 [Service]
 Type=simple
+
 ProtectSystem=strict
 ProtectHome=true
 ReadWritePaths=/opt/jupyter/.local/share/jupyter/runtime
