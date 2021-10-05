@@ -18,10 +18,6 @@
 ### notebookのインストール
 # su -s /bin/bash - jupyter -c "pip3 install -U pip --user"
 # su -s /bin/bash - jupyter -c "pip3 install -U notebook --user"
-
-### Trashディレクトリの作成
-# mkdir -p /opt/jupyter/.local/share/Trash
-# chown jupyter:jupyter /opt/jupyter/.local/share/Trash
 ```
 ## ■ バージョンの確認
 ```
@@ -69,8 +65,7 @@ Type=simple
 ProtectSystem=strict
 ProtectHome=true
 ReadWritePaths=/opt/jupyter/playground
-ReadWritePaths=/opt/jupyter/.local/share/Trash
-ReadWritePaths=/opt/jupyter/.local/share/jupyter/runtime
+ReadWritePaths=/opt/jupyter/.local/share
 PrivateTmp=true
 WorkingDirectory=/opt/jupyter/playground
 ExecStart=/opt/jupyter/.local/bin/jupyter-notebook --config=/opt/jupyter/.jupyter/jupyter_notebook_config.py
