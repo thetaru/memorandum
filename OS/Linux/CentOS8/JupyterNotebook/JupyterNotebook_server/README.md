@@ -86,6 +86,22 @@ WantedBy=multi-user.target
 - 8888/tcp
 
 ## ■ ロギング
+### /etc/rsyslog.conf
+```
++  if $msg contains 'jupyter-notebook' then /var/log/jupyter-notebook.log
++  &stop
+```
+### /etc/logrotate.d/jupyter-notebook
+```
+/var/log/jupyter-notebook.log {
+    compress
+    dateext
+    daily
+    rotate 7
+    notifempty
+    missingok
+}
+```
 ## ■ チューニング
 ## ■ サービスの起動
 ```
