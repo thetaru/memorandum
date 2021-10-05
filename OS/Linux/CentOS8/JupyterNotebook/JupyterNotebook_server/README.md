@@ -7,6 +7,7 @@
 ### 設定ファイル格納用ディレクトリの作成
 # mkdir -p /opt/jupyter/.jupyter
 # mkdir -p /opt/jupyter/playground
+# touch /opt/jupyter/.jupyter/jupyter_notebook_config.py
 # chown -R jupyter:jupyter /opt/jupyter
 ```
 ## ■ インストール
