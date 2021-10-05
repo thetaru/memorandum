@@ -64,8 +64,9 @@ Type=simple
 
 ProtectSystem=strict
 ProtectHome=true
-ReadWritePaths=/opt/jupyter/.local/share/jupyter/runtime
 ReadWritePaths=/opt/jupyter/playground
+ReadWritePaths=/opt/jupyter/.local/share/Trash
+ReadWritePaths=/opt/jupyter/.local/share/jupyter/runtime
 PrivateTmp=true
 WorkingDirectory=/opt/jupyter/playground
 ExecStart=/opt/jupyter/.local/bin/jupyter-notebook --config=/opt/jupyter/.jupyter/jupyter_notebook_config.py
@@ -75,8 +76,6 @@ Group=jupyter
 
 Restart=always
 RestartSec=10
-
-OOMPolicy=continue
 
 [Install]
 WantedBy=multi-user.target
