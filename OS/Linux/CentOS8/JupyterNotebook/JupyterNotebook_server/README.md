@@ -61,7 +61,12 @@ Description=Jupyter Notebook
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/jupyter
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/jupyter/.local/share/jupyter/runtime
+ReadWritePaths=/opt/jupyter/playground
+PrivateTmp=true
+WorkingDirectory=/opt/jupyter/playground
 ExecStart=/opt/jupyter/.local/bin/jupyter-notebook --config=/opt/jupyter/.jupyter/jupyter_notebook_config.py
 
 User=jupyter
