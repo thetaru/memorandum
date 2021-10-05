@@ -18,6 +18,10 @@
 ### notebookのインストール
 # su -s /bin/bash - jupyter -c "pip3 install -U pip --user"
 # su -s /bin/bash - jupyter -c "pip3 install -U notebook --user"
+
+### Trashディレクトリの作成
+# mkdir -p /opt/jupyter/.local/share/Trash
+# chown jupyter:jupyter /opt/jupyter/.local/share/Trash
 ```
 ## ■ バージョンの確認
 ```
