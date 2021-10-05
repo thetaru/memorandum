@@ -1,15 +1,15 @@
 # Jupyter Notebookサーバの構築
 ## ■ 事前準備
 ```
-### サービス用ユーザの作成
-# useradd -M -s /sbin/nologin jupyter
-# useradd -d /opt/jupyter jupyter
-
 ### 設定ファイル格納用ディレクトリの作成
 # mkdir -p /opt/jupyter/.jupyter
 # mkdir -p /opt/jupyter/playground
 # touch /opt/jupyter/.jupyter/jupyter_notebook_config.py
 # chown -R jupyter:jupyter /opt/jupyter
+
+### サービス用ユーザの作成
+# useradd -M -s /sbin/nologin jupyter
+# useradd -d /opt/jupyter jupyter
 ```
 ## ■ インストール
 ```
