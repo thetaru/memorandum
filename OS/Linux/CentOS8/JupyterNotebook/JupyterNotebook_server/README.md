@@ -27,12 +27,6 @@
 ### notebook
 # su -s /bin/bash - jupyter -c "jupyter notebook --version"
 ```
-## ■ サービスの起動
-## ■ 関連サービス
-|サービス名|ポート番号|役割|
-|:---|:---|:---|
-||||
-
 ## ■ 主設定ファイル /opt/jupyter/.jupyter/jupyter_notebook_config.py
 ```py
 
@@ -87,7 +81,7 @@ WantedBy=multi-user.target
 
 ## ■ ロギング
 ## ■ チューニング
-## ■ 設定の反映
+## ■ サービスの起動
 ```
 # systemctl daemon-reload
 # systemctl enable --now jupyter.service
