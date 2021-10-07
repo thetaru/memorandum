@@ -91,7 +91,13 @@ IPアドレスがすでに設定されている場合は、既存の設定を下
 ```
 #### ワークグループ名
 ```ps1
-> 
+### ドメイン参加
+> Add-Computer -DomainName <Domain> -Credential <DomainUser> -PassThru -Verbose
+```
+#### おまけ
+ホスト名の設定とドメイン参加を同時に行う方法は以下の通り。(ドメイン参加後に`-Restart -Force`オプションがついているので再起動する点に注意すること)
+```ps1
+> Add-Computer -DomainName <Domain> -NewName <Hostname> -Credential <DomainUser> -Restart -Force
 ```
 ### ■ ハードウェア - デバイスのインストール設定
 Windows Updateによるデバイスの自動インストールの設定を変更する。
