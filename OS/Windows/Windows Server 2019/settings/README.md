@@ -197,6 +197,16 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ## レジストリ
 ### ■ IPv6の無効化
 ### ■ 時刻同期の設定
+|レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters|
+|:---|:---|
+|レジストリ値名|NtpServer|
+|レジストリ値|NTPサーバ(IPアドレス\|FQDN)|
+
+```ps1
+> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters').'NtpServer'
+> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters' -name 'NtpServer' -value 'ntp.nict.jp,0x8' 
+```
+
 |オプション|同期方法|説明|
 |:---|:---|:---|
 |0x01|SpecialInterval||
