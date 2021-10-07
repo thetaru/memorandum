@@ -94,14 +94,17 @@ IPアドレスがすでに設定されている場合は、既存の設定を下
 ```
 ### ■ ハードウェア - デバイスのインストール設定
 Windows Updateによるデバイスの自動インストールの設定を変更する。
-|キー|HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching|
+|レジストリキー|HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching|
 |:---|:---|
-|値|SearchOrderConfig|
-|値|DriverUpdateWizardWuSearchEnabled|
+|レジストリ値名|SearchOrderConfig|
+|レジストリ値||
+|レジストリ値名|DriverUpdateWizardWuSearchEnabled|
+|レジストリ値||
 
-|キー|HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata|
+|レジストリキー|HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata|
 |:---|:---|
-|値|PreventDeviceMetadataFromNetwork|
+|レジストリ値名|PreventDeviceMetadataFromNetwork|
+|レジストリ値||
 
 ```ps1
 ### 設定値を確認する
@@ -116,9 +119,10 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata' -name 'PreventDeviceMetadataFromNetwork' -value '1' -type DWord
 ```
 ### ■ 詳細設定 - パフォーマンス - 設定 - 詳細設定 - 仮想メモリ - 変更
-|キー|HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management|
+|レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management|
 |:---|:---|
-|値|PagingFiles|
+|レジストリ値名|PagingFiles|
+|レジストリ値||
 
 ```ps1
 ### 設定値を確認する
@@ -189,6 +193,18 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 
 https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 ### ■ リモートデスクトップ制限の解除
+|レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server|
+|:---|:---|
+|レジストリ値名|fDenyTSConnections|
+|レジストリ値|0(有効)/1(無効)|
+
+```ps1
+### 設定値を確認する
+> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server').'fDenyTSConnections'
+
+### リモートデスクトップを有効に設定
+> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -name 'fDenyTSConnections' -value '0' -type DWord
+```
 ### ■ 組織名/所有者名の設定
 ## プロキシの設定
 ieとwinhttp
