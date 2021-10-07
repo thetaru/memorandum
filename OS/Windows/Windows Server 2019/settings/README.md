@@ -1,5 +1,5 @@
 # Settings
-なるべくPowershellで設定していきたい。  
+windowsサーバとして、一般的な設定をPowershellで設定していく。  
 以下、Powershellを管理者として実行しているものとする。
 ## ネットワーク接続
 DHCPを用いず、静的にIPアドレスを割り当てることとする。
