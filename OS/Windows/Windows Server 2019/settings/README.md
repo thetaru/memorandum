@@ -234,5 +234,7 @@ https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 > Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -name 'fSingleSessionPerUser' -value '0' -type DWord
 ```
 ### ■ 組織名/所有者名の設定
+### ■ 自動メンテナンスの設定
+自動メンテナンスはスケジュールされた時間にメンテナンスが実行される機能です。
 ## プロキシの設定
 ieとwinhttp
