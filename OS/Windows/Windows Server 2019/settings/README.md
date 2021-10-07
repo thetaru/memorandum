@@ -176,7 +176,7 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ## フォルダー オプション
 ## ローカル セキュリティ ポリシー
 ## サービス
-不要なサービスを無効化する。
+不要なサービスを無効化する
 ### ■ ActiveX Installer (AxInstSV)
 ```ps1
 > Stop-Service -Name 'AxInstSV'
@@ -191,6 +191,11 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ```ps1
 > Stop-Service -Name 'bthserv'
 > Set-Service 'bthserv' -StartupType Disabled
+```
+サービスのスタートアップの種類を変更する
+### ■ XXX サービス
+```ps1
+> 
 ```
 ## イベントビューアー
 ## Windows Defender ファイアウォール
