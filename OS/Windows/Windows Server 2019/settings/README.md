@@ -200,12 +200,7 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 |レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters|
 |:---|:---|
 |レジストリ値名|NtpServer|
-|レジストリ値|NTPサーバ(IPアドレス\|FQDN)|
-
-```ps1
-> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters').'NtpServer'
-> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters' -name 'NtpServer' -value 'ntp.nict.jp,0x8' 
-```
+|レジストリ値|NTPサーバ(IPアドレス\|FQDN),オプション|
 
 |オプション|同期方法|説明|
 |:---|:---|:---|
@@ -213,6 +208,14 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 |0x02|UseAsFallbackOnly||
 |0x04|SymmetricActive||
 |0x08|NTP request in Client mode||
+
+```ps1
+### 設定値を確認する
+> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters').'NtpServer'
+
+### 同期先NTPサーバを設定
+> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters' -name 'NtpServer' -value 'ntp.nict.jp,0x8' 
+```
 
 https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 ### ■ リモートデスクトップ制限の解除
