@@ -197,6 +197,7 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ## レジストリ
 ### ■ IPv6の無効化
 ### ■ 時刻同期の設定
+ここでは、NTPクライアントとして上位NTPサーバを参照する設定のみを行い、NTPサーバとしての設定やポーリング間隔、アドバタイズなどのパラメータを調整する設定は行いません。
 |レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Parameters|
 |:---|:---|
 |レジストリ値名|NtpServer|
