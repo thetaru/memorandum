@@ -224,8 +224,9 @@ https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 |レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server|
 |:---|:---|
 |レジストリ値名|fSingleSessionPerUser|
-|レジストリ値|1ユーザに対して複数セッションを許す</br>1ユーザに対して1セッションを許可する|
+|レジストリ値|1ユーザに対して複数セッションを許可する</br>1ユーザに対して1セッションを許可する|
 
+※ 無課金の場合、制限を解除しても最大2セッションとなる
 ```ps1
 ### 設定値を確認する
 > (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server').'fSingleSessionPerUser'
