@@ -153,7 +153,7 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 |レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server|
 |:---|:---|
 |レジストリ値名|fDenyTSConnections|
-|レジストリ値|0(有効)/1(無効)|
+|レジストリ値|0(有効)</br>1(無効)|
 
 ```ps1
 ### 設定値を確認する
@@ -206,6 +206,18 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 
 https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 ### ■ リモートデスクトップ制限の解除
+|レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server|
+|:---|:---|
+|レジストリ値名|fSingleSessionPerUser|
+|レジストリ値|1ユーザに対して複数セッションを許す</br>1ユーザに対して1セッションを許可する|
+
+```ps1
+### 設定値を確認する
+> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server').'fSingleSessionPerUser'
+
+### 複数セッションを許す
+> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -name 'fSingleSessionPerUser' -value '0' -type DWord
+```
 ### ■ 組織名/所有者名の設定
 ## プロキシの設定
 ieとwinhttp
