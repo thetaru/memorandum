@@ -150,6 +150,19 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ```
 
 ### ■ リモート - リモートデスクトップ
+|レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server|
+|:---|:---|
+|レジストリ値名|fDenyTSConnections|
+|レジストリ値|0(有効)/1(無効)|
+
+```ps1
+### 設定値を確認する
+> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server').'fDenyTSConnections'
+
+### リモートデスクトップを有効に設定
+> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -name 'fDenyTSConnections' -value '0' -type DWord
+```
+
 ## 機能と役割
 ### ■ SNMPクライアント
 ## Windowsの設定
@@ -193,18 +206,6 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 
 https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 ### ■ リモートデスクトップ制限の解除
-|レジストリキー|HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server|
-|:---|:---|
-|レジストリ値名|fDenyTSConnections|
-|レジストリ値|0(有効)/1(無効)|
-
-```ps1
-### 設定値を確認する
-> (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server').'fDenyTSConnections'
-
-### リモートデスクトップを有効に設定
-> Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -name 'fDenyTSConnections' -value '0' -type DWord
-```
 ### ■ 組織名/所有者名の設定
 ## プロキシの設定
 ieとwinhttp
