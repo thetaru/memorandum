@@ -242,7 +242,11 @@ Windwosは除く
 特に指定しない場合、agentのMaxLinesPerSecondに依存する => 最大20行/秒  
 copytruncate方式のログローテをしている場合は注意しましょう。  
 再検知する場合があります。(inode番号と関わりがあるようでcopytruncateの場合はinodeが継承されないため引き起こされる様)  
-copytruncate方式に限らず、inode番号を書き換える処理をはさむ場合は発生すると思います。
+copytruncate方式に限らず、inode番号を書き換える処理をはさむ場合は発生すると思います。  
+  
+logとlogrtの使い分け  
+logはログファイル名がhoge.logのような場合に有効  
+logrtはログファイル名hoge_20211225.logの場合に有効
 ### ホスト情報
 - ホスト名
   - XXX
