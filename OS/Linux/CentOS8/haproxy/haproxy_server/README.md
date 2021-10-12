@@ -33,8 +33,6 @@ frontendセクションで使えるパラメータは[こちら](https://github.
 #### backendセクション
 負荷分散方式や負荷分散先のサーバが受け付けるIPアドレス・ポート番号を設定します。  
 backendセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/backend_keywords)にまとめました。
-#### resolversセクション
-resolversセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/resolvers_keywords)にまとめました。
 
 ### ● 文法チェック
 ```
