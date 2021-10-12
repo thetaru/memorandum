@@ -85,7 +85,7 @@ EOF
 ### webページにアクセス
 # curl http://www.example.com -x localhost:8081
 ```
-- リクエストヘッダに不要情報がヘッダに含まれないこと
+- リクエストヘッダに不要な情報が含まれないこと
   - Referer
   - User-Agent
   - X-Forwarded-For
