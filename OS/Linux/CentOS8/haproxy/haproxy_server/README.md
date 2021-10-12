@@ -73,18 +73,17 @@ EOF
 ```
 ## ■ チューニング
 - プロセス数
+```
+globalセクションよりnbprocで設定可能
+```
 - FD数
 ```
-# mkdir -p /etc/systemd/system/haproxy.service.d
-# cat << EOF > /etc/systemd/system/haproxy.service.d/override.conf
-[Service]
-LimitNOFILE=100000
-EOF
-# systemctl daemon-reload
-# systemctl restart haproxy.service
+globalセクションよりulimit-nで設定可能(ユニットファイルでドロップインしないでOK)
 ```
-
 - コネクション数
+```
+各セクションごとにmaxconnで設定可能
+```
 
 あたり？
 
