@@ -45,14 +45,14 @@ backendセクションで使えるパラメータは[こちら](https://github.c
 ## 証明書
 ## 認証
 ## ■ ロギング
-### rsyslog
+### ● rsyslog
 ```
 ### haproxyのログのファシリティがlocal2の場合
 # cat << EOF > /etc/rsyslog.d/haproxy.conf
 local2.* /var/log/haproxy/haproxy.log
 EOF
 ```
-### logrotate
+### ● logrotate
 ```
 # cat << EOF > /etc/logrotate.d/haproxy
 /var/log/haproxy/haproxy.log {
