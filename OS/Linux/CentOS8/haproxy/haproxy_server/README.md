@@ -43,6 +43,7 @@ backendセクションで使えるパラメータは[こちら](https://github.c
 - 任意/tcp
 
 ## 証明書
+クライアント-HAProxyサーバ間をSSL通信でやりとりする。(HAProxyサーバ-バックエンドサーバ間は非SSL通信)
 ## 認証
 ## ■ ロギング
 ### ● rsyslog
