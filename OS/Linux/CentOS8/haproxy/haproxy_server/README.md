@@ -74,6 +74,16 @@ EOF
 ## ■ チューニング
 - プロセス数
 - FD数
+```
+# mkdir -p /etc/systemd/system/haproxy.service.d
+# cat << EOF > /etc/systemd/system/haproxy.service.d/override.conf
+[Service]
+LimitNOFILE=100000
+EOF
+# systemctl daemon-reload
+# systemctl restart haproxy.service
+```
+
 - コネクション数
 
 あたり？
