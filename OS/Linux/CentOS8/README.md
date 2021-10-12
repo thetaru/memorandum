@@ -2,17 +2,6 @@
 - [ ] [テンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/_Template)
 ## ■ MEMO
 ```
-## 新テンプレートに移行
-SMB
-HAProxy
-BIND
-apache
-postfix
-chrony
-mariadb
-firewalld
-nftables
-
 ## 機能調査
 BIND
 samba 数パターンつくる
