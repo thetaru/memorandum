@@ -40,9 +40,35 @@ backendセクションで使えるパラメータは[こちら](https://github.c
 ```
 ## ■ セキュリティ
 ## firewall
+- 任意/tcp
+
 ## 証明書
 ## 認証
 ## ■ ロギング
+### rsyslog
+```
+### haproxyのログのファシリティがlocal2の場合
+# cat << EOF > /etc/rsyslog.d/haproxy.conf
+local2.* /var/log/haproxy/haproxy.log
+EOF
+```
+### logrotate
+```
+# cat << EOF > /etc/logrotate.d/haproxy
+/var/log/haproxy/haproxy.log {
+    dateext
+    daily
+    missingok
+    rotate 7
+    notifempty
+    compress
+    sharedscripts
+    postrotate
+        /bin/kill -HUP \`cat /var/run/rsyslogd.pid 2> /dev/null\` 2> /dev/null || true
+    endscript
+}
+EOF
+```
 ## ■ チューニング
 ## ■ 設定の反映
 ```
