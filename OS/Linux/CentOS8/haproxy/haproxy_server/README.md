@@ -70,6 +70,12 @@ EOF
 EOF
 ```
 ## ■ チューニング
+- プロセス数
+- FD数
+- コネクション数
+
+あたり？
+
 ## ■ 設定の反映
 ```
 # systemctl restart haproxy.service
