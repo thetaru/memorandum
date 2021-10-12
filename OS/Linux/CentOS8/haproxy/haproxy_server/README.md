@@ -31,7 +31,7 @@ defaultsセクションで使えるパラメータは[こちら](https://github.
 クライアントからの通信を受け付けるIPアドレス(VIP)・ポート番号を設定します。  
 frontendセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/frontend_keywords)にまとめました。
 #### backendセクション
-負荷分散方式や負荷分散先のサーバが受け付けるIPアドレス・ポート番号を設定します。
+負荷分散方式や負荷分散先のサーバが受け付けるIPアドレス・ポート番号を設定します。  
 backendセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/backend_keywords)にまとめました。
 #### resolversセクション
 resolversセクションで使えるパラメータは[こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server/resolvers_keywords)にまとめました。
