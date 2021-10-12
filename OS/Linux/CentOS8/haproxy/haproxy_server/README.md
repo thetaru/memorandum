@@ -85,8 +85,6 @@ globalセクションよりulimit-nで設定可能(ユニットファイルで�
 各セクションごとにmaxconnで設定可能
 ```
 
-あたり？
-
 ## ■ 設定の反映
 ```
 # systemctl restart haproxy.service
