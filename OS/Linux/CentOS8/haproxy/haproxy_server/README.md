@@ -74,4 +74,3 @@ EOF
 ```
 # systemctl restart haproxy.service
 ```
-## ■ トラブルシューティング
