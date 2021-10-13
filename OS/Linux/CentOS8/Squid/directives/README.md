@@ -71,6 +71,7 @@ acl whitelist dstdomain "/etc/squid/whitelist"
 ## ● cache (cache)
 ### ■ Syntax
 ```
+cache (allow|deny) acl
 ```
 ### ■ 使用例
 ```
@@ -109,9 +110,26 @@ cache_dir ufs /var/spool/squid 100 16 256
 ```
 # squid -z
 ```
-## ● cache_log (cache)
+## ● cache_log (common)
+squidのログの出力先を指定する
+### ■ Syntax
+```
+cache_log file
+```
+### ■ 使用例
+```
+cache_log /var/log/squid/cache.log
+```
 ## ● cache_mem (cache)
 (インメモリ)キャッシュとして使用するメモリ量(デフォルトは256MB)を指定する。
+### ■ Syntax
+```
+cache_mem SIZE
+```
+### ■ 使用例
+```
+cache_mem 1500MB
+```
 ## ● cache_peer (cache)
 ### ■ Syntax
 ```
@@ -271,10 +289,34 @@ icp_port 3130
 
 ## ● ipcache_high (cache)
 ipcache_sizeで指定した最大保存アドレス数と実際に保存しているアドレス数の百分率がipcache_highで指定した値を越えたらその値がipcache_lowになるまで古いアドレスから削除する。
+### ■ Syntax
+```
+ipcache_high PERCENTAGE
+```
+### ■ 使用例
+```
+ipcache_high 95
+```
 ## ● ipcache_low (cache)
 同上
+### ■ Syntax
+```
+ipcache_low PERCENTAGE
+```
+### ■ 使用例
+```
+ipcache_low 90
+```
 ## ● ipcache_size (cache)
-squidが名前解決した結果をメモリ上に保存するアドレスの最大数を指定する。
+squidが名前解決(正引きに限る)した結果をメモリキャッシュ上に保存するIPアドレスの最大数を指定する。
+### ■ Syntax
+```
+ipcache_size SIZE
+```
+### ■ 使用例
+```
+ipcache_size 15000
+```
 ## ● logfile_rotate
 ログの世代数(間隔はdaily)を設定する。  
 ここで設定したならば`squid -k rotate`コマンドを実行しないといけない。  
@@ -282,11 +324,25 @@ squidが名前解決した結果をメモリ上に保存するアドレスの最
 ## ● logformat (log)
 ## ● max_filedescriptors
 ## ● maximum_object_size (cache)
-ディスク上にキャッシュされるオブジェクトの最大サイズ(byte)を指定する。  
-※ あくまで１つのオブジェクトの最大容量を指定するだけなことに注意
+ディスク上にキャッシュされるオブジェクトの最大サイズをバイト単位で指定する。
+### ■ Syntax
+```
+maximum_object_size SIZE
+```
+### ■ 使用例
+```
+maximum_object_size 100MB
+```
 ## ● maximum_object_size_in_memory (cache)
-メモリ上にキャッシュされるオブジェクトの最大サイズ(byte)を指定する。  
-指定したサイズより大きいオブジェクトはメモリにはキャッシュされません(?)。
+メモリ上にキャッシュされるオブジェクトの最大サイズをバイト単位で指定する。
+### ■ Syntax
+```
+maximum_object_size_in_memory SIZE
+```
+### ■ 使用例
+```
+maximum_object_size_in_memory 8MB
+```
 ## ● memory_cache_mode (cache)
 メモリにキャッシュするオブジェクトを制御します。
 - always
@@ -298,8 +354,15 @@ squidが名前解決した結果をメモリ上に保存するアドレスの最
 - network
 ネットワーク経由で取得したオブジェクトのみメモリにキャッシュします。
 ## ● minimum_object_size (cache)
-ディスク上にキャッシュされるオブジェクトの最小サイズ(byte)を指定する。  
-※ メモリにはされる...ってコト！？
+ディスク上にキャッシュされるオブジェクトの最小サイズをバイト単位で指定する。
+### ■ Syntax
+```
+minimum_object_size SIZE
+```
+### ■ 使用例
+```
+minimum_object_size 0KB
+```
 ## ● miss_access (cache)
 自身を親とする子プロキシサーバからのアクセスを制御します。
 ## ● never_direct
