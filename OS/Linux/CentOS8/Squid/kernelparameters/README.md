@@ -33,7 +33,7 @@ TIME_WAIT状態のコネクション総数が最大数と等しい場合、次�
 TIME_WAIT状態のコネクションを再利用するかを設定する  
 ただし、再利用する際は以下の条件がある
 1. 送信元アドレス、送信元ポート、送信先アドレス、送信先ポートが一致している
-2. TCP Time Stamp Optionが有効な接続
+2. TCP Timestamp Optionが有効(net.ipv4.tcp_timestamps = 1)な接続
 
 # ■ カーネルパラメータの反映
 ```
