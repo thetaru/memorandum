@@ -78,7 +78,33 @@ acl whitelist dstdomain "/etc/squid/whitelist"
 cache deny all
 ```
 ## ● cache_dir (cache)
-(オンディスク)キャッシュとして使用するディスク量を指定する。  
+(オンディスク)キャッシュとして使用するディスク量(とディレクトリ)を指定する。
+### ■ Syntax
+```
+cache_dir StorageType Directory SIZE L1 L2 [option]
+```
+#### StorageType
+ストレージ書き込みの方式の種類(ufs,aufs,disked)を指定する
+#### Directory
+キャッシュを保存するディレクトリを指定する
+#### SIZE
+ディスクキャッシュの大きさをMB単位で指定する
+#### L1・L2
+squidではキャッシュを2階層の階層構造を持つディレクトリに保存している。  
+L1には1階層目のディレクトリ数を指定し、L2には2階層目のディレクトリ数を指定する
+#### option
+- min-size
+
+キャッシュするオブジェクトの最小のサイズをバイト単位で指定する  
+※ キャッシュディレクトリが複数ある場合に有効
+- max-size
+
+キャッシュするオブジェクトの最大のサイズをバイト単位で指定する  
+※ キャッシュディレクトリが複数ある場合に有効
+### ■ 使用例
+```
+cache_dir ufs /var/spool/squid 100 16 256
+```
 以下のコマンドでキャッシュディレクトリを作成する。
 ```
 # squid -z
