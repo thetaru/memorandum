@@ -45,5 +45,7 @@ TIME_WAIT状態のコネクションを再利用するかを設定する
 
 ### 設定の確認
 # sysctl -a | sort > KernelParameters_$(date +%Y%m%d).new
+
+### 差分確認(動的なパラメータもあるので余計な情報も出力される)
 # diff KernelParameters_$(date +%Y%m%d).{old,new}
 ```
