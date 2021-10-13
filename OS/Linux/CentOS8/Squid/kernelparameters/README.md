@@ -38,8 +38,12 @@ TIME_WAIT状態のコネクションを再利用するかを設定する
 # ■ カーネルパラメータの反映
 ```
 ### デフォルトのカーネルパラメータを取得
-# sysctl -a | sort > KernelParameters_$(date +%Y%m%d)
+# sysctl -a | sort > KernelParameters_$(date +%Y%m%d).old
 
 ### 設定の反映
 # sysctl -p
+
+### 設定の確認
+# sysctl -a | sort > KernelParameters_$(date +%Y%m%d).new
+# diff KernelParameters_$(date +%Y%m%d).{old,new}
 ```
