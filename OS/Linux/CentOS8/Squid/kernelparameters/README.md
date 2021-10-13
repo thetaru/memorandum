@@ -35,7 +35,7 @@ TIME_WAIT状態のコネクションを再利用するかを設定する
 1. 送信元アドレス、送信元ポート、送信先アドレス、送信先ポートが一致している
 2. TCP Timestamp Optionが有効な接続
 
-※ TCP Timestamp Optionが有効かは、`net.ipv4.tcp_timestamps = 0`で確認できる
+※ TCP Timestamp Optionが有効であることは、`net.ipv4.tcp_timestamps = 0`から確認できる
 
 # ■ カーネルパラメータの反映
 ```
