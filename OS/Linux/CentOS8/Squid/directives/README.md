@@ -177,6 +177,15 @@ ICPポートを利用しない場合は、0を指定すること。
 ## ● client_lifetime
 ## ● client_persistent_connections
 ## ● coredump_dir (common)
+squidのコアファイルの出力先ディレクトリを指定する
+### ■ Syntax
+```
+coredump_dir Directory
+```
+### ■ 設定例
+```
+coredump_dir /var/spool/squid
+```
 ## ● dns_defnames
 名前解決にsearch/domainを使用できる
 ## ● dns_nameservers
@@ -225,6 +234,15 @@ follow_x_forwarded_for allow LoadBalancer
 forwarded_for off
 ```
 ## ● fqdncache_size
+squidが名前解決(逆引きに限る)した結果をメモリキャッシュ上に保存するFQDNの最大数を指定する。
+### ■ Syntax
+```
+fqdncache_size SIZE
+```
+### ■ 使用例
+```
+fqdncache_size 10000
+```
 ## ● hosts_file
 ### ■ Syntax
 ```
@@ -392,7 +410,27 @@ request_header_access Cache-Control deny all
 ```
 ## ● server_persistent_connections
 ## ● snmp_access (monitoring)
+SNMPポートへのアクセスを許可または拒否を指定する
+### ■ Syntax
+```
+snmp_access (allow|deny) aclname...
+```
+### ■ 使用例
+```
+acl community snmp_community public
+snmp_access allow community localhost
+snmp_access deny all
+```
 ## ● snmp_port (monitoring)
+squidがSNMP要求をリッスンするポート番号を指定する
+### ■ Syntax
+```
+snmp_port PORT
+```
+### ■ 使用例
+```
+snmp_port 3401
+```
 ## ● strip_query_terms (log)
 urlからクエリ用語が一部抜ける
 ## ● visible_hostname (security)
