@@ -4,4 +4,4 @@
 - [ ] [パーソナル ファイアウォール]()
 - [ ] [DNSレコード ヒアリングシート]()
 # 監視項目一覧
-- [ ] [Zabbix](https://github.com/thetaru/memorandum/tree/master/design_document/zabbix_monitoring_design)
+- [ ] [Zabbix監視項目 ヒアリングシート](https://github.com/thetaru/memorandum/tree/master/design_document/zabbix_monitoring_design)
