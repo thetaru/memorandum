@@ -22,7 +22,10 @@ keepaliveパケットを送信する回数を設定する
 (2回目以降の)keepaliveパケットを送信する間隔を設定する  
 死活監視の際にkeepaliveパケットを送信する間隔を変更するため
 ## net.ipv4.tcp_max_syn_backlog
+接続確立中(SYN_RECIEVED状態のコネクション)キューの最大値を設定する  
+アクセス集中時(多数のSYNパケットを受信時)にSYNパケットの取りこぼさないようにするため
 ## net.ipv4.tcp_max_tw_buckets
+
 ## net.ipv4.tcp_tw_reuse
 
 # カーネルパラメータの反映
