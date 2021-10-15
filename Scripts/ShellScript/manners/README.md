@@ -109,6 +109,7 @@ diff "test-${DATE}-before" "test-${DATE}-after"
 diff "test-${DATE}-before" "test-${DATE}-after"
 ```
 ### コマンドの呼び出し
+- `$()`で囲む
 - `""`で囲む
 ```sh
 chown "$(whoami)" /tmp/workdir
