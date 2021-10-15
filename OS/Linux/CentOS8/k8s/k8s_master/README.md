@@ -147,3 +147,10 @@ kubenetesを管理するユーザ毎に次のコマンドを実行します。
 NAME             STATUS     ROLES                  AGE     VERSION
 kube-master      Ready      control-plane,master   6m41s   v1.21.1
 ```
+## ■ 特定パッケージのアップデート禁止
+```
+# vi /etc/yum.conf
+```
+```
++  exclude=kernel* kubeadm* kubelet* kubectl*
+```
