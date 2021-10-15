@@ -13,6 +13,7 @@ swapファイルを作成している場合は別に操作が必要となるが�
 +  #UUID=<UUID> none                    swap    defaults        0 0
 ```
 ## ■ hostsの追加
+参照先のDNSで名前解決ができれば、hostsに追加する必要はない。
 ```
 # vi /etc/hosts
 ```
