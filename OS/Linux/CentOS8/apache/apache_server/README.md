@@ -9,12 +9,12 @@
 ```
 ## ■ サービスの起動
 ```
-# systemctl enable --now apache.service
+# systemctl enable --now httpd.service
 ```
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|apache.service|80||
+|httpd.service|80(443)||
 
 ## ■ 主設定ファイル /etc/apache/conf.d/httpd.conf
 ### xxxセクション
