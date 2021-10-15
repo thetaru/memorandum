@@ -113,3 +113,10 @@ Podネットワークを作成した際に出力されたコマンドを実行�
 ### トークンからハッシュの生成
 # openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
+## ■ 特定パッケージのアップデート禁止
+```
+# vi /etc/yum.conf
+```
+```
++  exclude=kernel* kubeadm* kubelet* kubectl*
+```
