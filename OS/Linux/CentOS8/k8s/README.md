@@ -11,6 +11,9 @@
 - [ ] [k8sノードの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/k8s_node)
 - [ ] [MetalLB](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/MetalLB)
 - [ ] [helm](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/k8s/helm)
+- [ ] [kustomize]()
+- [ ] [fluxcd]()
+- [ ] []()
 ## ■ Tips
 
 ## ■ Memo
