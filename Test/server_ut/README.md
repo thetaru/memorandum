@@ -1,8 +1,7 @@
 # 単体テスト
 ## ■ 概要
 単体テストでは、詳細設計書と構築したサーバの設定値を比較し、差分がないことを確認する。  
-以下では、OS部分と機能部分のテストを行います。  
-※ なるべくディストリビューションに依存しないようにする予定です
+以下では、OS部分と機能部分のテストを行います。
 
 ## ■ 観点
 ### 事前準備
@@ -38,9 +37,6 @@ $ ethtool ens192 > ./interface_status_$(date +%Y%m%d).log
 $ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
 $ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
 ```
-※ centosやrhelで有効
-
-
 ### 設定ファイル情報の確認
 ファイルのパーミッションと所有権が適切であることを確認する。
 ```
