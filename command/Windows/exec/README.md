@@ -8,6 +8,7 @@
 |eventvwr|イベント ビューアー|
 |explore|エクスプローラー|
 |iexplore|インターネット エクスプローラー|
+|logoff|ログオフ|
 |msinfo32|システム構成|
 |mspaint|ペイント|
 |mstsc|リモートデスクトップ|
