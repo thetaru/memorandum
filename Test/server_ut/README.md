@@ -31,13 +31,20 @@ $ lscpu > ./cpu_$(date +%Y%m%d).log
 ```
 $ lsblk -f -o +MIN-IO,SIZE,STATE > ./disk_$(date +%Y%m%d).log
 ```
-### パッケージ一覧の取得
+### パッケージ一覧の確認
+不要なパッケージがないことを確認します
 ```
-$ rpm -qa | sort > ./packages_$(date +%Y%m%d).log
+$ rpm -qa | sort > ./package_$(date +%Y%m%d).log
 ```
-### サービス一覧の取得
+### サービス一覧の確認
+不要なサービスがないことを確認します
 ```
-$ systemctl list-unit-files --no-pager -t service > ./services_$(date +%Y%m%d).log
+$ systemctl list-unit-files --no-pager -t service > ./service_$(date +%Y%m%d).log
+```
+### ユーザ・グループの確認
+```
+$ cat /etc/passwd > ./user_$(date +%Y%m%d).log
+$ cat /etc/group > ./group_$(date +%Y%m%d).log
 ```
 ### ネットワークインターフェースの状態確認
 ```
@@ -49,6 +56,8 @@ $ ethtool ens192 > ./interface_status_$(date +%Y%m%d).log
 $ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
 $ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
 ```
+### ファイアウォールの確認
+詳細設計書どおりのルールを適用していることを確認
 ### 設定ファイル情報の確認
 ファイルのパーミッションと所有権が適切であることを確認する。
 ```
