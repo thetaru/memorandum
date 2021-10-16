@@ -11,6 +11,6 @@ $ cd ~/work/$(date +%Y%m%d)_UnitTest_01
 ### 取得するファイルを単体テスト用のディレクトリに格納
 $ cp -p /etc/XXX ./
 ...(対象ファイルをコピーする)
-### 取得したファイルをtarで固める
+### 取得したファイルをtar.gzで固める
 $ tar cvfz configs_$(date +%Y%m%d).tar.gz *
 ```
