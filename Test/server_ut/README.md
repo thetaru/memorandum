@@ -67,13 +67,7 @@ $ ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@localhost
 ```
 $ ssh -c 3des-cbc localhost
 ```
-※ `3des-cbc`は脆弱性があるため、除外される想定  
-  
-指定外のハッシュアルゴリズムを利用したSSHログインが不可であることを確認する。
-```
-$ ssh -m hmac-md5 localhost
-```
-※ `hmac-md5`は脆弱性があるため、除外される想定
+※ `3des-cbc`は脆弱性があるため、除外される想定
 ### 設定ファイル情報の確認
 ファイルのパーミッションと所有権が適切であることを確認する。
 ```
