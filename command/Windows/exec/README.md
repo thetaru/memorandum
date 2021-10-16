@@ -20,9 +20,12 @@
 |appwiz.cpl|プログラムの追加と削除|
 |control|コントロールパネル|
 |control folders|フォルダオプション|
+|control schedtasks|タスク スケジューラ|
 |diskmgmt.msc|ディスクの管理|
+|devmgmt.msc|デバイスマネージャー|
 |gpedit.msc|ローカルグループポリシーエディター|
 |inetcpl.cpl|インターネットオプション|
+|lusrmgr.msc|ローカルユーザとグループ|
 |msinfo32|システム構成|
 |ncpa.cpl|ネットワーク接続|
 |powercfg.cpl|電源オプション|
