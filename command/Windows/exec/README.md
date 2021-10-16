@@ -21,7 +21,7 @@
 |control|コントロールパネル|
 |control folders|フォルダオプション|
 |diskmgmt.msc|ディスクの管理|
-|gpedit.msc|ローカル グループ ポリシー エディター|
+|gpedit.msc|ローカルグループポリシーエディター|
 |inetcpl.cpl|インターネットオプション|
 |msinfo32|システム構成|
 |ncpa.cpl|ネットワーク接続|
