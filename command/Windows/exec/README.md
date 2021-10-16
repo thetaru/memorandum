@@ -4,29 +4,32 @@
 |:---|:---|
 |calc|電卓|
 |cmd|コマンドプロンプト|
-|control|コントロールパネル|
 |eventvwr|イベント ビューアー|
 |explore|エクスプローラー|
 |iexplore|インターネット エクスプローラー|
 |logoff|ログオフ|
-|msinfo32|システム構成|
 |mspaint|ペイント|
 |mstsc|リモートデスクトップ|
 |notepad|ノートパッド|
-|regedit|レジストリエディタ|
 |powershell|PowerShell|
-|taskmgr|タスクマネージャ|
+|regedit|レジストリエディタ|
 
-## コントロールパネル
+## システム
 |コマンド|説明|
 |:---|:---|
 |appwiz.cpl|プログラムの追加と削除|
+|control|コントロールパネル|
 |control folders|フォルダオプション|
 |diskmgmt.msc|ディスクの管理|
 |gpedit.msc|ローカル グループ ポリシー エディター|
 |inetcpl.cpl|インターネットオプション|
+|msinfo32|システム構成|
 |ncpa.cpl|ネットワーク接続|
+|powercfg.cpl|電源オプション|
 |services.msc|管理ツールのサービス|
-|secpol.msc|ローカル セキュリティ ポリシー|
+|secpol.msc|ローカルセキュリティポリシー|
 |sysdm.cpl|システムのプロパティ|
+|taskmgr|タスクマネージャ|
+|timedate.cpl|日時と時刻|
 |wf.msc|Windows Defender ファイアウォール|
+|winver|バージョン情報|
