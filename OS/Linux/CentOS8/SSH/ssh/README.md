@@ -31,3 +31,11 @@ ssh [オプション] [ユーザ名@]ホスト名 [コマンド]
 ```
 # ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null [ユーザ名@]ホスト名
 ```
+### SSHがサポートする暗号方式を確認する
+```
+# ssh -Q cipher
+```
+### SSHがサポートするハッシュアルゴリズムを確認する
+```
+# ssh -Q mac
+```
