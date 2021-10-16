@@ -9,7 +9,7 @@
 $ mkdir -p ~/work/$(date +%Y%m%d)_UnitTest_01
 $ cd ~/work/$(date +%Y%m%d)_UnitTest_01
 
-### 取得するファイルを単体テスト用のディレクトリに格納
+### 取得するファイルを単体テスト用のディレクトリにコピー
 $ cp -p /etc/XXX ./
 $ cp -p /etc/YYY ./
 ...(上と同様に、対象ファイルをコピーする)
