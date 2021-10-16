@@ -29,7 +29,7 @@ $ lscpu > ./cpu_$(date +%Y%m%d).log
 ```
 ### ブロックデバイスの確認
 ```
-$ lsblk -f -o +SIZE,MIN-IO,STATE > ./disk_$(date +%Y%m%d).log
+$ lsblk -f -o +MIN-IO,SIZE,STATE > ./disk_$(date +%Y%m%d).log
 ```
 ### パッケージ一覧の取得
 ```
