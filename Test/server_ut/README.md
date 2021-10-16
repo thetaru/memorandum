@@ -28,6 +28,19 @@ $ rpm -qa | sort > ./packages_$(date +%Y%m%d).log
 ```
 $ systemctl list-unit-files --no-pager -t service > ./services_$(date +%Y%m%d).log
 ```
+### ネットワークインターフェースの状態確認
+```
+$ ethtool ens192 > ./interface_status_$(date +%Y%m%d).log
+```
+※ 例として`ens192`のインターフェースの情報を見ています
+### ネットワークインターフェースの設定確認
+```
+$ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
+$ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
+```
+※ centosやrhelで有効
+
+
 ### 設定ファイル情報の確認
 ファイルのパーミッションと所有権が適切であることを確認する。
 ```
