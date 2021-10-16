@@ -56,8 +56,7 @@ $ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
 $ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
 ```
 ### ファイアウォールの確認
-詳細設計書どおりのルールを適用していることを確認する。  
-ファイアウォールの設定方法が複数あるため、コマンドは省略する。
+詳細設計書どおりのルールを適用していることを確認する。
 ### SSHの設定確認
 rootでのSSHログインが不可であることを確認する。
 ```
