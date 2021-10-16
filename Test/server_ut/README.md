@@ -1,7 +1,7 @@
 # 単体テスト
 ## ■ 概要
 単体テストでは、詳細設計書と構築したサーバの設定値を比較し、差分がないことを確認する。  
-以下では、OS部分と機能部分のテストを行います。
+以下では、OS部分と機能部分のテストを行う。
 
 ## ■ 観点
 ### 事前準備
@@ -10,7 +10,7 @@
 $ mkdir -p ~/work/$(date +%Y%m%d)_UnitTest_01
 $ cd ~/work/$(date +%Y%m%d)_UnitTest_01
 ```
-以降、特に指定しなければ、`~/work/$(date +%Y%m%d)_UnitTest_01`で作業します。
+以降、特に指定しなければ、`~/work/$(date +%Y%m%d)_UnitTest_01`で作業する。
 ### OSとカーネルバージョンを確認
 ```
 $ uname -a > ./systeminfo_$(date +%Y%m%d).log
@@ -32,12 +32,12 @@ $ lscpu > ./cpu_$(date +%Y%m%d).log
 $ lsblk -f -o +MIN-IO,SIZE,STATE > ./disk_$(date +%Y%m%d).log
 ```
 ### パッケージ一覧の確認
-不要なパッケージがないことを確認します
+不要なパッケージがないことを確認する。
 ```
 $ rpm -qa | sort > ./package_$(date +%Y%m%d).log
 ```
 ### サービス一覧の確認
-不要なサービスがないことを確認します
+不要なサービスがないことを確認する。
 ```
 $ systemctl list-unit-files --no-pager -t service > ./service_$(date +%Y%m%d).log
 ```
@@ -50,14 +50,19 @@ $ cat /etc/group > ./group_$(date +%Y%m%d).log
 ```
 $ ethtool ens192 > ./interface_status_$(date +%Y%m%d).log
 ```
-※ 例として`ens192`のインターフェースの情報を見ています
 ### ネットワークインターフェースの設定確認
 ```
 $ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
 $ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
 ```
 ### ファイアウォールの確認
-詳細設計書どおりのルールを適用していることを確認
+詳細設計書どおりのルールを適用していることを確認する。  
+ファイアウォールの設定方法が複数あるため、コマンドは省略する。
+### SSH
+rootでのSSHログインが不可であることを確認する。
+```
+$ ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@localhost
+```
 ### 設定ファイル情報の確認
 ファイルのパーミッションと所有権が適切であることを確認する。
 ```
