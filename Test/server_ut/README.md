@@ -44,7 +44,8 @@ $ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
 ### 設定ファイル情報の確認
 ファイルのパーミッションと所有権が適切であることを確認する。
 ```
-$ ls -l /etc/XXX.conf
+$ ls -l /etc/XXX.conf > ./file_permission_$(date +%Y%m%d).log
+$ ls -l /etc/YYY.cfg >> ./file_permission_$(date +%Y%m%d).log
 ```
 ### 設定ファイルの取得
 構築したサーバで詳細設計書と構築したサーバの設定値を比較した後、エビデンスとして手を入れた設定ファイルを取得する。  
