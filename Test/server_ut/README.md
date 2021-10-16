@@ -18,11 +18,11 @@ $ uname -a > ./systeminfo_$(date +%Y%m%d).log
 ```
 $ cat /etc/os-release > ./distribution_$(date +%Y%m%d).log
 ```
-### パッケージの取得
+### パッケージ一覧の取得
 ```
 $ rpm -qa | sort > ./packages_$(date +%Y%m%d).log
 ```
-### サービスの取得
+### サービス一覧の取得
 ```
 $ systemctl list-unit-files --no-pager -t service > ./services_$(date +%Y%m%d).log
 ```
