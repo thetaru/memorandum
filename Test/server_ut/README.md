@@ -8,9 +8,12 @@
 ### 単体テストで取得するファイルを格納するディレクトリを作成
 $ mkdir -p ~/work/$(date +%Y%m%d)_UnitTest_01
 $ cd ~/work/$(date +%Y%m%d)_UnitTest_01
+
 ### 取得するファイルを単体テスト用のディレクトリに格納
 $ cp -p /etc/XXX ./
-...(対象ファイルをコピーする)
+$ cp -p /etc/YYY ./
+...(上と同様に、対象ファイルをコピーする)
+
 ### 取得したファイルをtar.gzで固める
 $ tar cvfz configs_$(date +%Y%m%d).tar.gz *
 ```
