@@ -1,5 +1,5 @@
 # 備忘録
-## 目次
+## ■ 目次
 - [ ] [Cloud](https://github.com/thetaru/memorandum/tree/master/Cloud)
 - [ ] [Command](https://github.com/thetaru/memorandum/tree/master/command)
 - [ ] [Document](https://github.com/thetaru/memorandum/tree/master/design_document)
@@ -11,5 +11,5 @@
 - [ ] [Tool](https://github.com/thetaru/memorandum/tree/master/Tool)
 - [ ] [Math](https://github.com/thetaru/memorandum/tree/master/Math)
 
-## ショートカット
-- [ ] [OS->Linux->CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
+## ■ ショートカット
+- [ ] [OS > Linux > CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
