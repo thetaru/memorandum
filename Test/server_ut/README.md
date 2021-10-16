@@ -19,6 +19,18 @@ $ uname -a > ./systeminfo_$(date +%Y%m%d).log
 ```
 $ cat /etc/os-release > ./distribution_$(date +%Y%m%d).log
 ```
+### メモリの確認
+```
+$ lsmem > ./mem_$(date +%Y%m%d).log
+```
+### CPUの確認
+```
+$ lscpu > ./cpu_$(date +%Y%m%d).log
+```
+### ブロックデバイスの確認
+```
+$ lsblk -f -o +SIZE,MIN-IO,STATE > ./disk_$(date +%Y%m%d).log
+```
 ### パッケージ一覧の取得
 ```
 $ rpm -qa | sort > ./packages_$(date +%Y%m%d).log
