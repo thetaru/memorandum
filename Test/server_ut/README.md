@@ -56,7 +56,8 @@ $ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
 $ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
 ```
 ### ファイアウォールの確認
-詳細設計書どおりのルールを適用していることを確認する。
+詳細設計書どおりのルールを適用していることを確認する。  
+また、FWが機能していることを確認する。
 ### SSHの設定確認
 rootでのSSHログインが不可であることを確認する。
 ```
@@ -70,7 +71,6 @@ $ ls -l /etc/YYY.cfg >> ./file_permission_$(date +%Y%m%d).log
 ```
 ### 設定ファイルの取得
 構築したサーバで詳細設計書と構築したサーバの設定値を比較した後、エビデンスとして手を入れた設定ファイルを取得する。  
-※ ちゃんとデフォルトの設定ファイルをとっている場合、そのファイルと設定後のファイルをdiffしてもOKです
 ```
 ### 取得するファイルを単体テスト用のディレクトリにコピー
 $ cp -p /etc/XXX.conf ./
