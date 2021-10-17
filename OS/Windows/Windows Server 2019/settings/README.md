@@ -252,3 +252,5 @@ https://www.server-world.info/query?os=Windows_Server_2019&p=ntp&f=2
 自動メンテナンスはスケジュールされた時間にメンテナンスが実行される機能です。
 ## プロキシの設定
 ieとwinhttp
+## めも
+UAC
