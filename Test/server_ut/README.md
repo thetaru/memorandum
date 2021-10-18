@@ -54,6 +54,12 @@ $ update-crypto-policies --show >./crypto_policies_$(date +%Y%m%d).log
 ```
 $ crontab -u root -l > ./cron_root_$(date +%Y%m%d).log
 ```
+### ログ
+ログのFacilityとSeverityが設定通りであることを確認する。  
+messagesなどにログが流れていないことを確認する。
+### ログローテーション
+ローテーション間隔が設定通りであることを確認する。  
+設定が適切に反映されていることを確認する。
 ### ユーザ・グループの確認
 ```
 $ cat /etc/passwd > ./user_$(date +%Y%m%d).log
