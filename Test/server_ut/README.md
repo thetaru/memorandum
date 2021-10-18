@@ -48,7 +48,7 @@ $ sysctl -a > ./KernelParam_$(date +%Y%m%d).log
 ### 暗号化ポリシーの確認
 ```
 ### Redhat
-$ update-crypto-policies --show
+$ update-crypto-policies --show >./crypto_policies_$(date +%Y%m%d).log
 ```
 ### ユーザ・グループの確認
 ```
