@@ -28,7 +28,7 @@ done
 ```
 指定回数分のループ処理の場合は`_`のみを使う。
 ```sh
-for _ in $(seq 1 10); do
+for _ in {1..10}; do
   echo "hoge"
 done
 ```
