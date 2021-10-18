@@ -9,6 +9,7 @@
 - [ ] [aws-cdk](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/aws-cdk)
 - [ ] [eksctl](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/eksctl)
 ## ■ Tips
+- [ ] [構築手順](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/procedure)
 - [ ] [CloudFormation](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/CloudFormation)
 - [ ] [Route53 + Freenom(無料ドメイン)](https://github.com/thetaru/memorandum/tree/master/Cloud/AWS/Route53%2BFreenom)
 
