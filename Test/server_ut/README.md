@@ -41,6 +41,10 @@ $ rpm -qa | sort > ./package_$(date +%Y%m%d).log
 ```
 $ systemctl list-unit-files --no-pager -t service > ./service_$(date +%Y%m%d).log
 ```
+### カーネルパラメータの確認
+```
+$ sysctl -a > ./KernelParam_$(date +%Y%m%d).log
+```
 ### ユーザ・グループの確認
 ```
 $ cat /etc/passwd > ./user_$(date +%Y%m%d).log
