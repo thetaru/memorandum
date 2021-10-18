@@ -45,6 +45,11 @@ $ systemctl list-unit-files --no-pager -t service > ./service_$(date +%Y%m%d).lo
 ```
 $ sysctl -a > ./KernelParam_$(date +%Y%m%d).log
 ```
+### 暗号化ポリシーの確認
+```
+### Redhat
+$ update-crypto-policies --show
+```
 ### ユーザ・グループの確認
 ```
 $ cat /etc/passwd > ./user_$(date +%Y%m%d).log
