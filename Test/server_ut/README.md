@@ -43,7 +43,7 @@ $ systemctl list-unit-files --no-pager -t service > ./service_$(date +%Y%m%d).lo
 ```
 ### カーネルパラメータの確認
 ```
-$ sysctl -a > ./KernelParam_$(date +%Y%m%d).log
+$ sysctl -a > ./kernelparameter_$(date +%Y%m%d).log
 ```
 ### 暗号化ポリシーの確認
 ```
@@ -62,7 +62,7 @@ $ ethtool ens192 > ./interface_status_$(date +%Y%m%d).log
 ### ネットワークインターフェースの設定確認
 ```
 $ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
-$ nmcli connection show ens192 > ./interface_settings_$(date +%Y%m%d).log
+$ nmcli connection show ens192 > ./interface_ens192_settings_$(date +%Y%m%d).log
 ```
 ### ファイアウォールの確認
 詳細設計書どおりのルールを適用していることを確認する。  
