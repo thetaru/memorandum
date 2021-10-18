@@ -52,7 +52,7 @@ $ update-crypto-policies --show >./crypto_policies_$(date +%Y%m%d).log
 ```
 ### cron
 ```
-$ crontab -u <user> -l
+$ crontab -u root -l > ./cron_root_$(date +%Y%m%d).log
 ```
 ### ユーザ・グループの確認
 ```
