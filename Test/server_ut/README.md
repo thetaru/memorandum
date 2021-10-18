@@ -50,6 +50,10 @@ $ sysctl -a > ./kernelparameter_$(date +%Y%m%d).log
 ### Redhat
 $ update-crypto-policies --show >./crypto_policies_$(date +%Y%m%d).log
 ```
+### cron
+```
+$ crontab -u <user> -l
+```
 ### ユーザ・グループの確認
 ```
 $ cat /etc/passwd > ./user_$(date +%Y%m%d).log
@@ -63,6 +67,10 @@ $ ethtool ens192 > ./interface_status_$(date +%Y%m%d).log
 ```
 $ nmcli connection show > ./interface_connections_$(date +%Y%m%d).log
 $ nmcli connection show ens192 > ./interface_ens192_settings_$(date +%Y%m%d).log
+```
+### リッスンポートの確認
+```
+$ ss -antu | grep -e LISTEN -e UNCONN > ./port_$(date +%Y%m%d).log
 ```
 ### ファイアウォールの確認
 詳細設計書どおりのルールを適用していることを確認する。  
