@@ -23,5 +23,5 @@ Remove-SmbShare -Name shared
 適用済みアップデートファイルとかいらないので定期的に削除したいよね(下コマンドのオプションはてきとー)
 ```
 ### CMD PS
-cleanmgr.exe / LOWDISK
+cleanmgr.exe /LOWDISK
 ```
