@@ -19,3 +19,8 @@ Get-SmbShare -Name shared | Format-List -Property *
 ### 共有解除
 Remove-SmbShare -Name shared
 ```
+ディスク クリーンアップ ツール  
+適用済みアップデートファイルとかいらないので定期的に削除したいよね(下コマンドのオプションはてきとー)
+```
+cleanmgr.exe / LOWDISK
+```
