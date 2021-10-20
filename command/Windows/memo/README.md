@@ -22,5 +22,6 @@ Remove-SmbShare -Name shared
 ディスク クリーンアップ ツール  
 適用済みアップデートファイルとかいらないので定期的に削除したいよね(下コマンドのオプションはてきとー)
 ```
+### CMD PS
 cleanmgr.exe / LOWDISK
 ```
