@@ -27,6 +27,10 @@
 - [ ] [search/domainについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/search_domain)
 - [ ] [セキュリティ事項](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/security)
 
+# 切り替え
+- レジストラにNSレコードとグルーレコードの(変更)申請を行う
+- 新権威DNSのviewでインターネット側からのクエリは旧(現行)権威DNSに捌く
+- 完全切り替え時に新権威DNSのviewの設定から旧(現行)を切り離す
 
 # SANKO
 https://qiita.com/sanyamarseille/items/d3e030aaf02478072d61  
