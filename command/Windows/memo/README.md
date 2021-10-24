@@ -30,4 +30,6 @@ cleanmgr.exe /LOWDISK
 ### PS
 Get-NetNeighbor [-InterfaceIndex <num>] [-Addressfamily IPv4] [-State Stale,Reachable]
 ```
-StateがPermanetのものはマルチキャストアドレスやブロードキャストアドレスとなっている。
+StateがPermanetのものはマルチキャストアドレスやブロードキャストアドレスとなっている。  
+InterfaceIndexは`Get-NetAdapter`から取得できる。
+
