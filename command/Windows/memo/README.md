@@ -25,8 +25,9 @@ Remove-SmbShare -Name shared
 ### CMD PS
 cleanmgr.exe /LOWDISK
 ```
-アクセス可能なIPアドレスを取得
+アクセス可能なIPアドレスを取得(arpテーブルをもとにしているっぽい)
 ```
 ### PS
 Get-NetNeighbor [-InterfaceIndex <num>] [-Addressfamily IPv4] [-State Stale,Reachable]
 ```
+StateがPermanetのものはマルチキャストアドレスやブロードキャストアドレスとなっている。
