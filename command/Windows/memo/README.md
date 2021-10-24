@@ -1,12 +1,15 @@
 # memo
+## 1
 ```
 ### CMD PS
 driverquery
 ```
+## 2
 ```
 ### CMD PS
 systeminfo
 ```
+## 共有
 ```
 # これだけで一つ記事かける
 ### PS
@@ -19,12 +22,14 @@ Get-SmbShare -Name shared | Format-List -Property *
 ### 共有解除
 Remove-SmbShare -Name shared
 ```
+## ディスククリーンアップ
 ディスク クリーンアップ ツール  
 適用済みアップデートファイルとかいらないので定期的に削除したいよね(下コマンドのオプションはてきとー)
 ```
 ### CMD PS
 cleanmgr.exe /LOWDISK
 ```
+## 疎通確認
 アクセス可能なIPアドレスを取得(arpテーブルをもとにしているっぽい)
 ```
 ### PS
