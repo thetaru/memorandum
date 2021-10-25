@@ -13,5 +13,13 @@ useradd -u 1001 -g 1001 hoge
 ```
 公開しているwebサーバの証明書を確認
 ```
-openssl s_client -connect google.com:443 -showcerts
+openssl s_client -connect example.com:443 | openssl x509 -noout -enddate
+
+openssl s_client -connect example.com:25 -starttls smtp | openssl x509 -noout -dates
+openssl s_client -connect example.com:587 -starttls smtp | openssl x509 -noout -dates
+
+openssl s_client -showcerts -connect example.org:443
+
+openssl s_server -accept 10443 -cert example.com.crt -key example.com.key -CAfile example.com.ica -WWW
+openssl s_client -connect localhost:10433
 ```
