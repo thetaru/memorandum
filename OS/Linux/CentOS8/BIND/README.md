@@ -27,6 +27,7 @@
 - [ ] [search/domainについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/search_domain)
 - [ ] [セキュリティ事項](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/security)
 - [ ] [フォワード設定について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/about_forward)
+- [ ] [.localドメイン](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/BIND/dot_local)
 
 # 切り替え
 - レジストラにNSレコードとグルーレコードの(変更)申請を行う
