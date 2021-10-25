@@ -14,5 +14,14 @@ options {
             192.168.138.2;             // フォワード先DNSサーバ
         };
     };
-}
+};
+```
+フォワード先DNSサーバがDNSSECに対応していない場合、DNSSECを無効化します。
+```
+options {
+    <snip>
+    dnssec-enable no;
+    dnssec-validation no;
+    <snip>
+};
 ```
