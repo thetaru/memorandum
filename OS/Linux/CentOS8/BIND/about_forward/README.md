@@ -1,0 +1,18 @@
+# フォーワード設定について
+forwardは一種の再起問い合わせのため、再起問い合わせを有効にする必要があることに注意します。
+```
+options {
+    <snip>
+    recursion yes;                     // 再起問い合わせの有効化
+    allow-recursion { internalnet; };  // 再起問い合わせを許可するクライアント
+    <snip>
+    zone "example.com." IN {
+        type forward;
+        forward only;
+        forwarders {
+            192.168.138.1;             // フォワード先DNSサーバ
+            192.168.138.2;             // フォワード先DNSサーバ
+        };
+    };
+}
+```
