@@ -11,3 +11,7 @@ groupadd -g 1001 hoge
 ### UID=1001 GID=1001のユーザーhogeを作成
 useradd -u 1001 -g 1001 hoge
 ```
+公開しているwebサーバの証明書を確認
+```
+openssl s_client -connect google.com:443 -showcerts
+```
