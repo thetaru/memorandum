@@ -62,6 +62,7 @@
 LimitNOFILE=100000
 EOF
 
+### 設定を読み込む(この時点では未反映なのでサービスの再起動が必要)
 # systemctl daemon-reload
 ```
 
