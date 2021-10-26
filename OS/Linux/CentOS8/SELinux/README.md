@@ -105,7 +105,8 @@ SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdenied�
 # cat /var/log/audit/audit.log | grep -e denied -e <プロセス名> | tail -1 | audit2allow
 ```
 複数の動作が拒否されていることがあるので、何度か上のコマンドを繰り返せばそれらのルールも追加できます。  
-ただし、SELinuxが原因だが、audit.logに出力されない場合もあることに注意しましょう。  
+ただし、SELinuxが原因だが、audit.logに出力されない場合もあるので注意しましょう。  
+この方法だと、受け身な対処方法なのがツラいです。  
 ※ SELinuxがプロセスに対して発行できるシステムコールを縛っているっぽい？
 
 ## ■ 調査・確認用コマンド
