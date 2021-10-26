@@ -96,7 +96,7 @@ SELINUXTYPE=targeted
 ```
 
 ### ● かんたんな対処方法
-SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdeniedログが出力されている場合、以下の方法でルールを追加することができます。
+SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdeniedログが出力されている場合、以下のコマンドでルールを追加することができます。
 ```
 ### プロセスに対して拒否されている動作(アクション)を確認
 # cat /var/log/audit/audit.log | grep -e denied -e <プロセス名> | tail -20
@@ -104,8 +104,8 @@ SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdenied�
 ### プロセスに対して拒否されている動作(アクション)を(allow)ルールに追加
 # cat /var/log/audit/audit.log | grep -e denied -e <プロセス名> | tail -1 | audit2allow
 ```
-複数の動作が拒否されていることがあるので、何度か上のコマンドを繰り返せばそれらのルールも追加できる。  
-ただし、SELinuxが原因だが、audit.logに出力されない場合もあることに注意する。  
+複数の動作が拒否されていることがあるので、何度か上のコマンドを繰り返せばそれらのルールも追加できます。  
+ただし、SELinuxが原因だが、audit.logに出力されない場合もあることに注意しましょう。  
 ※ SELinuxがプロセスに対して発行できるシステムコールを縛っているっぽい？
 
 ## ■ 調査・確認用コマンド
