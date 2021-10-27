@@ -20,5 +20,17 @@ Disk(HDD,SSD) -> PV(Physical Volume) -> VG(Volume Group) -> LV(Logical Volume)
 
 複数のディスク(の一部または全体)をまとめることで、柔軟なシステム構成をすることが可能になります。  
 (制限はあるものの)動的にシステム変更(縮小・拡張等)ができるのも強みです。
-## ■
-## ■
+## ■ 設定用コマンド
+## ■ 確認用コマンド
+### PV
+```
+# pvdisplay
+```
+### VG
+```
+# vgdisplay
+```
+### LV
+```
+# lvdisplay
+```
