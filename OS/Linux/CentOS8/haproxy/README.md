@@ -4,3 +4,5 @@
 ## ■ Settings
 - [ ] [HAProxyサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/haproxy/haproxy_server) version 1.8.27
 ## ■ Tips
+
+## ■ System architecture
