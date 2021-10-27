@@ -9,6 +9,7 @@
 - [ ] [Security](https://github.com/thetaru/memorandum/tree/master/Security)
 - [ ] [Test](https://github.com/thetaru/memorandum/tree/master/Test)
 - [ ] [Tool](https://github.com/thetaru/memorandum/tree/master/Tool)
+- [ ] [Troubleshooting](https://github.com/thetaru/memorandum/tree/master/Troubleshooting)
 - [ ] [Math](https://github.com/thetaru/memorandum/tree/master/Math)
 
 ## ■ ショートカット
