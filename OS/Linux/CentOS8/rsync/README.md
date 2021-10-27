@@ -22,7 +22,7 @@ rsyncの**コピー元の**パス指定において、  ```/path/to/```と```/pa
 # rsync -ahvn root@192.168.137.1:/etc/resolv.conf /root/work/
 
 ### 例2: 192.168.137.1のホストからskelディレクトリの本体のみをコピーする
-# rsync -ahvn root@192.168.137.1:/etc/skel /etc/skel
+# rsync -ahvn root@192.168.137.1:/etc/skel /etc/
 
 ### 例3: 192.168.137.1のホストからskelディレクトリの中身のみをコピーする
 # rsync -ahvn root@192.168.137.1:/etc/skel/ /etc/skel/
