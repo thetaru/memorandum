@@ -17,6 +17,15 @@ rsyncの**コピー元の**パス指定において、  ```/path/to/```と```/pa
 ### 対象ファイルの確認
 ```
 # rsync -ahvn username@hostname:/path/src/ /path/dest/
+
+### 例1: 192.168.137.1のホストからresolv.confをコピーする
+# rsync -ahvn root@192.168.137.1:/etc/resolv.conf /root/work/
+
+### 例2: 192.168.137.1のホストからskelディレクトリの本体のみをコピーする
+# rsync -ahvn root@192.168.137.1:/etc/skel /etc/skel
+
+### 例3: 192.168.137.1のホストからskelディレクトリの中身のみをコピーする
+# rsync -ahvn root@192.168.137.1:/etc/skel/ /etc/skel/
 ```
 ### ファイルの転送状況の表示
 ```
