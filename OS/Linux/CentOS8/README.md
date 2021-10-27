@@ -37,7 +37,7 @@ lets encrypt でワイルドカード証明書
 - [x] [firewalld](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/firewalld)
 - [x] [ipv6無効化](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ipv6無効化)
 - [x] [kdump](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/kdump)
-- [ ] [LVM](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/lvm)
+- [ ] [LVM](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/LVM)
 - [x] [nftables](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nftables)
 - [x] [repository](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/repository)
 - [ ] [SELinux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/SELinux)
