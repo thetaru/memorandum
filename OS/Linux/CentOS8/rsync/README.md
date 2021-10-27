@@ -1,9 +1,9 @@
 # rsync
 ## Syntax  
 ```
-rsync [OPTION] [username@]hostname:/path/src/ /path/dest
+rsync [OPTION] [username@]hostname:src dest
 ```
-```/path/src/```: コピー元のパス ```/path/dest```: コピー先のパス  
+`src: /path/src/`: コピー元のパス `dest: /path/dest`: コピー先のパス  
 ### :warning:一番大切なコト:warning:
 実際に`rsysnc`コマンドを実行して同期(またはコピー)する前に`--dry-run`オプションを付けて実行しましょう。(同期、コピーを実施せず転送内容のみ出力します)  
 コピー内容が正しいことを確認してから実施してください。
