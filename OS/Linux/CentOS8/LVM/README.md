@@ -6,15 +6,16 @@ Disk(/dev/sdb,/dev/sdc)のブロックデバイス(/dev/sdb1,/dev/sdb2,...,/dev/
 ```
 2. PVをまとめVGを作成する
 ```
-PV(/dev/sdb1,/dev/sdb2,...,/dev/sdc1,/dev/sdc2,...)からVG(VolumeGroup00)を作成する
+PV(/dev/sdb1,/dev/sdb2,...,/dev/sdc1,/dev/sdc2,...)からVG(VG0)を作成する
 ```
 3. VGを分割しLVを作成する
 ```
-VG(VolumeGroup00)を分割しLV(/dev/VolumeGroup00/LogicalVolume00,/dev/VolumeGroup00/LogicalVolume01,...)を作成する
+VG(VG0)を分割しLV(/dev/VG0/LV0,/dev/VG0/LV1,...)を作成する
 ```
-4. LVを
+
+大まかな流れは以下の通りです。
 ```
-Disk(HDD,SSD) -> PV(Physical Volume) -> VG(Volume Group) -> LV(Logical Volume) -> Partition
+Disk(HDD,SSD) -> PV(Physical Volume) -> VG(Volume Group) -> LV(Logical Volume)
 ```
 
 複数のディスク(の一部または全体)をまとめることで、柔軟なシステム構成をすることが可能になります。  
