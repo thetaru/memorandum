@@ -73,6 +73,10 @@ SELINUXTYPE=targeted
 ※ ワイルドカードを使った指定もできます
 
 ### ● マッピングの設定
+#### ◆ SELinuxユーザの確認
+```
+# semanage login -l
+```
 #### ◆ LinuxユーザとSELinuxユーザをマッピング
 ```
 # semanage login -a -s <SELinuxユーザ> <Linuxユーザ>
@@ -80,6 +84,21 @@ SELINUXTYPE=targeted
 #### ◆ マッピングの削除
 ```
 # semanage login -d <Linuxユーザ>
+```
+
+### ● 通信ポートの設定
+#### ◆ SELinuxポートタイプの確認
+SELinuxポートタイプと対応しているプロトコルとポート番号を確認できます。
+```
+# semanage port -l
+```
+#### ◆ SELinuxポートタイプにルールを追加
+```
+# semanage port -a -t <SELinuxポートタイプ> -p <プロトコル(tcp|udp)> <ポート番号>
+```
+#### ◆ SELinuxポートタイプからルールを削除
+```
+# semanage port -d -t <SELinuxポートタイプ> -p <プロトコル(tcp|udp)> <ポート番号>
 ```
 
 ### ● ブール値の設定
