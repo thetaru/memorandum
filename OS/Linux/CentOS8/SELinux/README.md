@@ -96,6 +96,7 @@ SELinuxポートタイプと対応しているプロトコルとポート番号�
 ```
 # semanage port -a -t <SELinuxポートタイプ> -p <プロトコル(tcp|udp)> <ポート番号>
 ```
+※ すでにSELinuxポートタイプと紐付いているプロトコルとポート番号の組は追加できません
 #### ◆ SELinuxポートタイプからルールを削除
 ```
 # semanage port -d -t <SELinuxポートタイプ> -p <プロトコル(tcp|udp)> <ポート番号>
