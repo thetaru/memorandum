@@ -23,3 +23,7 @@ openssl s_client -showcerts -connect example.org:443
 openssl s_server -accept 10443 -cert example.com.crt -key example.com.key -CAfile example.com.ica -WWW
 openssl s_client -connect localhost:10433
 ```
+ハードウェアの情報を表示する(オプション使うのがよい)
+```
+dmidecode
+```
