@@ -145,7 +145,7 @@ include "/etc/named.root.key";
 
 #### /var/named/named.zones
 ```
-zone "example.com." IN {
+zone "example.com" IN {
   type master;
   file "example.com.zone";
   notify yes;
