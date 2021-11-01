@@ -559,6 +559,12 @@ wheelグループに所属するユーザのみsuができるように設定し�
 ## ■ ブートローダーの設定(GRUB2)
 IPv6の無効化やブラックアウトの無効化をします。  
 物理マシンの場合はさらに細かい設定が必要な場合があるので注意しましょう。(物理マシンの詳細情報を読みましょう。)
+### 方法1
+```
+# grubby --args "consoleblank=0 ipv6.disable=1" --update-kernel=ALL
+```
+実行後、`cat /etc/default/grub`の`GRUB_CMDLINE_LINUX`より設定が反映されていることを確認します。
+### 方法2
 ```
 # vi /etc/default/grub
 ```
