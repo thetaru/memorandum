@@ -575,11 +575,19 @@ IPv6の無効化やブラックアウトの無効化をします。
 方法1または方法2を実施後、ブートローダの種類ごとに以下を実施します。
 ### BIOS
 ```
+### GRUB2の起動メニューを生成
 # grub2-mkconfig -o /boot/grub2/grub.cfg
+
+### 構文チェック
+# grub2-script-check /boot/grub2/grub.cfg
 ```
 ### UEFI
 ```
+### GRUB2の起動メニューを生成
 # grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+
+### 構文チェック
+# grub2-script-check /boot/efi/EFI/centos/grub.cfg
 ```
 ## ■ カーネルパラメータの設定
 https://gist.github.com/koudaiii/035120ed116ecf6f1b06  
