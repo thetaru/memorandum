@@ -572,6 +572,7 @@ IPv6の無効化やブラックアウトの無効化をします。
 -  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=<UUID> rhgb quiet"
 +  GRUB_CMDLINE_LINUX="crashkernel=auto resume=UUID=<UUID> rhgb quiet consoleblank=0 ipv6.disable=1"
 ```
+方法1または方法2を実施後、ブートローダの種類ごとに以下を実施します。
 ### BIOS
 ```
 # grub2-mkconfig -o /boot/grub2/grub.cfg
