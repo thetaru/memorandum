@@ -589,6 +589,7 @@ IPv6の無効化やブラックアウトの無効化をします。
 ### 構文チェック
 # grub2-script-check /boot/efi/EFI/centos/grub.cfg
 ```
+※ `grub2-reboot`も検討予定
 ## ■ カーネルパラメータの設定
 https://gist.github.com/koudaiii/035120ed116ecf6f1b06  
 https://note.com/ujisakura/n/n443807235887#o7Prw
