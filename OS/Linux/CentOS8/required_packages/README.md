@@ -11,3 +11,6 @@
 
 ## httpd-tools
 - ab
+
+## yum-utils
+- needs-restarting
