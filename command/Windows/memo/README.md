@@ -45,3 +45,12 @@ w32tm /query /status
 w32tm /query /peers
 w32tm /query /source
 ```
+
+## AD
+```
+### CMD PS
+## すべてのドメコンを対象として分析
+dcdiag /a
+## 自サーバを対象としたドメコンの詳細分析
+dcdiag /v
+```
