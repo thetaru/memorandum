@@ -38,3 +38,10 @@ Get-NetNeighbor [-InterfaceIndex <num>] [-Addressfamily IPv4] [-State Stale,Reac
 StateがPermanetのものはマルチキャストアドレスやブロードキャストアドレスとなっている。  
 InterfaceIndexは`Get-NetAdapter`から取得できる。
 
+## 時刻動機
+```
+### CMD PS
+w32tm /query /status
+w32tm /query /peers
+w32tm /query /source
+```
