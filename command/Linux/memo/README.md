@@ -27,3 +27,13 @@ openssl s_client -connect localhost:10433
 ```
 dmidecode
 ```
+systemdのtarget
+```
+systemctl get-default
+
+# CUI
+systemctl set-default multi-user.target
+
+# GUI
+systemctl set-default graphical.target
+```
