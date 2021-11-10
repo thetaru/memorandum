@@ -563,7 +563,8 @@ IPv6の無効化やブラックアウトの無効化をします。
 ```
 # grubby --args "consoleblank=0 ipv6.disable=1" --update-kernel=ALL
 ```
-実行後、`cat /etc/default/grub`の`GRUB_CMDLINE_LINUX`より設定が反映されていることを確認します。
+実行後、`cat /etc/default/grub`の`GRUB_CMDLINE_LINUX`より設定が反映されていることを確認します。  
+`grub2-editenv`
 ### 方法2
 ```
 # vi /etc/default/grub
