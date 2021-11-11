@@ -90,9 +90,9 @@ global
     cpu-map auto:1/1-2   0
     cpu-map auto:2/3-4   1
     cpu-map auto:3/5-6   2
-    cpu-map auto:5/7-8   3
-    cpu-map auto:6/9-10  4
-    cpu-map auto:7/11-12 5
+    cpu-map auto:4/7-8   3
+    cpu-map auto:5/9-10  4
+    cpu-map auto:6/11-12 5
     (snip)
 ```
 ### ● ファイルディスクリプタ数
