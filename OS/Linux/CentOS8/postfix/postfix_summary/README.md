@@ -280,6 +280,14 @@ relay_domains =
 ```
 ```
 
+## ● smtpd_etrn_restrictions
+`ETRN`コマンドの制御
+### ■ 設定例
+```
+smtpd_etrn_restrictions = permit_mynetworks,
+                          reject
+```
+
 ## ● smtpd_client_restrictions
 Postfixサーバへの接続するホストの許可/拒否を設定します。
 ### ■ 設定例
