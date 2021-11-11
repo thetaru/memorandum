@@ -74,7 +74,12 @@ EOF
 ## ■ チューニング
 ### ● プロセス数
 ```
-globalセクションよりnbprocオプションで設定可能
+    ### CPUのコア数に依存する
+    nbproc  4
+    cpu-map  1 1
+    cpu-map  2 2
+    cpu-map  3 3
+    cpu-map  4 4
 ```
 ### ● ファイルディスクリプタ数
 ```
