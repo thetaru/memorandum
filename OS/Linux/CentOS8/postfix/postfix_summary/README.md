@@ -281,16 +281,21 @@ relay_domains =
 ```
 
 ## ● smtpd_client_restrictions
+Postfixサーバへの接続するホストの許可/拒否を設定します。
 ### ■ 設定例
 ```
+smtpd_client_restrictions = permit_mynetworks,                                          # $mynetworksのホストからの接続を許可
+                            check_client_access hash:/etc/postfix/reject_access_sender, #
+                            reject_invalid_hostname,                                    #
+                            permit                                                      #
 ```
 
 ## ● smtpd_helo_restrictions
 ### ■ 設定例
 ```
-smtpd_helo_restrictions = permit_mynetworks, 
-                          reject_invalid_helo_hostname, 
-                          reject_non_fqdn_helo_hostname
+smtpd_helo_restrictions = permit_mynetworks,            # $mynetworksのホストからの接続を許可
+                          reject_invalid_helo_hostname, #
+                          reject_non_fqdn_helo_hostname #
 ```
 
 ## ● smtpd_helo_required
@@ -306,25 +311,28 @@ spam遮断ポリシーを設定します。
 `RCPT TO`コマンドで通知される宛先メールアドレスに応じてメール受信の許可/拒否を設定します。
 ### ■ 設定例
 ```
-smtpd_recipient_restrictions = permit_mynetworks,
-　　　　　　　　　　　　　　　    regexp:/etc/postfix/recipient_checks.reg,
-　　　　　　　　　　　　　　　    check_client_access hash:/etc/postfix/bad_sender,
-　　　　　　　　　　　　　　　    check_relay_domains
+smtpd_recipient_restrictions = permit_mynetworks,                                          # $mynetworksのホストからの接続を許可
+                               regexp:/etc/postfix/recipient_checks.reg,                   #
+                               check_client_access hash:/etc/postfix/reject_access_sender, #
+                               check_relay_domains                                         # 
 ```
 
 ## ● smtpd_relay_restrictions
 リレーポリシーを設定します。
 ### ■ 設定例
 ```
-smtpd_relay_restrictions = permit_mynetworks,         # ローカルネットワークを許可
+smtpd_relay_restrictions = permit_mynetworks,         # $mynetworksのホストからの接続を許可
                            permit_sasl_authenticated, # SASL認証による認証を通れば許可
                            defer_unauth_destination   # サブネットかメールサーバ上のアドレス以外不許可
 ```
 
 ## ● smtpd_sender_restrictions
-https://qiita.com/tukiyo3/items/902b3c859346f6c00168
+`MAIL FROM`コマンドで通知される送信元メールアドレスに応じてメール受信の許可/拒否を設定します。
 ### ■ 設定例
 ```
+smtpd_sender_restrictions = check_sender_access hash:/etc/postfix/reject_access_sender # 
+                            reject_non_fqdn_sender,                                    # 送信元メールアドレスがFQDN形式でない場合に拒否
+                            reject_unknown_sender_domain                               # 送信元メールアドレスのドメインが存在しない(MX,Aレコードを引けない)場合に拒否
 ```
 
 ## ● smtpd_tls_loglevel
