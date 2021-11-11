@@ -75,17 +75,24 @@ EOF
 ### ● プロセス数
 HAProxyはデフォルトだとシングルプロセスのみを使用してリクエストを処理するため、1つのCPUしか利用しません。  
 複数のCPUを使う場合は、HAProxyのプロセス数を増やし、それぞれを別のCPUに割り当てるよう設定します。  
-利用可能なCPUは`lshw -short -class cpu`により取得できます。
+利用可能なCPUは`lshw -short -class cpu`により取得できます。  
+※ HAProxyの推奨設定は、プロセス数1としている
 ```
+# システム上のCPU数: 6 (1CPU あたり 1コア 2スレッド) (CPU: 0-5)
+# システム上の合計スレッド数: 6 * 2 = 12 
 global
     (snip)
-    # プロセス数を設定(CPUのコア数と一致させればよい)
-    nbproc  4
-    # プロセスをCPUに割り当てる
-    cpu-map  1 1
-    cpu-map  2 2
-    cpu-map  3 3
-    cpu-map  4 4
+    # プロセス数を設定 (HAProxy process: 1-6)
+    nbproc 6
+    # スレッド数を設定 (thread: 1-12)
+    nbthread 12
+    # プロセスをCPUに割り当てる (process_number/thread_range cpu_range)
+    cpu-map auto:1/1-2   0
+    cpu-map auto:2/3-4   1
+    cpu-map auto:3/5-6   2
+    cpu-map auto:5/7-8   3
+    cpu-map auto:6/9-10  4
+    cpu-map auto:7/11-12 5
     (snip)
 ```
 ### ● ファイルディスクリプタ数
