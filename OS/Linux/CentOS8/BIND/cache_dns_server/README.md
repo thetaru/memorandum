@@ -157,15 +157,15 @@ zone "." IN {
 zone "example.com" {
   type forward;
   forward only;
-  forwarders { internalnet; };
-  allow-query { localhost; internalnet; };
+  forwarders { 192.168.138.21; 192.168.138.22; };
+  allow-query { internalnet; };
 };
 
 zone "138.168.192.in-addr.arpa" {
   type forward;
   forward only;
-  forwarders { internalnet; };
-  allow-query { localhost; internalnet; };
+  forwarders { 192.168.138.21; 192.168.138.22; };
+  allow-query { internalnet; };
 };
 ```
 
