@@ -86,7 +86,7 @@ global
     nbproc 6
     # スレッド数を設定 (thread: 1-12)
     nbthread 12
-    # プロセスをCPUに割り当てる (process_number/thread_range cpu_range)
+    # プロセスをCPUに割り当てる (process_range/thread_range cpu_range)
     cpu-map auto:1/1-2   0
     cpu-map auto:2/3-4   1
     cpu-map auto:3/5-6   2
