@@ -93,6 +93,8 @@ global
     cpu-map auto:4/7-8   3
     cpu-map auto:5/9-10  4
     cpu-map auto:6/11-12 5
+    # 統計情報取得の役割を持たせるプロセスを指定する(?)
+    stats bind-process 1
     (snip)
 ```
 CPU周りは物理マシンと仮想マシンで扱いが結構かわるので注意したほうがよさそう  
