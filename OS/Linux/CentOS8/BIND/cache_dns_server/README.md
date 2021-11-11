@@ -147,7 +147,7 @@ include "/var/named/named.zones";
 include "/etc/named.rfc1912.zones";
 include "/etc/named.root.key";
 ```
-### /var/named/named.zones
+#### /var/named/named.zones
 ```
 zone "." IN {
   type hint;
