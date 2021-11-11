@@ -148,12 +148,14 @@ include "/etc/named.rfc1912.zones";
 include "/etc/named.root.key";
 ```
 #### /var/named/named.zones
+DNSSEC未対応のDNSにforwardする場合、名前解決ができないため、named.confの`dnssec-validation`を`no`に設定する必要があります。
 ```
 zone "." IN {
   type hint;
   file "named.ca";
 };
 
+/*
 zone "example.com" {
   type forward;
   forward only;
@@ -167,6 +169,7 @@ zone "138.168.192.in-addr.arpa" {
   forwarders { 192.168.138.21; 192.168.138.22; };
   allow-query { internalnet; };
 };
+ */
 ```
 
 ### ● 文法チェック
