@@ -288,21 +288,37 @@ relay_domains =
 ## ● smtpd_helo_restrictions
 ### ■ 設定例
 ```
+smtpd_helo_restrictions = permit_mynetworks, 
+                          reject_invalid_helo_hostname, 
+                          reject_non_fqdn_helo_hostname
 ```
 
 ## ● smtpd_helo_required
+`HELO`コマンドでホスト名を通知しないホストの接続の許可/拒否を設定します。
 ### ■ 設定例
 ```
+### ホスト名を通知しないホストの接続を拒否する
+smtpd_helo_required = yes
 ```
 
 ## ● smtpd_recipient_restrictions
+spam遮断ポリシーを設定します。  
+`RCPT TO`コマンドで通知される宛先メールアドレスに応じてメール受信の許可/拒否を設定します。
 ### ■ 設定例
 ```
+smtpd_recipient_restrictions = permit_mynetworks,
+　　　　　　　　　　　　　　　    regexp:/etc/postfix/recipient_checks.reg,
+　　　　　　　　　　　　　　　    check_client_access hash:/etc/postfix/bad_sender,
+　　　　　　　　　　　　　　　    check_relay_domains
 ```
 
 ## ● smtpd_relay_restrictions
+リレーポリシーを設定します。
 ### ■ 設定例
 ```
+smtpd_relay_restrictions = permit_mynetworks,         # ローカルネットワークを許可
+                           permit_sasl_authenticated, # SASL認証による認証を通れば許可
+                           defer_unauth_destination   # サブネットかメールサーバ上のアドレス以外不許可
 ```
 
 ## ● smtpd_sender_restrictions
