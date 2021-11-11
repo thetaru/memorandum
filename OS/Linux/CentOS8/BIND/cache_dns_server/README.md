@@ -3,8 +3,7 @@
 ### ● 動作環境
 |項目|ホスト名|IPアドレス|
 |:---|:---|:---|
-|権威DNS(マスター)サーバ|dns-01(.exmaple.com)|192.168.138.20|
-|権威DNS(スレーブ)サーバ|dns-02(.example.com)|192.168.138.21|
+|キャッシュDNSサーバ|dns-03(.exmaple.com)|192.168.138.22|
 
 ### ● 設定方針
 - optionsステートメントでは、例外を除き無効にするよう設定し、各viewやzoneで個別に設定する。\*1)
@@ -76,7 +75,7 @@ options {
   hostname "";
   listen-on port 53 {
     127.0.0.1;
-    192.168.138.20;
+    192.168.138.22;
   };
   listen-on-v6 port 53 { none; };
   notify no;
@@ -87,14 +86,20 @@ options {
   secroots-file   "/var/named/data/named.secroots";
   recursing-file  "/var/named/data/named.recursing";
   
-  allow-query       { none; };
-  allow-query-cache { none; };
+  allow-query       { internalnet; };
+  allow-query-cache { internalnet; };
   
   allow-transfer { none; };
   allow-update { none; };
   
-  recursion no;
-  allow-recursion { none; };
+  recursion yes;
+  allow-recursion { internalnet; };
+  
+  max-ncache-ttl 300;
+  max-cache-ttl 3600;
+  recursive-clients 2000;
+  cleaning-interval 3600;
+  max-cache-size 200M;
   
   empty-zones-enable yes;
   
@@ -138,9 +143,30 @@ logging {
   category security { security_log; };
 };
 
-include "named.zones";
+include "/var/named/named.zones";
 include "/etc/named.rfc1912.zones";
 include "/etc/named.root.key";
+```
+### /var/named/named.zones
+```
+zone "." IN {
+  type hint;
+  file "named.ca";
+};
+
+zone "example.com" {
+  type forward;
+  forward only;
+  forwarders { internalnet; };
+  allow-query { localhost; internalnet; };
+};
+
+zone "138.168.192.in-addr.arpa" {
+  type forward;
+  forward only;
+  forwarders { internalnet; };
+  allow-query { localhost; internalnet; };
+};
 ```
 
 ### ● 文法チェック
