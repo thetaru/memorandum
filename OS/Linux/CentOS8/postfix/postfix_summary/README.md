@@ -229,6 +229,7 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ```
 
 ## ● message_size_limit
+メールサイズの上限をバイト単位で指定します。
 ### ■ 設定例
 ```
 ```
