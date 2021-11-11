@@ -236,6 +236,15 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 message_size_limit= 52428800
 ```
 
+## ● parent_domain_matches_subdomain
+`relay_domains`に含まれるドメイン(e.g. example.com)のサブドメイン(e.g. .example.com)のリレーを許可します。  
+`parent_domain_matches_subdomain`の設定値を空にすることで、明示的に`.domain.tld`形式を指定できます。
+### ■ 設定例
+```
+### 空
+relay_domains =
+```
+
 ## ● sender_canonical_classes
 ### ■ 設定例
 ```
