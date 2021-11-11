@@ -142,7 +142,7 @@ zone "example.com." IN {
   masters { 192.168.138.20; };
   file "slaves/example.com.zone";
   notify yes;
-  allow-query { localhost; internalnet; };
+  allow-query { internalnet; };
   allow-transfer { none; };
 };
 
@@ -151,7 +151,7 @@ zone "138.168.192.in-addr.arpa" {
   masters { 192.168.138.20; };
   file "slaves/138.168.192.rev";
   notify yes;
-  allow-query { localhost; internalnet; };
+  allow-query { internalnet; };
   allow-transfer { none; };
 };
 ```
