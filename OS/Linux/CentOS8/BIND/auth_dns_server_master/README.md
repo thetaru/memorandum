@@ -149,7 +149,7 @@ zone "example.com" {
   type master;
   file "example.com.zone";
   notify yes;
-  allow-query { localhost; internalnet; };
+  allow-query { internalnet; };
   allow-transfer { 192.168.138.21; };
   allow-update { none; };
 };
@@ -158,7 +158,7 @@ zone "138.168.192.in-addr.arpa" {
   type master;
   file "138.168.192.rev";
   notify yes;
-  allow-query { localhost; internalnet; };
+  allow-query { internalnet; };
   allow-transfer { 192.168.138.21; };
   allow-update { none; };
 };
