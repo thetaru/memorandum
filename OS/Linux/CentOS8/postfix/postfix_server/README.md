@@ -45,4 +45,9 @@
 # postconf -n
 ```
 ## ■ 設定の確認
+- STARTTLSが有効であること
+```
+# openssl s_client -connect <メールサーバのIPアドレス>
+```
+
 ## ■ 負荷テスト項目
