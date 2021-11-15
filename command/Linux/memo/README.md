@@ -38,9 +38,3 @@ ps -up $(pgrep <プロセス名>)
 # -oでフォーマットいじれる
 ps -o user,pid,uid,tty,cmd -p $(pgrep <プロセス名>)
 ```
-
-kdumpctl
-```
-# kdumpが予約しているメモリ容量を確認する
-kdumpctl showmem
-```
