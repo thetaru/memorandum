@@ -37,3 +37,9 @@ systemctl set-default multi-user.target
 # GUI
 systemctl set-default graphical.target
 ```
+
+ps
+```
+ps -lC <プロセス名>
+ps -p $(pgrep <プロセス名>)
+```
