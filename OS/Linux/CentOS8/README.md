@@ -48,9 +48,7 @@ lets encrypt でワイルドカード証明書
 - [ ] [(必要になった)パスワードポリシーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/PasswordPolicy)
 
 ## ■ Software Settings
-- [ ] [(書きかけ)389-ds](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/389-ds)
 - [x] [Ansible](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible)
-- [ ] [(書きかけ)AWX](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/AWX)
 - [ ] [apache](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/apache)
 - [ ] [BIND](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/BIND)
 - [x] [chrony](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
