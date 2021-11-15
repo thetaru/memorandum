@@ -61,9 +61,12 @@ if ($programname startswith "haproxy") then {
 EOF
 
 # vi /etc/haproxy/haproxy.cfg
--  log         127.0.0.1 local2
-+  log         /dev/log local2
-
+   global
+-      log         127.0.0.1 local2
++      log         /dev/log local2
+```
+サービスを再起動して、設定を読み込みます。
+```
 # systemctl restart haproxy
 # systemctl restart rsyslog
 ```
