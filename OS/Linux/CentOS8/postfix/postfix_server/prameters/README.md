@@ -33,6 +33,7 @@ header_checks = regexp:/etc/postfix/header_checks
 
 /^Received:\sfrom .*\[127\.0\.0\.1\]|^Received:\sfrom .*\[192\.168.*\]|^Received:\sfrom .*\[172\.16.*\]/ IGNORE
 ```
+※ ただし、日本語を扱う場合は文字コード(UTF-8など)ごとにMIMEにエンコードする必要があります
 
 #### header_checks.db
 postmapコマンドでheader_checksファイルをhash化したDB(header_checks.db)を作成します。
