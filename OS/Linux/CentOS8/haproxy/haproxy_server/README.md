@@ -48,11 +48,24 @@ backendセクションで使えるパラメータは[こちら](https://github.c
 ## 認証
 ## ■ ロギング
 ### ● rsyslog
+デフォルトの設定ではchroot環境のため、ひと手間加えます。
 ```
-### haproxyのログのファシリティがlocal2の場合
+# mkdir -p /var/lib/haproxy/dev
+
 # cat << EOF > /etc/rsyslog.d/haproxy.conf
-local2.* /var/log/haproxy/haproxy.log
+$AddUnixListenSocket /var/lib/haproxy/dev/log
+if ($programname startswith "haproxy") then {
+  action(type="omfile" file="/var/log/haproxy.log")
+  stop
+}
 EOF
+
+# vi /etc/haproxy/haproxy.cfg
+-  log         127.0.0.1 local2
++  log         /dev/log local2
+
+# systemctl restart haproxy
+# systemctl restart rsyslog
 ```
 ### ● logrotate
 ```
