@@ -99,7 +99,7 @@ myhostname = mail-01.example.com
 
 ## ● myorigin
 ローカルで送信されたメールがどのドメインから来るように見えるかを設定する。  
-一般的に、$myhostname(デフォルト)か$mydomainを指定します。  
+一般的に、\$myhostname(デフォルト)か\$mydomainを指定します。  
   
 送信者のアドレスがユーザ名のみの場合、<ユーザ名>@<$myorigin>のように@以降に設定値が補完されます。  
 ※ 例えば、maillogに`From: root@localhost.localdomain`といった風に記載されます
