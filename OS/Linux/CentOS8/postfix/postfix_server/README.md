@@ -47,7 +47,7 @@
 ## ■ 設定の確認
 ### ● STARTTLSが有効であること
 ```
-# openssl s_client -connect <メールサーバのIPアドレス> -starttls smtp
+# openssl s_client -quiet -connect <メールサーバのIPアドレス> -starttls smtp
 ```
 
 ## ■ 負荷テスト項目
