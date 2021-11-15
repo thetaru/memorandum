@@ -297,6 +297,7 @@ smtpd_client_restrictions = permit_mynetworks,                                  
 ```
 
 ## ● smtpd_helo_restrictions
+`HELO`コマンドでホスト名を通知しないホストの接続の許可/拒否を設定します。
 ### ■ 設定例
 ```
 smtpd_helo_restrictions = permit_mynetworks,            # $mynetworksのホストからの接続を許可
@@ -304,8 +305,7 @@ smtpd_helo_restrictions = permit_mynetworks,            # $mynetworksのホス�
                           reject_non_fqdn_helo_hostname #
 ```
 
-## ● smtpd_helo_required
-`HELO`コマンドでホスト名を通知しないホストの接続の許可/拒否を設定します。
+## ● smtpd_helo_require
 ### ■ 設定例
 ```
 ### ホスト名を通知しないホストの接続を拒否する
