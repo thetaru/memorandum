@@ -10,3 +10,4 @@
 - [ ] [ネットワークの統計情報を取得する](https://github.com/thetaru/memorandum/tree/master/command/Linux/network_statistics)
 - [ ] [複数ファイルで共通する行を見つける](https://github.com/thetaru/memorandum/tree/master/command/Linux/grep_common_line)
 - [ ] [UID/GIDを指定したユーザ作成](https://github.com/thetaru/memorandum/tree/master/command/Linux/user_fixed_uid_gid)
+- [ ] [kdumpが予約しているメモリ量を確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/kdump_reserved_mem)
