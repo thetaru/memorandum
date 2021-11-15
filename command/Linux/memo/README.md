@@ -42,4 +42,5 @@ ps
 ```
 ps -lC <プロセス名>
 ps -p $(pgrep <プロセス名>)
+ps -o user,pid,uid,tty,cmd -p $(pgrep <プロセス名>)
 ```
