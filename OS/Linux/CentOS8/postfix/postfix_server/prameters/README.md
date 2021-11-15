@@ -35,10 +35,9 @@ header_checks = regexp:/etc/postfix/header_checks
 /^Received:\sfrom .*\[127\.0\.0\.1\]|^Received:\sfrom .*\[192\.168.*\]|^Received:\sfrom .*\[172\.16.*\]/ IGNORE
 ```
 
-### ■ header_checks.dbの作成
-postmapコマンドでheader_checksファイルをhash化したDBを作成します。
+#### header_checks.db
+postmapコマンドでheader_checksファイルをhash化したDB(header_checks.db)を作成します。
 ```
-# cp -p /etc/postfix/header_checks{,.$(date +%Y%m%d)}
 # postmap /etc/postfix/header_checks
 ```
 
@@ -143,10 +142,9 @@ relay_recipient_maps = hash:/etc/postfix/relay_recipients
 test1@example.jp
 ```
 
-### ■ relay_recipients.dbの作成
-postmapコマンドでrelay_recipientsファイルをhash化したDBを作成します。
+#### relay_recipients.db
+postmapコマンドでrelay_recipientsファイルをhash化したDB(relay_recipients.db)を作成します。
 ```
-# cp -p /etc/postfix/relay_recipients{,.$(date +%Y%m%d)}
 # postmap /etc/postfix/relay_recipients
 ```
 
@@ -397,9 +395,8 @@ example.com        :
 ```
 ※ [ ]有りはAレコードで解決し、[ ]無しはMXレコードで解決することに注意
 
-### ■ transport.dbの作成
-postmapコマンドでtransportファイルをhash化したDBを作成します。
+#### transport.db
+postmapコマンドでtransportファイルをhash化したDB(transport.db)を作成します。
 ```
-# cp -p /etc/postfix/transport{,.$(date +%Y%m%d)}
 # postmap /etc/postfix/transport
 ```
