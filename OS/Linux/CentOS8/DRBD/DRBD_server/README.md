@@ -109,11 +109,11 @@ r0 role:Secondary
 # lsblk -f
 ```
 
-### DRBDデバイスのマウント
+## ■ DRBDデバイスのマウント
 DRBDデバイスはnode-01(プライマリ)でしかマウントすることができないことに注意します。  
 テスト等でnode-02(セカンダリ)にマウントする場合、node-01(プライマリ)をセカンダリに降格し、node-02(セカンダリ)をプライマリに昇格する必要があります。
 ```
-[root@node-01 ~]# mkdir /mnt/test
+# mkdir /mnt/test
 [root@node-01 ~]# mount /dev/drbd1 /mnt/test
 ```
 
