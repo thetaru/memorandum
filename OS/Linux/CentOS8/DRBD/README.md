@@ -3,4 +3,4 @@
 - [ ] [DRBDサーバの構築](DRBD_server)
 
 ## ■ Tips
-- [ ] [フェイルオーバー試験]()
+- [ ] [フェイルオーバーの試験](Failover_test)
