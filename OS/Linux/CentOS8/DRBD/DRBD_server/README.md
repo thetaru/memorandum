@@ -106,6 +106,7 @@ r0 role:Secondary
 セカンダリはプライマリと同期しているため、プライマリ側でファイルシステムを作成すれば十分です。 
 ```
 [root@node-01 ~]# mkfs.xfs /dev/drbd1
+# lsblk -f
 ```
 
 ## ■ 設定の反映
