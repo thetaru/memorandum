@@ -44,7 +44,7 @@ lets encrypt でワイルドカード証明書
 - [x] [chrony](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chrony)
 - [ ] [(書きかけ)Digdag](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/digdag)
 - [ ] [Docker](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Docker)
-- [ ] [(書きかけ)DRDB](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/DRDB)
+- [ ] [DRBD](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/DRBD)
 - [ ] [Elasticsearch](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Elasticsearch)
 - [x] [GitLab](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/GitLab)
 - [ ] [Kubernetes](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/k8s)
