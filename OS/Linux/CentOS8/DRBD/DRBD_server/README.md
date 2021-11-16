@@ -111,7 +111,7 @@ node-01(プライマリ)のDRBDデバイスにファイルシステムを作成�
 ```
 node-02(セカンダリ)をプライマリに昇格させた後、DRBDデバイスにファイルシステムを作成します。
 ```
-[root@node-02 ~]# drbdadm secondary r0
+[root@node-02 ~]# drbdadm primary r0
 [root@node-02 ~]# mkfs.xfs /dev/drbd1
 ```
 `node-01`と`node-02`のDRBDデバイスにファイルシステムを作成できたので元の役割に戻します。
