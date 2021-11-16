@@ -56,6 +56,18 @@ resource r0 {
 ```
 ※ `/etc/drbd.conf`が`/etc/drbd.d/r0.res`をインクルードします
 
+### DRBDリソースの初期化
+```
+### リソースr0にメタデータを作成
+# drbdadm create-md r0
+```
+
+### DRBDリソースの有効化
+```
+### リソースr0を有効化
+# drbdadm up r0
+```
+
 ## ■ 主設定ファイル /etc/drbd.conf
 ### ● xxxセクション
 ### ● yyyディレクティブ
