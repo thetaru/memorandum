@@ -73,11 +73,7 @@ lets encrypt でワイルドカード証明書
 - [ ] [Zabbix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Zabbix)
 ## ■ Tips
 - [x] [OOM-Killerにヤられないために](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/oom_killer)
-- [ ] [(やるか悩んでる)AnsibleとGitLabでCI/CD環境構築](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Ansible+GitLab)
-- [ ] [(書きかけ)tmpfsについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_tmpfs)
-- [ ] [(書きかけ)メモリ断片化について](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/memory_fragmentation)
 - [ ] [(書きたい)SNMPについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_snmp)
-- [ ] [(書きたい)カーネルパラメータについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_KernelParam)
 - [x] [ゲートウェイサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/gateway_srv)
 - [x] [スタティックルートの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/StaticRoute)
 - [x] [アプデの際の注意](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/update_note)
