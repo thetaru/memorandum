@@ -73,7 +73,7 @@ http://www.ice.is.kit.ac.jp/~umehara/misc/comp/20091218c.html
 ## ● mydestination (★)
 ### ■ 設定例
 ```
-$myhostname, localhost.$mydomain, localhost
+mydestination = $myhostname, localhost.$mydomain, localhost
 ```
 
 ## ● mydomain (★)
