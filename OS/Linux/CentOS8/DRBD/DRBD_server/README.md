@@ -73,7 +73,7 @@ resource r0 {
 ### DRBD同期
 #### プライマリ(node-01)の指定
 ```
-[root@node-01 ~]# drbdadm primary r0
+[root@node-01 ~]# drbdadm primary --force r0
 ```
 #### セカンダリ(node-02)の指定
 ```
