@@ -48,10 +48,20 @@ backendセクションで使えるパラメータは[こちら](https://github.c
 ## 認証
 ## ■ ロギング
 ### ● rsyslog
-デフォルトの設定ではchroot環境のため、ひと手間加えます。
+デフォルトの設定ではchroot環境のため、ひと手間加えます。  
+ソケット格納用のディレクトリを作成します。
 ```
 # mkdir -p /var/lib/haproxy/dev
-
+```
+haproxyのグローバルセクションのlogパラメータを設定します。
+```
+# vi /etc/haproxy/haproxy.cfg
+   global
+-      log         127.0.0.1 local2
++      log         /dev/log  local2
+```
+rsyslogのインクルードファイルを作成し、haproxyのログを指定のログファイル(今回は、/var/log/haproxy.log)に出力させます。
+```
 # cat << EOF > /etc/rsyslog.d/haproxy.conf
 $AddUnixListenSocket /var/lib/haproxy/dev/log
 if ($programname startswith "haproxy") then {
@@ -59,11 +69,6 @@ if ($programname startswith "haproxy") then {
   stop
 }
 EOF
-
-# vi /etc/haproxy/haproxy.cfg
-   global
--      log         127.0.0.1 local2
-+      log         /dev/log local2
 ```
 サービスを再起動して、設定を読み込みます。
 ```
