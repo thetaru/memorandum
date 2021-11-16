@@ -42,7 +42,7 @@ lets encrypt でワイルドカード証明書
 - [x] [nftables](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nftables)
 - [x] [repository](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/repository)
 - [ ] [SELinux](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/SELinux)
-- [ ] [SNMPについて](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_snmp)
+- [ ] [SNMP](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/about_snmp)
 - [x] [xfsファイルシステムのバックアップとリストア方法](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_backup)
 - [x] [xfsクォータ](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_quota)
 - [x] [xrdp](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xrdp)
