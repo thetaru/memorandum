@@ -41,13 +41,13 @@
 ```
 ```
 resource r0 {
-  on node1 {
+  on node-01 {
     device    /dev/drbd1;
     disk      /dev/mapper/drbdpool-drbdata;
     address   192.168.137.30:7789;
     meta-disk internal;
   }
-  on node2 {
+  on node-02 {
     device    /dev/drbd1;
     disk      /dev/mapper/drbdpool-drbdata;
     address   192.168.137.31:7789;
