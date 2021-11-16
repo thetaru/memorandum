@@ -1,3 +1,3 @@
 # DRBD
 ## ■ Settings
-- [ ] [構築]()
+- [ ] [DRBDサーバの構築](DRBD_server)
