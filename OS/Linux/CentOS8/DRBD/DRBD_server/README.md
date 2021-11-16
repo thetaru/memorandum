@@ -33,20 +33,21 @@
 # lvcreate -n drbdata -l100%FREE drbdpool
 ```
 ### DRBDリソースの定義
-リソースにノード間で同期させるLVをそれぞれ記述します。
+リソースにノード間で同期させるLVをそれぞれ記述します。  
+以下に出ているデバイス`/dev/drbd1`はDRBDデバイスのことを指し、DRBDリソースの有効化時に作成されます。
 ```
 # vi /etc/drbd.d/r0.res
 ```
 ```
 resource r0 {
   on node1 {
-    device    /dev/drbdpool;
+    device    /dev/drbd1;
     disk      /dev/mapper/drbdpool-drbdata;
     address   192.168.137.30:7789;
     meta-disk internal;
   }
   on node2 {
-    device    /dev/drbdpool;
+    device    /dev/drbd1;
     disk      /dev/mapper/drbdpool-drbdata;
     address   192.168.137.31:7789;
     meta-disk internal;
