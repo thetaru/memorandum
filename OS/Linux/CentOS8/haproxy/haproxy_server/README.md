@@ -40,7 +40,7 @@ backendセクションで使えるパラメータは[こちら](https://github.c
 ```
 ## ■ セキュリティ
 ## firewall
-- 任意/tcp
+- FrontendでListenしているTCPポート
 
 ## 証明書
 クライアント-HAProxyサーバ間をSSL通信でやりとりします。(HAProxyサーバ-バックエンドサーバ間は非SSL通信)  
