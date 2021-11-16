@@ -5,12 +5,17 @@
 # rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 # yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
 ```
+### DRBDパッケージのインストール
+```
+# yum search drbd
+# yum install drbd90-utils kmod-drbd90
+```
 ## ■ バージョンの確認
 ## ■ サービスの起動
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-||||
+||6996-7800/tcp||
 
 ## ■ 主設定ファイル xxx.conf
 ### ● xxxセクション
