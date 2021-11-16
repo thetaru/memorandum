@@ -1,12 +1,25 @@
 # DRBDサーバの構築
 ## ■ 前提条件
+以下の作業は`node-01`、`node-02`それぞれで実施します。
 |サーバ名|IPアドレス|同期ディスク|
 |:---|:---|:---|
 |node-01|192.168.137.1|/dev/sdb|
 |node-02|192.168.137.2|/dev/sdb|
 
 ## ■ 事前準備
-### デバイス
+### パーティションの作成
+デバイス`/dev/sdb`をまるごと1つのパーティション`/dev/sdb1`にします。
+```
+# parted -s -a optimal -- /dev/sdb mklabel gpt
+# parted -s -a optimal -- /dev/sdb mkpart primary 0% 100%
+# parted -s -- /dev/sdb align-check optimal 1
+```
+### PV・VG・LVの作成
+```
+# pvcreate /dev/sdb1
+# vgcreate drbdpool /dev/sdb1
+# lvcreate -n drbdata -l 100% FREE drbdpool
+```
 
 ## ■ インストール
 ### elrepoレポジトリの登録
