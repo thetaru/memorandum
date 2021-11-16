@@ -124,7 +124,8 @@ relay_domains = example.com,example.jp
 ```
 
 ## ● relay_recipient_maps
-relay_domainsにマッチするドメインを持つメールアドレスのリストファイルを指定します。
+relay_domainsにマッチするドメインを持つメールアドレスのリストファイルを指定します。  
+リストファイルに記載したメールアドレスのみ中継されるようになるため、relay_domainsの制限となります。
 ### ■ 設定例
 #### /etc/postfix/main.cf
 ```
