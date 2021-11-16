@@ -106,7 +106,8 @@ myorigin = $mydomain
 
 ## ● mynetworks (★)
 外部ドメインへのメールをリレーを許可するクライアントを指定します。  
-また、mynetworksの設定の優先度は高いためリレーを許可する場合は必要最小限に留めましょう。
+また、mynetworksの設定の優先度は高いためリレーを許可する場合は必要最小限に留めましょう。  
+中継可否はmynetworksとrelay_domains(ただし、優先順位はmynetworks > relay_domains)で制御し、転送先はtransport_mapに従う動きをします。
 ### ■ 設定例
 ```
 mynetworks = 128.0.0.1/32,192.168.137.0/24,192.168.138.0/24
@@ -115,6 +116,7 @@ mynetworks = 128.0.0.1/32,192.168.137.0/24,192.168.138.0/24
 ## ● relay_domains (★)
 サーバがリレーする配送先のドメイン(適用範囲はサブドメインを含む)を指定します。  
 mynetworksで指定したIPアドレス範囲に含まれる送信元IPアドレスの場合、relay_domainsで指定したドメインと関係なく中継されます。  
+中継可否はmynetworksとrelay_domains(ただし、優先順位はmynetworks > relay_domains)で制御し、転送先はtransport_mapに従う動きをします。  
 ※ mynetworksで指定したIPアドレス範囲に含まれない場合、relay_domainsの設定が適用される
 ### ■ 設定例
 ```
@@ -367,7 +369,8 @@ smtpd_sender_restrictions = check_sender_access hash:/etc/postfix/reject_access_
 ```
 
 ## ● transport_maps
-リレー先メールサーバのリストファイルを指定します。
+リレー先メールサーバのリストファイルを指定します。  
+中継可否はmynetworksとrelay_domains(ただし、優先順位はmynetworks > relay_domains)で制御し、転送先はtransport_mapに従う動きをします。
 ### ■ 設定例
 #### /etc/postfix/main.cf
 ```
