@@ -103,39 +103,11 @@ r0 role:Secondary
 ```
 
 ### DRBDデバイスにファイルシステムを作成
-セカンダリは読み込み専用のため、プライマリの状態にしないとファイルシステムを作成できません。  
-node-01(プライマリ)のDRBDデバイスにファイルシステムを作成した後、セカンダリに降格させます。  
+セカンダリはプライマリと同期しているため、プライマリ側でファイルシステムを作成すれば十分です。 
 ```
 [root@node-01 ~]# mkfs.xfs /dev/drbd1
-[root@node-01 ~]# drbdadm secondary r0
-```
-node-02(セカンダリ)をプライマリに昇格させた後、DRBDデバイスにファイルシステムを作成します。
-```
-[root@node-02 ~]# drbdadm primary r0
-[root@node-02 ~]# mkfs.xfs /dev/drbd1
-```
-`node-01`と`node-02`のDRBDデバイスにファイルシステムを作成できたので元の役割に戻します。
-```
-[root@node-01 ~]# drbdadm primary r0
-[root@node-02 ~]# drbdadm secondary r0
 ```
 
-## ■ 主設定ファイル /etc/drbd.conf
-### ● xxxセクション
-### ● yyyディレクティブ
-- aaa(recommended)
-- bbb
-### ● zzzパラメータ
-### ● 設定例
-### ● 文法チェック
-## ■ 設定ファイル yyy
-## ■ セキュリティ
-### ● firewall
-### ● 証明書
-### ● 認証
-## ■ ロギング
-### ● rsyslog
-### ● logrotate
 ## ■ 設定の反映
 ## ■ 設定の確認
 ## ■ 負荷テスト項目
