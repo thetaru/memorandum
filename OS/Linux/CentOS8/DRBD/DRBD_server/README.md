@@ -74,10 +74,32 @@ resource r0 {
 #### プライマリ(node-01)の指定
 ```
 [root@node-01 ~]# drbdadm primary --force r0
+[root@node-01 ~]# drbdadm status
 ```
 #### セカンダリ(node-02)の指定
 ```
 [root@node-02 ~]# drbdadm secondary r0
+[root@node-02 ~]# drbdadm status
+```
+#### 同期完了の確認
+プライマリ・セカンダリを設定後、同期が開始され少し待つと完了します。
+```
+[root@node-01 ~]# drbdadm status
+```
+```
+r0 role:Primary
+  disk:UpToDate
+  node-02 role:Secondary
+    peer-disk:UpToDate
+```
+```
+[root@node-02 ~]# drbdadm status
+```
+```
+r0 role:Secondary
+  disk:UpToDate
+  node-01 role:Primary
+    peer-disk:UpToDate
 ```
 
 ## ■ 主設定ファイル /etc/drbd.conf
