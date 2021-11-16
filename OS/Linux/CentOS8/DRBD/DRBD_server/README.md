@@ -18,7 +18,7 @@
 ```
 # pvcreate /dev/sdb1
 # vgcreate drbdpool /dev/sdb1
-# lvcreate -n drbdata -l 100% FREE drbdpool
+# lvcreate -n drbdata -l100%FREE drbdpool
 ```
 
 ## ■ インストール
