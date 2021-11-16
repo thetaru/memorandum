@@ -71,6 +71,7 @@ http://www.ice.is.kit.ac.jp/~umehara/misc/comp/20091218c.html
 
 
 ## ● mydestination (★)
+ホストから送られてきたメールを転送せずにローカルに配送するドメインを指定します。
 ### ■ 設定例
 ```
 mydestination = $myhostname, localhost.$mydomain, localhost
