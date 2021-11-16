@@ -6,21 +6,6 @@
 |node-01|192.168.137.1|/dev/sdb|
 |node-02|192.168.137.2|/dev/sdb|
 
-## ■ 事前準備
-### パーティションの作成
-デバイス`/dev/sdb`をまるごと1つのパーティション`/dev/sdb1`にします。
-```
-# parted -s -a optimal -- /dev/sdb mklabel gpt
-# parted -s -a optimal -- /dev/sdb mkpart primary 0% 100%
-# parted -s -- /dev/sdb align-check optimal 1
-```
-### PV・VG・LVの作成
-```
-# pvcreate /dev/sdb1
-# vgcreate drbdpool /dev/sdb1
-# lvcreate -n drbdata -l100%FREE drbdpool
-```
-
 ## ■ インストール
 ### elrepoレポジトリの登録
 ```
@@ -32,13 +17,43 @@
 # yum search drbd
 # yum install drbd90-utils kmod-drbd90
 ```
-## ■ バージョンの確認
-## ■ サービスの起動
-一通りの設定が完了するまでサービスを起動させないでください。
-## ■ 関連サービス
-|サービス名|ポート番号|役割|
-|:---|:---|:---|
-|drbd|6996-7800/tcp||
+
+## ■ DRBDデバイスの作成
+### パーティションの作成
+デバイス`/dev/sdb`をまるごと1つのパーティション`/dev/sdb1`にします。
+```
+# parted /dev/sdb mklabel gpt
+# parted /dev/sdb mkpart primary 0% 100%
+# parted /dev/sdb set 1 lvm on
+```
+### PV・VG・LVの作成
+```
+# pvcreate /dev/sdb1
+# vgcreate drbdpool /dev/sdb1
+# lvcreate -n drbdata -l100%FREE drbdpool
+```
+### DRBDリソースの定義
+リソースにノード間で同期させるLVをそれぞれ記述します。
+```
+# vi /etc/drbd.d/r0.res
+```
+```
+resource r0 {
+  on node1 {
+    device    /dev/drbdpool;
+    disk      /dev/mapper/drbdpool-drbdata;
+    address   192.168.137.30:7789;
+    meta-disk internal;
+  }
+  on node2 {
+    device    /dev/drbdpool;
+    disk      /dev/mapper/drbdpool-drbdata;
+    address   192.168.137.31:7789;
+    meta-disk internal;
+  }
+}
+```
+※ `/etc/drbd.conf`が`/etc/drbd.d/r0.res`をインクルードします
 
 ## ■ 主設定ファイル /etc/drbd.conf
 ### ● xxxセクション
