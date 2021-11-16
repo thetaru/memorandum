@@ -102,6 +102,24 @@ r0 role:Secondary
     peer-disk:UpToDate
 ```
 
+### DRBDデバイスにファイルシステムを作成
+セカンダリは読み込み専用のため、プライマリの状態にしないとファイルシステムを作成できません。  
+node-01(プライマリ)のDRBDデバイスにファイルシステムを作成した後、セカンダリに降格させます。  
+```
+[root@node-01 ~]# mkfs.xfs /dev/drbd1
+[root@node-01 ~]# drbdadm secondary r0
+```
+node-02(セカンダリ)をプライマリに昇格させた後、DRBDデバイスにファイルシステムを作成します。
+```
+[root@node-02 ~]# drbdadm secondary r0
+[root@node-02 ~]# mkfs.xfs /dev/drbd1
+```
+`node-01`と`node-02`のDRBDデバイスにファイルシステムを作成できたので元の役割に戻します。
+```
+[root@node-01 ~]# drbdadm primary r0
+[root@node-02 ~]# drbdadm secondary r0
+```
+
 ## ■ 主設定ファイル /etc/drbd.conf
 ### ● xxxセクション
 ### ● yyyディレクティブ
