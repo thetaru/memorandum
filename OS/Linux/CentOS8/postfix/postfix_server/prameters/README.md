@@ -35,12 +35,6 @@ header_checks = regexp:/etc/postfix/header_checks
 ```
 ※ ただし、日本語を扱う場合は文字コード(UTF-8など)ごとにMIMEにエンコードする必要があります
 
-#### header_checks.db
-postmapコマンドでheader_checksファイルをhash化したDB(header_checks.db)を作成します。
-```
-# postmap /etc/postfix/header_checks
-```
-
 ## ● inet_interfaces (★)
 Postfixサービスがメールを受け取るネットワークインターフェースアドレスを指定します。  
 https://qiita.com/bezeklik/items/438eadbdb06672f3c3b6#inet_interfaces
