@@ -3,25 +3,14 @@
 ## ■ MEMO
 ```
 ## 機能調査
-BIND(Cache)
 samba 数パターンつくる
-postfix 全部プラスじーめーる(優先度: 高)
-SNMpについて
-パケットキャプチャについて
-コアダンプについて
 パスワードポリシーについて(login.defs)
-mariadb(やったほうがいいためになる)
-postgreSQL(やったほうがいいためになる)
+postgreSQL
 keepalive
 pacemaker
 DRBD
 haproxy
 
-xfsquota 挙動についての調査
-LDAP
-
-tmpfs
-fragmentation
 lets encrypt でワイルドカード証明書
 ```
 ## ■ Commands
