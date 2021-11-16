@@ -284,6 +284,12 @@ relay_domains =
 ```
 ```
 
+## ● smtp_tls_note_starttls_offer
+### ■ 設定例
+```
+smtp_tls_note_starttls_offer = yes
+```
+
 ## ● smtp_tls_protocols
 ### ■ 設定例
 ```
