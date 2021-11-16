@@ -184,8 +184,11 @@ smtp_tls_security_level = may
 
 # Option
 ## ● biff (★)
+biffの有効化・無効化を設定します。
 ### ■ 設定例
 ```
+### biffの無効化
+biff = no
 ```
 
 ## ● body_checks
@@ -194,13 +197,17 @@ smtp_tls_security_level = may
 ```
 
 ## ● body_checks_size_limit
+body_checksでフィルタリング対象となるメッセージサイズを指定します。
 ### ■ 設定例
 ```
+body_checks_size_limit = 51200
 ```
 
 ## ● bounce_queue_lifetime
+送信失敗してから、配達不能と判定後、バウンスメール(エラーメール)を返すまでの時間を指定します。
 ### ■ 設定例
 ```
+bounce_queue_lifetime = 5d
 ```
 
 ## ● canonical_classes
@@ -215,13 +222,19 @@ https://blog.jicoman.info/2014/09/postfix_aliases_envelope_from/
 ```
 
 ## ● disable_vrfy_command
+vrfyコマンドの有効・無効を設定します。
 ### ■ 設定例
 ```
+### vrfyの無効化
+disable_vrfy_command=yes
 ```
 
 ## ● maximal_queue_lifetime
+送信失敗してから、配達不能と判定するまでの時間を指定します。  
+この間、再送を試み続けます。
 ### ■ 設定例
 ```
+maximal_queue_lifetime = 5d
 ```
 
 ## ● message_size_limit
