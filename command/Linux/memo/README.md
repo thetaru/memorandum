@@ -43,3 +43,8 @@ tracepath
 ```
 tracepath [-p port] -n host
 ```
+
+tcpdump
+```
+tcpdump -nn -vvv [-i interface] [options]
+```
