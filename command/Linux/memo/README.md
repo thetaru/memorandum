@@ -38,3 +38,8 @@ ps -up $(pgrep <プロセス名>)
 # -oでフォーマットいじれる
 ps -o user,pid,uid,tty,cmd -p $(pgrep <プロセス名>)
 ```
+
+tracepath
+```
+tracepath [-p port] -n host
+```
