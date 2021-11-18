@@ -44,7 +44,8 @@ tracepath
 tracepath [-p port] -n host
 ```
 
-tcpdump
+tcpdump  
+interfaceをしない場合、一番目のNICを使用してしまうことに注意する
 ```
-tcpdump -nn -vvv [-i interface] [options]
+tcpdump -nn [-vvv] [-i interface] [options]
 ```
