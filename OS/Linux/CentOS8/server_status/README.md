@@ -10,7 +10,7 @@ uptime
 ## プロセスの確認
 ```
 ps auxf
-ps -up $(pgrep <プロセス名>)
+ps -ufp $(pgrep <プロセス名>)
 ```
 ## NICの確認
 ```
