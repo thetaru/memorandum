@@ -1,4 +1,6 @@
 # DRBDサーバの構築
+原則はActive/Stanbyの構成となるストレージシステムで使用します。例外はファイルシステムにGFS(Global FileSystem)かOCFS2を使う場合、Active/Activeの構成をとれます。  
+Active/Activeのストレージシステムを構成するならDRBDではなく、GlusterFSを使用するべきだと思います。
 ## ■ 前提条件
 以下の作業は`node-01`、`node-02`それぞれで実施します。  
 
