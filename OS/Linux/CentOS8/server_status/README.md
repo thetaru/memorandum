@@ -42,3 +42,7 @@ less /var/log/secure
 ```
 ausearch -m avc -ts today
 ```
+## コアダンプの確認
+```
+coredumpctl list
+```
