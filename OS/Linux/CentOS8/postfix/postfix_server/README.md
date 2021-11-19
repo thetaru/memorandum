@@ -20,6 +20,15 @@
 ### ● パラメータ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/postfix/postfix_server/prameters)にまとめました。
 ### ● 設定例
+中継サーバとしてリレーできる最低限の設定です。セキュリティ対策などはパラメータ一覧で確認してください。
+```
+# postconf -e "myhostname = mail-01.example.com"
+# postconf -e "mydomain = example.com"
+# postconf -e "inet_interfaces = all"
+# postconf -e "inet_protocols = ipv4"
+# postconf -e "mynetworks = 127.0.0.1/32,XXX.XXX.XXX.XXX/YY"
+# postconf -e "relayhost = [relay-01.example.com]:25"
+```
 ### ● 文法チェック
 ```
 # postfix check
