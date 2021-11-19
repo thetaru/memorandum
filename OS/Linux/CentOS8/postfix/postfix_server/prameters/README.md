@@ -36,8 +36,7 @@ header_checks = regexp:/etc/postfix/header_checks
 ※ ただし、日本語を扱う場合は文字コード(UTF-8など)ごとにMIMEにエンコードする必要があります
 
 ## ● inet_interfaces (★)
-Postfixサービスがメールを受け取るネットワークインターフェースアドレスを指定します。  
-https://qiita.com/bezeklik/items/438eadbdb06672f3c3b6#inet_interfaces
+Postfixサービスがメールを受け取るネットワークインターフェースアドレスを指定します。
 ### ■ 設定例
 ```
 ### すべてのインターフェースを利用
