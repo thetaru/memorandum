@@ -15,7 +15,8 @@ ntpdサービスとは共存できないため、サービスが動作してい�
 ## ■ 関連サービス
 |サービス名|ポート番号|役割|
 |:---|:---|:---|
-|chronyd.service|123/udp||
+|chronyd.service|123/udp|クライアント接続用|
+|chronyd.service|323/udp|chronycコマンド用(自身のみ接続可)|
 
 ## ■ 主設定ファイル /etc/chrony.conf
 ### ● 設定項目
