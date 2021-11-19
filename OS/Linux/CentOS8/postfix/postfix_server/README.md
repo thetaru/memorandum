@@ -29,6 +29,7 @@
 # postconf -e "mynetworks = 127.0.0.1/32,XXX.XXX.XXX.XXX/YY"
 # postconf -e "relayhost = [relay-01.example.com]:25"
 ```
+※ パラメータはmain.cfに反映されます。
 ### ● 文法チェック
 ```
 # postfix check
