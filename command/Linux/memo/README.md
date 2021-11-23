@@ -33,7 +33,7 @@ ps -lC <プロセス名>
 ps -lp $(pgrep <プロセス名>)
 
 # オキに
-ps -up $(pgrep <プロセス名>)
+ps -fup $(pgrep <プロセス名>)
 
 # -oでフォーマットいじれる
 ps -o user,pid,uid,tty,cmd -p $(pgrep <プロセス名>)
