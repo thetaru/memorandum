@@ -12,3 +12,4 @@
 - [ ] [UID/GIDを指定したユーザ作成](https://github.com/thetaru/memorandum/tree/master/command/Linux/user_fixed_uid_gid)
 - [ ] [kdumpが予約しているメモリ量を確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/kdump_reserved_mem)
 - [ ] [ディスクのアクセス速度を測定する](https://github.com/thetaru/memorandum/tree/master/command/Linux/disk_access_speed)
+- [ ] [tcpdumpでよく使うやつ](https://github.com/thetaru/memorandum/tree/master/command/Linux/tcpdump_tips)
