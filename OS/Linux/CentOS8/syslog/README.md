@@ -1,7 +1,7 @@
 # rsyslog設定
 ## ■ Settings
 - [ ] [syslogサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_server)
-- [ ] [syslogクライアントの構築]()
+- [ ] [syslogクライアントの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/syslog/syslog_client)
 ## ■ Tips
 
 :warning:書きかけ  
