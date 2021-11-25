@@ -128,6 +128,11 @@ SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdenied�
 
 ### プロセスに対して拒否されている動作(アクション)を(allow)ルールに追加
 # cat /var/log/audit/audit.log | grep -e denied -e <プロセス名> | tail -1 | audit2allow
+
+### 拒否ルールの確認
+# ausearch -m avc | audit2allow
+
+### 許可ルールの作成
 # ausearch -m avc -c <プロセス名> | audit2allow -M <rule>
 # semodule -i <rule>.pp
 ```
