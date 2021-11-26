@@ -49,3 +49,7 @@ interfaceをしない場合、一番目のNICを使用してしまうことに�
 ```
 tcpdump -nn [-vvv] [-i interface] [options]
 ```
+yum系
+```
+yum provides <command>
+```
