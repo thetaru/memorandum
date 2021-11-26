@@ -37,10 +37,14 @@ IPv4のみを使用する場合は以下も実施してください。
 ```
 ## ■ chronydの起動と自動起動設定
 ```
-# systemctl start chronyd.service
-# systemctl enable chronyd.service
+# systemctl enable --now chronyd.service
 ```
 ```
 ### 確認
 # systemctl status chronyd.service
 ```
+
+## ■ TroubleShooting
+### NTPサーバとNTPクライアントを同時に起動した際の挙動
+正確には、(local stratumを設定した)NTPサーバが起動した際に上位NTPサーバへの時刻同期が完了する前にNTPクライアントがNTPサーバに対して時刻同期してしまったときの挙動です。  
+この場合、NTPクライアントはNTPサーバの時刻同期される前の時刻で同期されてしまいます。(そしてなぜかstepされない)
