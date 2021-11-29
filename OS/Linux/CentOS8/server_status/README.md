@@ -37,6 +37,9 @@ ss -antl
 ss -anul
 ```
 ```
+free -m
+```
+```
 top
 ```
 ```
