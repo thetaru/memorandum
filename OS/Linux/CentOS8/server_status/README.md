@@ -44,11 +44,15 @@ iostat -x 5s
 ```
 ## ログの確認
 ```
+# ログファイル
 less /var/log/messages
 less /var/log/cron
 less /var/log/secure
+
+# カーネル
+dmesg -kxT [-l priority]
 ```
-selinux環境ならauditログも確認する
+SELinux環境ならauditログも確認する
 ```
 ausearch -m avc -ts today
 ```
