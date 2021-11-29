@@ -2,7 +2,7 @@
 ## ■ General Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Windows/Windows%20Server%202019/settings)
 ## ■ Software Settings
-- [ ] [Acitve Directory]()
+- [ ] [Acitve Directory](ActiveDirectory)
 - [ ] [Windows Admin Center](https://github.com/thetaru/memorandum/tree/master/OS/Windows/Windows%20Server%202019/WindowsAdminCenter)
 
 windows admin center 構築ガイドがよさそう  
