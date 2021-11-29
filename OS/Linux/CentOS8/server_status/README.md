@@ -50,7 +50,7 @@ less /var/log/cron
 less /var/log/secure
 
 # カーネル
-dmesg -kxT [-l priority]
+dmesg -kxT [-l <priority>]
 ```
 SELinux環境ならauditログも確認する
 ```
