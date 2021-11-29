@@ -45,14 +45,29 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 # systemctl status kdump.service
 ```
 ### 2. おまけ
-確保されているメモリ量は、```dmesg```から確認できます。
+確保されているメモリ量は、`kdumpctl showmem`から確認できます。
 ```
-# dmesg | grep Reserving
+# kdumpctl showmem
 ```
 ```
-[    0.000000] Reserving 160MB of memory at 688MB for crashkernel (System RAM: 2047MB)
+kdump: Reserved 192MB memory for crash kernel
 ```
-160MB予約していることがわかります。
+192MB予約していることがわかります。  
+さらに詳しい情報が、`kdumpctl estimate`から確認できます。
+```
+# kdumpctl estimate
+```
+```
+Reserved crashkernel:    192M
+Recommended crashkernel: 192M
+
+Kernel image size:   49M
+Kernel modules size: 4M
+Initramfs size:      30M
+Runtime reservation: 64M
+Large modules:
+    xfs: 1544192
+```
 ## ■ クラッシュダンプの採取
 システムを故意にクラッシュさせダンプできていることを確認します。
 ### 1. Magic SysRq Key
