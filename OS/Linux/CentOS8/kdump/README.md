@@ -38,7 +38,7 @@ GRUB_CMDLINE_LINUX="crashkernel=1024M resume=UUID=<UUID> rhgb quiet"
 ```
 上記コマンドよりブートローダーが再設定され、設定ファイルに指定したパラメーターが、再起動後に反映されます。
 ```
-# shutdown -r now
+# systemctl reboot
 ```
 再起動後、Kdumpが動いていることを確認します。
 ```
