@@ -122,19 +122,23 @@ SELinuxポートタイプと対応している、プロトコルとポート番�
 ### ● かんたんな対処方法
 SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdeniedログが出力されている場合、以下のコマンドでルールを追加することができます。
 ```
-### プロセスに対して拒否されている動作(アクション)を確認
-# cat /var/log/audit/audit.log | grep -e denied -e <プロセス名> | tail -20
-# ausearch -m avc -c <プロセス名>
+### 拒否されたルールの確認
+# ausearch -m avc [-c <プロセス名>] | audit2allow
 
-### プロセスに対して拒否されている動作(アクション)を(allow)ルールに追加
-# cat /var/log/audit/audit.log | grep -e denied -e <プロセス名> | tail -1 | audit2allow
-
-### 拒否ルールの確認
-# ausearch -m avc | audit2allow
-
-### 許可ルールの作成
-# ausearch -m avc -c <プロセス名> | audit2allow -M <rule>
+### 拒否されたルールを元にモジュールを作成し読み込み
+# ausearch -m avc [-c <プロセス名>] | audit2allow -M <rule>
 # semodule -i <rule>.pp
+
+### モジュールの確認
+# semodule -l
+```
+モジュールを削除する場合は以下のとおりです。
+```
+### モジュールの確認
+# semodule -l
+
+### モジュールの削除
+# semodule -r <モジュール名>
 ```
 複数の動作が拒否されていることがあるので、何度か上のコマンドを繰り返せばそれらのルールも追加できます。  
 ただし、SELinuxが原因だが、audit.logに出力されない場合もあるので注意しましょう。  
