@@ -120,7 +120,7 @@ SELinuxポートタイプと対応している、プロトコルとポート番�
 ```
 
 ### ● かんたんな対処方法
-SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdeniedログが出力されている場合、以下のコマンドでルールを追加することができます。
+SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdeniedログが出力されている場合、以下のコマンドでモジュールを追加することができます。
 ```
 ### 拒否されたルールの確認
 # ausearch -m avc [-c <プロセス名>] | audit2allow
