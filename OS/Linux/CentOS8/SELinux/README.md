@@ -133,6 +133,7 @@ SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdenied�
 ### モジュールの確認
 # semodule -l
 ```
+※ ちなみにモジュールの作成先は`/usr/share/selinux/targeted/default/active/modules/100/`のようです。  
 モジュールを削除する場合は以下のとおりです。
 ```
 ### モジュールの確認
