@@ -224,7 +224,7 @@ SELinuxが動作しているシステムで`/var/log/audit/audit.log`にdenied�
 
 #### ◆ 期間制限をしたauditログを出力
 ```
-# ausearch -m avc -ts <today|recent>
+# ausearch -m avc -ts <recent|today|yesterday|week-ago>
 ```
 ※ todayは今日のログでrecentは最新10分間のログです
 
