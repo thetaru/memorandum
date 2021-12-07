@@ -53,3 +53,8 @@ yum系
 ```
 yum provides <command>
 ```
+kill  
+シグナルは必ず文字列で指定すること
+```
+kill -s <シグナル名> <PID>
+```
