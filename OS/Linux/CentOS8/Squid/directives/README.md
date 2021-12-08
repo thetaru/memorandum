@@ -42,15 +42,16 @@ ACL名を指定する。
 #### acltype
 |acltype|説明|
 |:---|:---|
-|src|送信元を指定する|
-|dstdomain|送信先ドメインを指定する|
-|dstdom_regex|正規表現を使用し送信先ドメインを指定する|
+|src|送信元IPアドレスを指定する(ファイル指定可能)|
+|dst|送信先IPアドレスを指定する(ファイル指定可能)|
+|dstdomain|送信先ドメインを指定する(ファイル指定可能)|
+|dstdom_regex|正規表現を使用し送信先ドメインを指定する(ファイル指定可能)|
 |port||
 |method||
 |req_mime_type||
 |rep_mime_type||
 |snmp_community||
-|any-of||
+|any-of|ホワイトリストを束ねたりするときに使う|
 |all-of||
 |proxy_auth||
 
