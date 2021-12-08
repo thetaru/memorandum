@@ -13,3 +13,4 @@
 - [ ] [kdumpが予約しているメモリ量を確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/kdump_reserved_mem)
 - [ ] [ディスクのアクセス速度を測定する](https://github.com/thetaru/memorandum/tree/master/command/Linux/disk_access_speed)
 - [ ] [tcpdumpでよく使うやつ](https://github.com/thetaru/memorandum/tree/master/command/Linux/tcpdump_tips)
+- [ ] [gccで覚えておくべきオプション](https://github.com/thetaru/memorandum/tree/master/command/Linux/_tips)
