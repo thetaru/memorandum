@@ -80,10 +80,12 @@ tmpfs /home/<USER>/.cache tmpfs noatime,nodev,nosuid,size=2G 0 0
 $ mount -a
 ```
 ## CapsLockをCtrlにする
+### 方法1
 うまく行かないときもある
 ```
 $ sudo gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 ```
+### 方法2
 udevで設定するのがよい
 ```
 $ cat /etc/udev/hwdb.d/90-nocaps-keyboard.hwdb
