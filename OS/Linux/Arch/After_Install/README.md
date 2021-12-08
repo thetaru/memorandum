@@ -80,8 +80,16 @@ tmpfs /home/<USER>/.cache tmpfs noatime,nodev,nosuid,size=2G 0 0
 $ mount -a
 ```
 ## CapsLockをCtrlにする
+うまく行かないときもある
 ```
 $ sudo gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+```
+udevで設定するのがよい
+```
+$ cat /etc/udev/hwdb.d/90-nocaps-keyboard.hwdb
+evdev:atkbd:dmi:bvn*:bvr*:bd*:svn*:pn*:pvr*
+  KEYBOARD_KEY_3A=leftctrl
+$ sudo systemd-hwdb update && sudo udevadm trigger
 ```
 ## キーバインドをEmacs風にする
 たびたび設定が剥がれるので`/etc/profile.d/key-bind.sh`を作成することにした。
