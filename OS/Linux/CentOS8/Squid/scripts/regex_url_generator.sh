@@ -5,7 +5,7 @@ set -euo pipefail
 # @param url
 # @return void
 function generate_regex_url() {
-  URL="$1"
+  local URL="$1"
   ## STEP1: 文頭(http://|https://)削除
   ## STEP2: ディレクトリ部削除
   ## STEP3: .を\.に置換
