@@ -36,6 +36,7 @@ function get_url_list() {
 }
 
 function main() {
+  cd "$(dirname "$0")"
   local urls=$(get_url_list)
   for url in ${urls}; do
     generate_regex_url "${url}"
