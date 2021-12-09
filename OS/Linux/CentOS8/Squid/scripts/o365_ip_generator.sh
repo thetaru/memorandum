@@ -18,6 +18,9 @@ function get_ip_list() {
 function main() {
   cd "$(dirname "$0")"
   local ips=$(get_ip_list)
+  if [[ "$s" == "" ]]; then
+    exit 1
+  fi
   for ip in ${ips}; do
     echo "${ip}"
   done
