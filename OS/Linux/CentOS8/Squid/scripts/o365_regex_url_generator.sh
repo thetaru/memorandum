@@ -38,6 +38,9 @@ function get_url_list() {
 function main() {
   cd "$(dirname "$0")"
   local urls=$(get_url_list)
+  if [[ "$urls" == "" ]]; then
+    exit 1
+  fi
   for url in ${urls}; do
     regex_url=$(generate_regex_url "${url}")
     echo "${regex_url}"
