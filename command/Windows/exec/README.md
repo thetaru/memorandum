@@ -39,4 +39,5 @@
 
 ## 設定
 |コマンド|説明|
+|:---|:---|
 |ms-settings:windowsupdate|Windows Update|
