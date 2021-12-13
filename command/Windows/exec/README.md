@@ -40,4 +40,6 @@
 ## 設定
 |コマンド|説明|
 |:---|:---|
+|ms-settings:autoplay|自動再生|
+|ms-settings:network-proxy|プロキシ|
 |ms-settings:windowsupdate|Windows Update|
