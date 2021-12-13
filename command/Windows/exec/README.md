@@ -36,3 +36,7 @@
 |timedate.cpl|日時と時刻|
 |wf.msc|Windows Defender ファイアウォール|
 |winver|バージョン情報|
+
+## 設定
+|コマンド|説明|
+|ms-settings:windowsupdate|Windows Update|
