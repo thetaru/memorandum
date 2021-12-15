@@ -58,3 +58,7 @@ kill
 ```
 kill -s <シグナル名> <PID>
 ```
+標準出力と標準エラー出力を別々のファイルに出力
+```
+some-commnad > stdout.log 2> stderr.log
+```
