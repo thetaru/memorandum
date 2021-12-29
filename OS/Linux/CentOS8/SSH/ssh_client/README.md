@@ -5,9 +5,11 @@
 # ssh-keygen -t (dsa|ecdsa|ed25519|rsa|rsa1)
 ```
 ```
+(snip)
 Enter file in which to save the key (/home/XXX/.ssh/id_YYY):
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
+(snip)
 ```
 
 ### 公開鍵の登録
