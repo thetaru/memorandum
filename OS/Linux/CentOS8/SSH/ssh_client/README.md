@@ -19,3 +19,7 @@ Enter same passphrase again:
 # ssh-copy-id [-n] [-p ${PORT}] -i ${PUBLIC_KEY} ${USER}@${HOST}
 ```
 ※ nオプションをつけるとドライランとなります
+
+## ■ ポートフォワード
+
+## ■ デバッグ
