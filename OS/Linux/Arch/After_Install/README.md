@@ -22,6 +22,7 @@ $ sudo pacman -Syu yay
 ```
 $ sudo pacman -Syu code
 ```
+※ インストール後、Code-OSSの拡張機能の検索先を変更する
 ## Fcitx-Mozc をインストール
 ```
 $ sudo pacman -S fcitx-im fcitx-mozc
