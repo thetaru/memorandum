@@ -65,3 +65,10 @@
 ```
 # systemctl restart rsyslog.service
 ```
+
+## ■ 設定の確認
+### ログの振り分けが行われていること
+IPアドレス、ファシリティ、プライオリティ、メッセージなどによりログの振り分けを行う場合は確認する。
+```
+# logger [-p <facility>.<priority>] <message>
+```
