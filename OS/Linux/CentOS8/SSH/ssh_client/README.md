@@ -13,7 +13,7 @@ Enter same passphrase again:
 ```
 
 ### 公開鍵の登録
-鍵認証でSSHする対象のSSHサーバに上で作成した公開鍵の情報を渡す(`.ssh/authorized_keys`に記載する)必要があります。  
+鍵認証でSSHする対象のSSHサーバに上で作成した公開鍵の情報を渡す(`authorized_keys`に記載する)必要があります。  
 コピペするのは面倒なので`ssh-copy-id`コマンドを使用します。
 ```
 # ssh-copy-id [-n] [-p ${PORT}] -i ${PUBLIC_KEY} ${USER}@${HOST}
