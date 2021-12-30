@@ -5,10 +5,13 @@ Google Authenticatorを使ってOTP認証をします。
 すでにSSHサーバとして動作していることを前提とします。
 
 ## ■ インストール
+EPELレポジトリをインストールします。
 ```
-# yum install google-authenticator qrencode-libs
+# yum install epel-release
 ```
-※ Google AuthenticatorでQRコードを生成するようにするため、qrencodeライブラリも導入します
+```
+# yum install google-authenticator
+```
 
 ## ■ REF
 - https://cloudfish.hatenablog.com/entry/2020/03/12/084826
