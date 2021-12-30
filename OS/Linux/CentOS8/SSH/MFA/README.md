@@ -27,7 +27,7 @@ Google Authenticator PAM moduleをインストールします。
 ```
 #%PAM-1.0
 auth        required      pam_env.so
-auth        required      pam_google_authenticator.so nullok echo_verification_code
+auth        required      pam_google_authenticator.so nullok
 auth        requisite     pam_succeed_if.so uid >= 500 quiet
 auth        required      pam_deny.so
 ```
