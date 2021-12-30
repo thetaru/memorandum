@@ -61,9 +61,9 @@ auth        required      pam_deny.so
 ```
 #!/bin/sh
 
-if [ ! -f "$HOME/.ssh/.google_authenticator" ]; then
+if [ ! -f "$HOME/.google_authenticator" ]; then
   trap 'exit' SIGINT
-  echo "google-authenticatorの初期設定を行います"
+  echo "google-authenticator の初期設定を行います"
   /usr/bin/google-authenticator -t -d -W -u -f
   trap -- SIGINT
 fi
