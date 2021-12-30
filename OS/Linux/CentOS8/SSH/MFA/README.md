@@ -20,6 +20,8 @@ Google Authenticator PAM moduleをインストールします。
 -  ChallengeResponseAuthentication no
 +  ChallengeResponseAuthentication yes
 
++  AuthenticationMethods publickey,keyboard-interactive
+
 =  UsePAM yes
 ```
 ## ■ 設定ファイル /etc/pam.d/google-auth
