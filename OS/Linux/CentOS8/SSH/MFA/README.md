@@ -9,6 +9,7 @@ EPELレポジトリをインストールします。
 ```
 # yum install epel-release
 ```
+Google Authenticator PAM moduleをインストールします。
 ```
 # yum install google-authenticator
 ```
