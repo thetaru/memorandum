@@ -15,6 +15,7 @@ $ echo 'これはuserです'
 ```
 -   hoge=0
 +   hoge=1
+=   fuga=2
 ```  
 `-`のみの場合は**削除**を意味します。
 ```
@@ -23,6 +24,10 @@ $ echo 'これはuserです'
 `+`のみの場合は**追加**を意味します。
 ```
 +   piyo=1
+```
+`=`は変更はしないが存在することを**強調**することを意味します。
+```
+=  fuga=2
 ```
 ## ■ OS
 - [ ] [CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
