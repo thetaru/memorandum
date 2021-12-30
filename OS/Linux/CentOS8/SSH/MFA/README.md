@@ -55,17 +55,6 @@ auth        required      pam_deny.so
    session    include      password-auth
    session    include      postlogin
 ```
-## ■ 設定ファイル /etc/profile.d/google-authenticator.sh
-```
-#!/bin/sh
-
-if [ ! -f "$HOME/.google_authenticator" ]; then
-  trap 'exit' SIGINT
-  echo "google-authenticator の初期設定を行います"
-  /usr/bin/google-authenticator -t -d -W -u -f
-  trap -- SIGINT
-fi
-```
 
 ## ■ REF
 - https://cloudfish.hatenablog.com/entry/2020/03/12/084826
