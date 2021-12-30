@@ -1,4 +1,4 @@
-# 二段階認証sshサーバの構築
+# (未完了)二段階認証sshサーバの構築
 Google Authenticatorを使ってOTP認証をします。  
 必要に応じて、スマホなどにGoogle Authenticatorアプリ等のOTP対応のアプリをインストールしてください。
 ## ■ 前提条件
