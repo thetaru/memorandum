@@ -27,7 +27,7 @@ Google Authenticator PAM moduleをインストールします。
 ```
 #%PAM-1.0
 auth        required      pam_env.so
-auth        required      pam_google_authenticator.so nullok echo_verification_code secret=$HOME/.ssh/.google_authenticator
+auth        required      pam_google_authenticator.so nullok echo_verification_code
 auth        requisite     pam_succeed_if.so uid >= 500 quiet
 auth        required      pam_deny.so
 ```
@@ -59,7 +59,7 @@ auth        required      pam_deny.so
 if [ ! -f "$HOME/.ssh/.google_authenticator" ]; then
   trap 'exit' SIGINT
   echo "google-authenticatorの初期設定を行います"
-  /usr/bin/google-authenticator -t -d -W -R 30 -r 3 -e 10 -f --secret=$HOME/.ssh/.google_authenticator
+  /usr/bin/google-authenticator -t -d -W -R 30 -r 3 -e 10 -f
   trap -- SIGINT
 fi
 ```
