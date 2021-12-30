@@ -1,8 +1,14 @@
 # 二段階認証sshサーバの構築
+Google Authenticatorを使ってOTP認証をします。  
+必要に応じて、スマホなどにGoogle Authenticatorアプリ等のOTP対応のアプリをインストールしてください。
 ## ■ 前提条件
 すでにSSHサーバとして動作していることを前提とします。
 
-## ■ 
+## ■ インストール
+```
+# yum install google-authenticator qrencode-libs
+```
+※ Google AuthenticatorでQRコードを生成するようにするため、qrencodeライブラリも導入します
 
 ## ■ REF
 - https://cloudfish.hatenablog.com/entry/2020/03/12/084826
