@@ -15,10 +15,13 @@ Google Authenticator PAM moduleをインストールします。
 ```
 
 ## ■ 設定ファイル /etc/ssh/sshd_config
-今回は、パスワード認証+OTP認証または鍵認証+OTP認証でログインすることを許します。(要件に応じ、設定を変更してください)
+今回は、パスワード認証(チャレンジレスポンス認証)+OTP認証または鍵認証+OTP認証でログインすることを許します。(要件に応じ、設定を変更してください)
 ```
 -  ChallengeResponseAuthentication no
 +  ChallengeResponseAuthentication yes
+
+-  PasswordAuthentication yes
++  PasswordAuthentication no
 
 +  AuthenticationMethods publickey,keyboard-interactive
 
