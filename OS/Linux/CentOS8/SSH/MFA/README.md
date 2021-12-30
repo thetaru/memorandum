@@ -14,6 +14,11 @@ Google Authenticator PAM moduleをインストールします。
 # yum install google-authenticator qrencode
 ```
 
+## ■ 設定ファイル /etc/ssh/sshd_config
+## ■ 設定ファイル /etc/pam.d/google-auth
+## ■ 設定ファイル /etc/pam.d/sshd
+## ■ 設定ファイル /etc/profile.d/google-authenticator.sh
+
 ## ■ REF
 - https://cloudfish.hatenablog.com/entry/2020/03/12/084826
 - https://dev.classmethod.jp/articles/amazon-linux-ssh-two-step-authentication/
