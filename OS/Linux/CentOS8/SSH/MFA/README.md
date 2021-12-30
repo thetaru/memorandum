@@ -52,7 +52,10 @@ auth        required      pam_deny.so
    session    include      password-auth
    session    include      postlogin
 ```
-
+## ■
+```
+# google-authenticator -t -d -W -R 30 -r 3 -e 10 -f
+```
 ## ■ REF
 - https://cloudfish.hatenablog.com/entry/2020/03/12/084826
 - https://dev.classmethod.jp/articles/amazon-linux-ssh-two-step-authentication/
