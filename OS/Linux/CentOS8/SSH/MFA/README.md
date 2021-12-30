@@ -1,4 +1,4 @@
-# 二段階認証の対応
+# 二段階認証sshサーバの構築
 ## ■ REF
 - https://cloudfish.hatenablog.com/entry/2020/03/12/084826
 - https://dev.classmethod.jp/articles/amazon-linux-ssh-two-step-authentication/
