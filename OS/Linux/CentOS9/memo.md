@@ -8,4 +8,7 @@
 - /etc/ssh/sshd_config
   - PermitRootLogin prohibit-password となっているためrootでのパスワード認証が通らない(はじめはyesにして後で)
 - sshのプロセスが取る引数が変わっていた(要確認)
-- epel-releaseが消えた(yum install epel-releaseできない)
+- yum install epel-releaseできない
+  - dnf config-manager --set-enabled crb
+  - dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+  - dnf install https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm
