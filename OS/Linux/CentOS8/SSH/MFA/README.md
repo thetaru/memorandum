@@ -19,3 +19,4 @@ Google Authenticator PAM moduleをインストールします。
 - https://dev.classmethod.jp/articles/amazon-linux-ssh-two-step-authentication/
 - https://tech.buty4649.net/entry/2021/12/07/143219
 - https://blog.pfs.nifcloud.com/20191002_2factor_authentication
+- https://soji256.hatenablog.jp/entry/2020/05/17/150250
