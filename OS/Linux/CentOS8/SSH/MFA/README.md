@@ -11,7 +11,7 @@ EPELレポジトリをインストールします。
 ```
 Google Authenticator PAM moduleをインストールします。
 ```
-# yum install google-authenticator
+# yum install google-authenticator qrencode
 ```
 
 ## ■ REF
