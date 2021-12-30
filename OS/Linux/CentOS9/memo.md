@@ -5,4 +5,6 @@
   - selinuxを変更できる kdumpの予約メモリがメモリ依存に変わった(メモリ依存なのは変わらないけど明示的になった)
 - /etc/systemd/system.conf
   - パラメータが増えてた(ulimit...)
+- /etc/ssh/sshd_config
+  - PermitRootLogin prohibit-password となっているためrootでのパスワード認証が通らない(はじめはyesにして後で)
 - sshのプロセスが取る引数が変わっていた(要確認)
