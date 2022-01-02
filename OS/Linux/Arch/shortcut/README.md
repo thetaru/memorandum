@@ -1,3 +1,3 @@
 # ショートカット
 ## ■ ワークスペース
-`super + (pageup|pagedown)` `super + alt + (left|right)`
+`super + (pageup|pagedown)` `ctrl + alt + (left|right)`
