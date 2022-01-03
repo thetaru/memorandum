@@ -3,7 +3,6 @@
 - [ ] [スタイルガイド](StyleGuide)
 - [ ] [エラー処理](ErrorHandling)
 - [ ] [例外処理](ExceptionHandling)
-- [ ] [オブジェクト指向](ObjectOriented)
 - [ ] [ユニットテスト](UnitTest)
 - [ ] [パフォーマンステスト](PerformanceTest)
 
