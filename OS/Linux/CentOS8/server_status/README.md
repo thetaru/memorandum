@@ -33,6 +33,7 @@ nmcli connection show <con-name>
 df -Th
 ```
 ## 負荷の確認
+リッスンポートの確認
 ```
 ss -antl
 ss -anul
