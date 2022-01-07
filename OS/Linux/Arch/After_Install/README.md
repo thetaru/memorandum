@@ -107,10 +107,12 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 ```
 ## ショートカットの作成
+### ウィンドウを最大化する
+`キーボードショートカット`-`ウィンドウ`-`ウィンドウを最大化する`を`Super+↑`に変更
 ### ホームフォルダー
-`ランチャー`-`ホームフォルダー`を`Super+E`に変更
+`キーボードショートカット`-`ランチャー`-`ホームフォルダー`を`Super+E`に変更
 ### スクリーンショット
-`スクリーンショット`-`ウィンドウのスクリーンショットをPicturesフォルダに保存する`を`Shft+Ctrl+F9`に変更
+`キーボードショートカット`-`スクリーンショット`-`ウィンドウのスクリーンショットをPicturesフォルダに保存する`を`Shft+Ctrl+F9`に変更
 ## 電源
 環境に合わせて設定する。
 ## タッチパッド
