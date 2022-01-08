@@ -58,5 +58,5 @@ scoopでインストールしたパッケージを表示します。
 ```
 ### よく使うパッケージ
 ```
-> scoop install googlechrome teraterm vim winmerge
+> scoop install googlechrome teraterm vim windows-terminal winmerge
 ```
