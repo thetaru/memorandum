@@ -22,5 +22,17 @@ Scoop was installed successfully!
 > scoop search [pkg]
 ```
 ### install
+パッケージ名を指定し、インストールします。
+```
+> scoop install <pkg>
+```
 ### uninstall
+パッケージ名を指定し、アンインストールします。
+```
+> scoop uninstall <pkg>
+```
 ### list
+scoopでインストールしたパッケージを表示します。
+```
+> scoop list [pkg]
+```
