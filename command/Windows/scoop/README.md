@@ -9,7 +9,7 @@ powershell上で以下を実行します。
 Scoop was installed successfully!
 ```
 
-## ■ オプション
+## ■ よく使うオプション
 ### help
 オプションの一覧が表示されます。
 ```ps
@@ -35,4 +35,15 @@ Scoop was installed successfully!
 scoopでインストールしたパッケージを表示します。
 ```
 > scoop list [pkg]
+```
+
+## ■ 初期設定
+### bucket追加
+```
+> scoop install git
+> scoop bucket add extras
+```
+### よく使うパッケージ
+```
+> scoop install googlechrome teraterm vim winmerge
 ```
