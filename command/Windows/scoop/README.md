@@ -11,7 +11,10 @@ Scoop was installed successfully!
 
 ## ■ オプション
 ### help
+```ps
+> scoop help
+```
 ### search
-### list
 ### install
 ### uninstall
+### list
