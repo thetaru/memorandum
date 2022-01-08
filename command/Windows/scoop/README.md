@@ -15,6 +15,9 @@ Scoop was installed successfully!
 > scoop help
 ```
 ### search
+```
+> scoop search [pkg]
+```
 ### install
 ### uninstall
 ### list
