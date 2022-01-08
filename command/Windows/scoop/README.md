@@ -11,6 +11,7 @@ Scoop was installed successfully!
 
 ## ■ オプション
 ### help
+オプションの一覧が表示されます。
 ```ps
 > scoop help
 ```
