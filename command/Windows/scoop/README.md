@@ -15,6 +15,8 @@ Scoop was installed successfully!
 > scoop help
 ```
 ### search
+パッケージを検索することができます。  
+パッケージ名を指定しない場合、レポジトリ(bucketなど)のすべてのパッケージが表示されます。
 ```
 > scoop search [pkg]
 ```
