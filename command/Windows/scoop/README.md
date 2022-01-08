@@ -8,3 +8,10 @@ powershell上で以下を実行します。
 ```
 Scoop was installed successfully!
 ```
+
+## ■ オプション
+### help
+### search
+### list
+### install
+### uninstall
