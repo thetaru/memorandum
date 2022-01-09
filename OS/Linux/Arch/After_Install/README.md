@@ -115,6 +115,8 @@ gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 `キーボードショートカット`-`ランチャー`-`ホームフォルダー`を`Super+E`に変更
 ### スクリーンショット
 `キーボードショートカット`-`スクリーンショット`-`ウィンドウのスクリーンショットをPicturesフォルダに保存する`を`Shft+Ctrl+F9`に変更
+### 新規ショートカット(ターミナル起動)
+`独自のショートカット`より`gnome-terminal`を`Ctrl+alt+t`で登録
 ## 電源
 環境に合わせて設定する。
 ## タッチパッド
