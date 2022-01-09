@@ -62,3 +62,7 @@ kill -s <シグナル名> <PID>
 ```
 some-commnad > stdout.log 2> stderr.log
 ```
+大きなサイズのファイルでgrepする際はファイルを分割すると楽
+```
+split -l 行数 ファイルパス
+```
