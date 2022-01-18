@@ -26,5 +26,7 @@ Get-Disk | fl
 netstat -an
 ```
 ## ログの確認
-
+```
+Get-EventLog -LogName System <options>
+```
 
