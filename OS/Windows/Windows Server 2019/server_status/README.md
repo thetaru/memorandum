@@ -18,7 +18,7 @@ date
 ```
 ## ドライブの確認
 ```
-Get-Disk | fl
+Get-PSDrive -Name C
 ```
 ## 負荷の確認
 CPU
