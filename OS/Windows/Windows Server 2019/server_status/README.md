@@ -22,6 +22,10 @@ Get-Disk | fl
 ```
 ## 負荷の確認
 リッスンポートの確認
+```
+netstat -antl
+netstat -anul
+```
 ## ログの確認
 ## コアダンプの確認
 
