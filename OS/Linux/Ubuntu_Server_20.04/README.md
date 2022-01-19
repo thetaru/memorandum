@@ -1,6 +1,7 @@
 # Ubuntu Server
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/settings)
+- [ ] [ufw](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/ufw)
 ## ■ Software Settings
 - [ ] [Gitlab](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/gitlab)
 - [ ] [k8s](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/k8s)
