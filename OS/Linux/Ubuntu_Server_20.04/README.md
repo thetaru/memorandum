@@ -1,6 +1,7 @@
 # Ubuntu Server
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/settings)
+- [ ] [netplan](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/netplan)
 - [ ] [ufw](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/ufw)
 ## ■ Software Settings
 - [ ] [Gitlab](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/gitlab)
