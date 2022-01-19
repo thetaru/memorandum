@@ -2,6 +2,9 @@
 - [ ] [テンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/_Template)
 ## ■ MEMO
 ```
+# 追加
+networkmanager
+
 ## 機能調査
 samba 数パターンつくる
 パスワードポリシーについて(login.defs)
