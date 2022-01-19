@@ -20,7 +20,7 @@ $ sudo vi /etc/fstab
 ```
 $ rm /swap.img
 ```
-# ■ docker Install
+## ■ docker Install
 ```
 $ sudo apt-get update
 $ sudo apt-get install \
