@@ -20,7 +20,7 @@ $ sudo vi /etc/fstab
 ```
 $ rm /swap.img
 ```
-# § docker Install
+# ■ docker Install
 ```
 $ sudo apt-get update
 $ sudo apt-get install \
@@ -57,8 +57,8 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker
 $ sudo systemctl enable docker
 ```
-# § k8s Install
-## ■ kubelet kubeadm kubectl Install
+## ■ k8s Install
+### kubelet kubeadm kubectl Install
 ```
 $ sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -69,7 +69,7 @@ $ sudo apt-get update
 $ sudo apt-get install -y kubelet kubeadm kubectl
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
-## ■ Masterの設定
+### Masterの設定
 ```
 [kube-master]$ sudo vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
@@ -118,10 +118,10 @@ kube-master   NotReady   master   4m31s   v1.18.8
 ### Flannel Install
 [kube-master]$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
-## ■ Nodeの設定
-### トークン確認
+### Nodeの設定
+#### トークン確認
 ```
-### トークン一覧表示
+#### トークン一覧表示
 [kube-master]$ kubeadm token list
 ```
 ```
@@ -136,7 +136,7 @@ TOKEN                     TTL         EXPIRES                USAGES             
 ```
 5229ea2d50bf5b4131c9bd841eec89041e5f1edbf1f15da480b021a1eacdd45f
 ```
-### Nodeの追加
+#### Nodeの追加
 ```
 ### 上で得たtokenとhashを入れてrootで実行
 [kube-node]# kubeadm join 192.168.137.100:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
@@ -159,7 +159,7 @@ This node has joined the cluster:
 
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
-## ■ クラスター確認
+### クラスター確認
 ```
 [kube-master]$ kubectl get nodes
 ```
