@@ -5,6 +5,8 @@
 # 追加
 networkmanager
 
+basicconfの内容を更新する。 参照させるようにすること。
+
 ## 機能調査
 samba 数パターンつくる
 パスワードポリシーについて(login.defs)
