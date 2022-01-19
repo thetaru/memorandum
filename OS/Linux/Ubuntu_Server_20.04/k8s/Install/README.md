@@ -36,6 +36,7 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 $ docker --version
 ```
+※ containerd.ioだけでいいと思う(要検証)
 ```
 ### cgroupdriverの変更(cgroup -> systemd)
 $ cat > /etc/docker/daemon.json <<EOF
