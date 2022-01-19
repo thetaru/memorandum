@@ -68,6 +68,10 @@ Runtime reservation: 64M
 Large modules:
     xfs: 1544192
 ```
+kdumpの設定を見ることができる
+```
+kdump-config show
+```
 ## ■ クラッシュダンプの採取
 システムを故意にクラッシュさせダンプできていることを確認します。
 ### 1. Magic SysRq Key
