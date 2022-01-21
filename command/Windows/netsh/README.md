@@ -2,5 +2,5 @@
 ## trace
 パケットキャプチャ
 
-l# proxy
+## proxy
 プロキシ設定
