@@ -1,4 +1,5 @@
-# networkmanager
+# NetworkManager
+NetworkManagerを利用する方法に`CUI・TUI・GUI`がある。ただし、このページではCUI(nmcliコマンド)のみを扱うこととする。
 ## ■ 機能の概要
 
 ## ■ 関連サービス
