@@ -57,6 +57,7 @@ scoopでインストールしたパッケージを表示します。
 > scoop bucket add extras
 ```
 ### よく使うパッケージ
+chromeとvscodeはインストーラを利用してインストールするほうが良いです。
 |パッケージ名|役割|
 |:---|:---|
 |googlechrome|ブラウザ|
@@ -68,5 +69,5 @@ scoopでインストールしたパッケージを表示します。
 |dbeaver|SQLクライアント|
 
 ```
-> scoop install googlechrome teraterm vim winmerge windows-terminal vscode ripgrep everything dbeaver
+> scoop install teraterm vim winmerge windows-terminal ripgrep everything dbeaver
 ```
