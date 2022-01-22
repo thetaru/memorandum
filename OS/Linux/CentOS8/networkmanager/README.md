@@ -9,7 +9,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 |:---|:---|
 |NetworkManager.service|なし|
 
-## ■ 主設定ファイル
+## ■ 主設定ファイル /etc/networkmanager/networkmanager.conf
 
 ## ■ 設定用コマンド
 
