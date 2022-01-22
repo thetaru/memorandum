@@ -32,6 +32,7 @@
 - パスワード認証
 - 公開鍵認証
 - LDAP認証
+- LDAP + Kerberos認証
 
 ## ■ ログ
 CentOS8のデフォルト設定では、SSHのログのファシリティはAUTHPRIV(レベルはINFO)なので、rsyslogにより`/var/log/secure`に振り分けられます。
