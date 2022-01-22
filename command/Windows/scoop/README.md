@@ -57,6 +57,16 @@ scoopでインストールしたパッケージを表示します。
 > scoop bucket add extras
 ```
 ### よく使うパッケージ
+|パッケージ名|役割|
+|:---|:---|
+|googlechrome|ブラウザ|
+|teraterm|ターミナルエミュレータ|
+|vim|エディタ|
+|vscode|エディタ|
+|winmerge|差分比較|
+|windows-terminal|ターミナル|
+|dbeaver|SQLクライアント|
+
 ```
-> scoop install googlechrome teraterm vim winmerge windows-terminal vscode ripgrep everything tableplus
+> scoop install googlechrome teraterm vim winmerge windows-terminal vscode ripgrep everything dbeaver
 ```
