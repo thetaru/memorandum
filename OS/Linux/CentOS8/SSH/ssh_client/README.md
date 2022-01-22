@@ -17,7 +17,7 @@ Enter same passphrase again:
 鍵認証でSSHする対象のSSHサーバに上で作成した公開鍵の情報を渡す(`authorized_keys`に記載する)必要があります。  
 コピペするのは面倒なので`ssh-copy-id`コマンドを使用します。
 ```
-# ssh-copy-id [-n] [-p ${PORT}] -i ${PUBLIC_KEY} ${USER}@${HOST}
+# ssh-copy-id [-n] [-p ${SSH_SERVER_PORT}] -i ${PUBLIC_KEY} ${USER}@${SSH_SERVER}
 ```
 ※ nオプションをつけるとドライランとなります
 
@@ -25,8 +25,9 @@ Enter same passphrase again:
 ### ローカルフォワード
 #### 文法
 ```
-# ssh [-g] -L <自ホストのポート>:<対象サーバ>:<対象サーバのポート> <SSHサーバ>
+# ssh [-g] -L ${HOST_PORT}:${TARGET_HOST}:${TARGET_PORT} ${USER}@${SSH_SERVER}
 ```
+※ gオプションをつけると
 
 #### 例
 SSHサーバ(192.168.0.1)から80番ポートを開放しているサーバ(192.168.0.10)にアクセスできることを前提とします。  
