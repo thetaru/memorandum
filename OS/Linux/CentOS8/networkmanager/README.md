@@ -12,5 +12,16 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 ## ■ 主設定ファイル /etc/NetworkManager/NetworkManager.conf
 
 ## ■ 設定用コマンド
+### 設定ファイルの読み込み
+```
+### コネクション名を確認
+# nmcli connection show
+
+### 編集した(コネクションと紐づく)設定ファイルを読み込み
+# nmcli connection load /etc/sysconfig/network-scripts/ifcfg-<connection-name>
+
+### コネクションに設定を反映
+# nmcli connection up <connectoin-name>
+```
 
 ## ■ 調査・確認用コマンド
