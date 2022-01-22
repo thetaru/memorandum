@@ -13,6 +13,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 
 ## ■ 設定用コマンド
 ### 設定ファイルの読み込み
+設定ファイルを手動で編集した場合に利用できる。
 ```
 ### コネクション名を確認
 # nmcli connection show
