@@ -30,7 +30,7 @@
 - 22/tcp
 ### ● 認証
 ## ■ ログ
-CentOS8のデフォルト設定では、SSHのログのファシリティはAUTHPRIVなので、rsyslogにより`/var/log/secure`に振り分けられます。
+CentOS8のデフォルト設定では、SSHのログのファシリティはAUTHPRIV(レベルはINFO)なので、rsyslogにより`/var/log/secure`に振り分けられます。
 
 ## ■ 設定の反映
 サービスの再起動を実施し、設定を読み込みます。
