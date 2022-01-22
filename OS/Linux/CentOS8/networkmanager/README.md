@@ -5,9 +5,9 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 もちろん、nmcliコマンドによる設定のみでなく、設定ファイルを手動で編集しNetworkManagerに読み込ませることもできる。
 
 ## ■ 関連サービス
-|サービス名|ポート番号|
-|:---|:---|
-|NetworkManager.service|なし|
+|サービス名|ポート番号|役割|
+|:---|:---|:---|
+|NetworkManager.service|なし|ネットワーク設定の管理|
 
 ## ■ 主設定ファイル /etc/NetworkManager/NetworkManager.conf
 
