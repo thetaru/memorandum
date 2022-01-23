@@ -66,3 +66,8 @@ some-commnad > stdout.log 2> stderr.log
 ```
 split -l 行数 ファイルパス
 ```
+tlp バッテリ系
+```
+tlp-stat
+tlp-stat -b
+```
