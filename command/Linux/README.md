@@ -17,3 +17,4 @@
 - [ ] [システムコール番号を確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/search_syscall)
 - [ ] [journalctlでログ表示](https://github.com/thetaru/memorandum/tree/master/command/Linux/journalctl)
 - [ ] [ARPテーブルの確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/show_arp)
+- [ ] [dmidecodeでよく使うやつ](https://github.com/thetaru/memorandum/tree/master/command/Linux/dmidecode_tips)
