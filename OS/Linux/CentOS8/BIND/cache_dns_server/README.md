@@ -200,9 +200,8 @@ nslookupやdig等の名前解決コマンドでインターネット側から名
 # dig @192.168.138.20 chaos version.bind -t txt
 ```
 ### ● 再帰問い合わせを行えること
-名前解決の経路を確認し、他のDNSサーバに対して問い合わせを行わないことを確認します。
 ```
- # dig +trace example.com
+ # dig @192.168.138.20 +trace example.com
 ```
 
 ### ● キャッシュを行わないこと
