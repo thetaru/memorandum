@@ -8,6 +8,7 @@ networkmanager
 basicconfの内容を更新する。 参照させるようにすること。
 
 ## 機能調査
+apache 未整理
 samba 数パターンつくる
 パスワードポリシーについて(login.defs)
 postgreSQL
