@@ -246,7 +246,9 @@ copytruncate方式に限らず、inode番号を書き換える処理をはさむ
   
 logとlogrtの使い分け  
 logはログファイル名がhoge.logのような場合に有効  
-logrtはログファイル名hoge_20211225.logの場合に有効
+logrtはログファイル名hoge_20211225.logの場合に有効  
+※ 最新の2ログ(hoge.lohとhoge_xxxxxxx.log)は非圧縮が推奨
+
 ### ホスト情報
 - ホスト名
   - XXX
