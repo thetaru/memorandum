@@ -15,11 +15,11 @@ rake task_name:task_test["name"]
 ```rb
 namespace :task_name do
   task main_task: :pre_task do
-    puts 'This is a main task.'
+    puts '0. This is a main task.'
   end
   
   task :pre_task do
-    puts 'This is a pre task.'
+    puts '1. This is a pre task.'
   end
 end
 ```
