@@ -23,3 +23,6 @@ namespace :task_name do
   end
 end
 ```
+```sh
+rake task_name:main_task
+```
