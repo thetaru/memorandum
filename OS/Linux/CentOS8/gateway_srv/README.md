@@ -63,7 +63,7 @@ INPUTなどはよしなに追加などしてください...
   <!-- Gateway -->
   <rule priority="1" ipv="ipv4" table="nat" chain="POSTROUTING">-o ens224 -j MASQUERADE</rule>
   <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens192 -o ens224 -m state --state RELATED,ESTABLISHED -j ACCEPT</rule>
-  <rule priority="0" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -j ACCEPT</rule>
+  <rule priority="1" ipv="ipv4" table="filter" chain="FORWARD">-i ens224 -o ens192 -j ACCEPT</rule>
   <!-- Input rule -->
   <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-s 192.168.137.0/24 -p tcp -m state --state NEW --dport 22 -j ACCEPT</rule>
   <rule priority="1" table="filter" ipv="ipv4" chain="INPUT">-s 192.168.0.0/24 -p tcp -m state --state NEW --dport 22 -j ACCEPT</rule>
