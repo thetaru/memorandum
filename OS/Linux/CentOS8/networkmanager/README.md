@@ -53,7 +53,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 # nmcli connection show
 
 ### (コネクションと紐づくネットワークインターフェースの)設定ファイルを読み込み
-# nmcli connection load /etc/sysconfig/network-scripts/ifcfg-<connection-name>
+# nmcli connection load /etc/sysconfig/network-scripts/ifcfg-<device-name>
 
 ### コネクションに設定を反映
 # nmcli connection up <connection-name>
