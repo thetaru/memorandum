@@ -13,6 +13,6 @@
   - dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
   - dnf install https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm
 
-- NetworkManagerの挙動が違う(ver: 1.34 バージョン差かな?)
+- NetworkManagerの挙動が違う(ver: 1.34 バージョン差かな? -> deprecatedだった)
   - /etc/NetworkManager/system-connections配下で管理しているように見える
   - 一方で、/etc/sysconfig/network-scripts配下は空となっていた
