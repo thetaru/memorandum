@@ -24,7 +24,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 ```
 ### コネクションの起動/停止
 ```
-### コネクションの起動(すでに起動している場合、設定の再読み込み)
+### コネクションの起動(設定の反映も兼ねる)
 # nmcli connection up <connection-name>
 
 ### コネクションの停止
