@@ -12,7 +12,13 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 ## ■ 主設定ファイル /etc/NetworkManager/NetworkManager.conf
 
 ## ■ 設定用コマンド
-### 設定ファイルの読み込み
+### コマンドによる設定
+一般的な設定項目を紹介する。
+|パラメータ|設定値|意味|
+|:---|:---|:---|
+||||
+
+### コンフィグによる設定
 設定ファイルを手動で編集した場合は以下のように設定する。  
 ※ CentOS9から`/etc/sysconfig/network-scripts/`はdeprecatedであることに注意
 ```
