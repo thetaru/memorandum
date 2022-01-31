@@ -32,6 +32,8 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 |ipv4.gateway|||
 |ipv4.dns|||
 |ipv4.routes|||
+|ipv4.may-fail|||
+|ipv4.never-default|||
 ||||
 
 #### コンフィグによる設定
