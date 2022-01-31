@@ -23,7 +23,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 # nmcli connection load /etc/sysconfig/network-scripts/ifcfg-<connection-name>
 
 ### コネクションに設定を反映
-# nmcli connection up <connectoin-name>
+# nmcli connection up <connection-name>
 ```
 
 ## ■ 調査・確認用コマンド
