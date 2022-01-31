@@ -13,7 +13,8 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 
 ## ■ 設定用コマンド
 ### 設定ファイルの読み込み
-設定ファイルを手動で編集した場合は以下のように設定する。
+設定ファイルを手動で編集した場合は以下のように設定する。  
+※ CentOS9から`/etc/sysconfig/network-scripts/`はdeprecatedであることに注意
 ```
 ### コネクション名を確認
 # nmcli connection show
