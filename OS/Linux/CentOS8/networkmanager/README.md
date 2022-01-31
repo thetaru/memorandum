@@ -16,6 +16,11 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 一般的な設定項目を紹介する。
 |パラメータ|設定値|意味|
 |:---|:---|:---|
+|ipv4.method|||
+|ipv4.addresses|||
+|ipv4.gateway|||
+|ipv4.dns|||
+|ipv4.routes|||
 ||||
 
 ### コンフィグによる設定
