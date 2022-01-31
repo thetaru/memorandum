@@ -60,3 +60,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 ```
 
 ## ■ 調査・確認用コマンド
+### コネクションのバックアップを作成
+```
+# nmcli connection clone <バックアップ対象のコネクション名> <バックアップ先のコネクション名>
+```
