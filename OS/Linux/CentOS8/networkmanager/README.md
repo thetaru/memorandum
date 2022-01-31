@@ -16,7 +16,11 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 ネットワークインターフェース(NIC)と論理インターフェース(コネクション)を紐づけの操作を行う。  
 ユーザは直接デバイスをさわることなく設定することができる。
 ```
-# 
+### コネクションの作成
+# nmcli connection add con-name <connection-name> ifname <device-name> type ethernet
+
+### コネクションの削除
+# nmcli connection delete <connection-name>
 ```
 ### コネクションの起動/停止
 ```
