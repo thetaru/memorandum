@@ -1,6 +1,7 @@
 # Ubuntu Server
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/settings)
+- [ ] [apparmor](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/apparmor)
 - [ ] [netplan](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/netplan)
 - [ ] [ufw](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/ufw)
 ## ■ Software Settings
