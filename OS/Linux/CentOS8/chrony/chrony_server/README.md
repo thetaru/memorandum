@@ -58,7 +58,7 @@ IPv6を使用しない場合は、IPv4のみを指定します。
 ### ● 起動オプションの確認
 `/etc/sysconfig/chronyd`で設定したオプションがプロセスに渡されていることを確認します。
 ```
-# ps -fp $(pgrep --parent 1 chronyd)
+# ps -fup $(pgrep chronyd)
 ```
 
 ### ● 上位NTPサーバとの同期確認
