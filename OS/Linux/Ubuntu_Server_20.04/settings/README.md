@@ -60,52 +60,9 @@ $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ```
 :warning:`sudo apt full-upgrade`でアップデートをするとカーネルアップデートが実行してしまうことに注意します。
 ## ■ sshdの設定
-```
-$ sudo vi /etc/ssh/sshd_config
-```
-```
-### sshで使用するポートを指定
--  #Port 22
-+  Port 2020
 
-### IPv4のみ許可
--  #AddressFamily any
-+  AddressFamily inet
-
-### rootでのログインを禁止
--  PermitRootLogin prohibit-password
-+  PermitRootLogin no
-
-### パスワード認証を禁止
--  PasswordAuthentication yes
-+  PasswordAuthentication no
-```
-```
-### sshdを再起動
-$ sudo systemctl restart sshd
-```
 ## ■ ufwの設定
-```
-### サービスのステータス確認
-$ systemctl status ufw
-```
-1. **有効**にする場合(デフォルトで有効です)
-```
-### サービスの有効化
-$ sudo systemctl start ufw
 
-### 自動起動の無効化
-$ sudo systemctl enable ufw
-```
-2. **無効**にする場合
-```
-### サービスの無効化
-$ sudo systemctl stop ufw
-
-### 自動起動の無効化
-$ sudo systemctl disable ufw
-```
-ここでは、ufwの詳しい設定は行いません。
 ## ■ localeの設定
 ```
 ### language-pack-jaのインストール
