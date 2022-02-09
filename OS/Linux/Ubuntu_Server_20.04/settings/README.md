@@ -3,30 +3,25 @@
 ```
 $ sudo hostnamectl set-hostname <hostname>
 ```
+
 ## ■ ネットワークの設定
-ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は(netplan)[]を参照してください。
+ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[netplan]()を参照してください。
 
-## ■ 名前解決の設定
-
-### /etc/hostsの設定
+## ■ /etc/hostsの設定
 ```
 $ sudo vi /etc/hosts
 ```
 ```
 # IPv6は使わないので無効化
 -  ::1     ip6-localhost ip6-loopback
-+  #::1     ip6-localhost ip6-loopback
-
 -  fe00::0 ip6-localnet
-+  #fe00::0 ip6-localnet
-
 -  ff00::0 ip6-mcastprefix
-+  #ff00::0 ip6-mcastprefix
-
 -  ff02::1 ip6-allnodes
-+  #ff02::1 ip6-allnodes
-
 -  ff02::2 ip6-allrouters
++  #::1     ip6-localhost ip6-loopback
++  #fe00::0 ip6-localnet
++  #ff00::0 ip6-mcastprefix
++  #ff02::1 ip6-allnodes
 +  #ff02::2 ip6-allrouters
 ```
 ## ■ パッケージアップデート
