@@ -153,12 +153,13 @@ networking.service
 multipathd.service
 
 ### パッケージリストの自動更新の停止・自動起動の無効化
-$ sudo systemctl mask apt-daily.timer
-$ sudo systemctl mask apt-daily.service
-$ sudo systemctl mask apt-daily-upgrade.timer
-$ sudo systemctl mask apt-daily-upgrade.service
+$ sudo systemctl disable --now apt-daily.timer
+$ sudo systemctl disable --now apt-daily.service
 
-$ sudo systemctl mask unattended-upgrades.service
+$ sudo systemctl disable --now apt-daily-upgrade.timer
+$ sudo systemctl disable --now apt-daily-upgrade.service
+
+$ sudo systemctl disable --now unattended-upgrades.service
 ```
 ## ■ sshdの設定
 
