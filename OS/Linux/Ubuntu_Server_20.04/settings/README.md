@@ -63,7 +63,35 @@ $ timedatectl set-timezone Asia/Tokyo
 ここでは、NTPクライアント(systemd-timesyncd.service)の設定のみを記載します。  
 ※ ntpdやchtonyを使うこともできますが、インストールが必要です  
   
+NTPサービスが有効(active)になっていることを確認します。
+```
+$ timedatectl status
+```
+```
+(snip)
+NTP service:(inactive|active)
+(snip)
+```
+NTPサービスが無効(inactive)の場合、次のコマンドで有効化します。
+```
+$ sudo timedatectl set-ntp true
+```
+参照先のNTPサーバを指定します。
+```
+$ sudo vim /etc/systemd/timesyncd.service
+```
+```
+[Time]
+- #NTP=
++ NTP=<プライマリntpサーバ>
 
+- #FallbackNTP=
++ FallbackNTP=<セカンダリntpサーバ>
+```
+設定を有効化します。
+```
+$ sudo systemctl restart systemd-timesyncd
+```
 
 ## ■ パッケージアップデート
 ```
