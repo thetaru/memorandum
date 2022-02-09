@@ -59,6 +59,10 @@ $ timedatectl list-timezones
 $ timedatectl set-timezone Asia/Tokyo
 ```
 
+## ■ 時刻同期の設定
+ここでは、NTPクライアント(systemd-timesyncd.service)の設定のみを記載します。  
+※ ntpdやchtonyを使うこともできますが、インストールが必要です
+
 ## ■ パッケージアップデート
 ```
 # パッケージ一覧を更新
@@ -68,7 +72,7 @@ $ sudo apt update
 $ sudo apt upgrade
 ```
 ## ■ 不要なサービスの停止
-調査中...
+調査中..
 ```
 ### いらないサービス(メモ)
 avahi-daemon.service # 自動でルーティングが入る
@@ -97,8 +101,6 @@ $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ## ■ ufwの設定
 
 ## ■ apparmorの設定
-
-## ■ 時刻同期の設定
 
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
