@@ -107,6 +107,11 @@ APT::Periodic::Unattended-Upgrade "0";
 ```
 $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
 ```
+```
+Unattended-Upgrade::Allowed-Origins {
+//    "${}"
+}
+```
 
 ## ■ パッケージアップデート制限の設定
 カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
