@@ -147,6 +147,8 @@ $ sudo systemctl mask apt-daily.timer
 $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
+
+$ sudo systemctl mask unattended-upgrades.service
 ```
 ## ■ sshdの設定
 
