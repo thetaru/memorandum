@@ -4,6 +4,27 @@
 $ sudo hostnamectl set-hostname <hostname>
 ```
 
+## ■ ブートローダーの設定
+```
+$ sudo vim /etc/default/grub
+```
+```
+-  GRUB_CMDLINE_LINUX=""
++  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet ipv6.disable=1"
+```
+設定を反映します。
+```
+# BIOSの場合
+$ sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# UEFI
+$ sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
+```
+再起動後、IPv6関連のカーネルモジュールがロードされていないことが確認できます。
+```
+$ lsmod | grep ipv6
+```
+
 ## ■ ネットワークの設定
 ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[netplan]()を参照してください。
 
@@ -209,17 +230,7 @@ $ sudo vi /etc/logrotate.conf
 -  #compress
 +  compress
 ```
-## ■ ブートローダーの設定(GRUB2)
-```
-$ sudo vi /etc/default/grub
-```
-```
--  GRUB_CMDLINE_LINUX=""
-+  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet"
-```
-```
-$ sudo update-grub
-```
+
 ## ■ カーネルパラメータの設定
 ```
 $ sudo vi /etc/sysctl.conf
