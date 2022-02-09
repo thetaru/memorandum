@@ -13,3 +13,6 @@
 
 ## ■ 調査・確認用コマンド
 
+netplan get
+  
+netplan try --timeout <num>
