@@ -93,6 +93,22 @@ $ sudo vim /etc/systemd/timesyncd.service
 $ sudo systemctl restart systemd-timesyncd
 ```
 
+## ■ パッケージアップデート制限の設定
+カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
+```
+$ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
+```
+```
+(snip)
+Unattended-Upgrade::Package-Blacklist {
+    "linux-headers";
+    "linux-image";
+    "linux-generic";
+    "linux-modules";
+};
+(snip)
+```
+
 ## ■ パッケージアップデート
 ```
 # パッケージ一覧を更新
