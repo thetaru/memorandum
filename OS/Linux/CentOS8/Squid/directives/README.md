@@ -434,6 +434,9 @@ snmp_port 3401
 ```
 ## ● strip_query_terms (log)
 urlからクエリ用語が一部抜ける
+## ● tcp_outgoing_address
+リクエストをソースアドレス(や認証ならユーザ名)をルールに送信IPアドレスを振り分けることができる。  
+例えば、AポートならIPv4、BポートならIPv6といったことも可能となる
 ## ● visible_hostname (security)
 ### ■ Syntax
 ```
