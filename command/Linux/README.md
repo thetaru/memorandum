@@ -18,3 +18,4 @@
 - [ ] [journalctlでログ表示](https://github.com/thetaru/memorandum/tree/master/command/Linux/journalctl)
 - [ ] [ARPテーブルの確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/show_arp)
 - [ ] [dmidecodeでよく使うやつ](https://github.com/thetaru/memorandum/tree/master/command/Linux/dmidecode_tips)
+- [ ] [systemd timerの一覧を確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/systemd_timer_list)
