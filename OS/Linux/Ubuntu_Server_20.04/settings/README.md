@@ -26,6 +26,39 @@ $ sudo vi /etc/hosts
 +  #ff02::1 ip6-allnodes
 +  #ff02::2 ip6-allrouters
 ```
+
+## ■ ロケールの設定
+システムに設定されているロケールを確認します。
+```
+$ localectl
+```
+インストール済みロケールを確認します。
+```
+$ localectl list-locales
+```
+日本語ロケール(ja_JP.UTF-8)がインストールされていない場合、以下のコマンドでインストールします。
+```
+$ sudo apt install language-pack-ja
+```
+日本語ロケールを設定します。
+```
+$ sudo localectl set-locale LANG=ja_JP.UTF-8
+```
+
+## ■ タイムゾーンの設定
+システムに設定されているタイムゾーンを確認します。
+```
+$ timedatectl
+```
+タイムゾーンの一覧を確認します。
+```
+$ timedatectl list-timezones
+```
+タイムゾーン(Asia/Tokyo)に設定します。
+```
+$ timedatectl set-timezone Asia/Tokyo
+```
+
 ## ■ パッケージアップデート
 ```
 # パッケージ一覧を更新
@@ -63,21 +96,7 @@ $ sudo apt-mark hold linux-image-generic linux-headers-generic
 
 ## ■ ufwの設定
 
-## ■ localeの設定
-インストール済みロケールを確認します。
-```
-$ localectl list-locales
-```
-日本語ロケール(ja_JP.UTF-8)がインストールされていない場合、以下のコマンドでインストールします。
-```
-$ sudo apt install language-pack-ja
-```
-日本語ロケールを設定します。
-```
-$ sudo localectl set-locale LANG=ja_JP.UTF-8
-```
-
-## ■ timezoneの設定
+## ■ apparmorの設定
 
 ## ■ 時刻同期の設定
 
