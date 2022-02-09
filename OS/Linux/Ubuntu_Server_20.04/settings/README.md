@@ -8,6 +8,7 @@ $ sudo hostnamectl set-hostname <hostname>
 ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[netplan]()を参照してください。
 
 ## ■ 名前解決の設定
+`/etc/resolv.conf`は使用しない
 ### /etc/hostsの設定
 ```
 $ sudo vi /etc/hosts
