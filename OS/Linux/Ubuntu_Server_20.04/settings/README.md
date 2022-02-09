@@ -157,10 +157,10 @@ $ sudo apt-mark hold linux-headers linux-image linux-generic linux-modules
 
 ## ■ パッケージアップデート
 ```
-# パッケージ一覧を更新
+# パッケージリストをアップデート
 $ sudo apt update
 
-# パッケージを更新
+# パッケージをアップグレード
 $ sudo apt upgrade
 ```
 
