@@ -103,7 +103,7 @@ $ sudo vim /etc/apt/apt.conf.d/20auto-upgrades
 APT::Periodic::Update-Package-Lists "0";
 APT::Periodic::Unattended-Upgrade "0";
 ```
-
+アップグレード対象となるパッケージをすべてコメントアウトします。
 ```
 $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
 ```
