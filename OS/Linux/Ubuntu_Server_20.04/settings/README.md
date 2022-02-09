@@ -109,8 +109,17 @@ $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
 ```
 ```
 Unattended-Upgrade::Allowed-Origins {
-//    "${}"
-}
+//    "${distro_id}:${distro_codename}";
+//    "${distro_id}:${distro_codename}-security";
+//    "${distro_id}ESMApps:${distro_codename}-apps_security";
+};
+
+Unattended-Upgrade::Package-Blacklist {
+    "linux-headers";
+    "linux-image";
+    "linux-generic";
+    "linux-modules";
+};
 ```
 
 ## ■ パッケージアップデート制限の設定
