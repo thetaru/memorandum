@@ -92,12 +92,16 @@ $ sudo vim /etc/systemd/timesyncd.service
 ```
 $ sudo systemctl restart systemd-timesyncd
 ```
+参照先NTPサーバと時刻同期できていることを確認します。
+```
+$ timedatectl timesync-status
+```
 
 ## ■ パッケージリスト自動更新の設定
 デフォルトでは、自動でパッケージリストを更新し、パッケージのアップグレードを行います。  
-自動更新は`/etc/apt/apt.conf.d/`配下のファイルに沿って実行されます。(実行順序は名前の昇順)  
+一連の処理は`/etc/apt/apt.conf.d/`配下のファイルに沿って実行されます。(実行順序は名前の昇順)  
   
-
+自動パッケージリスト更新と自動パッケージアップグレードを無効にします。
 ```
 $ sudo vim /etc/apt/apt.conf.d/20auto-upgrades
 ```
@@ -105,7 +109,7 @@ $ sudo vim /etc/apt/apt.conf.d/20auto-upgrades
 APT::Periodic::Update-Package-Lists "0";
 APT::Periodic::Unattended-Upgrade "0";
 ```
-アップグレード対象となるパッケージをすべてコメントアウトします。
+アップグレード対象となるパッケージをすべてコメントアウトし、アップグレードから除外するパッケージを指定します。
 ```
 $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
 ```
@@ -127,9 +131,7 @@ Unattended-Upgrade::Package-Blacklist {
 ## ■ パッケージアップデート制限の設定
 カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
 ```
-$ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
-```
-```
+$ sudo apt-mark hold linux-headers linux-image linux-generic linux-modules
 ```
 
 ## ■ パッケージアップデート
@@ -140,20 +142,10 @@ $ sudo apt update
 # パッケージを更新
 $ sudo apt upgrade
 ```
+
 ## ■ 不要なサービスの停止
 調査中..
 ```
-### いらないサービス(メモ)
-avahi-daemon.service # 自動でルーティングが入る
-bluetooth.service
-cups.service
-cups-browsed.service
-ModemManager.service
-networking.service
-
-### 必要に応じて停止
-multipathd.service
-
 ### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl disable --now apt-daily.timer
 $ sudo systemctl disable --now apt-daily.service
@@ -163,6 +155,7 @@ $ sudo systemctl disable --now apt-daily-upgrade.service
 
 $ sudo systemctl disable --now unattended-upgrades.service
 ```
+
 ## ■ sshdの設定
 
 ## ■ ufwの設定
@@ -249,7 +242,6 @@ $ sudo systemctl -p
 ```
 ## ■ カーネルクラッシュダンプ
 ```
-### kdumpのインストール
 $ sudo apt install linux-crashdump
 ```
 ```
@@ -326,7 +318,7 @@ $ sudo vi /etc/systemd/system.conf
 # systemctl restart rsyslog.service
 # systemctl status rsyslog.service
 ```
-## ■ [option]Proxyの設定
+## ■ [任意]Proxyの設定
 ```
 $ sudo vi /etc/profile.d/proxy.sh
 ```
