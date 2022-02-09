@@ -1,4 +1,4 @@
-# systemd timerを一覧表示
+# systemd timerを一覧を確認
 ```
 systemctl list-timers --all
 ```
