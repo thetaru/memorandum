@@ -56,7 +56,7 @@ $ timedatectl list-timezones
 ```
 タイムゾーン(Asia/Tokyo)に設定します。
 ```
-$ timedatectl set-timezone Asia/Tokyo
+$ sudo timedatectl set-timezone Asia/Tokyo
 ```
 
 ## ■ 時刻同期の設定
