@@ -93,6 +93,17 @@ $ sudo vim /etc/systemd/timesyncd.service
 $ sudo systemctl restart systemd-timesyncd
 ```
 
+## ■ パッケージリスト自動更新の設定
+デフォルトでは、自動でパッケージリストを更新し、パッケージのアップグレードまで行います。  
+ここでは、パッケージリストの自動更新とパッケージの自動アップグレードを無効にします。
+```
+$ sudo vim /etc/apt/apt.conf.d/20auto-upgrades
+```
+```
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Unattended-Upgrade "0";
+```
+
 ## ■ パッケージアップデート制限の設定
 カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
 ```
