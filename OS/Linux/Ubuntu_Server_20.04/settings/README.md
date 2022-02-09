@@ -64,84 +64,23 @@ $ sudo apt-mark hold linux-image-generic linux-headers-generic
 ## ■ ufwの設定
 
 ## ■ localeの設定
+インストール済みロケールを確認します。
 ```
-### language-pack-jaのインストール
-$ sudo apt-get install language-pack-ja
+$ localectl list-locales
 ```
+日本語ロケール(ja_JP.UTF-8)がインストールされていない場合、以下のコマンドでインストールします。
 ```
-### localeにja_JP.UTF-8を設定
-$ sudo update-locale LANG=ja_JP.UTF-8
+$ sudo apt install language-pack-ja
 ```
+日本語ロケールを設定します。
 ```
-### 確認
-$ cat /etc/default/locale
+$ sudo localectl set-locale LANG=ja_JP.UTF-8
 ```
-```
-LANG=ja_JP.UTF-8
-```
+
 ## ■ timezoneの設定
-```
-### Asia/Tokyoのシンボリックリンクlocaltimeを作成
-$ sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-```
-```
-$ ll /etc/localtime
-```
-```
-lrwxrwxrwx 1 root root 30  7月 31 22:27 /etc/localtime -> /usr/share/zoneinfo/Asia/Tokyo
-```
+
 ## ■ 時刻同期の設定
-```
-### ntpのインストール
-$ sudo apt-get install ntp
-```
-### ntpdの設定
-```
-$ sudo vi /etc/ntp.conf
-```
-```
--  pool 0.ubuntu.pool.ntp.org iburst
-+  #pool 0.ubuntu.pool.ntp.org iburst
 
--  pool 1.ubuntu.pool.ntp.org iburst
-+  #pool 1.ubuntu.pool.ntp.org iburst
-
--  pool 2.ubuntu.pool.ntp.org iburst
-+  #pool 2.ubuntu.pool.ntp.org iburst
-
--  pool 3.ubuntu.pool.ntp.org iburst
-+  #pool 3.ubuntu.pool.ntp.org iburst
-
-### 参照するntpサーバを指定
-+  server <ntp-server1 ip-address or hostname>
-+  server <ntp-server2 ip-address or hostname>
-+  server <ntp-server3 ip-address or hostname>
-
--  pool ntp.ubuntu.com
-+  #pool ntp.ubuntu.com
-
-### IPv6は使わないので無効化
--  restrict -6 default kod notrap nomodify nopeer noquery limited
-+  #restrict -6 default kod notrap nomodify nopeer noquery limited
-
-### IPv6は使わないので無効化
--  restrict ::1
-+  #restrict ::1
-```
-```
-### slewモード設定
-$ sudo vi /etc/default/ntp
-```
-```
--  NTPD_OPTS='-g'
-+  NTPD_OPTS='-g -x'
-```
-### ntpの起動
-```
-### ntpサービスの起動
-$ sudo systemctl start ntp
-$ sudo systemctl enable ntp
-```
 ## ■ pamの設定
 `su` コマンドを実行できるユーザを制限します。  
 :warning:例としてユーザ名は`thetaru`を使用しています。
