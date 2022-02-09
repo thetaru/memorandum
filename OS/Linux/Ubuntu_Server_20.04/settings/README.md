@@ -61,7 +61,9 @@ $ timedatectl set-timezone Asia/Tokyo
 
 ## ■ 時刻同期の設定
 ここでは、NTPクライアント(systemd-timesyncd.service)の設定のみを記載します。  
-※ ntpdやchtonyを使うこともできますが、インストールが必要です
+※ ntpdやchtonyを使うこともできますが、インストールが必要です  
+  
+
 
 ## ■ パッケージアップデート
 ```
