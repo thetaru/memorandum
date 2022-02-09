@@ -436,7 +436,14 @@ snmp_port 3401
 urlからクエリ用語が一部抜ける
 ## ● tcp_outgoing_address
 リクエストをソースアドレス(や認証ならユーザ名)をルールに送信IPアドレスを振り分けることができる。  
-例えば、AポートならIPv4、BポートならIPv6といったことも可能となる
+例えば、ポート番号AならIPv4、ポート番号BならIPv6といったことも可能となる
+### ■ 使用例
+```
+acl ipv4 localport 8081
+acl ipv6 localport 8082
+tcp_outgoing_address 192.168.137.1 ipv4
+tcp_outgoing_address 192.168.137.2 ipv6
+```
 ## ● visible_hostname (security)
 ### ■ Syntax
 ```
