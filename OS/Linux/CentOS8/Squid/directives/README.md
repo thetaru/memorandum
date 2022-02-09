@@ -438,11 +438,12 @@ urlからクエリ用語が一部抜ける
 ソースアドレス(や認証ならユーザ名)をルールに、クライアントから受けたリクエストを送信するIPアドレスを振り分けることができる。  
 例えば、ポート番号AへのアクセスならIPv4、ポート番号BのアクセスならIPv6といったことが可能となる。  
 ### ■ 使用例
+#### ポートごとにリクエストを振り分ける方法
 ```
 acl ipv4 localport 8081
 acl ipv6 localport 8082
 tcp_outgoing_address 192.168.137.1 ipv4
-tcp_outgoing_address 192.168.137.2 ipv6
+tcp_outgoing_address 192.168.138.1 ipv6
 ```
 ## ● visible_hostname (security)
 ### ■ Syntax
