@@ -104,20 +104,16 @@ APT::Periodic::Update-Package-Lists "0";
 APT::Periodic::Unattended-Upgrade "0";
 ```
 
+```
+$ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
+```
+
 ## ■ パッケージアップデート制限の設定
 カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
 ```
 $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
 ```
 ```
-(snip)
-Unattended-Upgrade::Package-Blacklist {
-    "linux-headers";
-    "linux-image";
-    "linux-generic";
-    "linux-modules";
-};
-(snip)
 ```
 
 ## ■ パッケージアップデート
