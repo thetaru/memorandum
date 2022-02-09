@@ -7,12 +7,13 @@ $ sudo hostnamectl set-hostname <hostname>
 ## ■ ネットワークの設定
 ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[netplan]()を参照してください。
 
-## ■ /etc/hostsの設定
+## ■ 名前解決の設定
+### /etc/hostsの設定
 ```
 $ sudo vi /etc/hosts
 ```
 ```
-# IPv6は使わないので無効化
+# IPv6を使用しない場合はコメントアウトする
 -  ::1     ip6-localhost ip6-loopback
 -  fe00::0 ip6-localnet
 -  ff00::0 ip6-mcastprefix
@@ -26,8 +27,11 @@ $ sudo vi /etc/hosts
 ```
 ## ■ パッケージアップデート
 ```
-$ sudo apt-get update
-$ sudo apt-get upgrade
+# パッケージ一覧を更新
+$ sudo apt update
+
+# パッケージを更新
+$ sudo apt upgrade
 ```
 ## ■ 不要なサービスの停止
 調査中...
