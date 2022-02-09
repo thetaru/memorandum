@@ -137,11 +137,6 @@ $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 ```
-## ■ カーネルアップデート抑止
-```
-$ sudo apt-mark hold linux-image-generic linux-headers-generic
-```
-:warning:`sudo apt full-upgrade`でアップデートをするとカーネルアップデートが実行してしまうことに注意します。
 ## ■ sshdの設定
 
 ## ■ ufwの設定
