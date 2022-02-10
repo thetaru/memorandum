@@ -81,7 +81,7 @@ $ localectl status
 ## ■ タイムゾーンの設定
 システムに設定されているタイムゾーンを確認します。
 ```
-$ timedatectl
+$ timedatectl status
 ```
 タイムゾーンの一覧を確認します。
 ```
@@ -90,6 +90,10 @@ $ timedatectl list-timezones
 タイムゾーン(Asia/Tokyo)に設定します。
 ```
 $ sudo timedatectl set-timezone Asia/Tokyo
+```
+設定が反映されていることを確認します。
+```
+$ timedatectl status
 ```
 
 ## ■ 時刻同期の設定
