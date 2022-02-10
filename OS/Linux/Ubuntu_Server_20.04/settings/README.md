@@ -200,6 +200,17 @@ $ sudo systemctl disable --now apt-daily-upgrade.service
 $ sudo systemctl disable --now unattended-upgrades.service
 ```
 
+## ■ コアダンプの設定
+コアダンプの出力をするかしないかはプロジェクトのポリシーにも依存します。(メモリ情報に機密情報を含む場合があるため)
+```
+$ sudo vi /etc/systemd/system.conf
+```
+```
+-  #DefaultLimitCORE=
++  DefaultLimitCORE=infinity
+```
+特定のサービスに対してのみ設定するのであれば、drop-inファイルを作成し`DefaultLimitCORE`の設定値を変更といいかもしれません。
+
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
 
@@ -242,4 +253,4 @@ $ sudo vi /etc/systemd/system.conf
 ### 反映
 # systemctl daemon-reexec
 ```
-個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
+
