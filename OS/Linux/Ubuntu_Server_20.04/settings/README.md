@@ -20,11 +20,19 @@ $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 # UEFI
 $ sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
 ```
-再起動後、IPv6関連のカーネルモジュールがロードされていないことが確認できます。
-```
-$ lsmod | grep ipv6
-```
 
+## ■ カーネルパラメータの設定
+```
+$ sudo vim /etc/sysctl.conf
+```
+```
+fs.suid_dumpable=2
+vm.panic_on_oom=2
+```
+設定を反映します。
+```
+$ sudo systemctl -p
+```
 ## ■ ネットワークの設定
 ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[netplan]()を参照してください。
 
@@ -204,7 +212,7 @@ journalctlの設定は[journalctl]()を参照してください。
 ## ■ ログローテートの設定
 
 ## ■ SSHサーバの設定
-SSHの設定は[SSH]()を参照してください。
+SSHサーバの設定は[SSH]()を参照してください。
 
 ## ■ ufwの設定
 ufwの設定は[ufw]()を参照してください。
@@ -212,24 +220,6 @@ ufwの設定は[ufw]()を参照してください。
 ## ■ apparmorの設定
 apparmorの設定は[apparmor]()を参照してください。
 
-## ■ カーネルパラメータの設定
-```
-$ sudo vi /etc/sysctl.conf
-```
-```
-###
-+  kernel.core_pattern=/var/tmp/core-%e.%p
-
-###
-+  fs.suid_dumpable=2
-
-### OOM Killer が実行に必ずカーネルパニックさせる
-+  vm.panic_on_oom=2
-```
-```
-### 設定の反映
-$ sudo systemctl -p
-```
 ## ■ kdumpの設定
 ```
 $ sudo apt install linux-crashdump
