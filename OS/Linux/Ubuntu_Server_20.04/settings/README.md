@@ -145,6 +145,7 @@ Unattended-Upgrade::Package-Blacklist {
 ## ■ パッケージアップデート制限の設定
 カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
 ```
+# linux-から始まるパッケージをホールド対象とする
 $ sudo apt-mark hold $(dpkg -l | grep "linux-" | sed -r 's/^.*(linux-[0-9a-z.-]*).*$/\1/')
 ```
 ホールドしているパッケージ名を確認します。
