@@ -191,59 +191,26 @@ $ sudo systemctl disable --now apt-daily-upgrade.service
 $ sudo systemctl disable --now unattended-upgrades.service
 ```
 
-## ■ sshdの設定
+## ■ PAMの設定
+PAMの設定は[PAM]()を参照してください。
+
+## ■ ロギングの設定
+### rsyslogの設定
+rsyslogの設定は[rsyslog]()を参照してください。
+
+### journalctlの設定
+journalctlの設定は[journalctl]()を参照してください。
+
+## ■ ログローテートの設定
+
+## ■ SSHサーバの設定
+SSHの設定は[SSH]()を参照してください。
 
 ## ■ ufwの設定
+ufwの設定は[ufw]()を参照してください。
 
 ## ■ apparmorの設定
-
-## ■ pamの設定
-`su` コマンドを実行できるユーザを制限します。  
-:warning:例としてユーザ名は`thetaru`を使用しています。
-```
-### ubuntuにはwheelグループがデフォルトで存在しないので作成
-$ sudo addgroup wheel
-```
-```
-### ユーザthetaru を グループwheelに追加
-$ sudo usermod -aG wheel thetaru
-```
-```
-### wheelグループに属していることを確認
-$ id thetaru
-```
-```
-uid=1001(thetaru) gid=1001(thetaru) groups=1001(thetaru),1002(wheel)
-```
-```
-$ sudo vi /etc/pam.d/su
-```
-```
-### su可能ユーザ制限
--  #auth       required   pam_wheel.so
-+  auth       required   pam_wheel.so use_uid
-```
-```
-### 再起動して反映
-$ sudo systemctl reboot
-```
-## ■ logrotateの設定
-```
-$ sudo vi /etc/logrotate.conf
-```
-```
-### ローテート期間
--  weekly
-+  daily
-
-### 7世代分のログを管理
--  rotate 4
-+  rotate 7
-
-### ローテーションしたログをgzipで圧縮
--  #compress
-+  compress
-```
+apparmorの設定は[apparmor]()を参照してください。
 
 ## ■ カーネルパラメータの設定
 ```
@@ -263,25 +230,15 @@ $ sudo vi /etc/sysctl.conf
 ### 設定の反映
 $ sudo systemctl -p
 ```
-## ■ カーネルクラッシュダンプ
+## ■ kdumpの設定
 ```
 $ sudo apt install linux-crashdump
 ```
 ```
 $ kdump-config show
 ```
-```
-DUMP_MODE:        kdump
-USE_KDUMP:        1
-KDUMP_SYSCTL:     kernel.panic_on_oops=1
-KDUMP_COREDIR:    /var/crash
-crashkernel addr: 
-   /var/lib/kdump/vmlinuz: symbolic link to /boot/vmlinuz-5.4.0-45-generic
-kdump initrd: 
-   /var/lib/kdump/initrd.img: symbolic link to /var/lib/kdump/initrd.img-5.4.0-45-generic
-current state:    Not ready to kdump
-```
 `/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
+
 ## ■ コアダンプ出力設定
 ```
 $ sudo vi /etc/systemd/system.conf
@@ -295,49 +252,3 @@ $ sudo vi /etc/systemd/system.conf
 # systemctl daemon-reexec
 ```
 個々のサービスに対して設定するのなら`systemctl edit <サービス名>`より`DefaultLimitCORE`の設定値を変更します。
-## ■ ログ設定
-### journal設定
-```
-# vi /etc/systemd/journald.conf
-```
-#### 制限あり
-```
-### 30秒間に500以上のメッセージがあった場合ドロップ
--  #RateLimitIntervalSec=
-+  RateLimitIntervalSec=30s
--  #RateLimitBurst=
-+  RateLimitBurst=500
-```
-#### 制限なし
-```
-### 単位時間あたりに受付ける最大メッセージ数(0は無制限)
--  #RateLimitBurst=10000
-+  RateLimitBurst=0
-```
-```
-# systemctl restart systemd-journald
-# systemctl status systemd-journald
-```
-### メッセージ溢れ回避
-5秒間にrsyslogへ200以上のメッセージを送信するとメッセージを捨ててしまう。
-```
-# vi /etc/rsyslog.conf
-```
-#### 制限あり
-```
-### 10秒間に500以上のメッセージがあった場合ドロップ
--  module(load="imjournal" StateFile="imjournal.state")
-+  module(load="imjournal" StateFile="imjournal.state" Ratelimit.Interval="10" Ratelimit.Burst="500")
-```
-#### 制限なし
-```
-### 無制限に書き込む
-+  module(load="imjournal" StateFile="imjournal.state" Ratelimit.Interval="0")
-
--  module(load="imuxsock")
-+  module(load="imuxsock" SysSock.Use="off" SysSock.RateLimit.Interval="0" SysSock.RateLimit.Burst="0")
-```
-```
-# systemctl restart rsyslog.service
-# systemctl status rsyslog.service
-```
