@@ -210,7 +210,12 @@ $ sudo vim /etc/systemd/system.conf
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
 ```
-特定のサービスに対してのみ設定するのであれば、drop-inファイルを作成し`DefaultLimitCORE`の設定値を変更といいかもしれません。
+※ 特定のサービスのみコアダンプをしたい場合、drop-inファイルを作成し`DefaultLimitCORE`の設定値を変更といいかもしれません。  
+  
+設定を反映します。
+```
+$ sudo systemctl daemon-reexec
+```
 
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
@@ -242,17 +247,3 @@ $ sudo apt install linux-crashdump
 $ kdump-config show
 ```
 `/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
-
-## ■ コアダンプ出力設定
-```
-$ sudo vi /etc/systemd/system.conf
-```
-```
--  #DefaultLimitCORE=
-+  DefaultLimitCORE=infinity
-```
-```
-### 反映
-# systemctl daemon-reexec
-```
-
