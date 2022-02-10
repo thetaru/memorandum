@@ -59,7 +59,7 @@ $ sudo vi /etc/hosts
 ## ■ ロケールの設定
 システムに設定されているロケールを確認します。
 ```
-$ localectl
+$ localectl status
 ```
 インストール済みロケールを確認します。
 ```
@@ -72,6 +72,10 @@ $ sudo apt install language-pack-ja
 日本語ロケールを設定します。
 ```
 $ sudo localectl set-locale LANG=ja_JP.UTF-8
+```
+設定が反映されていることを確認します。
+```
+$ localectl status
 ```
 
 ## ■ タイムゾーンの設定
