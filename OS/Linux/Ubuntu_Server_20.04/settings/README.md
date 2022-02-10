@@ -27,6 +27,7 @@ $ sudo vim /etc/sysctl.conf
 ```
 ```
 fs.suid_dumpable=2
+net.ipv4.tcp_timestamps=0
 vm.panic_on_oom=2
 ```
 設定を反映します。
