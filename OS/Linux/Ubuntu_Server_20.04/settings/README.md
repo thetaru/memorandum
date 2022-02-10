@@ -36,16 +36,11 @@ $ sudo vi /etc/hosts
 ```
 ```
 # IPv6を使用しない場合はコメントアウトする
--  ::1     ip6-localhost ip6-loopback
--  fe00::0 ip6-localnet
--  ff00::0 ip6-mcastprefix
--  ff02::1 ip6-allnodes
--  ff02::2 ip6-allrouters
-+  #::1     ip6-localhost ip6-loopback
-+  #fe00::0 ip6-localnet
-+  #ff00::0 ip6-mcastprefix
-+  #ff02::1 ip6-allnodes
-+  #ff02::2 ip6-allrouters
+#::1     ip6-localhost ip6-loopback
+#fe00::0 ip6-localnet
+#ff00::0 ip6-mcastprefix
+#ff02::1 ip6-allnodes
+#ff02::2 ip6-allrouters
 ```
 
 ## ■ ロケールの設定
@@ -103,11 +98,8 @@ $ sudo vim /etc/systemd/timesyncd.service
 ```
 ```
 [Time]
-- #NTP=
-+ NTP=<プライマリntpサーバ>
-
-- #FallbackNTP=
-+ FallbackNTP=<セカンダリntpサーバ>
+NTP=<プライマリntpサーバ>
+FallbackNTP=<セカンダリntpサーバ>
 ```
 設定を有効化します。
 ```
