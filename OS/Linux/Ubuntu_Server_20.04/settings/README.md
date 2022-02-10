@@ -237,7 +237,8 @@ rsyslogの設定は[rsyslog]()を参照してください。
 ### journalctlの設定
 journalctlの設定は[journalctl]()を参照してください。
 
-## ■ ログローテートの設定
+### logrotateの設定
+logrotateの設定は[logrotate]()を参照してください。
 
 ## ■ SSHサーバの設定
 SSHサーバの設定は[SSH]()を参照してください。
