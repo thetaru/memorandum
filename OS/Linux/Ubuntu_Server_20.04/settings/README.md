@@ -150,6 +150,10 @@ Unattended-Upgrade::Package-Blacklist {
 ```
 $ sudo apt-mark hold $(dpkg -l | grep "linux-" | sed -r 's/^.*(linux-[0-9a-z.-]*).*$/\1/')
 ```
+ホールドしているパッケージ名を確認します。
+```
+$ apt-mark showhold
+```
 
 ## ■ パッケージアップデート
 ```
