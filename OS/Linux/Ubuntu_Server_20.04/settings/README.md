@@ -33,7 +33,7 @@ $ lsmod | grep ipv6
 $ sudo vim /etc/profile.d/proxy.sh
 ```
 ```
-PROXY="http://[username:password@]<プロキシのIPアドレスまたはホスト名>:<ポート番号>"
+PROXY="http://[<ユーザ名>:<パスワード>@]<プロキシのIPアドレスまたはホスト名>:<ポート番号>"
 export http_proxy=$PROXY
 export HTTP_PROXY=$PROXY
 export https_proxy=$PROXY
