@@ -154,24 +154,21 @@ $ apt-mark showhold
 ```
 
 ## ■ パッケージアップデート
+パッケージリストをアップデートします。
 ```
-# パッケージリストをアップデート
 $ sudo apt update
-
-# パッケージをアップグレード
+```
+パッケージリストをもとにパッケージをアップグレードします。
+```
 $ sudo apt upgrade
 ```
 
 ## ■ 不要なサービスの停止
-調査中..
 ```
-### パッケージリストの自動更新の停止・自動起動の無効化
 $ sudo systemctl disable --now apt-daily.timer
 $ sudo systemctl disable --now apt-daily.service
-
 $ sudo systemctl disable --now apt-daily-upgrade.timer
 $ sudo systemctl disable --now apt-daily-upgrade.service
-
 $ sudo systemctl disable --now unattended-upgrades.service
 ```
 
