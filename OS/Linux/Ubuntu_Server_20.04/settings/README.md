@@ -138,10 +138,7 @@ Unattended-Upgrade::Allowed-Origins {
 };
 
 Unattended-Upgrade::Package-Blacklist {
-    "linux-headers";
-    "linux-image";
-    "linux-generic";
-    "linux-modules";
+    "linux-";
 };
 ```
 
