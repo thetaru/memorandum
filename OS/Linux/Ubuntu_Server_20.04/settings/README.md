@@ -217,6 +217,16 @@ $ sudo vim /etc/systemd/system.conf
 $ sudo systemctl daemon-reexec
 ```
 
+## ■ カーネルダンプの設定
+OSがクラッシュした際に、カーネルが使用していたメモリ上の内容をファイルに出力します。
+```
+$ sudo apt install linux-crashdump
+```
+```
+$ kdump-config show
+```
+`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
+
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
 
@@ -238,12 +248,3 @@ ufwの設定は[ufw]()を参照してください。
 ## ■ apparmorの設定
 apparmorの設定は[apparmor]()を参照してください。
 
-## ■ kdumpの設定
-OSがクラッシュした際に、カーネルが使用していたメモリ上の内容をファイルに出力します。
-```
-$ sudo apt install linux-crashdump
-```
-```
-$ kdump-config show
-```
-`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
