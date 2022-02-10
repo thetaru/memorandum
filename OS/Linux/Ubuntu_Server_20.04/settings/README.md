@@ -79,13 +79,10 @@ $ localectl status
 ```
 
 ## ■ タイムゾーンの設定
-システムに設定されているタイムゾーンを確認します。
+システムに設定されているタイムゾーンを確認します。  
+すでに指定のタイムゾーン(ここでは、Asia/Tokyo)になっている場合、タイムゾーンの設定は不要です。
 ```
 $ timedatectl status
-```
-タイムゾーンの一覧を確認します。
-```
-$ timedatectl list-timezones
 ```
 タイムゾーン(Asia/Tokyo)に設定します。
 ```
@@ -344,4 +341,3 @@ $ sudo vi /etc/systemd/system.conf
 # systemctl restart rsyslog.service
 # systemctl status rsyslog.service
 ```
-
