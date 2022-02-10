@@ -165,6 +165,7 @@ $ sudo apt upgrade
 
 ## ■ 不要なサービスの停止
 ```
+# パッケージ自動更新周りのサービスを無効化
 $ sudo systemctl disable --now apt-daily.timer
 $ sudo systemctl disable --now apt-daily.service
 $ sudo systemctl disable --now apt-daily-upgrade.timer
