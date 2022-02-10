@@ -28,6 +28,19 @@ $ lsmod | grep ipv6
 ## ■ ネットワークの設定
 ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[netplan]()を参照してください。
 
+## ■ [任意] プロキシの設定
+```
+$ sudo vim /etc/profile.d/proxy.sh
+```
+```
+PROXY="http://[username:password@]<プロキシのIPアドレスまたはホスト名>:<ポート番号>"
+export http_proxy=$PROXY
+export HTTP_PROXY=$PROXY
+export https_proxy=$PROXY
+export HTTPS_PROXY=$PROXY
+export no_proxy="127.0.0.1"
+```
+
 ## ■ 名前解決の設定
 `/etc/resolv.conf`は使用しない
 ### /etc/hostsの設定
@@ -323,15 +336,4 @@ $ sudo vi /etc/systemd/system.conf
 # systemctl restart rsyslog.service
 # systemctl status rsyslog.service
 ```
-## ■ [任意]Proxyの設定
-```
-$ sudo vi /etc/profile.d/proxy.sh
-```
-```
-#!/bin/bash
-$PROXY="<Proxy-server Ip-address>:Port"
-export proxy_http="http://$PROXY"
-export proxy_https="https://$PROXY"
 
-export no_proxy="127.0.0.1"
-```
