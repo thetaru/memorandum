@@ -201,9 +201,10 @@ $ sudo systemctl disable --now unattended-upgrades.service
 ```
 
 ## ■ コアダンプの設定
+ソフトウェア(OSを含む)がクラッシュした際に、そのソフトウェアが使用していたメモリ上の情報をそのままファイルに出力します。
 コアダンプの出力をするかしないかはプロジェクトのポリシーにも依存します。(メモリ情報に機密情報を含む場合があるため)
 ```
-$ sudo vi /etc/systemd/system.conf
+$ sudo vim /etc/systemd/system.conf
 ```
 ```
 -  #DefaultLimitCORE=
@@ -233,6 +234,7 @@ ufwの設定は[ufw]()を参照してください。
 apparmorの設定は[apparmor]()を参照してください。
 
 ## ■ kdumpの設定
+カーネルダンプ
 ```
 $ sudo apt install linux-crashdump
 ```
