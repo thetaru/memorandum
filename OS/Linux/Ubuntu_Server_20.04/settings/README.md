@@ -240,12 +240,11 @@ journalctlの設定は[journalctl]()を参照してください。
 ### logrotateの設定
 logrotateの設定は[logrotate]()を参照してください。
 
-## ■ SSHサーバの設定
-SSHサーバの設定は[SSH]()を参照してください。
-
 ## ■ ufwの設定
 ufwの設定は[ufw]()を参照してください。
 
 ## ■ apparmorの設定
 apparmorの設定は[apparmor]()を参照してください。
 
+## ■ SSHサーバの設定
+SSHサーバの設定は[SSH]()を参照してください。
