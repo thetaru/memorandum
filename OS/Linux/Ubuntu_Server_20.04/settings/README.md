@@ -205,6 +205,9 @@ $ sudo systemctl disable --now apt-daily.service
 $ sudo systemctl disable --now apt-daily-upgrade.timer
 $ sudo systemctl disable --now apt-daily-upgrade.service
 $ sudo systemctl disable --now unattended-upgrades.service
+
+# cron.serviceがあるため不要
+$ sudo systemctl disable --now atd.service
 ```
 
 ## ■ コアダンプの設定
