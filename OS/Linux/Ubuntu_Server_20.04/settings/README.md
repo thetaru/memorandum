@@ -176,7 +176,7 @@ $ sudo vim /etc/apt/apt.conf.d/20auto-upgrades
 APT::Periodic::Update-Package-Lists "0";
 APT::Periodic::Unattended-Upgrade "0";
 ```
-アップグレード対象となるパッケージをすべてコメントアウトし、アップグレードから除外するパッケージを指定します。
+アップグレード対象となるパッケージをすべてコメントアウトし、アップグレードから除外するパッケージ(以下ではlinux-から始まるパッケージ名)を指定します。
 ```
 $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
 ```
