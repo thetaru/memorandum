@@ -21,13 +21,6 @@ $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 $ sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
 ```
 
-## ■ [任意] cloud-initの設定
-ここでは、cloud-initの無効化を行います。
-```
-$ sudo touch /etc/cloud/cloud-init.disabled
-```
-`/etc/cloud/cloud-init.disabled`ファイルを作成することでcloud-init関連のサービスはすべて自動起動されないようになります
-
 ## ■ カーネルパラメータの設定
 ```
 $ sudo vim /etc/sysctl.conf
@@ -144,6 +137,33 @@ $ sudo systemctl restart systemd-timesyncd
 $ timedatectl timesync-status
 ```
 
+## ■ カーネルダンプの設定
+OSがクラッシュした際に、カーネルが使用していたメモリ上の内容をファイルに出力します。
+```
+$ sudo apt install linux-crashdump
+```
+```
+$ kdump-config show
+```
+`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
+
+## ■ コアダンプの設定
+ソフトウェア(OSを含む)がクラッシュした際に、そのソフトウェアが使用していたメモリ上の内容をファイルに出力します。  
+コアダンプの出力をするかしないかはプロジェクトのポリシーにも依存します。(メモリ情報に機密情報を含む場合があるため)
+```
+$ sudo vim /etc/systemd/system.conf
+```
+```
+-  #DefaultLimitCORE=
++  DefaultLimitCORE=infinity
+```
+※ 特定のサービスのみコアダンプをしたい場合、drop-inファイルを作成し`DefaultLimitCORE`の設定値を変更といいかもしれません。  
+  
+設定を反映します。
+```
+$ sudo systemctl daemon-reexec
+```
+
 ## ■ パッケージリスト自動更新の設定
 デフォルトでは、自動でパッケージリストを更新し、パッケージのアップグレードを行います。  
 一連の処理は`/etc/apt/apt.conf.d/`配下のファイルに沿って実行されます。(実行順序は名前の昇順)  
@@ -210,32 +230,12 @@ $ sudo systemctl disable --now unattended-upgrades.service
 $ sudo systemctl disable --now atd.service
 ```
 
-## ■ コアダンプの設定
-ソフトウェア(OSを含む)がクラッシュした際に、そのソフトウェアが使用していたメモリ上の内容をファイルに出力します。  
-コアダンプの出力をするかしないかはプロジェクトのポリシーにも依存します。(メモリ情報に機密情報を含む場合があるため)
+## ■ [任意] cloud-initの設定
+ここでは、cloud-initの無効化を行います。
 ```
-$ sudo vim /etc/systemd/system.conf
+$ sudo touch /etc/cloud/cloud-init.disabled
 ```
-```
--  #DefaultLimitCORE=
-+  DefaultLimitCORE=infinity
-```
-※ 特定のサービスのみコアダンプをしたい場合、drop-inファイルを作成し`DefaultLimitCORE`の設定値を変更といいかもしれません。  
-  
-設定を反映します。
-```
-$ sudo systemctl daemon-reexec
-```
-
-## ■ カーネルダンプの設定
-OSがクラッシュした際に、カーネルが使用していたメモリ上の内容をファイルに出力します。
-```
-$ sudo apt install linux-crashdump
-```
-```
-$ kdump-config show
-```
-`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
+`/etc/cloud/cloud-init.disabled`ファイルを作成することでcloud-init関連のサービスはすべて自動起動されないようになります(だだし、サービスとしての自動起動設定は入ったまま)
 
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
