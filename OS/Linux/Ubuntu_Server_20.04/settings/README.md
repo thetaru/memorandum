@@ -180,7 +180,7 @@ Unattended-Upgrade::Package-Blacklist {
 カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
 ```
 # linux-から始まるパッケージをホールド対象とする
-$ sudo apt-mark hold $(dpkg -l | grep "linux-" | sed -r 's/^.*(linux-[0-9a-z.-]*).*$/\1/')
+$ sudo apt-mark hold $(dpkg -l | grep "linux-" | sed -r 's/^.*\s(linux-[0-9a-z.-]*)\s.*$/\1/')
 ```
 ホールドしているパッケージ名を確認します。
 ```
