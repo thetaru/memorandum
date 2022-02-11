@@ -21,6 +21,13 @@ $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 $ sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
 ```
 
+## ■ [任意] cloud-initの設定
+ここでは、cloud-initの無効化を行います。
+```
+$ sudo touch /etc/cloud/cloud-init.disabled
+```
+`/etc/cloud/cloud-init.disabled`ファイルを作成することでcloud-init関連のサービスはすべて自動起動されないようになります
+
 ## ■ カーネルパラメータの設定
 ```
 $ sudo vim /etc/sysctl.conf
