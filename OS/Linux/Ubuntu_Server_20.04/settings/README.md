@@ -157,7 +157,7 @@ $ sudo vim /etc/systemd/system.conf
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
 ```
-※ 特定のサービスのみコアダンプをしたい場合、drop-inファイルを作成し`DefaultLimitCORE`の設定値を変更といいかもしれません。  
+※ 特定のサービスがクラッシュ時にコアファイルを出力したい場合、drop-inファイルを作成し`DefaultLimitCORE`の設定値を変更といいかもしれません。  
   
 設定を反映します。
 ```
