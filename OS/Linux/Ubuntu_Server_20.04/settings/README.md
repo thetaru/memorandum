@@ -206,6 +206,7 @@ $ sudo apt-mark hold $(dpkg-query -Wf '${Package}\n' | grep "^linux-")
 ```
 $ apt-mark showhold
 ```
+※ ホールド対象から除外するパッケージがある場合は、`apt-mark unhold`コマンドを使用する
 
 ## ■ パッケージアップデート
 パッケージリストをアップデートします。
