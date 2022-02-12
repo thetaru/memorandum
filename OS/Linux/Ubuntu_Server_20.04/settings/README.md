@@ -234,11 +234,15 @@ $ sudo apt upgrade
 ## ■ 不要なサービスの停止
 ```
 # パッケージ自動更新周りのサービスを無効化
-$ sudo systemctl disable --now apt-daily.timer
-$ sudo systemctl disable --now apt-daily.service
-$ sudo systemctl disable --now apt-daily-upgrade.timer
-$ sudo systemctl disable --now apt-daily-upgrade.service
-$ sudo systemctl disable --now unattended-upgrades.service
+$ sudo systemctl mask --now apt-daily.timer
+$ sudo systemctl mask --now apt-daily.service
+$ sudo systemctl mask --now apt-daily-upgrade.timer
+$ sudo systemctl mask --now apt-daily-upgrade.service
+$ sudo systemctl mask --now unattended-upgrades.service
+
+# システム自動更新のサービスを無効化
+$ sudo systemctl mask --now packagekit.service
+$ sudo systemctl mask --now packagekit-offline-update.service
 
 # cron.serviceがあるため不要
 $ sudo systemctl disable --now atd.service
