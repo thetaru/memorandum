@@ -247,7 +247,7 @@ $ sudo systemctl mask packagekit-offline-update.service
 # cron.serviceがあるため不要
 $ sudo systemctl disable --now atd.service
 ```
-※ cronなどで起動させられたoneshotなサービスは`disable`であっても起動することに注意する(あくまで、自動起動の無効化のため)
+※ cronなどで起動させられたサービスは`disable`であっても起動することに注意する(disableは自動起動を無効化する設定のため)
 
 ## ■ [任意] cloud-initの設定
 ここでは、cloud-initの無効化を行います。
