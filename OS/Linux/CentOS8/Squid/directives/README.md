@@ -257,6 +257,7 @@ hosts_file /etc/hosts
 ```
 
 ## ● http_access (common)
+http_accessディレクティブが並んだ場合、上から評価され、一度条件にマッチしたら以降は評価されない。  
 
 ## ● http_port (common)
 ### ■ Syntax
