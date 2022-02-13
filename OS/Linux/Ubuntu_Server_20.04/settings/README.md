@@ -252,6 +252,18 @@ $ sudo touch /etc/cloud/cloud-init.disabled
 ```
 `/etc/cloud/cloud-init.disabled`ファイルを作成することでcloud-init関連のサービスはすべて自動起動されないようになります(だだし、サービスとしての自動起動設定は入ったまま)
 
+## ■ ユーザ/グループの設定
+### rootのパスワード設定
+以下では、sudo権限を持つユーザ(thetaru)を利用してrootのパスワードを設定します。
+```
+$ sudo passwd root
+```
+```
+[sudo] password for thetaru:
+New password:
+Retype new password:
+```
+
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
 
