@@ -240,10 +240,6 @@ $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 $ sudo systemctl mask unattended-upgrades.service
 
-# システム自動更新のサービスを無効化
-$ sudo systemctl mask packagekit.service
-$ sudo systemctl mask packagekit-offline-update.service
-
 # cron.serviceがあるため不要
 $ sudo systemctl disable --now atd.service
 ```
