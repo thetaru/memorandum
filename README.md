@@ -11,6 +11,7 @@
 - [ ] [Test](https://github.com/thetaru/memorandum/tree/master/Test)
 - [ ] [Tool](https://github.com/thetaru/memorandum/tree/master/Tool)
 - [ ] [Troubleshooting](https://github.com/thetaru/memorandum/tree/master/Troubleshooting)
+- [ ] [UPS](https://github.com/thetaru/memorandum/tree/master/UPS)
 - [ ] [Math](https://github.com/thetaru/memorandum/tree/master/Math)
 
 ## ■ ショートカット
