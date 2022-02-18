@@ -165,6 +165,18 @@ $ sudo vim /etc/systemd/system.conf
 $ sudo systemctl daemon-reexec
 ```
 
+## ■ パッケージアップデート制限の設定
+カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
+```
+# linux-から始まる名前のパッケージをホールド対象とする
+$ sudo apt-mark hold $(dpkg-query -Wf '${Package}\n' | grep "^linux-")
+```
+ホールドしているパッケージ名を確認します。
+```
+$ apt-mark showhold
+```
+※ ホールド対象から除外するパッケージがある場合は、`apt-mark unhold`コマンドを使用する
+
 ## ■ パッケージアップデート
 パッケージリストをアップデートします。
 ```
@@ -177,13 +189,15 @@ $ sudo apt upgrade
 
 ## ■ 不要なパッケージの削除
 ```
-# 勝手にインターネット通信が発生するものは削除する
-$ apt purge --autoremove apport apport-symptoms
+# 勝手にインターネット通信が発生するパッケージを削除する
+## ファームウェア自動更新ツール
 $ apt purge --autoremove fwupd
-$ apt purge --autoremove update-manager-core
-$ apt purge --autoremove unattended-upgrades
+## パッケージ利用調査用ツール
 $ apt purge --autoremove popularity-contest
-$ apt purge --autoremove netplan.io
+## パッケージ情報更新ツール
+$ apt purge --autoremove update-manager-core
+## パッケージ自動更新ツール
+$ apt purge --autoremove unattended-upgrades
 ```
 
 ## ■ 不要なサービスの停止
