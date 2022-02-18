@@ -150,6 +150,18 @@ $ kdump-config show
 ## ■ コアダンプの設定
 ソフトウェア(OSを含む)がクラッシュした際に、そのソフトウェアが使用していたメモリ上の内容をファイルに出力します。  
 コアダンプの出力をするかしないかはプロジェクトのポリシーにも依存します。(メモリ情報に機密情報を含む場合があるため)  
+  
+`apport.service`が有効であることを確認します。(デフォルトで有効(enable)のはず)
+```
+$ systemctl status apport.service
+```
+apport機能が有効になっていることを確認します。
+```
+$ sudo vim /etc/default/apport
+```
+```
+enabled=1
+```
 コアファイルのサイズの最大値を無制限に変更します。
 ```
 $ sudo vim /etc/systemd/system.conf
