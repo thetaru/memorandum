@@ -150,18 +150,6 @@ $ kdump-config show
 ## ■ コアダンプの設定
 ソフトウェア(OSを含む)がクラッシュした際に、そのソフトウェアが使用していたメモリ上の内容をファイルに出力します。  
 コアダンプの出力をするかしないかはプロジェクトのポリシーにも依存します。(メモリ情報に機密情報を含む場合があるため)  
-  
-`apport.service`が有効であることを確認します。(デフォルトで有効(enable)のはず)
-```
-$ systemctl status apport.service
-```
-apport機能が有効になっていることを確認します。(デフォルトで有効(enable=1)のはず)
-```
-$ sudo vim /etc/default/apoort
-```
-```
-enabled=1
-```
 コアファイルのサイズの最大値を無制限に変更します。
 ```
 $ sudo vim /etc/systemd/system.conf
@@ -177,50 +165,6 @@ $ sudo vim /etc/systemd/system.conf
 $ sudo systemctl daemon-reexec
 ```
 
-## ■ パッケージリスト自動更新の設定
-デフォルトでは、自動でパッケージリストを更新し、パッケージのアップグレードを行います。  
-一連の処理は`/etc/apt/apt.conf.d/`配下のファイルに沿って実行されます。(実行順序は名前の昇順)  
-  
-自動パッケージリスト更新と自動パッケージアップグレードを無効にします。
-```
-$ sudo vim /etc/apt/apt.conf.d/20auto-upgrades
-```
-```
-APT::Periodic::Update-Package-Lists "0";
-APT::Periodic::Unattended-Upgrade "0";
-```
-アップグレード対象となるパッケージをすべてコメントアウトし、アップグレードから除外するパッケージ(以下ではlinux-から始まるパッケージ名)を指定します。
-```
-$ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
-```
-```
-Unattended-Upgrade::Allowed-Origins {
-//    "${distro_id}:${distro_codename}";
-//    "${distro_id}:${distro_codename}-security";
-//    "${distro_id}ESMApps:${distro_codename}-apps_security";
-//    "${distro_id}ESM:${distro_codename}-infra-security";
-//    "${distro_id}:${distro_codename}-updates";
-//    "${distro_id}:${distro_codename}-proposed";
-//    "${distro_id}:${distro_codename}-backports";
-};
-
-Unattended-Upgrade::Package-Blacklist {
-    "linux-";
-};
-```
-
-## ■ パッケージアップデート制限の設定
-カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
-```
-# linux-から始まる名前のパッケージをホールド対象とする
-$ sudo apt-mark hold $(dpkg-query -Wf '${Package}\n' | grep "^linux-")
-```
-ホールドしているパッケージ名を確認します。
-```
-$ apt-mark showhold
-```
-※ ホールド対象から除外するパッケージがある場合は、`apt-mark unhold`コマンドを使用する
-
 ## ■ パッケージアップデート
 パッケージリストをアップデートします。
 ```
@@ -231,6 +175,17 @@ $ sudo apt update
 $ sudo apt upgrade
 ```
 
+## ■ 不要なパッケージの削除
+```
+# 勝手にインターネット通信が発生するものは削除する
+$ apt purge --autoremove apport apport-symptoms
+$ apt purge --autoremove fwupd
+$ apt purge --autoremove update-manager-core
+$ apt purge --autoremove unattended-upgrades
+$ apt purge --autoremove popularity-contest
+$ apt purge --autoremove netplan.io
+```
+
 ## ■ 不要なサービスの停止
 ```
 # パッケージ自動更新周りのサービスを無効化
@@ -238,6 +193,8 @@ $ sudo systemctl mask apt-daily.timer
 $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
+
+#
 $ sudo systemctl mask unattended-upgrades.service
 
 # cron.serviceがあるため不要
