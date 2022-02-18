@@ -194,9 +194,6 @@ $ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
 $ sudo systemctl mask apt-daily-upgrade.service
 
-#
-$ sudo systemctl mask unattended-upgrades.service
-
 # cron.serviceがあるため不要
 $ sudo systemctl disable --now atd.service
 ```
