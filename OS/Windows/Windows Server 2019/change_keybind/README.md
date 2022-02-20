@@ -4,7 +4,8 @@
 ```ps
 Import-Module PSReadLine -Scope CurrentUser
 ```
-`$PROFILE`(C:\Users\<ユーザ名>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1)を作成する。
+`$PROFILE`(C:\Users\<ユーザ名>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1)を作成する。  
+途中のディレクトリがない場合は作成すること。
 ```ps
 New-Item $PROFILE
 ```
