@@ -25,6 +25,10 @@ Set-PSReadLineKeyHandler -Key "Ctrl+p" -Function PreviousHistory
 Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function NextHistory
 ```
 最後に`$PROFILE`を再読み込み。
-```
+```ps
 & $PROFILE
+```
+キーバインドの確認は以下のコマンドでする。
+```ps
+Get-PSReadLineKeyHandlerで
 ```
