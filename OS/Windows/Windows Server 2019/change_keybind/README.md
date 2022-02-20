@@ -23,3 +23,7 @@ Set-PSReadLineKeyHandler -Key "Alt+b" -Function BackwardWord
 Set-PSReadLineKeyHandler -Key "Ctrl+p" -Function PreviousHistory
 Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function NextHistory
 ```
+最後に`$PROFILE`を再読み込み。
+```
+& $PROFILE
+```
