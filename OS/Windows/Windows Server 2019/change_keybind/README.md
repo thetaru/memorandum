@@ -30,5 +30,5 @@ Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function NextHistory
 ```
 キーバインドの確認は以下のコマンドでする。
 ```ps
-Get-PSReadLineKeyHandlerで
+Get-PSReadLineKeyHandler
 ```
