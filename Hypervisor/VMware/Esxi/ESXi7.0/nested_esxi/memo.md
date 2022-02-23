@@ -32,3 +32,7 @@ MACアドレスのなりすましに対して保護するかどうかを決定�
 パラメータ`das.ignoreinsufficienthbdatastore`をtrueに設定
 ### NW冗長
 パラメータ`das.ignoreRedundantNetWarning`をtrueに設定
+
+
+## webコンソール タイムアウト値変更
+間隔短いので長くする
