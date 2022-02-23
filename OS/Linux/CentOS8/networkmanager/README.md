@@ -33,17 +33,17 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 ### コネクションの設定
 #### コマンドによる設定
 はじめに、一般的な設定項目を紹介する。
-|パラメータ|設定値|意味|
-|:---|:---|:---|
-|connection.autoconnect|( yes \| no )||
-|ipv4.method|( auto \| method )||
-|ipv4.addresses|||
-|ipv4.gateway|||
-|ipv4.dns|||
-|ipv4.routes|||
-|ipv4.may-fail|||
-|ipv4.never-default|||
-|ipv6.method|disable||
+|パラメータ|設定値|意味|例|
+|:---|:---|:---|:---|
+|connection.autoconnect|yes: XXX</br>no: YYY|||
+|ipv4.method|auto: XXX</br>method: YYY|||
+|ipv4.addresses||||
+|ipv4.gateway||||
+|ipv4.dns||||
+|ipv4.routes||||
+|ipv4.may-fail||||
+|ipv4.never-default||||
+|ipv6.method|disable|||
 
 #### コンフィグによる設定
 設定ファイルを手動で編集した場合は以下のように設定する。  
