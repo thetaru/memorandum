@@ -146,7 +146,6 @@ NFS version3では利用ポートを固定する必要があります。
 NFS version4では利用ポートが固定されています。
 
 ## ■ チューニング
-### ● NFSデーモン数の調整
 ### ● I/Oのサイズ(最大ブロックサイズ)の変更
 ### ● カーネルパラメータ
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/kernelparameters)にまとめました。
