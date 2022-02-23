@@ -149,8 +149,6 @@ NFS version4では利用ポートが固定されています。
 ### ● NFSデーモン数の調整
 ### ● I/Oのサイズ(最大ブロックサイズ)の変更
 ### ● カーネルパラメータ
-候補: ファイルディスクリプタ、IO系、帯域幅系、カーネルスレッド系、コネクション系、iノード系  
-キープライブとかも考慮?てかtcp全般は手を付けたほうがいいのかも?  
 [こちら](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/nfs/nfs_server/kernelparameters)にまとめました。
 
 ## ■ 設定の確認
