@@ -1,5 +1,8 @@
 # Nested ESXi
 ## memo
+### 共有データストアの作成
+FC iSCSI NASがある。 費用的にNAS(NFS)が妥当
+
 ### ネストされるESXi
 - /etc/vmware/configに`vhv.allow = "TRUE"`を追加し、`/etc/init.d/hostd restart`
 
