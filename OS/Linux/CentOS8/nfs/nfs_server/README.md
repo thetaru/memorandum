@@ -40,12 +40,15 @@
 ※ NFSユーザを指定してマウントする場合、nfsclientユーザ(と同じUID/GIDを持つユーザ)をクライアント側も作成する必要がある
 
 ## ■ [任意] 設定ファイル /etc/netconfig
-NFSはRPCを利用するので、IPv6を無効化している場合、`/etc/netconfig`でもIPv6を無効化する必要がある。
-
-### ● 設定項目
+NFSはRPCを利用するので、IPv6を無効化している場合、`/etc/netconfig`でもIPv6を無効化する。
 
 ### ● 設定例
 ```
+-  udp6       tpi_clts      v     inet6    udp     -       -
++  #udp6       tpi_clts      v     inet6    udp     -       -
+
+-  tcp6       tpi_cots_ord  v     inet6    tcp     -       -
++  #tcp6       tpi_cots_ord  v     inet6    tcp     -       -
 ```
 
 ## ■ 設定ファイル /etc/exports
