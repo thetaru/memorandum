@@ -1,5 +1,6 @@
 # ESXi7.0
 ## ■ Settings
+- [ ] [Nested ESXi](Nested_ESXi)
 - [ ] [setting]()
 ## ■ Tips
 - [ ] [オーバーコミットについて]()
