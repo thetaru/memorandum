@@ -71,27 +71,26 @@ directory client(option,option...) client(option,option...) ...
 |nohide|hide オプション機能の無効化</br>このオプションは単独のホストに対してのみ有効|
 |subtree_check|ファイルシステム全体でなく、一部のディレクトリのみが公開されている場合に、クライアントからの要求されたファイルが公開ディレクトリに含まれるかどうかチェックされるようになる|
 |no_subtree_check|sub_tree_check オプション機能の無効化|
-|root_squash|クライアント側の root からのファイルの読み出し/書き込み要求を、匿名ユーザからの要求として扱う|
-|no_root_squash|root_squash オプション機能の無効化</br>クライアント側の root からのファイルの読み出し/書き込み要求を root からの要求として扱う|
-|all_squash|クライアント側のすべてのユーザーからの読み出し/書き込み要求を、匿名ユーザーからの要求として扱う|
-|no_all_squash|クライアント側の root 以外のユーザーからの読み出し/書き込み要求を、クライアントからの要求として扱う</br>ただしクライアント側とサーバ側で、UIDとGIDを一致させておく必要がある|
-|anonuid=UID</br>anongid=GID|クライアントからの読み出し/書き込み要求があったとき、そのクライアントは、このオプションで設定されたUID,GIDを持つ匿名ユーザーとして扱われる</br>UID/GIDの仕組みを持たないOS（Windowsなど）をNFSクライアントとする場合、それらのOSが利用する公開ディレクトリの設定に適用する|
-
-※ NFSv3においてall_squashを使用する場合は、anonuidとanongidを一緒に設定するべきだと思います。
+|root_squash|rootユーザのリクエストを匿名ユーザに格下げ(squash)する|
+|no_root_squash|rootユーザのリクエストをroot権限で実行する|
+|all_squash|root以外のユーザからのリクエストを匿名ユーザに格下げ(squash)する|
+|no_all_squash|すべてのユーザからリクエストを匿名ユーザに格下げ(squash)する|
+|anonuid=UID</br>anongid=GID|root_squashまたはall_squashがオプションが有効な場合、格下げ(squash)する匿名ユーザのUID/GIDを指定できる|
 
 ### ● 設定例
+#### Linux
 ```
-### NFSv3
-## For Linux
+# NFSv3
 /exports/Linux 192.168.137.0/24(rw,no_root_squash)
 /exports/Linux 192.168.137.0/24(rw,root_squash,anonuid=8888,anongid=8888)
 
-### NFSv4
-## For Linux
+# NFSv4
 /exports/Linux 192.168.137.0/24(rw,fsid=0)
-
-### NFSv(3|4)
-## For Windows
+```
+#### Windows
+WindowsはNFSv4を使用できない(はず)
+```
+# NFSv3
 /exports/Windows 192.168.137.0/24(rw,no_root_squash)
 ```
 
