@@ -1,4 +1,4 @@
 # Windows Server 2022
-## ■ General Settings
+## ■ OS Settings
 ## ■ Software Settings
 ## ■ Tips
