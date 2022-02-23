@@ -23,21 +23,24 @@
 ※ NFSv4プロトコルでは、`rpcbind`サービス、`lockd`サービス、`rpc-statd`サービスが不要となります。
 
 ## ■ 共有ディレクトリの作成
+### Linux
 ```
-### For Windows
-# mkdir -p /exports/Windows
-# chown 65534:65534 /exports/Windows
-# chmod 777 /exports/Windows
-
-### For Linux
 # mkdir -p /exports/Linux
-## [OPTION] NFSユーザを指定してマウントする場合は以下を実行する
+
+[OPTION] NFSユーザを指定してマウントする場合は以下を実行する
 # groupadd -g 8888 nfsclient
 # useradd -s /sbin/nologin -M -u 8888 -g 8888 nfsclient
 # chown nfsclient:nfsclient /exports/Linux
 ```
 ※ UID(8888)やGID(8888)、ユーザ名(nfsclient)は必要に応じて変更してください  
 ※ NFSユーザを指定してマウントする場合、nfsclientユーザ(と同じUID/GIDを持つユーザ)をクライアント側も作成する必要がある
+
+### Windows
+```
+# mkdir -p /exports/Windows
+# chown 65534:65534 /exports/Windows
+# chmod 777 /exports/Windows
+```
 
 ## ■ [任意] 設定ファイル /etc/netconfig
 NFSはRPCを利用するので、IPv6を無効化している場合、`/etc/netconfig`でもIPv6を無効化する。
@@ -78,7 +81,7 @@ directory client(option,option...) client(option,option...) ...
 |anonuid=UID</br>anongid=GID|root_squashまたはall_squashがオプションが有効な場合、格下げ(squash)する匿名ユーザのUID/GIDを指定できる|
 
 ### ● 設定例
-#### Linux
+### Linux
 ```
 # NFSv3
 /exports/Linux 192.168.137.0/24(rw,no_root_squash)
@@ -87,7 +90,7 @@ directory client(option,option...) client(option,option...) ...
 # NFSv4
 /exports/Linux 192.168.137.0/24(rw,fsid=0)
 ```
-#### Windows
+### Windows
 WindowsはNFSv4を使用できない(はず)
 ```
 # NFSv3
