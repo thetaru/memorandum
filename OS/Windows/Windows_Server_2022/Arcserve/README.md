@@ -1,6 +1,6 @@
 # Arcserve
 ## ■ Arcserve Backup
 
-#= ■ Arcserve Replication
+## ■ Arcserve Replication
 
 ## ■ Arcserve UDP
