@@ -43,7 +43,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 |ipv4.routes|||
 |ipv4.may-fail|||
 |ipv4.never-default|||
-||||
+|ipv6.method|disable||
 
 #### コンフィグによる設定
 設定ファイルを手動で編集した場合は以下のように設定する。  
