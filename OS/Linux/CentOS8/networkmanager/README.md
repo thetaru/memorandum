@@ -36,7 +36,7 @@ NetworkManagerによって`/etc/sysconfig/`配下のファイル(e.g. `/etc/sysc
 |パラメータ|設定値|意味|
 |:---|:---|:---|
 |connection.autoconnect|||
-|ipv4.method|||
+|ipv4.method|(yes\|no)||
 |ipv4.addresses|||
 |ipv4.gateway|||
 |ipv4.dns|||
