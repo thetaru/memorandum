@@ -1,3 +1,3 @@
 # Nested ESXi
-## VMware ESXiの構築
+## ■ VMware ESXiの構築
 - [ ] [ESXiのインストール]()
