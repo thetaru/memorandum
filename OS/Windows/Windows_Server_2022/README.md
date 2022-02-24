@@ -2,5 +2,6 @@
 ## ■ OS Settings
 ## ■ Software Settings
 - [ ] [Arcserve](Arcserve)
+- [ ] [Trend Micro](TrendMicro)
 - [ ] [Veeam](Veeam)
 ## ■ Tips
