@@ -6,6 +6,7 @@
 networkmanager
 
 basicconfの内容を更新する。 参照させるようにすること。
+nftables書き直す
 
 ## 機能調査
 apache 未整理
