@@ -20,10 +20,11 @@ haproxy
 lets encrypt でワイルドカード証明書
 ```
 ## ■ Commands
-- [x] [chroot](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/chroot)
-- [x] [rsync](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/rsync)
-- [ ] [certtool](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/certtool)
-- [ ] [systemctl](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/systemctl)
+- [x] [chroot](chroot)
+- [x] [rsync](rsync)
+- [ ] [certtool](certtool)
+- [ ] [parted](parted)
+- [ ] [systemctl](systemctl)
 
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/settings)
