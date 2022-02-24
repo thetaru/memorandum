@@ -9,7 +9,7 @@ Import-Module PSReadLine -Scope CurrentUser
 ```ps
 New-Item $PROFILE
 ```
-`$PROFILE`に以下を書き込む。
+`$PROFILE`に以下を書き込む。(以下ではBash風のキーバインドにしている)
 ```
 Set-PSReadLineKeyHandler -Key "Ctrl+d" -Function DeleteChar
 Set-PSReadLineKeyHandler -Key "Ctrl+w" -Function BackwardKillWord
