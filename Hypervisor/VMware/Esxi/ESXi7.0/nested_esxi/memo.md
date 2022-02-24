@@ -1,6 +1,7 @@
 ## memo
 ### 共有データストアの作成
-FC iSCSI NASがある。 費用的にNAS(NFS)が妥当
+FC iSCSI NASがある。 費用的にNAS(NFS)が妥当  
+オプションで非同期書き込み(async)するように設定するとパフォーマンスがあがるっぽい
 
 ### ネストされるESXi
 - /etc/vmware/configに`vhv.allow = "TRUE"`を追加し、`/etc/init.d/hostd restart`
