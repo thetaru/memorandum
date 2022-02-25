@@ -1,7 +1,7 @@
 # パーティションの作成
 ## ■ パーティションテーブルの作成
 ```
-parted /dev/sdX mklabel gpt
+parted -s /dev/sdX mklabel gpt
 ```
 
 ## ■ パーティションの作成
@@ -9,11 +9,11 @@ parted /dev/sdX mklabel gpt
 エンド位置は%単位か、MB単位またはGB単位で指定する。
 ```
 # デバイス全体を一つのパーティションする例
-parted /dev/sdX mkpart [primary|extended] xfs 0% 100%
+parted -s /dev/sdX mkpart [primary|extended] xfs 0% 100%
 ```
 ※ 0%をサボって0と書いたりしないこと
 
 ## ■ アライメントの確認
 ```
-parted /dev/sdX align-check
+parted -s /dev/sdX align-check
 ```
