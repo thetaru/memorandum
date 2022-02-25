@@ -13,6 +13,7 @@ unattended-upgtades
 - [ ] [apparmor](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/apparmor)
 - [ ] [systemd-networkd](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/systemd-networkd)
 - [ ] [ufw](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/ufw)
+- [ ] [local repository](local_repository)
 ## ■ Software Settings
 - [ ] [Gitlab](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/gitlab)
 - [ ] [k8s](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/k8s)
