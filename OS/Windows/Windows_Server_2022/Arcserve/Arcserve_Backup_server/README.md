@@ -1,2 +1,2 @@
 # Arcserve Backupサーバの構築
-- [ ] [ESXi/vCenterと連携したエージェントレス バックアップ]()
+- [ ] [エージェントレス バックアップ(ESXi/vCenter連携)]()
