@@ -11,3 +11,8 @@
   Current license or ESXi version prohibits execution of the requested operation.
 なので検証環境では、エージェントをインストールして実施すること。
 ```
+```
+即実行の挙動
+利用可能なデバイスが存在すればそれを使ってバックアップを実行する。
+ない場合は利用可能なデバイスを再利用セットに置くなどする必要がある。
+```
