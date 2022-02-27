@@ -1,4 +1,11 @@
 # パーティションの作成
+## ■ デバイスの確認
+ディスク容量や既存のパーティション情報などを確認する。
+```
+parted -l /dev/sdX
+parted -s /dev/sdX print
+```
+
 ## ■ パーティションテーブルの作成
 ```
 parted -s /dev/sdX mklabel gpt
