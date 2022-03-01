@@ -16,4 +16,3 @@
 
 ## ■ Tips
 - [ ] [コード整形について](CodeFormatting)
-- [ ] [gdbデバッグ](gdbDebug)
