@@ -7,5 +7,8 @@
 - [ ] [CLI操作]()
 
 ## ■ Arcserve Replication
+マスタ エンジン  レプリカ エンジン+コントロールサービス
+- [ ] [Arcserve Replication マスタサーバの構築](Arcserve_Replication_master)
+- [ ] [Arcserve Replication レプリカサーバの構築](Arcserve_Replication_replica)
 
 ## ■ Arcserve UDP
