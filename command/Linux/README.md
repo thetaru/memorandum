@@ -19,4 +19,4 @@
 - [ ] [ARPテーブルの確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/show_arp)
 - [ ] [dmidecodeでよく使うやつ](https://github.com/thetaru/memorandum/tree/master/command/Linux/dmidecode_tips)
 - [ ] [systemd timerの一覧を確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/systemd_timer_list)
-- [ ] [書き込み中のログを安全に空ファイルにする](safe_delete_log_content)
+- [ ] [書き込み中のログでも安全に空ファイルにする](safe_delete_log_content)
