@@ -1,4 +1,4 @@
 # パッケージのダウンロード
 ```
-yum install --downloadonly --installroot=/ --downloaddir=<ダウンロード先>
+yum install --downloadonly --installroot=/tmp --downloaddir=<ダウンロード先>
 ```
