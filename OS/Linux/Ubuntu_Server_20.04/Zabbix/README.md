@@ -2,7 +2,8 @@
 ## ■ Commands
 
 ## ■ Settings
-- [ ] [Zabbixサーバの構築](zabbix_server)
-- [ ] [Zabbixクライアントの設定](zabbix_client)
+### Zabbix Version: 6.0 LTS
+- [ ] [Zabbixサーバの構築](zabbix_server_6.0)
+- [ ] [Zabbixクライアントの設定](zabbix_client_6.0)
 
 ## ■ Tips
