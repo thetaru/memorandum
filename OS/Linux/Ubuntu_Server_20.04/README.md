@@ -15,8 +15,9 @@ unattended-upgtades
 - [ ] [ufw](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/ufw)
 - [ ] [local repository](local_repository)
 ## ■ Software Settings
-- [ ] [Gitlab](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/gitlab)
-- [ ] [k8s](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/k8s)
+- [ ] [Gitlab](gitlab)
+- [ ] [k8s](k8s)
+- [ ] 
 ## ■ Tips
 - [ ] [Router化](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/router)
 - [ ] [Jupyter Notebookをsystemdに登録](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/jupyter_notebook_daemon)
