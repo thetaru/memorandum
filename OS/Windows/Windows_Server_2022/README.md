@@ -1,6 +1,7 @@
 # Windows Server 2022
 ## ■ OS Settings
 - [ ] [メモリダンプ](memory_dump)
+- [ ] [ページングファイル](pagingfile)
 ## ■ Software Settings
 - [ ] [Active Directory](ActiveDirectory)
 - [ ] [Arcserve](Arcserve)
