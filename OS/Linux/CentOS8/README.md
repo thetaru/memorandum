@@ -84,6 +84,7 @@ lets encrypt でワイルドカード証明書
 - [ ] [サーバのセキュリティ事項](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/server_security)
 - [ ] [パーティションのサイズを変更する](resize_partition)
 - [ ] [HTTPヘッダー カスタムヘッダの確認](custom_header)
+- [ ] [多段SSHでRDP接続する方法](ssh_portforward)
 - [ ] [~~MetalLB+BINDで内部DNSサーバ構築~~](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/bind_k8s_gitlab)
 
 ## ■ Development
