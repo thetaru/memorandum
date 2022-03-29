@@ -2,6 +2,7 @@
 ## ■ Commands
 - [ ] [ssh](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/SSH/ssh)
 - [ ] [ssh-keygen](ssh-keygen)
+- [ ] [ssh-copy-id](ssh-copy-id)
 ## ■ Settings
 - [ ] [sshサーバの構築](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/SSH/ssh_server)
 - [ ] [sshクライアントの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/SSH/ssh_client)
