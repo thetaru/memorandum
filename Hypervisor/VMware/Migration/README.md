@@ -3,8 +3,8 @@
 - ブラウザからエクスポート・インポート
 - OVFToolsでエクスポート・インポート
 - vCenter Converterでエクスポート・インポート
-- vMotionによる移行
-- vMotion Storageによる移行
+- vMotion
+- Storage vMotion
 
 がある。
 ## 概要
@@ -19,3 +19,10 @@
 ### ■ OVFTool
 小中規模の環境なら推奨。  
 移行対象となるサーバの台数が多い場合は別の手段を検討するのがよさそう。
+
+### ■ vMotion
+既存と次期環境のESXiを1つのvCenterで管理してvMotonする方法。  
+怖くない？
+
+### ■ Storage vMotion
+お金があるならば、、、
