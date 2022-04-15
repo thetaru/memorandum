@@ -13,3 +13,6 @@ vCenterで管理されてるESXiに対してインポートすることはでき
 ### vCenter
 ```
 ```
+
+## ■ Ref
+- [OVF Tool での ovf デプロイ](https://vhoge.hateblo.jp/entry/2019/04/04/220935)
