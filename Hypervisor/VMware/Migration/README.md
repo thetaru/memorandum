@@ -1,8 +1,8 @@
 # 移行
 移行方法は
-- ブラウザからエクスポート・インポート
-- OVFToolsでエクスポート・インポート
-- vCenter Converterでエクスポート・インポート
+- ブラウザ
+- OVFTools
+- vCenter(サポート終了)
 - vMotion
 - Storage vMotion
 
