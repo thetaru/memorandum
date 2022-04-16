@@ -8,3 +8,8 @@ vSphere Web ClientからESXiサーバにログインし、`[ホスト]-[管理]-
 ```
 esxcli system hostname set --host <ホスト名>
 ```
+
+## ■ ドメイン名の設定
+```
+esxcli system hostname set --domain <ドメイン名>
+```
