@@ -11,20 +11,15 @@ PowerShellを起動し、以下のコマンドを実行する。
 > Install-Module VMware.PowerCLI -Scope CurrentUser
 ```
 
-## ■ VMware PowerCLIのインポート
-PowerShellを起動し、以下のコマンドを実行する。
-```ps1
-> Import-Module VMware.PowerCLI
-```
-
 ## ■ カスタムISOの作成
-### TLS1.2を有効にする
+### SSL3を有効にする
 ```ps1
-> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-> [Net.ServicePointManager]::SecurityProtocol
-Tls12
+> [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Ssl3
 ```
 ### ISOの作成
 ```ps1
 > .\ESXi-Customizer-PS.ps1 -v<バージョン> -pkgdir <vibファイル>
 ```
+
+## ■ Ref
+- ["[WinError 10054] An existing connection was forcibly closed by the remote host" during "Exporting the Imageprofile"](https://github.com/VFrontDe/ESXi-Customizer-PS/issues/15)
