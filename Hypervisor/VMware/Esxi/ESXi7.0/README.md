@@ -1,5 +1,6 @@
 # ESXi7.0
 ## ■ Settings
+- [ ] [Basic Configuration](settings)
 - [ ] [Nested ESXi 検証環境](nested_esxi)
 ## ■ Tips
 - [ ] [オーバーコミットについて]()
