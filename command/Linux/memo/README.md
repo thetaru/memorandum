@@ -44,11 +44,6 @@ tracepath
 tracepath [-p port] -n host
 ```
 
-tcpdump  
-interfaceをしない場合、一番目のNICを使用してしまうことに注意する
-```
-tcpdump -nn [-vvv] [-i interface] [options]
-```
 yum系
 ```
 yum provides <command>
@@ -66,6 +61,7 @@ some-commnad > stdout.log 2> stderr.log
 ```
 split -l 行数 ファイルパス
 ```
+
 tlp バッテリ系
 ```
 tlp-stat
