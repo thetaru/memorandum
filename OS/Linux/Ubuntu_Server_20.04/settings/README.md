@@ -216,9 +216,7 @@ $ apt purge --autoremove unattended-upgrades
 ```
 # パッケージ自動更新周りのサービスを無効化
 $ sudo systemctl mask apt-daily.timer
-$ sudo systemctl mask apt-daily.service
 $ sudo systemctl mask apt-daily-upgrade.timer
-$ sudo systemctl mask apt-daily-upgrade.service
 
 # cron.serviceがあるため不要
 $ sudo systemctl disable --now atd.service
