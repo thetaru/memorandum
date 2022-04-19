@@ -26,7 +26,6 @@ lets encrypt でワイルドカード証明書
 
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/settings)
-- [ ] [CentOS8 構築手順](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/basic-configuration)
 - [x] [Bonding + VLAN](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Bonding_VLAN)
 - [x] [cron](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/cron_note)
 - [x] [filedescriptor](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/filedescriptor)
