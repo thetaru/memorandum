@@ -13,6 +13,9 @@ administratorに昇格して以下のコマンド実行する。
 ```
 > administrator
 ```
+```
+Password: 
+```
 ### ログインパスワード
 ```
 # login password
