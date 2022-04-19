@@ -8,13 +8,6 @@ RTX1100は、初期設定時にIPアドレス192.168.100.1/24が振られてい�
 ```
 
 ## ■ パスワードの変更
-### administratorへ昇格
-```
-> administrator
-```
-```
-Password: 
-```
 ### ログインパスワード
 ```
 # login password
@@ -32,4 +25,9 @@ New_Password:
 Old_Password: 
 New_Password: 
 New_Password: 
+```
+
+## ■ 設定の保存
+```
+# save
 ```
