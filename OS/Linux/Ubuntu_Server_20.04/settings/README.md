@@ -1,4 +1,9 @@
 # Settings
+## ■ [任意] デフォルトエディタの設定
+デフォルトエディタをvimに設定します。
+```
+$ sudo update-alternatives --set editor /usr/bin/vim.basic
+```
 ## ■ ホスト名の設定
 ```
 $ sudo hostnamectl set-hostname <hostname>
