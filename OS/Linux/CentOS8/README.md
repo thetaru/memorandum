@@ -13,9 +13,6 @@ apache 未整理
 samba 数パターンつくる
 パスワードポリシーについて(login.defs)
 postgreSQL
-keepalive
-pacemaker
-DRBD
 haproxy
 
 lets encrypt でワイルドカード証明書
