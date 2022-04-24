@@ -6,3 +6,4 @@
 ## ■ sysprep
 `sysprep`を実行し、一般化する。
 ## ■ VMのテンプレート化
+ESXiまたはvCenterからテンプレート化する。
