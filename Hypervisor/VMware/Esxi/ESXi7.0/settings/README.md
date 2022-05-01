@@ -13,3 +13,13 @@ esxcli system hostname set --host <ホスト名>
 esxcli system hostname set --domain <ドメイン名>
 ```
 `[ネットワーク]-[TCP/IP スタック]-[デフォルトの TCP/IP スタック]`に反映
+
+
+## ■ ネットワークの設定
+### ポートグループ
+### 仮想スイッチ
+### VMkernel NIC
+### TCP/IPスタック
+## ■ データストア
+
+## ■ ライセンスの設定
