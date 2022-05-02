@@ -9,7 +9,13 @@ SSH用のログインユーザを作成する。
 # no login user <user>
 ```
 
-## ■ SSHサービスの設定
+## ■ SSHの設定
+### 秘密鍵の生成
+SSHサービスが有効にするために秘密鍵の生成が必須となる。
+```
+# sshd host key generate
+```
+### SSHサービスの設定
 以下のコマンドでSSHサービスを`on`で有効化、`off`で無効化することができる。
 ```
 # sshd service (on|off)
