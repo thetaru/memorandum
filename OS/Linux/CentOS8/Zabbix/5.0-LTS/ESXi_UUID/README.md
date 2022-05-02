@@ -2,5 +2,6 @@
 マクロ`VMware.hv.hw.uuid`を手動設定する。  
 ESXiにログインして、以下のコマンドを実行する。
 ```
-esxcli system uuid get
+esxcfg-info -u
 ```
+※ ESXiサーバのマザーボードが持つUUID
