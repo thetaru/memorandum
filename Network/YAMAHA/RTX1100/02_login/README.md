@@ -3,7 +3,7 @@
 SSH用のログインユーザを作成する。
 ```
 ### ユーザの作成
-# login user <user>
+# login user <user> [password]
 
 ### ユーザの削除
 # no login user <user>
