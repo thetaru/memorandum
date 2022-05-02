@@ -6,4 +6,4 @@
 - [ ] [show](show)
 
 ## ■ Settings
-- [ ] [Basic Configuration](Configuration)
+- [ ] [初期設定](01_initial)
