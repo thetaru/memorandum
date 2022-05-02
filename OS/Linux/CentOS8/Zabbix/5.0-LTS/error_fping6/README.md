@@ -6,8 +6,6 @@
 ipv6無効にしているのにfping6でping飛ばしにかかっているから生じるエラーっぽい。  
 fping6のバグ?(バージョン上げると正常動作するっぽい)
 ## ■ 設定
-サイテーな回避方法。  
-fpingとパス同じにしちゃえ。
 ```
 # vi /etc/zabbix/zabbix-server.conf
 ```
