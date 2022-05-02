@@ -6,6 +6,6 @@
 # ip lan1 address <address/mask>
 
 ### dhcp
-# ip lan1 dhcp
+# ip lan1 address dhcp
 ```
 ### VLANあり
