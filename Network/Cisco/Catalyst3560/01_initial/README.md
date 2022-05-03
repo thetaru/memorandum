@@ -26,3 +26,8 @@
 (config-if)#ip address <address> <mask>
 (config-if)#no shutdown
 ```
+
+## ■ デフォルトゲートウェイの設定
+```
+(config)# ip default-gateway <address>
+```
