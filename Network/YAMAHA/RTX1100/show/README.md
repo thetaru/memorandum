@@ -18,3 +18,8 @@
 ```
 > show arp
 ```
+
+## ■ LAN設定の表示
+```
+> show status lan1
+```
