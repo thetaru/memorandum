@@ -16,6 +16,9 @@
 ```
 (config)# crypto key generate rsa
 ```
+```
+How many bits in the modulus [512]: 2048
+```
 ### SSHバージョンの指定
 ```
 (config)# ip ssh version 2
