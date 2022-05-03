@@ -20,6 +20,7 @@
 
 ## ■ 管理用IPアドレスの設定
 管理用IPアドレスをSVI(Switched Virtual Interface)に設定する。  
+デフォルトで`interface Vlan1`の管理インターフェースが存在するので、そこにIPアドレスを設定することが多い。
 ```
 (config)#interface vlan <vlan-id>
 (config-if)#ip address <address> <mask>
