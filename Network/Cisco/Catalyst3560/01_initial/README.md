@@ -11,13 +11,13 @@
 ### コンソール接続時のパスワード
 ```
 (config)# line console 0
-(config-line)# password
+(config-line)# password <password>
 (config-line)# login
 (config-line)# exit
 ```
 ### enableパスワード
 ```
-(config)# enable secret
+(config)# enable secret <password>
 ```
 ### パスワード暗号化
 ```
