@@ -2,10 +2,10 @@
 ## ■ IPアドレスの設定
 ### VLANなし
 ```
-### スタティック
+### static
 # ip lan1 address <address/mask>
 
-### DHCP
+### dhcp
 # ip lan1 address dhcp
 ```
 ### VLANあり
