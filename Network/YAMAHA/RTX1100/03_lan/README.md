@@ -9,11 +9,11 @@
 # ip lan1 address dhcp
 ```
 ### VLANあり
-#### アクセスポート
+#### ポートVLAN
 ```
 # ip vlan<vlan_num> address <address/mask>
 ```
-#### トランクポート
+#### タグVLAN
 ```
 # ip lan1/<num> address <address/mask>
 ```
