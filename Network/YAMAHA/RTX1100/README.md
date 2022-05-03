@@ -8,3 +8,5 @@
 ## ■ Settings
 - [ ] [初期設定](01_initial)
 - [ ] [ログイン設定](02_login)
+- [ ] [LAN設定](03_lan)
+- [ ] [WAN設定](04_wan)
