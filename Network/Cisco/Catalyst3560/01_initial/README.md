@@ -17,3 +17,11 @@
 (config)# interface <interface>
 (config-if)# shutdown
 ```
+
+## ■ 管理用IPアドレスの設定
+管理用IPアドレスをSVI(Switched Virtual Interface)に設定する。  
+```
+(config)#interface vlan <vlan-id>
+(config-if)#ip address <address> <mask>
+(config-if)#no shutdown
+```
