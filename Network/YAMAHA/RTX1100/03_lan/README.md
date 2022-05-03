@@ -16,3 +16,12 @@
 ### タグVLAN
 # ip lan1/<num> address <address/mask>
 ```
+
+## ■ ゲートウェイの設定
+```
+### static
+# ip route default gateway <address>
+
+### dhcp
+# ip route default gateway dhcp
+```
