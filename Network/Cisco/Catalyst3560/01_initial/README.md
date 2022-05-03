@@ -4,4 +4,16 @@
 
 ## ■ ホスト名の設定
 ```
+(config)# hostname <hostname>
+```
+
+## ■ インターフェースの設定
+```
+# インターフェースの有効化
+(config)# interface <interface>
+(config-if)# no shutdown
+
+# インターフェースの無効化
+(config)# interface <interface>
+(config-if)# shutdown
 ```
