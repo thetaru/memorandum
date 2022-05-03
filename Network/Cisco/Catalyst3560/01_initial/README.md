@@ -7,6 +7,23 @@
 (config)# hostname <hostname>
 ```
 
+## ■ パスワードの設定
+### コンソール接続時のパスワード
+```
+(config)# line console 0
+(config-line)# password
+(config-line)# login
+(config-line)# exit
+```
+### enableパスワード
+```
+(config)# enable secret
+```
+### パスワード暗号化
+```
+(config)# service password-encryption
+```
+
 ## ■ インターフェースの設定
 ```
 # インターフェースの有効化
