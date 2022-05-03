@@ -1,7 +1,9 @@
 # Catalyst3560
 ## ■ Notion
-コマンドプロンプトを使用する際は、`#`は管理者ユーザ(administrator)、`>`は非管理者ユーザであることを意味します。
+`>`はユーザーEXEC、`#`は特権EXEC、`(config)#`はグローバルコンフィギュレーションであることを意味します。
 
 ## ■ Commands
+- [show](show)
 
 ## ■ Settings
+- [初期設定](01_initial)
