@@ -11,4 +11,9 @@
 - [ ] [LAN設定](03_lan)
 - [ ] [WAN設定](04_wan)
 - [ ] [VLAN設定](05_vlan)
-- [ ] [DNS設定](06_dns)
+
+
+- [ ] [DNS設定](xx_dns)
+- [ ] [NTP設定](xx_ntp)
+- [ ] [SYSLOG設定](xx_syslog)
+- [ ] [SNMP設定](xx_snmp)
