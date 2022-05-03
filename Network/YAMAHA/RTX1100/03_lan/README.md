@@ -2,11 +2,7 @@
 ## ■ IPアドレスの設定
 ### VLANなし
 ```
-### static
 # ip lan1 address <address/mask>
-
-### dhcp
-# ip lan1 address dhcp
 ```
 ### VLANあり
 ```
@@ -21,7 +17,4 @@
 ```
 ### static
 # ip route default gateway <address>
-
-### dhcp
-# ip route default gateway dhcp
 ```
