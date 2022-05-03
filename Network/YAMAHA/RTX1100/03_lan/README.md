@@ -15,6 +15,5 @@
 
 ## ■ ゲートウェイの設定
 ```
-### static
 # ip route default gateway <address>
 ```
