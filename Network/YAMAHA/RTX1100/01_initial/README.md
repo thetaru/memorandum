@@ -34,6 +34,11 @@ New_Password:
 # login timer <sec>
 ```
 
+## ■ タイムゾーンの設定
+```
+# timezone jst
+```
+
 ## ■ 設定の保存
 ```
 # save
