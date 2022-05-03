@@ -20,6 +20,7 @@
 (config)# enable secret <password>
 ```
 ### パスワード暗号化
+デフォルトではパスワードが平文で表示されてしまうため暗号化して表示する。
 ```
 (config)# service password-encryption
 ```
