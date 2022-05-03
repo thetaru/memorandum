@@ -8,19 +8,19 @@
 ```
 
 ## ■ パスワードの設定
-### コンソール接続時のパスワード
+### コンソールのパスワード
 ```
 (config)# line console 0
 (config-line)# password <password>
 (config-line)# login
 (config-line)# exit
 ```
-### enableパスワード
+### 特権モードのパスワード
 ```
 (config)# enable secret <password>
 ```
-### パスワード暗号化
-デフォルトではパスワードが平文で表示されてしまうため暗号化して表示する。
+### パスワード表示の暗号化
+デフォルトでは、`show running-config`を実行するとパスワードが平文で表示されてしまうため、暗号化して表示する。
 ```
 (config)# service password-encryption
 ```
