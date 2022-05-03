@@ -1,20 +1,18 @@
 # LAN設定
 ## ■ IPアドレスの設定
 ### VLANなし
-#### スタティック
 ```
+### スタティック
 # ip lan1 address <address/mask>
-```
-#### DHCP
-```
+
+### DHCP
 # ip lan1 address dhcp
 ```
 ### VLANあり
-#### ポートVLAN
 ```
+### ポートVLAN
 # ip vlan<vlan_num> address <address/mask>
-```
-#### タグVLAN
-```
+
+### タグVLAN
 # ip lan1/<num> address <address/mask>
 ```
