@@ -19,3 +19,8 @@
 ```
 # show interfaces <interface>
 ```
+
+## ■ ルーティングテーブルの表示
+```
+# show ip route
+```
