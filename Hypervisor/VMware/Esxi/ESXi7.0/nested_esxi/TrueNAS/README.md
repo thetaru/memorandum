@@ -34,11 +34,24 @@ TrueNASサーバがリッスンするIPアドレスや認証方法を設定す�
 ### Initiators Groups
 サーバ側のイニシエーターを指定することでストレージへのアクセス制御を行うことができる。  
 `Allow All Initiators`にチェックを入れると、すべてのイニシエーターからの接続を許可する。
+|||
+|:---|:---|
+|||
+
 ### Targets
+|||
+|:---|:---|
+|||
 
 ### Extents
+|||
+|:---|:---|
+|||
 
 ### Associated Targets
+|||
+|:---|:---|
+|||
 
 ## ■ サービスの設定
 |Name|Running|Start Automatically|
