@@ -21,4 +21,12 @@
 ※ SCSIコントローラの設定がVMWARE準仮想化だとインストールに失敗することがあったため  
   
 OSのインストール後、コンソール画面からIPアドレス・デフォルトゲートウェイ・DNS等を設定する。
-## ■ TrueNASの設定(iSCSI)
+## ■ ストレージの設定
+### プールの作成
+### ボリュームの作成
+## ■ 共有(iSCSI)の設定
+### Portals
+### Initiators Groups
+### Targets
+### Extents
+### Associated Targets
