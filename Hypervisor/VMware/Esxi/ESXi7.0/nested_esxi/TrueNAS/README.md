@@ -27,33 +27,15 @@ OSのインストール後、コンソール画面からIPアドレス・デフ�
 ## ■ 共有(iSCSI)の設定
 ### Portals
 TrueNASサーバがリッスンするIPアドレスや認証方法を設定する。
-|Portal Group ID|Listen|
-|:---|:---|
-|1|192.168.0.235:3260|
 
 ### Initiators Groups
 サーバ側のイニシエーターを指定することでストレージへのアクセス制御を行うことができる。  
 `Allow All Initiators`にチェックを入れると、すべてのイニシエーターからの接続を許可する。
-|Group ID||
-|:---|:---|
-|||
 
 ### Targets
-|||
-|:---|:---|
-|||
 
 ### Extents
-|||
-|:---|:---|
-|||
 
 ### Associated Targets
-|||
-|:---|:---|
-|||
 
 ## ■ サービスの設定
-|Name|Running|Start Automatically|
-|:---|:---|:---|
-|iSCSI|ON|ON|
