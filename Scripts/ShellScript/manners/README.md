@@ -101,9 +101,6 @@ function 関数名() {
 ## ■ 呼び出し
 ### 変数の呼び出し
 - `${}`で囲む
-```sh
-diff "test-${DATE}-before" "test-${DATE}-after"
-```
 - `""`で囲む
 ```sh
 diff "test-${DATE}-before" "test-${DATE}-after"
