@@ -2,86 +2,7 @@
 windowsサーバとして、一般的な設定をPowershellで設定していく。  
 以下、Powershellを管理者として実行しているものとする。
 ## ネットワーク接続
-DHCPを用いず、静的にIPアドレスを割り当てることとする。  
-※ 正直、ここに関しては`ncpa.cpl`で呼び出すのが安定な気がする
-### ■ NICの情報を取得
-設定するために必要となる情報を取得する。
-```ps1 
-> Get-NetAdapter | Select-Object InterfaceAlias,ifIndex
- 
-### 詳細情報
-> Get-NetAdapter | Select-Object *
-```
-### ■ NIC名の変更
-|コマンドレット|説明|
-|:---|:---|
-|Rename-NetAdapter|ネットワークアダプターの名前を変更する|
-
-|オプション|説明|
-|:---|:---|
-|Name|現在のアダプター名|
-|NewName|新しいアダプター名|
-
-```ps1
-> Rename-NetAdapter -Name <CurrentName> -NewName <NewName>
-```
-
-### ■ IPアドレス設定
-|コマンドレット|説明|
-|:---|:---|
-|New-NetIPAddress|IPアドレスの設定を新規に作成する|
-
-|オプション|説明|
-|:---|:---|
-|AddressFamily|IPアドレスのタイプ(IPv4\|IPv6)を指定する|
-|DefaultGateway|デフォルトゲートウェイを指定する|
-|InterfaceAlias|インターフェースのエイリアス名を指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
-|InterfaceIndex|インターフェイスのインデックスを指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
-|IPAddress|IPアドレスを指定する|
-|PrefixLength|サブネットマスクのビット数を指定する|
-
-```ps1
-> New-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -PrefixLength <Prefix> -AddressFamily "IPv4" -DefaultGateway <Gateway>
-```
-
-IPアドレスがすでに設定されている場合は、既存の設定を下記のコマンドで削除してから新しいIPアドレスを設定する。  
-※ 明示的にデフォルトゲートウェイを削除しないと、デフォルトゲートウェイが残ることに注意する。
-|コマンドレット|説明|
-|:---|:---|
-|Remove-NetIPAddress|IPアドレスの設定を削除する|
-
-|オプション|説明|
-|:---|:---|
-|AddressFamily|IPアドレスのタイプ(IPv4\|IPv6)を指定する|
-|DefaultGateway|デフォルトゲートウェイを指定する|
-|InterfaceAlias|インターフェースのエイリアス名を指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
-|InterfaceIndex|インターフェイスのインデックスを指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
-|IPAddress|IPアドレスを指定する|
-
-```ps1
-> Remove-NetIPAddress -InterfaceAlias <Interface> -IPAddress <IPaddr> -AddressFamily "IPv4" -DefaultGateway <Gateway>
-```
-
-### ■ DNSサーバ設定
-|コマンドレット|説明|
-|:---|:---|
-|Set-DnsClientServerAddress|DNSサーバを設定する|
-
-|オプション|説明|
-|:---|:---|
-|InterfaceAlias|インターフェースのエイリアス名を指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
-|InterfaceIndex|インターフェイスのインデックスを指定する</br>Get-NetIPAddressコマンドレットなどで確認できる|
-|ServerAddress|DNSサーバを指定する|
-|ResetServerAddresses|DNSサーバのIPアドレスをクリアする|
-
-```ps1
-> Set-DnsClientServerAddress -InterfaceAlias <Interface> -ServerAddress <IPaddr>
-```
-
-### ■ IPv6無効化
-```ps1
-> Disable-NetAdapterBinding -Name <NetworkAdapter> -ComponentID ms_tcpip6
-```
+GUIを使って設定する方がよい。
 ## システムのプロパティ
 ### ■ コンピュータ名 - 変更
 #### コンピュータ名
@@ -206,7 +127,9 @@ Windows Updateによるデバイスの自動インストールの設定を変更
 ```
 ## イベントビューアー
 ## Windows Defender ファイアウォール
+GUIを使って設定する方がよい。
 ## タスク スケジューラ
+GUIを使って設定する方がよい。
 ## レジストリ
 ### ■ IPv6の無効化
 ### ■ 時刻同期の設定
