@@ -1,6 +1,6 @@
 # RHEL8
 ## ■ OS Settings
-- [ ] [ローカルリポジトリ](localrepo)
+- [ ] [ローカルミラー](localmirror)
 ## ■ Software Settings
 
 
