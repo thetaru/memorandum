@@ -1,1 +1,3 @@
 # VyOS
+## ■ Commands
+## ■ Settings
