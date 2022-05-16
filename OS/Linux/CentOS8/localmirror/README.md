@@ -14,7 +14,11 @@
 
 ## ■ 公式リポジトリとの同期
 ```
-# reposync --download_path=/var/www/repo/centos/8 --repoid=centos-8-server-rpms --downloadcomps --download-metadata
+# reposync -p <download-path> --download-metadata --repo=<repo id>
+
+### CentOS8
+# reposync -p /var/www/repo/centos/8/ --download-metadata --repo=baseos
+# reposync -p /var/www/repo/centos/8/ --download-metadata --repo=appstream
 ```
 
 ## ■ リポジトリの作成
