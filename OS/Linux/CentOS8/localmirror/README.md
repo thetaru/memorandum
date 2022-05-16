@@ -48,3 +48,5 @@ Alias /repo /var/www/repo
     Require all granted
 </directory>
 ```
+## ■ パッケージの定期アップデート
+cronで同期するコマンドを実行する。
