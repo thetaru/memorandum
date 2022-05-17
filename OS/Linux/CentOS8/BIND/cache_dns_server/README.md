@@ -92,7 +92,7 @@ options {
   allow-transfer { none; };
   allow-update { none; };
   
-  recursion yes;
+  recursion no;
   allow-recursion { internalnet; };
   
   max-ncache-ttl 300;
