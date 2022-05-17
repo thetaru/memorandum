@@ -5,3 +5,4 @@
 - docker cgroup1にしないとコケる
 - selinux/apparmorでコケる
 - Timeoutでコケる(default:30min) -> CLIで実行しオプションからタイムアウト値を伸ばす
+- DHCPサーバでDNSを配布しないとコケる(vCenterや外の名前解決が必要)
