@@ -19,10 +19,10 @@ systemctl mask --now XXX.swap
 
 ### ノード間の名前解決ができることの確認
 各ノードがDNSもしくはhostsにより、他ノードの名前解決ができるように設定する。  
-DNSが落ちた場合を考えると、hostsに登録するのが無難かもしれない。  
 以下にhostsの設定を記載する。
 ```
 192.168.0.231 k8s01 k8s01.thetaru.home.
 192.168.0.232 k8s02 k8s02.thetaru.home.
 192.168.0.233 k8s03 k8s03.thetaru.home.
 ```
+※ DNSが落ちた場合を考えると、hostsに登録するのが無難かもしれない
