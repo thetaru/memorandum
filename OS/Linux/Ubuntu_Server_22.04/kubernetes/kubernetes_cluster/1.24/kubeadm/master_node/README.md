@@ -13,6 +13,6 @@ kubeletが正常動作するために、swapをオフにする必要がある。
 ```sh
 # スワップ領域がsystemd管理下にある場合
 systemctl --type swap
-systemctl mask XXX.swap
+systemctl mask --now XXX.swap
 ```
 ※ systemd管理ではない場合、`swapoff -a`したあと、fstabからswapの記述をコメントアウトする
