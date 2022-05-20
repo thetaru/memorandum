@@ -1,3 +1,4 @@
 # Kubernetes
-## Version
-- [1.24](1.24)
+## ■ Commands
+## ■ Settings
+- [ ] [Kubernetesクラスタの構築](kubernetes_cluster)
