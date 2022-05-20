@@ -6,3 +6,4 @@
 - [ ] [ufw](ufw)
 
 ## ■ Software Settings
+- [ ] [Kubernetes](kubernetes)
