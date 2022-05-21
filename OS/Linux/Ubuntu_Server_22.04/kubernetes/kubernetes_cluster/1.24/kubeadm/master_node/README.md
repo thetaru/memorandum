@@ -74,21 +74,19 @@ sysctl net.bridge.bridge-nf-call-ip6tables
 ```
 
 ### Containerdのインストール
-以下、[CRIのインストール](https://kubernetes.io/ja/docs/setup/production-environment/container-runtimes/#containerd)に記載の手順を抜粋した。
+以下、[CRIのインストール](https://kubernetes.io/ja/docs/setup/production-environment/container-runtimes/#containerd)に記載の手順を抜粋した。    
+(apt-keyは非推奨とのことだったので修正した。)
 ```sh
 # リポジトリの設定
-apt-get update && apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+apt-get update && apt-get install -y ca-certificates curl gnupg lsb-release
 ```
 ```sh
 # Docker公式のGPG鍵を追加
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
 ```sh
 # Dockerのaptリポジトリの追加
-add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) \
-    stable"
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 ```sh
 # containerdのインストール
@@ -112,12 +110,12 @@ systemctl status containerd
 以下、[Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/_print/#installing-kubeadm-kubelet-and-kubectl)に記載の手順を抜粋した。
 ```sh
 # リポジトリの設定
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl
+apt-get update
+apt-get install -y apt-transport-https ca-certificates curl
 ```
 ```sh
 # GoogleのGPG鍵を追加
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 ```
 ```sh
 # Kubernetesのaptリポジトリの追加
@@ -125,8 +123,8 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 ```
 ```sh
 # kubelet、kubeadm、kubectlをインストールし、バージョンを固定する(※1)
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubectl
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+apt-mark hold kubelet kubeadm kubectl
 ```
 ※1: [kubeadmクラスタのアップグレード](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)は特別な手順があるため、aptによるアップグレードは行わない
