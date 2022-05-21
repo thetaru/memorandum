@@ -27,7 +27,15 @@ systemctl mask --now XXX.swap
 ```
 ※ DNSが落ちた場合を考えると、hostsに登録するのが無難かもしれない
 
-### ファイアウォールのポート開放
+### ファイアウォールの設定
+iptablesをインストールしていない場合は、以下のコマンドからインストールを行うこと。
+```sh
+# iptablesのインストール
+apt install iptables iptables-persistent
+
+# iptablesサービスの自動起動の有効化
+systemctl enable --now iptables
+```
 Kuberneteが使用するポート番号を[Ports and Protocols](https://kubernetes.io/docs/reference/ports-and-protocols/)より抜粋する。  
 以下の表にマスターノードで必要なポートのみ記載する。
 |Protocol|Direction|Port Range|Purpose|Used By|
