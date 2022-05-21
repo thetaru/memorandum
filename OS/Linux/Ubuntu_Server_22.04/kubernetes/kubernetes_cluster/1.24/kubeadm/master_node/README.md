@@ -181,3 +181,9 @@ rootユーザの場合、以下のコマンドを実行する。
 ```sh
 export KUBECONFIG=/etc/kubernetes/admin.conf && source ~/.bashrc
 ```
+
+### CNIプラグインのインストール
+上記の通り、CNIプラグインはflannelを利用する。以下のコマンドでflannelをインストールする。
+```sh
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
