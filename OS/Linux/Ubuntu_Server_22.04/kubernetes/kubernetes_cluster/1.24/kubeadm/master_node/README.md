@@ -27,6 +27,17 @@ systemctl mask --now XXX.swap
 ```
 ※ DNSが落ちた場合を考えると、hostsに登録するのが無難かもしれない
 
+### ファイアウォールのポート開放
+Kuberneteが使用するポート番号を[Ports and Protocols](https://kubernetes.io/docs/reference/ports-and-protocols/)より抜粋する。  
+以下の表にマスターノードで必要なポートのみ記載する。
+|Protocol|Direction|Port Range|Purpose|Used By|
+|:---|:---|:---|:---|:---|
+|TCP|Inbound|6443|Kubernetes API server|All|
+|TCP|Inbound|2379-2380|etcd server client API|kube-apiserver, etcd|
+|TCP|Inbound|10250|Kubelet API|Self, Control plane|
+|TCP|Inbound|10259|kube-scheduler|Self|
+|TCP|Inbound|10257|kube-controller-manager|Self|
+
 ## ■ CRI(Container Runtime Interface)のインストール
 CRIは、kubeletがコンテナランタイムを操作するためのプラグインインターフェースである。  
 Kubernetesは、Podのコンテナを実行するために、コンテナランタイムを使用する。  
