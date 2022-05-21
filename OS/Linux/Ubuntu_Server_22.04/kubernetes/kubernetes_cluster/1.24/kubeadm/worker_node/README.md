@@ -153,4 +153,8 @@ apt-mark showhold
 ```
 
 ## ■ ワーカーノードのセットアップ
-### 
+### ワーカーノードをクラスタに追加
+マスターノードで`kubeadm init`を実行した際に出力されたコマンドを実行する。
+```sh
+kubeadm join k8s-masters.thetaru.home:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
