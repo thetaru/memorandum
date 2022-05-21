@@ -37,7 +37,7 @@ vm.panic_on_oom=2
 ```
 設定を反映します。
 ```
-$ sudo systemctl -p
+$ sudo sysctl -p
 ```
 ## ■ ネットワークの設定
 ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[systemd-networkd]()を参照してください。
