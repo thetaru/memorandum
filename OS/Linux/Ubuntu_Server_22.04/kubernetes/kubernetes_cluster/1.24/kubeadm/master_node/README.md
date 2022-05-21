@@ -74,3 +74,32 @@ sysctl net.bridge.bridge-nf-call-ip6tables
 ```
 
 ### Containerdのインストール
+以下、[CRIのインストール](https://kubernetes.io/ja/docs/setup/production-environment/container-runtimes/#containerd)に記載の手順を抜粋した。
+```sh
+# リポジトリの設定
+apt-get update && apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+```
+```sh
+# Docker公式のGPG鍵を追加
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+```
+```sh
+# Dockerのaptリポジトリの追加
+add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+```
+```sh
+# containerdのインストール
+apt-get update && apt-get install -y containerd.io
+```
+```sh
+# containerdの設定
+mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+```
+```sh
+# containerdの再起動
+systemctl restart containerd
+```
