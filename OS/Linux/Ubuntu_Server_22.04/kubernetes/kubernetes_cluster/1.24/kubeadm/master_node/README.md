@@ -164,3 +164,4 @@ flannelのデフォルトのCIDR(10.244.0.0/16)を`--pod-network-cidr`に指定�
 ```sh
 kubeadm init --control-plane-endpoint=192.168.0.230:6443 --pod-network-cidr=10.244.0.0/16
 ```
+kubernetesクラスタをリセットしたい場合、`kubeadm reset`を実行する。
