@@ -128,3 +128,9 @@ apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 ```
 ※1: [kubeadmクラスタのアップグレード](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)は特別な手順があるため、aptによるアップグレードは行わない
+```sh
+# kubelet、kubeadm、kubectlがホールドされていることを確認する
+apt-mark showhold
+```
+
+## ■ マスターノードのセットアップ
