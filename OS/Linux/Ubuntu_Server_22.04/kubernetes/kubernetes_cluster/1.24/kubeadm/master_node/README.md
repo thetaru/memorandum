@@ -167,5 +167,5 @@ kubeadm init --control-plane-endpoint=k8s-masters.thetaru.home:6443 --pod-networ
 ```
 ```sh
 # 出力結果の最後のコマンドはひかえておくこと(ワーカーノードで実行する必要があるため)
-kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+kubeadm join k8s-masters.thetaru.home:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 ```
