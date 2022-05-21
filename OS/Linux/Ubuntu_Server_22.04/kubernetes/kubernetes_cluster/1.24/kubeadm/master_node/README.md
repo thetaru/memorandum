@@ -33,7 +33,7 @@ iptablesをインストールしていない場合は、以下のコマンドか
 # iptablesのインストール
 apt install iptables iptables-persistent
 
-# iptablesサービスの自動起動の有効化
+# iptablesサービスの自動起動を有効化
 systemctl enable --now iptables
 ```
 Kuberneteが使用するポート番号を[Ports and Protocols](https://kubernetes.io/docs/reference/ports-and-protocols/)より抜粋する。  
