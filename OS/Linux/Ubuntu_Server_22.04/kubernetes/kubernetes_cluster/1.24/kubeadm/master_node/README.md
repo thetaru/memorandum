@@ -156,7 +156,7 @@ apt-mark showhold
 ### コントロールプレーンノードの初期化
 kubeadmクラスターをHAクラスタする予定がある場合、`--control-plane-endpoint`を指定する。  
 エンドポイントには、名前解決可能なホスト名やロードバランサーの仮想IPアドレス(VIP)を指定できる。(※2)  
-ここでは、DNSレコードを追加(k8s-masters.thetaru.homeで名前解決すると192.168.0.230のIPアドレスで解決させる)して対処する。  
+ここでは、内部DNSにDNSレコードを追加(k8s-masters.thetaru.homeで名前解決すると192.168.0.230のIPアドレスで解決させる)して対処する。  
   
 CNI(Container Network Interface)プラグインは、flannelを使用する。  
 ここでは、flannelのデフォルトのCIDR(10.244.0.0/16)を`--pod-network-cidr`に指定する。(※3)  
@@ -165,4 +165,7 @@ CNI(Container Network Interface)プラグインは、flannelを使用する。
 ```sh
 kubeadm init --control-plane-endpoint=k8s-masters.thetaru.home:6443 --pod-network-cidr=10.244.0.0/16
 ```
-kubernetesクラスタをリセットしたい場合、`kubeadm reset`を実行する。
+```sh
+# 出力結果の最後のコマンドはひかえておくこと(ワーカーノードで実行する必要があるため)
+kubeadm join 192.168.137.100:<port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
