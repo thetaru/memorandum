@@ -179,5 +179,5 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 rootユーザの場合、以下のコマンドを実行する。
 ```sh
-export KUBECONFIG=/etc/kubernetes/admin.conf
+export KUBECONFIG=/etc/kubernetes/admin.conf && source ~/.bashrc
 ```
