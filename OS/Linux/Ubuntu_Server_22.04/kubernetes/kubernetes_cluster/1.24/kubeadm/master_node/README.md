@@ -62,7 +62,7 @@ lsmod | egrep "^(overlay|br_netfilter)"
 
 ### カーネルパラメータの設定
 Kubernetesでは、
-- ネットワークブリッジを通過するパケットにiptablesのルールを適用すること
+- iptablesがネットワークブリッジを通過するパケットを処理できること
 - IPフォワーディングを有効にすること
 
 が必要であるため、以下のパラメータを設定する。
@@ -145,3 +145,14 @@ apt-mark showhold
 ```
 
 ## ■ マスターノードのセットアップ
+### コントロールプレーンノードの初期化
+kubeadmクラスターをHAクラスタする予定がある場合、`--control-plane-endpoint`を指定する。  
+エンドポイントには、名前解決可能なホスト名やロードバランサーの仮想IPアドレス(VIP)を指定できる。(※2)  
+  
+CNI(Container Network Interface)プラグインは、flannelを使用する。  
+flannelのデフォルトのCIDR(10.244.0.0/16)を`--pod-network-cidr`に指定する。(※3)  
+※2: DNSラウンドロビンやLBの負荷分散機能を利用する(ってことだと思う)
+※3: CNIについて調べられていない。また、各CNIプラグインの長所・短所も調べられていない。(用途ごとに変更する必要がある認識)
+```sh
+kubeadm init --control-plane-endpoint=192.168.0.230:6443 --pod-network-cidr=10.244.0.0/16
+```
