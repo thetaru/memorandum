@@ -103,3 +103,7 @@ containerd config default | sudo tee /etc/containerd/config.toml
 # containerdの再起動
 systemctl restart containerd
 ```
+```sh
+# containerdの起動確認
+systemctl status containerd
+```
