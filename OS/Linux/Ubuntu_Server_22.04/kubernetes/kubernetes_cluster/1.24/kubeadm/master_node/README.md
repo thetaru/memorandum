@@ -1,7 +1,6 @@
 # マスターノードの構築
 |ホスト名|IPアドレス|CPU数|搭載メモリ|役割|
 |:---|:---|:---|:---|:---|
-|k8sLB|192.168.0.230|2|4GB|ロードバランサ|
 |k8s01|192.168.0.231|4|16GB|マスターノード(★)|
 |k8s02|192.168.0.232|4|16GB|ワーカーノード|
 |k8s03|192.168.0.233|4|16GB|ワーカーノード|
@@ -157,12 +156,13 @@ apt-mark showhold
 ### コントロールプレーンノードの初期化
 kubeadmクラスターをHAクラスタする予定がある場合、`--control-plane-endpoint`を指定する。  
 エンドポイントには、名前解決可能なホスト名やロードバランサーの仮想IPアドレス(VIP)を指定できる。(※2)  
+ここでは、DNSレコード(k8s-masters.thetaru.home)を追加して対処する。  
   
 CNI(Container Network Interface)プラグインは、flannelを使用する。  
-flannelのデフォルトのCIDR(10.244.0.0/16)を`--pod-network-cidr`に指定する。(※3)  
+ここでは、flannelのデフォルトのCIDR(10.244.0.0/16)を`--pod-network-cidr`に指定する。(※3)  
 ※2: DNSラウンドロビンやLBの負荷分散機能を利用する(ってことだと思う)  
 ※3: CNIについて調べられていない。また、各CNIプラグインの長所・短所も調べられていない。(用途ごとに変更する必要がある認識)
 ```sh
-kubeadm init --control-plane-endpoint=192.168.0.230:6443 --pod-network-cidr=10.244.0.0/16
+kubeadm init --control-plane-endpoint=k8s-masters.thetaru.home:6443 --pod-network-cidr=10.244.0.0/16
 ```
 kubernetesクラスタをリセットしたい場合、`kubeadm reset`を実行する。
