@@ -26,3 +26,29 @@ systemctl mask --now XXX.swap
 192.168.0.233 k8s03 k8s03.thetaru.home.
 ```
 ※ DNSが落ちた場合を考えると、hostsに登録するのが無難かもしれない
+
+## ■ CRI(Container Runtime Interface)のインストール
+CRIは、kubeletがコンテナランタイムを操作するためのプラグインインターフェースである。  
+Kubernetesは、Podのコンテナを実行するために、コンテナランタイムを使用する。  
+ここでは、コンテナランタイムにcontainerdを使用する。
+### カーネルモジュールの設定
+起動時にロードするカーネルモジュール(overlay,br_netfilter)を`/etc/modules-load.d/containerd.conf`に記載する。
+```sh
+cat > /etc/modules-load.d/containerd.conf <<EOF
+overlay
+br_netfilter
+EOF
+```
+カーネルモジュール(overlay,br_netfilter)のロードを行う。
+```sh
+modprobe overlay
+modprobe br_netfilter
+```
+カーネルモジュール(overlay,br_netfilter)がロードされていることを確認する。
+```sh
+lsmod | egrep "^(overlay|br_netfilter)"
+```
+
+### カーネルパラメータの設定
+```sh
+```
