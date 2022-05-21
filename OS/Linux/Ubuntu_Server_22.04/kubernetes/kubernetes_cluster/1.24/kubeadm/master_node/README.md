@@ -107,3 +107,26 @@ systemctl restart containerd
 # containerdの起動確認
 systemctl status containerd
 ```
+
+## ■ kubeadm、kubelet、kubectlのインストール
+以下、[Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/_print/#installing-kubeadm-kubelet-and-kubectl)に記載の手順を抜粋した。
+```sh
+# リポジトリの設定
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+```
+```sh
+# GoogleのGPG鍵を追加
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+```
+```sh
+# Kubernetesのaptリポジトリの追加
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+```sh
+# kubelet、kubeadm、kubectlをインストールし、バージョンを固定する(※1)
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+※1: [kubeadmクラスタのアップグレード](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)は特別な手順があるため、aptによるアップグレードは行わないため
