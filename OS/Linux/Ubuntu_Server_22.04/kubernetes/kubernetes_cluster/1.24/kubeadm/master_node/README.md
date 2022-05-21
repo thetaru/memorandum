@@ -72,3 +72,5 @@ sysctl net.bridge.bridge-nf-call-iptables
 sysctl net.ipv4.ip_forward
 sysctl net.bridge.bridge-nf-call-ip6tables
 ```
+
+### Containerdのインストール
