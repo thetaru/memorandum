@@ -225,9 +225,6 @@ $ sudo apt upgrade
 # パッケージ自動更新周りのサービスを無効化
 $ sudo systemctl mask apt-daily.timer
 $ sudo systemctl mask apt-daily-upgrade.timer
-
-# cron.serviceがあるため不要
-$ sudo systemctl disable --now atd.service
 ```
 ※ cronなどで起動させられたサービスは`disable`であっても起動することに注意する(disableは自動起動を無効化する設定のため)
 
