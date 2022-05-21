@@ -68,5 +68,7 @@ sysctl -p /etc/sysctl.d/99-kubernetes-cri.conf
 ```
 カーネルパラメータが設定されていることを確認する。
 ```sh
-sysctl {net.bridge.bridge-nf-call-iptables,net.ipv4.ip_forward,net.bridge.bridge-nf-call-ip6tables}
+sysctl net.bridge.bridge-nf-call-iptables
+sysctl net.ipv4.ip_forward
+sysctl net.bridge.bridge-nf-call-ip6tables
 ```
