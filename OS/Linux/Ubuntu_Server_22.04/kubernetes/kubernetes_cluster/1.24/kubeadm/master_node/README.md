@@ -39,7 +39,7 @@ overlay
 br_netfilter
 EOF
 ```
-カーネルモジュール(overlay,br_netfilter)のロードを行う。
+カーネルモジュール(overlay,br_netfilter)のロードする。
 ```sh
 modprobe overlay
 modprobe br_netfilter
@@ -50,5 +50,23 @@ lsmod | egrep "^(overlay|br_netfilter)"
 ```
 
 ### カーネルパラメータの設定
+Kubernetesでは、
+- ネットワークブリッジを通過するパケットにiptablesのルールを適用すること
+- IPフォワーディングを有効にすること
+
+が必要であるため、以下のパラメータを設定する。
 ```sh
+cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+```
+設定ファイル`/etc/sysctl.d/99-kubernetes-cri.conf`をロードする。
+```sh
+sysctl -p /etc/sysctl.d/99-kubernetes-cri.conf
+```
+カーネルパラメータが設定されていることを確認する。
+```sh
+sysctl {net.bridge.bridge-nf-call-iptables,net.ipv4.ip_forward,net.bridge.bridge-nf-call-ip6tables}
 ```
