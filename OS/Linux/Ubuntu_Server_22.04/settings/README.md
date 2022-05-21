@@ -202,6 +202,7 @@ $ apt-mark showhold
 $ sudo apt purge --autoremove unattended-upgrades
 ```
 ## ■ パッケージのインストール
+下記のパッケージの他に必要なパッケージがあれば適宜インストールすること。
 ```
 # cron
 $ sudo apt install cron
