@@ -149,6 +149,35 @@ apt-mark hold kubelet kubeadm kubectl
 apt-mark showhold
 ```
 
+## ■ cgroupドライバの設定
+以下、[Configuring a cgroup driver](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/)に記載の手順を抜粋した。
+### containerd
+containerdがcgroupドライバにsystemdを利用するように設定する。
+```sh
+vim /etc/containerd/config.toml
+```
+```
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+  SystemdCgroup = true
+```
+設定の修正後、containerdサービスを再起動する。
+```sh
+systemctl restart containerd
+```
+
+### kubelet
+kubeletがcgroupドライバにsystemdを利用するように設定する。
+```sh
+kubectl edit cm kubelet-config -n kube-system
+```
+```
+cgroupDriver: systemd
+```
+設定の修正後、kubeletサービスを再起動する。
+```sh
+systemctl restart kubelet
+```
+
 ## ■ ワーカーノードのセットアップ
 ### ワーカーノードをクラスタに追加
 マスターノードで`kubeadm init`を実行した際に出力されたコマンドを実行する。
