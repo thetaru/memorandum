@@ -10,3 +10,10 @@
 
 ## 対応
 - firewallやAppArmor下で動かせるようにしたいかな。
+
+
+## エラー
+ワーカーノードのcontainerdの`systemd_cgroup = true`にしたらkubeletが動作しなくなった。(falseに戻せば起動する。)
+```
+failed to run Kubelet: unable to determine runtime API version: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial unix: missing address
+```
