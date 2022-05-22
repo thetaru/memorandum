@@ -186,7 +186,7 @@ systemctl daemon-reload && systemctl restart kubelet
 ### コントロールプレーンノードの初期化
 kubeadmクラスターをHAクラスタする予定がある場合、`--control-plane-endpoint`を指定する。  
 エンドポイントには、名前解決可能なホスト名やロードバランサーの仮想IPアドレス(VIP)を指定できる。(※2)  
-ここでは、内部DNSにDNSレコードを追加(k8s-masters.thetaru.homeで名前解決すると192.168.0.230のIPアドレスで解決させる)して対処する。  
+ここでは、内部DNSにレコードを追加(k8s-masters.thetaru.homeで名前解決すると192.168.0.231を返すようにする)して対処する。  
   
 CNI(Container Network Interface)プラグインは、flannelを使用する。  
 ここでは、flannelのデフォルトのCIDR(10.244.0.0/16)を`--pod-network-cidr`に指定する。(※3)  
