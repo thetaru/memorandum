@@ -4,3 +4,6 @@
 - CRI
 - CNI
 - CSI
+
+## ハマった
+- マスターノードのcontainerdとkubeletでcgroup driverが一致しないと6443ポートがバインドされない。
