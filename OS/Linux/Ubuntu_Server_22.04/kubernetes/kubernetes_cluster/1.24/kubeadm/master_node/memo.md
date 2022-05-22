@@ -7,3 +7,6 @@
 
 ## ハマった
 - マスターノードのcontainerdとkubeletでcgroup driverが一致しないと6443ポートがバインドされない。
+
+## 対応
+- firewallやAppArmor下で動かせるようにしたいかな。
