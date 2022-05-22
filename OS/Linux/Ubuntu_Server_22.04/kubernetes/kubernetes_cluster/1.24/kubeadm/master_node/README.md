@@ -153,6 +153,7 @@ apt-mark showhold
 ```
 
 ## ■ cgroupドライバの設定
+以下、[Configuring a cgroup driver](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/)に記載の手順を抜粋した。
 ### containerd
 containerdがcgroupドライバにsystemdを利用するように設定する。
 ```sh
