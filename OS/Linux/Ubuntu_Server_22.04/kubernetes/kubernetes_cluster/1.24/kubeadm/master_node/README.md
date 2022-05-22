@@ -179,10 +179,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 rootユーザの場合、以下のコマンドを実行する。
 ```sh
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-export KUBECONFIG=/etc/kubernetes/admin.conf && source ~/.bashrc
+echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bashrc && source ~/.bashrc
 ```
 
 ### CNIプラグインのインストール
