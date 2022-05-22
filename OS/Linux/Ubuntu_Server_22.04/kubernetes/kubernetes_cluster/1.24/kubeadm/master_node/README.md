@@ -169,9 +169,10 @@ systemctl restart containerd
 ```
 
 ### kubelet
-kubeletがcgroupドライバにsystemdを利用するように設定する。
+kubeletがcgroupドライバにsystemdを利用するように設定する。  
+kubeletサービスのユニットファイルは`/var/lib/kubelet/config.yaml`を参照しているので、このファイルを修正する。
 ```sh
-kubectl edit cm kubelet-config -n kube-system
+vim /var/lib/kubelet/config.yaml
 ```
 ```
 cgroupDriver: systemd
@@ -180,6 +181,7 @@ cgroupDriver: systemd
 ```sh
 systemctl daemon-reload && systemctl restart kubelet
 ```
+
 ## ■ マスターノードのセットアップ
 ### コントロールプレーンノードの初期化
 kubeadmクラスターをHAクラスタする予定がある場合、`--control-plane-endpoint`を指定する。  
