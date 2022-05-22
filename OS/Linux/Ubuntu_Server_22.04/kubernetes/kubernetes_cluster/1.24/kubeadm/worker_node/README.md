@@ -175,7 +175,7 @@ cgroupDriver: systemd
 ```
 設定の修正後、kubeletサービスを再起動する。
 ```sh
-systemctl restart kubelet
+systemctl daemon-reload && systemctl restart kubelet
 ```
 
 ## ■ ワーカーノードのセットアップ
