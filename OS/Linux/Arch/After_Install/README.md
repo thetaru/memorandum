@@ -35,6 +35,10 @@ $ sudo pacman -S remmina freerdp
 ```
 $ yay -S dropbox
 ```
+## Gitkraken をインストール
+```
+$ yay -S gitkraken
+```
 ## 隠しファイルの表示
 ファイルマネージャから`隠しファイルを表示`で設定
 ## ログインシェルの変更
