@@ -31,6 +31,10 @@ $ sudo pacman -S fcitx-im fcitx-mozc
 ```
 $ sudo pacman -S remmina freerdp
 ```
+## Dropbox をインストール
+```
+$ yay -S dropbox
+```
 ## 隠しファイルの表示
 ファイルマネージャから`隠しファイルを表示`で設定
 ## ログインシェルの変更
