@@ -2,9 +2,10 @@
 ## ■ Commands
 - [ ] [pacman]()
 ## ■ OS Settings
+- [ ] [コード管理](code_management)
 ## ■ Software Settings
 ## ■ Tips
-- [ ] [OSインストール後にやること](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Arch/After_Install)
-- [ ] [isoイメージをdvdに焼く方法](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Arch/dvd_burn)
-- [ ] [ショートカット](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Arch/shortcut)
+- [ ] [OSインストール後にやること](After_Install)
+- [ ] [isoイメージをdvdに焼く方法](dvd_burn)
+- [ ] [ショートカット](shortcut)
 - [ ] [シリアル通信する方法](serial)
