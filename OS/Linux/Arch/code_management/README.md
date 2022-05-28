@@ -17,12 +17,12 @@
 ```
 
 ## ■ VScodeの設定
-### SFTPによる自動アップデート
+### (S)FTPによる自動アップデート
 コマンドパレットより`SFTP: config`を実行すると、sftp.jsonファイルが開く。
 > **Warning**  
 > sftp.jsonファイルはプロジェクト毎に作成する。
 
-以下にように作成すること。
+#### SFTP
 ```json
 {
 	"name": "【リポジトリ名】",
@@ -31,7 +31,38 @@
 	"port": 22,
 	"username": "【リモートサーバのユーザ名】",
 	"privateKeyPath": "【秘密鍵のパス】",
-	"remotePath": "【リモートサーバのアップロード先のパス】",
+	"context": "【ローカルのアップロード元ディレクトリのパス】",
+	"remotePath": "【リモートサーバのアップロード先ディレクトリのパス】",
+	"ignore": [
+		".vscode",
+		".git"
+	],
+	"syncOption": {
+		"delete": true,
+		"skipCreate": false,
+		"ignoreExisting": false,
+		"update": false
+	},
+	"uploadOnSave": true,
+	"watcher": {
+		"files": "*",
+		"autoUpload": true,
+		"autoDelete": true
+	}
+}
+```
+
+#### FTP
+```json
+{
+	"name": "【リポジトリ名】",
+	"protocol": "ftp",
+	"host": "【リモートサーバのホスト名またはIPアドレス】",
+	"port": 21,
+	"username": "【リモートサーバのユーザ名】",
+	"password": "【リモートサーバのパスワード】",
+	"context": "【ローカルのアップロード元ディレクトリのパス】",
+	"remotePath": "【リモートサーバのアップロード先ディレクトリのパス】",
 	"ignore": [
 		".vscode",
 		".git"
