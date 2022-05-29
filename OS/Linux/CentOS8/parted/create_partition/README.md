@@ -20,6 +20,13 @@ parted -s /dev/sdX mkpart [primary|extended] xfs 0% 100%
 ```
 ※ 0%をサボって0と書いたりしないこと
 
+## ■ ファイルシステムのフォーマット
+ここでは、xfsでフォーマットする。
+```
+# /dev/sdb1など
+mkfs.xfs /dev/sdXN
+```
+
 ## ■ アライメントの確認
 ```
 parted -s /dev/sdX align-check
