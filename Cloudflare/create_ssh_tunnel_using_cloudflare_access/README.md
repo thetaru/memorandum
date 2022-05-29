@@ -40,6 +40,7 @@ ingress:
 cloudflared tunnel run <UUID or NAME>
 ```
 ```sh
+# トンネルの情報を取得
 cloudflared tunnel info <UUID or NAME>
 ```
 [Cloudflare Docs - Run as a service on Linux](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/run-tunnel/as-a-service/linux/)より抜粋した。
