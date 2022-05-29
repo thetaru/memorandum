@@ -23,4 +23,15 @@ cloudflared tunnel login
 # NAMEという名前のトンネルを作成
 cloudflared tunnel create <NAME>
 ```
-[Cloudflare Docs - Ingress rules](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/local-management/ingress/)
+[Cloudflare Docs - Ingress rules](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/local-management/ingress/)を参照した。
+```yaml
+tunnel: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+credentials-file: /root/.cloudflared/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.json
+
+ingress:
+  - hostname: XXX.example.com
+    service: http://localhost:80
+  - hostname: YYY.example.com
+    service: ssh://localhost:22
+  - service: http_status:404
+```
