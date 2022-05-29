@@ -20,15 +20,15 @@ parted -s /dev/sdX mkpart [primary|extended] xfs 0% 100%
 ```
 ※ 0%をサボって0と書いたりしないこと
 
+## ■ アライメントの確認
+```sh
+# Nにはパーティション番号を指定する
+parted -s /dev/sdX align-check optimal N
+```
+
 ## ■ ファイルシステムのフォーマット
 ここでは、xfsでフォーマットする。
 ```sh
 # /dev/sdXNにはパーティションを指定する
 mkfs.xfs /dev/sdXN
-```
-
-## ■ アライメントの確認
-```sh
-# Nにはパーティション番号を指定する
-parted -s /dev/sdX align-check optimal N
 ```
