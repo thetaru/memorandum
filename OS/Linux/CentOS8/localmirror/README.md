@@ -13,6 +13,7 @@
 ```
 
 ## ■ 公式リポジトリとの同期
+メタデータは公式から引っ張る、createrepoで作らない
 ```
 # reposync -p <download-path> --download-metadata --repo=<repo id>
 
