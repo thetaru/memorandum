@@ -72,3 +72,7 @@ tlp-stat -b
 ```
 fuser -v /dev/sda1
 ```
+FC接続時に認識しているLUNをみる
+```
+cat /proc/scsi/scsi
+```
