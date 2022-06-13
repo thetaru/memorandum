@@ -67,3 +67,8 @@ tlp バッテリ系
 tlp-stat
 tlp-stat -b
 ```
+
+ファイルやソケットを掴んでいるプロセスを探す
+```
+fuser -v /dev/sda1
+```
