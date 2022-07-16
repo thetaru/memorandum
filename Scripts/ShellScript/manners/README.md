@@ -9,16 +9,27 @@ deploy-server.sh
 ### 変数名
 - グローバル変数
 
+多用しないこと。なるべくグローバルな定数として利用する。  
 `_`区切りの大文字英数字を使う。
 ```sh
 GLOBAL_VAR="global"
 ```
 - ローカル変数
 
+function内で変数定義するときに`local`をつける。
 `_`区切りの小文字英数字を使う。
 ```sh
-local local_var="local"
+function test() {
+  local local_var="local"
+}
 ```
+- 定数
+
+定数を定義するときは、`readonly`を付ける。
+```sh
+readonly CONST="const"
+```
+
 ### ループ変数
 `_`区切りの小文字英数字を使う。
 ```sh
@@ -51,8 +62,15 @@ LFを使用する。
 ```
 
 ## ■ bashオプション
+|オプション|意味|
+|:---|:---|
+|-e|スクリプト中のコマンドが終了コード0以外を返した場合にスクリプトを停止する。|
+|-u|未定義変数を使おうとするとエラー終了する。|
+|-o|パイプの左側のコマンドが失敗した時にスクリプトを停止する。|
+|-C|リダイレクトでのファイル上書き時にエラー終了する。|
+
 ```sh
-set -euxo pipefail
+set -euCo pipefail
 ```
 
 ## ■ ディレクトリ移動
@@ -88,6 +106,13 @@ LOG_DIR="/var/log/hoge"
 ARG="$1"
 echo "Result is ${RESULT}" | tee "${LOG_DIR}/result.log"
 ```
+### 配列展開
+配列展開を行う場合は、必ず`""`で囲む。  
+特に、特殊変数`$@`を使う場合は注意すること。
+```sh
+for i in "$@"; do echo "${i}"; done
+```
+
 ## ■ 関数
 ### 関数定義
 `function`をつけて定義する。
@@ -150,6 +175,17 @@ done
 ※ 範囲はglob(`*.txt`など)かbrace expansion(`{1..5}`など)  
 ## ■ エラーハンドリング
 ## ■ ロギング
+### ログ出力
+```sh
+function log() {
+  local fname=${BASH_SOURCE[1]##*/}
+  echo -e "$(date '+%Y-%m-%dT%H:%M:%S') ${fname}:${BASH_LINENO[0]}:${FUNCNAME[1]} $@"
+}
+
+# ERR時にlogを実行
+trap "log 'message'" ERR
+#=> 2022-07-16T16:34:39 test.sh:8:main message
+```
 ## ■ オプション
 オプション解析にgetoptやgetoptsがありますが、そこまでするならちゃんとしたプログラミング言語で書くべきだと思う。
 ## ■ 単体テスト
