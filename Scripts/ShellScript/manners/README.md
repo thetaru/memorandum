@@ -173,9 +173,9 @@ for 変数 in 範囲; do
 done
 ```
 ※ 範囲はglob(`*.txt`など)かbrace expansion(`{1..5}`など)  
-## ■ エラーハンドリング
-## ■ ロギング
-### ログ出力
+## ■ トラップ
+### ログの出力
+trapでエラー発生時にシグナルを補足する。
 ```sh
 function log() {
   local fname=${BASH_SOURCE[1]##*/}
@@ -183,13 +183,21 @@ function log() {
 }
 
 # ERR時にlogを実行
-trap "log 'message'" ERR
-#=> 2022-07-16T16:34:39 test.sh:8:main message
+trap "log 'error occured'" ERR
+#=> 2022-07-16T16:34:39 test.sh:8:main error occured
 ```
+### スクリプト終了時の処理
+trapで終了時のシグナルを補足する。
+```sh
+function cleanup() {
+  echo "cleanup"
+}
+
+# EXIT時にcleanupを実行
+trap "cleanup" EXIT
+```
+
 ## ■ オプション
-オプション解析にgetoptやgetoptsがありますが、そこまでするならちゃんとしたプログラミング言語で書くべきだと思う。
 ## ■ 単体テスト
-## ■ スクリプトのコード長
-100行程度に収められないなら、ちゃんとしたプログラミング言語で書くべきだと思う。
 ## ■ Ref
 - https://qiita.com/autotaker1984/items/bc758fcf368c1a167353
