@@ -20,3 +20,4 @@
 - [ ] [systemd timerの一覧を確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/systemd_timer_list)
 - [ ] [書き込み中のログでも安全に空ファイルにする](safe_delete_log_content)
 - [ ] [マウントポイントを確認する](findmnt)
+- [ ] [あるパス配下にある各ディレクトリの使用容量を確認する](du_sh_total)
