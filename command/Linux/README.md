@@ -6,7 +6,6 @@
 - [ ] [パッケージインストール時に導入される設定ファイルの確認](https://github.com/thetaru/memorandum/tree/master/command/Linux/confirm_conf)
 - [ ] [ディスクがHDDかSSDか確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/check_disk)
 - [ ] [NICの製品名を確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/nic_product_logical_map)
-- [ ] [ネットワークの統計情報を取得する](https://github.com/thetaru/memorandum/tree/master/command/Linux/network_statistics)
 - [ ] [複数ファイルで共通する行を見つける](https://github.com/thetaru/memorandum/tree/master/command/Linux/grep_common_line)
 - [ ] [UID/GIDを指定したユーザ作成](https://github.com/thetaru/memorandum/tree/master/command/Linux/user_fixed_uid_gid)
 - [ ] [kdumpが予約しているメモリ量を確認する](https://github.com/thetaru/memorandum/tree/master/command/Linux/kdump_reserved_mem)
