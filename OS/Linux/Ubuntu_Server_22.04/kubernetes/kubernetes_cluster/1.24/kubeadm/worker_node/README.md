@@ -38,7 +38,7 @@ systemctl enable --now iptables
 ```
 iptablesのポリシーを変更する。
 ```sh
-apt-get install -y iptables arptables ebtables
+apt install iptables arptables ebtables
 update-alternatives --set iptables /usr/sbin/iptables-legacy
 update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 update-alternatives --set arptables /usr/sbin/arptables-legacy
