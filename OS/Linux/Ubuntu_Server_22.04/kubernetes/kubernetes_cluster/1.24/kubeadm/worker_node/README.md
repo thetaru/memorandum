@@ -36,6 +36,15 @@ apt install iptables iptables-persistent
 # iptablesサービスの自動起動を有効化
 systemctl enable --now iptables
 ```
+iptablesのポリシーを変更する。
+```sh
+apt-get install -y iptables arptables ebtables
+update-alternatives --set iptables /usr/sbin/iptables-legacy
+update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+update-alternatives --set arptables /usr/sbin/arptables-legacy
+update-alternatives --set ebtables /usr/sbin/ebtables-legacy
+```
+
 Kuberneteが使用するポート番号を[Ports and Protocols](https://kubernetes.io/docs/reference/ports-and-protocols/)より抜粋する。  
 以下の表にワーカーノードで必要なポートのみ記載する。
 |Protocol|Direction|Port Range|Purpose|Used By|
