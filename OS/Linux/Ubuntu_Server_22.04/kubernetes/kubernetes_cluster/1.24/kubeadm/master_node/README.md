@@ -174,6 +174,20 @@ apt-mark hold kubelet kubeadm kubectl
 apt-mark showhold
 ```
 
+## ■ kubeletの設定
+kubeletがプライマリネットワークインターフェイスを自動検知しないよう手動で設定する。  
+※ ノードごとにIPアドレスを設定すること
+```sh
+vim /etc/default/kubelet
+```
+```
+KUBELET_EXTRA_ARGS=--node-ip=192.168.0.231
+```
+kubeletサービスの再読み込みと再起動を行う。
+```sh
+systemctl daemon-reload && systemctl restart kubelet.service
+```
+
 ## ■ cgroupドライバの設定
 以下、[Configuring a cgroup driver](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/)に記載の手順を抜粋した。
 ### containerd
