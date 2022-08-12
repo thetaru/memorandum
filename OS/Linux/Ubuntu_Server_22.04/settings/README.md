@@ -127,7 +127,7 @@ $ sudo timedatectl set-ntp true
 ```
 参照先のNTPサーバを指定します。
 ```
-$ sudo vim /etc/systemd/timesyncd.service
+$ sudo vim /etc/systemd/timesyncd.conf
 ```
 ```
 [Time]
