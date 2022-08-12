@@ -175,6 +175,10 @@ kubeletサービスの再読み込みと再起動を行う。
 ```sh
 systemctl daemon-reload && systemctl restart kubelet.service
 ```
+psコマンドでkubeletプロセスを確認し、`--node-ip=x.x.x.x`オプションがあることを確認する。
+```sh
+ps -fup $(pgrep kubelet) -ww
+```
 
 ## ■ ワーカーノードのセットアップ
 ### ワーカーノードをクラスタに追加
