@@ -237,7 +237,24 @@ source ~/.bashrc
 ```
 
 ### CNIプラグインのインストール
+#### flannel
 上記の通り、CNIプラグインはflannelを利用する。以下のコマンドでflannelをインストールする。
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
+
+#### Calico
+```sh
+kubectl create -f https://projectcalico.docs.tigera.io/manifests/tigera-operator.yaml
+```
+```sh
+wget https://projectcalico.docs.tigera.io/manifests/custom-resources.yaml
+```
+`spec.calicoNetwork.ipPools`の`cidr`をPodネットワークのセグメント(`kubeadm init`のオプション`pod-network-cidr`への引数)に変更する。  
+※ ここでは、`10.244.0.0/16`を指定する。
+```sh
+vim custom-resources.yaml
+```
+```yaml
+cidr: 10.244.0.0/16
 ```
