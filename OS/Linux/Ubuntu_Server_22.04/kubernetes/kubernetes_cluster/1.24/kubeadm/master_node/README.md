@@ -204,6 +204,7 @@ CNI(Container Network Interface)プラグインは、flannelを使用する。
 ```sh
 kubeadm init --control-plane-endpoint=k8s-masters.thetaru.home:6443 --pod-network-cidr=10.244.0.0/16
 ```
+※ Preflight checkでエラーがでたら、`kubeadm reset`で実行後に再度`kubeadm init`で初期化を行うとよい。
 ```sh
 # 出力結果の最後のコマンドはひかえる(ワーカーノードがクラスタに参加する際に必要となる)
 kubeadm join k8s-masters.thetaru.home:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
