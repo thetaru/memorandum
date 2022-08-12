@@ -258,3 +258,7 @@ vim custom-resources.yaml
 ```yaml
 cidr: 10.244.0.0/16
 ```
+Calicoのリソースを作成する。
+```sh
+kubectl apply -f custom-resources.yaml
+```
