@@ -55,6 +55,19 @@ Kuberneteが使用するポート番号を[Ports and Protocols](https://kubernet
 |TCP|Inbound|10259|kube-scheduler|Self|
 |TCP|Inbound|10257|kube-controller-manager|Self|
 
+### GRUBの設定
+cgroupv2(デフォルト)からcgroupv1へ切り替える。
+```sh
+$ vim /etc/default/grub
+```
+```
+GRUB_CMDLINE_LINUX_DEFAULT="systemd.unified_cgroup_hierarchy=false"
+```
+パラメータを反映する。
+```sh
+$ sudo update-grub
+```
+
 ## ■ CRI(Container Runtime Interface)のインストール
 CRIは、kubeletがコンテナランタイムを操作するためのプラグインインターフェースである。  
 Kubernetesは、Podのコンテナを実行するために、コンテナランタイムを使用する。  
