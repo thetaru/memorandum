@@ -151,7 +151,11 @@ $ sudo apt install linux-crashdump
 ```
 $ kdump-config show
 ```
-`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。
+`/etc/default/kdump-tools`の`KDUMP_COREDIR`からコアダンプ出力先を変更できます。  
+kdump-tools.serviceが動作していることを確認します。
+```sh
+$ systemctl status kdump-tools.service
+```
 
 ## ■ コアダンプの設定
 ソフトウェア(OSを含む)がクラッシュした際に、そのソフトウェアが使用していたメモリ上の内容をファイルに出力します。  
