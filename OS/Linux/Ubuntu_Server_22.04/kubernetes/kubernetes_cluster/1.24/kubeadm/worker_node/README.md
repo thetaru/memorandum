@@ -158,6 +158,24 @@ apt-mark hold kubelet kubeadm kubectl
 apt-mark showhold
 ```
 
+## ■ kubeletの設定
+kubeletがプライマリネットワークインターフェイスを自動検知しないよう手動で設定する。  
+※ ノードごとにIPアドレスを設定すること
+```sh
+vim /etc/default/kubelet
+```
+```
+# k8s02の場合
+KUBELET_EXTRA_ARGS=--node-ip=192.168.0.232
+
+# k8s03の場合
+KUBELET_EXTRA_ARGS=--node-ip=192.168.0.233
+```
+kubeletサービスの再読み込みと再起動を行う。
+```sh
+systemctl daemon-reload && systemctl restart kubelet.service
+```
+
 ## ■ ワーカーノードのセットアップ
 ### ワーカーノードをクラスタに追加
 マスターノードで`kubeadm init`を実行した際に出力されたコマンドを実行する。
