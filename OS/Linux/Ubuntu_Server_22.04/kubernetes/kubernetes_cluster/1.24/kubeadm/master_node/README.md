@@ -258,7 +258,7 @@ source ~/.bashrc
 #### flannel
 上記の通り、CNIプラグインはflannelを利用する。以下のコマンドでflannelをインストールする。
 ```sh
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 
 #### Calico
