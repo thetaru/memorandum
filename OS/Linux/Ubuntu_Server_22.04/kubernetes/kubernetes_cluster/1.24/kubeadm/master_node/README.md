@@ -11,7 +11,7 @@ Ubuntu Serverの構築は済んでいるものとする。(また、apparmorは�
 kubeletが正常動作するために、swapをオフにする必要がある。  
 そのため、OSインストール時に必要以上にスワップ領域を確保する必要はない。
 ```sh
-$ vim /etc/default/grub
+$ sudo vim /etc/default/grub
 ```
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="systemd.gpt_auto=0"
