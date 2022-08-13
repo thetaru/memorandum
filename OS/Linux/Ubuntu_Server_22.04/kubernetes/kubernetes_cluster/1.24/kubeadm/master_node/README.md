@@ -11,6 +11,14 @@ Ubuntu Serverの構築は済んでいるものとする。(また、apparmorは�
 kubeletが正常動作するために、swapをオフにする必要がある。  
 そのため、OSインストール時に必要以上にスワップ領域を確保する必要はない。
 ```sh
+$ sudo vim /etc/fstab
+```
+```
+#/dev/disk/by-uuid/667a4e52-34e7-4803-a29a-6db36f152212 none swap sw 0 0
+#/swap.img      none    swap    sw      0       0
+```
+GPTパーティションの自動マウントを無効化する。
+```sh
 $ sudo vim /etc/default/grub
 ```
 ```
