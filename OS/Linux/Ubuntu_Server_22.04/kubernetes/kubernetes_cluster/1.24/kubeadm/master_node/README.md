@@ -11,11 +11,12 @@ Ubuntu Serverの構築は済んでいるものとする。(また、apparmorは�
 kubeletが正常動作するために、swapをオフにする必要がある。  
 そのため、OSインストール時に必要以上にスワップ領域を確保する必要はない。
 ```sh
-# スワップ領域がsystemd管理下にある場合
-systemctl --type swap
-systemctl mask --now XXX.swap
+vim /etc/default/grub
 ```
-※ systemd管理ではない場合、`swapoff -a`したあと、fstabからswapの記述をコメントアウトする
+```
+GRUB_CMDLINE_LINUX_DEFAULT="systemd.gpt_auto=0"
+```
+※ swapが有効の場合、`kubelet.service`が起動しないなどの影響がある。
 
 ### ノード間の名前解決ができることの確認
 各ノードがDNSもしくはhostsにより、他ノードの名前解決ができるように設定する。  
