@@ -20,7 +20,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="systemd.gpt_auto=0"
 ```
 $ sudo update-grub
 ```
-※ systemd管理ではない場合、`swapoff -a`したあと、fstabからswapの記述をコメントアウトする
+※ swapが有効の場合、kubelet.serviceが起動しないなどの影響がある。
 
 ### ノード間の名前解決ができることの確認
 各ノードがDNSもしくはhostsにより、他ノードの名前解決ができるように設定する。  
