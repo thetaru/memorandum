@@ -11,9 +11,14 @@ Ubuntu Serverの構築は済んでいるものとする。(また、apparmorは�
 kubeletが正常動作するために、swapをオフにする必要がある。  
 そのため、OSインストール時に必要以上にスワップ領域を確保する必要はない。
 ```sh
-# スワップ領域がsystemd管理下にある場合
-systemctl --type swap
-systemctl mask --now XXX.swap
+$ sudo vim /etc/default/grub
+```
+```
+GRUB_CMDLINE_LINUX_DEFAULT="systemd.gpt_auto=0"
+```
+パラメータを反映する。
+```
+$ sudo update-grub
 ```
 ※ systemd管理ではない場合、`swapoff -a`したあと、fstabからswapの記述をコメントアウトする
 
