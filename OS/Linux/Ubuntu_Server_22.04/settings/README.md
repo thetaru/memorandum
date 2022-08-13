@@ -202,8 +202,20 @@ $ apt-mark showhold
 ## ■ パッケージのアンインストール
 不要なパッケージを削除します。
 ```
+## パッケージ利用調査用ツール
+$ sudo apt purge --autoremove popularity-contest
+
+## パッケージ情報更新ツール
+$ sudo apt purge --autoremove update-manager-core
+
 ## パッケージ自動更新ツール
 $ sudo apt purge --autoremove unattended-upgrades
+
+## ファームウェア自動更新ツール
+$ sudo apt purge --autoremove fwupd
+
+## [オプション] netplan
+$ sudo apt purge --autoremove netplan.io
 ```
 ## ■ パッケージのインストール
 下記のパッケージの他に必要なパッケージがあれば適宜インストールすること。
