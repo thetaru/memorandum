@@ -43,6 +43,14 @@ Device        Start       End   Sectors Size Type
 
 Command (m for help): w
 ```
+OS起動時にマウントしないようにswap領域をコメントアウトする。
+```sh
+$ sudo vim /etc/fstab
+```
+```
+#/dev/disk/by-uuid/667a4e52-34e7-4803-a29a-6db36f152212 none swap sw 0 0
+#/swap.img      none    swap    sw      0       0
+```
 ※ swapが有効の場合、`kubelet.service`が起動しないなどの影響がある。
 
 ### ノード間の名前解決ができることの確認
