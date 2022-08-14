@@ -11,11 +11,11 @@ Ubuntu Serverの構築は済んでいるものとする。(また、apparmorは�
 kubeletが正常動作するために、swapをオフにする必要がある。  
 そのため、OSインストール時に必要以上にスワップ領域を確保する必要はない。
 ```sh
-$ sudo swapoff -a
+sudo swapoff -a
 ```
 ```sh
 # swapが存在するデバイスを選択する(ここでは、/dev/sdaとしている)
-$ sudo fdisk /dev/sda
+sudo fdisk /dev/sda
 ```
 ```
 Command (m for help): print
@@ -45,7 +45,7 @@ Command (m for help): w
 ```
 OS起動時にマウントしないようにswap領域をコメントアウトする。
 ```sh
-$ sudo vim /etc/fstab
+sudo vim /etc/fstab
 ```
 ```
 #/dev/disk/by-uuid/667a4e52-34e7-4803-a29a-6db36f152212 none swap sw 0 0
@@ -94,14 +94,14 @@ Kuberneteが使用するポート番号を[Ports and Protocols](https://kubernet
 ### GRUBの設定
 cgroupv2(デフォルト)からcgroupv1へ切り替える。
 ```sh
-$ vim /etc/default/grub
+vim /etc/default/grub
 ```
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="systemd.unified_cgroup_hierarchy=false"
 ```
 パラメータを反映する。
 ```sh
-$ sudo update-grub
+sudo update-grub
 ```
 
 ## ■ CRI(Container Runtime Interface)のインストール
