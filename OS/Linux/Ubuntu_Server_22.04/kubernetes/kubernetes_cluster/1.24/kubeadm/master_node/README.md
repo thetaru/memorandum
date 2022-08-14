@@ -295,7 +295,7 @@ source ~/.bashrc
 各ノードの`/opt/bin/flanneld/`配下に[flanneldバイナリ](https://github.com/flannel-io/flannel/releases)を配置する。
 ```sh
 mkdir -p /opt/bin
-wget -O - https://github.com/flannel-io/flannel/releases/download/<version>/flannel-<version>-linux-<arch>.tar.gz | tar zxvf - flanneld -C /opt/bin
+wget -O - https://github.com/flannel-io/flannel/releases/download/<version>/flannel-<version>-linux-<arch>.tar.gz | tar zxvf - -C /opt/bin flanneld
 chown root:root /opt/bin/flanneld
 ```
 flannelリソースを作成する。
