@@ -10,4 +10,5 @@
 
 ## ■ Tips
 - [ ] [token/discovery-token-ca-cert-hashの再生成](regenerate_token)
+- [ ] [名前空間を削除する際にTerminatingでスタックする](namespaces_stuck_in_terminating_state)
 - [ ] [トラブルシューティング](troubleshooting)
