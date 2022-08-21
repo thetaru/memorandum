@@ -1,5 +1,4 @@
 # 名前空間を削除する際にTerminatingでスタックする
-rook-cephを例に実施する。
 
 ```sh
 kubectl proxy &
