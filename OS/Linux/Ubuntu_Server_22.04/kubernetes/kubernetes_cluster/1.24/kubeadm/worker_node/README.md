@@ -214,6 +214,7 @@ systemctl restart containerd
 kubeletがcgroupドライバにsystemdを利用するように設定する。  
 kubeletサービスのユニットファイルは`/var/lib/kubelet/config.yaml`を参照しているので、このファイルを修正する。
 ```sh
+mkdir -p /var/lib/kubelet
 vim /var/lib/kubelet/config.yaml
 ```
 ```
