@@ -52,8 +52,50 @@ export HTTPS_PROXY=$PROXY
 export no_proxy="127.0.0.1"
 ```
 
+## ■ パッケージのアンインストール
+不要なパッケージを削除します。
+```
+## パッケージ利用調査用ツール
+$ sudo apt purge --autoremove popularity-contest
+
+## パッケージ情報更新ツール
+$ sudo apt purge --autoremove update-manager-core
+
+## パッケージ自動更新ツール
+$ sudo apt purge --autoremove unattended-upgrades
+
+## ファームウェア自動更新ツール
+$ sudo apt purge --autoremove fwupd
+
+## [オプション] netplan
+$ sudo apt purge --autoremove netplan.io
+```
+## ■ パッケージのインストール
+必要なパッケージがあれば適宜インストールすること。
+
+## ■ パッケージアップデート
+パッケージリストをアップデートします。
+```
+$ sudo apt update
+```
+パッケージリストをもとにパッケージをアップグレードします。
+```
+$ sudo apt upgrade
+```
+
+## ■ パッケージアップデート制限の設定
+カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
+```
+# linux-から始まる名前のパッケージをホールド対象とする
+$ sudo apt-mark hold $(dpkg-query -Wf '${Package}\n' | grep "^linux-")
+```
+ホールドしているパッケージ名を確認します。
+```
+$ apt-mark showhold
+```
+※ ホールド対象から除外するパッケージがある場合は、`apt-mark unhold`コマンドを使用する
+
 ## ■ 名前解決の設定
-`/etc/resolv.conf`は使用しない
 ### /etc/hostsの設定
 ```
 $ sudo vi /etc/hosts
@@ -65,6 +107,24 @@ $ sudo vi /etc/hosts
 #ff00::0 ip6-mcastprefix
 #ff02::1 ip6-allnodes
 #ff02::2 ip6-allrouters
+```
+
+### systemd-resolvedの設定
+```
+$ sudo vi /etc/systemd/resolved.conf
+```
+```
+[Resolve]
+DNS=<dnsサーバ1> <dnsサーバ2>
+Domains=~.
+```
+設定を反映します。
+```
+$ sudo systemctl restart systemd-resolved.service
+```
+設定が反映されていることを確認します。
+```
+$ resolvectl status
 ```
 
 ## ■ ロケールの設定
@@ -181,56 +241,6 @@ $ sudo vim /etc/systemd/system.conf
 設定を反映します。
 ```
 $ sudo systemctl daemon-reexec
-```
-
-## ■ パッケージアップデート制限の設定
-カーネルなどのパッケージがaptコマンドによってアップデートされないようにします。
-```
-# linux-から始まる名前のパッケージをホールド対象とする
-$ sudo apt-mark hold $(dpkg-query -Wf '${Package}\n' | grep "^linux-")
-```
-ホールドしているパッケージ名を確認します。
-```
-$ apt-mark showhold
-```
-※ ホールド対象から除外するパッケージがある場合は、`apt-mark unhold`コマンドを使用する
-
-## ■ パッケージのアンインストール
-不要なパッケージを削除します。
-```
-## パッケージ利用調査用ツール
-$ sudo apt purge --autoremove popularity-contest
-
-## パッケージ情報更新ツール
-$ sudo apt purge --autoremove update-manager-core
-
-## パッケージ自動更新ツール
-$ sudo apt purge --autoremove unattended-upgrades
-
-## ファームウェア自動更新ツール
-$ sudo apt purge --autoremove fwupd
-
-## [オプション] netplan
-$ sudo apt purge --autoremove netplan.io
-```
-## ■ パッケージのインストール
-下記のパッケージの他に必要なパッケージがあれば適宜インストールすること。
-```
-# cron
-$ sudo apt install cron
-
-# rsyslog(+logrotate)
-$ sudo apt install rsyslog
-```
-
-## ■ パッケージアップデート
-パッケージリストをアップデートします。
-```
-$ sudo apt update
-```
-パッケージリストをもとにパッケージをアップグレードします。
-```
-$ sudo apt upgrade
 ```
 
 ## ■ 不要なサービスの停止
