@@ -20,11 +20,7 @@ $ sudo vim /etc/default/grub
 ```
 設定を反映します。
 ```
-# BIOSの場合
-$ sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-# UEFI
-$ sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
+$ sudo update-grub2
 ```
 
 ## ■ カーネルパラメータの設定
