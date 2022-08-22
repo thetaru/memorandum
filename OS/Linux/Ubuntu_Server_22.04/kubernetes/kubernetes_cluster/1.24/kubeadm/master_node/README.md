@@ -210,6 +210,36 @@ apt-mark hold kubelet kubeadm kubectl
 apt-mark showhold
 ```
 
+## ■ cgroupドライバの設定
+以下、[Configuring a cgroup driver](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/)に記載の手順を抜粋した。
+### containerd
+containerdがcgroupドライバにsystemdを利用するように設定する。
+```sh
+vim /etc/containerd/config.toml
+```
+```
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+  SystemdCgroup = true
+```
+設定の修正後、containerdサービスを再起動する。
+```sh
+systemctl restart containerd
+```
+
+### kubelet
+kubeletがcgroupドライバにsystemdを利用するように設定する。  
+kubeletサービスのユニットファイルは`/var/lib/kubelet/config.yaml`を参照しているので、このファイルを修正する。
+```sh
+vim /var/lib/kubelet/config.yaml
+```
+```
+cgroupDriver: systemd
+```
+設定の修正後、kubeletサービスを再起動する。
+```sh
+systemctl daemon-reload && systemctl restart kubelet
+```
+
 ## ■ kubeletの設定
 ### ノードIPの設定
 kubeletがプライマリネットワークインターフェイスを自動検知しないよう手動で設定する。  
@@ -244,36 +274,6 @@ systemctl daemon-reload && systemctl restart kubelet.service
 psコマンドでkubeletプロセスを確認し、`--resolv-conf=/run/systemd/resolve/resolv.conf`オプションがあることを確認する。
 ```sh
 ps -fup $(pgrep kubelet) -ww
-```
-
-## ■ cgroupドライバの設定
-以下、[Configuring a cgroup driver](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/)に記載の手順を抜粋した。
-### containerd
-containerdがcgroupドライバにsystemdを利用するように設定する。
-```sh
-vim /etc/containerd/config.toml
-```
-```
-[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
-  SystemdCgroup = true
-```
-設定の修正後、containerdサービスを再起動する。
-```sh
-systemctl restart containerd
-```
-
-### kubelet
-kubeletがcgroupドライバにsystemdを利用するように設定する。  
-kubeletサービスのユニットファイルは`/var/lib/kubelet/config.yaml`を参照しているので、このファイルを修正する。
-```sh
-vim /var/lib/kubelet/config.yaml
-```
-```
-cgroupDriver: systemd
-```
-設定の修正後、kubeletサービスを再起動する。
-```sh
-systemctl daemon-reload && systemctl restart kubelet
 ```
 
 ## ■ マスターノードのセットアップ
