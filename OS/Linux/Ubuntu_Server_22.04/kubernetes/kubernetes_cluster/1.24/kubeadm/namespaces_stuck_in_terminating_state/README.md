@@ -30,7 +30,7 @@ curlコマンドを使って、プロキシ経由でKubernetes API Serverへア�
 # 4.
 curl -H "Content-Type: application/json" -X PUT --data-binary @temp.json http://127.0.0.1:XXXX/api/v1/namespaces/<namespace>/finalize
 ```
-`kubectl proxy &`プロセスをキルする。
+`kubectl proxy`プロセスをキルする。
 ```sh
 # 5.
 jobs -lr
