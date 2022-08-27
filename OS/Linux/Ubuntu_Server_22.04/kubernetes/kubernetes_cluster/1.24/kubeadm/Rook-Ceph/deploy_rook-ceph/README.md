@@ -41,7 +41,7 @@ kubectl apply -f crds.yaml -f common.yaml -f operator.yaml
 ```
 
 ## ■ Create a Ceph Cluster
-以下に`rook/deploy/examples/cluster.yaml`を変更したものをデプロイする。  
+以下に`rook/deploy/examples/cluster.yaml`を変更したyamlファイルを記載する。  
 `spec-storage-useAllDevices`と`spec-storage-devices`を変更し、使用するデバイス(今回は`/dev/sdb`)を指定している。
 ```yaml
 apiVersion: ceph.rook.io/v1
@@ -124,7 +124,7 @@ spec:
       osd:
         disabled: false
 ```
-
+上記のyamlファイルを`cluster.yaml`と名前をつけて保存しデプロイする。
 ```sh
 kubectl apply -f cluster.yaml
 ```
