@@ -40,5 +40,4 @@ persistentvolume/pvc-597b6529-cbe3-4fe1-a2e9-54dad674b289   1Gi        RWX      
 
 NAME                               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 persistentvolumeclaim/cephfs-pvc   Bound    pvc-597b6529-cbe3-4fe1-a2e9-54dad674b289   1Gi        RWX            rook-cephfs    17m
-
 ```
