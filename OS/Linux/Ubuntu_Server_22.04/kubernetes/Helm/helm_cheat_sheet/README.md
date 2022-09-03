@@ -1,12 +1,17 @@
 # Helmコマンドチートシート
-## repo
-## install
-## search
-## list
+## helm version
 ```sh
-helm list
+helm version
 ```
-## delete
-```sh
-helm delete <release-name>
-```
+
+## helm repo
+
+## helm search
+
+## helm install
+
+## helm uninstall
+
+## helm list
+
+## helm status
