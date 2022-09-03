@@ -25,7 +25,7 @@ spec:
 ```
 ### L2Configuration
 IPAddressPoolで定義したIPアドレスをL2Advirtisementと紐付ける。  
-下記のyamlでは、ipAddressPoolsにIPAddressPoolで定義した`first-pool`を割り当てている。
+下記のyamlでは、ipAddressPoolsにIPAddressPool`first-pool`を割り当てている。
 ```yaml
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
