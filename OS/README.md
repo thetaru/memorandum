@@ -6,7 +6,7 @@
 - [x] [RHEL7](Linux/RHEL7)
 - [x] [RHEL8](Linux/RHEL8)
 - [x] [Ubuntu Server 20.04](Linux/Ubuntu_Server_20.04)
-- [x] [Ubuntu Server 20.04](Linux/Ubuntu_Server_20.04)
+- [x] [Ubuntu Server 22.04](Linux/Ubuntu_Server_22.04)
 - [x] [Arch](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Arch)
 
 ## Windows
