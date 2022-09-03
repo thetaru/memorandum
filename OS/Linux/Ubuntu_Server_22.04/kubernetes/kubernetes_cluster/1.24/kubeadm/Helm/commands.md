@@ -6,3 +6,7 @@
 ```sh
 helm list
 ```
+## delete
+```sh
+helm delete <release-name>
+```
