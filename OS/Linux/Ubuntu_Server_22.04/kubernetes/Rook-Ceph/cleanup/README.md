@@ -32,4 +32,5 @@ sgdisk -Z /dev/sdb
 ```
 
 ## ■ Ref
+### Warning: Detected changes to resource XXX which is currently being deleted.
 - [Restoring CRDs After Deletion](https://github.com/rook/rook/blob/master/Documentation/Troubleshooting/disaster-recovery.md#restoring-crds-after-deletion)
