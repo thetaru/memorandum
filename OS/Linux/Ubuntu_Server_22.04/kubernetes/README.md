@@ -2,7 +2,7 @@
 ## ■ Settings
 - [ ] [Kubernetesクラスタの構築](kubernetes_cluster)
 
-## ■ Application
+## ■ Applications
 - [ ] [Helm](Helm)
 - [ ] [MetalLB](MetalLB)
 - [ ] [Rook-Ceph](Rook-Ceph)
