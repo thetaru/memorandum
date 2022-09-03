@@ -20,7 +20,6 @@ kubectl get node
 ワーカーノードを削除する。
 ```sh
 # マスター作業
-# ワーカーノードの台数分、下記コマンドを実行する
 kubectl delete node <node-name>
 ```
 # マスター作業
