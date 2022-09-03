@@ -29,3 +29,16 @@ spec:
       storage: 1Gi
   storageClassName: rook-cephfs
 ```
+`test_pvc.yaml`をapplyしてPV、PVCを確認する。
+```
+kubectl apply -f test_pvc.yaml
+kubectl get pv,pvc
+```
+```
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                STORAGECLASS   REASON   AGE
+persistentvolume/pvc-597b6529-cbe3-4fe1-a2e9-54dad674b289   1Gi        RWX            Delete           Bound    default/cephfs-pvc   rook-cephfs             17m
+
+NAME                               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+persistentvolumeclaim/cephfs-pvc   Bound    pvc-597b6529-cbe3-4fe1-a2e9-54dad674b289   1Gi        RWX            rook-cephfs    17m
+
+```
