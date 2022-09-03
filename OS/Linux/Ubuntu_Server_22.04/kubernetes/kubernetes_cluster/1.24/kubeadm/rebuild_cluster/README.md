@@ -23,7 +23,7 @@ kubectl get node
 kubectl delete node <node-name>
 ```
 ワーカーノードが削除されたことを確認する。
-```
+```sh
 # マスター作業
 kubectl get node
 ```
