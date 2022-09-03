@@ -22,12 +22,13 @@ kubectl get node
 # マスター作業
 kubectl delete node <node-name>
 ```
-# マスター作業
 ワーカーノードが削除されたことを確認する。
 ```
+# マスター作業
 kubectl get node
 ```
 `kubeadm`により初期化
 ```sh
+# マスター作業
 kubeadm reset
 ```
