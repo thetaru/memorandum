@@ -19,7 +19,6 @@ vim temp.json
 ```json
     "spec": {
         "finalizers": [
-          #kubernetes
         ]
     },
 ```
