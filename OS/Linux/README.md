@@ -30,9 +30,10 @@ $ echo 'これはuserです'
 =  fuga=2
 ```
 ## ■ OS
-- [ ] [CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
-- [ ] [CentOS9](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS9)
-- [ ] [RHEL7](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL7)
-- [ ] [RHEL8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/RHEL8)
-- [ ] [Ubuntu Server 20.04](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04)
+- [ ] [CentOS8](CentOS8)
+- [ ] [CentOS9](CentOS9)
+- [ ] [RHEL7](RHEL7)
+- [ ] [RHEL8](RHEL8)
+- [ ] [Ubuntu Server 20.04](Ubuntu_Server_20.04)
+- [ ] [Ubuntu Server 22.04](Ubuntu_Server_20.04)
 
