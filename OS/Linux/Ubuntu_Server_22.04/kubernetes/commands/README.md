@@ -20,5 +20,15 @@ kubectl rollout restart statefulset/<statefulset-name>
 ```
 ### DaemonSet
 ```sh
-$ kubectl rollout restart daemonset/<daemonset-name>
+kubectl rollout restart daemonset/<daemonset-name>
+```
+
+## ログ
+```sh
+# tail -n
+kubectl logs --tail=30 <pod-name>
+```
+```sh
+# tail -f
+kubectl logs -f <pod-name>
 ```
