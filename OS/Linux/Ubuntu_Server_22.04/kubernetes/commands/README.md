@@ -3,8 +3,6 @@
 ```sh
 kubectl api-resources
 ```
-
-## APIグループのバージョン
 ```sh
 kubectl api-versions
 ```
