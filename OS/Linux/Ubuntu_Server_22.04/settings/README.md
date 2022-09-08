@@ -110,19 +110,30 @@ $ sudo vi /etc/hosts
 ```
 
 ### systemd-resolvedの設定
+システムに設定されている名前解決先のDNSサーバと`resolv.conf mode`(デフォルトはstub)を確認する。
+```sh
+$ resolvctl status
+```
 ```
 $ sudo vi /etc/systemd/resolved.conf
 ```
 ```
 [Resolve]
+# DNSサーバを指定する(半角スペース区切り)
 DNS=<dnsサーバ1> <dnsサーバ2>
-Domains=~.
+
+# スタブリゾルバを使用しない
+DNSStubListener=no
+```
+`/etc/resolv.conf`のシンボリックリンクを`/run/systemd/resolve/resolv.conf`に張り替えます。
+```sh
+$ sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 ```
 設定を反映します。
 ```
 $ sudo systemctl restart systemd-resolved.service
 ```
-設定が反映されていることを確認します。
+DNSサーバと`resolv.conf mode`の設定が反映されていることを確認します。
 ```
 $ resolvectl status
 ```
