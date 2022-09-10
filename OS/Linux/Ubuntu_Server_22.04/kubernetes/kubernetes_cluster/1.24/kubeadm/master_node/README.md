@@ -252,14 +252,6 @@ vim /etc/default/kubelet
 ```
 KUBELET_EXTRA_ARGS="--node-ip=192.168.0.231"
 ```
-kubeletサービスの再読み込みと再起動を行う。
-```sh
-systemctl daemon-reload && systemctl restart kubelet.service
-```
-psコマンドでkubeletプロセスを確認し、`--node-ip=x.x.x.x`オプションがあることを確認する。
-```sh
-ps -fup $(pgrep kubelet) -ww
-```
 
 ### 名前解決の設定
 kubeletが名前解決の際に利用する`resolv.conf`を指定する。
@@ -269,13 +261,11 @@ vim /etc/default/kubelet
 ```
 KUBELET_EXTRA_ARGS="--resolv-conf=/run/systemd/resolve/resolv.conf"
 ```
-kubeletサービスの再読み込みと再起動を行う。
+
+## ■ 設定の反映
+マスターノードのセットアップをする前に、OSを再起動する。
 ```sh
-systemctl daemon-reload && systemctl restart kubelet.service
-```
-psコマンドでkubeletプロセスを確認し、`--resolv-conf=/run/systemd/resolve/resolv.conf`オプションがあることを確認する。
-```sh
-ps -fup $(pgrep kubelet) -ww
+systemctl reboot
 ```
 
 ## ■ マスターノードのセットアップ
