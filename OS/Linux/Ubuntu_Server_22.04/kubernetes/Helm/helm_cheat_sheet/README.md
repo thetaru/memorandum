@@ -16,6 +16,16 @@ helm version
 
 ## helm status
 
+## helm show
+```sh
+# Usage
+ helm show values [CHART] [flags]
+```
+```sh
+# Example: values.yamlファイルを抽出する
+helm show values prometheus-community/kube-prometheus-stack > values.yaml
+```
+
 ## helm template
 ```sh
 # Usage
