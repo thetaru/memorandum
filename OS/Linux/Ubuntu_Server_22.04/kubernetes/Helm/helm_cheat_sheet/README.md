@@ -15,3 +15,13 @@ helm version
 ## helm list
 
 ## helm status
+
+## helm template
+```sh
+# Usage
+helm template [NAME] [CHART] [flags]
+```
+```sh
+# Example: マニフェストを抽出する
+helm template kube-prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring > kube-prometheus-stack.yaml
+```
