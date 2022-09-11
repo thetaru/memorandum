@@ -34,4 +34,7 @@ helm template [NAME] [CHART] [flags]
 ```sh
 # Example: マニフェストを抽出する
 helm template kube-prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring > kube-prometheus-stack.yaml
+
+# Example: values.yamlを適用してマニフェストを抽出する
+helm template kube-prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring -f values.yaml > kube-prometheus-stack.yaml
 ```
