@@ -48,6 +48,11 @@ helm list [-n <namespace>]
 helm show values prometheus-community/kube-prometheus-stack > values.yaml
 ```
 
+## helm pull
+```sh
+helm pull grafana/loki-distributed --untar
+```
+
 ## helm template
 ```sh
 # Usage
