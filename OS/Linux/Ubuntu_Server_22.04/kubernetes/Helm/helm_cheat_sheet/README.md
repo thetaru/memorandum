@@ -4,13 +4,21 @@
 helm version
 ```
 
-## helm repo
-
 ## helm search
 
 ## helm install
 
 ## helm uninstall
+
+## helm repo
+```sh
+# Usage
+helm repo [command]
+```
+```sh
+# リポジトリの一覧を表示する
+helm repo list
+```
 
 ## helm list
 
