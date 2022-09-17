@@ -38,6 +38,11 @@ helm list [-n <namespace>]
 
 ## helm status
 
+## helm pull
+```sh
+helm pull grafana/loki-distributed --untar
+```
+
 ## helm show
 ```sh
 # Usage
@@ -46,11 +51,6 @@ helm list [-n <namespace>]
 ```sh
 # Example: values.yamlファイルを抽出する
 helm show values prometheus-community/kube-prometheus-stack > values.yaml
-```
-
-## helm pull
-```sh
-helm pull grafana/loki-distributed --untar
 ```
 
 ## helm template
