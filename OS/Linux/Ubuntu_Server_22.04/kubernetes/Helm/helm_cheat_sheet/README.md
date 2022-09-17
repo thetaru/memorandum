@@ -31,6 +31,10 @@ helm search repo grafana
 ```
 
 ## helm list
+```sh
+# リリース名をみる
+helm list [-n <namespace>]
+```
 
 ## helm status
 
