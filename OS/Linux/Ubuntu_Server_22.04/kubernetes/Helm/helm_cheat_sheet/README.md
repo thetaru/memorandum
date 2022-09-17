@@ -20,6 +20,15 @@ helm repo [command]
 helm repo list
 ```
 
+## helm search
+```sh
+# Usage
+helm search repo [CHART]
+```
+```sh
+helm search repo grafana
+```
+
 ## helm list
 
 ## helm status
