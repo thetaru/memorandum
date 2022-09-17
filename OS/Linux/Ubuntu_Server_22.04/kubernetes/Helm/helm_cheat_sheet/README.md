@@ -26,6 +26,7 @@ helm repo list
 helm search repo [CHART]
 ```
 ```sh
+# チャートの一覧を表示する
 helm search repo grafana
 ```
 
