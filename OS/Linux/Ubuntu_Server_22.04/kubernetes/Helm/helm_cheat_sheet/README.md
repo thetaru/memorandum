@@ -65,3 +65,16 @@ helm template kube-prometheus-stack prometheus-community/kube-prometheus-stack -
 # Example: values.yamlを適用してマニフェストを抽出する
 helm template kube-prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring -f values.yaml > kube-prometheus-stack.yaml
 ```
+
+# インストール時によくある流れ
+```sh
+# common
+helm install [NAME] [CHART] [flags]
+helm repo update
+helm repo list
+helm search repo [keyword] [flags]
+
+# optional
+helm show values [CHART] [flags]  > values.yaml
+helm template [NAME] [CHART] [flags] > template.yaml
+```
