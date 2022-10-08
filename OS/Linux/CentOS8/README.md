@@ -58,6 +58,7 @@ lets encrypt でワイルドカード証明書
 - [x] [NFS](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/nfs)
 - [ ] [minecraft](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/minecraft)
 - [ ] [(書きかけ)HAProxy](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/haproxy)
+- [ ] [Oracle Databse](Oracle_Databse)
 - [ ] [(書きかけ)Postfix](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/postfix)
 - [ ] [(書きかけ)PostgreSQL](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/PostgreSQL)
 - [ ] [Samba](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/Samba)
