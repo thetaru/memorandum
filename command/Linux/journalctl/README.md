@@ -1,14 +1,25 @@
-# journalctl
-ログはjournalctlでも確認できるようにしようと思って。
-## ■ シンタックス
-```
-journalctl [オプション]
+# journalctlでよくつかうやつ
+## ■ 最近のメッセージを表示
+```sh
+journalctl -e
 ```
 
-## ■ 便利なオプション
-|オプション|説明|
-|:---|:---|
-|||
-|||
+## ■ リアルタイムにログを表示
+`tail -f`のような動作
+```sh
+journalctl -f
+```
 
-## ■ Tips
+## ■ 特定サービスのログを表示
+```sh
+# ひとつ
+journalctl -u <ユニット名>
+
+# 複数
+journalctl _SYSTEMD_UNIT=<ユニット名1> + _SYSTEMD_UNIT=<ユニット名2>
+```
+
+## ■ ログのプライオリティを指定して表示
+```sh
+journalctl -p <priority>
+```
