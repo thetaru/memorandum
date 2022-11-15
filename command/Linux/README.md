@@ -23,3 +23,4 @@
 - [ ] [ユーザ指定でコマンド実行](do_command)
 - [ ] [I/Oトレース](io_trace)
 - [ ] [一時ファイルの削除](delete_tmpfiles)
+- [ ] [journalctlでよくつかうやつ](journalctl)
