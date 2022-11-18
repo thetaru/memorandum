@@ -16,7 +16,7 @@ journalctl -f
 journalctl -u <ユニット名>
 
 # 複数
-journalctl _SYSTEMD_UNIT=<ユニット名1> + _SYSTEMD_UNIT=<ユニット名2>
+journalctl -u <ユニット名1> -u <ユニット名2>
 ```
 
 ## ■ ログのプライオリティを指定して表示
