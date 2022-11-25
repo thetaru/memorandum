@@ -24,4 +24,5 @@
 - [ ] [I/Oトレース](io_trace)
 - [ ] [一時ファイルの削除](delete_tmpfiles)
 - [ ] [diffでよくつかうやつ](diff)
+- [ ] [仮想環境かどうか調べる](is_virtual)
 
