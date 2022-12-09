@@ -1,7 +1,7 @@
-# インストール後にやること
+# Manjaro Linux Client Settings
 以下、ディストリはmanjaroを想定しています。  
 Xはそんなに使う機会が多くないので忘れる前にちょくちょく更新中です。  
-デスクトップ環境はGNOMEを使用しているため、xfceやKDEの場合あまり参考にならないかもしれないです。
+デスクトップ環境はGNOMEを使用しています。
 ## リポジトリのミラーサーバーリストを変更
 ```
 $ sudo pacman-mirrors --fasttrack
