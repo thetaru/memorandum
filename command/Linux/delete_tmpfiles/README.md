@@ -1,4 +1,8 @@
 # 一時ファイルの削除
+## ■ サービスが起動していることを確認
+```sh
+systemctl status systemd-tmpfiles-clean.service
+```
 ## ■ 削除対象のファイルとディレクトリを確認
 ```sh
 systemd-tmpfiles --cat-config
