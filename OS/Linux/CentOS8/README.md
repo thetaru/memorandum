@@ -41,7 +41,7 @@ lets encrypt でワイルドカード証明書
 - [x] [xfsファイルシステムのバックアップとリストア方法](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_backup)
 - [x] [xfsクォータ](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xfs_quota)
 - [x] [xrdp](https://github.com/thetaru/memorandum/edit/master/OS/Linux/CentOS8/xrdp)
-- [ ] [(必要になった)パスワードポリシーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/PasswordPolicy)
+- [ ] [パスワードポリシーの設定](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/PasswordPolicy)
 - [ ] [ローカルミラー](localmirror)
 
 ## ■ Software Settings
