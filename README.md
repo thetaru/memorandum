@@ -8,7 +8,6 @@
 - [ ] [OS](https://github.com/thetaru/memorandum/tree/master/OS)
 - [ ] [Scripts](https://github.com/thetaru/memorandum/tree/master/Scripts)
 - [ ] [Security](https://github.com/thetaru/memorandum/tree/master/Security)
-- [ ] [Test](https://github.com/thetaru/memorandum/tree/master/Test)
 - [ ] [Tool](https://github.com/thetaru/memorandum/tree/master/Tool)
 - [ ] [Troubleshooting](https://github.com/thetaru/memorandum/tree/master/Troubleshooting)
 - [ ] [UPS](https://github.com/thetaru/memorandum/tree/master/UPS)
