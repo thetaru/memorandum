@@ -7,7 +7,6 @@
 - [ ] [Network](https://github.com/thetaru/memorandum/tree/master/Network)
 - [ ] [OS](https://github.com/thetaru/memorandum/tree/master/OS)
 - [ ] [Scripts](https://github.com/thetaru/memorandum/tree/master/Scripts)
-- [ ] [Tool](https://github.com/thetaru/memorandum/tree/master/Tool)
 - [ ] [UPS](https://github.com/thetaru/memorandum/tree/master/UPS)
 - [ ] [Math](https://github.com/thetaru/memorandum/tree/master/Math)
 
