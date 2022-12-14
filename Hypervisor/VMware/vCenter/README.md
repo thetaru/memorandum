@@ -1,6 +1,7 @@
 # vCenter
 
 - [ ] [7.X](7.X)
+- [ ] [8.X](8.X)
 
 ## ■ Settings
 - [ ] [ローカルユーザの作成](add_local_user)
