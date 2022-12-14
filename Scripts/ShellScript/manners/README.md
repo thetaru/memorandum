@@ -198,6 +198,6 @@ trap "cleanup" EXIT
 ```
 
 ## ■ オプション
-## ■ 単体テスト
+## ■ Lint
 ## ■ Ref
 - https://qiita.com/autotaker1984/items/bc758fcf368c1a167353
