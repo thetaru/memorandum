@@ -156,13 +156,13 @@ fi
 ```
 ### while文
 ```sh
-while read line; do
+while read line || [ -n "${line}" ]; do
   処理
 done < (入力生成)
 ```
 テキストデータの読み込みやコマンド展開をする場合に使う。
 ```sh
-while read line; do
+while read line || [ -n "${line}" ]; do
   (snip)
 done < $(find . -name '*.log')
 ```
