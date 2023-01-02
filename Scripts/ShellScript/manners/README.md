@@ -203,4 +203,5 @@ ShellCheck
 ## ■ テスト
 ShellSpec
 ## ■ Ref
-- https://qiita.com/autotaker1984/items/bc758fcf368c1a167353
+- [Bash Scriptの作法](https://qiita.com/autotaker1984/items/bc758fcf368c1a167353)
+- [BASHのwhile readで最終行が処理されない問題の解決方法](https://qiita.com/Ets/items/a7fa24b138b8ee883dac)
