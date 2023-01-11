@@ -26,4 +26,4 @@
 - [ ] [diffでよくつかうやつ](diff)
 - [ ] [仮想環境かどうか調べる](is_virtual)
 - [ ] [CPUコア数をさくっと調べる](check_cpu_cores)
-
+- [ ] [ファイルをつかんでいるプロセスの特定](specify_process_of_grabbing_file)
