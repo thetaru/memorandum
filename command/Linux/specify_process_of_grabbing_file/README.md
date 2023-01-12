@@ -4,7 +4,8 @@
 lsof /var/log/hoge.log
 ```
 
-取得したPIDからすべてのプロセスを列挙する。
+取得したPIDからすべてのプロセスを列挙する。  
 ```sh
 lsof -p xxxx
 ```
+`/var/log/messages`のログからPIDを見つけ、上記コマンドを実行するのもよい。  
