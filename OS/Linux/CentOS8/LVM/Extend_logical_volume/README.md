@@ -1,4 +1,4 @@
-# LV(Logical Volume)拡張
+# LV(Logical Volume)の拡張
 |前提条件||
 |:---|:---|
 |OS|CentOS8|
