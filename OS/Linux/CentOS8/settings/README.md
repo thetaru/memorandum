@@ -741,3 +741,22 @@ export no_proxy="127.0.0.1,localhost"
 ### 反映
 # source /etc/profile.d/proxy.sh
 ```
+
+## ■ Ctrl+Alt+Delを使用した再起動の無効化
+ターゲットの無効化を行います。
+```sh
+systemctl disable --now ctrl-alt-del.target
+systemctl mask ctrl-alt-del.target
+```
+2秒間に7回以上`Ctrl+Alt+Del`を押されても再起動しないようにします。
+```sh
+vim /etc/systemd/system.conf
+```
+```diff
+- #CtrlAltDelBurstAction=reboot-force
++ CtrlAltDelBurstAction=none
+```
+systemdを再起動して設定を反映します。
+```sh
+systemctl daemon-reexec
+```
