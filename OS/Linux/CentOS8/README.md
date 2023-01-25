@@ -1,22 +1,4 @@
 # CentOS8
-- [ ] [テンプレート](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8/_Template)
-## ■ MEMO
-```
-# 追加
-networkmanager
-
-basicconfの内容を更新する。 参照させるようにすること。
-nftables書き直す
-
-## 機能調査
-apache 未整理
-samba 数パターンつくる
-パスワードポリシーについて(login.defs)
-postgreSQL
-haproxy
-
-lets encrypt でワイルドカード証明書
-```
 ## ■ Commands
 - [x] [chroot](chroot)
 - [x] [rsync](rsync)
