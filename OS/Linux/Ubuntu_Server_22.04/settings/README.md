@@ -14,7 +14,7 @@ $ sudo hostnamectl set-hostname <hostname>
 ```
 $ sudo vim /etc/default/grub
 ```
-```
+```diff
 -  GRUB_CMDLINE_LINUX=""
 +  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet ipv6.disable=1"
 ```
@@ -243,7 +243,7 @@ enabled=1
 ```
 $ sudo vim /etc/systemd/system.conf
 ```
-```
+```diff
 -  #DefaultLimitCORE=
 +  DefaultLimitCORE=infinity
 ```
