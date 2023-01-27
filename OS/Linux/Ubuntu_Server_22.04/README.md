@@ -4,6 +4,7 @@
 - [ ] [apparmor](apparmor)
 - [ ] [systemd-networkd](systemd-networkd)
 - [ ] [ufw](ufw)
+- [ ] [console-setup](console-setup)
 
 ## ■ Software Settings
 - [ ] [Kubernetes](kubernetes)
