@@ -1,4 +1,4 @@
 # console-setup
 ```sh
-systemctl restart consolensetup.service
+systemctl restart console-setup.service
 ```
