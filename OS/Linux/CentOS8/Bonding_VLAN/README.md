@@ -82,7 +82,7 @@ nmcli coonection up bond0.20
 nmcli connection show
 ```
 ## ■ 確認
-NICを抜き差ししてstateのUP,DOWNを確認する。
+NICを抜き差しして冗長されていることを確認する。
 ```sh
 watch -n 5 /proc/net/bonding/bond0
 ```
