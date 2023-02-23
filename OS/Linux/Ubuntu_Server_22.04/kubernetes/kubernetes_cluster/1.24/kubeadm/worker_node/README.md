@@ -12,58 +12,12 @@ kubeletが正常動作するために、swapをオフにする必要がある。
 そのため、OSインストール時に必要以上にスワップ領域を確保する必要はない。
 ```sh
 # 一時的にスワップを無効にする
-sudo swapoff -a
+swapoff -a
 ```
 ```sh
-# swapが存在するデバイスを選択する(ここでは、/dev/sdaとしている)
-sudo fdisk /dev/sda
+systemctl mask swap.taget
 ```
-```
-Command (m for help): print
-Device        Start       End   Sectors Size Type
-/dev/sda1      2048      4095      2048   1M BIOS boot
-/dev/sda2      4096   2101247   2097152   1G Linux filesystem
-/dev/sda3   2101248  10489855   8388608   4G Linux swap
-/dev/sda4  10489856 209713151 199223296  95G Linux filesystem
-
-Command (m for help): t
-Partition number (1-4, default 4): 3 (/dev/sda3がswapなので3を選択する)
-Partition type or alias (type L to list all): L
- 19 Linux swap                     0657FD6D-A4AB-43C4-84E5-0933C84B4F4F
- 20 Linux filesystem               0FC63DAF-8483-4772-8E79-3D69D8477DE4
-Partition type or alias (type L to list all): 20
-
-Changed type of partition 'Linux swap' to 'Linux filesystem'.
-
-Command (m for help): print
-Device        Start       End   Sectors Size Type
-/dev/sda1      2048      4095      2048   1M BIOS boot
-/dev/sda2      4096   2101247   2097152   1G Linux filesystem
-/dev/sda3   2101248  10489855   8388608   4G Linux filesystem
-/dev/sda4  10489856 209713151 199223296  95G Linux filesystem
-
-Command (m for help): w
-```
-OS起動時にマウントしないようにswap領域をコメントアウトする。
-```sh
-sudo vim /etc/fstab
-```
-```
-#/dev/disk/by-uuid/667a4e52-34e7-4803-a29a-6db36f152212 none swap sw 0 0
-#/swap.img      none    swap    sw      0       0
-```
-swapがsystemdにより管理されている場合、swap領域に対応するswapユニットを見つけてマスクする。
-```sh
-# swapユニットを見つける
-systemctl list-unit-files -t swap --no-pager
-```
-```
-dev-disk-byx2duuid-b8e9e260x2d5f79x2d4486x2dba10x2d491728ed410b.swap    enabled      enabled 
-```
-```sh
-# swapユニットをマスクする
-systemctl mask dev-disk-byx2duuid-b8e9e260x2d5f79x2d4486x2dba10x2d491728ed410b.swap
-```
+再起動後、スワップが無効化されていることを確認する。  
 ※ swapが有効の場合、kubelet.serviceが起動しないなどの影響がある。
 
 ### ノード間の名前解決ができることの確認
