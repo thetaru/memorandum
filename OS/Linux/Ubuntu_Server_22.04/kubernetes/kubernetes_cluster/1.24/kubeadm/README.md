@@ -7,4 +7,5 @@
 - [ ] [token/discovery-token-ca-cert-hashの再生成](regenerate_token)
 - [ ] [名前空間を削除する際にTerminatingでスタックする](namespaces_stuck_in_terminating_state)
 - [ ] [クラスタの再構築](rebuild_cluster)
+- [ ] [マスターノードのPodスケジュールを有効にする](enable_pod_scheduler_on_master)
 - [ ] [トラブルシューティング](troubleshooting)
