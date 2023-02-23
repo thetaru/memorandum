@@ -17,8 +17,9 @@ sudo swapoff -a
 ```sh
 systemctl mask swap.taget
 ```
-再起動後、スワップが無効化されていることを確認する。  
-※ swapが有効の場合、`kubelet.service`が起動しないなどの影響がある。
+再起動後、スワップが無効化されていることを確認する。
+> **Warning**  
+> swapが有効の場合、`kubelet.service`が起動しないなどの影響がある。
 
 ### ノード間の名前解決ができることの確認
 各ノードがDNSもしくはhostsにより、他ノードの名前解決ができるように設定する。  
@@ -28,7 +29,8 @@ systemctl mask swap.taget
 192.168.0.232 k8s02 k8s02.thetaru.home.
 192.168.0.233 k8s03 k8s03.thetaru.home.
 ```
-※ DNSが落ちた場合を考えると、hostsに登録するのが無難かもしれない
+> **Note**  
+> DNSが落ちた場合を考えて、hostsにも登録するとよい。
 
 ### ファイアウォールの設定
 iptablesをインストールしていない場合は、以下のコマンドからインストールを行うこと。
