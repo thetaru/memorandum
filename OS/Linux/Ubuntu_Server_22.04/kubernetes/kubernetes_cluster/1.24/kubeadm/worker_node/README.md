@@ -183,9 +183,10 @@ containerdがcgroupドライバにsystemdを利用するように設定する。
 ```sh
 vim /etc/containerd/config.toml
 ```
-```
+```diff
 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
-  SystemdCgroup = true
+- SystemdCgroup = false
++ SystemdCgroup = true
 ```
 設定の修正後、containerdサービスを再起動する。
 ```sh
