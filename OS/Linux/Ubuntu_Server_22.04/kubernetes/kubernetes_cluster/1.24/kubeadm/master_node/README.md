@@ -24,10 +24,10 @@ systemctl mask swap.taget
 ### ノード間の名前解決ができることの確認
 各ノードがDNSもしくはhostsにより、他ノードの名前解決ができるように設定する。  
 以下にhostsの設定を記載する。
-```
-192.168.0.231 k8s01 k8s01.thetaru.home.
-192.168.0.232 k8s02 k8s02.thetaru.home.
-192.168.0.233 k8s03 k8s03.thetaru.home.
+```diff
++ 192.168.0.231 k8s01 k8s01.thetaru.home.
++ 192.168.0.232 k8s02 k8s02.thetaru.home.
++ 192.168.0.233 k8s03 k8s03.thetaru.home.
 ```
 > **Note**  
 > DNSが落ちた場合を考えて、hostsにも登録するとよい。
