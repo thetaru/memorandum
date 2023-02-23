@@ -15,6 +15,10 @@ kubeletが正常動作するために、swapをオフにする必要がある。
 sudo swapoff -a
 ```
 ```sh
+# スワップが無効化されたことを確認する
+swapon --show
+```
+```sh
 # swapが存在するデバイスを選択する(ここでは、/dev/sdaとしている)
 sudo fdisk /dev/sda
 ```
@@ -51,6 +55,18 @@ sudo vim /etc/fstab
 ```
 #/dev/disk/by-uuid/667a4e52-34e7-4803-a29a-6db36f152212 none swap sw 0 0
 #/swap.img      none    swap    sw      0       0
+```
+swapがsystemdにより管理されている場合、swap領域に対応するswapユニットを見つけてマスクする。
+```sh
+# swapユニットを見つける
+systemctl list-unit-files -t swap --no-pager
+```
+```
+dev-disk-byx2duuid-b8e9e260x2d5f79x2d4486x2dba10x2d491728ed410b.swap    enabled      enabled 
+```
+```sh
+# swapユニットをマスクする
+systemctl mask dev-disk-byx2duuid-b8e9e260x2d5f79x2d4486x2dba10x2d491728ed410b.swap
 ```
 ※ swapが有効の場合、`kubelet.service`が起動しないなどの影響がある。
 
