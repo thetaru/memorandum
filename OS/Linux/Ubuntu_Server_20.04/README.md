@@ -1,13 +1,4 @@
 # Ubuntu Server
-```
-memo
-
-unattended-upgtades
-パラメータ周りを知った方がいいかも
-あと自動アップグレードと再起動タイミングのコントロールとか メール通知するとかなどなど
-(アップグレードによる障害は受け入れられない場合がほとんどだと思うけど一応、、、)
-
-```
 ## ■ OS Settings
 - [ ] [Basic Configuration](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/settings)
 - [ ] [apparmor](https://github.com/thetaru/memorandum/tree/master/OS/Linux/Ubuntu_Server_20.04/apparmor)
