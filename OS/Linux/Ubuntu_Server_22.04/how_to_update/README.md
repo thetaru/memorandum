@@ -14,9 +14,14 @@ w
 # 日付
 date
 ```
-## ■ アップデート前のパッケージ情報を取得する
+## ■ アップデート前の事前準備
+パッケージ情報を取得する。
 ```sh
 apt list --installed > /tmp/packages_before.log
+```
+サービス起動一覧を取得する。
+```sh
+systemctl list-unit-file -t service --no-pager > /tmp/services_before.log
 ```
 ## ■ アップデートのテストをする
 パッケージ一覧を更新する。
@@ -33,12 +38,18 @@ apt list --upgradable 2>&1 | tee upgradable_$(date +%Y%m%d).log
 nohup apt upgrade -y | tee upgrade_$(date +%Y%m%d).log &
 ```
 ## ■ アップデート後にすること
-アップデートされたパッケージを確認する。
+パッケージ情報を取得する。
 ```sh
 apt list --installed > /tmp/packages_after.log
-
-# アップデート前後のパッケージ差分確認
+```
+サービス起動一覧を取得する。
+```sh
+systemctl list-unit-file -t service --no-pager > /tmp/services_after.log
+```
+アップデート前後の差分確認を実施する。
+```sh
 diff -u /tmp/packages_{before,after}
+diff -u /tmp/services_{before,after}
 ```
 ※ ホールドした(つもりの)パッケージがアップデートされていないことなどを確認する   
 
