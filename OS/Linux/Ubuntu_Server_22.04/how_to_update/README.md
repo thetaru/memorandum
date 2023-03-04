@@ -36,6 +36,8 @@ nohup apt upgrade -y | tee upgrade_$(date +%Y%m%d).log &
 アップデートされたパッケージを確認する。
 ```sh
 apt list --installed > /tmp/packages_after.log
+
+# アップデート前後のパッケージ差分確認
 diff -u /tmp/packages_{before,after}
 ```
 ※ ホールドした(つもりの)パッケージがアップデートされていないことなどを確認する   
@@ -53,8 +55,8 @@ ls -l /var/run/reboot-required
   
 もろもろ確認したら必要に応じて、**業務影響がないことを確認**しつつサービスまたはシステムの再起動を実施する。  
   
-再起動後、サーバ上で動作しているサービスが正常に動いていることを確認します。  
-以下は、サービスが動いていることを確認しています。
-```
+再起動後、サーバ上で動作しているサービスが正常に動いていることを確認する。  
+以下は、サービスが動いていることを確認している。
+```sh
 systemctl status XXX.service
 ```
