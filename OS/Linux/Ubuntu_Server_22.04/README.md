@@ -8,3 +8,6 @@
 
 ## ■ Software Settings
 - [ ] [Kubernetes](kubernetes)
+
+## ■ Tips
+- [ ] [アップデート手順](how_to_update)
