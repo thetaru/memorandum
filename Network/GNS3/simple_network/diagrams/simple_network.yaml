@@ -2,16 +2,12 @@ diagram:
   fill: "white"
   rows: 5
   columns: 5
-  gridLines: true
+  gridLines: false
 title:
-  author: thetaru
-  color: black
-  type: bar
-  stroke: black
-  logoFill: white
-  text: simple network
-  subText: ""
-  version: ""
+  color: none
+  fill: none
+  stroke: none
+  logoFill: none
 cisco: &cisco
   color: "#004BAF"
   fill: "white"
