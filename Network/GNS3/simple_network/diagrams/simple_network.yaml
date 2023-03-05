@@ -1,0 +1,48 @@
+diagram:
+  fill: "white"
+  rows: 5
+  columns: 5
+  gridLines: true
+title:
+  author: thetaru
+  color: black
+  type: bar
+  stroke: black
+  logoFill: white
+  text: simple network
+  subText: ""
+  version: ""
+cisco: &cisco
+  color: "#004BAF"
+  fill: "white"
+  iconFamily: "cisco"
+  iconFill: "#004BAF"
+  iconStrokeWidth: .25
+  preserveWhite: true
+  stroke: "#004BAF"
+icons:
+  Router1:
+    {color: black, fill: "none", stroke: "none", x: 1, y: 3, iconFamily: cisco, icon: "router"}
+  Router2:
+    {color: black, fill: "none", stroke: "none", x: 3, y: 3, iconFamily: cisco, icon: "router"}
+  Router3:
+    {color: black, fill: "none", stroke: "none", x: 2, y: 2, iconFamily: cisco, icon: "router"}
+  ESW1:
+    {color: black, fill: "none", stroke: "none", x: 2, y: 3, iconFamily: cisco, icon: "layer3switch"}
+  PC1:
+    {color: black, fill: "none", stroke: "none", x: 0, y: 3, iconFamily: cisco, icon: "terminal"}
+  PC2:
+    {color: black, fill: "none", stroke: "none", x: 4, y: 3, iconFamily: cisco, icon: "terminal"}
+  PC3:
+    {color: black, fill: "none", stroke: "none", x: 2, y: 1, iconFamily: cisco, icon: "terminal"}
+connections:
+  - {endpoints: ["Router1:f0/1", "ESW1:f1/0"] }
+  - {endpoints: ["Router2:f0/1", "ESW1:f1/1"] }
+  - {endpoints: ["Router3:f0/1", "ESW1:f1/2"] }
+  - {endpoints: ["Router1:f0/0", "PC1:e0"] }
+  - {endpoints: ["Router2:f0/0", "PC2:e0"] }
+  - {endpoints: ["Router3:f0/0", "PC3:e0"] }
+group: &group
+  - { stroke: "black", fill: "none", color: black, strokeDashArray: 3 }
+groups:
+ - { <<: *group, name: RIP, members: [Router1, Router2, Router3, ESW1] }
