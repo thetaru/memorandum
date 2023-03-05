@@ -14,3 +14,9 @@
 (config-if-range)# duplex full
 (config-if-range)# no shutdown
 ```
+
+## ■ Router1の設定
+
+## ■ Router2の設定
+
+## ■ Router3の設定
