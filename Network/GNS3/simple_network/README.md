@@ -84,3 +84,20 @@
 (config-router)# network 192.168.3.0
 (config-router)# network 10.0.0.0
 ```
+## ■ 設定の確認
+### VLAN割り当ての確認
+```
+# show vlan-switch
+```
+### CDPネイバーの確認
+```
+# show cdp neighbors
+```
+### ルーティングテーブルの確認
+```
+# show ip route rip
+```
+### インターフェースの確認
+```
+# show interface FastEthernet 0/0
+```
