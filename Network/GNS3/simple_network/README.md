@@ -1,5 +1,6 @@
 # 簡単なネットワークの構築
-
+## ■ NW構成図
+![NW構成図](diagrams/simple_network.png)
 ## ■ ESW1の設定
 ```
 > enable
