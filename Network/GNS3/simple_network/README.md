@@ -11,9 +11,10 @@
 (config)# interface range FastEthernet 1/0 - 2
 (config-if-range)# switchport mode access
 (config-if-range)# switchport access vlan 100
-(config-if-range)# speed 100
-(config-if-range)# duplex full
 (config-if-range)# no shutdown
+(config-if-range)# exit
+(config)# exit
+# write memory
 ```
 ## ■ Router1の設定
 ```
@@ -22,14 +23,10 @@
 (config)# hostname Router1
 (config)# interface FastEthernet 0/0
 (config-if)# ip address 192.168.1.1 255.255.255.0
-(config-if)# speed 100
-(config-if)# duplex full
 (config-if)# no shutdown
 (config-if)# exit
 (config)# interface FastEthernet 0/1
 (config-if)# ip address 10.10.10.1 255.255.255.0
-(config-if)# speed 100
-(config-if)# duplex full
 (config-if)# no shutdown
 (config-if)# exit
 (config)# router rip
@@ -37,6 +34,9 @@
 (config-router)# no auto-summary
 (config-router)# network 192.168.1.0
 (config-router)# network 10.0.0.0
+(config-router)# exit
+(config)# exit
+# write memory
 ```
 ## ■ Router2の設定
 ```
@@ -45,14 +45,10 @@
 (config)# hostname Router2
 (config)# interface FastEthernet 0/0
 (config-if)# ip address 192.168.2.2 255.255.255.0
-(config-if)# speed 100
-(config-if)# duplex full
 (config-if)# no shutdown
 (config-if)# exit
 (config)# interface FastEthernet 0/1
 (config-if)# ip address 10.10.10.2 255.255.255.0
-(config-if)# speed 100
-(config-if)# duplex full
 (config-if)# no shutdown
 (config-if)# exit
 (config)# router rip
@@ -60,6 +56,9 @@
 (config-router)# no auto-summary
 (config-router)# network 192.168.2.0
 (config-router)# network 10.0.0.0
+(config-router)# exit
+(config)# exit
+# write memory
 ```
 ## ■ Router3の設定
 ```
@@ -68,14 +67,10 @@
 (config)# hostname Router3
 (config)# interface FastEthernet 0/0
 (config-if)# ip address 192.168.3.3 255.255.255.0
-(config-if)# speed 100
-(config-if)# duplex full
 (config-if)# no shutdown
 (config-if)# exit
 (config)# interface FastEthernet 0/1
 (config-if)# ip address 10.10.10.3 255.255.255.0
-(config-if)# speed 100
-(config-if)# duplex full
 (config-if)# no shutdown
 (config-if)# exit
 (config)# router rip
@@ -83,6 +78,9 @@
 (config-router)# no auto-summary
 (config-router)# network 192.168.3.0
 (config-router)# network 10.0.0.0
+(config-router)# exit
+(config)# exit
+# write memory
 ```
 ## ■ PC1
 ```
