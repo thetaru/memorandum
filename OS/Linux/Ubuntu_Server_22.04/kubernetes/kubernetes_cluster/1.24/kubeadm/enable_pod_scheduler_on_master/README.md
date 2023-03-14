@@ -42,4 +42,9 @@ tolerations:
 
 ## シングルノード構成の場合の注意点
 Deploymentでは、レプリカ数が2以上の場合、Podを複数ノードに分散配置する。  
-そのため、シングルノード構成ではエラーとなってしまうが、`Node Affinity`を利用しノードを指定することで回避できる。
+そのため、シングルノード構成ではエラーとなってしまうが、`Node Affinity`を利用しノードを指定することで回避できる。  
+  
+ノードにラベルを設定する。
+```sh
+kubectl label node <node name> nodeName=<label name>
+```
