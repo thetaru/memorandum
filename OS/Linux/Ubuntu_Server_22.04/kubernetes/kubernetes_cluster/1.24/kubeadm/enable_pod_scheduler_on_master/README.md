@@ -39,3 +39,8 @@ tolerations:
 - key: node-role.kubernetes.io/control-plane
   effect: NoSchedule
 ```
+
+## シングルノード構成の場合の注意点
+Deploymentでは、レプリカ数が2以上の場合、Podを複数ノードに分散配置する。  
+そのため、シングルノード構成ではエラーとなってしまう。  
+この場合、Node Affinityを利用しノードを指定することで回避できる。
