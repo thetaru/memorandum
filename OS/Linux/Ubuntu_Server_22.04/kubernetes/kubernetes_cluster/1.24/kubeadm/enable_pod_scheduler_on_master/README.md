@@ -46,5 +46,5 @@ Deploymentでは、レプリカ数が2以上の場合、Podを複数ノードに
   
 ノードにラベルを設定する。
 ```sh
-kubectl label node <node name> nodeName=<label name>
+kubectl label node master nodeName=master
 ```
