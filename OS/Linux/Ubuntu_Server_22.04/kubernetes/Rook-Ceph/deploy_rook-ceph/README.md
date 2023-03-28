@@ -33,6 +33,9 @@ Kustomize Version: v4.5.4
 Server Version: v1.24.3
 ```
 
+## ■ デバイス名の固定
+`/dev/sdb`をOSDとして使いたいので、パーティション領域のデバイス名を固定する。
+
 ## ■ Deploy the Rook Operator
 ```
 git clone --single-branch --branch master https://github.com/rook/rook.git
