@@ -4,12 +4,12 @@ set -euo pipefail
 function usage()
 {
   cat <<- EOS
-    Description:
-      $(basename $0) is tool to ping multiple terminals.
-    Usage:
-      $(basename $0) [device]
-    Example:
-      $(basename $0) eth0
+  Description:
+    $(basename $0) is tool to ping multiple terminals.
+  Usage:
+    $(basename $0) [device]
+  Example:
+    $(basename $0) eth0
 EOS
 }
 
@@ -55,6 +55,12 @@ if [ $# == 1 ] && [ "$1" != "" ]; then
   DEVICE_NAME="$1"
 else
   usage
+  exit 1
+fi
+
+# nmcliコマンドが使えることを確認する
+if ! type "nmcli" > /dev/null 2>&1; then
+  echo "nmcli is not exist"
   exit 1
 fi
 
