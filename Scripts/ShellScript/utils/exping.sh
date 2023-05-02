@@ -59,7 +59,20 @@ else
 fi
 
 IP_CIDR=$(nmcli -g ip4.address device show "${DEVICE_NAME}")
+
+# IPアドレスのチェック
 IP="$( echo "${IP_CIDR}" | cut -d '/' -f1 | awk '{ print $1 }' )"
+if ! echo ${IP} | grep -E --quiet "^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"; then
+  echo "invalid IP Address."
+  exit 1
+fi
+
+# CIDRのチェック
 CIDR="$( echo "${IP_CIDR}" | cut -d '/' -f2 | awk '{ print $1 }' )"
+if (( ${CIDR} < 0 || ${CIDR} > 32 )); then
+  echo "invalid CIDR."
+  exit 1
+fi
+
 NW_ADDR="$( decimal2ip $(( $(ip2decimal "${IP}") & $(cidr2decimal "${CIDR}") )))"
 exping ${NW_ADDR} $((2 ** (32-${CIDR})))
