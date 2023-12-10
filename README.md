@@ -1,14 +1,11 @@
 # 備忘録
 ## ■ 目次
-- [ ] [Cloud](https://github.com/thetaru/memorandum/tree/master/Cloud)
-- [ ] [Command](https://github.com/thetaru/memorandum/tree/master/command)
-- [ ] [Document](https://github.com/thetaru/memorandum/tree/master/design_document)
-- [ ] [Hypervisor](https://github.com/thetaru/memorandum/tree/master/Hypervisor)
-- [ ] [Network](https://github.com/thetaru/memorandum/tree/master/Network)
-- [ ] [OS](https://github.com/thetaru/memorandum/tree/master/OS)
-- [ ] [Scripts](https://github.com/thetaru/memorandum/tree/master/Scripts)
-- [ ] [UPS](https://github.com/thetaru/memorandum/tree/master/UPS)
-- [ ] [Math](https://github.com/thetaru/memorandum/tree/master/Math)
+- [ ] [Cloud](Cloud)
+- [ ] [Command](command)
+- [ ] [Hypervisor](Hypervisor)
+- [ ] [Network](Network)
+- [ ] [OS](OS)
+- [ ] [Scripts](Scripts)
 
 ## ■ ショートカット
-- [ ] [OS > Linux > CentOS8](https://github.com/thetaru/memorandum/tree/master/OS/Linux/CentOS8)
+- [ ] [OS > Linux > CentOS8](OS/Linux/CentOS8)
