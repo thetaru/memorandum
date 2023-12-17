@@ -15,7 +15,7 @@ vim ~/.local/share/applications/wave.desktop
 Version=0.5.1
 Type=Application
 Name=Wave Terminal
-Icon=/usr/local/Wave/Wave/resources/app/public/logos/wave-logo.png
+Icon=/usr/local/Wave/resources/app/public/logos/wave-logo.png
 Exec="/usr/local/Wave/Wave"
 Comment=Wave Terminal
 Categories=Development;
