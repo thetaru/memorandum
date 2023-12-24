@@ -41,6 +41,7 @@ rye add email-validator
 rye add flask-debugtoolbar
 rye add flask-sqlalchemy==2.5.1
 rye add flask-migrate
+rye add sqlalchemy==1.4
 ```
 ### パッケージの削除
 `rye remove`コマンドを実行すると、`pyproject.toml`にパッケージ情報が削除される。
