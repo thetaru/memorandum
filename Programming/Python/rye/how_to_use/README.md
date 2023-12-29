@@ -11,7 +11,8 @@ echo 'source "$HOME/.rye/env"' >> ~/.bashrc
 ## ■ プロジェクトの作成
 新規ディレクトリを作成し、プロジェクトを作成する。
 ```sh
-rye init flaskbook && cd flaskbook
+rye init flaskbook
+cd flaskbook
 ```
 ## ■ プロジェクトの同期
 以下のコマンドを実行することで、プロジェクトの変更を反映することができる。  
@@ -43,6 +44,7 @@ rye add flask-sqlalchemy==2.5.1
 rye add flask-migrate
 rye add sqlalchemy==1.4
 rye add flask-wtf
+rye add flask-login
 ```
 ### パッケージの削除
 `rye remove`コマンドを実行すると、`pyproject.toml`にパッケージ情報が削除される。
