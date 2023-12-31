@@ -45,6 +45,7 @@ rye add flask-migrate
 rye add sqlalchemy==1.4
 rye add flask-wtf
 rye add flask-login
+rye add pytest
 ```
 ### パッケージの削除
 `rye remove`コマンドを実行すると、`pyproject.toml`にパッケージ情報が削除される。
