@@ -14,6 +14,9 @@ echo 'source "$HOME/.rye/env"' >> ~/.bashrc
 rye init flaskbook
 cd flaskbook
 ```
+> [!WARNING]
+> プロジェクト名に`_`や`-`を入れた場合、`rye sync`を実行後、以下のエラーが出て同期が失敗した。(ryeのバージョンは、`0.1.0`)  
+> Invalid script entry point: <ExportEntry hello = <プロジェクト名>:None []> - A callable suffix is required.
 ## ■ プロジェクトの同期
 以下のコマンドを実行することで、プロジェクトの変更を反映することができる。  
 `rye sync`コマンドを実行したタイミングでPythonやパッケージのインストールが開始する。  
