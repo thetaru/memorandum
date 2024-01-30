@@ -271,12 +271,6 @@ source ~/.bashrc
 
 ### CNIプラグインのインストール
 #### flannel
-各ノードの`/opt/bin/flanneld/`配下に[flanneldバイナリ](https://github.com/flannel-io/flannel/releases)を配置する。
-```sh
-mkdir -p /opt/bin
-wget -O - https://github.com/flannel-io/flannel/releases/download/<version>/flannel-<version>-linux-<arch>.tar.gz | tar zxvf - -C /opt/bin flanneld
-chown root:root /opt/bin/flanneld
-```
 flannelリソースを作成する。
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
