@@ -1,5 +1,10 @@
 # Python環境構築
 ## ■ ryeのインストール
+執筆時のryeのバージョン情報は以下の通り。
+|バージョン|プラットフォーム|
+|:---:|:---:|
+|0.31.0|linux(x86_64)|
+
 公式ドキュメント(`https://rye-up.com/guide/installation`)にしたがってインストールする。
 ```sh
 curl -sSf https://rye-up.com/get | bash
