@@ -6,3 +6,4 @@
 ## ■ Tips
 - [ ] [isoイメージをdvdに焼く方法](dvd_burn)
 - [ ] [シリアル通信する方法](serial)
+- [ ] [ブート終わらない](cant_boot_init.d_rcS)
