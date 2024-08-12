@@ -15,9 +15,23 @@ kubeletが正常動作するために、swapをオフにする必要がある。
 sudo swapoff -a
 ```
 ```sh
+systemctl stop swap.target
 systemctl mask swap.taget
 ```
+`swap.target`がマスクされていることを確認する。
+```sh
+systemctl status swap.target
+```
+```
+○ swap.target
+     Loaded: masked (Reason: Unit swap.target is masked.)
+     Active: inactive (dead)
+```
 再起動後、スワップが無効化されていることを確認する。
+```sh
+# 出力がないことを確認
+swapon -s
+```
 > **Warning**  
 > swapが有効の場合、`kubelet.service`が起動しないなどの影響がある。
 
