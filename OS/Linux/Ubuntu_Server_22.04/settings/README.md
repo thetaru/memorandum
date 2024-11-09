@@ -282,6 +282,26 @@ New password:
 Retype new password:
 ```
 
+## ■ [任意] ログイン時に出力されるメッセージ(MOTD)の抑止
+出力用のスクリプトは`/etc/update-motd.d/`に配置されている。(カスタマイズする場合は、このスクリプトを修正する。)  
+以下では、PAMによる抑止を行っている。
+```sh
+# SSHログイン時
+$ sudo vim /etc/pam.d/sshd
+```
+```diff
+-  session    optional     pam_motd.so  motd=/run/motd.dynamic
++  #session    optional     pam_motd.so  motd=/run/motd.dynamic
+```
+```sh
+# コンソールログイン時
+$ sudo vim /etc/pam.d/login
+```
+```diff
+-  session    optional     pam_motd.so  motd=/run/motd.dynamic
++  #session    optional     pam_motd.so  motd=/run/motd.dynamic
+```
+
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
 
