@@ -115,7 +115,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 ```
 ## VSCodeのターミナルでBashのショートカットを使えるようにする
-`Ctrl+Shift+P` - `Open Keyboard Shortcuts(JSON)`から編集する。
+`Ctrl+Shift+P` - `Open Keyboard Shortcuts(JSON)`から編集し、以下を追加する。(すでに他のショートカットがある場合、いい感じに修正する。)
 ```json
 [
     {
