@@ -114,10 +114,11 @@ $ sudo vim /etc/profile.d/key-bind.sh
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 ```
-## VSCodeのターミナルでBashのショートカットを使えるようにする
+## VSCodeのショートカットを変更する
 `Ctrl+Shift+P` - `Open Keyboard Shortcuts(JSON)`から編集し、以下を追加する。(すでに他のショートカットがある場合、いい感じに修正する。)
 ```json
 [
+    // Bash Shortcut Enable
     {
         "key": "ctrl+a",
         "command": "",
@@ -147,6 +148,23 @@ gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
         "key": "ctrl+l",
         "command": "",
         "when": "terminalFocus"
+    },
+
+    // Define File Operations
+    {
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
     },
 ]
 ```
