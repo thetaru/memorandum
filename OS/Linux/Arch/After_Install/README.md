@@ -114,6 +114,42 @@ $ sudo vim /etc/profile.d/key-bind.sh
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 ```
+## VSCodeのターミナルでBashのショートカットを使えるようにする
+`Ctrl+Shift+P` - `Open Keyboard Shortcuts(JSON)`から編集する。
+```json
+[
+    {
+        "key": "ctrl+a",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "",
+        "when": "terminalFocus"
+    },
+]
+```
 ## ショートカットの作成
 ### ウィンドウを最大化する
 `キーボードショートカット`-`ウィンドウ`-`ウィンドウを最大化する`を`Super+↑`に変更
