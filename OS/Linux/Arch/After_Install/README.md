@@ -149,7 +149,11 @@ gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
         "command": "",
         "when": "terminalFocus"
     },
-
+    {
+        "key": "ctrl+p",
+        "command": "",
+        "when": "terminalFocus"
+    },
     // Define File Operations
     {
         "key": "ctrl+n",
