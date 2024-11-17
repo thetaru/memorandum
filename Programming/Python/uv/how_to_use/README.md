@@ -27,14 +27,16 @@ uv python pin 3.12
 
 ## ■ 依存関係の管理
 ### パッケージの追加
-`uv add`コマンドを実行すると、パッケージがインストールされ`pyproject.toml`にパッケージ情報が追加される。
+`uv add`コマンドを実行すると、パッケージがインストールされ`pyproject.toml`にパッケージ情報が追加される。  
+開発時のみに使用するパッケージは、`--dev`オプションをつけてインストールする。
 ```sh
 # Example
 uv add flask
 uv add pytest --dev
 ```
 ### パッケージの削除
-`uv remove`コマンドを実行すると、`pyproject.toml`にパッケージ情報が削除される。
+`uv remove`コマンドを実行すると、パッケージがアンインストールされ`pyproject.toml`にパッケージ情報が削除される。  
+開発時のみに使用するパッケージは、`--dev`オプションをつけてアンインストールする。
 ```sh
 # Example
 uv remove flask
