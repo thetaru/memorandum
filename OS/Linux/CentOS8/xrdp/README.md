@@ -1,37 +1,28 @@
 # xrdp
-## xrdpのインストール
-epelリポジトリが登録されていない場合は次を実行します。
+## xrdpパッケージ
+### パッケージのインストール
+```sh
+# EPELリポジトリの追加(リポジトリが登録されていない場合)
+yum install epel-release
+# xrdpパッケージの追加
+yum install xrdp tigervnc-server
 ```
-# yum install epel-release
+## xrdpサービス
+### サービスの起動
+```sh
+systemctl start xrdp
 ```
-```
-# yum install xrdp tigervnc-server
-```
-サービスの起動と自動起動の有効化
-```
-# systemctl start xrdp
-# systemctl enable xrdp
-# systemctl status xrdp
+### サービス自動起動の有効化
+```sh
+systemctl enable xrdp
 ```
 ## xrdpの設定
-### 各種設定
-大体の設定は以下ファイルをいじればどうにかなると思います。
+### /etc/xrdp/xrdp.ini
+### /etc/xrdp/sesman.ini
+### /etc/X11/Xwrapper.config
+```diff
+# コンソールにログインしていないユーザーでもXサーバーを使用できるようにする(ここでは簡単のため任意のユーザに変更してる)
+- allowed_users=console
++ allowed_users=anybody
++ needs_root_rights=no
 ```
-# vi /etc/xrdp/sesman.ini
-```
-```
-# vi /etc/xrdp/xrdp.ini
-```
-### 自動パッケージアップデートの無効化
-```
-# systemctl stop packagekit
-# systemctl stop packagekit-offline-update.service
-# systemctl mask packagekit
-# systemctl mask packagekit-offline-update.service
-```
-### ポート解放
-念の為何番ポートを使用しているか確認します。
-```
-# lsof -i -n -P | grep xrdp
-```
-firewallを導入している場合は確認したポート(デフォルトだと`3389/tcp`)をあけましょう。
