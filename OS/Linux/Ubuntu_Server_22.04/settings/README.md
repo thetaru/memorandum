@@ -27,10 +27,10 @@ $ sudo update-grub2
 ```
 $ sudo vim /etc/sysctl.conf
 ```
-```
-fs.suid_dumpable=2
-net.ipv4.tcp_timestamps=0
-vm.panic_on_oom=2
+```diff
++ fs.suid_dumpable=2
++ net.ipv4.tcp_timestamps=0
++ vm.panic_on_oom=2
 ```
 設定を反映します。
 ```
@@ -100,16 +100,17 @@ $ apt-mark showhold
 ```
 $ sudo vi /etc/hosts
 ```
-```
+```diff
 # IPv6を使用しない場合はコメントアウトする
-#::1     ip6-localhost ip6-loopback
-#fe00::0 ip6-localnet
-#ff00::0 ip6-mcastprefix
-#ff02::1 ip6-allnodes
-#ff02::2 ip6-allrouters
+- #::1     ip6-localhost ip6-loopback
+- #fe00::0 ip6-localnet
+- #ff00::0 ip6-mcastprefix
+- #ff02::1 ip6-allnodes
+- #ff02::2 ip6-allrouters
 ```
 ### /etc/systemd/resolved.confの設定
-DNS stub listenerは利用しない。
+DNS stub listenerは利用しない。  
+なお、`/etc/systemd/network/*.network`ファイル内でDNSを指定する場合、下記の`DNS`オプションと`FallbackDNS`オプションの設定は不要。(`/etc/resolv.conf`に重複して登録されてしまう)
 ```
 $ sudo vi /etc/systemd/resolved.conf
 ```
@@ -205,8 +206,15 @@ $ sudo vim /etc/systemd/timesyncd.conf
 ```
 ```
 [Time]
-NTP=<プライマリntpサーバ>
-FallbackNTP=<セカンダリntpサーバ>
+- #NTP=
++ NTP=<プライマリntpサーバ>
+- #FallbackNTP=
++ FallbackNTP=<セカンダリntpサーバ>
+#RootDistanceMaxSec=5
+#PollIntervalMinSec=32
+#PollIntervalMaxSec=2048
+#ConnectionRetrySec=30
+#SaveIntervalSec=60
 ```
 設定を有効化します。
 ```
