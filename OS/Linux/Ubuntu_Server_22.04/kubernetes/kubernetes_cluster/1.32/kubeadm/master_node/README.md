@@ -119,66 +119,11 @@ systemctl restart containerd
 ```
 
 ## ■ kubeadm、kubelet、kubectlのインストール
-以下、[Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/_print/#installing-kubeadm-kubelet-and-kubectl)に記載の手順を抜粋した。
+リポジトリの追加は、[Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/_print/#installing-kubeadm-kubelet-and-kubectl)を参照すること。
 ```sh
-# リポジトリの設定
-apt-get update
-apt-get install -y apt-transport-https ca-certificates curl
-```
-```sh
-# GoogleのGPG鍵を追加
-curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-```
-```sh
-# Kubernetesのaptリポジトリの追加
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-```
-```sh
-# kubelet、kubeadm、kubectlをインストールし、バージョンを固定する(※1)
-apt-get update
-apt-get install -y kubelet kubeadm kubectl
+# kubelet、kubeadm、kubectlをホールドする
 apt-mark hold kubelet kubeadm kubectl
-```
-※1: [kubeadmクラスタのアップグレード](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)は特別な手順があるため、aptによるアップグレードは行わない
-```sh
-# kubelet、kubeadm、kubectlがホールドされていることを確認する
 apt-mark showhold
-```
-
-
-### kubelet
-kubeletがcgroupドライバにsystemdを利用するように設定する。  
-kubeletサービスのユニットファイルは`/var/lib/kubelet/config.yaml`を参照しているので、このファイルを修正する。
-```sh
-mkdir -p /var/lib/kubelet
-vim /var/lib/kubelet/config.yaml
-```
-```
-cgroupDriver: systemd
-```
-設定の修正後、kubeletサービスを再起動する。
-```sh
-systemctl daemon-reload && systemctl restart kubelet
-```
-
-## ■ kubeletの設定
-### ノードIPの設定
-kubeletがプライマリネットワークインターフェイスを自動検知しないよう手動で設定する。  
-※ ノードごとにIPアドレスを設定すること
-```sh
-vim /etc/default/kubelet
-```
-```
-KUBELET_EXTRA_ARGS="--node-ip=192.168.0.231"
-```
-
-### 名前解決の設定
-kubeletが名前解決の際に利用する`resolv.conf`を指定する。
-```sh
-vim /etc/default/kubelet
-```
-```
-KUBELET_EXTRA_ARGS="--resolv-conf=/run/systemd/resolve/resolv.conf"
 ```
 
 ## ■ 設定の反映
@@ -220,28 +165,4 @@ source ~/.bashrc
 ```
 
 ### CNIプラグインのインストール
-#### flannel
-flannelリソースを作成する。
-```sh
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-```
-
-#### Calico
-```sh
-kubectl create -f https://projectcalico.docs.tigera.io/manifests/tigera-operator.yaml
-```
-```sh
-wget https://projectcalico.docs.tigera.io/manifests/custom-resources.yaml
-```
-`spec.calicoNetwork.ipPools`の`cidr`をPodネットワークのセグメント(`kubeadm init`のオプション`pod-network-cidr`への引数)に変更する。  
-※ ここでは、`10.244.0.0/16`を指定する。
-```sh
-vim custom-resources.yaml
-```
-```yaml
-cidr: 10.244.0.0/16
-```
-Calicoのリソースを作成する。
-```sh
-kubectl create -f custom-resources.yaml
-```
+#### Cilium
