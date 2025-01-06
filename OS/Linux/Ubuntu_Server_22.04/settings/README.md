@@ -204,7 +204,7 @@ $ sudo timedatectl set-ntp true
 ```
 $ sudo vim /etc/systemd/timesyncd.conf
 ```
-```
+```diff
 [Time]
 - #NTP=
 + NTP=<プライマリntpサーバ>
