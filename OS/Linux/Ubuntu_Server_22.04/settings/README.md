@@ -108,22 +108,29 @@ $ sudo vi /etc/hosts
 #ff02::1 ip6-allnodes
 #ff02::2 ip6-allrouters
 ```
-
-### systemd-resolvedの設定
-システムに設定されている名前解決先のDNSサーバと`resolv.conf mode`(デフォルトはstub)を確認する。
-```sh
-$ resolvctl status
-```
+### /etc/systemd/resolved.confの設定
+DNS stub listenerは利用しない。
 ```
 $ sudo vi /etc/systemd/resolved.conf
 ```
-```
-[Resolve]
-# DNSサーバを指定する(半角スペース区切り)
-DNS=<dnsサーバ1> <dnsサーバ2>
-
-# スタブリゾルバを使用しない
-DNSStubListener=no
+```diff
+- #DNS=
++ DNS=<プライマリDNSサーバのIPアドレス>
+- #FallbackDNS=
++ FallbackDNS=<セカンダリDNSサーバのIPアドレス>
+- #Domains=
++ Domain=<ドメイン名>
+#DNSSEC=no
+#DNSOverTLS=no
+#MulticastDNS=no
+#LLMNR=no
+#Cache=no-negative
+#CacheFromLocalhost=no
+- #DNSStubListener=yes
++ DNSStubListener=no
+#DNSStubListenerExtra=
+#ReadEtcHosts=yes
+#ResolveUnicastSingleLabel=no
 ```
 `/etc/resolv.conf`のシンボリックリンクを`/run/systemd/resolve/resolv.conf`に張り替えます。
 ```sh
