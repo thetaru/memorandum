@@ -140,7 +140,10 @@ systemctl reboot
 ## ■ マスターノードのセットアップ
 ### コントロールプレーンノードの初期化
 ```sh
+# CNIにciliumを使わない場合
 kubeadm init --control-plane-endpoint=k8s-masters.thetaru.home:6443 --pod-network-cidr=10.244.0.0/16
+# CNIにciliumを使う場合(kube-proxyを使わない)
+kubeadm init --control-plane-endpoint=k8s-masters.thetaru.home:6443 --pod-network-cidr=10.244.0.0/16 --skip-phases=addon/kube-proxy
 ```
 ※ Preflight checkでエラーがでたら、`kubeadm reset`で実行後に再度`kubeadm init`で初期化を行うとよい。
 ```sh
@@ -163,3 +166,23 @@ source ~/.bashrc
 
 ### CNIプラグインのインストール
 #### Cilium
+Helmチャートのリポジトリを追加する。
+```sh
+helm repo add cilium https://helm.cilium.io/
+```
+helmでciliumをデプロイする。  
+Cilium L2 Announcementを利用する場合、`kubeProxyReplacement`と`l2announcements.enabled`を有効にする。
+```sh
+CILIUM_VERSION="1.16.5"       # ciliumのバージョンを指定
+API_SERVER_IP="192.168.0.231" # APIサーバ(マスターノード)のIPアドレスを指定
+API_SERVER_PORT="6443"        # APIサーバ(マスターノード)のデフォルトポートは6443
+helm install cilium cilium/cilium \
+  --version ${CILIUM_VERSION} \
+  --namespace kube-system \
+  --set hubble.relay.enabled=true \
+  --set hubble.ui.enabled=true \
+  --set l2announcements.enabled=true \
+  --set kubeProxyReplacement=true \
+  --set k8sServiceHost=${API_SERVER_IP} \
+  --set k8sServicePort=${API_SERVER_PORT}
+```
