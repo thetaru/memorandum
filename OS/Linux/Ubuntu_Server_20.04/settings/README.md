@@ -56,7 +56,7 @@ export no_proxy="127.0.0.1"
 ```
 
 ## ■ 名前解決の設定
-`/etc/resolv.conf`は使用しない
+`/etc/resolv.conf`は使用しない。
 ### /etc/hostsの設定
 ```
 $ sudo vi /etc/hosts
@@ -68,6 +68,30 @@ $ sudo vi /etc/hosts
 #ff00::0 ip6-mcastprefix
 #ff02::1 ip6-allnodes
 #ff02::2 ip6-allrouters
+```
+### /etc/systemd/resolved.confの設定
+DNS stub listenerは利用しない。
+```
+$ sudo vi /etc/systemd/resolved.conf
+```
+```diff
+- #DNS=
++ DNS=<プライマリDNSサーバのIPアドレス>
+- #FallbackDNS=
++ FallbackDNS=<セカンダリDNSサーバのIPアドレス>
+- #Domains=
++ Domain=<ドメイン名>
+#DNSSEC=no
+#DNSOverTLS=no
+#MulticastDNS=no
+#LLMNR=no
+#Cache=no-negative
+#CacheFromLocalhost=no
+- #DNSStubListener=yes
++ DNSStubListener=no
+#DNSStubListenerExtra=
+#ReadEtcHosts=yes
+#ResolveUnicastSingleLabel=no
 ```
 
 ## ■ ロケールの設定
