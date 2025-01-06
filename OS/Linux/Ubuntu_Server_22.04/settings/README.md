@@ -133,10 +133,6 @@ $ sudo vi /etc/systemd/resolved.conf
 #ReadEtcHosts=yes
 #ResolveUnicastSingleLabel=no
 ```
-`/etc/resolv.conf`のシンボリックリンクを`/run/systemd/resolve/resolv.conf`に張り替えます。
-```sh
-$ sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
-```
 設定を反映します。
 ```
 $ sudo systemctl restart systemd-resolved.service
@@ -144,6 +140,17 @@ $ sudo systemctl restart systemd-resolved.service
 DNSサーバと`resolv.conf mode`の設定が反映されていることを確認します。
 ```
 $ resolvectl status
+```
+`DNSStubListener`オプションをnoに設定すると、`/run/systemd/resolve/stub-resolv.conf`がファイルからシンボリックリンクに変わる。
+```
+# 変更前
+/etc/resolv.conf -> /run/systemd/resolve/stub-resolv.conf
+# 変更後
+/etc/resolv.conf -> /run/systemd/resolve/stub-resolv.conf -> /run/systemd/resolve/resolv.conf
+```
+`/etc/resolv.conf`のシンボリックリンクを`/run/systemd/resolve/resolv.conf`に張り替えます。
+```sh
+$ sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 ```
 
 ## ■ ロケールの設定
