@@ -12,7 +12,7 @@ kubeletが正常動作するために、swapをオフにする必要がある。
 そのため、OSインストール時に必要以上にスワップ領域を確保する必要はない。
 ```sh
 # 一時的にスワップを無効にする
-sudo swapoff -a
+swapoff -a
 ```
 ```sh
 systemctl stop swap.target
@@ -26,6 +26,11 @@ systemctl status swap.target
 ○ swap.target
      Loaded: masked (Reason: Unit swap.target is masked.)
      Active: inactive (dead)
+```
+`/etc/fstab`にswapをマウントする記載がある場合はそれも削除する。
+```sh
+sed -i.bak '/ swap / s/^/#/' /etc/fstab
+diff -u /etc/fstab.bak /etc/fstab | grep -E "^(-|\+)"
 ```
 再起動後、スワップが無効化されていることを確認する。
 ```sh
@@ -134,14 +139,6 @@ systemctl reboot
 
 ## ■ マスターノードのセットアップ
 ### コントロールプレーンノードの初期化
-kubeadmクラスターをHAクラスタする予定がある場合、`--control-plane-endpoint`を指定する。  
-エンドポイントには、名前解決可能なホスト名やロードバランサーの仮想IPアドレス(VIP)を指定できる。(※2)  
-ここでは、内部DNSにレコードを追加(k8s-masters.thetaru.homeで名前解決すると192.168.0.231を返すようにする)して対処する。  
-  
-CNI(Container Network Interface)プラグインは、flannelを使用する。  
-ここでは、flannelのデフォルトのCIDR(10.244.0.0/16)を`--pod-network-cidr`に指定する。(※3)  
-※2: DNSラウンドロビンやLBの負荷分散機能を利用する(ってことだと思う)  
-※3: CNIについて調べられていない。また、各CNIプラグインの長所・短所も調べられていない。(用途ごとに変更する必要がある認識)
 ```sh
 kubeadm init --control-plane-endpoint=k8s-masters.thetaru.home:6443 --pod-network-cidr=10.244.0.0/16
 ```
