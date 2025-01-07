@@ -23,7 +23,7 @@ NAME      DISABLED   CONFLICTING   IPS AVAILABLE   AGE
 default   false      False         10              10h
 ```
 ### L2 Announcements
-External-IPのARPに応答する。(送信先PodのいるノードのMACアドレスを渡して、そのノードが受け取ったパケットを内部でいいかんじにルーティングしているのかな)  
+External-IPのARPに応答する。(送信元のクライアントに送信先PodのいるノードのMACアドレスを渡して、そのノードが受け取ったパケットを内部でいいかんじにルーティングしているのかな)  
 こういう仕様なので、特定のExternal-IPに応答できるのは、クラスタ内の1ノードのみとなる。  
 
 CiliumL2AnnouncementPolicyを定義し、L2ネットワーク上でどのノードがどのサービスをアナウンスするかを制御する。  
@@ -51,4 +51,19 @@ kubectl get ciliuml2announcementpolicies
 ```
 NAME      AGE
 default   10h
+```
+### Hubble UI
+L3/L4およびL7のKubernetesクラスタのサービス依存関係グラフを自動的に検出できる。  
+上記で定義したIP範囲からExternal-IPを払い出す。
+```sh
+kubectl patch svc hubble-ui -n kube-system -p '{"spec": {"type": "LoadBalancer"}}'
+kubectl patch svc hubble-ui -n kube-system -p '{"metadata": {"annotations": {"lbipam.cilium.io/ips": "192.168.0.95"}}}'
+```
+Hubble UIサービスに払い出しているExternal-IPアドレスを確認する。
+```sh
+kubectl get svc hubble-ui -n kube-system
+```
+```
+NAME        TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)        AGE
+hubble-ui   LoadBalancer   10.105.241.102   192.168.0.95   80:32148/TCP   10h
 ```
