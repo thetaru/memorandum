@@ -23,7 +23,8 @@ NAME      DISABLED   CONFLICTING   IPS AVAILABLE   AGE
 default   false      False         10              10h
 ```
 ### L2 Announcements
-External-IPのARPに応答する。(送信元のクライアントに送信先PodのいるノードのMACアドレスを渡して、そのノードが受け取ったパケットを内部でいいかんじにルーティングしているのかな)  
+External-IPのARPリクエストに応答するようになる。  
+送信元クライアントに送信先PodのいるノードのMACアドレスを渡して、そのノードが受け取ったパケットを内部でルーティングしているのかな?  
 こういう仕様なので、特定のExternal-IPに応答できるのは、クラスタ内の1ノードのみとなる。  
 
 CiliumL2AnnouncementPolicyを定義し、L2ネットワーク上でどのノードがどのサービスをアナウンスするかを制御する。  
