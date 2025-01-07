@@ -53,9 +53,10 @@ kubectl get ciliuml2announcementpolicies
 NAME      AGE
 default   10h
 ```
-### Hubble UI
+
+## Hubble UI
 L3/L4およびL7のKubernetesクラスタのサービス依存関係グラフを自動的に検出できる。  
-上記で定義したIP範囲からExternal-IPを払い出す。
+LB IPAMで定義したIPプールからExternal-IPを払い出す。
 ```sh
 kubectl patch svc hubble-ui -n kube-system -p '{"spec": {"type": "LoadBalancer"}}'
 kubectl patch svc hubble-ui -n kube-system -p '{"metadata": {"annotations": {"lbipam.cilium.io/ips": "192.168.0.95"}}}'
