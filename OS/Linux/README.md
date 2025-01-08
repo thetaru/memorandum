@@ -35,5 +35,5 @@ $ echo 'これはuserです'
 - [ ] [RHEL7](RHEL7)
 - [ ] [RHEL8](RHEL8)
 - [ ] [Ubuntu Server 20.04](Ubuntu_Server_20.04)
-- [ ] [Ubuntu Server 22.04](Ubuntu_Server_20.04)
+- [ ] [Ubuntu Server 22.04](Ubuntu_Server_22.04)
 
