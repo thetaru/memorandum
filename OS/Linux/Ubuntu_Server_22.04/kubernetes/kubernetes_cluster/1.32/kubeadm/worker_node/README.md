@@ -114,9 +114,14 @@ containerd config default > /etc/containerd/config.toml
 vim /etc/containerd/config.toml
 ```
 ```diff
-[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
-- SystemdCgroup = false
-+ SystemdCgroup = true
+    [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+-     SystemdCgroup = false
++     SystemdCgroup = true
+
+# 証明書を配置する必要がある場合は設定する(e.g. HarborのCA証明書など)
+    [plugins."io.containerd.grpc.v1.cri".registry]
+-     config_path = ""
++     config_path = "/etc/containerd/certs.d"
 ```
 設定の修正後、containerdサービスを再起動する。
 ```sh
