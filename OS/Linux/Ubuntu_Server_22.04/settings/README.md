@@ -282,6 +282,9 @@ $ sudo systemctl daemon-reexec
 $ sudo systemctl disable --now apt-daily.timer
 $ sudo systemctl disable --now apt-daily-upgrade.timer
 $ sudo systemctl disable --now ua-timer.timer
+
+# MOTD(Message Of The Day)の周りのサービスを無効化
+$ sudo systemctl disable --now motd-news.timer
 ```
 ※ cronなどで起動させられたサービスは`disable`であっても起動することに注意する(disableは自動起動を無効化する設定のため)
 
