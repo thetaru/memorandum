@@ -52,6 +52,10 @@ Name=ens18
 Address=192.168.0.1/24
 Gateway=192.168.0.254
 ```
+設定を反映する。
+```
+$ sudo systemctl restart systemd-networkd.service
+```
 
 ## ■ パッケージのアンインストール
 不要なパッケージを削除します。
