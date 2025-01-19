@@ -42,7 +42,7 @@ $ sudo for DEV in $(ls /sys/class/net | grep -v -E "^lo$"); do touch /etc/system
 ```
 最低限必要なものを記載する。また下記の設定はあくまで例であることに注意する。
 ```sh
-$ sudo vim /etc/systemd/network/<network interface>.network
+$ sudo vim /etc/systemd/network/ens18.network
 ```
 ```ini
 [Match]
