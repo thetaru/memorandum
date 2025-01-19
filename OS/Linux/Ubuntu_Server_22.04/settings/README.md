@@ -10,6 +10,18 @@ $ sudo update-alternatives --set editor /usr/bin/vim.basic
 $ sudo hostnamectl set-hostname <hostname>
 ```
 
+## ■ ユーザ/グループの設定
+### rootのパスワード設定
+以下では、sudo権限を持つユーザ(thetaru)を利用してrootのパスワードを設定します。
+```
+$ sudo passwd root
+```
+```
+[sudo] password for thetaru:
+New password:
+Retype new password:
+```
+
 ## ■ ブートローダーの設定
 ```
 $ sudo vim /etc/default/grub
@@ -23,33 +35,22 @@ $ sudo vim /etc/default/grub
 $ sudo update-grub2
 ```
 
-## ■ カーネルパラメータの設定
-```
-$ sudo vim /etc/sysctl.conf
-```
-```diff
-+ fs.suid_dumpable=2
-+ net.ipv4.tcp_timestamps=0
-+ vm.panic_on_oom=2
-```
-設定を反映します。
-```
-$ sudo sysctl -p
-```
 ## ■ ネットワークの設定
-ネットワークの設定(IPアドレス、ルーティング、ゲートウェイ、DNSなど)は[systemd-networkd]()を参照してください。
+loopbackを除く、ネットワークインターフェースの設定ファイルを生成する。
+```sh
+$ sudo for DEV in $(ls /sys/class/net | grep -v -E "^lo$"); do touch /etc/systemd/network/${DEV}.network; done
+```
+最低限必要なものを記載する。また下記の設定はあくまで例であることに注意する。
+```sh
+$ sudo vim /etc/systemd/network/<network interface>.network
+```
+```ini
+[Match]
+Name=ens18
 
-## ■ [任意] プロキシの設定
-```
-$ sudo vim /etc/profile.d/proxy.sh
-```
-```
-PROXY="http://[<ユーザ名>:<パスワード>@]<プロキシのIPアドレスまたはホスト名>:<ポート番号>"
-export http_proxy=$PROXY
-export HTTP_PROXY=$PROXY
-export https_proxy=$PROXY
-export HTTPS_PROXY=$PROXY
-export no_proxy="127.0.0.1"
+[Network]
+Address=192.168.0.1/24
+Gateway=192.168.0.254
 ```
 
 ## ■ パッケージのアンインストール
@@ -276,6 +277,20 @@ $ sudo vim /etc/systemd/system.conf
 $ sudo systemctl daemon-reexec
 ```
 
+## ■ カーネルパラメータの設定
+```
+$ sudo vim /etc/sysctl.conf
+```
+```diff
++ fs.suid_dumpable=2
++ net.ipv4.tcp_timestamps=0
++ vm.panic_on_oom=2
+```
+設定を反映します。
+```
+$ sudo sysctl -p
+```
+
 ## ■ 不要なサービスの停止
 ```
 # パッケージ自動更新周りのサービスを無効化
@@ -295,18 +310,6 @@ $ sudo touch /etc/cloud/cloud-init.disabled
 ```
 `/etc/cloud/cloud-init.disabled`ファイルを作成することでcloud-init関連のサービスはすべて自動起動されないようになります(だだし、サービスとしての自動起動設定は入ったまま)
 
-## ■ ユーザ/グループの設定
-### rootのパスワード設定
-以下では、sudo権限を持つユーザ(thetaru)を利用してrootのパスワードを設定します。
-```
-$ sudo passwd root
-```
-```
-[sudo] password for thetaru:
-New password:
-Retype new password:
-```
-
 ## ■ [任意] ログイン時に出力されるメッセージ(MOTD)の抑止
 出力用のスクリプトは`/etc/update-motd.d/`に配置されている。(カスタマイズする場合は、このスクリプトを修正する。)  
 以下では、PAMによる抑止を行っている。
@@ -325,6 +328,20 @@ $ sudo vim /etc/pam.d/login
 ```diff
 -  session    optional     pam_motd.so  motd=/run/motd.dynamic
 +  #session    optional     pam_motd.so  motd=/run/motd.dynamic
+```
+
+## ■ [任意] プロキシの設定
+以下では、全ユーザに影響があるので注意する。
+```
+$ sudo vim /etc/profile.d/proxy.sh
+```
+```
+PROXY="http://[<ユーザ名>:<パスワード>@]<プロキシのIPアドレスまたはホスト名>:<ポート番号>"
+export http_proxy=$PROXY
+export HTTP_PROXY=$PROXY
+export https_proxy=$PROXY
+export HTTPS_PROXY=$PROXY
+export no_proxy="127.0.0.1"
 ```
 
 ## ■ PAMの設定
