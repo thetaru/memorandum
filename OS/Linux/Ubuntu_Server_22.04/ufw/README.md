@@ -82,5 +82,5 @@ ufw logging medium
 ufw allow from 192.168.0.0/24 to any port 22 proto tcp
 
 # Show ufw rules
-ufw status
+ufw status verbose
 ```
