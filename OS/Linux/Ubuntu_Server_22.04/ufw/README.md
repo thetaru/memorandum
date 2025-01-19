@@ -74,6 +74,8 @@ ufw logging [on|off|level]
 # Initialize ufw configuration
 ufw --force reset
 ufw --force enable
+ufw default deny incoming
+ufw default allow outgoing
 ufw logging medium
 
 # Add ufw rules
