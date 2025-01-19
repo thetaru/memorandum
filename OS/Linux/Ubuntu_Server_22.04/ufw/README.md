@@ -62,8 +62,6 @@ ufw logging [on|off|level]
 ログレベルごとの説明については以下を参照すること。
 |level|description|
 |-----|-----------|
-|on||
-|off||
 |low||
 |medium||
 |high||
