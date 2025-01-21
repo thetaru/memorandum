@@ -349,6 +349,25 @@ export HTTPS_PROXY=$PROXY
 export no_proxy="127.0.0.1"
 ```
 
+## ■ [任意] AppArmorの無効化
+apparmorプロファイルの読み込みを停止する。
+```
+$ sudo systemctl disable --now apparmor.service
+```
+カーネル上のapparmorを無効化する。
+```
+$ sudo vim /etc/default/grub
+```
+```diff
+# apparmor=0を追加
+-  GRUB_CMDLINE_LINUX=""
++  GRUB_CMDLINE_LINUX="apparmor=0"
+```
+設定を反映し、再起動する。
+```
+$ sudo update-grub2
+```
+
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
 
