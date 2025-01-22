@@ -30,9 +30,13 @@ $ sudo vim /etc/default/grub
 -  GRUB_CMDLINE_LINUX=""
 +  GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet ipv6.disable=1"
 ```
-設定を反映します。
+`/boot/grub/grub.cfg`に設定を反映します。
 ```
 $ sudo update-grub2
+```
+システムに反映するため再起動を実施する。
+```sh
+$ sudo systemctl reboot
 ```
 
 ## ■ ネットワークの設定
@@ -349,7 +353,7 @@ export HTTPS_PROXY=$PROXY
 export no_proxy="127.0.0.1"
 ```
 
-## ■ [任意] AppArmorの無効化
+## ■ [任意] apparmorの無効化
 apparmorプロファイルの読み込みを停止する。
 ```
 $ sudo systemctl disable --now apparmor.service
@@ -363,9 +367,13 @@ $ sudo vim /etc/default/grub
 -  GRUB_CMDLINE_LINUX=""
 +  GRUB_CMDLINE_LINUX="apparmor=0"
 ```
-設定を反映し、再起動する。
+`/boot/grub/grub.cfg`に設定を反映します。
 ```
 $ sudo update-grub2
+```
+システムに反映するため再起動を実施する。
+```sh
+$ sudo systemctl reboot
 ```
 
 ## ■ PAMの設定
