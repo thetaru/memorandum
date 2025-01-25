@@ -1,4 +1,5 @@
 # ufw
+iptablesのラッパー
 ## ufwの有効化
 デフォルトで無効化されているため有効化する。
 ```sh
@@ -10,12 +11,18 @@ ufw enable
 ### Incoming
 デフォルトでは、インバウンド通信は拒否(deny)になっている。
 ```sh
-ufw default [allow|deny] incoming
+ufw default [allow|deny|reject] incoming
 ```
 ### Outgoing
 デフォルトでは、アウトバウンド通信は許可(allow)になっている。
 ```sh
-ufw default [allow|deny] outgoing
+ufw default [allow|deny|reject] outgoing
+```
+### Routed
+デフォルトでは、転送は無効(disabled)になっている。  
+有効にするには、カーネルパラメータ`net.ipv4.ip_forward`を設定する必要がある。
+```sh
+ufw default [allow|deny|reject] routed
 ```
 
 ## ルールの確認
