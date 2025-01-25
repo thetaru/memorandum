@@ -61,6 +61,10 @@ Gateway=192.168.0.254
 ```
 $ sudo systemctl restart systemd-networkd.service
 ```
+インターフェースの設定が反映されていることを確認する。
+```sh
+$ networkctl status ens18
+```
 
 ## ■ パッケージのアンインストール
 不要なパッケージを削除します。
