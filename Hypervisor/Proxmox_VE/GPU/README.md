@@ -1,0 +1,1 @@
+# ProxmoxにおけるGPU設定
