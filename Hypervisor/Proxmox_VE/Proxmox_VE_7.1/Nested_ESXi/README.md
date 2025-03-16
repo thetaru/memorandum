@@ -1,3 +1,0 @@
-# Nested ESXi
-## ■ Settings
-## ■ Tips
