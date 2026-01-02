@@ -42,7 +42,7 @@ $ sudo systemctl reboot
 ## ■ ネットワークの設定
 loopbackを除く、ネットワークインターフェースの設定ファイルを生成する。
 ```sh
-$ sudo for DEV in $(ls /sys/class/net | grep -v -E "^lo$"); do touch /etc/systemd/network/${DEV}.network; done
+$ for DEV in $(ls /sys/class/net | grep -v -E "^lo$"); do touch /etc/systemd/network/${DEV}.network; done
 ```
 最低限必要なものを記載する。また下記の設定はあくまで例であることに注意する。
 ```sh
