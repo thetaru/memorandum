@@ -383,7 +383,7 @@ $ sudo systemctl reboot
 ## ■ PAMの設定
 PAMの設定は[PAM]()を参照してください。
 
-## ■ ロギングの設定
+## ■ ログの設定
 ### rsyslogの設定
 rsyslogの設定は[rsyslog]()を参照してください。
 
@@ -394,10 +394,8 @@ journalctlの設定は[journalctl]()を参照してください。
 logrotateの設定は[logrotate]()を参照してください。
 
 ## ■ ufwの設定
-ufwの設定は[ufw]()を参照してください。
+ufwの設定は[ufw](../ufw)を参照してください。
 
 ## ■ apparmorの設定
 apparmorの設定は[apparmor]()を参照してください。
 
-## ■ SSHサーバの設定
-SSHサーバの設定は[SSH]()を参照してください。
